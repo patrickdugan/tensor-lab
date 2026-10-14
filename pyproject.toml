@@ -1,0 +1,13 @@
+[project]
+name = "tensorlab"
+version = "0.1.0"
+description = "Exact discovery and verification of tensor degenerations (matrix multiplication exponent research)"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+numeric = ["numpy"]
+test = ["pytest", "numpy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

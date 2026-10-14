@@ -1,0 +1,264 @@
+{
+ "note": "LP relaxation over convolution block types; resources = Y/Z flattening ranks and X-Koszul ranks (additive over shared-X sums, monotone under degeneration). lp_max <= P* proves no exact degeneration of C(a,B) into such blocks beats the extremal profile.",
+ "slope": [
+  {
+   "a": "3",
+   "B": null,
+   "status": "optimal",
+   "lp_max": "14/9",
+   "pstar": "14/9",
+   "beats_pstar": false,
+   "optimal_mix": {
+    "N_3_10": "1/22",
+    "E_3_10": "1/22"
+   },
+   "capacities": {
+    "Y": "1",
+    "Z": "1",
+    "K1": "2"
+   }
+  },
+  {
+   "a": "4",
+   "B": null,
+   "status": "optimal",
+   "lp_max": "187/108",
+   "pstar": "140/81",
+   "beats_pstar": true,
+   "optimal_mix": {
+    "N_4_1": "1/40",
+    "E_4_2": "1/8",
+    "N_4_3": "1/12",
+    "R_2_3": "1/20"
+   },
+   "capacities": {
+    "Y": "1",
+    "Z": "1",
+    "K1": "3",
+    "K2": "3"
+   }
+  },
+  {
+   "a": "5",
+   "B": null,
+   "status": "optimal",
+   "lp_max": "254/135",
+   "pstar": "455/243",
+   "beats_pstar": true,
+   "optimal_mix": {
+    "N_5_1": "1/15",
+    "E_5_2": "1/10",
+    "R_2_4": "1/15",
+    "R_3_3": "1/15"
+   },
+   "capacities": {
+    "Y": "1",
+    "Z": "1",
+    "K1": "4",
+    "K2": "6",
+    "K3": "4"
+   }
+  },
+  {
+   "a": "6",
+   "B": null,
+   "status": "optimal",
+   "lp_max": "153367/76545",
+   "pstar": "1456/729",
+   "beats_pstar": true,
+   "optimal_mix": {
+    "N_6_1": "1/126",
+    "E_6_2": "1/90",
+    "E_6_3": "1/15",
+    "N_6_5": "1/18",
+    "R_2_5": "1/63",
+    "R_3_4": "1/42"
+   },
+   "capacities": {
+    "Y": "1",
+    "Z": "1",
+    "K1": "5",
+    "K2": "10",
+    "K3": "10",
+    "K4": "5"
+   }
+  }
+ ],
+ "finite_a3": [
+  {
+   "a": 3,
+   "B": 1,
+   "lp_max": "3",
+   "pstar": "3",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 2,
+   "lp_max": "14/3",
+   "pstar": "14/3",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 3,
+   "lp_max": "56/9",
+   "pstar": "56/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 4,
+   "lp_max": "70/9",
+   "pstar": "70/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 5,
+   "lp_max": "28/3",
+   "pstar": "28/3",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 6,
+   "lp_max": "98/9",
+   "pstar": "98/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 7,
+   "lp_max": "112/9",
+   "pstar": "112/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 8,
+   "lp_max": "14",
+   "pstar": "14",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 9,
+   "lp_max": "140/9",
+   "pstar": "140/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 10,
+   "lp_max": "154/9",
+   "pstar": "154/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 11,
+   "lp_max": "56/3",
+   "pstar": "56/3",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 12,
+   "lp_max": "182/9",
+   "pstar": "182/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 13,
+   "lp_max": "196/9",
+   "pstar": "196/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 14,
+   "lp_max": "70/3",
+   "pstar": "70/3",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 15,
+   "lp_max": "224/9",
+   "pstar": "224/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 16,
+   "lp_max": "238/9",
+   "pstar": "238/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 17,
+   "lp_max": "28",
+   "pstar": "28",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 18,
+   "lp_max": "266/9",
+   "pstar": "266/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 19,
+   "lp_max": "280/9",
+   "pstar": "280/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 20,
+   "lp_max": "98/3",
+   "pstar": "98/3",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 21,
+   "lp_max": "308/9",
+   "pstar": "308/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 22,
+   "lp_max": "322/9",
+   "pstar": "322/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 23,
+   "lp_max": "112/3",
+   "pstar": "112/3",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 24,
+   "lp_max": "350/9",
+   "pstar": "350/9",
+   "beats": false
+  },
+  {
+   "a": 3,
+   "B": 25,
+   "lp_max": "364/9",
+   "pstar": "364/9",
+   "beats": false
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "note": "floating point Levenberg-Marquardt, 12 random starts; residual = squared Frobenius error",
+ "rows": [
+  {
+   "source": "C(3,2)",
+   "target": "C(2,2)^sigma (x) B_X(1)",
+   "kind": "one rectangle (sanity)",
+   "best_residual": 1.3891028270257772e-18,
+   "max_abs_entry": 5.107722057096019,
+   "seconds": 0.431255578994751
+  },
+  {
+   "source": "C(3,5)",
+   "target": "C(2,2)^sigma (x) B_X(2)",
+   "kind": "monomial staircase, period 3 (sanity)",
+   "best_residual": 4.819258741623776e-13,
+   "max_abs_entry": 4.072666516143184,
+   "seconds": 4.307207345962524
+  },
+  {
+   "source": "C(3,4)",
+   "target": "C(2,2)^sigma (x) B_X(2)",
+   "kind": "dense, period 2",
+   "best_residual": 1.0000001203847988,
+   "max_abs_entry": 30.41054087599713,
+   "seconds": 5.3481104373931885
+  },
+  {
+   "source": "C(3,6)",
+   "target": "C(2,2)^sigma (x) B_X(3)",
+   "kind": "dense, period 2",
+   "best_residual": 2.000003105694398,
+   "max_abs_entry": 65.09158104706313,
+   "seconds": 7.04718804359436
+  }
+ ]
+}

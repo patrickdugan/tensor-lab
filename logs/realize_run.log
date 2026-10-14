@@ -1,0 +1,33 @@
+E4_three_sector_sanity {'a': 2, 'h': 1, 'B': 4, 'use_x': False, 'realizable': True, 'farkas_consistent': True, 'verified': True}
+E4_three_sector_sanity {'a': 2, 'h': 1, 'B': 4, 'use_x': True, 'realizable': True, 'farkas_consistent': True, 'verified': True}
+E4_three_sector_sanity {'a': 3, 'h': 2, 'B': 8, 'use_x': False, 'realizable': True, 'farkas_consistent': True, 'verified': True}
+E4_three_sector_sanity {'a': 3, 'h': 2, 'B': 8, 'use_x': True, 'realizable': True, 'farkas_consistent': True, 'verified': True}
+E4_three_sector_sanity {'a': 2, 'h': 3, 'B': 10, 'use_x': False, 'realizable': True, 'farkas_consistent': True, 'verified': True}
+E4_three_sector_sanity {'a': 2, 'h': 3, 'B': 10, 'use_x': True, 'realizable': True, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 5, 'p': 3, 'q': 3, 'period': 3, 'B': 9, 'realizable': False, 'predicted_realizable': False, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 5, 'p': 3, 'q': 3, 'period': 4, 'B': 11, 'realizable': False, 'predicted_realizable': False, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 5, 'p': 3, 'q': 3, 'period': 5, 'B': 13, 'realizable': True, 'predicted_realizable': True, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 5, 'p': 3, 'q': 3, 'period': 6, 'B': 15, 'realizable': True, 'predicted_realizable': True, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 7, 'p': 3, 'q': 3, 'period': 3, 'B': 9, 'realizable': False, 'predicted_realizable': False, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 7, 'p': 3, 'q': 3, 'period': 4, 'B': 11, 'realizable': False, 'predicted_realizable': False, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 7, 'p': 3, 'q': 3, 'period': 5, 'B': 13, 'realizable': True, 'predicted_realizable': True, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 7, 'p': 3, 'q': 3, 'period': 6, 'B': 15, 'realizable': True, 'predicted_realizable': True, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 6, 'p': 2, 'q': 4, 'period': 4, 'B': 10, 'realizable': False, 'predicted_realizable': False, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 6, 'p': 2, 'q': 4, 'period': 5, 'B': 12, 'realizable': True, 'predicted_realizable': True, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 6, 'p': 2, 'q': 4, 'period': 6, 'B': 14, 'realizable': True, 'predicted_realizable': True, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 6, 'p': 3, 'q': 2, 'period': 3, 'B': 9, 'realizable': False, 'predicted_realizable': False, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 6, 'p': 3, 'q': 2, 'period': 4, 'B': 11, 'realizable': True, 'predicted_realizable': True, 'farkas_consistent': True, 'verified': True}
+E1_staircase_spacing {'a': 6, 'p': 3, 'q': 2, 'period': 5, 'B': 13, 'realizable': True, 'predicted_realizable': True, 'farkas_consistent': True, 'verified': True}
+E2_two_classes {'a': 9, 'B': 12, 'realizable': False, 'farkas_consistent': True, 'verified': True}
+E3_double_staircase {'a': 5, 'p': 3, 'q': 3, 'B': 13, 'realizable': False, 'farkas_consistent': True, 'verified': True}
+E3_double_staircase {'a': 7, 'p': 4, 'q': 4, 'B': 18, 'realizable': False, 'farkas_consistent': True, 'verified': True}
+E5 a=3 B=15: P*=224/9 {'templates': 720, 'packings_above_target': 31, 'lp_calls': 31, 'realizable_above_target': 0, 'max_density': '5/6', 'truncated': False, 'seconds': 14.343926906585693} best realizable above target: None
+E5 a=3 B=16: P*=238/9 {'templates': 816, 'packings_above_target': 33, 'lp_calls': 33, 'realizable_above_target': 0, 'max_density': '5/6', 'truncated': False, 'seconds': 28.92171335220337} best realizable above target: None
+E5 a=3 B=18: P*=266/9 {'templates': 1026, 'packings_above_target': 172, 'lp_calls': 150, 'realizable_above_target': 0, 'max_density': '5/6', 'truncated': True, 'seconds': 152.96080470085144} best realizable above target: None
+E5 a=4 B=12: P*=70/3 {'templates': 912, 'packings_above_target': 2, 'lp_calls': 2, 'realizable_above_target': 0, 'max_density': '14/15', 'truncated': False, 'seconds': 3.291067600250244} best realizable above target: None
+E5 a=4 B=14: P*=2170/81 {'templates': 1232, 'packings_above_target': 13, 'lp_calls': 13, 'realizable_above_target': 0, 'max_density': '14/15', 'truncated': False, 'seconds': 23.37580680847168} best realizable above target: None
+E5 a=4 B=16: P*=2450/81 {'templates': 1600, 'packings_above_target': 72, 'lp_calls': 72, 'realizable_above_target': 0, 'max_density': '14/15', 'truncated': False, 'seconds': 181.38451027870178} best realizable above target: None
+E5 a=5 B=12: P*=6370/243 {'templates': 1500, 'packings_above_target': 4, 'lp_calls': 4, 'realizable_above_target': 0, 'max_density': '28/27', 'truncated': False, 'seconds': 22.517173051834106} best realizable above target: None
+E5 a=5 B=14: P*=7280/243 {'templates': 2030, 'packings_above_target': 15, 'lp_calls': 15, 'realizable_above_target': 0, 'max_density': '28/27', 'truncated': False, 'seconds': 129.4899115562439} best realizable above target: None
+written to C:\Users\patri\OneDrive\Documents\GitHub\Spiral\tensor-lab\logs\realizability.json
+REALIZE EXIT 0

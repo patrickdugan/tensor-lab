@@ -1,0 +1,236 @@
+{
+ "generator": "tensorlab 0.1.0",
+ "range": {
+  "max_a": 5,
+  "max_h": 5
+ },
+ "all_pass": true,
+ "cases": [
+  {
+   "a": 1,
+   "h": 1,
+   "B": 3,
+   "verdict": "PASS",
+   "retained": 3,
+   "erased": 0,
+   "file": "certificates\\three_sector_a1_h1.json"
+  },
+  {
+   "a": 1,
+   "h": 2,
+   "B": 6,
+   "verdict": "PASS",
+   "retained": 6,
+   "erased": 0,
+   "file": "certificates\\three_sector_a1_h2.json"
+  },
+  {
+   "a": 1,
+   "h": 3,
+   "B": 9,
+   "verdict": "PASS",
+   "retained": 9,
+   "erased": 0,
+   "file": "certificates\\three_sector_a1_h3.json"
+  },
+  {
+   "a": 1,
+   "h": 4,
+   "B": 12,
+   "verdict": "PASS",
+   "retained": 12,
+   "erased": 0,
+   "file": "certificates\\three_sector_a1_h4.json"
+  },
+  {
+   "a": 1,
+   "h": 5,
+   "B": 15,
+   "verdict": "PASS",
+   "retained": 15,
+   "erased": 0,
+   "file": "certificates\\three_sector_a1_h5.json"
+  },
+  {
+   "a": 2,
+   "h": 1,
+   "B": 4,
+   "verdict": "PASS",
+   "retained": 6,
+   "erased": 2,
+   "file": "certificates\\three_sector_a2_h1.json"
+  },
+  {
+   "a": 2,
+   "h": 2,
+   "B": 7,
+   "verdict": "PASS",
+   "retained": 12,
+   "erased": 2,
+   "file": "certificates\\three_sector_a2_h2.json"
+  },
+  {
+   "a": 2,
+   "h": 3,
+   "B": 10,
+   "verdict": "PASS",
+   "retained": 18,
+   "erased": 2,
+   "file": "certificates\\three_sector_a2_h3.json"
+  },
+  {
+   "a": 2,
+   "h": 4,
+   "B": 13,
+   "verdict": "PASS",
+   "retained": 24,
+   "erased": 2,
+   "file": "certificates\\three_sector_a2_h4.json"
+  },
+  {
+   "a": 2,
+   "h": 5,
+   "B": 16,
+   "verdict": "PASS",
+   "retained": 30,
+   "erased": 2,
+   "file": "certificates\\three_sector_a2_h5.json"
+  },
+  {
+   "a": 3,
+   "h": 1,
+   "B": 5,
+   "verdict": "PASS",
+   "retained": 9,
+   "erased": 6,
+   "file": "certificates\\three_sector_a3_h1.json"
+  },
+  {
+   "a": 3,
+   "h": 2,
+   "B": 8,
+   "verdict": "PASS",
+   "retained": 18,
+   "erased": 6,
+   "file": "certificates\\three_sector_a3_h2.json"
+  },
+  {
+   "a": 3,
+   "h": 3,
+   "B": 11,
+   "verdict": "PASS",
+   "retained": 27,
+   "erased": 6,
+   "file": "certificates\\three_sector_a3_h3.json"
+  },
+  {
+   "a": 3,
+   "h": 4,
+   "B": 14,
+   "verdict": "PASS",
+   "retained": 36,
+   "erased": 6,
+   "file": "certificates\\three_sector_a3_h4.json"
+  },
+  {
+   "a": 3,
+   "h": 5,
+   "B": 17,
+   "verdict": "PASS",
+   "retained": 45,
+   "erased": 6,
+   "file": "certificates\\three_sector_a3_h5.json"
+  },
+  {
+   "a": 4,
+   "h": 1,
+   "B": 6,
+   "verdict": "PASS",
+   "retained": 12,
+   "erased": 12,
+   "file": "certificates\\three_sector_a4_h1.json"
+  },
+  {
+   "a": 4,
+   "h": 2,
+   "B": 9,
+   "verdict": "PASS",
+   "retained": 24,
+   "erased": 12,
+   "file": "certificates\\three_sector_a4_h2.json"
+  },
+  {
+   "a": 4,
+   "h": 3,
+   "B": 12,
+   "verdict": "PASS",
+   "retained": 36,
+   "erased": 12,
+   "file": "certificates\\three_sector_a4_h3.json"
+  },
+  {
+   "a": 4,
+   "h": 4,
+   "B": 15,
+   "verdict": "PASS",
+   "retained": 48,
+   "erased": 12,
+   "file": "certificates\\three_sector_a4_h4.json"
+  },
+  {
+   "a": 4,
+   "h": 5,
+   "B": 18,
+   "verdict": "PASS",
+   "retained": 60,
+   "erased": 12,
+   "file": "certificates\\three_sector_a4_h5.json"
+  },
+  {
+   "a": 5,
+   "h": 1,
+   "B": 7,
+   "verdict": "PASS",
+   "retained": 15,
+   "erased": 20,
+   "file": "certificates\\three_sector_a5_h1.json"
+  },
+  {
+   "a": 5,
+   "h": 2,
+   "B": 10,
+   "verdict": "PASS",
+   "retained": 30,
+   "erased": 20,
+   "file": "certificates\\three_sector_a5_h2.json"
+  },
+  {
+   "a": 5,
+   "h": 3,
+   "B": 13,
+   "verdict": "PASS",
+   "retained": 45,
+   "erased": 20,
+   "file": "certificates\\three_sector_a5_h3.json"
+  },
+  {
+   "a": 5,
+   "h": 4,
+   "B": 16,
+   "verdict": "PASS",
+   "retained": 60,
+   "erased": 20,
+   "file": "certificates\\three_sector_a5_h4.json"
+  },
+  {
+   "a": 5,
+   "h": 5,
+   "B": 19,
+   "verdict": "PASS",
+   "retained": 75,
+   "erased": 20,
+   "file": "certificates\\three_sector_a5_h5.json"
+  }
+ ],
+ "scope": "Each case is a finite exact identity (Lemma 4.2 of the paper at those parameters). The family statement for all (a,h) is OpenAI's Lean theorem Sector.retained_eq_three_branches; this tool only checks the listed cases."
+}

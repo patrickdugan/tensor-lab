@@ -1,0 +1,13 @@
+extremal profile on [1,60]^2: 0 violations, tight: {'C': 1769, 'T': 170, 'L': 1}  [0.2s]
+cube check H_a^3 >= a: True
+LP grid 12: min P(2,2) = 10/3 (3.3333333333333335), extremal P*(2,2) = 3.3333, 2^(4/3) = 2.5198  [optimal]
+LP grid 12: min P(3,3) = 56/9 (6.222222222222222), extremal P*(3,3) = 6.2222, 3^(4/3) = 4.3267  [optimal]
+LP grid 12: min P(4,4) = 770/81 (9.506172839506172), extremal P*(4,4) = 9.5062, 4^(4/3) = 6.3496  [optimal]
+LP grid 12: min P(5,5) = 7388/567 (13.029982363315696), extremal P*(5,5) = 13.1070, 5^(4/3) = 8.5499  [optimal]
+P(2,7) >= P(1,2) + P(1,2) + P(1,2) + P(1,2) + P(1,2): extremal slack 0; LP min over grid 12: optimal 0
+P(4,4) >= P(2,2) + P(2,2): extremal slack 230/81; LP min over grid 12: optimal 230/81
+P(3,5) >= P(1,1) + P(2,2) + P(2,2): extremal slack 5/3; LP min over grid 12: optimal 5/3
+P(3,16) >= P(2,2) + P(2,2) + P(2,2) + P(2,2) + P(2,2) + P(2,2) + P(2,2) + P(2,2): extremal slack -2/9; LP min over grid 12: unbounded None
+what-if (paper_only): local exponent of P(a,a) at a=32768: 1.3334, omega <= 2.2500
+what-if (dense_rectangles): local exponent of P(a,a) at a=32768: 1.4570, omega <= 2.0590
+EXIT 0

@@ -1,0 +1,2 @@
+coarse N=3: 3 rank-one + 1 tangential (5 copies), starts=6 iters=300 seed=1
+  start 0: 1.5e+01 3.6e+00 9.0e-01 2.2e-01 5.6e-02 1.4e-02 3.6e-03 9.3e-04 2.5e-04 1.0e-04 5.9e-05 | norm 953.0

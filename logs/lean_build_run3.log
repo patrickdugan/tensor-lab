@@ -1,0 +1,41 @@
+total 8
+drwxr-xr-x 2 root root 4096 Oct 12 16:41 .
+drwxr-xr-x 5 root root 4096 Oct 12 16:42 ..
+lrwxrwxrwx 1 root root   45 Oct 12 16:41 Cli -> /root/oai-verify/math/lean/.lake/packages/Cli
+lrwxrwxrwx 1 root root   58 Oct 12 16:41 LeanSearchClient -> /root/oai-verify/math/lean/.lake/packages/LeanSearchClient
+lrwxrwxrwx 1 root root   44 Oct 12 16:41 Qq -> /root/oai-verify/math/lean/.lake/packages/Qq
+lrwxrwxrwx 1 root root   47 Oct 12 16:41 aesop -> /root/oai-verify/math/lean/.lake/packages/aesop
+lrwxrwxrwx 1 root root   51 Oct 12 16:41 batteries -> /root/oai-verify/math/lean/.lake/packages/batteries
+lrwxrwxrwx 1 root root   53 Oct 12 16:41 importGraph -> /root/oai-verify/math/lean/.lake/packages/importGraph
+lrwxrwxrwx 1 root root   49 Oct 12 16:41 mathlib -> /root/oai-verify/math/lean/.lake/packages/mathlib
+lrwxrwxrwx 1 root root   51 Oct 12 16:41 plausible -> /root/oai-verify/math/lean/.lake/packages/plausible
+lrwxrwxrwx 1 root root   54 Oct 12 16:41 proofwidgets -> /root/oai-verify/math/lean/.lake/packages/proofwidgets
+== lake build
+⚠ [3095/3097] Built TensorLab.Extremal (686s)
+warning: TensorLab/Extremal.lean:155:33: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: TensorLab/Extremal.lean:246:7: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: TensorLab/Extremal.lean:246:9: Variable name `b` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _b
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: TensorLab/Extremal.lean:268:42: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully (3097 jobs).
+== axioms
+LEAN BUILD EXIT 0

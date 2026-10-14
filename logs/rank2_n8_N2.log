@@ -1,0 +1,6 @@
+full n=8 N=2: support 2116, dims (9, 256, 256); screening 40 starts
+  seed 7000: 1.739e+02 norm 522 [197s]
+  seed 7001: 1.229e+02 norm 166 [362s]
+  seed 7002: 1.683e+02 norm 620 [530s]
+  seed 7003: 1.129e+02 norm 192 [693s]
+  seed 7004: 7.975e+01 norm 3723 [845s]

@@ -1,0 +1,96 @@
+  convolution a=1 B=1: 0 structures, 0 unique so far, 0.0s
+  convolution a=1 B=2: 1 structures, 1 unique so far, 0.0s
+  convolution a=1 B=3: 16 structures, 4 unique so far, 0.0s
+  convolution a=1 B=4: 87 structures, 10 unique so far, 0.0s
+  convolution a=1 B=5: 290 structures, 20 unique so far, 0.1s
+  convolution a=1 B=6: 735 structures, 36 unique so far, 0.2s
+  convolution a=1 B=7: 1566 structures, 59 unique so far, 0.4s
+  convolution a=1 B=8: 2961 structures, 91 unique so far, 0.8s
+  convolution a=1 B=9: 5132 structures, 134 unique so far, 1.5s
+  convolution a=1 B=10: 8325 structures, 190 unique so far, 2.3s
+  convolution a=1 B=11: 12820 structures, 261 unique so far, 3.4s
+  convolution a=1 B=12: 18931 structures, 350 unique so far, 5.3s
+  convolution a=1 B=13: 27006 structures, 459 unique so far, 7.6s
+  convolution a=1 B=14: 37427 structures, 591 unique so far, 11.3s
+  convolution a=1 B=15: 50610 structures, 749 unique so far, 17.0s
+  convolution a=1 B=16: 67005 structures, 936 unique so far, 24.1s
+  convolution a=2 B=1: 0 structures, 936 unique so far, 24.1s
+  convolution a=2 B=2: 5 structures, 938 unique so far, 24.1s
+  convolution a=2 B=3: 49 structures, 943 unique so far, 24.1s
+  convolution a=2 B=4: 200 structures, 952 unique so far, 24.1s
+  convolution a=2 B=5: 560 structures, 966 unique so far, 24.2s
+  convolution a=2 B=6: 1265 structures, 986 unique so far, 24.3s
+  convolution a=2 B=7: 2485 structures, 1014 unique so far, 24.5s
+  convolution a=2 B=8: 4424 structures, 1051 unique so far, 24.9s
+  convolution a=2 B=9: 7320 structures, 1099 unique so far, 25.7s
+  convolution a=2 B=10: 11445 structures, 1160 unique so far, 26.9s
+  convolution a=2 B=11: 17105 structures, 1236 unique so far, 28.7s
+  convolution a=2 B=12: 24640 structures, 1329 unique so far, 31.6s
+  convolution a=2 B=13: 34424 structures, 1442 unique so far, 36.2s
+  convolution a=2 B=14: 46865 structures, 1577 unique so far, 42.9s
+  convolution a=2 B=15: 62405 structures, 1737 unique so far, 51.4s
+  convolution a=2 B=16: 81520 structures, 1925 unique so far, 60.8s
+  convolution a=3 B=1: 0 structures, 1925 unique so far, 60.8s
+  convolution a=3 B=2: 12 structures, 1926 unique so far, 60.8s
+  convolution a=3 B=3: 98 structures, 1933 unique so far, 60.8s
+  convolution a=3 B=4: 352 structures, 1945 unique so far, 60.8s
+  convolution a=3 B=5: 902 structures, 1963 unique so far, 60.8s
+  convolution a=3 B=6: 1910 structures, 1988 unique so far, 61.0s
+  convolution a=3 B=7: 3572 structures, 2021 unique so far, 61.4s
+  convolution a=3 B=8: 6118 structures, 2064 unique so far, 62.1s
+  convolution a=3 B=9: 9812 structures, 2118 unique so far, 63.1s
+  convolution a=3 B=10: 14952 structures, 2185 unique so far, 65.0s
+  convolution a=3 B=11: 21870 structures, 2267 unique so far, 68.0s
+  convolution a=3 B=12: 30932 structures, 2366 unique so far, 71.7s
+  convolution a=3 B=13: 42538 structures, 2484 unique so far, 76.5s
+  convolution a=3 B=14: 57122 structures, 2624 unique so far, 83.5s
+  convolution a=3 B=15: 75152 structures, 2788 unique so far, 93.0s
+  convolution a=3 B=16: 97130 structures, 2979 unique so far, 107.1s
+  convolution a=4 B=1: 0 structures, 2979 unique so far, 107.1s
+  convolution a=4 B=2: 22 structures, 2981 unique so far, 107.1s
+  convolution a=4 B=3: 163 structures, 2985 unique so far, 107.1s
+  convolution a=4 B=4: 543 structures, 3000 unique so far, 107.1s
+  convolution a=4 B=5: 1316 structures, 3022 unique so far, 107.2s
+  convolution a=4 B=6: 2670 structures, 3052 unique so far, 107.5s
+  convolution a=4 B=7: 4827 structures, 3091 unique so far, 108.0s
+  convolution a=4 B=8: 8043 structures, 3140 unique so far, 109.4s
+  convolution a=4 B=9: 12608 structures, 3201 unique so far, 111.1s
+  convolution a=4 B=10: 18846 structures, 3275 unique so far, 113.6s
+  convolution a=4 B=11: 27115 structures, 3364 unique so far, 117.3s
+  convolution a=4 B=12: 37807 structures, 3470 unique so far, 122.8s
+  convolution a=4 B=13: 51348 structures, 3595 unique so far, 132.4s
+  convolution a=4 B=14: 68198 structures, 3741 unique so far, 141.3s
+  convolution a=4 B=15: 88851 structures, 3911 unique so far, 155.4s
+  convolution a=4 B=16: 113835 structures, 4107 unique so far, 172.0s
+  convolution a=5 B=1: 0 structures, 4107 unique so far, 172.0s
+  convolution a=5 B=2: 35 structures, 4110 unique so far, 172.0s
+  convolution a=5 B=3: 244 structures, 4116 unique so far, 172.0s
+  convolution a=5 B=4: 773 structures, 4125 unique so far, 172.1s
+  convolution a=5 B=5: 1802 structures, 4151 unique so far, 172.2s
+  convolution a=5 B=6: 3545 structures, 4187 unique so far, 172.5s
+  convolution a=5 B=7: 6250 structures, 4234 unique so far, 173.1s
+  convolution a=5 B=8: 10199 structures, 4293 unique so far, 173.9s
+  convolution a=5 B=9: 15708 structures, 4365 unique so far, 175.3s
+  convolution a=5 B=10: 23127 structures, 4452 unique so far, 177.2s
+  convolution a=5 B=11: 32840 structures, 4555 unique so far, 180.0s
+  convolution a=5 B=12: 45265 structures, 4676 unique so far, 184.5s
+  convolution a=5 B=13: 60854 structures, 4817 unique so far, 190.8s
+  convolution a=5 B=14: 80093 structures, 4980 unique so far, 200.8s
+  convolution a=5 B=15: 103502 structures, 5167 unique so far, 222.8s
+  convolution a=5 B=16: 131635 structures, 5381 unique so far, 247.5s
+{"sources": 80, "structures": 1842160, "weight_feasible": 1665744, "degenerations": 1665744, "all_identified": 582132, "unique": 5381, "seconds": 247.53513646125793}
+classes:
+    1995  restriction-type (a block uses a proper subset of the shared X leg)
+    1994  known family: alternating C(a,h_i) blocks (slack > 0: coordinates wasted)
+     936  trivial: splitting a dot product C(1,B) = B_X(B) (P(1,b) = b is additive)
+     301  other block shapes (slack >= 0: consistent with the extremal profile)
+     155  known family: alternating C(a,h_i) blocks, tight on the extremal profile
+non-dominated: 956 of 5381
+     333  known family: alternating C(a,h_i) blocks (slack > 0: coordinates wasted)  (non-dominated)
+     234  restriction-type (a block uses a proper subset of the shared X leg)  (non-dominated)
+     187  trivial: splitting a dot product C(1,B) = B_X(B) (P(1,b) = b is additive)  (non-dominated)
+     155  known family: alternating C(a,h_i) blocks, tight on the extremal profile  (non-dominated)
+      47  other block shapes (slack >= 0: consistent with the extremal profile)  (non-dominated)
+novel (negative slack on the extremal profile): 0
+catalogue written to C:\Users\patri\OneDrive\Documents\GitHub\Spiral\tensor-lab\catalogue\search_a5_b16_k3.json
+SEARCH EXIT 0

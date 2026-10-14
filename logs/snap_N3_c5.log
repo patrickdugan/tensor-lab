@@ -1,0 +1,9 @@
+stage 0 (mu=1e-10): residual 4.932e-06 norm 315.1 [89s]
+stage 1 (mu=1e-11): residual 9.514e-07 norm 457.4 [138s]
+stage 2 (mu=1e-12): residual 1.967e-07 norm 655.3 [220s]
+stage 3 (mu=1e-13): residual 6.043e-08 norm 859.0 [300s]
+stage 4 (mu=1e-14): residual 2.747e-08 norm 1029.9 [382s]
+stage 5 (mu=1e-15): residual 1.547e-08 norm 1175.8 [468s]
+stage 6 (mu=1e-16): residual 9.987e-09 norm 1300.8 [545s]
+DONE
+EXIT 0

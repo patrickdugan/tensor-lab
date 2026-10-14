@@ -1,0 +1,13 @@
+{
+ "coarse_support_is_cyclic": true,
+ "retained_part_is_T2": true,
+ "cyc_flattening_ranks": [
+  3,
+  4,
+  4
+ ],
+ "cyc_rank_4_by_dft": true,
+ "T2_koszul_border_rank_lower_bound": 6,
+ "T2_border_rank_upper_bound": 6,
+ "ok": true
+}

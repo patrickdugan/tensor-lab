@@ -1,0 +1,32 @@
+total 8
+drwxr-xr-x 2 root root 4096 Oct 12 16:41 .
+drwxr-xr-x 5 root root 4096 Oct 12 16:42 ..
+lrwxrwxrwx 1 root root   45 Oct 12 16:41 Cli -> /root/oai-verify/math/lean/.lake/packages/Cli
+lrwxrwxrwx 1 root root   58 Oct 12 16:41 LeanSearchClient -> /root/oai-verify/math/lean/.lake/packages/LeanSearchClient
+lrwxrwxrwx 1 root root   44 Oct 12 16:41 Qq -> /root/oai-verify/math/lean/.lake/packages/Qq
+lrwxrwxrwx 1 root root   47 Oct 12 16:41 aesop -> /root/oai-verify/math/lean/.lake/packages/aesop
+lrwxrwxrwx 1 root root   51 Oct 12 16:41 batteries -> /root/oai-verify/math/lean/.lake/packages/batteries
+lrwxrwxrwx 1 root root   53 Oct 12 16:41 importGraph -> /root/oai-verify/math/lean/.lake/packages/importGraph
+lrwxrwxrwx 1 root root   49 Oct 12 16:41 mathlib -> /root/oai-verify/math/lean/.lake/packages/mathlib
+lrwxrwxrwx 1 root root   51 Oct 12 16:41 plausible -> /root/oai-verify/math/lean/.lake/packages/plausible
+lrwxrwxrwx 1 root root   54 Oct 12 16:41 proofwidgets -> /root/oai-verify/math/lean/.lake/packages/proofwidgets
+== lake build
+Build completed successfully (3096 jobs).
+== axioms
+'TensorLab.Finite.retained_2_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Finite.weights_2_1' does not depend on any axioms
+'TensorLab.Finite.middle_2_1' depends on axioms: [propext, Quot.sound]
+'TensorLab.Finite.retained_3_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Finite.weights_3_2' does not depend on any axioms
+'TensorLab.Finite.middle_3_2' depends on axioms: [propext, Quot.sound]
+'TensorLab.Finite.retained_2_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Finite.weights_2_3' does not depend on any axioms
+'TensorLab.Finite.retained_4_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Finite.weights_4_1' does not depend on any axioms
+'TensorLab.Finite.middle_4_1' depends on axioms: [propext, Quot.sound]
+'TensorLab.Obstruction.chord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Obstruction.tripling_chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Obstruction.odd_sector_implied' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.exponent_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.omega_bound_of_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+LEAN BUILD EXIT 0

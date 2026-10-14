@@ -1,0 +1,49 @@
+[
+ {
+  "terms": 514,
+  "retained": 512,
+  "realizable": false,
+  "obstruction": true,
+  "obstruction_verified": true,
+  "obstruction_support": 2,
+  "farkas_consistent": null,
+  "p": 2,
+  "n": 2,
+  "N": 3,
+  "c": [
+   1,
+   2,
+   4
+  ],
+  "L": 7,
+  "surviving_nonzero_patterns": [
+   [
+    -1,
+    -1,
+    -1
+   ],
+   [
+    1,
+    1,
+    1
+   ]
+  ]
+ },
+ {
+  "terms": 512,
+  "retained": 512,
+  "realizable": null,
+  "obstruction": false,
+  "farkas_consistent": null,
+  "p": 2,
+  "n": 2,
+  "N": 3,
+  "c": [
+   1,
+   2,
+   4
+  ],
+  "L": 8,
+  "surviving_nonzero_patterns": []
+ }
+]

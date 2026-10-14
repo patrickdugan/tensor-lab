@@ -1,0 +1,29 @@
+N=2 c=1:
+   mu=1e-01: residual 1.734e+01, |params| 5.534e+00
+   mu=1e-02: residual 1.717e+01, |params| 5.589e+00
+   mu=1e-03: residual 1.713e+01, |params| 5.596e+00
+   mu=1e-04: residual 1.713e+01, |params| 5.596e+00
+   mu=1e-05: residual 1.713e+01, |params| 5.596e+00
+   mu=1e-06: residual 1.713e+01, |params| 5.596e+00
+   mu=1e-07: residual 1.713e+01, |params| 5.596e+00
+   mu=1e-08: residual 1.713e+01, |params| 5.596e+00
+   mu=1e-09: residual 1.712e+01, |params| 5.596e+00
+   mu=1e-10: residual 1.712e+01, |params| 5.596e+00
+   mu=1e-11: residual 1.712e+01, |params| 5.596e+00
+   mu=1e-12: residual 1.712e+01, |params| 5.596e+00
+   [17.0s]
+N=2 c=2:
+   mu=1e-01: residual 2.143e-01, |params| 7.431e+00
+   mu=1e-02: residual 4.019e-02, |params| 7.722e+00
+   mu=1e-03: residual 8.018e-03, |params| 8.326e+00
+   mu=1e-04: residual 1.281e-03, |params| 9.398e+00
+   mu=1e-05: residual 1.874e-04, |params| 1.088e+01
+   mu=1e-06: residual 2.653e-05, |params| 1.274e+01
+   mu=1e-07: residual 3.708e-06, |params| 1.498e+01
+   mu=1e-08: residual 5.168e-07, |params| 1.763e+01
+   mu=1e-09: residual 7.189e-08, |params| 2.078e+01
+   mu=1e-10: residual 1.205e-08, |params| 2.411e+01
+   mu=1e-11: residual 3.543e-09, |params| 2.670e+01
+   mu=1e-12: residual 1.440e-09, |params| 2.878e+01
+   [50.6s]
+EXIT 124

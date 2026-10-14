@@ -1,0 +1,10 @@
+coarse N=3 c=5 seed=11 reproduced start 0: 8.9e+00 1.6e+00 3.2e-01 6.5e-02 1.3e-02 2.6e-03 5.4e-04 1.1e-04 2.2e-05 4.9e-06 [101s]
+  mu=1e-11: residual 9.514e-07  norm 457.4  [150s]
+  mu=1e-12: residual 1.967e-07  norm 655.3  [227s]
+  mu=1e-13: residual 6.043e-08  norm 859.0  [302s]
+  mu=1e-14: residual 2.747e-08  norm 1029.9  [378s]
+  mu=1e-15: residual 1.547e-08  norm 1175.8  [453s]
+  mu=1e-16: residual 9.987e-09  norm 1300.8  [532s]
+  mu=0e+00: residual 6.879e-09  norm 1417.9  [608s]
+DONE
+EXIT 0

@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "single_factor_ell_vanishes_exactly_on_cross": true,
+ "L_equals_product_and_is_additive": true,
+ "w_times_L_is_target": true,
+ "eps_constant_term_is_target": true,
+ "support_terms": 100,
+ "copies": 2,
+ "single_factor_rank_one": {
+  "f": {
+   "0": "1",
+   "1": "1",
+   "2": "3/4"
+  },
+  "C": {
+   "1": "1",
+   "3": "1",
+   "0": "2/3",
+   "2": "2"
+  },
+  "A": {
+   "0": "1/2",
+   "2": "-1/2",
+   "1": "1",
+   "3": "-1/3"
+  }
+ },
+ "generator": "tensorlab 0.1.0",
+ "statement": "Two copies of C(3,4)^{(x)2} degenerate (first order in eps, polynomial of degree 2) to T_2^{(x)2}, T_2 = two rectangles C(2,2) sharing X.  One copy is impossible (Koszul).  Consequence: lambda(T_2) <= sqrt(2) lambda(C(3,4)) for every tensor character.",
+ "construction": "ell(tau) = 4 - j - k on single-factor terms (zero exactly on the two cross terms); L = ell(tau1) ell(tau2) = 16 - 4(j1+j2) - 4(k1+k2) + 2 j1 j2 + 2 k1 k2 - x1 x2 (additive); w = 1/L on retained terms is rank one; copies scaled by rho sigma tau (1 + eps alpha)(1 + eps beta)(1 + eps gamma) and -rho sigma tau, divided by eps."
+}

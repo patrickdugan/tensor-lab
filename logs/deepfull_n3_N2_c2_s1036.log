@@ -1,0 +1,9 @@
+full n=3 N=2 c=2 seed=1036 reproduced: 8.4e+00 2.1e+00 5.5e-01 1.5e-01 1.2e-02 9.3e-04 4.1e-04 | norm 475.0 [1s]
+  mu=1e-11: residual 1.897e-04 norm 651.1 [1s]
+  mu=1e-12: residual 1.477e-04 norm 722.3 [2s]
+  mu=1e-13: residual 1.267e-04 norm 769.5 [3s]
+  mu=1e-14: residual 1.133e-04 norm 806.0 [3s]
+  mu=1e-15: residual 1.039e-04 norm 835.6 [5s]
+  mu=1e-16: residual 9.683e-05 norm 860.4 [6s]
+  mu=0e+00: residual 9.131e-05 norm 881.7 [7s]
+DONE

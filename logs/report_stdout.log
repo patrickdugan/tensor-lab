@@ -1,0 +1,100 @@
+# tensorlab status report
+
+## Three-sector reproduction certificates (25)
+
+| a | h | B | retained | erased | blocks | verdict |
+|---|---|---|---|---|---|---|
+| 1 | 1 | 3 | 3 | 0 | 3 | PASS |
+| 1 | 2 | 6 | 6 | 0 | 3 | PASS |
+| 1 | 3 | 9 | 9 | 0 | 3 | PASS |
+| 1 | 4 | 12 | 12 | 0 | 3 | PASS |
+| 1 | 5 | 15 | 15 | 0 | 3 | PASS |
+| 2 | 1 | 4 | 6 | 2 | 3 | PASS |
+| 2 | 2 | 7 | 12 | 2 | 3 | PASS |
+| 2 | 3 | 10 | 18 | 2 | 3 | PASS |
+| 2 | 4 | 13 | 24 | 2 | 3 | PASS |
+| 2 | 5 | 16 | 30 | 2 | 3 | PASS |
+| 3 | 1 | 5 | 9 | 6 | 3 | PASS |
+| 3 | 2 | 8 | 18 | 6 | 3 | PASS |
+| 3 | 3 | 11 | 27 | 6 | 3 | PASS |
+| 3 | 4 | 14 | 36 | 6 | 3 | PASS |
+| 3 | 5 | 17 | 45 | 6 | 3 | PASS |
+| 4 | 1 | 6 | 12 | 12 | 3 | PASS |
+| 4 | 2 | 9 | 24 | 12 | 3 | PASS |
+| 4 | 3 | 12 | 36 | 12 | 3 | PASS |
+| 4 | 4 | 15 | 48 | 12 | 3 | PASS |
+| 4 | 5 | 18 | 60 | 12 | 3 | PASS |
+| 5 | 1 | 7 | 15 | 20 | 3 | PASS |
+| 5 | 2 | 10 | 30 | 20 | 3 | PASS |
+| 5 | 3 | 13 | 45 | 20 | 3 | PASS |
+| 5 | 4 | 16 | 60 | 20 | 3 | PASS |
+| 5 | 5 | 19 | 75 | 20 | 3 | PASS |
+
+## Fourier separation certificates (6)
+- fourier_separation_a1_h1.json: M=3 L=15 target dims [3, 9, 9] weight-zero terms 9 max weight 1 -> PASS
+- fourier_separation_a2_h1.json: M=3 L=15 target dims [6, 12, 15] weight-zero terms 18 max weight 1 -> PASS
+- fourier_separation_a2_h2.json: M=3 L=15 target dims [6, 21, 24] weight-zero terms 36 max weight 1 -> PASS
+- fourier_separation_a3_h1.json: M=3 L=15 target dims [9, 15, 21] weight-zero terms 27 max weight 1 -> PASS
+- fourier_separation_a3_h2.json: M=3 L=15 target dims [9, 24, 30] weight-zero terms 54 max weight 1 -> PASS
+- fourier_separation_a4_h1.json: M=3 L=15 target dims [12, 18, 27] weight-zero terms 36 max weight 1 -> PASS
+
+## Search catalogues (2)
+- search_a4_b10_k4.json: 3279354 structures, 2875257 weight-feasible, 1227697 fully identified, 1723 unique inequalities, novel=0, 396s
+    - 1129: restriction-type (a block uses a proper subset of the shared X leg)
+    - 261: trivial: splitting a dot product C(1,B) = B_X(B) (P(1,b) = b is additive)
+    - 257: known family: alternating C(a,h_i) blocks (slack > 0: coordinates wasted)
+    - 49: other block shapes (slack >= 0: consistent with the extremal profile)
+    - 27: known family: alternating C(a,h_i) blocks, tight on the extremal profile
+- search_a5_b16_k3.json: 1842160 structures, 1665744 weight-feasible, 582132 fully identified, 5381 unique inequalities, novel=0, 248s
+    - 1995: restriction-type (a block uses a proper subset of the shared X leg)
+    - 1994: known family: alternating C(a,h_i) blocks (slack > 0: coordinates wasted)
+    - 936: trivial: splitting a dot product C(1,B) = B_X(B) (P(1,b) = b is additive)
+    - 301: other block shapes (slack >= 0: consistent with the extremal profile)
+    - 155: known family: alternating C(a,h_i) blocks, tight on the extremal profile
+
+## Growth / inequality logs (1)
+- growth_grid60.json: grid 60, extremal-profile violations: 0, tight: {'C': 1769, 'T': 170, 'L': 1}
+    - LP min P(2,2) = 10/3 vs extremal 10/3
+    - LP min P(3,3) = 56/9 vs extremal 56/9
+    - LP min P(4,4) = 770/81 vs extremal 770/81
+    - LP min P(5,5) = 7388/567 vs extremal 3185/243
+    - P(2,7) >= P(1,2) + P(1,2) + P(1,2) + P(1,2) + P(1,2): extremal slack 0, LP min 0 (optimal)
+    - P(4,4) >= P(2,2) + P(2,2): extremal slack 230/81, LP min 230/81 (optimal)
+    - P(3,5) >= P(1,1) + P(2,2) + P(2,2): extremal slack 5/3, LP min 5/3 (optimal)
+    - P(3,16) >= P(2,2) + P(2,2) + P(2,2) + P(2,2) + P(2,2) + P(2,2) + P(2,2) + P(2,2): extremal slack -2/9, LP min None (unbounded)
+
+## Lean
+- axiom report (`logs/lean_axioms_direct.log`): 31 theorems checked, 0 using `sorryAx` or `ofReduceBool`
+    - 'TensorLab.Finite.retained_2_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Finite.weights_2_1' does not depend on any axioms
+    - 'TensorLab.Finite.middle_2_1' depends on axioms: [propext, Quot.sound]
+    - 'TensorLab.Finite.retained_3_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Finite.weights_3_2' does not depend on any axioms
+    - 'TensorLab.Finite.middle_3_2' depends on axioms: [propext, Quot.sound]
+    - 'TensorLab.Finite.retained_2_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Finite.weights_2_3' does not depend on any axioms
+    - 'TensorLab.Finite.retained_4_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Finite.weights_4_1' does not depend on any axioms
+    - 'TensorLab.Finite.middle_4_1' depends on axioms: [propext, Quot.sound]
+    - 'TensorLab.Obstruction.chord' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Obstruction.tripling_chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Obstruction.odd_sector_implied' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.exponent_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.omega_bound_of_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Extremal.key_g' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Extremal.key_f' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Extremal.P_le_row_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Extremal.P_concave' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Extremal.P_tripling' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Extremal.extremal_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Extremal.P_diag' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Extremal.block_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Extremal.counting_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Extremal.rectangle_exceeds' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Theta.step' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Theta.induction' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Theta.G_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Theta.theta_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+    - 'TensorLab.Theta.paper_case' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+[written to C:\Users\patri\OneDrive\Documents\GitHub\Spiral\tensor-lab\logs\report.md]

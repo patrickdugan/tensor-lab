@@ -1,0 +1,34 @@
+compiled TensorLab.ThetaGrowth in 911s
+'TensorLab.Finite.retained_2_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Finite.weights_2_1' does not depend on any axioms
+'TensorLab.Finite.middle_2_1' depends on axioms: [propext, Quot.sound]
+'TensorLab.Finite.retained_3_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Finite.weights_3_2' does not depend on any axioms
+'TensorLab.Finite.middle_3_2' depends on axioms: [propext, Quot.sound]
+'TensorLab.Finite.retained_2_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Finite.weights_2_3' does not depend on any axioms
+'TensorLab.Finite.retained_4_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Finite.weights_4_1' does not depend on any axioms
+'TensorLab.Finite.middle_4_1' depends on axioms: [propext, Quot.sound]
+'TensorLab.Obstruction.chord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Obstruction.tripling_chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Obstruction.odd_sector_implied' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.exponent_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.omega_bound_of_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Extremal.key_g' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Extremal.key_f' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Extremal.P_le_row_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Extremal.P_concave' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Extremal.P_tripling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Extremal.extremal_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Extremal.P_diag' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Extremal.block_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Extremal.counting_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Extremal.rectangle_exceeds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Theta.step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Theta.induction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Theta.G_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Theta.theta_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TensorLab.Theta.paper_case' depends on axioms: [propext, Classical.choice, Quot.sound]
+AxiomCheck in 765s
+EXIT 0

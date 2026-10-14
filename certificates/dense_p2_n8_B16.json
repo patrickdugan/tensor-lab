@@ -1,0 +1,23 @@
+{
+ "question": "C(3,16) => 8 rectangles C(2,2) with output on the shared X leg (= C(2,2)^sigma (x) B_X(8))",
+ "target_dims": [
+  3,
+  16,
+  16
+ ],
+ "target_is_rectangle_tensor": true,
+ "koszul_s": 1,
+ "koszul_rank_source": 34,
+ "koszul_rank_target": 48,
+ "degeneration_possible_by_koszul": false,
+ "koszul_threshold_B": 23,
+ "staircase_B": 23,
+ "staircase_certified": true,
+ "staircase_is_optimal": true,
+ "max_rectangles_in_source": 5,
+ "border_rank_source": 18,
+ "border_rank_target_lower_bound": 24,
+ "two_copy_restriction_verified": true,
+ "scope": "Exact statements: (1) Koszul flattening ranks along X cannot increase under a degeneration that keeps the target X-concise, so rank_source < rank_target excludes every degeneration and restriction, monomial or not; (2) the staircase certificate shows the threshold is attained.  Not covered: asymptotic restriction (tensor powers), which is what the character inequality P(a,B) >= n P(p,p) actually needs.",
+ "generator": "tensorlab 0.1.0"
+}

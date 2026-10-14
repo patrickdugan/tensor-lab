@@ -1,0 +1,30 @@
+total 8
+drwxr-xr-x 2 root root 4096 Oct 12 16:41 .
+drwxr-xr-x 3 root root 4096 Oct 12 16:41 ..
+lrwxrwxrwx 1 root root   45 Oct 12 16:41 Cli -> /root/oai-verify/math/lean/.lake/packages/Cli
+lrwxrwxrwx 1 root root   58 Oct 12 16:41 LeanSearchClient -> /root/oai-verify/math/lean/.lake/packages/LeanSearchClient
+lrwxrwxrwx 1 root root   44 Oct 12 16:41 Qq -> /root/oai-verify/math/lean/.lake/packages/Qq
+lrwxrwxrwx 1 root root   47 Oct 12 16:41 aesop -> /root/oai-verify/math/lean/.lake/packages/aesop
+lrwxrwxrwx 1 root root   51 Oct 12 16:41 batteries -> /root/oai-verify/math/lean/.lake/packages/batteries
+lrwxrwxrwx 1 root root   53 Oct 12 16:41 importGraph -> /root/oai-verify/math/lean/.lake/packages/importGraph
+lrwxrwxrwx 1 root root   49 Oct 12 16:41 mathlib -> /root/oai-verify/math/lean/.lake/packages/mathlib
+lrwxrwxrwx 1 root root   51 Oct 12 16:41 plausible -> /root/oai-verify/math/lean/.lake/packages/plausible
+lrwxrwxrwx 1 root root   54 Oct 12 16:41 proofwidgets -> /root/oai-verify/math/lean/.lake/packages/proofwidgets
+== lake build
+✖ [3092/3096] Building TensorLab.Obstruction (63s)
+trace: .> LEAN_PATH=/root/oai-verify/math/lean/.lake/packages/Cli/.lake/build/lib/lean:/root/oai-verify/math/lean/.lake/packages/batteries/.lake/build/lib/lean:/root/oai-verify/math/lean/.lake/packages/Qq/.lake/build/lib/lean:/root/oai-verify/math/lean/.lake/packages/aesop/.lake/build/lib/lean:/root/oai-verify/math/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/root/oai-verify/math/lean/.lake/packages/importGraph/.lake/build/lib/lean:/root/oai-verify/math/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/root/oai-verify/math/lean/.lake/packages/plausible/.lake/build/lib/lean:/root/oai-verify/math/lean/.lake/packages/mathlib/.lake/build/lib/lean:/root/work/tensorlab-lean/.lake/build/lib/lean /root/.elan/toolchains/leanprover--lean4---v4.34.1/bin/lean /root/work/tensorlab-lean/TensorLab/Obstruction.lean -o /root/work/tensorlab-lean/.lake/build/lib/lean/TensorLab/Obstruction.olean -i /root/work/tensorlab-lean/.lake/build/lib/lean/TensorLab/Obstruction.ilean -c /root/work/tensorlab-lean/.lake/build/ir/TensorLab/Obstruction.c --setup /root/work/tensorlab-lean/.lake/build/ir/TensorLab/Obstruction.setup.json --json
+error: TensorLab/Obstruction.lean:131:2: `simp` made no progress
+⚠ [3093/3096] Built TensorLab.ExponentTransfer (64s)
+warning: TensorLab/ExponentTransfer.lean:26:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+Some required targets logged failures:
+- TensorLab.Obstruction
+error: build failed
+== axioms
+AxiomCheck.lean:1:0: error: object file '/root/work/tensorlab-lean/.lake/build/lib/lean/TensorLab.olean' of module TensorLab does not exist
+LEAN BUILD EXIT 0

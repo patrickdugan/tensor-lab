@@ -1,0 +1,951 @@
+{
+ "certificate_version": 1,
+ "generator": "tensorlab 0.1.0",
+ "kind": "three_sector_shifted_tripling",
+ "parameters": {
+  "a": 4,
+  "h": 4,
+  "B": 15
+ },
+ "source": {
+  "family": "convolution",
+  "a": 4,
+  "b": 15,
+  "dims": [
+   4,
+   15,
+   18
+  ],
+  "nnz": 60
+ },
+ "weights": {
+  "X": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "Y": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "Z": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   -1,
+   -1,
+   -1,
+   -1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ "sectors": {
+  "Y": [
+   [
+    0,
+    1,
+    2,
+    3
+   ],
+   [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   [
+    11,
+    12,
+    13,
+    14
+   ]
+  ],
+  "Z": [
+   [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   [
+    7,
+    8,
+    9,
+    10
+   ],
+   [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+   ]
+  ]
+ },
+ "shared_leg": "X",
+ "min_weight": 0,
+ "max_weight": 1,
+ "retained_terms": [
+  [
+   0,
+   0,
+   0,
+   "1"
+  ],
+  [
+   0,
+   1,
+   1,
+   "1"
+  ],
+  [
+   0,
+   2,
+   2,
+   "1"
+  ],
+  [
+   0,
+   3,
+   3,
+   "1"
+  ],
+  [
+   0,
+   7,
+   7,
+   "1"
+  ],
+  [
+   0,
+   8,
+   8,
+   "1"
+  ],
+  [
+   0,
+   9,
+   9,
+   "1"
+  ],
+  [
+   0,
+   10,
+   10,
+   "1"
+  ],
+  [
+   0,
+   11,
+   11,
+   "1"
+  ],
+  [
+   0,
+   12,
+   12,
+   "1"
+  ],
+  [
+   0,
+   13,
+   13,
+   "1"
+  ],
+  [
+   0,
+   14,
+   14,
+   "1"
+  ],
+  [
+   1,
+   0,
+   1,
+   "1"
+  ],
+  [
+   1,
+   1,
+   2,
+   "1"
+  ],
+  [
+   1,
+   2,
+   3,
+   "1"
+  ],
+  [
+   1,
+   3,
+   4,
+   "1"
+  ],
+  [
+   1,
+   6,
+   7,
+   "1"
+  ],
+  [
+   1,
+   7,
+   8,
+   "1"
+  ],
+  [
+   1,
+   8,
+   9,
+   "1"
+  ],
+  [
+   1,
+   9,
+   10,
+   "1"
+  ],
+  [
+   1,
+   11,
+   12,
+   "1"
+  ],
+  [
+   1,
+   12,
+   13,
+   "1"
+  ],
+  [
+   1,
+   13,
+   14,
+   "1"
+  ],
+  [
+   1,
+   14,
+   15,
+   "1"
+  ],
+  [
+   2,
+   0,
+   2,
+   "1"
+  ],
+  [
+   2,
+   1,
+   3,
+   "1"
+  ],
+  [
+   2,
+   2,
+   4,
+   "1"
+  ],
+  [
+   2,
+   3,
+   5,
+   "1"
+  ],
+  [
+   2,
+   5,
+   7,
+   "1"
+  ],
+  [
+   2,
+   6,
+   8,
+   "1"
+  ],
+  [
+   2,
+   7,
+   9,
+   "1"
+  ],
+  [
+   2,
+   8,
+   10,
+   "1"
+  ],
+  [
+   2,
+   11,
+   13,
+   "1"
+  ],
+  [
+   2,
+   12,
+   14,
+   "1"
+  ],
+  [
+   2,
+   13,
+   15,
+   "1"
+  ],
+  [
+   2,
+   14,
+   16,
+   "1"
+  ],
+  [
+   3,
+   0,
+   3,
+   "1"
+  ],
+  [
+   3,
+   1,
+   4,
+   "1"
+  ],
+  [
+   3,
+   2,
+   5,
+   "1"
+  ],
+  [
+   3,
+   3,
+   6,
+   "1"
+  ],
+  [
+   3,
+   4,
+   7,
+   "1"
+  ],
+  [
+   3,
+   5,
+   8,
+   "1"
+  ],
+  [
+   3,
+   6,
+   9,
+   "1"
+  ],
+  [
+   3,
+   7,
+   10,
+   "1"
+  ],
+  [
+   3,
+   11,
+   14,
+   "1"
+  ],
+  [
+   3,
+   12,
+   15,
+   "1"
+  ],
+  [
+   3,
+   13,
+   16,
+   "1"
+  ],
+  [
+   3,
+   14,
+   17,
+   "1"
+  ]
+ ],
+ "erased_terms": [
+  [
+   0,
+   4,
+   4,
+   "1",
+   1
+  ],
+  [
+   0,
+   5,
+   5,
+   "1",
+   1
+  ],
+  [
+   0,
+   6,
+   6,
+   "1",
+   1
+  ],
+  [
+   1,
+   4,
+   5,
+   "1",
+   1
+  ],
+  [
+   1,
+   5,
+   6,
+   "1",
+   1
+  ],
+  [
+   1,
+   10,
+   11,
+   "1",
+   1
+  ],
+  [
+   2,
+   4,
+   6,
+   "1",
+   1
+  ],
+  [
+   2,
+   9,
+   11,
+   "1",
+   1
+  ],
+  [
+   2,
+   10,
+   12,
+   "1",
+   1
+  ],
+  [
+   3,
+   8,
+   11,
+   "1",
+   1
+  ],
+  [
+   3,
+   9,
+   12,
+   "1",
+   1
+  ],
+  [
+   3,
+   10,
+   13,
+   "1",
+   1
+  ]
+ ],
+ "stray_terms": [],
+ "blocks": [
+  {
+   "label": 0,
+   "y_sectors": [
+    0
+   ],
+   "z_sectors": [
+    0
+   ],
+   "y_coords": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "z_coords": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "nnz": 16,
+   "target": {
+    "family": "convolution",
+    "a": 4,
+    "b": 4
+   },
+   "leg_permutation": "identity",
+   "maps": {
+    "X": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "Y": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "Z": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   "identified": true
+  },
+  {
+   "label": 1,
+   "y_sectors": [
+    1
+   ],
+   "z_sectors": [
+    1
+   ],
+   "y_coords": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "z_coords": [
+    7,
+    8,
+    9,
+    10
+   ],
+   "nnz": 16,
+   "target": {
+    "family": "convolution",
+    "a": 4,
+    "b": 4
+   },
+   "leg_permutation": "swap_YZ",
+   "maps": {
+    "X": [
+     3,
+     2,
+     1,
+     0
+    ],
+    "Y": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "Z": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ]
+   },
+   "identified": true
+  },
+  {
+   "label": 2,
+   "y_sectors": [
+    2
+   ],
+   "z_sectors": [
+    2
+   ],
+   "y_coords": [
+    11,
+    12,
+    13,
+    14
+   ],
+   "z_coords": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+   ],
+   "nnz": 16,
+   "target": {
+    "family": "convolution",
+    "a": 4,
+    "b": 4
+   },
+   "leg_permutation": "identity",
+   "maps": {
+    "X": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "Y": [
+     11,
+     12,
+     13,
+     14
+    ],
+    "Z": [
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17
+    ]
+   },
+   "identified": true
+  }
+ ],
+ "claims": [
+  "C(4,15) degenerates (minimum weight 0) to three blocks sharing the X leg",
+  "left block == C(4,4) with identity maps",
+  "middle block == C(4,4) with legs Y,Z exchanged and X reversed",
+  "right block == C(4,4) translated by 11 on Y and Z",
+  "every erased term has weight exactly +1; no term has negative weight",
+  "this is Lemma 4.2 (shifted tripling) of the paper at (a,h)=(4,4): P(4,15) >= 3 P(4,4) after Cor. 3.2"
+ ],
+ "scope": "Finite exact identity for the stated parameters only. It does not by itself establish the identity for other parameters, nor the tensor-character inequality, which needs Lemma 2.3 (interpolation, characteristic zero) and Corollary 3.2 of the paper.",
+ "expected": {
+  "num_blocks": 3,
+  "block_targets": [
+   {
+    "family": "convolution",
+    "a": 4,
+    "b": 4
+   },
+   {
+    "family": "convolution",
+    "a": 4,
+    "b": 4
+   },
+   {
+    "family": "convolution",
+    "a": 4,
+    "b": 4
+   }
+  ],
+  "middle_block_permutation": "swap_YZ",
+  "paper_lemma": "4.2",
+  "lean_reference": "OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation/Sector/Weights.lean"
+ },
+ "verification": {
+  "ok": true,
+  "checks": [
+   {
+    "name": "source rebuilt from family spec",
+    "ok": true,
+    "detail": "dims=(4, 15, 18) nnz=60"
+   },
+   {
+    "name": "source dims match certificate",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "source nnz matches certificate",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "weight vectors have one entry per coordinate",
+    "ok": true,
+    "detail": "(4, 15, 18) vs (4, 15, 18)"
+   },
+   {
+    "name": "minimum weight recomputed",
+    "ok": true,
+    "detail": "recomputed 0, stated 0"
+   },
+   {
+    "name": "no supported term has weight below the stated minimum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "retained set equals the exact minimum-weight set",
+    "ok": true,
+    "detail": "48 recomputed vs 48 stated"
+   },
+   {
+    "name": "erased set and weights recomputed",
+    "ok": true,
+    "detail": "12 recomputed vs 12 stated"
+   },
+   {
+    "name": "retained + erased = source (every coefficient accounted for)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "maximum weight recomputed",
+    "ok": true,
+    "detail": "1"
+   },
+   {
+    "name": "Y sectors are disjoint and within range",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Z sectors are disjoint and within range",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every retained term lies in a Y sector and a Z sector",
+    "ok": true,
+    "detail": "0 stray"
+   },
+   {
+    "name": "stray list matches",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 0: coordinate lists match its sectors",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 0: sectors not reused by another block",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 0: nnz",
+    "ok": true,
+    "detail": "16 vs 16"
+   },
+   {
+    "name": "block 0: no cross-sector contamination",
+    "ok": true,
+    "detail": "0 cross terms"
+   },
+   {
+    "name": "block 0: map lengths equal target dims",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 0: pullback along maps equals target {'family': 'convolution', 'a': 4, 'b': 4} with permutation identity",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 0: coordinate maps injective",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 0: map images cover the block support",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 0: X-leg map is a bijection onto the shared X support",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 1: coordinate lists match its sectors",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 1: sectors not reused by another block",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 1: nnz",
+    "ok": true,
+    "detail": "16 vs 16"
+   },
+   {
+    "name": "block 1: no cross-sector contamination",
+    "ok": true,
+    "detail": "0 cross terms"
+   },
+   {
+    "name": "block 1: map lengths equal target dims",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 1: pullback along maps equals target {'family': 'convolution', 'a': 4, 'b': 4} with permutation swap_YZ",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 1: coordinate maps injective",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 1: map images cover the block support",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 1: X-leg map is a bijection onto the shared X support",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 2: coordinate lists match its sectors",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 2: sectors not reused by another block",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 2: nnz",
+    "ok": true,
+    "detail": "16 vs 16"
+   },
+   {
+    "name": "block 2: no cross-sector contamination",
+    "ok": true,
+    "detail": "0 cross terms"
+   },
+   {
+    "name": "block 2: map lengths equal target dims",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 2: pullback along maps equals target {'family': 'convolution', 'a': 4, 'b': 4} with permutation identity",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 2: coordinate maps injective",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 2: map images cover the block support",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "block 2: X-leg map is a bijection onto the shared X support",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blocks partition the retained terms",
+    "ok": true,
+    "detail": "48 covered vs 48 retained"
+   },
+   {
+    "name": "blocks use disjoint Y coordinates",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "blocks use disjoint Z coordinates",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "expected number of blocks",
+    "ok": true,
+    "detail": "3 vs 3"
+   },
+   {
+    "name": "expected block targets",
+    "ok": true,
+    "detail": "['{\"a\": 4, \"b\": 4, \"family\": \"convolution\"}', '{\"a\": 4, \"b\": 4, \"family\": \"convolution\"}', '{\"a\": 4, \"b\": 4, \"family\": \"convolution\"}'] vs ['{\"a\": 4, \"b\": 4, \"family\": \"convolution\"}', '{\"a\": 4, \"b\": 4, \"family\": \"convolution\"}', '{\"a\": 4, \"b\": 4, \"family\": \"convolution\"}']"
+   },
+   {
+    "name": "middle block uses the Y/Z exchange",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "middle block reverses the first coordinate",
+    "ok": true,
+    "detail": "[3, 2, 1, 0]"
+   },
+   {
+    "name": "every erased term has weight exactly +1 (paper: no negative weights)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "parameters consistent: B = 3h + a - 1",
+    "ok": true,
+    "detail": ""
+   }
+  ]
+ }
+}

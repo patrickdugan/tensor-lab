@@ -1,0 +1,272 @@
+{
+ "generator": "tensorlab 0.1.0",
+ "step": 0.1,
+ "note": "floating point; necessary condition for ANY degeneration C(a,n*p) ~> R(p,q) (x) B_X(n)",
+ "rows": [
+  {
+   "a": 3,
+   "p": 2,
+   "q": 2,
+   "n": 2,
+   "B": 4,
+   "worst_certified_margin": -9.774248077576431e-11,
+   "worst_violation_bound": 0.0,
+   "theta": [
+    0.1,
+    0.9,
+    0.0
+   ],
+   "worst_interior_margin": 0.040546510713074246,
+   "theta_interior": [
+    0.1,
+    0.8,
+    0.1
+   ],
+   "obstruction": false,
+   "no_obstruction_certified_on_grid": true
+  },
+  {
+   "a": 3,
+   "p": 2,
+   "q": 2,
+   "n": 8,
+   "B": 16,
+   "worst_certified_margin": -9.774270282036923e-11,
+   "worst_violation_bound": 0.0,
+   "theta": [
+    0.1,
+    0.9,
+    0.0
+   ],
+   "worst_interior_margin": 0.011778302783907124,
+   "theta_interior": [
+    0.8,
+    0.1,
+    0.1
+   ],
+   "obstruction": false,
+   "no_obstruction_certified_on_grid": true
+  },
+  {
+   "a": 3,
+   "p": 2,
+   "q": 2,
+   "n": 16,
+   "B": 32,
+   "worst_certified_margin": -9.774270282036923e-11,
+   "worst_violation_bound": 0.0,
+   "theta": [
+    0.1,
+    0.9,
+    0.0
+   ],
+   "worst_interior_margin": 0.006061434166064528,
+   "theta_interior": [
+    0.8,
+    0.1,
+    0.1
+   ],
+   "obstruction": false,
+   "no_obstruction_certified_on_grid": true
+  },
+  {
+   "a": 3,
+   "p": 2,
+   "q": 2,
+   "n": 32,
+   "B": 64,
+   "worst_certified_margin": -9.774314690957908e-11,
+   "worst_violation_bound": -4.440892098500626e-16,
+   "theta": [
+    0.1,
+    0.9,
+    0.0
+   ],
+   "worst_interior_margin": 0.003069743689853688,
+   "theta_interior": [
+    0.8,
+    0.1,
+    0.1
+   ],
+   "obstruction": false,
+   "no_obstruction_certified_on_grid": true
+  },
+  {
+   "a": 5,
+   "p": 3,
+   "q": 3,
+   "n": 2,
+   "B": 6,
+   "worst_certified_margin": -9.972511705313991e-11,
+   "worst_violation_bound": 0.0,
+   "theta": [
+    0.7,
+    0.3,
+    0.0
+   ],
+   "worst_interior_margin": 0.05108256227700014,
+   "theta_interior": [
+    0.4,
+    0.5,
+    0.1
+   ],
+   "obstruction": false,
+   "no_obstruction_certified_on_grid": true
+  },
+  {
+   "a": 5,
+   "p": 3,
+   "q": 3,
+   "n": 8,
+   "B": 24,
+   "worst_certified_margin": -9.972467296393006e-11,
+   "worst_violation_bound": 0.0,
+   "theta": [
+    0.7,
+    0.3,
+    0.0
+   ],
+   "worst_interior_margin": 0.015414985220220778,
+   "theta_interior": [
+    0.8,
+    0.1,
+    0.1
+   ],
+   "obstruction": false,
+   "no_obstruction_certified_on_grid": true
+  },
+  {
+   "a": 5,
+   "p": 3,
+   "q": 3,
+   "n": 16,
+   "B": 48,
+   "worst_certified_margin": -9.972467296393006e-11,
+   "worst_violation_bound": -4.440892098500626e-16,
+   "theta": [
+    0.7,
+    0.3,
+    0.0
+   ],
+   "worst_interior_margin": 0.008001054290811993,
+   "theta_interior": [
+    0.8,
+    0.1,
+    0.1
+   ],
+   "obstruction": false,
+   "no_obstruction_certified_on_grid": true
+  },
+  {
+   "a": 5,
+   "p": 3,
+   "q": 3,
+   "n": 32,
+   "B": 96,
+   "worst_certified_margin": -9.972556114234976e-11,
+   "worst_violation_bound": 8.881784197001252e-16,
+   "theta": [
+    0.7,
+    0.3,
+    0.0
+   ],
+   "worst_interior_margin": 0.004070843346849262,
+   "theta_interior": [
+    0.8,
+    0.1,
+    0.1
+   ],
+   "obstruction": false,
+   "no_obstruction_certified_on_grid": true
+  },
+  {
+   "a": 7,
+   "p": 4,
+   "q": 4,
+   "n": 2,
+   "B": 8,
+   "worst_certified_margin": -9.93063409282513e-11,
+   "worst_violation_bound": 0.0,
+   "theta": [
+    0.1,
+    0.9,
+    0.0
+   ],
+   "worst_interior_margin": 0.05596157869377394,
+   "theta_interior": [
+    0.6,
+    0.3,
+    0.1
+   ],
+   "obstruction": false,
+   "no_obstruction_certified_on_grid": true
+  },
+  {
+   "a": 7,
+   "p": 4,
+   "q": 4,
+   "n": 8,
+   "B": 32,
+   "worst_certified_margin": -9.93063409282513e-11,
+   "worst_violation_bound": 4.440892098500626e-16,
+   "theta": [
+    0.1,
+    0.9,
+    0.0
+   ],
+   "worst_interior_margin": 0.01718443949593107,
+   "theta_interior": [
+    0.8,
+    0.1,
+    0.1
+   ],
+   "obstruction": false,
+   "no_obstruction_certified_on_grid": true
+  },
+  {
+   "a": 7,
+   "p": 4,
+   "q": 4,
+   "n": 16,
+   "B": 64,
+   "worst_certified_margin": -9.93063409282513e-11,
+   "worst_violation_bound": 4.440892098500626e-16,
+   "theta": [
+    0.1,
+    0.9,
+    0.0
+   ],
+   "worst_interior_margin": 0.00895543613679406,
+   "theta_interior": [
+    0.8,
+    0.1,
+    0.1
+   ],
+   "obstruction": false,
+   "no_obstruction_certified_on_grid": true
+  },
+  {
+   "a": 7,
+   "p": 4,
+   "q": 4,
+   "n": 32,
+   "B": 128,
+   "worst_certified_margin": -9.93063409282513e-11,
+   "worst_violation_bound": 8.881784197001252e-16,
+   "theta": [
+    0.1,
+    0.9,
+    0.0
+   ],
+   "worst_interior_margin": 0.004566655249961027,
+   "theta_interior": [
+    0.8,
+    0.1,
+    0.1
+   ],
+   "obstruction": false,
+   "no_obstruction_certified_on_grid": true
+  }
+ ],
+ "seconds": 102.75227522850037
+}

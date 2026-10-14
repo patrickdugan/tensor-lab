@@ -1,0 +1,2 @@
+full n=3 N=3: 2 rank-one + 1 tangential (4 copies), support 4096, dims (27, 216, 216), starts=4 iters=250 seed=5
+  start 0: 4.5e+01 2.1e+01 1.5e+01 1.3e+01 1.2e+01 1.2e+01 1.2e+01 1.2e+01 1.2e+01 1.2e+01 1.2e+01 | norm 1632.6

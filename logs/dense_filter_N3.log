@@ -1,0 +1,4 @@
+N=2 c=(1,1) L=3 dual only: obstruction True verified True [0.3s]
+N=3 c=(1, 2, 4) L=7: terms 514, retained 512, surviving nonzero patterns [[-1, -1, -1], [1, 1, 1]]: obstruction=True verified=True support=2 realizable=False  [20.3s]
+N=3 c=(1, 2, 4) L=8: terms 512, retained 512, surviving nonzero patterns []: obstruction=False verified=None support=None realizable=None  [20.3s]
+EXIT 0

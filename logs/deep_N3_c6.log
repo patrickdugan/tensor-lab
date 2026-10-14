@@ -1,0 +1,5 @@
+coarse N=3 c=6 seed=3 reproduced start 0: 8.6e+00 1.8e+00 4.0e-01 9.1e-02 2.1e-02 4.8e-03 1.1e-03 2.7e-04 6.7e-05 3.6e-05 [152s]
+  mu=1e-11: residual 1.622e-05  norm 506.7  [269s]
+  mu=1e-12: residual 1.194e-05  norm 557.8  [385s]
+  mu=1e-13: residual 1.001e-05  norm 589.7  [503s]
+  mu=1e-14: residual 8.665e-06  norm 617.0  [618s]

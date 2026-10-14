@@ -1,0 +1,185 @@
+{
+ "certificate_version": 1,
+ "kind": "fourier_separation",
+ "generator": "tensorlab 0.1.0",
+ "input": {
+  "three_sector": {
+   "a": 3,
+   "h": 2,
+   "B": 8
+  }
+ },
+ "checks": [
+  {
+   "name": "Fourier modulus L = 5M",
+   "ok": true,
+   "detail": "L=15, M=3"
+  },
+  {
+   "name": "input is a compatible block decomposition (no unmatched or stray terms)",
+   "ok": true,
+   "detail": "0 bad terms"
+  },
+  {
+   "name": "root-of-unity filter (1/L) sum_r zeta^(re) = [e=0] for |e| <= 6, computed in Q(zeta_15)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "no modular wrap: 3(M-1) < L",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "every transformed coefficient is rational (phases cancel exactly)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "transformed tensor = sum over terms with u - v + 2(g-h) = 0 (eq. 3.2)",
+   "ok": true,
+   "detail": "78 terms"
+  },
+  {
+   "name": "some individual weights are negative (allowed; total degree stays nonnegative)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "total weight of every surviving term equals (g-h)^2",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "minimum total weight is 0 and no surviving term has negative weight",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "maximum total weight 1 <= (M-1)^2 = 4",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "weight-zero terms have g = h and u = v exactly",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "weight-zero tensor = (+)_h A_h (x) B_X(M) with explicit coordinate identification",
+   "ok": true,
+   "detail": "54 terms"
+  },
+  {
+   "name": "blocks use disjoint X-coordinates (full direct sum)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "blocks use disjoint Y-coordinates (full direct sum)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "blocks use disjoint Z-coordinates (full direct sum)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "block (x) dot-product term counts match the library construction",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "ok": true,
+ "data": {
+  "M": 3,
+  "L": 15,
+  "target_dims": [
+   9,
+   24,
+   30
+  ],
+  "source_copies": 15,
+  "transformed_nnz": 78,
+  "weight_zero_nnz": 54,
+  "max_weight": 1,
+  "weights": {
+   "X": [
+    1,
+    4,
+    9,
+    1,
+    4,
+    9,
+    1,
+    4,
+    9
+   ],
+   "Y": [
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    -2,
+    0,
+    2,
+    -2,
+    0,
+    2,
+    -2,
+    0,
+    2,
+    -2,
+    0,
+    2,
+    -6,
+    -3,
+    0,
+    -6,
+    -3,
+    0
+   ],
+   "Z": [
+    -1,
+    -2,
+    -3,
+    -1,
+    -2,
+    -3,
+    -1,
+    -2,
+    -3,
+    -1,
+    -2,
+    -3,
+    -2,
+    -4,
+    -6,
+    -2,
+    -4,
+    -6,
+    -3,
+    -6,
+    -9,
+    -3,
+    -6,
+    -9,
+    -3,
+    -6,
+    -9,
+    -3,
+    -6,
+    -9
+   ]
+  },
+  "field_assumptions": [
+   "primitive 15-th root of unity present and 15 invertible (char 0, or char p with p not dividing 15)",
+   "weights and block identification: valid over every field",
+   "character inequality (Lemma 2.3): interpolation over an infinite field"
+  ]
+ },
+ "scope": "Finite exact instance of Proposition 3.1 (A^{(+)5M} ~> (+)_h A_h (x) B_X(M)) for the retained tensor of the three-sector certificate; valid over any field with a primitive 15th root of unity and 15 invertible."
+}
