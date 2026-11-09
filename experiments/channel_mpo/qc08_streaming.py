@@ -111,7 +111,8 @@ class StreamingJointChain(JointPurifiedChain):
                               *, bond_cap:int|None=None,env_cap:int|None=None,
                               bond_weight_override:float|None=None,
                               order:str='fused',gram:bool=True,
-                              track_marginals:bool=False)->StreamResult:
+                              track_marginals:bool=False,
+                              rank_allocator=None)->StreamResult:
         if order not in ('fused','classic'):
             raise ValueError('compression order must be fused or classic')
         if bond_cap is not None and bond_cap<1 or env_cap is not None and env_cap<1:
@@ -122,8 +123,9 @@ class StreamingJointChain(JointPurifiedChain):
         self._preflight_sweeps()
         bond_s,env_s,stats=scan_joint_spectra(self,gram=gram)
         weight=pauli_transfer_norm(operators) if bond_weight_override is None else float(bond_weight_override)
-        plan=allocate_joint(bond_s,env_s,int(budget_entries),bond_cap or self.max_bond,
-                            env_cap or self.max_env,channel_bond_weight=weight)
+        plan=(allocate_joint if rank_allocator is None else rank_allocator)(
+            bond_s,env_s,int(budget_entries),bond_cap or self.max_bond,
+            env_cap or self.max_env,channel_bond_weight=weight)
         before=one_site_densities(self) if track_marginals else None
         loss_sum=0.; error_prior=self.error_bound_sum; retention=1.; svds=0
         self._right_qr(1)
