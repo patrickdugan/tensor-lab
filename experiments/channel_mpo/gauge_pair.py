@@ -194,7 +194,8 @@ class PairPurifiedChain(PurifiedChain):
                  max_env: int | None = None, local_tol: float = 0,
                  proposals: int = 0, sweeps: int = 1, seed: int = 0,
                  factor_swaps: bool = False, fresh_k: int = 1,
-                 factor_objective: str = "retention"):
+                 factor_objective: str = "retention",
+                 fast_factor_search: bool = False):
         super().__init__(n, max_bond, max_env, local_tol)
         if proposals < 0 or sweeps < 0:
             raise ValueError("bad proposal/sweep count")
@@ -202,6 +203,12 @@ class PairPurifiedChain(PurifiedChain):
         self.proposals, self.sweeps = proposals, sweeps
         self.factor_swaps, self.fresh_k = factor_swaps, fresh_k
         self.factor_objective = factor_objective
+        self.fast_factor_search = fast_factor_search
+        if fast_factor_search and (factor_objective != "retention" or
+                                   proposals != 0 or not factor_swaps):
+            raise ValueError("screened factor search needs retention objective, factor_swaps and proposals=0")
+        self.gauge_pruned = 0
+        self.gauge_exact_scores = 0
         self.gauge_evaluations = 0
         self.gauge_acceptances = 0
         self.gauge_surrogate_gain = 0.0
@@ -222,15 +229,26 @@ class PairPurifiedChain(PurifiedChain):
             n0 = float(np.sum(np.abs(candidate)**2))
             return max(0., n0-projected_pair_norm(
                 candidate, self.max_env, self.max_bond, self.local_tol))
-        old_score = local_score(theta)
-        factor_stats = GaugeStats(old_score, old_score, 0, 0)
-        if self.factor_swaps:
-            theta, factor_stats = optimize_factor_permutations(
-                theta, self.max_env, self.fresh_k, self.max_bond,
-                self.local_tol, self.factor_objective)
-        theta, rotation_stats = optimize_ancillas(theta, self.max_env, self.rng,
-                                                 self.proposals, self.sweeps)
-        new_score = local_score(theta)
+        if self.fast_factor_search and self.factor_swaps and not self.proposals:
+            from qc04_gauge import screened_factor_search
+            theta, screening = screened_factor_search(
+                theta, self.max_env, self.fresh_k, self.max_bond, self.local_tol)
+            old_score, new_score = screening.old_loss, screening.new_loss
+            factor_stats = GaugeStats(old_score, new_score,
+                                      screening.evaluated, screening.accepted)
+            self.gauge_pruned += screening.pruned
+            self.gauge_exact_scores += screening.evaluated
+            rotation_stats = GaugeStats(0., 0., 0, 0)
+        else:
+            old_score = local_score(theta)
+            factor_stats = GaugeStats(old_score, old_score, 0, 0)
+            if self.factor_swaps:
+                theta, factor_stats = optimize_factor_permutations(
+                    theta, self.max_env, self.fresh_k, self.max_bond,
+                    self.local_tol, self.factor_objective)
+            theta, rotation_stats = optimize_ancillas(theta, self.max_env, self.rng,
+                                                     self.proposals, self.sweeps)
+            new_score = local_score(theta)
         stats = GaugeStats(old_score, new_score,
                            factor_stats.candidate_evaluations + rotation_stats.candidate_evaluations,
                            factor_stats.accepted + rotation_stats.accepted)
@@ -308,14 +326,16 @@ def trace_distance(rho: np.ndarray, sigma: np.ndarray) -> float:
 def run_pair(n: int, depth: int, seed: int, channel: str, p: float,
              bond: int, env: int, proposals: int, sweeps: int = 1,
              validate: bool = True, local_tol: float = 0.0,
-             factor_swaps: bool = False, factor_objective: str = "retention") -> list[dict]:
+             factor_swaps: bool = False, factor_objective: str = "retention",
+             fast_factor_search: bool = False) -> list[dict]:
     if n < 2 or depth < 1 or (validate and n > 10):
         raise ValueError("require n>=2, depth>=1, and n<=10 for validation")
     gates = gate_layers(n, depth, seed)
     ops = kraus(channel, p)
     chain = PairPurifiedChain(n,bond,env,local_tol,proposals,sweeps,seed=seed,
                               factor_swaps=factor_swaps, fresh_k=len(ops),
-                              factor_objective=factor_objective)
+                              factor_objective=factor_objective,
+                              fast_factor_search=fast_factor_search)
     exact = np.zeros((2**n, 2**n), complex) if validate else None
     if exact is not None:
         exact[0,0] = 1
@@ -346,6 +366,9 @@ def run_pair(n: int, depth: int, seed: int, channel: str, p: float,
              "gauge_acceptances":chain.gauge_acceptances,
              "gauge_surrogate_gain":chain.gauge_surrogate_gain,
              "gauge_seconds":chain.gauge_seconds,
+             "gauge_pruned":chain.gauge_pruned,
+             "gauge_exact_scores":chain.gauge_exact_scores,
+             "fast_factor_search":fast_factor_search,
              "sum_discarded_weight":sum(x.discarded_weight for x in chain.truncations),
              **chain.dimensions()}
         if exact is not None:
