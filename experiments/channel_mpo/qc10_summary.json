@@ -1,0 +1,128 @@
+{
+  "experiment": "QC-10 exact local causal-cone oracle",
+  "date": "2026-11-09",
+  "protocol": {
+    "depth": 6,
+    "qubits": [
+      24,
+      48
+    ],
+    "seed_set": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "depolarizing_strengths": [
+      0.2,
+      0.5
+    ],
+    "channels": [
+      "depolarizing",
+      "dephasing",
+      "amplitude_damping"
+    ],
+    "local_regions": [
+      "left_1",
+      "left_2",
+      "right_1",
+      "right_2"
+    ],
+    "operational_event_error_tolerance": 0.05
+  },
+  "primary": {
+    "row_count": 160,
+    "unique_circuits": 20,
+    "mean_trace_distance": {
+      "24": {
+        "sketch": 0.018783485164400815,
+        "peak": 0.022926558453081575
+      },
+      "48": {
+        "sketch": 0.020096460018405232,
+        "peak": 0.027467163716234033
+      }
+    },
+    "max_trace_distance": {
+      "24": {
+        "sketch": 0.0452410473126484,
+        "peak": 0.0638366272296185
+      },
+      "48": {
+        "sketch": 0.0559119276718035,
+        "peak": 0.0619754032655104
+      }
+    },
+    "sketch_better_paired_regions": 70,
+    "paired_regions": 80,
+    "qubits_48_regions_below_0_05": {
+      "sketch": 39,
+      "peak": 36,
+      "total_per_mode": 40
+    },
+    "average_evolution_seconds_qubits_48": {
+      "sketch": 1.09707170069978,
+      "peak": 1.1819575825003994
+    }
+  },
+  "channel_transfer": {
+    "qubits": 48,
+    "row_count": 160,
+    "unique_circuits": 20,
+    "modes_numerically_equal": true,
+    "mean_local_trace_distance_by_channel_and_p": {
+      "dephasing": {
+        "0.2": 0.0248,
+        "0.5": 0.04559
+      },
+      "amplitude_damping": {
+        "0.2": 0.01701,
+        "0.5": 0.01703
+      }
+    },
+    "largest_local_trace_distance": {
+      "dephasing": 0.1440506062191007,
+      "amplitude_damping": 0.0429699177002289
+    }
+  },
+  "acceptance": {
+    "cases": 40,
+    "peak": 32,
+    "sketch": 4,
+    "reject": 4,
+    "by_family": {
+      "depolarizing": {
+        "peak": 15,
+        "sketch": 4,
+        "reject": 1
+      },
+      "dephasing": {
+        "peak": 7,
+        "sketch": 0,
+        "reject": 3
+      },
+      "amplitude_damping": {
+        "peak": 10,
+        "sketch": 0,
+        "reject": 0
+      }
+    }
+  },
+  "remote_edges": {
+    "qubits": 48,
+    "records": 20,
+    "max_spurious_independence_distance": "<1e-15",
+    "mean_exact_pair_trace_distance": {
+      "sketch": 0.019196200699839454,
+      "peak": 0.0269605684951957
+    }
+  },
+  "tests_local": 110,
+  "caveats": [
+    "Finite-cone density oracle is floating-point, not verified interval arithmetic",
+    "Only nominated edge regions are assessed; no global state upper error bound",
+    "Peak cap models explicit live arrays, not actual RSS upper bound",
+    "Acceptance uses an independent post-run oracle and is not predictive"
+  ]
+}
