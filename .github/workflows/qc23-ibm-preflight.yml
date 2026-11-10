@@ -1,0 +1,26 @@
+name: QC-23 IBM hardware preflight
+on:
+  push:
+    paths:
+      - 'experiments/channel_mpo/ibm_qc23/**'
+      - '.github/workflows/qc23-ibm-preflight.yml'
+  pull_request:
+    paths:
+      - 'experiments/channel_mpo/ibm_qc23/**'
+      - '.github/workflows/qc23-ibm-preflight.yml'
+  workflow_dispatch:
+jobs:
+  offline-preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test without Qiskit or IBM credentials
+        working-directory: experiments/channel_mpo/ibm_qc23
+        run: |
+          python -m unittest -v test_qc23.py
+          python -m py_compile qc23_ibm.py test_qc23.py
+          python qc23_ibm.py plan --out /tmp/qc23_plan
+          python -c "import json; rows=json.load(open('/tmp/qc23_plan/plan.json')); assert len(rows)==12; assert all(row['shots']==2048 for row in rows)"
