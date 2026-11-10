@@ -105,7 +105,7 @@ def mpo_prediction(ops, n, faults, readout, bits, *, p_override=None, certify=Fa
     return out
 
 
-def evaluate_set(root, snap, set_name, source, modelB, aer_source='aer', certify=False):
+def evaluate_set(root, snap, set_name, source, modelB, aer_source='aer', certify=False, certify_max_n=8):
     meta, items = load_set(root, set_name)
     counts = load_counts(root, source, set_name)
     aer = load_counts(root, aer_source, set_name)
@@ -123,7 +123,7 @@ def evaluate_set(root, snap, set_name, source, modelB, aer_source='aer', certify
             ideal = ideal_z(make_kicked_ising(n, rec['depth'], rec['seed']), bits) if n <= 16 else {}
         fa, ra = model_a_faults(ops, snap_used)
         fb, rb = model_b_faults(ops, modelB)
-        mpo_a = mpo_prediction(ops, n, fa, ra, bits, certify=certify,
+        mpo_a = mpo_prediction(ops, n, fa, ra, bits, certify=certify and n <= certify_max_n,
                                clifford_reference=(rec['family'] == 'echo'))
         mpo_b = mpo_prediction(ops, n, fb, rb, bits, dense=False)
         pauli_a = pauli_b = None
@@ -273,7 +273,8 @@ def make_plots(rows, out: Path, tag: str):
         ax[1].set_xlabel('depth / steps')
         ax[1].set_ylabel('mean |pred - measured|')
         ax[1].legend(fontsize=7)
-        fig.suptitle(f'{fam} held-out circuits [{tag}]')
+        label = 'SYNTHETIC SURROGATE - NOT IBM HARDWARE' if tag == 'surrogate' else 'IBM hardware'
+        fig.suptitle(f'{fam} held-out circuits [{label}]')
         fig.tight_layout()
         fig.savefig(out / f'{fam}_{tag}.png', dpi=130)
         plt.close(fig)
@@ -285,13 +286,15 @@ def main():
     ap.add_argument('--source', default='surrogate', choices=['surrogate', 'ibm'])
     ap.add_argument('--certify', action='store_true', help='run QC-14 dyadic certificates (slow)')
     ap.add_argument('--scale-test', action='store_true')
+    ap.add_argument('--certify-max-n', type=int, default=8)
     ap.add_argument('--out-dir', help='write outputs here instead of --root')
     args = ap.parse_args()
     root = Path(args.root)
     snap = json.loads((root / 'compiled' / 'calibration_snapshot.json').read_text())
     tag = 'SYNTHETIC-SURROGATE-NOT-HARDWARE' if args.source == 'surrogate' else 'IBM-HARDWARE'
     params, diag, fit_ids = fit_calibration(root, snap, args.source)
-    eval_rows = evaluate_set(root, snap, 'eval_echo', args.source, params, certify=args.certify)
+    eval_rows = evaluate_set(root, snap, 'eval_echo', args.source, params, certify=args.certify,
+                             certify_max_n=args.certify_max_n)
     nc_rows = evaluate_set(root, snap, 'nc_eval', args.source, params, certify=False)
     allrows = eval_rows + nc_rows
     reports = {}
