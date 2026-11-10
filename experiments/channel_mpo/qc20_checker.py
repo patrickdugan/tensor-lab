@@ -96,8 +96,12 @@ def verify_one_segment(source,checkpoints,plan,directory,i,storage_mode="fast"):
     tally=dict(point['tally'])
     acc=point['accumulated']
     changes=0
-    require(storage_mode in ("fast","compact"), "invalid storage mode")
-    kernel=StreamFastKernel() if storage_mode=="fast" else StreamPackedKernel()
+    require(storage_mode in ("fast","compact","summary"), "invalid storage mode")
+    if storage_mode == 'summary':
+        from qc21_kernel import SummaryKernel
+        kernel = SummaryKernel()
+    else:
+        kernel=StreamFastKernel() if storage_mode=="fast" else StreamPackedKernel()
     # Every segment checks the same physical-map correction preconditions.
     start=rec['start_index']
     end=start+rec['count']
@@ -175,7 +179,7 @@ def verify(manifest_path,workers=1,*,start_method='auto',storage_mode='fast'):
     'spawn' works across platforms; 'fork' (POSIX) can share initialized
     circuit metadata by copy-on-write, but workers still independently replay.
     """
-    require(storage_mode in ('fast','compact'),'invalid storage mode')
+    require(storage_mode in ('fast','compact','summary'),'invalid storage mode')
     path=Path(manifest_path).resolve()
     workers=cint(workers,1,16)
     require(start_method in ('auto','spawn','fork'),'invalid start method')
@@ -183,13 +187,26 @@ def verify(manifest_path,workers=1,*,start_method='auto',storage_mode='fast'):
         start_method='fork' if os.name=='posix' else 'spawn'
     manifest,source,checkpoints,plan=load_root(path,corrections=False)
     digest=hashlib.sha256(_canonical_bytes(manifest)).hexdigest()
-    begin=read_checkpoint(path.parent,checkpoints[0])
-    _check_genesis(begin,plan)
-    final=read_checkpoint(path.parent,checkpoints[-1])
-    result=_check_final(final,plan,manifest['result'])
-    del begin, final  # Release decoded boundary tensors before forking workers.
-    for desc in checkpoints[1:-1]:
-        read_checkpoint(path.parent,desc)
+    if storage_mode == 'summary':
+        from qc21_anchor import check_genesis, check_final
+        begin=read_checkpoint_packed(path.parent,checkpoints[0])
+        check_genesis(begin,plan)
+        final=read_checkpoint_packed(path.parent,checkpoints[-1])
+        result=check_final(final,plan,manifest['result'])
+        del begin, final
+        # Each of the scheduled segment workers independently loads, hashes,
+        # validates and replays both endpoint checkpoints; together they cover
+        # every intermediate checkpoint twice. There is no need to decode a
+        # second in-memory copy in the coordinator before launching workers.
+        # The combined verifier requires *every* scheduled segment to pass.
+    else:
+        begin=read_checkpoint(path.parent,checkpoints[0])
+        _check_genesis(begin,plan)
+        final=read_checkpoint(path.parent,checkpoints[-1])
+        result=_check_final(final,plan,manifest['result'])
+        del begin, final  # Release decoded boundary tensors before forking workers.
+        for desc in checkpoints[1:-1]:
+            read_checkpoint(path.parent,desc)
     count=len(source.segments)
     if workers==1:
         global _STATE
@@ -217,10 +234,14 @@ def verify(manifest_path,workers=1,*,start_method='auto',storage_mode='fast'):
             'not all scheduled transitions were checked')
     total=sum(x['changed_entries'] for x in checks)
     require(total<=MAX_TOTAL_WITNESS_ENTRIES,'whole proof entry limit exceeded')
-    return {**result,'proof_level':'qc20-packed-dyadic-checkpointed-full-witness',
+    return {**result,'proof_level':('qc21-summary-cached-checkpointed-full-witness'
+                                      if storage_mode=='summary' else
+                                      'qc20-packed-dyadic-checkpointed-full-witness'),
             'segments_checked':count,'checkpoints_checked':len(checkpoints),
             'witness_complex_entries':total,'workers':min(workers,count),
-            'arithmetic_backend':('exact-dyadic-streamed-pair-fast' if storage_mode=='fast' else 'exact-dyadic-streamed-pair-packed-int'),
+            'arithmetic_backend':('exact-dyadic-context-summary' if storage_mode=='summary'
+                          else ('exact-dyadic-streamed-pair-fast' if storage_mode=='fast'
+                          else 'exact-dyadic-streamed-pair-packed-int')),
             'transport':'read-only-mmap-packed-binary64-one-event-at-a-time',
             'storage_mode':storage_mode}
 
@@ -230,7 +251,7 @@ def main():
     p.add_argument('manifest',type=Path)
     p.add_argument('--workers',type=int,default=1)
     p.add_argument('--start-method',choices=('auto','spawn','fork'),default='auto')
-    p.add_argument('--storage-mode',choices=('fast','compact'),default='fast')
+    p.add_argument('--storage-mode',choices=('fast','compact','summary'),default='fast')
     a=p.parse_args()
     try:
         result=verify(a.manifest,workers=a.workers,start_method=a.start_method,storage_mode=a.storage_mode)
