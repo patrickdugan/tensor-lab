@@ -1,0 +1,1089 @@
+{
+  "set": "eval_echo",
+  "backend": "fake_fez",
+  "mode": "fixture:FakeFez",
+  "calibration_timestamp": "2025-02-26T15:16:25-05:00",
+  "qpy_sha256": "4def1ccd2e54481e9d4ab0f5c61c6172d01a564d1fc27b71996e0a9f61eaded5",
+  "circuits": [
+    {
+      "id": "echo_n8_d2_s3",
+      "set": "eval_echo",
+      "family": "echo",
+      "n": 8,
+      "depth": 2,
+      "seed": 3,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        126,
+        125,
+        124,
+        123,
+        136,
+        143,
+        142,
+        141
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 126,
+          "1": 125,
+          "2": 124,
+          "3": 123,
+          "4": 136,
+          "5": 143,
+          "6": 142,
+          "7": 141
+        },
+        "initial_layout_logical_to_physical": [
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "final_index_layout": [
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "two_qubit_gates": 14,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 166,
+        "gate_counts": {
+          "rz": 98,
+          "sx": 42,
+          "cz": 14,
+          "measure": 8,
+          "barrier": 6,
+          "x": 4
+        },
+        "num_two_qubit": 14
+      },
+      "qasm3_sha256": "3cfe46feb8761399535691050c633e895245850827bfed44b6b0d961c985662e",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "echo_n8_d2_s5",
+      "set": "eval_echo",
+      "family": "echo",
+      "n": 8,
+      "depth": 2,
+      "seed": 5,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        126,
+        125,
+        124,
+        123,
+        136,
+        143,
+        142,
+        141
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 126,
+          "1": 125,
+          "2": 124,
+          "3": 123,
+          "4": 136,
+          "5": 143,
+          "6": 142,
+          "7": 141
+        },
+        "initial_layout_logical_to_physical": [
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "final_index_layout": [
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "two_qubit_gates": 14,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 170,
+        "gate_counts": {
+          "rz": 98,
+          "sx": 44,
+          "cz": 14,
+          "measure": 8,
+          "x": 6,
+          "barrier": 6
+        },
+        "num_two_qubit": 14
+      },
+      "qasm3_sha256": "e7b718a0ae1c0b2fbefcb28139f478877ef3c8385754a8762f443542e0921aaa",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "echo_n8_d4_s3",
+      "set": "eval_echo",
+      "family": "echo",
+      "n": 8,
+      "depth": 4,
+      "seed": 3,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        126,
+        125,
+        124,
+        123,
+        136,
+        143,
+        142,
+        141
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 126,
+          "1": 125,
+          "2": 124,
+          "3": 123,
+          "4": 136,
+          "5": 143,
+          "6": 142,
+          "7": 141
+        },
+        "initial_layout_logical_to_physical": [
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "final_index_layout": [
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "two_qubit_gates": 28,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 83,
+        "two_qubit_depth": 8,
+        "size": 340,
+        "gate_counts": {
+          "rz": 202,
+          "sx": 92,
+          "cz": 28,
+          "x": 10,
+          "barrier": 10,
+          "measure": 8
+        },
+        "num_two_qubit": 28
+      },
+      "qasm3_sha256": "40625f0622af593b3d6300ec76bc47bfcd295cd21a5b80bf0ad4436937a91b24",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "echo_n8_d4_s5",
+      "set": "eval_echo",
+      "family": "echo",
+      "n": 8,
+      "depth": 4,
+      "seed": 5,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        126,
+        125,
+        124,
+        123,
+        136,
+        143,
+        142,
+        141
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 126,
+          "1": 125,
+          "2": 124,
+          "3": 123,
+          "4": 136,
+          "5": 143,
+          "6": 142,
+          "7": 141
+        },
+        "initial_layout_logical_to_physical": [
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "final_index_layout": [
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "two_qubit_gates": 28,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 85,
+        "two_qubit_depth": 8,
+        "size": 324,
+        "gate_counts": {
+          "rz": 196,
+          "sx": 84,
+          "cz": 28,
+          "barrier": 10,
+          "x": 8,
+          "measure": 8
+        },
+        "num_two_qubit": 28
+      },
+      "qasm3_sha256": "a2f56211ef389f45587ab494599053cf8abffaef8fd99c04bd60d50e948502c4",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "echo_n8_d8_s3",
+      "set": "eval_echo",
+      "family": "echo",
+      "n": 8,
+      "depth": 8,
+      "seed": 3,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        126,
+        125,
+        124,
+        123,
+        136,
+        143,
+        142,
+        141
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 126,
+          "1": 125,
+          "2": 124,
+          "3": 123,
+          "4": 136,
+          "5": 143,
+          "6": 142,
+          "7": 141
+        },
+        "initial_layout_logical_to_physical": [
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "final_index_layout": [
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "two_qubit_gates": 56,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 167,
+        "two_qubit_depth": 16,
+        "size": 664,
+        "gate_counts": {
+          "rz": 390,
+          "sx": 180,
+          "cz": 56,
+          "x": 30,
+          "barrier": 18,
+          "measure": 8
+        },
+        "num_two_qubit": 56
+      },
+      "qasm3_sha256": "499e4a849c0699e9b27038b4f8e29343766b1e0fc085c28c4513c4ec55b332b5",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "echo_n8_d8_s5",
+      "set": "eval_echo",
+      "family": "echo",
+      "n": 8,
+      "depth": 8,
+      "seed": 5,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        126,
+        125,
+        124,
+        123,
+        136,
+        143,
+        142,
+        141
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 126,
+          "1": 125,
+          "2": 124,
+          "3": 123,
+          "4": 136,
+          "5": 143,
+          "6": 142,
+          "7": 141
+        },
+        "initial_layout_logical_to_physical": [
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "final_index_layout": [
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "two_qubit_gates": 56,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 166,
+        "two_qubit_depth": 16,
+        "size": 628,
+        "gate_counts": {
+          "rz": 368,
+          "sx": 162,
+          "cz": 56,
+          "x": 34,
+          "barrier": 18,
+          "measure": 8
+        },
+        "num_two_qubit": 56
+      },
+      "qasm3_sha256": "e9351a5425b1b2924d8c7e94248b659d66a59f9f622be3240c8047620e5b7899",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "echo_n16_d2_s3",
+      "set": "eval_echo",
+      "family": "echo",
+      "n": 16,
+      "depth": 2,
+      "seed": 3,
+      "shots": 2048,
+      "bits": [
+        0,
+        15,
+        8
+      ],
+      "physical_path": [
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        126,
+        125,
+        124,
+        123,
+        136,
+        143,
+        142,
+        141
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 97,
+          "1": 107,
+          "2": 108,
+          "3": 109,
+          "4": 118,
+          "5": 129,
+          "6": 128,
+          "7": 127,
+          "8": 126,
+          "9": 125,
+          "10": 124,
+          "11": 123,
+          "12": 136,
+          "13": 143,
+          "14": 142,
+          "15": 141
+        },
+        "initial_layout_logical_to_physical": [
+          97,
+          107,
+          108,
+          109,
+          118,
+          129,
+          128,
+          127,
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "final_index_layout": [
+          97,
+          107,
+          108,
+          109,
+          118,
+          129,
+          128,
+          127,
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "two_qubit_gates": 30,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 45,
+        "two_qubit_depth": 4,
+        "size": 362,
+        "gate_counts": {
+          "rz": 210,
+          "sx": 96,
+          "cz": 30,
+          "measure": 16,
+          "x": 10,
+          "barrier": 6
+        },
+        "num_two_qubit": 30
+      },
+      "qasm3_sha256": "ba25489e8794a59566ef4e5f084c82e73acfb279b6199bdd19fc8474271c39b0",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "echo_n16_d2_s5",
+      "set": "eval_echo",
+      "family": "echo",
+      "n": 16,
+      "depth": 2,
+      "seed": 5,
+      "shots": 2048,
+      "bits": [
+        0,
+        15,
+        8
+      ],
+      "physical_path": [
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        126,
+        125,
+        124,
+        123,
+        136,
+        143,
+        142,
+        141
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 97,
+          "1": 107,
+          "2": 108,
+          "3": 109,
+          "4": 118,
+          "5": 129,
+          "6": 128,
+          "7": 127,
+          "8": 126,
+          "9": 125,
+          "10": 124,
+          "11": 123,
+          "12": 136,
+          "13": 143,
+          "14": 142,
+          "15": 141
+        },
+        "initial_layout_logical_to_physical": [
+          97,
+          107,
+          108,
+          109,
+          118,
+          129,
+          128,
+          127,
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "final_index_layout": [
+          97,
+          107,
+          108,
+          109,
+          118,
+          129,
+          128,
+          127,
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "two_qubit_gates": 30,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 346,
+        "gate_counts": {
+          "rz": 204,
+          "sx": 88,
+          "cz": 30,
+          "measure": 16,
+          "x": 8,
+          "barrier": 6
+        },
+        "num_two_qubit": 30
+      },
+      "qasm3_sha256": "619831e28bbd3399ccde5734830f17b3716584a679b7e4e5fb810e53b7673699",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "echo_n16_d4_s3",
+      "set": "eval_echo",
+      "family": "echo",
+      "n": 16,
+      "depth": 4,
+      "seed": 3,
+      "shots": 2048,
+      "bits": [
+        0,
+        15,
+        8
+      ],
+      "physical_path": [
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        126,
+        125,
+        124,
+        123,
+        136,
+        143,
+        142,
+        141
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 97,
+          "1": 107,
+          "2": 108,
+          "3": 109,
+          "4": 118,
+          "5": 129,
+          "6": 128,
+          "7": 127,
+          "8": 126,
+          "9": 125,
+          "10": 124,
+          "11": 123,
+          "12": 136,
+          "13": 143,
+          "14": 142,
+          "15": 141
+        },
+        "initial_layout_logical_to_physical": [
+          97,
+          107,
+          108,
+          109,
+          118,
+          129,
+          128,
+          127,
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "final_index_layout": [
+          97,
+          107,
+          108,
+          109,
+          118,
+          129,
+          128,
+          127,
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "two_qubit_gates": 60,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 89,
+        "two_qubit_depth": 8,
+        "size": 700,
+        "gate_counts": {
+          "rz": 406,
+          "sx": 188,
+          "cz": 60,
+          "x": 30,
+          "measure": 16,
+          "barrier": 10
+        },
+        "num_two_qubit": 60
+      },
+      "qasm3_sha256": "149bd40a90620d7c8a5bcb5785c2db06bdb04a72d8733be7dcc02cd09d2956aa",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "echo_n16_d4_s5",
+      "set": "eval_echo",
+      "family": "echo",
+      "n": 16,
+      "depth": 4,
+      "seed": 5,
+      "shots": 2048,
+      "bits": [
+        0,
+        15,
+        8
+      ],
+      "physical_path": [
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        126,
+        125,
+        124,
+        123,
+        136,
+        143,
+        142,
+        141
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 97,
+          "1": 107,
+          "2": 108,
+          "3": 109,
+          "4": 118,
+          "5": 129,
+          "6": 128,
+          "7": 127,
+          "8": 126,
+          "9": 125,
+          "10": 124,
+          "11": 123,
+          "12": 136,
+          "13": 143,
+          "14": 142,
+          "15": 141
+        },
+        "initial_layout_logical_to_physical": [
+          97,
+          107,
+          108,
+          109,
+          118,
+          129,
+          128,
+          127,
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "final_index_layout": [
+          97,
+          107,
+          108,
+          109,
+          118,
+          129,
+          128,
+          127,
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "two_qubit_gates": 60,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 80,
+        "two_qubit_depth": 8,
+        "size": 664,
+        "gate_counts": {
+          "rz": 384,
+          "sx": 170,
+          "cz": 60,
+          "x": 34,
+          "measure": 16,
+          "barrier": 10
+        },
+        "num_two_qubit": 60
+      },
+      "qasm3_sha256": "3709382dc76df162d55e42ef176527bd881c6e39fb0d1104ff3c8d4546367cc9",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "echo_n16_d8_s3",
+      "set": "eval_echo",
+      "family": "echo",
+      "n": 16,
+      "depth": 8,
+      "seed": 3,
+      "shots": 2048,
+      "bits": [
+        0,
+        15,
+        8
+      ],
+      "physical_path": [
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        126,
+        125,
+        124,
+        123,
+        136,
+        143,
+        142,
+        141
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 97,
+          "1": 107,
+          "2": 108,
+          "3": 109,
+          "4": 118,
+          "5": 129,
+          "6": 128,
+          "7": 127,
+          "8": 126,
+          "9": 125,
+          "10": 124,
+          "11": 123,
+          "12": 136,
+          "13": 143,
+          "14": 142,
+          "15": 141
+        },
+        "initial_layout_logical_to_physical": [
+          97,
+          107,
+          108,
+          109,
+          118,
+          129,
+          128,
+          127,
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "final_index_layout": [
+          97,
+          107,
+          108,
+          109,
+          118,
+          129,
+          128,
+          127,
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "two_qubit_gates": 120,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 177,
+        "two_qubit_depth": 16,
+        "size": 1372,
+        "gate_counts": {
+          "rz": 786,
+          "sx": 370,
+          "cz": 120,
+          "x": 80,
+          "barrier": 18,
+          "measure": 16
+        },
+        "num_two_qubit": 120
+      },
+      "qasm3_sha256": "d62834d35eabb4e447601312e379b9728f5c85292769f8dec7b6548ec69333b9",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "echo_n16_d8_s5",
+      "set": "eval_echo",
+      "family": "echo",
+      "n": 16,
+      "depth": 8,
+      "seed": 5,
+      "shots": 2048,
+      "bits": [
+        0,
+        15,
+        8
+      ],
+      "physical_path": [
+        97,
+        107,
+        108,
+        109,
+        118,
+        129,
+        128,
+        127,
+        126,
+        125,
+        124,
+        123,
+        136,
+        143,
+        142,
+        141
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 97,
+          "1": 107,
+          "2": 108,
+          "3": 109,
+          "4": 118,
+          "5": 129,
+          "6": 128,
+          "7": 127,
+          "8": 126,
+          "9": 125,
+          "10": 124,
+          "11": 123,
+          "12": 136,
+          "13": 143,
+          "14": 142,
+          "15": 141
+        },
+        "initial_layout_logical_to_physical": [
+          97,
+          107,
+          108,
+          109,
+          118,
+          129,
+          128,
+          127,
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "final_index_layout": [
+          97,
+          107,
+          108,
+          109,
+          118,
+          129,
+          128,
+          127,
+          126,
+          125,
+          124,
+          123,
+          136,
+          143,
+          142,
+          141
+        ],
+        "two_qubit_gates": 120,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 168,
+        "two_qubit_depth": 16,
+        "size": 1332,
+        "gate_counts": {
+          "rz": 774,
+          "sx": 350,
+          "cz": 120,
+          "x": 72,
+          "barrier": 18,
+          "measure": 16
+        },
+        "num_two_qubit": 120
+      },
+      "qasm3_sha256": "b62e9192d5268569ca88b319c68adf30494c67b83eba038914798eef6bc6a234",
+      "forward_two_qubit": null
+    }
+  ]
+}
