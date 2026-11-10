@@ -85,6 +85,15 @@ class QC18Tests(unittest.TestCase):
         self.assertEqual(proc.returncode,0,proc.stderr)
         self.compare(qc18_verify(output/'manifest.json',workers=1))
 
+    def test_committed_fixture_schema_and_replay(self):
+        archive=HERE/'qc18_certificates/10q_d6_mmap.zip'
+        with ZipFile(archive) as src:
+            src.extractall(self.root/'committed')
+        fixture=self.root/'committed/manifest.json'
+        m=read_proof(fixture)
+        self.assertEqual(m['tape']['encoding'],'zlib-event-v1')
+        self.compare(qc18_verify(fixture,workers=2,start_method='fork'))
+
     def test_standard_library_isolated_cli(self):
         proc=subprocess.run([sys.executable,'-I',str(HERE/'qc18_checker.py'),
                              str(self.manifest),'--workers','2'],

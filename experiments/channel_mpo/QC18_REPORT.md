@@ -1,6 +1,6 @@
 # QC-18: Sharing witness bytes between parallel exact verifiers
 
-**Date:** 2026-11-10. **Base:** QC-17 PR #19 (`research/qc17-parallel-checkpointed-witness-20261110`). **Status:** verified research implementation with 218 passing local tests and one complete 48-qubit independently replayed witness.
+**Date:** 2026-11-10. **Base:** QC-17 PR #19 (`research/qc17-parallel-checkpointed-witness-20261110`). **Status:** verified research implementation with 219 passing local tests and one complete 48-qubit independently replayed witness.
 
 ## Question and outcome
 
@@ -34,7 +34,7 @@ This test shows a limited benefit in uniquely owned worker memory for four forke
 
 ## Verification, adversarial checks, and limitations
 
-All **218** tests pass locally across QC-01 through QC-18. The 16 new tests cover strict frame lengths and contiguity, raw versus zlib encoding, serial versus fork/spawn parallel equivalence, isolated CLI execution, independent segment checks, tampered tensor residuals with all transport checksums recalculated, reordered events, malformed checkpoint files, symlinked tape files, missing segments and noncanonical proof inputs.
+All **219** tests pass locally across QC-01 through QC-18. The 17 new tests cover strict frame lengths and contiguity, raw versus zlib encoding, serial versus fork/spawn parallel equivalence, isolated CLI execution, independent segment checks, tampered tensor residuals with all transport checksums recalculated, reordered events, malformed checkpoint files, symlinked tape files, missing segments and noncanonical proof inputs.
 
 The event decoder never imports the simulator or NumPy. Cryptographic hashes bind the exact encoded bytes, and every local transformation is checked by QC-16's independent exact-dyadic integer kernel. The checker is written in Python and has no external formal proof. A valid certificate proves the specified physical observable bound under the QC-14 assumptions, for a polar-corrected circuit, not for an arbitrary uncensored physical device.
 
