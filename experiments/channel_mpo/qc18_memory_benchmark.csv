@@ -1,0 +1,8 @@
+qubits,depth,channel,p,seed,bond_cap,workers,backend,start_method,seconds,aggregate_rss_mib,aggregate_pss_mib,aggregate_uss_mib,events,segments,verified_bound
+48,16,dephasing,0.5,3,8,1,qc17,default,34.012,123.2,110.5,105.3,3097,13,0.011832047006821769
+48,16,dephasing,0.5,3,8,1,qc18-zlib,serial,33.472,130.6,117.8,112.7,3097,13,0.011832047006821769
+48,16,dephasing,0.5,3,8,2,qc17,default,18.299,313.6,222.3,179.3,3097,13,0.011832047006821769
+48,16,dephasing,0.5,3,8,2,qc18-zlib,fork,18.662,333.7,227.1,174.0,3097,13,0.011832047006821769
+48,16,dephasing,0.5,3,8,4,qc17,default,10.251,520.7,349.6,306.1,3097,13,0.011832047006821769
+48,16,dephasing,0.5,3,8,4,qc18-zlib,fork,10.388,533.2,346.4,290.1,3097,13,0.011832047006821769
+48,16,dephasing,0.5,3,8,4,qc18-zlib,spawn,11.732,715.2,560.8,533.6,3097,13,0.011832047006821769
