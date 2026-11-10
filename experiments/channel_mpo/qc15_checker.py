@@ -347,7 +347,7 @@ def expected_cone(qubits, layers, targets):
     return states
 
 
-def check_witness(proof):
+def check_witness(proof, *, kernel=None, event_source=None, on_boundary=None):
     require(proof.get("format") == SCHEMA, "full-witness format required")
     circuit=proof.get("circuit")
     require(isinstance(circuit,dict),"missing circuit")
@@ -374,18 +374,19 @@ def check_witness(proof):
     require(all(k.shape==(2,2) for k in ops),"Kraus shape")
     states=expected_cone(n,layers,targets)
     require(len(states[0])<=64,"cone too wide")
-    transcript=proof.get("events")
-    require(isinstance(transcript,list) and len(transcript)<=MAX_EVENTS+64,"event limit")
+    transcript=proof.get("events") if event_source is None else event_source
+    require((isinstance(transcript,list) or event_source is not None)
+            and len(transcript)<=MAX_EVENTS+64,"event limit")
     claimed=proof.get("result")
     require(isinstance(claimed,dict),"missing result")
     require(cint(claimed.get("cone_width"),1,64)==len(states[0]),"cone width mismatch")
-    channel_defect=sqrt_up(kraus_defect2(ops))
+    channel_defect=sqrt_up((kernel.kraus_defect2 if kernel is not None else kraus_defect2)(ops))
     require(channel_defect<F(1,2),"Kraus map lacks polar-isometry correction")
     ch_alpha=channel_defect*(2+channel_defect)
     gate_alpha={}
     for layer in layers:
         for _,u in layer:
-            d=sqrt_up(gate_defect2(u))
+            d=sqrt_up((kernel.gate_defect2 if kernel is not None else gate_defect2)(u))
             require(d<F(1,2),"gate lacks polar-unitary correction")
             gate_alpha[id(u)]=d*(2+d)
     first,last=targets[0],targets[-1]
@@ -394,6 +395,8 @@ def check_witness(proof):
     accumulated=F(0)
     whole=0
     tally={"channel":0,"left_qr":0,"right_qr":0,"gate_svd":0}
+    if on_boundary is not None:
+        on_boundary(0,first,last,cores,accumulated,tally)
     def apply_event(kind,t,site,indices,gate=None):
         nonlocal index, accumulated, whole
         require(index<len(transcript),"missing event")
@@ -411,21 +414,23 @@ def check_witness(proof):
             require(whole<=MAX_TOTAL_WITNESS_ENTRIES,"witness entry budget")
         checked_chain(after)
         if kind=="channel":
-            squared=channel_error2(cores[indices[0]],after[indices[0]],ops)
+            squared=(kernel.channel_error2 if kernel is not None else channel_error2)(
+                cores[indices[0]],after[indices[0]],ops)
             needed_alpha=ch_alpha
         elif kind=="gate_svd":
-            squared=pair_error2(cores[indices[0]],cores[indices[1]],
-                                after[indices[0]],after[indices[1]],gate)
+            squared=(kernel.pair_error2 if kernel is not None else pair_error2)(
+                cores[indices[0]],cores[indices[1]],after[indices[0]],after[indices[1]],gate)
             needed_alpha=gate_alpha[id(gate)]
         else:
-            squared=pair_error2(cores[indices[0]],cores[indices[1]],
-                                after[indices[0]],after[indices[1]])
+            squared=(kernel.pair_error2 if kernel is not None else pair_error2)(
+                cores[indices[0]],cores[indices[1]],after[indices[0]],after[indices[1]])
             needed_alpha=F(0)
         r=realhex(ev.get("residual_upper"),nonnegative=True)
         g=realhex(ev.get("context_upper"),nonnegative=True)
         alpha=realhex(ev.get("polar_upper"),nonnegative=True)
         require(r*r>=squared, "invalid exact local residual upper")
-        require(g>=context_bound(after,indices,gate=(kind=="gate_svd")),
+        require(g>=(kernel.context_bound if kernel is not None else context_bound)(
+                    after,indices,gate=(kind=="gate_svd")),
                 "invalid external-context norm upper")
         require(alpha>=needed_alpha,"invalid gate/channel polar allowance")
         require(alpha==0 if kind not in ("gate_svd","channel") else True,
@@ -433,6 +438,8 @@ def check_witness(proof):
         accumulated += r*g+alpha*(1+accumulated)
         cores[:] = after
         tally[kind] += 1
+        if on_boundary is not None:
+            on_boundary(index,first,last,cores,accumulated,tally)
     for t in range(len(layers)-1,-1,-1):
         after_state=states[t+1]
         for site in range(first,last+1):
@@ -447,6 +454,8 @@ def check_witness(proof):
         cores.extend(initial_core("I") for _ in range(high-last))
         first,last=low,high
         checked_chain(cores)
+        if on_boundary is not None:
+            on_boundary(index,first,last,cores,accumulated,tally)
         for site,u in layers[t]:
             if site in after_state or site+1 in after_state:
                 j=site-first
@@ -458,7 +467,7 @@ def check_witness(proof):
                 apply_event("gate_svd",t,site,[j,j+1],u)
     require(index==len(transcript),"unused trailing events")
     checked_chain(cores)
-    value=exact_readout(cores)
+    value=(kernel.exact_readout if kernel is not None else exact_readout)(cores)
     reported=realhex(claimed.get("expectation"))
     error=realhex(claimed.get("error_upper"),nonnegative=True)
     require(error>=accumulated+abs(value[0]-reported),"end-to-end bound understated")
