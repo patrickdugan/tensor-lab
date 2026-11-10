@@ -1,8 +1,11 @@
 """QC-23 IBM Quantum Clifford echo hardware pilot.
 
-Offline `plan` needs only stdlib. `build` and `submit` require recent
-qiskit / qiskit-ibm-runtime, and a configured IBM Quantum account.
-No paid hardware action occurs without --submit AND --allow-paid.
+Offline `plan` needs only stdlib. `discover`, `build` and `submit` require
+qiskit / qiskit-ibm-runtime and a configured IBM Quantum account (`build` also
+accepts --fixture to compile against a bundled backend snapshot offline).
+`submit` additionally requires an --authorization file written by the account
+owner that names the backend, the compiled-plan hash and a QPU-seconds
+ceiling; the --allow-paid flag alone never authorises execution.
 """
 from __future__ import annotations
 
@@ -27,7 +30,7 @@ def echo_schedule(n: int, depth: int, seed: int) -> list[list[tuple]]:
         ops = []
         for i in range(n):
             gate = rng.choice(('h', 's', 'x', 'sx'))
-            # Qiskit sx is not Clifford (sqrt X is Clifford), inverse is sxdg.
+            # sqrt(X) is Clifford; its inverse is sxdg.
             ops.append((gate, i))
         parity = layer % 2
         for i in range(parity, n - 1, 2):
@@ -60,6 +63,26 @@ def selected_bits(n: int):
     return tuple(dict.fromkeys((0, 1, n//2, n-2, n-1)))
 
 
+def observable_bits(n: int):
+    """Left edge, right edge and central Z observables (distinct, in range)."""
+    return tuple(dict.fromkeys((0, n-1, n//2)))
+
+
+def hoeffding_halfwidth(shots: int, confidence: float = 0.95) -> float:
+    """Non-asymptotic half-width for the mean of `shots` samples in [-1, 1]."""
+    return math.sqrt(2*math.log(2/(1-confidence))/shots)
+
+
+def wilson_interval(successes: int, trials: int, z: float = 1.959964):
+    if trials <= 0:
+        raise ValueError('positive trials required')
+    p = successes/trials
+    denom = 1 + z*z/trials
+    centre = (p + z*z/(2*trials))/denom
+    half = z*math.sqrt(p*(1-p)/trials + z*z/(4*trials*trials))/denom
+    return max(0.0, centre-half), min(1.0, centre+half)
+
+
 def z_estimators(counts: dict[str, int], n: int, bits: tuple[int,...]):
     """Qiskit full-register bit strings are little-endian by qubit index."""
     total = sum(counts.values())
@@ -71,19 +94,23 @@ def z_estimators(counts: dict[str, int], n: int, bits: tuple[int,...]):
         ones = sum(v for key,v in counts.items() if key.replace(' ','')[::-1][bit]=='1')
         z = 1-2*ones/total
         se = math.sqrt(max(0,1-z*z)/total)
+        # Wilson interval on P(bit=1) mapped to Z; non-degenerate when z == +-1.
+        lo1, hi1 = wilson_interval(ones, total)
         result[str(bit)]={'expectation_z':z,'standard_error':se,'shots':total,
-                           'ideal_z':1.0,'observed_bias':z-1.0}
+                           'ideal_z':1.0,'observed_bias':z-1.0,
+                           'wilson95':[1-2*hi1, 1-2*lo1],
+                           'hoeffding95_halfwidth':hoeffding_halfwidth(total)}
     return result
 
 
 def choose_line(backend, n: int):
-    """Find a simple connected path; this is topology-only, not calibration-optimal."""
+    """Topology-only simple path (kept for compatibility); prefer
+    qc23_compile.choose_line_calibrated, which minimises calibrated error."""
     coupling = backend.coupling_map
     edges = coupling.get_edges()
     neighbors={i:set() for i in range(backend.num_qubits)}
     for a,b in edges:
         neighbors[a].add(b); neighbors[b].add(a)
-    # bounded DFS with degree heuristic; works quickly for n<=48 on typical layouts
     starts=sorted(neighbors,key=lambda i:(-len(neighbors[i]),i))
     for start in starts:
         stack=[(start,[start],{start})]
@@ -104,22 +131,25 @@ def plan(n_list=(8,16), depths=(2,4,8), seeds=(3,5), shots=2048):
                 layers=echo_schedule(n,depth,seed)
                 serial=json.dumps(layers,separators=(',',':'))
                 manifest.append(dict(n=n,depth=depth,seed=seed,shots=shots,
-                    bits=selected_bits(n),schedule_sha256=hashlib.sha256(serial.encode()).hexdigest(),
+                    bits=observable_bits(n),schedule_sha256=hashlib.sha256(serial.encode()).hexdigest(),
                     forward_cx=sum(sum(op[0]=='cx' for op in layer) for layer in layers)))
     return manifest
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['plan','build','submit'])
+    parser.add_argument('command', choices=['plan','discover','build','submit'])
     parser.add_argument('--qubits',default='8,16')
     parser.add_argument('--depths',default='2,4,8')
     parser.add_argument('--seeds',default='3,5')
     parser.add_argument('--shots',type=int,default=2048)
     parser.add_argument('--backend',help='specific accessible IBM QPU')
+    parser.add_argument('--fixture',help='offline backend snapshot class, e.g. FakeFez (build only)')
     parser.add_argument('--out',default='qc23_results')
     parser.add_argument('--submit',action='store_true',help='required in addition to submit command')
-    parser.add_argument('--allow-paid',action='store_true',help='required for non-Open instance')
+    parser.add_argument('--allow-paid',action='store_true',
+                        help='acknowledges possible charges; NOT sufficient without --authorization')
+    parser.add_argument('--authorization',help='JSON file written by the account owner (see README)')
     parser.add_argument('--instance',help='IBM Cloud instance CRN/name; omit to use configured default')
     args=parser.parse_args()
     n_list=tuple(map(int,args.qubits.split(',')))
@@ -133,52 +163,68 @@ def main():
     if args.command=='plan':
         print(f'Wrote {len(rows)} planned echo circuits to {output}/plan.json; no IBM connection used.')
         return
-    from qiskit import qpy
-    from qiskit.transpiler import generate_preset_pass_manager
-    from qiskit_ibm_runtime import QiskitRuntimeService
-    # IBM account is read from the local Qiskit config; never collect tokens in arguments or files.
-    service = QiskitRuntimeService(instance=args.instance) if args.instance else QiskitRuntimeService()
-    backend = service.backend(args.backend) if args.backend else service.least_busy(operational=True,simulator=False,min_num_qubits=max(n_list))
-    line = choose_line(backend,max(n_list))
-    all_circuits=[]
-    # IMPORTANT: mapping selected physical qubits through initial_layout; backend
-    # transpilation may reroute or alter operations. Preserve QPY and ISA metrics.
+    from qc23_access import connect, discover, plan_hash, estimate_qpu_seconds, check_authorization
+    if args.command=='discover':
+        service,err=connect(args.instance)
+        if service is None:
+            (output/'discovery.json').write_text(json.dumps({'accessible':False,'error':err},indent=2)+'\n')
+            print('IBM account unavailable:',err); raise SystemExit(2)
+        info=discover(service); info['accessible']=True
+        (output/'discovery.json').write_text(json.dumps(info,indent=2,default=str)+'\n')
+        print(f"Discovered {len(info['backends'])} QPUs; wrote {output}/discovery.json"); return
+    from qc23_experiment import Compiler
+    from qc23_noise import calibration_snapshot
+    from qc23_compile import qasm3_text, qpy_bytes, sha256_text
+    if args.fixture:
+        import qiskit_ibm_runtime.fake_provider as fp
+        backend=getattr(fp,args.fixture)(); mode=f'fixture:{args.fixture}'
+    else:
+        service,err=connect(args.instance)
+        if service is None:
+            parser.error(f'IBM account unavailable: {err}')
+        backend = service.backend(args.backend) if args.backend else service.least_busy(
+            operational=True,simulator=False,min_num_qubits=max(n_list))
+        mode='live'
+    snap=calibration_snapshot(backend,source=mode)
+    comp=Compiler(backend,snap)
+    isas=[]; (output/'circuits').mkdir(exist_ok=True)
     for row in rows:
-        original=make_echo(row['n'],row['depth'],row['seed'])
-        physical=line[:row['n']]
-        measured=original.copy(); measured.measure_all()
-        pm=generate_preset_pass_manager(optimization_level=0,backend=backend,initial_layout=physical)
-        isa=pm.run(measured)
-        all_circuits.append(isa)
-        row['physical_path']=physical
-        row['isa_depth']=isa.depth()
-        row['isa_operations']=dict(isa.count_ops())
-    metadata={'backend':backend.name,'instance':args.instance or 'configured-default',
-              'circuits':rows,'qiskit_isa_qubits':backend.num_qubits,
-              'method':'single-shot unmitigated Sampler; Clifford identity echo'}
-    (output/'compiled.json').write_text(json.dumps(metadata,indent=2)+'\n')
-    with (output/'compiled.qpy').open('wb') as f:qpy.dump(all_circuits,f)
-    print(f'Compiled {len(rows)} circuits on {backend.name}. Output saved to {output}.')
+        item={'id':f"echo_n{row['n']}_d{row['depth']}_s{row['seed']}",'family':'echo','n':row['n'],
+              'depth':row['depth'],'seed':row['seed'],'shots':row['shots'],'bits':list(row['bits'])}
+        c=comp.compile(item)
+        qasm=qasm3_text(c['isa']); (output/'circuits'/f"{item['id']}.qasm").write_text(qasm)
+        row.update(id=item['id'],physical_path=c['physical'],mapping=c['audit'],metrics=c['metrics'],
+                   qasm3_sha256=sha256_text(qasm))
+        isas.append(c['isa'])
+    qpy=qpy_bytes(isas)
+    meta={'backend':backend.name,'mode':mode,'instance':args.instance or 'configured-default',
+          'calibration_timestamp':snap['timestamp'],'circuits':rows,'plan_sha256':plan_hash(rows),
+          'method':'unmitigated SamplerV2, optimization_level=0 Clifford identity echo'}
+    (output/'compiled.json').write_text(json.dumps(meta,indent=2)+'\n')
+    (output/'compiled.qpy').write_bytes(qpy)
+    (output/'calibration_snapshot.json').write_text(json.dumps(snap)+'\n')
+    print(f'Compiled {len(rows)} circuits on {backend.name} ({mode}). Output saved to {output}.')
     if args.command=='build': return
-    if not args.submit:parser.error('hardware execution requires --submit')
-    if not args.allow_paid:
-        # Users MUST verify instance billing in their IBM dashboard. `--allow-paid`
-        # acknowledges potential charges; no reliable general plan introspection here.
-        parser.error('hardware usage can incur charges; explicit --allow-paid required')
-    from qiskit_ibm_runtime.executor_sampler import Sampler
-    sampler=Sampler(mode=backend)
-    job=sampler.run(all_circuits,shots=args.shots)
+    if mode!='live': parser.error('submit requires a live backend, not a fixture')
+    if not args.submit: parser.error('hardware execution requires --submit')
+    est=estimate_qpu_seconds([c['metrics']['depth']*5e-7 for c in rows],args.shots)
+    ok,why=check_authorization(args.authorization,backend=backend.name,sha=meta['plan_sha256'],estimated_seconds=est)
+    if not ok:
+        parser.error(f'hardware execution NOT authorised: {why} (estimated {est:.1f} QPU-s, plan_sha256={meta["plan_sha256"]})')
+    from qiskit_ibm_runtime import SamplerV2
+    sampler=SamplerV2(mode=backend)
+    job=sampler.run(isas,shots=args.shots)
     job_id=job.job_id()
-    (output/'job.json').write_text(json.dumps({'job_id':job_id,'backend':backend.name},indent=2)+'\n')
+    (output/'job.json').write_text(json.dumps({'job_id':job_id,'backend':backend.name,'plan_sha256':meta['plan_sha256']},indent=2)+'\n')
     print('Submitted IBM job:',job_id)
     result=job.result()
     summaries=[]
     for row,entry in zip(rows,result):
         counts=entry.data.meas.get_counts()
-        summary={'n':row['n'],'depth':row['depth'],'seed':row['seed'],
-                 'counts':counts,'z':z_estimators(counts,row['n'],row['bits'])}
-        summaries.append(summary)
-    (output/'hardware_results.json').write_text(json.dumps({'job_id':job_id,'measurements':summaries},indent=2)+'\n')
+        summaries.append({'id':row['id'],'n':row['n'],'depth':row['depth'],'seed':row['seed'],
+                          'counts':counts,'z':z_estimators(counts,row['n'],tuple(row['bits'])),
+                          'physical_path':row['physical_path']})
+    (output/'hardware_results.json').write_text(json.dumps({'job_id':job_id,'backend':backend.name,'measurements':summaries},indent=2)+'\n')
     print('Wrote hardware_results.json')
 
 if __name__=='__main__':main()
