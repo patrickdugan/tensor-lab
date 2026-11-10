@@ -1,84 +1,89 @@
-# QC-17: Checkpointed parallel full-witness verification
+# QC-17: Parallel independent checking of checkpointed MPO witnesses
 
 **Date:** 2026-11-10  
-**Repository:** `patrickdugan/tensor-lab`  
-**Base:** QC-16, stacked on PR #18  
-**Evidence:** 202/202 local regression tests, independent 48-qubit verification and fresh-process timing/memory measurements.
+**Repository:** `patrickdugan/tensor-lab`; PR stacked on QC-16  
+**Evidence:** 202 passing QC-01 through QC-17 local regression tests, verified 48-qubit full witness, frozen fresh-process runtime and process-tree RSS benchmarks.
 
 ## Research question
 
-QC-16 reduced standalone verification of a 48-qubit, depth-16, dephasing Heisenberg-MPO proof from QC-15's recorded 390 seconds to 34.57 seconds using exact dyadic integer arithmetic. The remaining computational cost is distributed over 13 independently delimited segments. Can we check those segments concurrently without trusting their starting states or weakening the error bound?
+QC-16 independently checked all 3,097 operations of a depth-16, 48-qubit Heisenberg-MPO witness in about 35 seconds with one worker. A full witness can be partitioned into claim segments with independently reconstructed and checked state boundaries. How much CPU time does verification save by checking each segment concurrently, and what is the aggregate RAM cost?
 
-**Result:** QC-17 produces a checkpointed format with independently checked MPO states at every boundary. Each worker verifies a complete exact-dyadic local transition sequence against a deterministically reconstructed global event schedule. The coordinator verifies genesis, the chain of SHA-256 boundary commitments, the final readout, cumulative error, and the global changed-entry limit. Four workers checked the 48-qubit proof in **11.21 seconds**, compared with **33.95 seconds** for a serial QC-17 run (3.03× faster). The complete witness statement and exact verified error bound were unchanged.
+**Measured result:** For the recorded 48-qubit proof, QC-17 checks the complete witness with four workers in 11.21 seconds against 33.95 seconds serially (3.03x). The identical expectation-error bound `0.011832047006821769` is accepted by every configuration. Four workers raised sampled peak aggregate process-tree RSS from 126,240 KiB to 529,412 KiB. These are three fresh-process timing observations, not a sampling distribution. A subsequent four-worker replay independently returned `PASS` with the same exact counts and bound.
 
-## Certificate specification and security
+## Certificate and algorithm
 
-See [`QC17_FORMAT.md`](QC17_FORMAT.md) for the complete format, parsing bounds, mathematical induction argument and security assumptions. The producer emits the full QC-16 event segments and an added checkpoint for each boundary. Each checkpoint stores the exact tensor coefficients, physical support, accumulated rational error and audited event counts, with the same QC-16 boundary digest. The verifier reconstructs its own event schedule from the circuit, checks all segment arithmetic, and requires each computed output digest to match the next independently decoded checkpoint.
+The producer splits the complete QC-15 operand trace into QC-16 event segments and inserts exact, serialized MPO state checkpoints. The 48-qubit example contains 13 segments and 14 checkpoint records. Each checkpoint carries its position in the event schedule, the physical MPO support, the exact dyadic error accumulator, four event counters and the complete stored binary64 MPO cores. A domain-separated SHA-256 commitment binds these fields; individual compressed files also have byte checksums.
 
-Critically, **a detached segment is not a proof of the full circuit**. The final result is accepted only after every segment has passed, the exact Pauli genesis has been checked and the final readout/bound is validated. The producer is excluded from the verifier's imports. The verifier uses Python's standard library and QC-15/16's independent arithmetic code, without NumPy, QR or SVD libraries.
+The separate QC-17 checker reconstructs the event schedule from the serialized circuit and Pauli target. It verifies genesis and final readout independently. Each worker receives the pinned manifest, the segment index and claimed checkpoint boundaries, then replays all transitions with the QC-16 common-denominator exact-integer kernel. The coordinator requires every worker to finish successfully and checks global event and witness-entry limits.
 
-The segment/checkpoint chain relies on SHA-256 collision resistance for matching states across processes. No external digital signature, trusted execution environment, formal verification of Python, or reduction to a zero-knowledge proof is claimed.
+The exact error recurrence is
 
-## Deep-circuit verification
+\[
+ E_{j+1}=E_j+r_j g_j+\alpha_j(1+E_j),
+\]
 
-- Physical circuit: **48 qubits**, depth **16**, dephasing strength `p=0.5`, central observable, bond cap **8**.
-- Source witness: the QC-15 full operand witness; archived 48-qubit segmented QC-16 and QC-17 variants are distributed alongside this report. Source full witness SHA-256 `3bbd436120fee57677fcab1d970e60802c523ad9817e955ab2016ab9f14e8889` (from QC-16).
-- Segments: **13**, plus **14** checked state checkpoints.
-- Checked transformations: **3,097** (`channel` 241, `gate_svd` 136, `left_qr` 1360, `right_qr` 1360).
-- Changed complex MPO coefficients checked: **1,206,052**.
-- Reported expectation: `6.8465099397700234e-09`.
-- Independently checked expectation error bound: **`0.011832047006821769`**. The error-bound sum preceding final readout rounding is `0.011832047006820182`.
-- The 13 unmodified QC-16 event-segment files occupy **11,995,527 bytes**. The QC-17 checkpoints add **969,983 bytes** compressed, and the root manifest is **156,679 bytes**. The complete QC-17 directory is approximately 13 MB.
+where each residual upper bound `r`, context upper bound `g` and polar-correction bound `alpha` is checked by independent exact arithmetic before being accumulated. The end-to-end statement remains the QC-14 absolute expectation-error bound for the polar-corrected binary64 circuit. The producer's boundary calculations are treated as claims until worker replay.
 
-### Fresh-process resource results
+A detached segment is a conditional transition certificate. Acceptance of the whole circuit requires the exact genesis anchor, verified chain and final readout. The checker imports only its standalone QC-15/16 arithmetic modules and the QC-17 serialization module; it does not import NumPy or simulator code. See `QC17_FORMAT.md` for the schema, invariants and threat model.
 
-The same verified 48-qubit proof was run under three configurations on this container (5 available logical AMD EPYC cores). `benchmark_qc17.py` samples Linux `/proc` parent PIDs to count the coordinator **and all child verifier processes** when reporting aggregate RSS. Sampling intervals are 30 ms; the measured maxima may miss short transient allocations and are not formal upper bounds.
+## Measured 48-qubit results
 
-| Workers | Elapsed time | Paired speedup | Sampled aggregate peak RSS | Sampled largest single process |
-|--:|--:|--:|--:|--:|
-| 1 | 33.953 s | 1.00× | 126,240 KiB | 126,240 KiB |
-| 2 | 18.550 s | 1.83× | 320,676 KiB | 109,156 KiB |
-| 4 | **11.211 s** | **3.03×** | 529,412 KiB | 109,800 KiB |
+Configuration: 48 qubits, 16 circuit layers, dephasing `p=0.5`, bond cap 8, central Pauli expectation. The complete proof contains 3,097 audited operations (`channel=241`, `gate_svd=136`, `left_qr=1360`, `right_qr=1360`) and 1,206,052 changed complex MPO coefficients. The 16 support-growth events are separate schedule records.
 
-The additional RAM cost is real and substantial. This result establishes lower latency with adequate cores and memory. QC-16's 34.57-second verifier is a separately recorded baseline; the paired QC-17 speedups above use the new serial run. Per-process RSS must not be mistaken for total process-tree RSS.
+| Worker processes | Verification time (s) | Paired speedup | Peak aggregate RSS (KiB) | Approx. MiB |
+|---:|---:|---:|---:|---:|
+| 1 | 33.953 | 1.00x | 126,240 | 123.3 |
+| 2 | 18.550 | 1.83x | 320,676 | 313.2 |
+| 4 | **11.211** | **3.03x** | 529,412 | 517.0 |
 
-### Small-fixture measurements
+The benchmark starts a new isolated Python process for each worker count and samples `/proc` resident memory of the parent and its descendants every 30 milliseconds. It reports the largest sampled *sum*, which may underestimate instantaneous peaks between samples. The values include the coordinator and workers; they are neither virtual memory reservations nor individual-worker RSS peaks. The serial and parallel runs all returned the identical accumulated bound, event counts and changed-entry count.
 
-Fresh Python interpreter for each configuration, times include certificate parsing and worker startup. Small proofs show little or no advantage from multiple processes:
+Stored proof sizes: the 13 compressed event files occupy **11,995,527 bytes**, 14 compressed checkpoints **969,983 bytes**, and the manifest **156,679 bytes**, totalling **13,122,189 bytes** (approximately 12.52 MiB). The additional checkpoints cost about 0.93 MiB compressed. The larger proof archive is distributed as a separate reproducible artifact and is not committed to GitHub.
 
-| Qubits / depth | Audited events | Serial time | Four-worker setting | Speedup |
-|:--|--:|--:|--:|--:|
-| 3 / 3 | 11 | 0.648 s | 0.740 s | 0.88× |
-| 10 / 6 | 48 | 0.774 s | 0.715 s | 1.08× |
-| 12 / 8 | 107 | 1.173 s | 0.933 s | 1.26× |
+The exact reported expectation is `6.8465099397700234e-09`; the lower required error is `0.011832047006820182`; the accepted upper bound is `0.011832047006821769`. These numbers match QC-16.
 
-At three qubits the proof has only one segment, so the four-worker setting starts just one worker. At larger depth, segments contain enough exact contractions to offset the cost of process creation and duplicated metadata parsing.
+## Small-circuit parallelism
+
+The fresh-process CPU comparison covers a three-qubit depth-three fixture, a ten-qubit depth-six fixture and a twelve-qubit depth-eight fixture. All configurations agree on result and event count. Short proofs are dominated by process startup, scheduling and checkpoint validation.
+
+| Circuit | Audited ops | Workers | Serial (s) | Parallel (s) | Speedup |
+|---|---:|---:|---:|---:|---:|
+| 3 qubits / depth 3 | 11 | 2 | 0.648 | 0.679 | 0.95x |
+| 10 qubits / depth 6 | 48 | 4 | 0.774 | 0.715 | 1.08x |
+| 12 qubits / depth 8 | 107 | 4 | 1.173 | 0.933 | 1.26x |
+
+Use one worker for tiny proofs; four workers become worthwhile for this deeper witness. These single-shot results are platform dependent.
 
 ## Verification and adversarial tests
 
-The full QC-01 through QC-17 regression suite passes: **202/202 tests**. The 17 QC-17 tests cover serial/parallel differential replay, exact agreement with the QC-16 dyadic kernel, isolated `python -I` execution, depolarizing/dephasing/amplitude-damping witnesses, deterministic proof emission, missing or duplicate file records, path escapes, damaged compressed bytes, altered intermediate states with repaired checksums, forged error bounds, reordered events with regenerated commitments, altered local residuals, and coordinator-to-worker manifest pinning.
+All **202 tests** passed locally across QC-01 through QC-17. The 17 new QC-17 tests cover serial and parallel agreement with QC-16, independent segment verification, an isolated Python CLI, exact cross-channel small-system checks, and attempts to forge a checkpoint with all neighboring checksums repaired. The suite also rejects missing, duplicated, reordered or path-traversing payloads, understated event residuals, forged manifest pins, altered genesis states and final bounds. The ten-qubit fixture is committed as a zipped archive and checked by lightweight GitHub CI using only the standard library. The complete regression workflow additionally installs NumPy for historical simulator tests.
 
-The repository includes a compact prebuilt 10-qubit checkpointed proof for a standard-library-only CI smoke test. Large witnesses and the 48-qubit checkpoints are published separately from the Git source tree to keep pull-request CI lightweight.
+A separately rerun four-worker replay of the 48-qubit proof returned all 13 accepted segments, 14 verified checkpoints, and the exact bound `0.011832047006821769`.
 
-## Commands
+## Reproduce
 
 ```bash
 cd experiments/channel_mpo
-python -m pip install 'numpy>=1.24,<3'  # only needed for producer/full regression tests
-python qc17_emit.py qc15_certificates/full_10q_d6_dephasing_s3_c4.json.gz \
-  --out-dir /tmp/qc17-10q --events-per-segment 12
-python -I qc17_checker.py /tmp/qc17-10q/manifest.json --workers 1
-python -I qc17_checker.py /tmp/qc17-10q/manifest.json --workers 4
-python benchmark_qc17.py --small --out /tmp/qc17-small.csv
-python benchmark_qc17.py --manifest /path/to/48q/manifest.json \
-  --out /tmp/qc17-deep.csv
+python -m pip install 'numpy>=1.24,<3'
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
-  python -m unittest -q test_channel_mpo test_purified_mpo \
-  test_qc03 test_qc04 test_qc05 test_qc06 test_qc07 test_qc08 \
-  test_qc09 test_qc10 test_qc11 test_qc12 test_qc13 test_qc14 \
-  test_qc15 test_qc16 test_qc17
+python -m unittest -q test_channel_mpo test_purified_mpo test_qc03 \
+  test_qc04 test_qc05 test_qc06 test_qc07 test_qc08 test_qc09 \
+  test_qc10 test_qc11 test_qc12 test_qc13 test_qc14 test_qc15 \
+  test_qc16 test_qc17
+
+python - <<'PY'
+from zipfile import ZipFile
+with ZipFile('qc17_certificates/10q_d6_checkpointed.zip') as archive:
+    archive.extractall('/tmp/qc17_small')
+PY
+python -I qc17_checker.py /tmp/qc17_small/manifest.json --workers 2
+
+# For a downloaded 48-qubit proof archive extracted to /tmp/qc17_deep:
+python -I qc17_checker.py /tmp/qc17_deep/manifest.json --workers 4
+python benchmark_qc17.py --manifest /tmp/qc17_deep/manifest.json \
+  --workers 1,2,4 --out /tmp/qc17_benchmark.csv
 ```
 
-## Next experiment
+## Limits and next directions
 
-QC-18 should reduce the parallel verifier's aggregate memory without losing its independent-event semantics. Candidate approaches include a process pool that shares immutable checkpoint/circuit pages across workers, arena allocation for dyadic cores, and a compact Rust/Lean checker. Any acceleration should report a paired error bound, elapsed time, **aggregate** memory, and the extra trust introduced by the new execution model.
+Four-worker verification consumes around half a gigabyte of aggregate RAM in the recorded 48-qubit test. Execution uses Python multiprocessing and duplicates the circuit description and some arithmetic state. Better packaging could stream immutable circuit coefficients from a read-only mapping, keep fewer checkpoints resident at once, and share deduplicated MPO cores. Results apply to one selected Pauli expectation and a polar-corrected binary64 physical circuit, under QC-14's inequalities. Independent formal proof of the checker remains open. Additional parallelism may plateau because of file I/O, process creation and uneven segment costs.
