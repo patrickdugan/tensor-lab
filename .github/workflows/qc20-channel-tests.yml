@@ -1,0 +1,49 @@
+name: QC-20 compact dyadic witness tests
+on:
+  push:
+    paths:
+      - 'experiments/channel_mpo/**'
+      - '.github/workflows/qc20-channel-tests.yml'
+  pull_request:
+    paths:
+      - 'experiments/channel_mpo/**'
+      - '.github/workflows/qc20-channel-tests.yml'
+
+jobs:
+  independent-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay pinned witness under fast and compact exact integer modes
+        shell: bash
+        run: |
+          cd experiments/channel_mpo
+          python - <<'PY'
+          from zipfile import ZipFile
+          with ZipFile('qc18_certificates/10q_d6_mmap.zip') as z:
+              z.extractall('/tmp/qc20-witness')
+          PY
+          python -I qc20_checker.py /tmp/qc20-witness/manifest.json --workers 2 --start-method fork
+          python -I qc20_checker.py /tmp/qc20-witness/manifest.json --workers 2 --start-method spawn
+          python -I qc20_checker.py /tmp/qc20-witness/manifest.json --storage-mode compact
+
+  regressions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3'
+      - name: QC-01 through QC-20 numerical and adversarial regressions
+        shell: bash
+        run: |
+          cd experiments/channel_mpo
+          export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+          python -m unittest -q test_channel_mpo test_purified_mpo test_qc03 \
+            test_qc04 test_qc05 test_qc06 test_qc07 test_qc08 test_qc09 test_qc10 \
+            test_qc11 test_qc12 test_qc13 test_qc14 test_qc15 test_qc16 \
+            test_qc17 test_qc18 test_qc19 test_qc20
