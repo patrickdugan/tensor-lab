@@ -1,0 +1,36 @@
+name: QC-15 standalone proof-witness checker
+on:
+  push:
+    paths:
+      - 'experiments/channel_mpo/qc15_*.py'
+      - 'experiments/channel_mpo/QC15_*.md'
+      - 'experiments/channel_mpo/qc14_certified.py'
+      - '.github/workflows/qc15-channel-tests.yml'
+  pull_request:
+    paths:
+      - 'experiments/channel_mpo/qc15_*.py'
+      - 'experiments/channel_mpo/QC15_*.md'
+      - 'experiments/channel_mpo/qc14_certified.py'
+      - '.github/workflows/qc15-channel-tests.yml'
+jobs:
+  witness-cpu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'numpy>=1.24,<3'
+      - name: Standalone and tamper regression
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+          MKL_NUM_THREADS: '1'
+        run: |
+          cd experiments/channel_mpo
+          python -m unittest -q test_qc15
+          python qc15_emit.py --qubits 3 --depth 3 --noise dephasing --seed 3 --tier witness --output /tmp/qc15.json.gz
+          python -I qc15_checker.py /tmp/qc15.json.gz --require-witness
+          python -I qc15_checker.py qc15_certificates/full_10q_d6_dephasing_s3_c4.json.gz --require-witness
+          python -I qc15_checker.py qc15_certificates/ledger_48q_d16_dephasing_s3_c8.json.gz

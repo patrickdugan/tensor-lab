@@ -1,0 +1,2 @@
+tier,n,depth,noise,p,seed,bond_cap,filename,bytes,events,emit_seconds,verify_seconds,reported_expectation,verified_bound,independently_checked_residuals,certificate_status,provenance
+ledger,48,16,dephasing,0.5,3,8,ledger_48q_d16_dephasing_s3_c8.json.gz,45063,3097,24.02745899599995,0.4487173710000434,6.8465099397700234e-09,0.011832047006821769,False,PASS,polar-corrected literal binary64 gates and Kraus operators
