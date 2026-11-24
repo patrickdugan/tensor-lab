@@ -1,0 +1,3021 @@
+{
+  "set": "nc_eval",
+  "backend": "ibm_kingston",
+  "mode": "live",
+  "calibration_timestamp": "2026-11-24T21:47:29+08:00",
+  "qpy_sha256": "52b0d884418018f87b3b693db7ddc34fa5e603e44d2f30e985dc8d0f5a7298f0",
+  "circuits": [
+    {
+      "id": "kicked_ising_n8_d1_s41",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 1,
+      "seed": 41,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 8,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 22,
+        "two_qubit_depth": 2,
+        "size": 116,
+        "gate_counts": {
+          "rz": 68,
+          "sx": 32,
+          "cz": 8,
+          "measure": 8,
+          "barrier": 2
+        },
+        "num_two_qubit": 8
+      },
+      "qasm3_sha256": "40a92309813f1d7effcaa1bdfbd766846150c88316a7cf2118547e620c070067",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d1_s42",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 1,
+      "seed": 42,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 8,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 22,
+        "two_qubit_depth": 2,
+        "size": 116,
+        "gate_counts": {
+          "rz": 68,
+          "sx": 32,
+          "cz": 8,
+          "measure": 8,
+          "barrier": 2
+        },
+        "num_two_qubit": 8
+      },
+      "qasm3_sha256": "309cb2b1fcb3425608945e861fe4e2152b288638e0bda123aac67857d7aae808",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d1_s43",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 1,
+      "seed": 43,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 8,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 22,
+        "two_qubit_depth": 2,
+        "size": 116,
+        "gate_counts": {
+          "rz": 68,
+          "sx": 32,
+          "cz": 8,
+          "measure": 8,
+          "barrier": 2
+        },
+        "num_two_qubit": 8
+      },
+      "qasm3_sha256": "7759d4f36ec7e225ea2006c221a8e2bf0e40ba711f6dd1816e984ff4955b1fea",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d1_s44",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 1,
+      "seed": 44,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 8,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 22,
+        "two_qubit_depth": 2,
+        "size": 116,
+        "gate_counts": {
+          "rz": 68,
+          "sx": 32,
+          "cz": 8,
+          "measure": 8,
+          "barrier": 2
+        },
+        "num_two_qubit": 8
+      },
+      "qasm3_sha256": "9d4aff69233b2405c7407ccc210843dcc241dbdd1a9231e84cbbebed63627d83",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d2_s41",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 2,
+      "seed": 41,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 14,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 209,
+        "gate_counts": {
+          "rz": 127,
+          "sx": 60,
+          "cz": 14,
+          "measure": 8,
+          "barrier": 3
+        },
+        "num_two_qubit": 14
+      },
+      "qasm3_sha256": "316db2559d310de05d79b0eafbe40e49c59d37160e732107ae10032f12525b9c",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d2_s42",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 2,
+      "seed": 42,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 14,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 209,
+        "gate_counts": {
+          "rz": 127,
+          "sx": 60,
+          "cz": 14,
+          "measure": 8,
+          "barrier": 3
+        },
+        "num_two_qubit": 14
+      },
+      "qasm3_sha256": "8a4701197537f533c99243cacb0234b9a26242301bd48dfb6f0d8f0bb84a345e",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d2_s43",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 2,
+      "seed": 43,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 14,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 209,
+        "gate_counts": {
+          "rz": 127,
+          "sx": 60,
+          "cz": 14,
+          "measure": 8,
+          "barrier": 3
+        },
+        "num_two_qubit": 14
+      },
+      "qasm3_sha256": "0324325ff5a7aa63a5dab630be05f68362c2439b79b2dc73ba40040702fa9d11",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d2_s44",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 2,
+      "seed": 44,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 14,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 209,
+        "gate_counts": {
+          "rz": 127,
+          "sx": 60,
+          "cz": 14,
+          "measure": 8,
+          "barrier": 3
+        },
+        "num_two_qubit": 14
+      },
+      "qasm3_sha256": "e17c291bac4bc363b449ffd92db8373e9aab95c684c02a343ab0bf32cfa1c495",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d3_s41",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 3,
+      "seed": 41,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 22,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 64,
+        "two_qubit_depth": 6,
+        "size": 317,
+        "gate_counts": {
+          "rz": 195,
+          "sx": 92,
+          "cz": 22,
+          "measure": 8,
+          "barrier": 4
+        },
+        "num_two_qubit": 22
+      },
+      "qasm3_sha256": "7263900d81af4418068244cadb76eb9c3aefa00f784b10db4d421e3a0c6baae1",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d3_s42",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 3,
+      "seed": 42,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 22,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 64,
+        "two_qubit_depth": 6,
+        "size": 317,
+        "gate_counts": {
+          "rz": 195,
+          "sx": 92,
+          "cz": 22,
+          "measure": 8,
+          "barrier": 4
+        },
+        "num_two_qubit": 22
+      },
+      "qasm3_sha256": "fe8424705dea46ff4c594498002c80b47bd3d69e86518498d9078b499980d565",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d3_s43",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 3,
+      "seed": 43,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 22,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 64,
+        "two_qubit_depth": 6,
+        "size": 317,
+        "gate_counts": {
+          "rz": 195,
+          "sx": 92,
+          "cz": 22,
+          "measure": 8,
+          "barrier": 4
+        },
+        "num_two_qubit": 22
+      },
+      "qasm3_sha256": "7aae5b1a130035deab7b6fd74b6fa36f702a4dee9f5524b3aaed2e360c9a0917",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d3_s44",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 3,
+      "seed": 44,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 22,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 64,
+        "two_qubit_depth": 6,
+        "size": 317,
+        "gate_counts": {
+          "rz": 195,
+          "sx": 92,
+          "cz": 22,
+          "measure": 8,
+          "barrier": 4
+        },
+        "num_two_qubit": 22
+      },
+      "qasm3_sha256": "4e3f6a037df88967ca0c8f5a8ba610d76b44fe99cfd234073518f07f9144d61d",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d4_s41",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 4,
+      "seed": 41,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 28,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 85,
+        "two_qubit_depth": 8,
+        "size": 410,
+        "gate_counts": {
+          "rz": 254,
+          "sx": 120,
+          "cz": 28,
+          "measure": 8,
+          "barrier": 5
+        },
+        "num_two_qubit": 28
+      },
+      "qasm3_sha256": "15674505c414f9fed7858caba6ea54a7f66995ca0a65affc12c229533fe9a91b",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d4_s42",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 4,
+      "seed": 42,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 28,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 85,
+        "two_qubit_depth": 8,
+        "size": 410,
+        "gate_counts": {
+          "rz": 254,
+          "sx": 120,
+          "cz": 28,
+          "measure": 8,
+          "barrier": 5
+        },
+        "num_two_qubit": 28
+      },
+      "qasm3_sha256": "12367cb7bbdbb904122950dd17d15418c0de48f88d887b596b25fff2d4493327",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d4_s43",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 4,
+      "seed": 43,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 28,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 85,
+        "two_qubit_depth": 8,
+        "size": 410,
+        "gate_counts": {
+          "rz": 254,
+          "sx": 120,
+          "cz": 28,
+          "measure": 8,
+          "barrier": 5
+        },
+        "num_two_qubit": 28
+      },
+      "qasm3_sha256": "f3a401303a4ba2b8d52de9af3520a04db8716e292e0694b3cf368a49aff4e1ff",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n8_d4_s44",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 8,
+      "depth": 4,
+      "seed": 44,
+      "shots": 2048,
+      "bits": [
+        0,
+        7,
+        4
+      ],
+      "physical_path": [
+        44,
+        45,
+        46,
+        47,
+        57,
+        67,
+        68,
+        69
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 44,
+          "1": 45,
+          "2": 46,
+          "3": 47,
+          "4": 57,
+          "5": 67,
+          "6": 68,
+          "7": 69
+        },
+        "initial_layout_logical_to_physical": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "final_index_layout": [
+          44,
+          45,
+          46,
+          47,
+          57,
+          67,
+          68,
+          69
+        ],
+        "two_qubit_gates": 28,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 85,
+        "two_qubit_depth": 8,
+        "size": 410,
+        "gate_counts": {
+          "rz": 254,
+          "sx": 120,
+          "cz": 28,
+          "measure": 8,
+          "barrier": 5
+        },
+        "num_two_qubit": 28
+      },
+      "qasm3_sha256": "aeffa928cbd1ee02eb37394b65e123ed977fd7c2e062088df5ecc551d6d41903",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d1_s41",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 1,
+      "seed": 41,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 12,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 22,
+        "two_qubit_depth": 2,
+        "size": 174,
+        "gate_counts": {
+          "rz": 102,
+          "sx": 48,
+          "cz": 12,
+          "measure": 12,
+          "barrier": 2
+        },
+        "num_two_qubit": 12
+      },
+      "qasm3_sha256": "0ca126d25842c28e7c735d74c6913203e2ca167cb4f937826a97041b39b11859",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d1_s42",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 1,
+      "seed": 42,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 12,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 22,
+        "two_qubit_depth": 2,
+        "size": 174,
+        "gate_counts": {
+          "rz": 102,
+          "sx": 48,
+          "cz": 12,
+          "measure": 12,
+          "barrier": 2
+        },
+        "num_two_qubit": 12
+      },
+      "qasm3_sha256": "d46dbd60ecd4d609c40209a3273ba79e93830a35f74be121217ea4de044cd211",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d1_s43",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 1,
+      "seed": 43,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 12,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 22,
+        "two_qubit_depth": 2,
+        "size": 174,
+        "gate_counts": {
+          "rz": 102,
+          "sx": 48,
+          "cz": 12,
+          "measure": 12,
+          "barrier": 2
+        },
+        "num_two_qubit": 12
+      },
+      "qasm3_sha256": "a1e13b02900a48978e842f2ba04db943c7d9887e50715c955c46dcb0244ffcd2",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d1_s44",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 1,
+      "seed": 44,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 12,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 22,
+        "two_qubit_depth": 2,
+        "size": 174,
+        "gate_counts": {
+          "rz": 102,
+          "sx": 48,
+          "cz": 12,
+          "measure": 12,
+          "barrier": 2
+        },
+        "num_two_qubit": 12
+      },
+      "qasm3_sha256": "6e7d3af632ad892da7172824b19f5a386ed930e5b015071bf70b07ecb54c3d70",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d2_s41",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 2,
+      "seed": 41,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 22,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 321,
+        "gate_counts": {
+          "rz": 195,
+          "sx": 92,
+          "cz": 22,
+          "measure": 12,
+          "barrier": 3
+        },
+        "num_two_qubit": 22
+      },
+      "qasm3_sha256": "541772d140c7b4b1c4db3bf34ceb4f8314a0c114ce871d5c3bf0852a7062bcc4",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d2_s42",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 2,
+      "seed": 42,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 22,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 321,
+        "gate_counts": {
+          "rz": 195,
+          "sx": 92,
+          "cz": 22,
+          "measure": 12,
+          "barrier": 3
+        },
+        "num_two_qubit": 22
+      },
+      "qasm3_sha256": "24e76b332a53df97756b738814c8ce8648baa528e4600e35f20152345685b303",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d2_s43",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 2,
+      "seed": 43,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 22,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 321,
+        "gate_counts": {
+          "rz": 195,
+          "sx": 92,
+          "cz": 22,
+          "measure": 12,
+          "barrier": 3
+        },
+        "num_two_qubit": 22
+      },
+      "qasm3_sha256": "afa3591476581eddfbf22dc3b900573d5f41fa4c8b9fa97e88aa6fb371c8341c",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d2_s44",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 2,
+      "seed": 44,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 22,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 321,
+        "gate_counts": {
+          "rz": 195,
+          "sx": 92,
+          "cz": 22,
+          "measure": 12,
+          "barrier": 3
+        },
+        "num_two_qubit": 22
+      },
+      "qasm3_sha256": "9fa07282672734a770c34a1d89b0579a5ac5530a055c734d2a14a4c5f44c209c",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d3_s41",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 3,
+      "seed": 41,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 34,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 64,
+        "two_qubit_depth": 6,
+        "size": 483,
+        "gate_counts": {
+          "rz": 297,
+          "sx": 140,
+          "cz": 34,
+          "measure": 12,
+          "barrier": 4
+        },
+        "num_two_qubit": 34
+      },
+      "qasm3_sha256": "fb698a74222f458d35abd0e70b11183c8530016967ebce4bafe73c11516475a1",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d3_s42",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 3,
+      "seed": 42,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 34,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 64,
+        "two_qubit_depth": 6,
+        "size": 483,
+        "gate_counts": {
+          "rz": 297,
+          "sx": 140,
+          "cz": 34,
+          "measure": 12,
+          "barrier": 4
+        },
+        "num_two_qubit": 34
+      },
+      "qasm3_sha256": "b2e2f03d346e519e99c417eb77abbb6978f63923944c063f3d4780894437ee3c",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d3_s43",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 3,
+      "seed": 43,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 34,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 64,
+        "two_qubit_depth": 6,
+        "size": 483,
+        "gate_counts": {
+          "rz": 297,
+          "sx": 140,
+          "cz": 34,
+          "measure": 12,
+          "barrier": 4
+        },
+        "num_two_qubit": 34
+      },
+      "qasm3_sha256": "d6ba353aa4e2d3c20984b0fdffe70359d30605474f507e271f01aaeefe355822",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d3_s44",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 3,
+      "seed": 44,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 34,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 64,
+        "two_qubit_depth": 6,
+        "size": 483,
+        "gate_counts": {
+          "rz": 297,
+          "sx": 140,
+          "cz": 34,
+          "measure": 12,
+          "barrier": 4
+        },
+        "num_two_qubit": 34
+      },
+      "qasm3_sha256": "a6a77e6f1334c659e762efd6157de30eee9fb70ff2f01be2f616e7e5d7a1f1f8",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d4_s41",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 4,
+      "seed": 41,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 44,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 85,
+        "two_qubit_depth": 8,
+        "size": 630,
+        "gate_counts": {
+          "rz": 390,
+          "sx": 184,
+          "cz": 44,
+          "measure": 12,
+          "barrier": 5
+        },
+        "num_two_qubit": 44
+      },
+      "qasm3_sha256": "c0e3ac4fc8e74a373b964bd14be2625b361d81e06decb49fc0700d72796db5b5",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d4_s42",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 4,
+      "seed": 42,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 44,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 85,
+        "two_qubit_depth": 8,
+        "size": 630,
+        "gate_counts": {
+          "rz": 390,
+          "sx": 184,
+          "cz": 44,
+          "measure": 12,
+          "barrier": 5
+        },
+        "num_two_qubit": 44
+      },
+      "qasm3_sha256": "36a1bd290e97bb907b5223d31f8434e09a4103ac8670642c5bb36b1e91afbf96",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d4_s43",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 4,
+      "seed": 43,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 44,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 85,
+        "two_qubit_depth": 8,
+        "size": 630,
+        "gate_counts": {
+          "rz": 390,
+          "sx": 184,
+          "cz": 44,
+          "measure": 12,
+          "barrier": 5
+        },
+        "num_two_qubit": 44
+      },
+      "qasm3_sha256": "63d9d2eda8521a57971c4d1d9b7f9dd29f6349e1641380af5814d22fb826f18d",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n12_d4_s44",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 12,
+      "depth": 4,
+      "seed": 44,
+      "shots": 2048,
+      "bits": [
+        0,
+        11,
+        6
+      ],
+      "physical_path": [
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        88
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 61,
+          "1": 62,
+          "2": 63,
+          "3": 64,
+          "4": 65,
+          "5": 66,
+          "6": 67,
+          "7": 68,
+          "8": 69,
+          "9": 78,
+          "10": 89,
+          "11": 88
+        },
+        "initial_layout_logical_to_physical": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "final_index_layout": [
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          88
+        ],
+        "two_qubit_gates": 44,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 85,
+        "two_qubit_depth": 8,
+        "size": 630,
+        "gate_counts": {
+          "rz": 390,
+          "sx": 184,
+          "cz": 44,
+          "measure": 12,
+          "barrier": 5
+        },
+        "num_two_qubit": 44
+      },
+      "qasm3_sha256": "72c071f25c6a16f0b1f32a21ca4eb2684dae552f159e686b72fd1664352420e9",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n16_d2_s41",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 16,
+      "depth": 2,
+      "seed": 41,
+      "shots": 2048,
+      "bits": [
+        0,
+        15,
+        8
+      ],
+      "physical_path": [
+        77,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        90,
+        91,
+        98,
+        111,
+        110,
+        109,
+        118,
+        129
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 77,
+          "1": 65,
+          "2": 66,
+          "3": 67,
+          "4": 68,
+          "5": 69,
+          "6": 78,
+          "7": 89,
+          "8": 90,
+          "9": 91,
+          "10": 98,
+          "11": 111,
+          "12": 110,
+          "13": 109,
+          "14": 118,
+          "15": 129
+        },
+        "initial_layout_logical_to_physical": [
+          77,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          90,
+          91,
+          98,
+          111,
+          110,
+          109,
+          118,
+          129
+        ],
+        "final_index_layout": [
+          77,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          90,
+          91,
+          98,
+          111,
+          110,
+          109,
+          118,
+          129
+        ],
+        "two_qubit_gates": 30,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 433,
+        "gate_counts": {
+          "rz": 263,
+          "sx": 124,
+          "cz": 30,
+          "measure": 16,
+          "barrier": 3
+        },
+        "num_two_qubit": 30
+      },
+      "qasm3_sha256": "b1bf801fe344122bd5665e0e20c6ca446471859d3fd176f82d5fea96b46915cb",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n16_d2_s42",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 16,
+      "depth": 2,
+      "seed": 42,
+      "shots": 2048,
+      "bits": [
+        0,
+        15,
+        8
+      ],
+      "physical_path": [
+        77,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        90,
+        91,
+        98,
+        111,
+        110,
+        109,
+        118,
+        129
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 77,
+          "1": 65,
+          "2": 66,
+          "3": 67,
+          "4": 68,
+          "5": 69,
+          "6": 78,
+          "7": 89,
+          "8": 90,
+          "9": 91,
+          "10": 98,
+          "11": 111,
+          "12": 110,
+          "13": 109,
+          "14": 118,
+          "15": 129
+        },
+        "initial_layout_logical_to_physical": [
+          77,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          90,
+          91,
+          98,
+          111,
+          110,
+          109,
+          118,
+          129
+        ],
+        "final_index_layout": [
+          77,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          90,
+          91,
+          98,
+          111,
+          110,
+          109,
+          118,
+          129
+        ],
+        "two_qubit_gates": 30,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 43,
+        "two_qubit_depth": 4,
+        "size": 433,
+        "gate_counts": {
+          "rz": 263,
+          "sx": 124,
+          "cz": 30,
+          "measure": 16,
+          "barrier": 3
+        },
+        "num_two_qubit": 30
+      },
+      "qasm3_sha256": "fb724cee5cd1925c7cc2acf93cf043b0ba3878db57effbecf13d047656a37126",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n16_d4_s41",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 16,
+      "depth": 4,
+      "seed": 41,
+      "shots": 2048,
+      "bits": [
+        0,
+        15,
+        8
+      ],
+      "physical_path": [
+        77,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        90,
+        91,
+        98,
+        111,
+        110,
+        109,
+        118,
+        129
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 77,
+          "1": 65,
+          "2": 66,
+          "3": 67,
+          "4": 68,
+          "5": 69,
+          "6": 78,
+          "7": 89,
+          "8": 90,
+          "9": 91,
+          "10": 98,
+          "11": 111,
+          "12": 110,
+          "13": 109,
+          "14": 118,
+          "15": 129
+        },
+        "initial_layout_logical_to_physical": [
+          77,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          90,
+          91,
+          98,
+          111,
+          110,
+          109,
+          118,
+          129
+        ],
+        "final_index_layout": [
+          77,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          90,
+          91,
+          98,
+          111,
+          110,
+          109,
+          118,
+          129
+        ],
+        "two_qubit_gates": 60,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 85,
+        "two_qubit_depth": 8,
+        "size": 850,
+        "gate_counts": {
+          "rz": 526,
+          "sx": 248,
+          "cz": 60,
+          "measure": 16,
+          "barrier": 5
+        },
+        "num_two_qubit": 60
+      },
+      "qasm3_sha256": "5624920dda121b843b04d125e4ad435ca9504fb884c46050eaa2ddcd17e39fd4",
+      "forward_two_qubit": null
+    },
+    {
+      "id": "kicked_ising_n16_d4_s42",
+      "set": "nc_eval",
+      "family": "kicked_ising",
+      "n": 16,
+      "depth": 4,
+      "seed": 42,
+      "shots": 2048,
+      "bits": [
+        0,
+        15,
+        8
+      ],
+      "physical_path": [
+        77,
+        65,
+        66,
+        67,
+        68,
+        69,
+        78,
+        89,
+        90,
+        91,
+        98,
+        111,
+        110,
+        109,
+        118,
+        129
+      ],
+      "mapping": {
+        "measurement_map": {
+          "0": 77,
+          "1": 65,
+          "2": 66,
+          "3": 67,
+          "4": 68,
+          "5": 69,
+          "6": 78,
+          "7": 89,
+          "8": 90,
+          "9": 91,
+          "10": 98,
+          "11": 111,
+          "12": 110,
+          "13": 109,
+          "14": 118,
+          "15": 129
+        },
+        "initial_layout_logical_to_physical": [
+          77,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          90,
+          91,
+          98,
+          111,
+          110,
+          109,
+          118,
+          129
+        ],
+        "final_index_layout": [
+          77,
+          65,
+          66,
+          67,
+          68,
+          69,
+          78,
+          89,
+          90,
+          91,
+          98,
+          111,
+          110,
+          109,
+          118,
+          129
+        ],
+        "two_qubit_gates": 60,
+        "swaps": 0
+      },
+      "metrics": {
+        "depth": 85,
+        "two_qubit_depth": 8,
+        "size": 850,
+        "gate_counts": {
+          "rz": 526,
+          "sx": 248,
+          "cz": 60,
+          "measure": 16,
+          "barrier": 5
+        },
+        "num_two_qubit": 60
+      },
+      "qasm3_sha256": "3f2f0b30847c9ce5b11e26e21e8c155bb99ff2edc77acbb2e70b4b3aa4117cd7",
+      "forward_two_qubit": null
+    }
+  ]
+}

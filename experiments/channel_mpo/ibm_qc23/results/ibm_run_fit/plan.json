@@ -1,0 +1,158 @@
+[
+  {
+    "n": 8,
+    "depth": 1,
+    "seed": 11,
+    "shots": 2048,
+    "bits": [
+      0,
+      7,
+      4
+    ],
+    "schedule_sha256": "7bb94c08be3b7574adc86f26ef5a50cae503efab11d78761a205d5b5bd848dcf",
+    "forward_cx": 4
+  },
+  {
+    "n": 8,
+    "depth": 1,
+    "seed": 13,
+    "shots": 2048,
+    "bits": [
+      0,
+      7,
+      4
+    ],
+    "schedule_sha256": "7491d41010fa947ca0352566a790b4ac5efd89cad87f91bc3f2fe492db037674",
+    "forward_cx": 4
+  },
+  {
+    "n": 8,
+    "depth": 3,
+    "seed": 11,
+    "shots": 2048,
+    "bits": [
+      0,
+      7,
+      4
+    ],
+    "schedule_sha256": "bd39e53c6285eb7c896a59e77f5caf6c674371a06a1543d9e6603add35b8c916",
+    "forward_cx": 11
+  },
+  {
+    "n": 8,
+    "depth": 3,
+    "seed": 13,
+    "shots": 2048,
+    "bits": [
+      0,
+      7,
+      4
+    ],
+    "schedule_sha256": "de50efe004fd675c65ddd0737e8cd28e5a06574defcd1862b6fe08b49d5f92b1",
+    "forward_cx": 11
+  },
+  {
+    "n": 8,
+    "depth": 6,
+    "seed": 11,
+    "shots": 2048,
+    "bits": [
+      0,
+      7,
+      4
+    ],
+    "schedule_sha256": "e56f2c7fff1219a63f3e67f990ff72a81d42390ea2cb21e250fee1313d0fc3b2",
+    "forward_cx": 21
+  },
+  {
+    "n": 8,
+    "depth": 6,
+    "seed": 13,
+    "shots": 2048,
+    "bits": [
+      0,
+      7,
+      4
+    ],
+    "schedule_sha256": "782bb5779e20e8b3fb9f9933d64eb9cc8fc24893d9d5969ad7b4eb3b9106c3ff",
+    "forward_cx": 21
+  },
+  {
+    "n": 16,
+    "depth": 1,
+    "seed": 11,
+    "shots": 2048,
+    "bits": [
+      0,
+      15,
+      8
+    ],
+    "schedule_sha256": "d387c5874c251b2dd291135ff7477b3f2123718bf5842977a2cdd2fb2582fabc",
+    "forward_cx": 8
+  },
+  {
+    "n": 16,
+    "depth": 1,
+    "seed": 13,
+    "shots": 2048,
+    "bits": [
+      0,
+      15,
+      8
+    ],
+    "schedule_sha256": "7c2315266df305fa35092ac2b76cad9e3c8af97f0efdd1a9f7735c1a3680d83f",
+    "forward_cx": 8
+  },
+  {
+    "n": 16,
+    "depth": 3,
+    "seed": 11,
+    "shots": 2048,
+    "bits": [
+      0,
+      15,
+      8
+    ],
+    "schedule_sha256": "e8b8ba5537984fed772846bbec5c10ca4983b403baaef3ae5b58dfab2ace38b9",
+    "forward_cx": 23
+  },
+  {
+    "n": 16,
+    "depth": 3,
+    "seed": 13,
+    "shots": 2048,
+    "bits": [
+      0,
+      15,
+      8
+    ],
+    "schedule_sha256": "c20de498cee1e91173381b90d018b8b6cba54f7f42abd19c897329fdb4962877",
+    "forward_cx": 23
+  },
+  {
+    "n": 16,
+    "depth": 6,
+    "seed": 11,
+    "shots": 2048,
+    "bits": [
+      0,
+      15,
+      8
+    ],
+    "schedule_sha256": "5cc4ac7f6bb2c028ef8b1b42a3cfbdd06674cd0022f2b4f5f820a4672157895b",
+    "forward_cx": 45
+  },
+  {
+    "n": 16,
+    "depth": 6,
+    "seed": 13,
+    "shots": 2048,
+    "bits": [
+      0,
+      15,
+      8
+    ],
+    "schedule_sha256": "4168f40cdc56a58dc5621b537b733423dff678175eb33b0bfa294c6b7448e8bf",
+    "forward_cx": 45
+  }
+]
