@@ -108,6 +108,9 @@ def mpo_prediction(ops, n, faults, readout, bits, *, p_override=None, certify=Fa
 def evaluate_set(root, snap, set_name, source, modelB, aer_source='aer', certify=False, certify_max_n=8):
     meta, items = load_set(root, set_name)
     counts = load_counts(root, source, set_name)
+    override = root / 'compiled' / f'calibration_snapshot_{set_name}.json'
+    if override.exists():   # set compiled under a different device calibration than the root snapshot
+        snap = json.loads(override.read_text())
     aer = load_counts(root, aer_source, set_name)
     rows = []
     for cid, entry in counts.items():

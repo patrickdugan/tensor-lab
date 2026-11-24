@@ -32,11 +32,26 @@ Mean measured Z by configuration (Model B Pauli / Model A Pauli in brackets):
 | 8 | 0.973 (0.974 / 0.980) | 0.931 (0.937 / 0.963) | 0.835 (0.787 / 0.890) |
 | 16 | 0.965 (0.974 / 0.972) | 0.902 (0.924 / 0.947) | 0.787 (0.774 / 0.866) |
 
+## Non-Clifford held-out set (kicked-Ising, `nc_eval`)
+
+36 circuits: n in {8, 12} at depths 1 to 4 with seeds 41 to 44, plus n=16 at depths 2 and 4 with seeds 41 and 42; 2048 shots each, same `ibm_kingston`, job `dc2r6rls2omc738cfli0`, plan hash `cb3c19d0...7380`, 22 s of QPU time (plan usage 202 s to 224 s of 600 s). Submitted with `qc23_submit_set.py` under `results/authorization_nc.json` (ceiling 60 s). Counts: `results/ibm_run_nc/ibm/nc_eval_counts.json`; analysis in `results/hw_root/` with the submitted ISAs and a per-set calibration snapshot.
+
+Held-out accuracy, 108 observables over 36 circuits, threshold 0.05:
+
+| Predictor | Within threshold | Wilson 95% | Cluster bootstrap 95% | Mean abs error | Max abs error |
+|---|---|---|---|---|---|
+| ideal (no noise) | 75/108 = 0.69 | 0.60 to 0.77 | 0.60 to 0.78 | 0.042 | 0.198 |
+| MPO, Model A | 84/108 = 0.78 | 0.69 to 0.85 | 0.69 to 0.85 | 0.038 | 0.190 |
+| MPO, Model B | 85/108 = 0.79 | 0.70 to 0.85 | 0.69 to 0.86 | 0.037 | 0.187 |
+
+The noise models improve on the ideal prediction by about nine points, within overlapping intervals, so this run does not separate them from ideal. The shortfall is concentrated at n=12, depths 3 and 4, where measured Z (0.159, -0.086) is higher than every prediction (0.083 to 0.086 and -0.162 to -0.173). At depth 4 the measured value is smaller in magnitude, which damping could produce, but the predicted damping is far weaker than observed; at depth 3 the measured value is larger in magnitude than ideal, which pure damping cannot produce. Those two cells are unexplained and may reflect coherent error or drift rather than the stochastic Pauli noise both models assume; no test of that was run. Per-configuration means are in `results/hw_root/predictions_ibm.csv`.
+
 ## Limitations
 
 * Model B's fit is poor: chi2 = 1280 on 141 dof, the two-qubit parameter `p2` sits at its lower bound (1e-7), and its log-parameter standard deviation is 3872, so the fit is degenerate in that direction. Model B's good held-out score does not show that the fitted channel is physically right; it reflects the single-qubit and readout terms absorbing the error.
 * Model A overpredicts Z at depth 8 (0.866 vs 0.787 measured at n=16); Model B underpredicts it at n=8 (0.787 vs 0.835).
 * The worst single observable measured Z = 0.610 (n=16, depth 8).
-* The non-Clifford (`nc_eval`, kicked-Ising, 36 circuits) set was not run on hardware, so the `kicked_ising` rows in the analysis JSON are empty, and the Aer noisy comparison was not run. The evaluation covers Clifford echoes only.
+* The Aer noisy comparison was not run, and there is no Pauli-fault predictor for the non-Clifford family (it applies to Clifford circuits only).
+* Kicked-Ising was run in a later session than the echoes (job `dc2r6rls2omc738cfli0`), after IBM had recalibrated: compiled against the 23:37:32 +08:00 calibration, analysed against a snapshot taken at 23:42:51 +08:00, so Model A used a calibration about five minutes newer than the one the circuits were routed on. Model B was fitted on the 21:47 echo data and applied unchanged. The physical paths therefore differ from the echo runs.
 * One backend, one calibration snapshot, one day, 12 evaluation circuits. Drift across days is not measured.
 * The README's earlier note that `compiled.json` contains the instance identifier is wrong: it stores `configured-default`. The instance identifier appears only in `results/hw_discovery/discovery.json`, which is gitignored.
