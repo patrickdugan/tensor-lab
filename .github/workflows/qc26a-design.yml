@@ -1,0 +1,39 @@
+name: QC-26A offline native calibration design
+on:
+  pull_request:
+    paths:
+      - 'experiments/channel_mpo/ibm_qc23/qc26/**'
+      - '.github/workflows/qc26a-design.yml'
+  workflow_dispatch:
+jobs:
+  design:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: experiments/channel_mpo/ibm_qc23/qc26
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r ../requirements-qc23.txt
+      - run: python -m unittest -v test_qc26a.py
+      - run: node qc26a_design.mjs plan /tmp/plan.json
+      - run: node qc26a_design.mjs synthetic /tmp/synthetic.json
+      - name: Check design and synthetic receipt
+        run: |
+          python - <<'PY'
+          import json,numpy as np
+          a=json.load(open('/tmp/plan.json')); b=json.load(open('qc26a_plan.json')); assert a==b
+          a=json.load(open('/tmp/synthetic.json')); b=json.load(open('qc26a_synthetic.json'))
+          assert a['truth']==b['truth'] and len(a['trials'])==len(b['trials'])==96
+          for x,y in zip(a['trials'],b['trials']):
+              assert x['zero']==y['zero']
+              for k in ('sx','cz','local'):
+                  assert x[k].keys()==y[k].keys()
+                  np.testing.assert_allclose(list(x[k].values()),list(y[k].values()),atol=1e-10,rtol=0)
+          PY
