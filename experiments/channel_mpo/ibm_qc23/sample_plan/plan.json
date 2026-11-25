@@ -1,0 +1,182 @@
+[
+  {
+    "n": 8,
+    "depth": 2,
+    "seed": 3,
+    "shots": 2048,
+    "bits": [
+      0,
+      1,
+      4,
+      6,
+      7
+    ],
+    "schedule_sha256": "d5fcba6f3d9d897bb914e613164383b84a5f976441f81cdb6ea140a92b4a9587",
+    "forward_cx": 7
+  },
+  {
+    "n": 8,
+    "depth": 2,
+    "seed": 5,
+    "shots": 2048,
+    "bits": [
+      0,
+      1,
+      4,
+      6,
+      7
+    ],
+    "schedule_sha256": "3001970bd5257325b33d70294b6620a4f081b34468a9cac2bd6d23bd4b584754",
+    "forward_cx": 7
+  },
+  {
+    "n": 8,
+    "depth": 4,
+    "seed": 3,
+    "shots": 2048,
+    "bits": [
+      0,
+      1,
+      4,
+      6,
+      7
+    ],
+    "schedule_sha256": "d43ba1b19c3bf1697543ad942728652fe8e74f747225a77a675df2d821d0aad6",
+    "forward_cx": 14
+  },
+  {
+    "n": 8,
+    "depth": 4,
+    "seed": 5,
+    "shots": 2048,
+    "bits": [
+      0,
+      1,
+      4,
+      6,
+      7
+    ],
+    "schedule_sha256": "f38f90df87ca6add2a36cb84c24b3de72bb51b75b8be9be66df6cd7ce6839484",
+    "forward_cx": 14
+  },
+  {
+    "n": 8,
+    "depth": 8,
+    "seed": 3,
+    "shots": 2048,
+    "bits": [
+      0,
+      1,
+      4,
+      6,
+      7
+    ],
+    "schedule_sha256": "2c4e0b9da3105901281230560e5fe09312a2705a9de6696e0a8d9a00b505e745",
+    "forward_cx": 28
+  },
+  {
+    "n": 8,
+    "depth": 8,
+    "seed": 5,
+    "shots": 2048,
+    "bits": [
+      0,
+      1,
+      4,
+      6,
+      7
+    ],
+    "schedule_sha256": "739c0412d83a0cbea142adc7ee4145144caf7bd0325ee781b71fbf3bf7f9b63a",
+    "forward_cx": 28
+  },
+  {
+    "n": 16,
+    "depth": 2,
+    "seed": 3,
+    "shots": 2048,
+    "bits": [
+      0,
+      1,
+      8,
+      14,
+      15
+    ],
+    "schedule_sha256": "93e2864a562f3bfe53d3107e90406b6caf426c9556fd87d63b06b17541b181e6",
+    "forward_cx": 15
+  },
+  {
+    "n": 16,
+    "depth": 2,
+    "seed": 5,
+    "shots": 2048,
+    "bits": [
+      0,
+      1,
+      8,
+      14,
+      15
+    ],
+    "schedule_sha256": "d618e98e1b17d4d329fdd7a0b14fcf728fe08adaf404c10428cec8eec2e5c625",
+    "forward_cx": 15
+  },
+  {
+    "n": 16,
+    "depth": 4,
+    "seed": 3,
+    "shots": 2048,
+    "bits": [
+      0,
+      1,
+      8,
+      14,
+      15
+    ],
+    "schedule_sha256": "7dab34180f1b56fa01e5f7d2dd571a8b6ea7e61b5b3151fe98a7b565659054c6",
+    "forward_cx": 30
+  },
+  {
+    "n": 16,
+    "depth": 4,
+    "seed": 5,
+    "shots": 2048,
+    "bits": [
+      0,
+      1,
+      8,
+      14,
+      15
+    ],
+    "schedule_sha256": "48db9a11973b603f0d03f7e7c847ebd296c2883cecebb86c519711af6fd3d996",
+    "forward_cx": 30
+  },
+  {
+    "n": 16,
+    "depth": 8,
+    "seed": 3,
+    "shots": 2048,
+    "bits": [
+      0,
+      1,
+      8,
+      14,
+      15
+    ],
+    "schedule_sha256": "6bd73f0a146071ae9f975d48d0eb7761a9af105ce396cf65cb3de247987e6e59",
+    "forward_cx": 60
+  },
+  {
+    "n": 16,
+    "depth": 8,
+    "seed": 5,
+    "shots": 2048,
+    "bits": [
+      0,
+      1,
+      8,
+      14,
+      15
+    ],
+    "schedule_sha256": "1c0812e31acb806cb6904f822a7be72cc37a494b758f0d184e9f3b308064c04f",
+    "forward_cx": 60
+  }
+]

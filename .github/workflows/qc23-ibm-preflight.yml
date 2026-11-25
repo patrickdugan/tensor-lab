@@ -1,0 +1,59 @@
+name: QC-23 IBM hardware preflight
+on:
+  push:
+    paths:
+      - 'experiments/channel_mpo/ibm_qc23/**'
+      - 'experiments/channel_mpo/qc1[024]_*.py'
+      - '.github/workflows/qc23-ibm-preflight.yml'
+  pull_request:
+    paths:
+      - 'experiments/channel_mpo/ibm_qc23/**'
+      - '.github/workflows/qc23-ibm-preflight.yml'
+  workflow_dispatch:
+jobs:
+  offline-preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test without Qiskit or IBM credentials
+        working-directory: experiments/channel_mpo/ibm_qc23
+        run: |
+          python -m unittest -v test_qc23.py
+          python -m py_compile qc23_ibm.py test_qc23.py
+          python qc23_ibm.py plan --out /tmp/qc23_plan
+          python -c "import json; rows=json.load(open('/tmp/qc23_plan/plan.json')); assert len(rows)==12; assert all(row['shots']==2048 for row in rows)"
+
+  pipeline-offline:
+    # Pinned Qiskit stack, bundled FakeFez calibration snapshot, committed counts.
+    # No IBM credentials, no network after pip install, no QPU time, no Aer.
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependencies
+        working-directory: experiments/channel_mpo/ibm_qc23
+        run: python -m pip install -r requirements-qc23.txt
+      - name: QC-23 pipeline tests (stabilizer proofs, mapping audit, MPO bridge, authorization gate)
+        working-directory: experiments/channel_mpo/ibm_qc23
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: python -m unittest -v test_qc23_pipeline
+      - name: Regression - QC-12 to QC-14 (numerics used by the bridge)
+        working-directory: experiments/channel_mpo
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: python -m unittest -q test_qc12 test_qc13 test_qc14
+      - name: Replay committed analysis from raw counts and compare
+        working-directory: experiments/channel_mpo/ibm_qc23
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          python qc23_analysis.py --root results --source surrogate --out-dir /tmp/qc23_replay
+          python qc23_verify_replay.py results/analysis_surrogate.json /tmp/qc23_replay/analysis_surrogate.json

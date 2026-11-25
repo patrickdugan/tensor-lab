@@ -1,0 +1,8 @@
+matplotlib==3.11.2
+numpy==2.5.4
+qiskit==2.6.2
+qiskit-aer==0.18.2
+qiskit-ibm-runtime==0.52.0
+qiskit-qasm3-import==0.6.0
+scipy==1.18.1
+stim==1.16.0
