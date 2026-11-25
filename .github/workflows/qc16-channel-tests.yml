@@ -1,0 +1,49 @@
+name: QC-16 independent segmented witness tests
+on:
+  push:
+    paths:
+      - 'experiments/channel_mpo/qc15_checker.py'
+      - 'experiments/channel_mpo/qc16_*'
+      - 'experiments/channel_mpo/test_qc16.py'
+      - 'experiments/channel_mpo/qc15_certificates/**'
+      - '.github/workflows/qc16-channel-tests.yml'
+  pull_request:
+    paths:
+      - 'experiments/channel_mpo/qc15_checker.py'
+      - 'experiments/channel_mpo/qc16_*'
+      - 'experiments/channel_mpo/test_qc16.py'
+      - 'experiments/channel_mpo/qc15_certificates/**'
+      - '.github/workflows/qc16-channel-tests.yml'
+jobs:
+  standalone-verifier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check independent CLI on frozen QC-15 witness
+        working-directory: experiments/channel_mpo
+        run: |
+          python -I qc16_checker.py qc15_certificates/full_10q_d6_dephasing_s3_c4.json.gz
+          python qc16_segments.py qc15_certificates/full_10q_d6_dephasing_s3_c4.json.gz --out-dir /tmp/qc16 --events-per-segment 16
+          python -I qc16_checker.py /tmp/qc16/manifest.json
+          python -I qc16_checker.py /tmp/qc16/manifest.json --reference
+  differential-and-regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical producer requirements
+        run: python -m pip install 'numpy>=1.24,<3'
+      - name: Run QC-15 and QC-16 tests
+        working-directory: experiments/channel_mpo
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+          MKL_NUM_THREADS: '1'
+        run: python -m unittest -q test_qc15 test_qc16
