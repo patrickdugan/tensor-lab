@@ -1,0 +1,28 @@
+name: QC-26/27 offline tests
+on:
+  push:
+    paths: ['experiments/channel_mpo/ibm_qc23/qc26/**', 'experiments/channel_mpo/ibm_qc23/qc27/**', '.github/workflows/qc26-qc27-tests.yml']
+  pull_request:
+    paths: ['experiments/channel_mpo/ibm_qc23/qc26/**', 'experiments/channel_mpo/ibm_qc23/qc27/**', '.github/workflows/qc26-qc27-tests.yml']
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r experiments/channel_mpo/ibm_qc23/requirements-qc23.txt scipy
+      - name: QC-26A identification and QC-26B prospective tooling
+        working-directory: experiments/channel_mpo/ibm_qc23/qc26
+        run: |
+          python -m unittest test_qc26a_identify
+          python -m unittest test_qc26b_prospective
+      - name: QC-27 bounds
+        working-directory: experiments/channel_mpo/ibm_qc23/qc27
+        env:
+          OMP_NUM_THREADS: '1'
+        run: python -m unittest test_qc27_bounds
