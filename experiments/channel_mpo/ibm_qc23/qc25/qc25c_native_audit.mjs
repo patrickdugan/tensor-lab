@@ -17,7 +17,7 @@ function nativeExperiment(records,snap,raw,prior,qasms,fit=null){
 }
 const root=new URL('../results/',import.meta.url);const j=p=>JSON.parse(fs.readFileSync(new URL(p,root),'utf8'));
 const m=j('hw_root/compiled/compiled_nc_eval.json'),s=j('hw_root/compiled/calibration_snapshot_nc_eval.json'),r=j('hw_root/ibm/nc_eval_counts.json'),o=j('hw_root/analysis_ibm.json');
-const mode=process.argv[2]||'fit'; const width=Number(process.argv[3]||8);const records=m.circuits.filter(r=>mode==='fit'?r.n===8&&r.depth<=2:r.n===width&&(width!==8||r.depth>=3));
+const mode=process.argv[2]||'fit'; const width=Number(process.argv[3]||8);if(!['fit','transfer','transfer_deep','transfer_shallow'].includes(mode))throw Error('unknown mode');const records=m.circuits.filter(r=>mode==='fit'?r.n===8&&r.depth<=2:r.n===width&&(width!==8||r.depth>=3)&&(mode!=='transfer_deep'||r.depth>=3)&&(mode!=='transfer_shallow'||r.depth<=2));
 const qasms=Object.fromEntries(records.map(r=>{let q=fs.readFileSync(new URL('ibm_run_nc/circuits/'+r.id+'.qasm',root),'utf8');if(crypto.createHash('sha256').update(q).digest('hex')!==r.qasm3_sha256)throw Error('QASM hash mismatch');return [r.id,q];}));
 const fit=mode==='fit'?null:JSON.parse(fs.readFileSync(new URL('qc25c_fit.json',import.meta.url),'utf8')).fit;
-const result=nativeExperiment(records,s,r,o,qasms,fit);fs.writeFileSync(process.argv[4]||new URL('qc25c_'+mode+'_'+width+'.json',import.meta.url),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({fit:result.fit,validation:result.validation,metrics:result.metrics},null,2));
+const result=nativeExperiment(records,s,r,o,qasms,fit);fs.writeFileSync(process.argv[4]||new URL(mode==='fit'?'qc25c_fit.json':'qc25c_'+mode+'_'+width+'.json',import.meta.url),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({fit:result.fit,validation:result.validation,metrics:result.metrics},null,2));

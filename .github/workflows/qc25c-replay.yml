@@ -1,0 +1,30 @@
+name: QC-25C native coherent and nonunital replay
+on:
+  pull_request:
+    paths:
+      - 'experiments/channel_mpo/ibm_qc23/qc25/qc25c*'
+      - '.github/workflows/qc25c-replay.yml'
+  workflow_dispatch:
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {mode: fit, width: 8, receipt: qc25c_fit.json}
+          - {mode: transfer, width: 8, receipt: qc25c_transfer_8.json}
+          - {mode: transfer_shallow, width: 12, receipt: qc25c_transfer_12_shallow.json}
+          - {mode: transfer_deep, width: 12, receipt: qc25c_transfer_12_deep.json}
+          - {mode: transfer, width: 16, receipt: qc25c_transfer_16.json}
+    defaults:
+      run:
+        working-directory: experiments/channel_mpo/ibm_qc23/qc25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node qc25c_native_audit.mjs ${{ matrix.mode }} ${{ matrix.width }} /tmp/qc25c.json
+      - run: python qc25c_verify.py /tmp/qc25c.json ${{ matrix.receipt }}
