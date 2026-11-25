@@ -110,6 +110,17 @@ def run(set_name,width):
             if old is not None: row['legacy_B']=old['mpo_modelB']
             rows.append(row)
     assert rows, 'empty width shard'
+    sparse_oracle_gap=None
+    if set_name=='nc_eval' and width==12:
+        oracle=json.loads((Path(__file__).with_name('qc25b_sparse_spotcheck.json')).read_text())
+        index={(r['id'],r['bit']):r for r in rows}
+        errors=[]
+        for o in oracle['rows']:
+            r=index[(o['id'],o['bit'])]
+            gap=abs(r['native_A']-o['native_A'])
+            assert gap<=r['native_ledger']+o['drop_bound']+1e-9,(o['id'],o['bit'],gap)
+            errors.append(gap)
+        sparse_oracle_gap=max(errors)
     keys=['ideal','uniform_A','native_A']
     pub=[r for r in rows if r['published']]
     summary=dict(label='retrospective IBM count replay; no new QPU',source_commit=SOURCE,set=set_name,width=width,
@@ -118,7 +129,7 @@ def run(set_name,width):
                  paired_all=paired(rows,'native_A','uniform_A'),paired_published=paired(pub,'native_A','uniform_A'),
                  max_native_ledger=max(r['native_ledger'] for r in rows),max_uniform_ledger=max(r['uniform_ledger'] for r in rows),
                  native_bound_exceeds_1e6=sum(r['native_ledger']>TOL for r in rows),
-                 max_echo_oracle_gap=max_echo_gap,max_published_ideal_gap=max_published_ideal_gap,
+                 sparse_oracle_gap=sparse_oracle_gap,max_echo_oracle_gap=max_echo_gap,max_published_ideal_gap=max_published_ideal_gap,
                  max_published_uniform_gap=max_published_uniform_gap,
                  cap_hist={str(c):sum(r['cap']==c for r in rows) for c in CAPS},provenance=provenance,
                  seconds=time.perf_counter()-start)
