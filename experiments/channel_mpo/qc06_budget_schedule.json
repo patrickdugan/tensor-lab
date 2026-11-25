@@ -1,0 +1,57 @@
+{
+  "protocol": "QC-06 frozen entry budgets from calibration seeds 0-2 (baseline bond12/env6)",
+  "circuit_depth": 6,
+  "bond_cap": 12,
+  "uniform_env_cap": 6,
+  "budgets_by_n": {
+    "6": [
+      96,
+      416,
+      1728,
+      4800,
+      7200,
+      7200
+    ],
+    "8": [
+      128,
+      608,
+      2496,
+      7104,
+      10656,
+      10656
+    ],
+    "12": [
+      192,
+      992,
+      4032,
+      11712,
+      17568,
+      17568
+    ],
+    "16": [
+      256,
+      1376,
+      5568,
+      16320,
+      24480,
+      24480
+    ],
+    "24": [
+      384,
+      2144,
+      8640,
+      25536,
+      38304,
+      38304
+    ],
+    "48": [
+      768,
+      4448,
+      17856,
+      53184,
+      79776,
+      79776
+    ]
+  },
+  "notes": "Calibration budgets were identical across the tested seeds and p=0.2,0.5. Apply to heldout seeds 3-7 and assert equality with each baseline layer count. Every budget bounds only retained layer-boundary tensor entries."
+}
