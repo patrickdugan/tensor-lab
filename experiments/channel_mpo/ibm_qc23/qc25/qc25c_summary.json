@@ -1,0 +1,213 @@
+{
+  "label": "retrospective fixed-parameter transfer, one hardware session, suspect-selected",
+  "source_commit": "e519d36a2121c4e876c928e29d83812e5776e853",
+  "fit": {
+    "twirled": {
+      "offsets": {
+        "5": -0.021875000000000002,
+        "23": 0.1
+      },
+      "target_mse": 0.013976021552545419
+    },
+    "nonunital": {
+      "offsets": {
+        "5": -0.019140625000000005,
+        "23": 0.1
+      },
+      "target_mse": 0.014092676627847462
+    },
+    "fit_width": 8,
+    "fit_depths": [
+      1,
+      2
+    ],
+    "fit_circuits": 8,
+    "evals": 88,
+    "bound_rad": 0.1
+  },
+  "validation": {
+    "train_circuits": 8,
+    "transfer_circuits": 28,
+    "train_rows": 64,
+    "transfer_rows": 320,
+    "max_ideal_replay_gap": 1.0824674490095276e-15,
+    "max_discarded_pauli_l1": 3.597771552234192e-11,
+    "peak_sparse_terms": 57541
+  },
+  "metrics": {
+    "all": {
+      "ideal": {
+        "mae": 0.047423269774997404,
+        "within": 222,
+        "n": 320
+      },
+      "twirled": {
+        "mae": 0.04629522637232646,
+        "within": 228,
+        "n": 320
+      },
+      "nonunital": {
+        "mae": 0.045302174213264886,
+        "within": 236,
+        "n": 320
+      },
+      "twirled_sx": {
+        "mae": 0.04429287221012103,
+        "within": 231,
+        "n": 320
+      },
+      "nonunital_sx": {
+        "mae": 0.043368397607990876,
+        "within": 238,
+        "n": 320
+      }
+    },
+    "target": {
+      "ideal": {
+        "mae": 0.12452072922097847,
+        "within": 10,
+        "n": 56
+      },
+      "twirled": {
+        "mae": 0.12379858363181162,
+        "within": 8,
+        "n": 56
+      },
+      "nonunital": {
+        "mae": 0.12402485009814432,
+        "within": 8,
+        "n": 56
+      },
+      "twirled_sx": {
+        "mae": 0.11318851277768453,
+        "within": 10,
+        "n": 56
+      },
+      "nonunital_sx": {
+        "mae": 0.11365832171331565,
+        "within": 10,
+        "n": 56
+      }
+    },
+    "other": {
+      "ideal": {
+        "mae": 0.031069263225849932,
+        "within": 212,
+        "n": 264
+      },
+      "twirled": {
+        "mae": 0.02985512028698116,
+        "within": 220,
+        "n": 264
+      },
+      "nonunital": {
+        "mae": 0.028603424783138934,
+        "within": 228,
+        "n": 264
+      },
+      "twirled_sx": {
+        "mae": 0.029678645423062172,
+        "within": 221,
+        "n": 264
+      },
+      "nonunital_sx": {
+        "mae": 0.028458413706861384,
+        "within": 228,
+        "n": 264
+      }
+    },
+    "published": {
+      "ideal": {
+        "mae": 0.04827447940656155,
+        "within": 51,
+        "n": 84
+      },
+      "twirled": {
+        "mae": 0.04458746354759164,
+        "within": 61,
+        "n": 84
+      },
+      "nonunital": {
+        "mae": 0.04355091457081876,
+        "within": 61,
+        "n": 84
+      },
+      "twirled_sx": {
+        "mae": 0.04153354002413192,
+        "within": 63,
+        "n": 84
+      },
+      "nonunital_sx": {
+        "mae": 0.04055308044478778,
+        "within": 63,
+        "n": 84
+      },
+      "uniform_A": {
+        "mae": 0.043778346608409874,
+        "within": 60,
+        "n": 84
+      },
+      "uniform_B": {
+        "mae": 0.042990942431220536,
+        "within": 61,
+        "n": 84
+      }
+    }
+  },
+  "paired": {
+    "twirled_to_nonunital": {
+      "circuits": 28,
+      "mean_improvement": 0.0010247742626006994,
+      "ci95": [
+        0.0006606727249092519,
+        0.0013768011707287284
+      ],
+      "wins": 24
+    },
+    "twirled_to_twirled_sx": {
+      "circuits": 28,
+      "mean_improvement": 0.0022943486915539555,
+      "ci95": [
+        0.0015167749815150286,
+        0.003118839686505386
+      ],
+      "wins": 24
+    },
+    "twirled_to_nonunital_sx": {
+      "circuits": 28,
+      "mean_improvement": 0.0032437540507623645,
+      "ci95": [
+        0.002338950399841886,
+        0.004206608173887691
+      ],
+      "wins": 28
+    },
+    "nonunital_to_nonunital_sx": {
+      "circuits": 28,
+      "mean_improvement": 0.0022189797881616647,
+      "ci95": [
+        0.0014470231694833928,
+        0.003038914190085081
+      ],
+      "wins": 24
+    },
+    "published_uniform_A_to_nonunital_sx": {
+      "circuits": 28,
+      "mean_improvement": 0.0032252661636220895,
+      "ci95": [
+        0.0014493633869085644,
+        0.00508017795139204
+      ],
+      "wins": 20
+    },
+    "published_uniform_B_to_nonunital_sx": {
+      "circuits": 28,
+      "mean_improvement": 0.0024378619864327544,
+      "ci95": [
+        0.0004829871656047007,
+        0.004442402979866501
+      ],
+      "wins": 17
+    }
+  }
+}
