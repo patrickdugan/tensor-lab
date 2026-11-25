@@ -1,0 +1,51 @@
+{
+  "source": "959e73ad60dd51954e7cd5f9900ba10e208555f6",
+  "verified": [
+    {
+      "id": "kicked_ising_n12_d3_s41",
+      "expected": "5ff3fe04504d21d3d85d16e81aaccebab521acc9c11a9ccf9cdadf65ec891d3f",
+      "actual": "5ff3fe04504d21d3d85d16e81aaccebab521acc9c11a9ccf9cdadf65ec891d3f"
+    },
+    {
+      "id": "kicked_ising_n12_d3_s42",
+      "expected": "c578ffc57a7e01e9f3da7272dd367fab3e804dbdc3db8784f92e47dbbb81a36a",
+      "actual": "c578ffc57a7e01e9f3da7272dd367fab3e804dbdc3db8784f92e47dbbb81a36a"
+    },
+    {
+      "id": "kicked_ising_n12_d3_s43",
+      "expected": "0375207d65d1ca8c60c2dc1a6fff8b6e6bf5c6b329b4c106c035a0abead16e17",
+      "actual": "0375207d65d1ca8c60c2dc1a6fff8b6e6bf5c6b329b4c106c035a0abead16e17"
+    },
+    {
+      "id": "kicked_ising_n12_d3_s44",
+      "expected": "1c8209e228527546612c8a9a0b9d464e13443e9ac75409306c158c84ba5ebf81",
+      "actual": "1c8209e228527546612c8a9a0b9d464e13443e9ac75409306c158c84ba5ebf81"
+    },
+    {
+      "id": "kicked_ising_n12_d4_s41",
+      "expected": "6f62a206ed11ec0fb6c6904b6db910bc7dda7679af0c4874a152b2ed36e2fac7",
+      "actual": "6f62a206ed11ec0fb6c6904b6db910bc7dda7679af0c4874a152b2ed36e2fac7"
+    },
+    {
+      "id": "kicked_ising_n12_d4_s42",
+      "expected": "cee8c074230686914c3992eaec3bd5f7bc9f4e36ca8948a55c4144f01608c68e",
+      "actual": "cee8c074230686914c3992eaec3bd5f7bc9f4e36ca8948a55c4144f01608c68e"
+    },
+    {
+      "id": "kicked_ising_n12_d4_s43",
+      "expected": "2f343e8f301fae58532620ad7d8db12494355befe0d13d10e5aeeb79adec55bf",
+      "actual": "2f343e8f301fae58532620ad7d8db12494355befe0d13d10e5aeeb79adec55bf"
+    },
+    {
+      "id": "kicked_ising_n12_d4_s44",
+      "expected": "6d39901a140d0008d545806df2163b7a0bdd94356e25ae1d4cf58c8dfb88b228",
+      "actual": "6d39901a140d0008d545806df2163b7a0bdd94356e25ae1d4cf58c8dfb88b228"
+    }
+  ],
+  "stale_shared_example": {
+    "id": "kicked_ising_n8_d1_s41",
+    "expected": "c89a8812e5763e6300e4b0e77400e1075be9639d88b0d17256f38b9c501d9756",
+    "shared": "40a92309813f1d7effcaa1bdfbd766846150c88316a7cf2118547e620c070067",
+    "submitted": "c89a8812e5763e6300e4b0e77400e1075be9639d88b0d17256f38b9c501d9756"
+  }
+}
