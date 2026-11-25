@@ -1,0 +1,30 @@
+name: QC-22 Linux sealed witness checker
+on:
+  push:
+    paths:
+      - 'experiments/channel_mpo/qc22_*.py'
+      - 'experiments/channel_mpo/test_qc22.py'
+      - 'experiments/channel_mpo/benchmark_qc22.py'
+      - 'experiments/channel_mpo/QC22_*.md'
+      - '.github/workflows/qc22-channel-tests.yml'
+  pull_request:
+    paths:
+      - 'experiments/channel_mpo/qc22_*.py'
+      - 'experiments/channel_mpo/test_qc22.py'
+      - 'experiments/channel_mpo/benchmark_qc22.py'
+      - 'experiments/channel_mpo/QC22_*.md'
+      - '.github/workflows/qc22-channel-tests.yml'
+  workflow_dispatch:
+jobs:
+  sealed-dyadic-cpu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: QC-18 through QC-22 checks, no third-party dependencies
+        working-directory: experiments/channel_mpo
+        run: |
+          python -m unittest -q test_qc18 test_qc19 test_qc20 test_qc21 test_qc22
