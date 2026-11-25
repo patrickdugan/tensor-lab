@@ -1,0 +1,1048 @@
+{
+  "version": "QC26A-v1",
+  "status": "proposal; no owner authorization",
+  "backend": "ibm_kingston",
+  "sites": [
+    3,
+    5,
+    21,
+    23
+  ],
+  "edges": [
+    [
+      4,
+      5
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      16,
+      23
+    ],
+    [
+      22,
+      23
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      22,
+      21
+    ]
+  ],
+  "shots": 384,
+  "ordering_seed": 261101,
+  "rows": [
+    {
+      "id": "cz_16_23_1_0_X",
+      "family": "cz",
+      "path": [
+        16,
+        23
+      ],
+      "state": 1,
+      "m": 0,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_6_5_0_2_X",
+      "family": "cz",
+      "path": [
+        6,
+        5
+      ],
+      "state": 0,
+      "m": 2,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_3_1_0_Y",
+      "family": "cz",
+      "path": [
+        4,
+        3
+      ],
+      "state": 1,
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "sx_4_Y",
+      "family": "sx",
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "m": 4,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_16_23_1_8_Y",
+      "family": "cz",
+      "path": [
+        16,
+        23
+      ],
+      "state": 1,
+      "m": 8,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_23_0_8_X",
+      "family": "cz",
+      "path": [
+        22,
+        23
+      ],
+      "state": 0,
+      "m": 8,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_21_0_2_X",
+      "family": "cz",
+      "path": [
+        22,
+        21
+      ],
+      "state": 0,
+      "m": 2,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_21_0_8_X",
+      "family": "cz",
+      "path": [
+        22,
+        21
+      ],
+      "state": 0,
+      "m": 8,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_5_0_2_X",
+      "family": "cz",
+      "path": [
+        4,
+        5
+      ],
+      "state": 0,
+      "m": 2,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_16_23_1_8_X",
+      "family": "cz",
+      "path": [
+        16,
+        23
+      ],
+      "state": 1,
+      "m": 8,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_3_0_0_Y",
+      "family": "cz",
+      "path": [
+        4,
+        3
+      ],
+      "state": 0,
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_21_0_0_X",
+      "family": "cz",
+      "path": [
+        22,
+        21
+      ],
+      "state": 0,
+      "m": 0,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_3_1_2_Y",
+      "family": "cz",
+      "path": [
+        4,
+        3
+      ],
+      "state": 1,
+      "m": 2,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_5_0_0_Y",
+      "family": "cz",
+      "path": [
+        4,
+        5
+      ],
+      "state": 0,
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_23_1_8_X",
+      "family": "cz",
+      "path": [
+        22,
+        23
+      ],
+      "state": 1,
+      "m": 8,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_21_1_0_Y",
+      "family": "cz",
+      "path": [
+        22,
+        21
+      ],
+      "state": 1,
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_21_1_8_X",
+      "family": "cz",
+      "path": [
+        22,
+        21
+      ],
+      "state": 1,
+      "m": 8,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_5_1_8_X",
+      "family": "cz",
+      "path": [
+        4,
+        5
+      ],
+      "state": 1,
+      "m": 8,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_23_1_8_Y",
+      "family": "cz",
+      "path": [
+        22,
+        23
+      ],
+      "state": 1,
+      "m": 8,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_16_23_0_2_X",
+      "family": "cz",
+      "path": [
+        16,
+        23
+      ],
+      "state": 0,
+      "m": 2,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_3_1_0_X",
+      "family": "cz",
+      "path": [
+        4,
+        3
+      ],
+      "state": 1,
+      "m": 0,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_5_1_0_Y",
+      "family": "cz",
+      "path": [
+        4,
+        5
+      ],
+      "state": 1,
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "spam_0",
+      "family": "spam",
+      "path": [
+        3,
+        4,
+        5,
+        6,
+        16,
+        21,
+        22,
+        23
+      ],
+      "state": 0,
+      "shots": 384
+    },
+    {
+      "id": "cz_6_5_0_8_X",
+      "family": "cz",
+      "path": [
+        6,
+        5
+      ],
+      "state": 0,
+      "m": 8,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "sx_12_Z",
+      "family": "sx",
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "m": 12,
+      "axis": "Z",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_23_0_0_Y",
+      "family": "cz",
+      "path": [
+        22,
+        23
+      ],
+      "state": 0,
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_21_0_8_Y",
+      "family": "cz",
+      "path": [
+        22,
+        21
+      ],
+      "state": 0,
+      "m": 8,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_6_5_0_0_Y",
+      "family": "cz",
+      "path": [
+        6,
+        5
+      ],
+      "state": 0,
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_21_1_2_Y",
+      "family": "cz",
+      "path": [
+        22,
+        21
+      ],
+      "state": 1,
+      "m": 2,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_5_1_8_Y",
+      "family": "cz",
+      "path": [
+        4,
+        5
+      ],
+      "state": 1,
+      "m": 8,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_5_1_2_Y",
+      "family": "cz",
+      "path": [
+        4,
+        5
+      ],
+      "state": 1,
+      "m": 2,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_3_1_8_Y",
+      "family": "cz",
+      "path": [
+        4,
+        3
+      ],
+      "state": 1,
+      "m": 8,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_21_1_2_X",
+      "family": "cz",
+      "path": [
+        22,
+        21
+      ],
+      "state": 1,
+      "m": 2,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_21_1_8_Y",
+      "family": "cz",
+      "path": [
+        22,
+        21
+      ],
+      "state": 1,
+      "m": 8,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_23_1_2_X",
+      "family": "cz",
+      "path": [
+        22,
+        23
+      ],
+      "state": 1,
+      "m": 2,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_23_0_0_X",
+      "family": "cz",
+      "path": [
+        22,
+        23
+      ],
+      "state": 0,
+      "m": 0,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_16_23_1_2_X",
+      "family": "cz",
+      "path": [
+        16,
+        23
+      ],
+      "state": 1,
+      "m": 2,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_5_0_2_Y",
+      "family": "cz",
+      "path": [
+        4,
+        5
+      ],
+      "state": 0,
+      "m": 2,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_5_1_2_X",
+      "family": "cz",
+      "path": [
+        4,
+        5
+      ],
+      "state": 1,
+      "m": 2,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_6_5_0_8_Y",
+      "family": "cz",
+      "path": [
+        6,
+        5
+      ],
+      "state": 0,
+      "m": 8,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_16_23_0_2_Y",
+      "family": "cz",
+      "path": [
+        16,
+        23
+      ],
+      "state": 0,
+      "m": 2,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "sx_0_Y",
+      "family": "sx",
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_5_1_0_X",
+      "family": "cz",
+      "path": [
+        4,
+        5
+      ],
+      "state": 1,
+      "m": 0,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_21_1_0_X",
+      "family": "cz",
+      "path": [
+        22,
+        21
+      ],
+      "state": 1,
+      "m": 0,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_6_5_0_2_Y",
+      "family": "cz",
+      "path": [
+        6,
+        5
+      ],
+      "state": 0,
+      "m": 2,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_3_0_2_X",
+      "family": "cz",
+      "path": [
+        4,
+        3
+      ],
+      "state": 0,
+      "m": 2,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_5_0_8_Y",
+      "family": "cz",
+      "path": [
+        4,
+        5
+      ],
+      "state": 0,
+      "m": 8,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_16_23_0_0_Y",
+      "family": "cz",
+      "path": [
+        16,
+        23
+      ],
+      "state": 0,
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "sx_0_Z",
+      "family": "sx",
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "m": 0,
+      "axis": "Z",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_5_0_0_X",
+      "family": "cz",
+      "path": [
+        4,
+        5
+      ],
+      "state": 0,
+      "m": 0,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_6_5_1_2_Y",
+      "family": "cz",
+      "path": [
+        6,
+        5
+      ],
+      "state": 1,
+      "m": 2,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_5_0_8_X",
+      "family": "cz",
+      "path": [
+        4,
+        5
+      ],
+      "state": 0,
+      "m": 8,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_23_0_8_Y",
+      "family": "cz",
+      "path": [
+        22,
+        23
+      ],
+      "state": 0,
+      "m": 8,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_23_1_2_Y",
+      "family": "cz",
+      "path": [
+        22,
+        23
+      ],
+      "state": 1,
+      "m": 2,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_3_0_0_X",
+      "family": "cz",
+      "path": [
+        4,
+        3
+      ],
+      "state": 0,
+      "m": 0,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_23_0_2_X",
+      "family": "cz",
+      "path": [
+        22,
+        23
+      ],
+      "state": 0,
+      "m": 2,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_6_5_1_8_Y",
+      "family": "cz",
+      "path": [
+        6,
+        5
+      ],
+      "state": 1,
+      "m": 8,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_21_0_2_Y",
+      "family": "cz",
+      "path": [
+        22,
+        21
+      ],
+      "state": 0,
+      "m": 2,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_16_23_0_8_X",
+      "family": "cz",
+      "path": [
+        16,
+        23
+      ],
+      "state": 0,
+      "m": 8,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_23_0_2_Y",
+      "family": "cz",
+      "path": [
+        22,
+        23
+      ],
+      "state": 0,
+      "m": 2,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_16_23_1_2_Y",
+      "family": "cz",
+      "path": [
+        16,
+        23
+      ],
+      "state": 1,
+      "m": 2,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_3_0_8_Y",
+      "family": "cz",
+      "path": [
+        4,
+        3
+      ],
+      "state": 0,
+      "m": 8,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_3_0_2_Y",
+      "family": "cz",
+      "path": [
+        4,
+        3
+      ],
+      "state": 0,
+      "m": 2,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_21_0_0_Y",
+      "family": "cz",
+      "path": [
+        22,
+        21
+      ],
+      "state": 0,
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "sx_24_Z",
+      "family": "sx",
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "m": 24,
+      "axis": "Z",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_3_1_8_X",
+      "family": "cz",
+      "path": [
+        4,
+        3
+      ],
+      "state": 1,
+      "m": 8,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_6_5_1_0_Y",
+      "family": "cz",
+      "path": [
+        6,
+        5
+      ],
+      "state": 1,
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_6_5_0_0_X",
+      "family": "cz",
+      "path": [
+        6,
+        5
+      ],
+      "state": 0,
+      "m": 0,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_6_5_1_0_X",
+      "family": "cz",
+      "path": [
+        6,
+        5
+      ],
+      "state": 1,
+      "m": 0,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "sx_4_Z",
+      "family": "sx",
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "m": 4,
+      "axis": "Z",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_3_0_8_X",
+      "family": "cz",
+      "path": [
+        4,
+        3
+      ],
+      "state": 0,
+      "m": 8,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "spam_1",
+      "family": "spam",
+      "path": [
+        3,
+        4,
+        5,
+        6,
+        16,
+        21,
+        22,
+        23
+      ],
+      "state": 1,
+      "shots": 384
+    },
+    {
+      "id": "cz_6_5_1_8_X",
+      "family": "cz",
+      "path": [
+        6,
+        5
+      ],
+      "state": 1,
+      "m": 8,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_16_23_0_8_Y",
+      "family": "cz",
+      "path": [
+        16,
+        23
+      ],
+      "state": 0,
+      "m": 8,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "sx_12_Y",
+      "family": "sx",
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "m": 12,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_16_23_1_0_Y",
+      "family": "cz",
+      "path": [
+        16,
+        23
+      ],
+      "state": 1,
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_23_1_0_X",
+      "family": "cz",
+      "path": [
+        22,
+        23
+      ],
+      "state": 1,
+      "m": 0,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_6_5_1_2_X",
+      "family": "cz",
+      "path": [
+        6,
+        5
+      ],
+      "state": 1,
+      "m": 2,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "cz_22_23_1_0_Y",
+      "family": "cz",
+      "path": [
+        22,
+        23
+      ],
+      "state": 1,
+      "m": 0,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_4_3_1_2_X",
+      "family": "cz",
+      "path": [
+        4,
+        3
+      ],
+      "state": 1,
+      "m": 2,
+      "axis": "X",
+      "shots": 384
+    },
+    {
+      "id": "sx_24_Y",
+      "family": "sx",
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "m": 24,
+      "axis": "Y",
+      "shots": 384
+    },
+    {
+      "id": "cz_16_23_0_0_X",
+      "family": "cz",
+      "path": [
+        16,
+        23
+      ],
+      "state": 0,
+      "m": 0,
+      "axis": "X",
+      "shots": 384
+    }
+  ],
+  "cap_seconds": 20,
+  "estimate": {
+    "shot_repetition_delay_s": 0.00025,
+    "per_circuit_overhead_allowance_s": 0.1,
+    "per_shot_circuit_allowance_s": 0.00001,
+    "nominal_seconds": 16.38688
+  }
+}
