@@ -33,6 +33,7 @@ function prep(e){
 }
 const circuits=[...loadSet('nc_eval'),...loadSet('eval_echo')].map(prep);
 const TARGETS=[5,23];
+const BOUND=Number(process.env.QC26B_BOUND||.1);        // |delta| search bound (rad); .1 reproduces the committed receipt
 const isFit=o=>o.set==='nc_eval'&&o.n===8&&o.r.depth<=2;     // QC-25C fit circuits (width 8, depth 1-2)
 const fitSet=circuits.filter(isFit);
 function targetLoss(set,cfg){
@@ -45,20 +46,21 @@ function fitDelta(sxOffsets){
   const edges=[...new Set(fitSet.flatMap(o=>o.czEdges).filter(k=>k.split('_').some(s=>TARGETS.includes(+s))))].sort();
   const mk=x=>({nonunital:true,sx:sxOffsets,cz:Object.fromEntries(edges.map((k,i)=>[k,{delta:x[i]}]))});
   let x=edges.map(()=>0),v=targetLoss(fitSet,mk(x)),evals=1;const v0=v;
-  for(const step of [.025,.0125,.00625,.003125,.0015625,.00078125,.000390625]){
-    for(let pass=0;pass<30;pass++){
+  for(const step of [.025*BOUND/.1,.0125*BOUND/.1,.00625,.003125,.0015625,.00078125,.000390625]){
+    for(let pass=0;pass<60;pass++){
       let improved=false;
       for(let i=0;i<x.length;i++){
         let best=x,bv=v;
-        for(const sg of [-1,1]){const y=x.slice();y[i]+=sg*step;if(Math.abs(y[i])>.100000001)continue;const w=targetLoss(fitSet,mk(y));evals++;if(w<bv-1e-14){best=y;bv=w;}}
+        for(const sg of [-1,1]){const y=x.slice();y[i]+=sg*step;if(Math.abs(y[i])>BOUND*1.00000001)continue;const w=targetLoss(fitSet,mk(y));evals++;if(w<bv-1e-14){best=y;bv=w;}}
         if(bv<v-1e-14){x=best;v=bv;improved=true;}
       }
       if(!improved)break;
     }
   }
-  return {edges,delta:Object.fromEntries(edges.map((k,i)=>[k,x[i]])),target_mse_before:v0,target_mse_after:v,evals,bound_rad:.1,at_bound:edges.filter((k,i)=>Math.abs(x[i])>=.0999)};
+  return {edges,delta:Object.fromEntries(edges.map((k,i)=>[k,x[i]])),target_mse_before:v0,target_mse_after:v,evals,bound_rad:BOUND,at_bound:edges.filter((k,i)=>Math.abs(x[i])>=BOUND*.999)};
 }
 let sxOffsets,czCfg,label;
+if(process.env.QC26B_FIT_ONLY){const f=fitDelta(qc25.fit.nonunital.offsets);console.log(JSON.stringify({bound:BOUND,...f}));process.exit(0);}
 if(indep){sxOffsets=indep.sx;czCfg=indep.cz;label='independent: parameters from separately acquired calibration; evaluation on these counts is retrospective only if those counts were not used in calibration';}
 else{sxOffsets=qc25.fit.nonunital.offsets;const f=fitDelta(sxOffsets);czCfg=Object.fromEntries(Object.entries(f.delta).map(([k,d])=>[k,{delta:d}]));label='retrospective: SX offsets from QC-25C fit, ZZ phases fitted here, both on width-8 depth 1-2 nc circuits only';var fitReport=f;}
 const CFG={C0:{nonunital:false},C1:{nonunital:true},C2:{nonunital:true,sx:sxOffsets},C3:{nonunital:true,sx:sxOffsets,cz:czCfg}};

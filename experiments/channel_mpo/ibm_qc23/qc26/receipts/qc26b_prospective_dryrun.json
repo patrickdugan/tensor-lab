@@ -1,0 +1,1086 @@
+{
+ "counts_follow_C0": {
+  "analysis": {
+   "candidates": {
+    "C2": {
+     "criteria": {
+      "a_relative_improvement_ge_10pct": {
+       "detail": "pooled 0.19% and targeted(5,23) 3.12% (both must be >= 10%)",
+       "pass": false
+      },
+      "b_paired_ci_lower_positive": {
+       "detail": "pooled CI95 [-0.00069, 0.00085], targeted CI95 [-0.00158, 0.00312] (both lower bounds must be > 0)",
+       "pass": false
+      },
+      "c_no_other_site_degradation_gt_0p005": {
+       "detail": "no site other than 5/23 worsens by more than 0.005 (pooled other-site change 0.00016)",
+       "pass": true
+      },
+      "d_ledger_bound_below_1pct_of_mae": {
+       "detail": "max min_bound 2.428e-11 / MAE 0.01656 = 1.467e-9 (need < 0.01)",
+       "pass": true
+      },
+      "e_no_tuning_freeze_verified": {
+       "detail": "frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring",
+       "pass": true
+      }
+     },
+     "numerical_vs_physical": {
+      "candidate_max_l1_discard": 4.2975503894987456e-11,
+      "candidate_max_min_bound": 2.4281171151061407e-11,
+      "candidate_max_old_bound": 2.4281171151061407e-11,
+      "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C2) < 1% of the pooled MAE of C2",
+      "max_l1_discard": 4.2975503894987456e-11,
+      "max_live_terms": 40989,
+      "max_min_bound": 2.4281171151061407e-11,
+      "max_old_bound": 2.4281171151061407e-11,
+      "mean_abs_model_effect_vs_C0": 0.003237927829177707,
+      "models_considered": "all four models (worst case)",
+      "physical_prediction_error_mae": 0.016555022467878603,
+      "ratio_candidate_l1_to_mae": 2.595919394151957e-09,
+      "ratio_candidate_min_bound_to_mae": 1.4666951493526332e-09,
+      "ratio_candidate_min_bound_to_model_effect": 7.498984669225247e-09,
+      "ratio_candidate_old_bound_to_mae": 1.4666951493526332e-09
+     },
+     "other_site_degradation": {
+      "flagged_sites": [],
+      "pooled_other_sites_change": 0.00015550119894199368
+     },
+     "paired_bootstrap_vs_C0": {
+      "all_sites": {
+       "ci95": [
+        -0.0006909140078180953,
+        0.0008455721634162489
+       ],
+       "circuits": 20,
+       "losses": 9,
+       "mean_improvement": 4.610955837128814e-05,
+       "relative_ci95": [
+        -0.042734370894285466,
+        0.048823780696306905
+       ],
+       "relative_improvement_equal_circuit_weight": 0.0027519279180099614,
+       "resamples": 20000,
+       "seed": 26112501,
+       "wins": 11
+      },
+      "targets_5_23": {
+       "ci95": [
+        -0.001583834839383924,
+        0.003118839352502625
+       ],
+       "circuits": 20,
+       "losses": 10,
+       "mean_improvement": 0.0006708460770271487,
+       "relative_ci95": [
+        -0.07694014449148472,
+        0.14323256750842694
+       ],
+       "relative_improvement_equal_circuit_weight": 0.031187278010378704,
+       "resamples": 20000,
+       "seed": 26112501,
+       "wins": 10
+      }
+     },
+     "relative_mae_improvement": {
+      "controls_3_21": 0.0072137043001385725,
+      "other_than_5_23": -0.010271285450965234,
+      "pooled_all_sites": 0.0019475711324908832,
+      "site_23": -0.01040059506693346,
+      "site_5": 0.0654846565144224,
+      "targets_5_23": 0.031187278010378662
+     },
+     "verdict": "FAIL"
+    },
+    "C3": {
+     "criteria": {
+      "a_relative_improvement_ge_10pct": {
+       "detail": "pooled -41.90% and targeted(5,23) -110.15% (both must be >= 10%)",
+       "pass": false
+      },
+      "b_paired_ci_lower_positive": {
+       "detail": "pooled CI95 [-0.00868, -0.00558], targeted CI95 [-0.02995, -0.01713] (both lower bounds must be > 0)",
+       "pass": false
+      },
+      "c_no_other_site_degradation_gt_0p005": {
+       "detail": "flagged physical sites: 4 (+0.0118)",
+       "pass": false
+      },
+      "d_ledger_bound_below_1pct_of_mae": {
+       "detail": "max min_bound 2.424e-11 / MAE 0.02354 = 1.030e-9 (need < 0.01)",
+       "pass": true
+      },
+      "e_no_tuning_freeze_verified": {
+       "detail": "frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring",
+       "pass": true
+      }
+     },
+     "numerical_vs_physical": {
+      "candidate_max_l1_discard": 4.2553666434291135e-11,
+      "candidate_max_min_bound": 2.4237465833242362e-11,
+      "candidate_max_old_bound": 2.4237465833242362e-11,
+      "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C3) < 1% of the pooled MAE of C3",
+      "max_l1_discard": 4.2975503894987456e-11,
+      "max_live_terms": 40989,
+      "max_min_bound": 2.4281171151061407e-11,
+      "max_old_bound": 2.4281171151061407e-11,
+      "mean_abs_model_effect_vs_C0": 0.012959364284703269,
+      "models_considered": "all four models (worst case)",
+      "physical_prediction_error_mae": 0.023537163424276367,
+      "ratio_candidate_l1_to_mae": 1.8079352072816488e-09,
+      "ratio_candidate_min_bound_to_mae": 1.029753050371554e-09,
+      "ratio_candidate_min_bound_to_model_effect": 1.8702665733265426e-09,
+      "ratio_candidate_old_bound_to_mae": 1.029753050371554e-09
+     },
+     "other_site_degradation": {
+      "flagged_sites": [
+       {
+        "change": 0.011809352608198528,
+        "n_obs": 20,
+        "physical": 4
+       }
+      ],
+      "pooled_other_sites_change": 0.002025071549972694
+     },
+     "paired_bootstrap_vs_C0": {
+      "all_sites": {
+       "ci95": [
+        -0.008683656024839812,
+        -0.005582390156974979
+       ],
+       "circuits": 20,
+       "losses": 19,
+       "mean_improvement": -0.00712736173330829,
+       "relative_ci95": [
+        -0.5400839003976807,
+        -0.32156349390774597
+       ],
+       "relative_improvement_equal_circuit_weight": -0.4253778701957888,
+       "resamples": 20000,
+       "seed": 26112501,
+       "wins": 1
+      },
+      "targets_5_23": {
+       "ci95": [
+        -0.029952945058114754,
+        -0.017125975898172604
+       ],
+       "circuits": 20,
+       "losses": 16,
+       "mean_improvement": -0.023694034937618656,
+       "relative_ci95": [
+        -1.499495236439609,
+        -0.784326598648847
+       ],
+       "relative_improvement_equal_circuit_weight": -1.1015231065549393,
+       "resamples": 20000,
+       "seed": 26112501,
+       "wins": 4
+      }
+     },
+     "relative_mae_improvement": {
+      "controls_3_21": -0.025154565840371144,
+      "other_than_5_23": -0.13376159212867011,
+      "pooled_all_sites": -0.41898467186198607,
+      "site_23": -2.5261743431370283,
+      "site_5": 0.07338195787274801,
+      "targets_5_23": -1.1015231065549391
+     },
+     "verdict": "FAIL"
+    }
+   },
+   "groups": {
+    "all": {
+     "C0": 0.016587327468020493,
+     "C1": 0.01671929472334517,
+     "C2": 0.016555022467878603,
+     "C3": 0.023537163424276367,
+     "ideal": 0.021089521653966877,
+     "n": 176
+    },
+    "controls_3_21": {
+     "C0": 0.013542221128678986,
+     "C1": 0.01373636060627013,
+     "C2": 0.013444531549889607,
+     "C3": 0.013882869821685207,
+     "ideal": 0.017210620353367644,
+     "n": 40
+    },
+    "other_than_5_23": {
+     "C0": 0.015139409734482709,
+     "C1": 0.015263406040982745,
+     "C2": 0.015294910933424702,
+     "C3": 0.017164481284455402,
+     "ideal": 0.021011221555408285,
+     "n": 136
+    },
+    "site_23": {
+     "C0": 0.019443702006306848,
+     "C1": 0.01970480432627695,
+     "C2": 0.019645928077476567,
+     "C3": 0.06856188315024117,
+     "ideal": 0.020092111639296563,
+     "n": 20
+    },
+    "site_5": {
+     "C0": 0.023576793517791163,
+     "C1": 0.02363382816047786,
+     "C2": 0.022032875292567148,
+     "C3": 0.021846682249094133,
+     "ideal": 0.02261937233883554,
+     "n": 20
+    },
+    "targets_5_23": {
+     "C0": 0.021510247762049007,
+     "C1": 0.021669316243377403,
+     "C2": 0.02083940168502186,
+     "C3": 0.045204282699667656,
+     "ideal": 0.021355741989066056,
+     "n": 40
+    }
+   },
+   "sites": [
+    {
+     "change_C2_vs_C0": -0.000366099336063571,
+     "change_C3_vs_C0": 0.0005252465321909233,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.013544739053348378,
+      "C1": 0.01376233591577115,
+      "C2": 0.013178639717284807,
+      "C3": 0.014069985585539301,
+      "ideal": 0.016338923731628215
+     },
+     "n_obs": 20,
+     "physical": 3,
+     "role": "control"
+    },
+    {
+     "change_C2_vs_C0": 8.561950625434606e-05,
+     "change_C3_vs_C0": 0.011809352608198528,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": true,
+     "mae": {
+      "C0": 0.018242262220281573,
+      "C1": 0.01828569487199597,
+      "C2": 0.01832788172653592,
+      "C3": 0.0300516148284801,
+      "ideal": 0.02285331034833769
+     },
+     "n_obs": 20,
+     "physical": 4,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": -0.0015439182252240148,
+     "change_C3_vs_C0": -0.0017301112686970294,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.023576793517791163,
+      "C1": 0.02363382816047786,
+      "C2": 0.022032875292567148,
+      "C3": 0.021846682249094133,
+      "ideal": 0.02261937233883554
+     },
+     "n_obs": 20,
+     "physical": 5,
+     "role": "target"
+    },
+    {
+     "change_C2_vs_C0": -0.0004677183799403628,
+     "change_C3_vs_C0": -0.00046652719132831214,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.016397146728148564,
+      "C1": 0.01581037086952816,
+      "C2": 0.0159294283482082,
+      "C3": 0.01593061953682025,
+      "ideal": 0.021747102331999814
+     },
+     "n_obs": 20,
+     "physical": 6,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": -2.914713617568898e-05,
+     "change_C3_vs_C0": -2.914713617568898e-05,
+     "circuits": 4,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.014462635975425048,
+      "C1": 0.014433488839249359,
+      "C2": 0.014433488839249359,
+      "C3": 0.014433488839249359,
+      "ideal": 0.022338795680910892
+     },
+     "n_obs": 4,
+     "physical": 7,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": 0.0006916947074416448,
+     "change_C3_vs_C0": 0.0006861099546720262,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.01409956842548259,
+      "C1": 0.014173810225757602,
+      "C2": 0.014791263132924235,
+      "C3": 0.014785678380154616,
+      "ideal": 0.023298838400132714
+     },
+     "n_obs": 20,
+     "physical": 16,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": 0.0001707201784848112,
+     "change_C3_vs_C0": 0.0001560508538215183,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.013539703204009596,
+      "C1": 0.01371038529676911,
+      "C2": 0.013710423382494407,
+      "C3": 0.013695754057831114,
+      "ideal": 0.018082316975107073
+     },
+     "n_obs": 20,
+     "physical": 21,
+     "role": "control"
+    },
+    {
+     "change_C2_vs_C0": 0.0010626621196242695,
+     "change_C3_vs_C0": 0.0011797244252551818,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.0131316861023041,
+      "C1": 0.01417515408094865,
+      "C2": 0.014194348221928369,
+      "C3": 0.014311410527559281,
+      "ideal": 0.021673999040545677
+     },
+     "n_obs": 20,
+     "physical": 22,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": 0.00020222607116971922,
+     "change_C3_vs_C0": 0.04911818114393432,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.019443702006306848,
+      "C1": 0.01970480432627695,
+      "C2": 0.019645928077476567,
+      "C3": 0.06856188315024117,
+      "ideal": 0.020092111639296563
+     },
+     "n_obs": 20,
+     "physical": 23,
+     "role": "target"
+    },
+    {
+     "change_C2_vs_C0": -0.0002474528123631997,
+     "change_C3_vs_C0": -0.0002474528123631997,
+     "circuits": 4,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.016492392039247558,
+      "C1": 0.01624493922688436,
+      "C2": 0.01624493922688436,
+      "C3": 0.01624493922688436,
+      "ideal": 0.03176645578458513
+     },
+     "n_obs": 4,
+     "physical": 36,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": 3.3204821293097986e-05,
+     "change_C3_vs_C0": 3.3204821293097986e-05,
+     "circuits": 4,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.017815326632184852,
+      "C1": 0.01784853145347795,
+      "C2": 0.01784853145347795,
+      "C3": 0.01784853145347795,
+      "ideal": 0.01861255399408425
+     },
+     "n_obs": 4,
+     "physical": 41,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": -0.0003539580877318649,
+     "change_C3_vs_C0": -0.0003539580877318649,
+     "circuits": 4,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.021194047657680515,
+      "C1": 0.02084008956994865,
+      "C2": 0.02084008956994865,
+      "C3": 0.02084008956994865,
+      "ideal": 0.021691273285545515
+     },
+     "n_obs": 4,
+     "physical": 42,
+     "role": "other"
+    }
+   ]
+  },
+  "bootstrap": {
+   "resamples": 20000,
+   "seed": 26112501
+  },
+  "circuits": 20,
+  "controls": [
+   3,
+   21
+  ],
+  "counts_sha256": "188ed41cb7f481fec9da790be938333bec6286deef02de51549d080017c91fe8",
+  "freeze_check": {
+   "checks": [
+    {
+     "detail": "qc26b-frozen-v1",
+     "name": "format",
+     "ok": true
+    },
+    {
+     "detail": "top-level sha256 does not match contents",
+     "name": "frozen self-hash",
+     "ok": true
+    },
+    {
+     "detail": "parameter file differs from the frozen parameters",
+     "name": "parameter file equals frozen parameters",
+     "ok": true
+    },
+    {
+     "detail": null,
+     "name": "params_sha256",
+     "ok": true
+    },
+    {
+     "detail": "qc26b_engine.mjs differs from the frozen version",
+     "name": "engine code hash",
+     "ok": true
+    },
+    {
+     "detail": null,
+     "name": "compiled.json hash",
+     "ok": true
+    },
+    {
+     "detail": null,
+     "name": "plan_sha256",
+     "ok": true
+    },
+    {
+     "detail": null,
+     "name": "calibration snapshot hash",
+     "ok": true
+    },
+    {
+     "detail": null,
+     "name": "circuit id set",
+     "ok": true
+    },
+    {
+     "detail": "0 of 880 values differ, max gap 0",
+     "name": "predictions recompute within 1e-12",
+     "ok": true
+    },
+    {
+     "detail": 0,
+     "name": "max recompute gap",
+     "ok": true
+    }
+   ],
+   "passed": true
+  },
+  "frozen_sha256": "c51648fcecbe248787b989d4b1d7094b43d932f6d7da2ff81ee33f98540a321f",
+  "label": "SYNTHETIC DRY RUN - NOT HARDWARE DATA",
+  "observables": 176,
+  "params_sha256": "9e2db39065778b36f13f5afa837f271d14200e18f569964587b48dd7bad2a4b9",
+  "plan_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "refused": false,
+  "synthetic": true,
+  "targets": [
+   5,
+   23
+  ],
+  "thresholds": {
+   "ledger_fraction_of_mae": 0.01,
+   "other_site_degradation": 0.005,
+   "rel_improvement": 0.1
+  }
+ },
+ "counts_follow_C3": {
+  "analysis": {
+   "candidates": {
+    "C2": {
+     "criteria": {
+      "a_relative_improvement_ge_10pct": {
+       "detail": "pooled 2.13% and targeted(5,23) 3.18% (both must be >= 10%)",
+       "pass": false
+      },
+      "b_paired_ci_lower_positive": {
+       "detail": "pooled CI95 [-0.00021, 0.00138], targeted CI95 [-0.00080, 0.00417] (both lower bounds must be > 0)",
+       "pass": false
+      },
+      "c_no_other_site_degradation_gt_0p005": {
+       "detail": "no site other than 5/23 worsens by more than 0.005 (pooled other-site change -0.00019)",
+       "pass": true
+      },
+      "d_ledger_bound_below_1pct_of_mae": {
+       "detail": "max min_bound 2.428e-11 / MAE 0.02294 = 1.058e-9 (need < 0.01)",
+       "pass": true
+      },
+      "e_no_tuning_freeze_verified": {
+       "detail": "frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring",
+       "pass": true
+      }
+     },
+     "numerical_vs_physical": {
+      "candidate_max_l1_discard": 4.2975503894987456e-11,
+      "candidate_max_min_bound": 2.4281171151061407e-11,
+      "candidate_max_old_bound": 2.4281171151061407e-11,
+      "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C2) < 1% of the pooled MAE of C2",
+      "max_l1_discard": 4.2975503894987456e-11,
+      "max_live_terms": 40989,
+      "max_min_bound": 2.4281171151061407e-11,
+      "max_old_bound": 2.4281171151061407e-11,
+      "mean_abs_model_effect_vs_C0": 0.003237927829177707,
+      "models_considered": "all four models (worst case)",
+      "physical_prediction_error_mae": 0.02294342304000403,
+      "ratio_candidate_l1_to_mae": 1.873107766877488e-09,
+      "ratio_candidate_min_bound_to_mae": 1.0583063873566245e-09,
+      "ratio_candidate_min_bound_to_model_effect": 7.498984669225247e-09,
+      "ratio_candidate_old_bound_to_mae": 1.0583063873566245e-09
+     },
+     "other_site_degradation": {
+      "flagged_sites": [],
+      "pooled_other_sites_change": -0.0001949509270577146
+     },
+     "paired_bootstrap_vs_C0": {
+      "all_sites": {
+       "ci95": [
+        -0.0002067329319275931,
+        0.0013804351015176714
+       ],
+       "circuits": 20,
+       "losses": 6,
+       "mean_improvement": 0.0005113750948590269,
+       "relative_ci95": [
+        -0.00925094813648786,
+        0.05378274168042281
+       ],
+       "relative_improvement_equal_circuit_weight": 0.021346035037520746,
+       "resamples": 20000,
+       "seed": 26112501,
+       "wins": 14
+      },
+      "targets_5_23": {
+       "ci95": [
+        -0.0007987298196772827,
+        0.004168419865948502
+       ],
+       "circuits": 20,
+       "losses": 9,
+       "mean_improvement": 0.0015301622686067688,
+       "relative_ci95": [
+        -0.01835538513005292,
+        0.07982405583605566
+       ],
+       "relative_improvement_equal_circuit_weight": 0.03176117035569716,
+       "resamples": 20000,
+       "seed": 26112501,
+       "wins": 11
+      }
+     },
+     "relative_mae_improvement": {
+      "controls_3_21": 0.03109649304183993,
+      "other_than_5_23": 0.012058764788392967,
+      "pooled_all_sites": 0.02126148116247844,
+      "site_23": 0.018805211006019833,
+      "site_5": 0.06970960577444173,
+      "targets_5_23": 0.031761170355697185
+     },
+     "verdict": "FAIL"
+    },
+    "C3": {
+     "criteria": {
+      "a_relative_improvement_ge_10pct": {
+       "detail": "pooled 31.16% and targeted(5,23) 57.90% (both must be >= 10%)",
+       "pass": true
+      },
+      "b_paired_ci_lower_positive": {
+       "detail": "pooled CI95 [0.00518, 0.01024], targeted CI95 [0.01895, 0.03681] (both lower bounds must be > 0)",
+       "pass": true
+      },
+      "c_no_other_site_degradation_gt_0p005": {
+       "detail": "no site other than 5/23 worsens by more than 0.005 (pooled other-site change -0.00125)",
+       "pass": true
+      },
+      "d_ledger_bound_below_1pct_of_mae": {
+       "detail": "max min_bound 2.424e-11 / MAE 0.01614 = 1.502e-9 (need < 0.01)",
+       "pass": true
+      },
+      "e_no_tuning_freeze_verified": {
+       "detail": "frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring",
+       "pass": true
+      }
+     },
+     "numerical_vs_physical": {
+      "candidate_max_l1_discard": 4.2553666434291135e-11,
+      "candidate_max_min_bound": 2.4237465833242362e-11,
+      "candidate_max_old_bound": 2.4237465833242362e-11,
+      "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C3) < 1% of the pooled MAE of C3",
+      "max_l1_discard": 4.2975503894987456e-11,
+      "max_live_terms": 40989,
+      "max_min_bound": 2.4281171151061407e-11,
+      "max_old_bound": 2.4281171151061407e-11,
+      "mean_abs_model_effect_vs_C0": 0.012959364284703269,
+      "models_considered": "all four models (worst case)",
+      "physical_prediction_error_mae": 0.01613783690311438,
+      "ratio_candidate_l1_to_mae": 2.6368878734967797e-09,
+      "ratio_candidate_min_bound_to_mae": 1.5019030108406204e-09,
+      "ratio_candidate_min_bound_to_model_effect": 1.8702665733265426e-09,
+      "ratio_candidate_old_bound_to_mae": 1.5019030108406204e-09
+     },
+     "other_site_degradation": {
+      "flagged_sites": [],
+      "pooled_other_sites_change": -0.0012482780710408089
+     },
+     "paired_bootstrap_vs_C0": {
+      "all_sites": {
+       "ci95": [
+        0.0051835291683313784,
+        0.010238106711479192
+       ],
+       "circuits": 20,
+       "losses": 2,
+       "mean_improvement": 0.007696925909998854,
+       "relative_ci95": [
+        0.24498402334440036,
+        0.3872424544811286
+       ],
+       "relative_improvement_equal_circuit_weight": 0.3212883298537052,
+       "resamples": 20000,
+       "seed": 26112501,
+       "wins": 18
+      },
+      "targets_5_23": {
+       "ci95": [
+        0.018948993509483154,
+        0.036812225855645586
+       ],
+       "circuits": 20,
+       "losses": 1,
+       "mean_improvement": 0.027893428981378653,
+       "relative_ci95": [
+        0.48649625831604887,
+        0.6473586760493246
+       ],
+       "relative_improvement_equal_circuit_weight": 0.5789764705731214,
+       "resamples": 20000,
+       "seed": 26112501,
+       "wins": 19
+      }
+     },
+     "relative_mae_improvement": {
+      "controls_3_21": -0.004095366306458022,
+      "other_than_5_23": 0.0772127215621483,
+      "pooled_all_sites": 0.3115795075453182,
+      "site_23": 0.75025294372134,
+      "site_5": 0.07730198977309513,
+      "targets_5_23": 0.5789764705731213
+     },
+     "verdict": "PASS"
+    }
+   },
+   "groups": {
+    "all": {
+     "C0": 0.023441831090141065,
+     "C1": 0.02351565841104042,
+     "C2": 0.02294342304000403,
+     "C3": 0.01613783690311438,
+     "ideal": 0.0270670143347821,
+     "n": 176
+    },
+    "controls_3_21": {
+     "C0": 0.01345599058361322,
+     "C1": 0.013531340371466272,
+     "C2": 0.013037556466058827,
+     "C3": 0.013511097794069366,
+     "ideal": 0.01594747413828613,
+     "n": 40
+    },
+    "other_than_5_23": {
+     "C0": 0.01616674099534328,
+     "C1": 0.016036149994301908,
+     "C2": 0.015971790068285564,
+     "C3": 0.01491846292430247,
+     "ideal": 0.02035502928675446,
+     "n": 136
+    },
+    "site_23": {
+     "C0": 0.07183061486434258,
+     "C1": 0.07340923645593689,
+     "C2": 0.07047982499512648,
+     "C3": 0.017939484613055716,
+     "ideal": 0.07665859422504376,
+     "n": 20
+    },
+    "site_5": {
+     "C0": 0.024523659960564558,
+     "C1": 0.02448273759996586,
+     "C2": 0.02281412529256714,
+     "C3": 0.022627932249094134,
+     "ideal": 0.02311693277110851,
+     "n": 20
+    },
+    "targets_5_23": {
+     "C0": 0.04817713741245357,
+     "C1": 0.04894598702795137,
+     "C2": 0.0466469751438468,
+     "C3": 0.020283708431074927,
+     "ideal": 0.04988776349807614,
+     "n": 40
+    }
+   },
+   "sites": [
+    {
+     "change_C2_vs_C0": -0.0007700090341174123,
+     "change_C3_vs_C0": 0.00019174294656696192,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.013202942178348378,
+      "C1": 0.01342053904077115,
+      "C2": 0.012432933144230966,
+      "C3": 0.01339468512491534,
+      "ideal": 0.014336970606628214
+     },
+     "n_obs": 20,
+     "physical": 3,
+     "role": "control"
+    },
+    {
+     "change_C2_vs_C0": -0.001116416486821363,
+     "change_C3_vs_C0": -0.008913275280158558,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.026000524250424695,
+      "C1": 0.02510141487819262,
+      "C2": 0.024884107763603332,
+      "C3": 0.017087248970266138,
+      "ideal": 0.025148475343459948
+     },
+     "n_obs": 20,
+     "physical": 4,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": -0.0017095346679974165,
+     "change_C3_vs_C0": -0.001895727711470424,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.024523659960564558,
+      "C1": 0.02448273759996586,
+      "C2": 0.02281412529256714,
+      "C3": 0.022627932249094134,
+      "ideal": 0.02311693277110851
+     },
+     "n_obs": 20,
+     "physical": 5,
+     "role": "target"
+    },
+    {
+     "change_C2_vs_C0": -0.0006971147224626335,
+     "change_C3_vs_C0": -0.0006959235338505829,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.016528886820670833,
+      "C1": 0.01571271461952816,
+      "C2": 0.0158317720982082,
+      "C3": 0.01583296328682025,
+      "ideal": 0.022137727331999812
+     },
+     "n_obs": 20,
+     "physical": 6,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": -2.914713617568898e-05,
+     "change_C3_vs_C0": -2.914713617568898e-05,
+     "circuits": 4,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.015195057850425048,
+      "C1": 0.015165910714249359,
+      "C2": 0.015165910714249359,
+      "C3": 0.015165910714249359,
+      "ideal": 0.022276446310079565
+     },
+     "n_obs": 4,
+     "physical": 7,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": 0.0004739021493821091,
+     "change_C3_vs_C0": 0.00033610955060498805,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.013862210729737947,
+      "C1": 0.013693393313979355,
+      "C2": 0.014336112879120056,
+      "C3": 0.014198320280342935,
+      "ideal": 0.022468760275132716
+     },
+     "n_obs": 20,
+     "physical": 16,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": -6.685920099137703e-05,
+     "change_C3_vs_C0": -8.152852565466995e-05,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.013709038988878064,
+      "C1": 0.01364214170216139,
+      "C2": 0.013642179787886687,
+      "C3": 0.013627510463223394,
+      "ideal": 0.017557977669944047
+     },
+     "n_obs": 20,
+     "physical": 21,
+     "role": "control"
+    },
+    {
+     "change_C2_vs_C0": 0.0009703016340138326,
+     "change_C3_vs_C0": 0.0007940546024098865,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.012344386589366759,
+      "C1": 0.01330923783870826,
+      "C2": 0.013314688223380592,
+      "C3": 0.013138441191776646,
+      "ideal": 0.018402514665545676
+     },
+     "n_obs": 20,
+     "physical": 22,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": -0.0013507898692161069,
+     "change_C3_vs_C0": -0.05389113025128687,
+     "circuits": 20,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.07183061486434258,
+      "C1": 0.07340923645593689,
+      "C2": 0.07047982499512648,
+      "C3": 0.017939484613055716,
+      "ideal": 0.07665859422504376
+     },
+     "n_obs": 20,
+     "physical": 23,
+     "role": "target"
+    },
+    {
+     "change_C2_vs_C0": -0.0002474528123631997,
+     "change_C3_vs_C0": -0.0002474528123631997,
+     "circuits": 4,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.016736532664247558,
+      "C1": 0.01648907985188436,
+      "C2": 0.01648907985188436,
+      "C3": 0.01648907985188436,
+      "ideal": 0.029716873946390124
+     },
+     "n_obs": 4,
+     "physical": 36,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": 3.3204821293097986e-05,
+     "change_C3_vs_C0": 3.3204821293097986e-05,
+     "circuits": 4,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.018059467257184852,
+      "C1": 0.01809267207847795,
+      "C2": 0.01809267207847795,
+      "C3": 0.01809267207847795,
+      "ideal": 0.01885669461908425
+     },
+     "n_obs": 4,
+     "physical": 41,
+     "role": "other"
+    },
+    {
+     "change_C2_vs_C0": -0.0003539580877318649,
+     "change_C3_vs_C0": -0.0003539580877318649,
+     "circuits": 4,
+     "flag_C2": false,
+     "flag_C3": false,
+     "mae": {
+      "C0": 0.021438188282680515,
+      "C1": 0.02108423019494865,
+      "C2": 0.02108423019494865,
+      "C3": 0.02108423019494865,
+      "ideal": 0.020958851410545515
+     },
+     "n_obs": 4,
+     "physical": 42,
+     "role": "other"
+    }
+   ]
+  },
+  "bootstrap": {
+   "resamples": 20000,
+   "seed": 26112501
+  },
+  "circuits": 20,
+  "controls": [
+   3,
+   21
+  ],
+  "counts_sha256": "fe35f454ee8441b7d3c1d9ade753160ea7fca16f5275a074303360ce15fd1578",
+  "freeze_check": {
+   "checks": [
+    {
+     "detail": "qc26b-frozen-v1",
+     "name": "format",
+     "ok": true
+    },
+    {
+     "detail": "top-level sha256 does not match contents",
+     "name": "frozen self-hash",
+     "ok": true
+    },
+    {
+     "detail": "parameter file differs from the frozen parameters",
+     "name": "parameter file equals frozen parameters",
+     "ok": true
+    },
+    {
+     "detail": null,
+     "name": "params_sha256",
+     "ok": true
+    },
+    {
+     "detail": "qc26b_engine.mjs differs from the frozen version",
+     "name": "engine code hash",
+     "ok": true
+    },
+    {
+     "detail": null,
+     "name": "compiled.json hash",
+     "ok": true
+    },
+    {
+     "detail": null,
+     "name": "plan_sha256",
+     "ok": true
+    },
+    {
+     "detail": null,
+     "name": "calibration snapshot hash",
+     "ok": true
+    },
+    {
+     "detail": null,
+     "name": "circuit id set",
+     "ok": true
+    },
+    {
+     "detail": "0 of 880 values differ, max gap 0",
+     "name": "predictions recompute within 1e-12",
+     "ok": true
+    },
+    {
+     "detail": 0,
+     "name": "max recompute gap",
+     "ok": true
+    }
+   ],
+   "passed": true
+  },
+  "frozen_sha256": "c51648fcecbe248787b989d4b1d7094b43d932f6d7da2ff81ee33f98540a321f",
+  "label": "SYNTHETIC DRY RUN - NOT HARDWARE DATA",
+  "observables": 176,
+  "params_sha256": "9e2db39065778b36f13f5afa837f271d14200e18f569964587b48dd7bad2a4b9",
+  "plan_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "refused": false,
+  "synthetic": true,
+  "targets": [
+   5,
+   23
+  ],
+  "thresholds": {
+   "ledger_fraction_of_mae": 0.01,
+   "other_site_degradation": 0.005,
+   "rel_improvement": 0.1
+  }
+ },
+ "description": "freeze -> evaluate on counts fabricated from engine C3 predictions plus Bernoulli shot noise (seed 11), on a subset of the committed QC-23 nc_eval circuits (width 8 all 16, width 12 depth<=2 seeds 41,42) with an ARBITRARY parameter file chosen only to exercise the code. The control run draws counts from C0.",
+ "label": "DRY RUN - SYNTHETIC COUNTS - NOT HARDWARE DATA - pipeline check only",
+ "node": "v24",
+ "parameters_used_for_dry_run": {
+  "cz": {
+   "16_23": {
+    "alpha": {
+     "23": 0.02
+    },
+    "delta": 0.05
+   },
+   "4_5": {
+    "delta": -0.04
+   }
+  },
+  "sx": {
+   "23": -0.03,
+   "3": 0.02,
+   "5": 0.04
+  }
+ },
+ "unittest": "test_qc26b_prospective.py"
+}

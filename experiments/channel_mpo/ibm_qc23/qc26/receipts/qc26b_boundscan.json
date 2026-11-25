@@ -1,0 +1,42 @@
+{
+ "label": "QC-26B retrospective ZZ-phase fit bound scan (fit circuits only: width-8 depth 1-2 kicked-Ising, target sites 5 and 23); SX offsets fixed at QC-25C values; target MSE before fit 0.014092676627847509",
+ "scan": [
+  {
+   "bound": 0.1,
+   "delta": {
+    "16_23": -0.1,
+    "22_23": 0,
+    "4_5": 0,
+    "5_6": 0.1
+   },
+   "target_mse_after": 0.0010047007750122658,
+   "at_bound": [
+    "16_23",
+    "5_6"
+   ]
+  },
+  {
+   "bound": 0.2,
+   "delta": {
+    "16_23": -0.101171875,
+    "22_23": 0,
+    "4_5": 0,
+    "5_6": 0.1109375
+   },
+   "target_mse_after": 0.0009081162813319176,
+   "at_bound": []
+  },
+  {
+   "bound": 0.4,
+   "delta": {
+    "16_23": -0.101171875,
+    "22_23": 0,
+    "4_5": 0,
+    "5_6": 0.1109375
+   },
+   "target_mse_after": 0.0009081162813319176,
+   "at_bound": []
+  }
+ ],
+ "reading": "The 0.1 rad solutions are not runaway boundary artifacts: with the bound relaxed to 0.2 and 0.4 the optimum is interior at -0.1012 and +0.1109 rad. Edges 22_23 and 4_5 stay at zero. Phases of about 0.1 rad per CZ are two to five times larger than the 0.022 to 0.047 rad conditional phases QC-26A injected in its synthetic design, so these are effective parameters that may absorb unmodelled physics until QC-26A measures them independently."
+}
