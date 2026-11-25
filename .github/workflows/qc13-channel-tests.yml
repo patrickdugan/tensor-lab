@@ -1,0 +1,46 @@
+name: QC-13 exact-dyadic and Clifford oracle tests
+on:
+  push:
+    paths:
+      - 'experiments/channel_mpo/**'
+      - '.github/workflows/qc13-channel-tests.yml'
+  pull_request:
+    paths:
+      - 'experiments/channel_mpo/**'
+      - '.github/workflows/qc13-channel-tests.yml'
+  workflow_dispatch:
+jobs:
+  exact-audit-cpu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install NumPy
+        run: python -m pip install 'numpy>=1.24,<3'
+      - name: Full QC-01 through QC-13 regression suite
+        working-directory: experiments/channel_mpo
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+          MKL_NUM_THREADS: '1'
+        run: |
+          python -m unittest -q test_channel_mpo test_purified_mpo test_qc03 test_qc04 test_qc05 test_qc06 test_qc07 test_qc08 test_qc09 test_qc10 test_qc11 test_qc12 test_qc13
+      - name: Exact Clifford 48-qubit amplitude-damping smoke
+        working-directory: experiments/channel_mpo
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+          MKL_NUM_THREADS: '1'
+        run: |
+          python benchmark_qc13.py --mode clifford --n 48 --depth 16 --seeds 8 --channels amplitude_damping --strengths .2 --caps 1,2 --output /tmp/qc13_clifford_smoke.csv
+      - name: Exact dyadic audit smoke
+        working-directory: experiments/channel_mpo
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+          MKL_NUM_THREADS: '1'
+        run: |
+          python benchmark_qc13.py --mode audit --n 8 --depth 6 --seeds 3 --caps 8 --channels dephasing --strengths .5 --target 0 --output /tmp/qc13_dyadic_smoke.csv
