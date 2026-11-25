@@ -1,0 +1,41 @@
+name: QC-26B channel engine
+on:
+  push:
+    paths: ['experiments/channel_mpo/ibm_qc23/qc26/qc26b_**', '.github/workflows/qc26b-engine.yml']
+  pull_request:
+    paths: ['experiments/channel_mpo/ibm_qc23/qc26/qc26b_**', '.github/workflows/qc26b-engine.yml']
+jobs:
+  dense-crosscheck:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: experiments/channel_mpo/ibm_qc23/qc26
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy
+      - name: Sparse engine vs dense density matrices (96 evaluations)
+        run: |
+          node qc26b_selftest.mjs /tmp/cases.json
+          python qc26b_dense_check.py /tmp/cases.json /tmp/dense.json
+          cmp /tmp/cases.json receipts/qc26b_selftest_cases.json || python -c "import json;a=json.load(open('/tmp/cases.json'));b=json.load(open('receipts/qc26b_selftest_cases.json'));assert len(a['cases'])==len(b['cases'])==48"
+  replay:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: experiments/channel_mpo/ibm_qc23/qc26
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: node qc26b_replay.mjs /tmp/replay.json > /dev/null
+      - run: python qc26b_verify.py /tmp/replay.json receipts/qc26b_replay_retrospective.json
