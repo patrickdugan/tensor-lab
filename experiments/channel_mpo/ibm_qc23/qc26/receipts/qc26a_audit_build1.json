@@ -1,0 +1,41 @@
+{
+  "plan_sha256": "1ff6d3b5d8147de6fadbe83d8d4966b1435d14912063aefab0b87194c10876bb",
+  "qpy_sha256": "7fb4d3299b0446f1d7ed856e6f11d38c57e06cff534e11684247c8c7da74d96c",
+  "calibration_timestamp": "2026-11-25T17:24:39+08:00",
+  "compiled_at": "2026-11-25T09:34:49.803576+00:00",
+  "age_minutes_at_audit": 0.9230345666666667,
+  "estimated_qpu_seconds": 16.38688,
+  "checks": [
+    {
+      "check": "frozen manifest, proposal, calibration, QPY and QASM hashes reproduce",
+      "pass": true,
+      "detail": "1ff6d3b5d8147de6fadbe83d8d4966b1435d14912063aefab0b87194c10876bb"
+    },
+    {
+      "check": "all 82 circuits stay on their planned physical qubits; CZ only on calibrated edges; zero swaps",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "native gate set is {rz, sx, x, cz, measure, barrier}",
+      "pass": true,
+      "detail": "{\"barrier\": 474, \"measure\": 192, \"rz\": 324, \"sx\": 480, \"x\": 44, \"cz\": 240}"
+    },
+    {
+      "check": "SX sign convention: recovered offsets match injected within 0.003 rad with correct sign",
+      "pass": true,
+      "detail": "{\"sx_3\": {\"injected\": 0.004, \"recovered\": 0.004}, \"sx_5\": {\"injected\": -0.025, \"recovered\": -0.0245}, \"sx_21\": {\"injected\": 0.0, \"recovered\": 0}, \"sx_23\": {\"injected\": 0.04, \"recovered\": 0.04}}"
+    },
+    {
+      "check": "CZ sign convention: recovered conditional and local phases match injected within 0.005 rad with correct sign",
+      "pass": true,
+      "detail": "{\"cz_4_5\": {\"zz_injected\": 0.032, \"zz_recovered\": 0.032098438588835265, \"local_injected\": 0.013, \"local_recovered\": 0.013110862523024224}, \"cz_6_5\": {\"zz_injected\": -0.022, \"zz_recovered\": -0.022017477030368965, \"local_injected\": -0.012, \"local_recovered\": -0.012268408637879383}, \"cz_16_23\": {\"zz_injected\": 0.047, \"zz_recovered\": 0.04716629239294289, \"local_injected\": 0.01, \"local_recovered\": 0.01020954822696328}, \"cz_22_23\": {\"zz_injected\": -0.038, \"zz_recovered\": -0.038085112058054246, \"local_injected\": 0.006, \"local_recovered\": 0.005810482699364662}, \"cz_4_3\": {\"zz_injected\": 0.0, \"zz_recovered\": 0, \"local_injected\": -0.008, \"local_recovered\": -0.007801619475591303}, \"cz_22_21\": {\"zz_injected\": 0.0, \"zz_recovered\": 0, \"local_injected\": 0.009, \"local_recovered\": 0.00919745159589466}}"
+    },
+    {
+      "check": "estimate is under the 20 s ceiling",
+      "pass": true,
+      "detail": "16.38688 s"
+    }
+  ],
+  "all_pass": true
+}

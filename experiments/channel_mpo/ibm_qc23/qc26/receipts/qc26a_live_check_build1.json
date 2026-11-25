@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-11-25T09:36:19.536592+00:00",
+  "plan_sha256": "1ff6d3b5d8147de6fadbe83d8d4966b1435d14912063aefab0b87194c10876bb",
+  "build_calibration_timestamp": "2026-11-25T17:24:39+08:00",
+  "live_calibration_timestamp": "2026-11-25T17:24:39+08:00",
+  "calibration_unchanged": true,
+  "durations_unchanged": true,
+  "build_age_minutes": 1.4955502666666667,
+  "submission_window_open": true,
+  "pubs_coerced": 82,
+  "sampler_v2_constructed_with_rep_delay_option": true,
+  "all_ops_in_live_target": true,
+  "rep_delay_range_s": [
+    0.0,
+    0.002
+  ],
+  "backend_operational": true,
+  "pending_jobs": 1,
+  "usage": {
+    "usage_consumed_seconds": 224,
+    "usage_limit_seconds": 600,
+    "usage_remaining_seconds": 376,
+    "usage_period": {
+      "start_time": "2026-10-28T09:36:19.038Z",
+      "end_time": "2026-11-25T09:36:19.038Z"
+    },
+    "usage_limit_reached": false
+  },
+  "estimated_qpu_seconds": 16.38688
+}
