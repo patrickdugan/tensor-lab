@@ -18,3 +18,5 @@ jobs:
         with:
           node-version: '22'
       - run: node experiments/channel_mpo/ibm_qc23/pgc_qpu/audit.mjs --check
+      - run: node experiments/channel_mpo/ibm_qc23/pgc_qpu/ramsey_campaign.mjs --check
+      - run: python3 -m py_compile experiments/channel_mpo/ibm_qc23/pgc_qpu/compile_readonly.py
