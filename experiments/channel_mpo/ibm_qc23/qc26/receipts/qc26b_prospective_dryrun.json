@@ -31,7 +31,7 @@
       "candidate_max_old_bound": 2.4281171151061407e-11,
       "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C2) < 1% of the pooled MAE of C2",
       "max_l1_discard": 4.2975503894987456e-11,
-      "max_live_terms": 40989,
+      "max_live_terms": 40948,
       "max_min_bound": 2.4281171151061407e-11,
       "max_old_bound": 2.4281171151061407e-11,
       "mean_abs_model_effect_vs_C0": 0.003237927829177707,
@@ -48,6 +48,7 @@
      },
      "paired_bootstrap_vs_C0": {
       "all_sites": {
+       "base": "C0",
        "ci95": [
         -0.0006909140078180953,
         0.0008455721634162489
@@ -65,6 +66,7 @@
        "wins": 11
       },
       "targets_5_23": {
+       "base": "C0",
        "ci95": [
         -0.001583834839383924,
         0.003118839352502625
@@ -95,6 +97,104 @@
     "C3": {
      "criteria": {
       "a_relative_improvement_ge_10pct": {
+       "detail": "pooled -20.30% and targeted(5,23) -39.58% (both must be >= 10%)",
+       "pass": false
+      },
+      "b_paired_ci_lower_positive": {
+       "detail": "pooled CI95 [-0.00479, -0.00171], targeted CI95 [-0.01420, -0.00264] (both lower bounds must be > 0)",
+       "pass": false
+      },
+      "c_no_other_site_degradation_gt_0p005": {
+       "detail": "flagged physical sites: 4 (+0.0118)",
+       "pass": false
+      },
+      "d_ledger_bound_below_1pct_of_mae": {
+       "detail": "max min_bound 2.401e-11 / MAE 0.01995 = 1.203e-9 (need < 0.01)",
+       "pass": true
+      },
+      "e_no_tuning_freeze_verified": {
+       "detail": "frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring",
+       "pass": true
+      }
+     },
+     "numerical_vs_physical": {
+      "candidate_max_l1_discard": 4.2290111418876775e-11,
+      "candidate_max_min_bound": 2.400567378547267e-11,
+      "candidate_max_old_bound": 2.400567378547267e-11,
+      "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C3) < 1% of the pooled MAE of C3",
+      "max_l1_discard": 4.2975503894987456e-11,
+      "max_live_terms": 40948,
+      "max_min_bound": 2.4281171151061407e-11,
+      "max_old_bound": 2.4281171151061407e-11,
+      "mean_abs_model_effect_vs_C0": 0.009562848288692478,
+      "models_considered": "all four models (worst case)",
+      "physical_prediction_error_mae": 0.019953937163153294,
+      "ratio_candidate_l1_to_mae": 2.1193868194077105e-09,
+      "ratio_candidate_min_bound_to_mae": 1.203054494418338e-09,
+      "ratio_candidate_min_bound_to_model_effect": 2.510305827381786e-09,
+      "ratio_candidate_old_bound_to_mae": 1.203054494418338e-09
+     },
+     "other_site_degradation": {
+      "flagged_sites": [
+       {
+        "change": 0.011809429211777474,
+        "n_obs": 20,
+        "physical": 4
+       }
+      ],
+      "pooled_other_sites_change": 0.0018528014569225027
+     },
+     "paired_bootstrap_vs_C0": {
+      "all_sites": {
+       "base": "C0",
+       "ci95": [
+        -0.004785430395638515,
+        -0.001708285011343873
+       ],
+       "circuits": 20,
+       "losses": 18,
+       "mean_improvement": -0.003302261824500219,
+       "relative_ci95": [
+        -0.3038736087202026,
+        -0.09604517733092696
+       ],
+       "relative_improvement_equal_circuit_weight": -0.19708682599483307,
+       "resamples": 20000,
+       "seed": 26112501,
+       "wins": 2
+      },
+      "targets_5_23": {
+       "base": "C0",
+       "ci95": [
+        -0.014199223977385522,
+        -0.002636179682696949
+       ],
+       "circuits": 20,
+       "losses": 14,
+       "mean_improvement": -0.008513557705047834,
+       "relative_ci95": [
+        -0.720786329556329,
+        -0.11958067523599931
+       ],
+       "relative_improvement_equal_circuit_weight": -0.39579077838742927,
+       "resamples": 20000,
+       "seed": 26112501,
+       "wins": 6
+      }
+     },
+     "relative_mae_improvement": {
+      "controls_3_21": -0.025324408298303278,
+      "other_than_5_23": -0.1223826747156738,
+      "pooled_all_sites": -0.20296275585222817,
+      "site_23": -0.9646942065203699,
+      "site_5": 0.07338195787274801,
+      "targets_5_23": -0.39579077838742877
+     },
+     "verdict": "FAIL"
+    },
+    "C3Z": {
+     "criteria": {
+      "a_relative_improvement_ge_10pct": {
        "detail": "pooled -41.90% and targeted(5,23) -110.15% (both must be >= 10%)",
        "pass": false
       },
@@ -119,13 +219,13 @@
       "candidate_max_l1_discard": 4.2553666434291135e-11,
       "candidate_max_min_bound": 2.4237465833242362e-11,
       "candidate_max_old_bound": 2.4237465833242362e-11,
-      "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C3) < 1% of the pooled MAE of C3",
+      "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C3Z) < 1% of the pooled MAE of C3Z",
       "max_l1_discard": 4.2975503894987456e-11,
       "max_live_terms": 40989,
       "max_min_bound": 2.4281171151061407e-11,
       "max_old_bound": 2.4281171151061407e-11,
       "mean_abs_model_effect_vs_C0": 0.012959364284703269,
-      "models_considered": "all four models (worst case)",
+      "models_considered": "all models C0, C1, C2, C3, C3Z (worst case)",
       "physical_prediction_error_mae": 0.023537163424276367,
       "ratio_candidate_l1_to_mae": 1.8079352072816488e-09,
       "ratio_candidate_min_bound_to_mae": 1.029753050371554e-09,
@@ -144,6 +244,7 @@
      },
      "paired_bootstrap_vs_C0": {
       "all_sites": {
+       "base": "C0",
        "ci95": [
         -0.008683656024839812,
         -0.005582390156974979
@@ -161,6 +262,7 @@
        "wins": 1
       },
       "targets_5_23": {
+       "base": "C0",
        "ci95": [
         -0.029952945058114754,
         -0.017125975898172604
@@ -186,7 +288,69 @@
       "site_5": 0.07338195787274801,
       "targets_5_23": -1.1015231065549391
      },
-     "verdict": "FAIL"
+     "status": "DECLARED EXTENSION: C3 plus endpoint-local Z terms (params.cz.*.alpha). Not the primary comparator; the C3 verdict and criteria are unaffected by it.",
+     "target_site_mae": {
+      "site_23": {
+       "C0": 0.019443702006306848,
+       "C2": 0.019645928077476567,
+       "C3": 0.038200928685099556,
+       "C3Z": 0.06856188315024117,
+       "n_obs": 20
+      },
+      "site_5": {
+       "C0": 0.023576793517791163,
+       "C2": 0.022032875292567148,
+       "C3": 0.021846682249094133,
+       "C3Z": 0.021846682249094133,
+       "n_obs": 20
+      }
+     },
+     "verdict": "FAIL",
+     "vs_C3": {
+      "mae_change_C3Z_minus_C3": {
+       "all": 0.003583226261123073,
+       "other_than_5_23": 0.00017227009305019123,
+       "targets_5_23": 0.015180477232570825
+      },
+      "paired_bootstrap_MAE_C3_minus_MAE_C3Z": {
+       "all_sites": {
+        "base": "C3",
+        "ci95": [
+         -0.004669646515658551,
+         -0.0029612546296727007
+        ],
+        "circuits": 20,
+        "losses": 18,
+        "mean_improvement": -0.0038250999088080715,
+        "relative_ci95": [
+         -0.2311420677461291,
+         -0.15216441058267022
+        ],
+        "relative_improvement_equal_circuit_weight": -0.19070550209358095,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 0
+       },
+       "targets_5_23": {
+        "base": "C3",
+        "ci95": [
+         -0.018056460261158553,
+         -0.012133755827627365
+        ],
+        "circuits": 20,
+        "losses": 18,
+        "mean_improvement": -0.015180477232570821,
+        "relative_ci95": [
+         -0.6528827557399709,
+         -0.40424784630321997
+        ],
+        "relative_improvement_equal_circuit_weight": -0.5056146946198125,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 0
+       }
+      }
+     }
     }
    },
    "groups": {
@@ -194,7 +358,8 @@
      "C0": 0.016587327468020493,
      "C1": 0.01671929472334517,
      "C2": 0.016555022467878603,
-     "C3": 0.023537163424276367,
+     "C3": 0.019953937163153294,
+     "C3Z": 0.023537163424276367,
      "ideal": 0.021089521653966877,
      "n": 176
     },
@@ -202,7 +367,8 @@
      "C0": 0.013542221128678986,
      "C1": 0.01373636060627013,
      "C2": 0.013444531549889607,
-     "C3": 0.013882869821685207,
+     "C3": 0.013885169865807562,
+     "C3Z": 0.013882869821685207,
      "ideal": 0.017210620353367644,
      "n": 40
     },
@@ -210,7 +376,8 @@
      "C0": 0.015139409734482709,
      "C1": 0.015263406040982745,
      "C2": 0.015294910933424702,
-     "C3": 0.017164481284455402,
+     "C3": 0.01699221119140521,
+     "C3Z": 0.017164481284455402,
      "ideal": 0.021011221555408285,
      "n": 136
     },
@@ -218,7 +385,8 @@
      "C0": 0.019443702006306848,
      "C1": 0.01970480432627695,
      "C2": 0.019645928077476567,
-     "C3": 0.06856188315024117,
+     "C3": 0.038200928685099556,
+     "C3Z": 0.06856188315024117,
      "ideal": 0.020092111639296563,
      "n": 20
     },
@@ -227,6 +395,7 @@
      "C1": 0.02363382816047786,
      "C2": 0.022032875292567148,
      "C3": 0.021846682249094133,
+     "C3Z": 0.021846682249094133,
      "ideal": 0.02261937233883554,
      "n": 20
     },
@@ -234,7 +403,8 @@
      "C0": 0.021510247762049007,
      "C1": 0.021669316243377403,
      "C2": 0.02083940168502186,
-     "C3": 0.045204282699667656,
+     "C3": 0.03002380546709683,
+     "C3Z": 0.045204282699667656,
      "ideal": 0.021355741989066056,
      "n": 40
     }
@@ -242,15 +412,18 @@
    "sites": [
     {
      "change_C2_vs_C0": -0.000366099336063571,
-     "change_C3_vs_C0": 0.0005252465321909233,
+     "change_C3Z_vs_C0": 0.0005252465321909233,
+     "change_C3_vs_C0": 0.0005250213562487255,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.013544739053348378,
       "C1": 0.01376233591577115,
       "C2": 0.013178639717284807,
-      "C3": 0.014069985585539301,
+      "C3": 0.014069760409597103,
+      "C3Z": 0.014069985585539301,
       "ideal": 0.016338923731628215
      },
      "n_obs": 20,
@@ -259,15 +432,18 @@
     },
     {
      "change_C2_vs_C0": 8.561950625434606e-05,
-     "change_C3_vs_C0": 0.011809352608198528,
+     "change_C3Z_vs_C0": 0.011809352608198528,
+     "change_C3_vs_C0": 0.011809429211777474,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": true,
+     "flag_C3Z": true,
      "mae": {
       "C0": 0.018242262220281573,
       "C1": 0.01828569487199597,
       "C2": 0.01832788172653592,
-      "C3": 0.0300516148284801,
+      "C3": 0.030051691432059047,
+      "C3Z": 0.0300516148284801,
       "ideal": 0.02285331034833769
      },
      "n_obs": 20,
@@ -276,15 +452,18 @@
     },
     {
      "change_C2_vs_C0": -0.0015439182252240148,
+     "change_C3Z_vs_C0": -0.0017301112686970294,
      "change_C3_vs_C0": -0.0017301112686970294,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.023576793517791163,
       "C1": 0.02363382816047786,
       "C2": 0.022032875292567148,
       "C3": 0.021846682249094133,
+      "C3Z": 0.021846682249094133,
       "ideal": 0.02261937233883554
      },
      "n_obs": 20,
@@ -293,15 +472,18 @@
     },
     {
      "change_C2_vs_C0": -0.0004677183799403628,
+     "change_C3Z_vs_C0": -0.00046652719132831214,
      "change_C3_vs_C0": -0.00046652719132831214,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.016397146728148564,
       "C1": 0.01581037086952816,
       "C2": 0.0159294283482082,
       "C3": 0.01593061953682025,
+      "C3Z": 0.01593061953682025,
       "ideal": 0.021747102331999814
      },
      "n_obs": 20,
@@ -310,15 +492,18 @@
     },
     {
      "change_C2_vs_C0": -2.914713617568898e-05,
+     "change_C3Z_vs_C0": -2.914713617568898e-05,
      "change_C3_vs_C0": -2.914713617568898e-05,
      "circuits": 4,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.014462635975425048,
       "C1": 0.014433488839249359,
       "C2": 0.014433488839249359,
       "C3": 0.014433488839249359,
+      "C3Z": 0.014433488839249359,
       "ideal": 0.022338795680910892
      },
      "n_obs": 4,
@@ -327,15 +512,18 @@
     },
     {
      "change_C2_vs_C0": 0.0006916947074416448,
-     "change_C3_vs_C0": 0.0006861099546720262,
+     "change_C3Z_vs_C0": 0.0006861099546720262,
+     "change_C3_vs_C0": -0.00028376998432024826,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.01409956842548259,
       "C1": 0.014173810225757602,
       "C2": 0.014791263132924235,
-      "C3": 0.014785678380154616,
+      "C3": 0.013815798441162342,
+      "C3Z": 0.014785678380154616,
       "ideal": 0.023298838400132714
      },
      "n_obs": 20,
@@ -344,15 +532,18 @@
     },
     {
      "change_C2_vs_C0": 0.0001707201784848112,
-     "change_C3_vs_C0": 0.0001560508538215183,
+     "change_C3Z_vs_C0": 0.0001560508538215183,
+     "change_C3_vs_C0": 0.00016087611800841804,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.013539703204009596,
       "C1": 0.01371038529676911,
       "C2": 0.013710423382494407,
-      "C3": 0.013695754057831114,
+      "C3": 0.013700579322018014,
+      "C3Z": 0.013695754057831114,
       "ideal": 0.018082316975107073
      },
      "n_obs": 20,
@@ -361,15 +552,18 @@
     },
     {
      "change_C2_vs_C0": 0.0010626621196242695,
-     "change_C3_vs_C0": 0.0011797244252551818,
+     "change_C3Z_vs_C0": 0.0011797244252551818,
+     "change_C3_vs_C0": 0.0009734910396825038,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.0131316861023041,
       "C1": 0.01417515408094865,
       "C2": 0.014194348221928369,
-      "C3": 0.014311410527559281,
+      "C3": 0.014105177141986603,
+      "C3Z": 0.014311410527559281,
       "ideal": 0.021673999040545677
      },
      "n_obs": 20,
@@ -378,15 +572,18 @@
     },
     {
      "change_C2_vs_C0": 0.00020222607116971922,
-     "change_C3_vs_C0": 0.04911818114393432,
+     "change_C3Z_vs_C0": 0.04911818114393432,
+     "change_C3_vs_C0": 0.018757226678792708,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.019443702006306848,
       "C1": 0.01970480432627695,
       "C2": 0.019645928077476567,
-      "C3": 0.06856188315024117,
+      "C3": 0.038200928685099556,
+      "C3Z": 0.06856188315024117,
       "ideal": 0.020092111639296563
      },
      "n_obs": 20,
@@ -395,15 +592,18 @@
     },
     {
      "change_C2_vs_C0": -0.0002474528123631997,
+     "change_C3Z_vs_C0": -0.0002474528123631997,
      "change_C3_vs_C0": -0.0002474528123631997,
      "circuits": 4,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.016492392039247558,
       "C1": 0.01624493922688436,
       "C2": 0.01624493922688436,
       "C3": 0.01624493922688436,
+      "C3Z": 0.01624493922688436,
       "ideal": 0.03176645578458513
      },
      "n_obs": 4,
@@ -412,15 +612,18 @@
     },
     {
      "change_C2_vs_C0": 3.3204821293097986e-05,
+     "change_C3Z_vs_C0": 3.3204821293097986e-05,
      "change_C3_vs_C0": 3.3204821293097986e-05,
      "circuits": 4,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.017815326632184852,
       "C1": 0.01784853145347795,
       "C2": 0.01784853145347795,
       "C3": 0.01784853145347795,
+      "C3Z": 0.01784853145347795,
       "ideal": 0.01861255399408425
      },
      "n_obs": 4,
@@ -429,15 +632,18 @@
     },
     {
      "change_C2_vs_C0": -0.0003539580877318649,
+     "change_C3Z_vs_C0": -0.0003539580877318649,
      "change_C3_vs_C0": -0.0003539580877318649,
      "circuits": 4,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.021194047657680515,
       "C1": 0.02084008956994865,
       "C2": 0.02084008956994865,
       "C3": 0.02084008956994865,
+      "C3Z": 0.02084008956994865,
       "ideal": 0.021691273285545515
      },
      "n_obs": 4,
@@ -459,7 +665,7 @@
   "freeze_check": {
    "checks": [
     {
-     "detail": "qc26b-frozen-v1",
+     "detail": "qc26b-frozen-v2",
      "name": "format",
      "ok": true
     },
@@ -504,7 +710,7 @@
      "ok": true
     },
     {
-     "detail": "0 of 880 values differ, max gap 0",
+     "detail": "0 of 1056 values differ, max gap 0",
      "name": "predictions recompute within 1e-12",
      "ok": true
     },
@@ -516,7 +722,7 @@
    ],
    "passed": true
   },
-  "frozen_sha256": "c51648fcecbe248787b989d4b1d7094b43d932f6d7da2ff81ee33f98540a321f",
+  "frozen_sha256": "0b2572ea7cf533a4629d5490378f551cd4b564415cfc1250fc73f3f00fe56037",
   "label": "SYNTHETIC DRY RUN - NOT HARDWARE DATA",
   "observables": 176,
   "params_sha256": "9e2db39065778b36f13f5afa837f271d14200e18f569964587b48dd7bad2a4b9",
@@ -539,19 +745,19 @@
     "C2": {
      "criteria": {
       "a_relative_improvement_ge_10pct": {
-       "detail": "pooled 2.13% and targeted(5,23) 3.18% (both must be >= 10%)",
+       "detail": "pooled 2.61% and targeted(5,23) 4.46% (both must be >= 10%)",
        "pass": false
       },
       "b_paired_ci_lower_positive": {
-       "detail": "pooled CI95 [-0.00021, 0.00138], targeted CI95 [-0.00080, 0.00417] (both lower bounds must be > 0)",
+       "detail": "pooled CI95 [-0.00017, 0.00141], targeted CI95 [-0.00086, 0.00412] (both lower bounds must be > 0)",
        "pass": false
       },
       "c_no_other_site_degradation_gt_0p005": {
-       "detail": "no site other than 5/23 worsens by more than 0.005 (pooled other-site change -0.00019)",
+       "detail": "no site other than 5/23 worsens by more than 0.005 (pooled other-site change -0.00025)",
        "pass": true
       },
       "d_ledger_bound_below_1pct_of_mae": {
-       "detail": "max min_bound 2.428e-11 / MAE 0.02294 = 1.058e-9 (need < 0.01)",
+       "detail": "max min_bound 2.428e-11 / MAE 0.01959 = 1.239e-9 (need < 0.01)",
        "pass": true
       },
       "e_no_tuning_freeze_verified": {
@@ -565,52 +771,54 @@
       "candidate_max_old_bound": 2.4281171151061407e-11,
       "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C2) < 1% of the pooled MAE of C2",
       "max_l1_discard": 4.2975503894987456e-11,
-      "max_live_terms": 40989,
+      "max_live_terms": 40948,
       "max_min_bound": 2.4281171151061407e-11,
       "max_old_bound": 2.4281171151061407e-11,
       "mean_abs_model_effect_vs_C0": 0.003237927829177707,
       "models_considered": "all four models (worst case)",
-      "physical_prediction_error_mae": 0.02294342304000403,
-      "ratio_candidate_l1_to_mae": 1.873107766877488e-09,
-      "ratio_candidate_min_bound_to_mae": 1.0583063873566245e-09,
+      "physical_prediction_error_mae": 0.019591859023418805,
+      "ratio_candidate_l1_to_mae": 2.193538849152467e-09,
+      "ratio_candidate_min_bound_to_mae": 1.2393500342176467e-09,
       "ratio_candidate_min_bound_to_model_effect": 7.498984669225247e-09,
-      "ratio_candidate_old_bound_to_mae": 1.0583063873566245e-09
+      "ratio_candidate_old_bound_to_mae": 1.2393500342176467e-09
      },
      "other_site_degradation": {
       "flagged_sites": [],
-      "pooled_other_sites_change": -0.0001949509270577146
+      "pooled_other_sites_change": -0.0002460115784119095
      },
      "paired_bootstrap_vs_C0": {
       "all_sites": {
+       "base": "C0",
        "ci95": [
-        -0.0002067329319275931,
-        0.0013804351015176714
+        -0.00017229110992366526,
+        0.0014085378450371306
        ],
        "circuits": 20,
        "losses": 6,
-       "mean_improvement": 0.0005113750948590269,
+       "mean_improvement": 0.0005396242595837496,
        "relative_ci95": [
-        -0.00925094813648786,
-        0.05378274168042281
+        -0.009023258674806384,
+        0.06374767389966898
        ],
-       "relative_improvement_equal_circuit_weight": 0.021346035037520746,
+       "relative_improvement_equal_circuit_weight": 0.026431472532058915,
        "resamples": 20000,
        "seed": 26112501,
        "wins": 14
       },
       "targets_5_23": {
+       "base": "C0",
        "ci95": [
-        -0.0007987298196772827,
-        0.004168419865948502
+        -0.0008609442855971887,
+        0.004118630721101512
        ],
        "circuits": 20,
        "losses": 9,
-       "mean_improvement": 0.0015301622686067688,
+       "mean_improvement": 0.0014695527129013754,
        "relative_ci95": [
-        -0.01835538513005292,
-        0.07982405583605566
+        -0.029183784788372216,
+        0.11471314407268206
        ],
-       "relative_improvement_equal_circuit_weight": 0.03176117035569716,
+       "relative_improvement_equal_circuit_weight": 0.04455999820095194,
        "resamples": 20000,
        "seed": 26112501,
        "wins": 11
@@ -618,30 +826,122 @@
      },
      "relative_mae_improvement": {
       "controls_3_21": 0.03109649304183993,
-      "other_than_5_23": 0.012058764788392967,
-      "pooled_all_sites": 0.02126148116247844,
-      "site_23": 0.018805211006019833,
+      "other_than_5_23": 0.015062571595244463,
+      "pooled_all_sites": 0.026053413218622163,
+      "site_23": 0.02967488784652778,
       "site_5": 0.06970960577444173,
-      "targets_5_23": 0.031761170355697185
+      "targets_5_23": 0.044559998200952376
      },
      "verdict": "FAIL"
     },
     "C3": {
      "criteria": {
       "a_relative_improvement_ge_10pct": {
-       "detail": "pooled 31.16% and targeted(5,23) 57.90% (both must be >= 10%)",
+       "detail": "pooled 19.33% and targeted(5,23) 37.08% (both must be >= 10%)",
        "pass": true
       },
       "b_paired_ci_lower_positive": {
-       "detail": "pooled CI95 [0.00518, 0.01024], targeted CI95 [0.01895, 0.03681] (both lower bounds must be > 0)",
+       "detail": "pooled CI95 [0.00201, 0.00614], targeted CI95 [0.00503, 0.01935] (both lower bounds must be > 0)",
        "pass": true
+      },
+      "c_no_other_site_degradation_gt_0p005": {
+       "detail": "no site other than 5/23 worsens by more than 0.005 (pooled other-site change -0.00143)",
+       "pass": true
+      },
+      "d_ledger_bound_below_1pct_of_mae": {
+       "detail": "max min_bound 2.401e-11 / MAE 0.01623 = 1.479e-9 (need < 0.01)",
+       "pass": true
+      },
+      "e_no_tuning_freeze_verified": {
+       "detail": "frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring",
+       "pass": true
+      }
+     },
+     "numerical_vs_physical": {
+      "candidate_max_l1_discard": 4.2290111418876775e-11,
+      "candidate_max_min_bound": 2.400567378547267e-11,
+      "candidate_max_old_bound": 2.400567378547267e-11,
+      "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C3) < 1% of the pooled MAE of C3",
+      "max_l1_discard": 4.2975503894987456e-11,
+      "max_live_terms": 40948,
+      "max_min_bound": 2.4281171151061407e-11,
+      "max_old_bound": 2.4281171151061407e-11,
+      "mean_abs_model_effect_vs_C0": 0.009562848288692478,
+      "models_considered": "all four models (worst case)",
+      "physical_prediction_error_mae": 0.01622853920767932,
+      "ratio_candidate_l1_to_mae": 2.605909926807532e-09,
+      "ratio_candidate_min_bound_to_mae": 1.479225793416651e-09,
+      "ratio_candidate_min_bound_to_model_effect": 2.510305827381786e-09,
+      "ratio_candidate_old_bound_to_mae": 1.479225793416651e-09
+     },
+     "other_site_degradation": {
+      "flagged_sites": [],
+      "pooled_other_sites_change": -0.0014345407524894473
+     },
+     "paired_bootstrap_vs_C0": {
+      "all_sites": {
+       "base": "C0",
+       "ci95": [
+        0.0020055437676714466,
+        0.006141991095350264
+       ],
+       "circuits": 20,
+       "losses": 4,
+       "mean_improvement": 0.004043255764524148,
+       "relative_ci95": [
+        0.11108477042118355,
+        0.27123271382861447
+       ],
+       "relative_improvement_equal_circuit_weight": 0.1980437346581576,
+       "resamples": 20000,
+       "seed": 26112501,
+       "wins": 16
+      },
+      "targets_5_23": {
+       "base": "C0",
+       "ci95": [
+        0.0050303148617659435,
+        0.019346574200546963
+       ],
+       "circuits": 20,
+       "losses": 4,
+       "mean_improvement": 0.012227160710291476,
+       "relative_ci95": [
+        0.19410711961148172,
+        0.4843781851639803
+       ],
+       "relative_improvement_equal_circuit_weight": 0.3707538045216783,
+       "resamples": 20000,
+       "seed": 26112501,
+       "wins": 16
+      }
+     },
+     "relative_mae_improvement": {
+      "controls_3_21": -0.004266297172384481,
+      "other_than_5_23": 0.08783274726398863,
+      "pooled_all_sites": 0.1932500968451274,
+      "site_23": 0.5444369378856759,
+      "site_5": 0.07730198977309513,
+      "targets_5_23": 0.37075380452167844
+     },
+     "verdict": "PASS"
+    },
+    "C3Z": {
+     "criteria": {
+      "a_relative_improvement_ge_10pct": {
+       "detail": "pooled 12.31% and targeted(5,23) 20.12% (both must be >= 10%)",
+       "pass": true
+      },
+      "b_paired_ci_lower_positive": {
+       "detail": "pooled CI95 [-0.00022, 0.00535], targeted CI95 [-0.00410, 0.01772] (both lower bounds must be > 0)",
+       "pass": false
       },
       "c_no_other_site_degradation_gt_0p005": {
        "detail": "no site other than 5/23 worsens by more than 0.005 (pooled other-site change -0.00125)",
        "pass": true
       },
       "d_ledger_bound_below_1pct_of_mae": {
-       "detail": "max min_bound 2.424e-11 / MAE 0.01614 = 1.502e-9 (need < 0.01)",
+       "detail": "max min_bound 2.424e-11 / MAE 0.01764 = 1.374e-9 (need < 0.01)",
        "pass": true
       },
       "e_no_tuning_freeze_verified": {
@@ -653,101 +953,169 @@
       "candidate_max_l1_discard": 4.2553666434291135e-11,
       "candidate_max_min_bound": 2.4237465833242362e-11,
       "candidate_max_old_bound": 2.4237465833242362e-11,
-      "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C3) < 1% of the pooled MAE of C3",
+      "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C3Z) < 1% of the pooled MAE of C3Z",
       "max_l1_discard": 4.2975503894987456e-11,
       "max_live_terms": 40989,
       "max_min_bound": 2.4281171151061407e-11,
       "max_old_bound": 2.4281171151061407e-11,
       "mean_abs_model_effect_vs_C0": 0.012959364284703269,
-      "models_considered": "all four models (worst case)",
-      "physical_prediction_error_mae": 0.01613783690311438,
-      "ratio_candidate_l1_to_mae": 2.6368878734967797e-09,
-      "ratio_candidate_min_bound_to_mae": 1.5019030108406204e-09,
+      "models_considered": "all models C0, C1, C2, C3, C3Z (worst case)",
+      "physical_prediction_error_mae": 0.01763927676094653,
+      "ratio_candidate_l1_to_mae": 2.4124382768632114e-09,
+      "ratio_candidate_min_bound_to_mae": 1.3740623360989643e-09,
       "ratio_candidate_min_bound_to_model_effect": 1.8702665733265426e-09,
-      "ratio_candidate_old_bound_to_mae": 1.5019030108406204e-09
+      "ratio_candidate_old_bound_to_mae": 1.3740623360989643e-09
      },
      "other_site_degradation": {
       "flagged_sites": [],
-      "pooled_other_sites_change": -0.0012482780710408089
+      "pooled_other_sites_change": -0.0012538239668856994
      },
      "paired_bootstrap_vs_C0": {
       "all_sites": {
+       "base": "C0",
        "ci95": [
-        0.0051835291683313784,
-        0.010238106711479192
+        -0.000216752672646249,
+        0.0053465391612117445
        ],
        "circuits": 20,
-       "losses": 2,
-       "mean_improvement": 0.007696925909998854,
+       "losses": 8,
+       "mean_improvement": 0.0025214211321400396,
        "relative_ci95": [
-        0.24498402334440036,
-        0.3872424544811286
+        -0.011608814615375496,
+        0.24156659313333578
        ],
-       "relative_improvement_equal_circuit_weight": 0.3212883298537052,
+       "relative_improvement_equal_circuit_weight": 0.12350236708653584,
        "resamples": 20000,
        "seed": 26112501,
-       "wins": 18
+       "wins": 12
       },
       "targets_5_23": {
+       "base": "C0",
        "ci95": [
-        0.018948993509483154,
-        0.036812225855645586
+        -0.0040981241313392865,
+        0.017716127745893383
        ],
        "circuits": 20,
-       "losses": 1,
-       "mean_improvement": 0.027893428981378653,
+       "losses": 7,
+       "mean_improvement": 0.0066343525469684484,
        "relative_ci95": [
-        0.48649625831604887,
-        0.6473586760493246
+        -0.1593036133301553,
+        0.43765742911024036
        ],
-       "relative_improvement_equal_circuit_weight": 0.5789764705731214,
+       "relative_improvement_equal_circuit_weight": 0.2011678349215059,
        "resamples": 20000,
        "seed": 26112501,
-       "wins": 19
+       "wins": 13
       }
      },
      "relative_mae_improvement": {
       "controls_3_21": -0.004095366306458022,
-      "other_than_5_23": 0.0772127215621483,
-      "pooled_all_sites": 0.3115795075453182,
-      "site_23": 0.75025294372134,
+      "other_than_5_23": 0.07676798543777402,
+      "pooled_all_sites": 0.1231197930691281,
+      "site_23": 0.27447938734992555,
       "site_5": 0.07730198977309513,
-      "targets_5_23": 0.5789764705731213
+      "targets_5_23": 0.20116783492150603
      },
-     "verdict": "PASS"
+     "status": "DECLARED EXTENSION: C3 plus endpoint-local Z terms (params.cz.*.alpha). Not the primary comparator; the C3 verdict and criteria are unaffected by it.",
+     "target_site_mae": {
+      "site_23": {
+       "C0": 0.04143472299421665,
+       "C2": 0.04020515223641132,
+       "C3": 0.01887612928510413,
+       "C3Z": 0.03006174561175019,
+       "n_obs": 20
+      },
+      "site_5": {
+       "C0": 0.024523659960564558,
+       "C2": 0.02281412529256714,
+       "C3": 0.022627932249094134,
+       "C3Z": 0.022627932249094134,
+       "n_obs": 20
+      }
+     },
+     "verdict": "FAIL",
+     "vs_C3": {
+      "mae_change_C3Z_minus_C3": {
+       "all": 0.001410737553267212,
+       "other_than_5_23": 0.0001807167856037479,
+       "targets_5_23": 0.00559280816332303
+      },
+      "paired_bootstrap_MAE_C3_minus_MAE_C3Z": {
+       "all_sites": {
+        "base": "C3",
+        "ci95": [
+         -0.002790114391440138,
+         -0.00022331296139302
+        ],
+        "circuits": 20,
+        "losses": 13,
+        "mean_improvement": -0.0015218346323841079,
+        "relative_ci95": [
+         -0.17065428913420105,
+         -0.013991460034549399
+        ],
+        "relative_improvement_equal_circuit_weight": -0.09294941730999222,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 5
+       },
+       "targets_5_23": {
+        "base": "C3",
+        "ci95": [
+         -0.010642229206011076,
+         -0.00029123466885492503
+        ],
+        "circuits": 20,
+        "losses": 12,
+        "mean_improvement": -0.005592808163323028,
+        "relative_ci95": [
+         -0.5531169503213489,
+         -0.012623019733251362
+        ],
+        "relative_improvement_equal_circuit_weight": -0.269506547387643,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 6
+       }
+      }
+     }
     }
    },
    "groups": {
     "all": {
-     "C0": 0.023441831090141065,
-     "C1": 0.02351565841104042,
-     "C2": 0.02294342304000403,
-     "C3": 0.01613783690311438,
-     "ideal": 0.0270670143347821,
+     "C0": 0.0201159481323965,
+     "C1": 0.020142380437509513,
+     "C2": 0.019591859023418805,
+     "C3": 0.01622853920767932,
+     "C3Z": 0.01763927676094653,
+     "ideal": 0.02374293222302313,
      "n": 176
     },
     "controls_3_21": {
      "C0": 0.01345599058361322,
      "C1": 0.013531340371466272,
      "C2": 0.013037556466058827,
-     "C3": 0.013511097794069366,
+     "C3": 0.01351339783819172,
+     "C3Z": 0.013511097794069366,
      "ideal": 0.01594747413828613,
      "n": 40
     },
     "other_than_5_23": {
-     "C0": 0.01616674099534328,
-     "C1": 0.016036149994301908,
-     "C2": 0.015971790068285564,
-     "C3": 0.01491846292430247,
-     "ideal": 0.02035502928675446,
+     "C0": 0.016332641266221762,
+     "C1": 0.016148968473192755,
+     "C2": 0.016086629687809852,
+     "C3": 0.014898100513732315,
+     "C3Z": 0.015078817299336062,
+     "ideal": 0.020541155101684014,
      "n": 136
     },
     "site_23": {
-     "C0": 0.07183061486434258,
-     "C1": 0.07340923645593689,
-     "C2": 0.07047982499512648,
-     "C3": 0.017939484613055716,
-     "ideal": 0.07665859422504376,
+     "C0": 0.04143472299421665,
+     "C1": 0.04295722463240719,
+     "C2": 0.04020515223641132,
+     "C3": 0.01887612928510413,
+     "C3Z": 0.03006174561175019,
+     "ideal": 0.046141016100043765,
      "n": 20
     },
     "site_5": {
@@ -755,30 +1123,35 @@
      "C1": 0.02448273759996586,
      "C2": 0.02281412529256714,
      "C3": 0.022627932249094134,
+     "C3Z": 0.022627932249094134,
      "ideal": 0.02311693277110851,
      "n": 20
     },
     "targets_5_23": {
-     "C0": 0.04817713741245357,
-     "C1": 0.04894598702795137,
-     "C2": 0.0466469751438468,
-     "C3": 0.020283708431074927,
-     "ideal": 0.04988776349807614,
+     "C0": 0.03297919147739061,
+     "C1": 0.033719981116186515,
+     "C2": 0.03150963876448922,
+     "C3": 0.02075203076709913,
+     "C3Z": 0.02634483893042216,
+     "ideal": 0.03462897443557614,
      "n": 40
     }
    },
    "sites": [
     {
      "change_C2_vs_C0": -0.0007700090341174123,
-     "change_C3_vs_C0": 0.00019174294656696192,
+     "change_C3Z_vs_C0": 0.00019174294656696192,
+     "change_C3_vs_C0": 0.00019151777062476408,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.013202942178348378,
       "C1": 0.01342053904077115,
       "C2": 0.012432933144230966,
-      "C3": 0.01339468512491534,
+      "C3": 0.013394459948973142,
+      "C3Z": 0.01339468512491534,
       "ideal": 0.014336970606628214
      },
      "n_obs": 20,
@@ -787,15 +1160,18 @@
     },
     {
      "change_C2_vs_C0": -0.001116416486821363,
-     "change_C3_vs_C0": -0.008913275280158558,
+     "change_C3Z_vs_C0": -0.008913275280158558,
+     "change_C3_vs_C0": -0.008913198676579612,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.026000524250424695,
       "C1": 0.02510141487819262,
       "C2": 0.024884107763603332,
-      "C3": 0.017087248970266138,
+      "C3": 0.017087325573845083,
+      "C3Z": 0.017087248970266138,
       "ideal": 0.025148475343459948
      },
      "n_obs": 20,
@@ -804,15 +1180,18 @@
     },
     {
      "change_C2_vs_C0": -0.0017095346679974165,
+     "change_C3Z_vs_C0": -0.001895727711470424,
      "change_C3_vs_C0": -0.001895727711470424,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.024523659960564558,
       "C1": 0.02448273759996586,
       "C2": 0.02281412529256714,
       "C3": 0.022627932249094134,
+      "C3Z": 0.022627932249094134,
       "ideal": 0.02311693277110851
      },
      "n_obs": 20,
@@ -821,15 +1200,18 @@
     },
     {
      "change_C2_vs_C0": -0.0006971147224626335,
+     "change_C3Z_vs_C0": -0.0006959235338505829,
      "change_C3_vs_C0": -0.0006959235338505829,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.016528886820670833,
       "C1": 0.01571271461952816,
       "C2": 0.0158317720982082,
       "C3": 0.01583296328682025,
+      "C3Z": 0.01583296328682025,
       "ideal": 0.022137727331999812
      },
      "n_obs": 20,
@@ -838,15 +1220,18 @@
     },
     {
      "change_C2_vs_C0": -2.914713617568898e-05,
+     "change_C3Z_vs_C0": -2.914713617568898e-05,
      "change_C3_vs_C0": -2.914713617568898e-05,
      "circuits": 4,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.015195057850425048,
       "C1": 0.015165910714249359,
       "C2": 0.015165910714249359,
       "C3": 0.015165910714249359,
+      "C3Z": 0.015165910714249359,
       "ideal": 0.022276446310079565
      },
      "n_obs": 4,
@@ -854,17 +1239,20 @@
      "role": "other"
     },
     {
-     "change_C2_vs_C0": 0.0004739021493821091,
-     "change_C3_vs_C0": 0.00033610955060498805,
+     "change_C2_vs_C0": 0.0004421739758538601,
+     "change_C3Z_vs_C0": 0.00030438137707674076,
+     "change_C3_vs_C0": -0.0007067450710512759,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
-      "C0": 0.013862210729737947,
-      "C1": 0.013693393313979355,
-      "C2": 0.014336112879120056,
-      "C3": 0.014198320280342935,
-      "ideal": 0.022468760275132716
+      "C0": 0.014528704528266195,
+      "C1": 0.014328158938979355,
+      "C2": 0.014970878504120055,
+      "C3": 0.013821959457214919,
+      "C3Z": 0.014833085905342935,
+      "ideal": 0.023103525900132715
      },
      "n_obs": 20,
      "physical": 16,
@@ -872,15 +1260,18 @@
     },
     {
      "change_C2_vs_C0": -6.685920099137703e-05,
-     "change_C3_vs_C0": -8.152852565466995e-05,
+     "change_C3Z_vs_C0": -8.152852565466995e-05,
+     "change_C3_vs_C0": -7.670326146777019e-05,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.013709038988878064,
       "C1": 0.01364214170216139,
       "C2": 0.013642179787886687,
-      "C3": 0.013627510463223394,
+      "C3": 0.013632335727410294,
+      "C3Z": 0.013627510463223394,
       "ideal": 0.017557977669944047
      },
      "n_obs": 20,
@@ -888,34 +1279,40 @@
      "role": "control"
     },
     {
-     "change_C2_vs_C0": 0.0009703016340138326,
-     "change_C3_vs_C0": 0.0007940546024098865,
+     "change_C2_vs_C0": 0.0006548173783335123,
+     "change_C3Z_vs_C0": 0.0007880706841928518,
+     "change_C3_vs_C0": 0.0005656462983917449,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
-      "C0": 0.012344386589366759,
-      "C1": 0.01330923783870826,
-      "C2": 0.013314688223380592,
-      "C3": 0.013138441191776646,
-      "ideal": 0.018402514665545676
+      "C0": 0.01280601463281222,
+      "C1": 0.013441637870166011,
+      "C2": 0.013460832011145733,
+      "C3": 0.013371660931203965,
+      "C3Z": 0.013594085317005072,
+      "ideal": 0.019033404582066673
      },
      "n_obs": 20,
      "physical": 22,
      "role": "other"
     },
     {
-     "change_C2_vs_C0": -0.0013507898692161069,
-     "change_C3_vs_C0": -0.05389113025128687,
+     "change_C2_vs_C0": -0.0012295707578053247,
+     "change_C3Z_vs_C0": -0.011372977382466457,
+     "change_C3_vs_C0": -0.022558593709112517,
      "circuits": 20,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
-      "C0": 0.07183061486434258,
-      "C1": 0.07340923645593689,
-      "C2": 0.07047982499512648,
-      "C3": 0.017939484613055716,
-      "ideal": 0.07665859422504376
+      "C0": 0.04143472299421665,
+      "C1": 0.04295722463240719,
+      "C2": 0.04020515223641132,
+      "C3": 0.01887612928510413,
+      "C3Z": 0.03006174561175019,
+      "ideal": 0.046141016100043765
      },
      "n_obs": 20,
      "physical": 23,
@@ -923,15 +1320,18 @@
     },
     {
      "change_C2_vs_C0": -0.0002474528123631997,
+     "change_C3Z_vs_C0": -0.0002474528123631997,
      "change_C3_vs_C0": -0.0002474528123631997,
      "circuits": 4,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.016736532664247558,
       "C1": 0.01648907985188436,
       "C2": 0.01648907985188436,
       "C3": 0.01648907985188436,
+      "C3Z": 0.01648907985188436,
       "ideal": 0.029716873946390124
      },
      "n_obs": 4,
@@ -940,15 +1340,18 @@
     },
     {
      "change_C2_vs_C0": 3.3204821293097986e-05,
+     "change_C3Z_vs_C0": 3.3204821293097986e-05,
      "change_C3_vs_C0": 3.3204821293097986e-05,
      "circuits": 4,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.018059467257184852,
       "C1": 0.01809267207847795,
       "C2": 0.01809267207847795,
       "C3": 0.01809267207847795,
+      "C3Z": 0.01809267207847795,
       "ideal": 0.01885669461908425
      },
      "n_obs": 4,
@@ -957,15 +1360,18 @@
     },
     {
      "change_C2_vs_C0": -0.0003539580877318649,
+     "change_C3Z_vs_C0": -0.0003539580877318649,
      "change_C3_vs_C0": -0.0003539580877318649,
      "circuits": 4,
      "flag_C2": false,
      "flag_C3": false,
+     "flag_C3Z": false,
      "mae": {
       "C0": 0.021438188282680515,
       "C1": 0.02108423019494865,
       "C2": 0.02108423019494865,
       "C3": 0.02108423019494865,
+      "C3Z": 0.02108423019494865,
       "ideal": 0.020958851410545515
      },
      "n_obs": 4,
@@ -983,11 +1389,11 @@
    3,
    21
   ],
-  "counts_sha256": "fe35f454ee8441b7d3c1d9ade753160ea7fca16f5275a074303360ce15fd1578",
+  "counts_sha256": "31f68b5b662efe7ab257b5a3e6aac7390886b385ebea29f4ede0197847abcc00",
   "freeze_check": {
    "checks": [
     {
-     "detail": "qc26b-frozen-v1",
+     "detail": "qc26b-frozen-v2",
      "name": "format",
      "ok": true
     },
@@ -1032,7 +1438,7 @@
      "ok": true
     },
     {
-     "detail": "0 of 880 values differ, max gap 0",
+     "detail": "0 of 1056 values differ, max gap 0",
      "name": "predictions recompute within 1e-12",
      "ok": true
     },
@@ -1044,7 +1450,7 @@
    ],
    "passed": true
   },
-  "frozen_sha256": "c51648fcecbe248787b989d4b1d7094b43d932f6d7da2ff81ee33f98540a321f",
+  "frozen_sha256": "0b2572ea7cf533a4629d5490378f551cd4b564415cfc1250fc73f3f00fe56037",
   "label": "SYNTHETIC DRY RUN - NOT HARDWARE DATA",
   "observables": 176,
   "params_sha256": "9e2db39065778b36f13f5afa837f271d14200e18f569964587b48dd7bad2a4b9",
@@ -1061,9 +1467,1511 @@
    "rel_improvement": 0.1
   }
  },
- "description": "freeze -> evaluate on counts fabricated from engine C3 predictions plus Bernoulli shot noise (seed 11), on a subset of the committed QC-23 nc_eval circuits (width 8 all 16, width 12 depth<=2 seeds 41,42) with an ARBITRARY parameter file chosen only to exercise the code. The control run draws counts from C0.",
+ "declared_extension_C3Z": {
+  "counts_follow_C3Z": {
+   "analysis": {
+    "candidates": {
+     "C2": {
+      "criteria": {
+       "a_relative_improvement_ge_10pct": {
+        "detail": "pooled 1.33% and targeted(5,23) 2.29% (both must be >= 10%)",
+        "pass": false
+       },
+       "b_paired_ci_lower_positive": {
+        "detail": "pooled CI95 [0.00019, 0.00156], targeted CI95 [0.00139, 0.00612] (both lower bounds must be > 0)",
+        "pass": true
+       },
+       "c_no_other_site_degradation_gt_0p005": {
+        "detail": "no site other than 5/23 worsens by more than 0.005 (pooled other-site change -0.00006)",
+        "pass": true
+       },
+       "d_ledger_bound_below_1pct_of_mae": {
+        "detail": "max min_bound 2.428e-11 / MAE 0.06511 = 3.729e-10 (need < 0.01)",
+        "pass": true
+       },
+       "e_no_tuning_freeze_verified": {
+        "detail": "frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring",
+        "pass": true
+       }
+      },
+      "numerical_vs_physical": {
+       "candidate_max_l1_discard": 4.2975503894987456e-11,
+       "candidate_max_min_bound": 2.4281171151061407e-11,
+       "candidate_max_old_bound": 2.4281171151061407e-11,
+       "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C2) < 1% of the pooled MAE of C2",
+       "max_l1_discard": 4.2975503894987456e-11,
+       "max_live_terms": 40948,
+       "max_min_bound": 2.4281171151061407e-11,
+       "max_old_bound": 2.4281171151061407e-11,
+       "mean_abs_model_effect_vs_C0": 0.003237927829177707,
+       "models_considered": "all four models (worst case)",
+       "physical_prediction_error_mae": 0.06511465354157578,
+       "ratio_candidate_l1_to_mae": 6.599974284981421e-10,
+       "ratio_candidate_min_bound_to_mae": 3.728987229511688e-10,
+       "ratio_candidate_min_bound_to_model_effect": 7.498984669225247e-09,
+       "ratio_candidate_old_bound_to_mae": 3.728987229511688e-10
+      },
+      "other_site_degradation": {
+       "flagged_sites": [],
+       "pooled_other_sites_change": -6.354091629154346e-05
+      },
+      "paired_bootstrap_vs_C0": {
+       "all_sites": {
+        "base": "C0",
+        "ci95": [
+         0.00019250715318263023,
+         0.001557058126891717
+        ],
+        "circuits": 20,
+        "losses": 2,
+        "mean_improvement": 0.0008789546507708832,
+        "relative_ci95": [
+         0.002846649069002042,
+         0.02168676710195948
+        ],
+        "relative_improvement_equal_circuit_weight": 0.012772694426626173,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 18
+       },
+       "targets_5_23": {
+        "base": "C0",
+        "ci95": [
+         0.0013941176534009749,
+         0.006118101212283628
+        ],
+        "circuits": 20,
+        "losses": 5,
+        "mean_improvement": 0.003641646616156917,
+        "relative_ci95": [
+         0.009561273005988424,
+         0.035539110682464535
+        ],
+        "relative_improvement_equal_circuit_weight": 0.02290628511422273,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 15
+       }
+      },
+      "relative_mae_improvement": {
+       "controls_3_21": 0.043814421889714766,
+       "other_than_5_23": 0.0016443594891471546,
+       "pooled_all_sites": 0.013285772891634438,
+       "site_23": 0.005373676681758374,
+       "site_5": 0.08909155357891041,
+       "targets_5_23": 0.022906285114223147
+      },
+      "verdict": "FAIL"
+     },
+     "C3": {
+      "criteria": {
+       "a_relative_improvement_ge_10pct": {
+        "detail": "pooled 12.13% and targeted(5,23) 13.71% (both must be >= 10%)",
+        "pass": true
+       },
+       "b_paired_ci_lower_positive": {
+        "detail": "pooled CI95 [0.00688, 0.00955], targeted CI95 [0.01718, 0.02614] (both lower bounds must be > 0)",
+        "pass": true
+       },
+       "c_no_other_site_degradation_gt_0p005": {
+        "detail": "no site other than 5/23 worsens by more than 0.005 (pooled other-site change -0.00395)",
+        "pass": true
+       },
+       "d_ledger_bound_below_1pct_of_mae": {
+        "detail": "max min_bound 2.401e-11 / MAE 0.05798 = 4.140e-10 (need < 0.01)",
+        "pass": true
+       },
+       "e_no_tuning_freeze_verified": {
+        "detail": "frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring",
+        "pass": true
+       }
+      },
+      "numerical_vs_physical": {
+       "candidate_max_l1_discard": 4.2290111418876775e-11,
+       "candidate_max_min_bound": 2.400567378547267e-11,
+       "candidate_max_old_bound": 2.400567378547267e-11,
+       "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C3) < 1% of the pooled MAE of C3",
+       "max_l1_discard": 4.2975503894987456e-11,
+       "max_live_terms": 40948,
+       "max_min_bound": 2.4281171151061407e-11,
+       "max_old_bound": 2.4281171151061407e-11,
+       "mean_abs_model_effect_vs_C0": 0.009562848288692478,
+       "models_considered": "all four models (worst case)",
+       "physical_prediction_error_mae": 0.05798453657246169,
+       "ratio_candidate_l1_to_mae": 7.293343004652279e-10,
+       "ratio_candidate_min_bound_to_mae": 4.1400130456287143e-10,
+       "ratio_candidate_min_bound_to_model_effect": 2.510305827381786e-09,
+       "ratio_candidate_old_bound_to_mae": 4.1400130456287143e-10
+      },
+      "other_site_degradation": {
+       "flagged_sites": [],
+       "pooled_other_sites_change": -0.003950888959768681
+      },
+      "paired_bootstrap_vs_C0": {
+       "all_sites": {
+        "base": "C0",
+        "ci95": [
+         0.006884209433601321,
+         0.00955438063689636
+        ],
+        "circuits": 20,
+        "losses": 0,
+        "mean_improvement": 0.008236466361399465,
+        "relative_ci95": [
+         0.1036078941726688,
+         0.13750533178393237
+        ],
+        "relative_improvement_equal_circuit_weight": 0.11968975634530642,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 20
+       },
+       "targets_5_23": {
+        "base": "C0",
+        "ci95": [
+         0.017182417109233593,
+         0.02613780159682194
+        ],
+        "circuits": 20,
+        "losses": 0,
+        "mean_improvement": 0.021797177932436535,
+        "relative_ci95": [
+         0.11707024333696538,
+         0.15961908566988592
+        ],
+        "relative_improvement_equal_circuit_weight": 0.13710621184126476,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 20
+       }
+      },
+      "relative_mae_improvement": {
+       "controls_3_21": 0.061662899471651975,
+       "other_than_5_23": 0.10224406777128885,
+       "pooled_all_sites": 0.12133192643339512,
+       "site_23": 0.15343557629985038,
+       "site_5": 0.0754631668424379,
+       "targets_5_23": 0.1371062118412646
+      },
+      "verdict": "PASS"
+     },
+     "C3Z": {
+      "criteria": {
+       "a_relative_improvement_ge_10pct": {
+        "detail": "pooled 76.34% and targeted(5,23) 87.31% (both must be >= 10%)",
+        "pass": true
+       },
+       "b_paired_ci_lower_positive": {
+        "detail": "pooled CI95 [0.04057, 0.06565], targeted CI95 [0.10863, 0.16835] (both lower bounds must be > 0)",
+        "pass": true
+       },
+       "c_no_other_site_degradation_gt_0p005": {
+        "detail": "no site other than 5/23 worsens by more than 0.005 (pooled other-site change -0.02438)",
+        "pass": true
+       },
+       "d_ledger_bound_below_1pct_of_mae": {
+        "detail": "max min_bound 2.349e-11 / MAE 0.01561 = 1.504e-9 (need < 0.01)",
+        "pass": true
+       },
+       "e_no_tuning_freeze_verified": {
+        "detail": "frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring",
+        "pass": true
+       }
+      },
+      "numerical_vs_physical": {
+       "candidate_max_l1_discard": 4.1619696519014074e-11,
+       "candidate_max_min_bound": 2.3485602927565128e-11,
+       "candidate_max_old_bound": 2.3485602927565128e-11,
+       "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C3Z) < 1% of the pooled MAE of C3Z",
+       "max_l1_discard": 4.2975503894987456e-11,
+       "max_live_terms": 42152,
+       "max_min_bound": 2.4281171151061407e-11,
+       "max_old_bound": 2.4281171151061407e-11,
+       "mean_abs_model_effect_vs_C0": 0.05836519428255605,
+       "models_considered": "all models C0, C1, C2, C3, C3Z (worst case)",
+       "physical_prediction_error_mae": 0.015610344685803218,
+       "ratio_candidate_l1_to_mae": 2.666161276814405e-09,
+       "ratio_candidate_min_bound_to_mae": 1.5044897086048356e-09,
+       "ratio_candidate_min_bound_to_model_effect": 4.0239055512892223e-10,
+       "ratio_candidate_old_bound_to_mae": 1.5044897086048356e-09
+      },
+      "other_site_degradation": {
+       "flagged_sites": [],
+       "pooled_other_sites_change": -0.024375416393623665
+      },
+      "paired_bootstrap_vs_C0": {
+       "all_sites": {
+        "base": "C0",
+        "ci95": [
+         0.040574094229643684,
+         0.06564931637679544
+        ],
+        "circuits": 20,
+        "losses": 0,
+        "mean_improvement": 0.05319129971406631,
+        "relative_ci95": [
+         0.7290708524537864,
+         0.8043907003907378
+        ],
+        "relative_improvement_equal_circuit_weight": 0.7729593521201529,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 20
+       },
+       "targets_5_23": {
+        "base": "C0",
+        "ci95": [
+         0.10862513791083557,
+         0.16835374036558773
+        ],
+        "circuits": 20,
+        "losses": 0,
+        "mean_improvement": 0.13880022895862698,
+        "relative_ci95": [
+         0.8481049013715948,
+         0.8940256702195288
+        ],
+        "relative_improvement_equal_circuit_weight": 0.8730659379028295,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 20
+       }
+      },
+      "relative_mae_improvement": {
+       "controls_3_21": 0.04307673857899896,
+       "other_than_5_23": 0.6308053076361226,
+       "pooled_all_sites": 0.7634488037057173,
+       "site_23": 0.9258270070623714,
+       "site_5": 0.6738938899865466,
+       "targets_5_23": 0.8730659379028294
+      },
+      "status": "DECLARED EXTENSION: C3 plus endpoint-local Z terms (params.cz.*.alpha). Not the primary comparator; the C3 verdict and criteria are unaffected by it.",
+      "target_site_mae": {
+       "site_23": {
+        "C0": 0.2513716304893426,
+        "C2": 0.2500208406201264,
+        "C3": 0.21280227949977726,
+        "C3Z": 0.018644986173006188,
+        "n_obs": 20
+       },
+       "site_5": {
+        "C0": 0.0665888417563979,
+        "C2": 0.06065633839330019,
+        "C3": 0.06156383688109015,
+        "C3Z": 0.021715028155480327,
+        "n_obs": 20
+       }
+      },
+      "verdict": "PASS",
+      "vs_C3": {
+       "mae_change_C3Z_minus_C3": {
+        "all": -0.042374191886658474,
+        "other_than_5_23": -0.020424527433854985,
+        "targets_5_23": -0.11700305102619052
+       },
+       "paired_bootstrap_MAE_C3_minus_MAE_C3Z": {
+        "all_sites": {
+         "base": "C3",
+         "ci95": [
+          0.03326574229691365,
+          0.056512142493236904
+         ],
+         "circuits": 20,
+         "losses": 0,
+         "mean_improvement": 0.044954833352666826,
+         "relative_ci95": [
+          0.6883486362756684,
+          0.7793777922076423
+         ],
+         "relative_improvement_equal_circuit_weight": 0.7420901897752933,
+         "resamples": 20000,
+         "seed": 26112501,
+         "wins": 20
+        },
+        "targets_5_23": {
+         "base": "C3",
+         "ci95": [
+          0.08989889140406901,
+          0.1438240090711292
+         ],
+         "circuits": 20,
+         "losses": 0,
+         "mean_improvement": 0.11700305102619044,
+         "relative_ci95": [
+          0.8218341397596777,
+          0.8780163748996042
+         ],
+         "relative_improvement_equal_circuit_weight": 0.8528972350490251,
+         "resamples": 20000,
+         "seed": 26112501,
+         "wins": 18
+        }
+       }
+      }
+     }
+    },
+    "groups": {
+     "all": {
+      "C0": 0.06599140029874585,
+      "C1": 0.0658720693329606,
+      "C2": 0.06511465354157578,
+      "C3": 0.05798453657246169,
+      "C3Z": 0.015610344685803218,
+      "ideal": 0.0689774102298384,
+      "n": 176
+     },
+     "controls_3_21": {
+      "C0": 0.014331131176768014,
+      "C1": 0.013880466856451609,
+      "C2": 0.013703220949232256,
+      "C3": 0.01344743207569991,
+      "C3Z": 0.013713792785525036,
+      "ideal": 0.01733135330573326,
+      "n": 40
+     },
+     "other_than_5_23": {
+      "C0": 0.03864174270341511,
+      "C1": 0.038513223874491465,
+      "C2": 0.03857820178712357,
+      "C3": 0.03469085374364643,
+      "C3Z": 0.014266326309791444,
+      "ideal": 0.04190056557032517,
+      "n": 136
+     },
+     "site_23": {
+      "C0": 0.2513716304893426,
+      "C1": 0.2529502520809369,
+      "C2": 0.2500208406201264,
+      "C3": 0.21280227949977726,
+      "C3Z": 0.018644986173006188,
+      "ideal": 0.25619960985004375,
+      "n": 20
+     },
+     "site_5": {
+      "C0": 0.0665888417563979,
+      "C1": 0.06483403570257466,
+      "C2": 0.06065633839330019,
+      "C3": 0.06156383688109015,
+      "C3Z": 0.021715028155480327,
+      "ideal": 0.0658777542943223,
+      "n": 20
+     },
+     "targets_5_23": {
+      "C0": 0.1589802361228703,
+      "C1": 0.15889214389175577,
+      "C2": 0.1553385895067133,
+      "C3": 0.13718305819043378,
+      "C3Z": 0.020180007164243254,
+      "ideal": 0.16103868207218303,
+      "n": 40
+     }
+    },
+    "sites": [
+     {
+      "change_C2_vs_C0": -0.0011889612540801342,
+      "change_C3Z_vs_C0": -0.0011206986529414646,
+      "change_C3_vs_C0": -0.001690694940668435,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.014953223364657963,
+       "C1": 0.01411879201074182,
+       "C2": 0.01376426211057783,
+       "C3": 0.013262528423989528,
+       "C3Z": 0.013832524711716499,
+       "ideal": 0.017104728941522474
+      },
+      "n_obs": 20,
+      "physical": 3,
+      "role": "control"
+     },
+     {
+      "change_C2_vs_C0": -0.001763985111482208,
+      "change_C3Z_vs_C0": -0.12777715234820575,
+      "change_C3_vs_C0": -0.021876829880636856,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.140765254196142,
+       "C1": 0.13950517284555752,
+       "C2": 0.1390012690846598,
+       "C3": 0.11888842431550514,
+       "C3Z": 0.01298810184793626,
+       "ideal": 0.13657586408589042
+      },
+      "n_obs": 20,
+      "physical": 4,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": -0.00593250336309771,
+      "change_C3Z_vs_C0": -0.04487381360091757,
+      "change_C3_vs_C0": -0.0050250048753077495,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.0665888417563979,
+       "C1": 0.06483403570257466,
+       "C2": 0.06065633839330019,
+       "C3": 0.06156383688109015,
+       "C3Z": 0.021715028155480327,
+       "ideal": 0.0658777542943223
+      },
+      "n_obs": 20,
+      "physical": 5,
+      "role": "target"
+     },
+     {
+      "change_C2_vs_C0": -0.0008924272224626328,
+      "change_C3Z_vs_C0": -0.0007842153574674077,
+      "change_C3_vs_C0": -0.0008912360338505787,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.01687068369567083,
+       "C1": 0.015879218013642775,
+       "C2": 0.015978256473208198,
+       "C3": 0.015979447661820252,
+       "C3Z": 0.016086468338203423,
+       "ideal": 0.022479524206999814
+      },
+      "n_obs": 20,
+      "physical": 6,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": -2.914713617568898e-05,
+      "change_C3Z_vs_C0": -2.914713617568898e-05,
+      "change_C3_vs_C0": -2.914713617568898e-05,
+      "circuits": 4,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.015195057850425048,
+       "C1": 0.015165910714249359,
+       "C2": 0.015165910714249359,
+       "C3": 0.015165910714249359,
+       "C3Z": 0.015165910714249359,
+       "ideal": 0.022276446310079565
+      },
+      "n_obs": 4,
+      "physical": 7,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": 0.0004048203487247437,
+      "change_C3Z_vs_C0": -0.029373674926429894,
+      "change_C3_vs_C0": -0.0023566000878683657,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.04286351333793766,
+       "C1": 0.04207577588344562,
+       "C2": 0.04326833368666241,
+       "C3": 0.0405069132500693,
+       "C3Z": 0.013489838411507771,
+       "ideal": 0.04652387741358812
+      },
+      "n_obs": 20,
+      "physical": 16,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": -6.685920099137703e-05,
+      "change_C3Z_vs_C0": -0.00011397812954448694,
+      "change_C3_vs_C0": -7.670326146777019e-05,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.013709038988878064,
+       "C1": 0.01364214170216139,
+       "C2": 0.013642179787886687,
+       "C3": 0.013632335727410294,
+       "C3Z": 0.013595060859333577,
+       "ideal": 0.017557977669944047
+      },
+      "n_obs": 20,
+      "physical": 21,
+      "role": "control"
+     },
+     {
+      "change_C2_vs_C0": 0.003194804852504698,
+      "change_C3Z_vs_C0": -0.006463641419056315,
+      "change_C3_vs_C0": 0.0001454899210605147,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.019316287589028574,
+       "C1": 0.022502443323080764,
+       "C2": 0.02251109244153327,
+       "C3": 0.01946177751008909,
+       "C3Z": 0.012852646169972259,
+       "ideal": 0.02632010030304645
+      },
+      "n_obs": 20,
+      "physical": 22,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": -0.0013507898692161624,
+      "change_C3Z_vs_C0": -0.23272664431633638,
+      "change_C3_vs_C0": -0.03856935098956532,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.2513716304893426,
+       "C1": 0.2529502520809369,
+       "C2": 0.2500208406201264,
+       "C3": 0.21280227949977726,
+       "C3Z": 0.018644986173006188,
+       "ideal": 0.25619960985004375
+      },
+      "n_obs": 20,
+      "physical": 23,
+      "role": "target"
+     },
+     {
+      "change_C2_vs_C0": -0.0002474528123631997,
+      "change_C3Z_vs_C0": -0.0002474528123631997,
+      "change_C3_vs_C0": -0.0002474528123631997,
+      "circuits": 4,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.016736532664247558,
+       "C1": 0.01648907985188436,
+       "C2": 0.01648907985188436,
+       "C3": 0.01648907985188436,
+       "C3Z": 0.01648907985188436,
+       "ideal": 0.029716873946390124
+      },
+      "n_obs": 4,
+      "physical": 36,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": 3.3204821293097986e-05,
+      "change_C3Z_vs_C0": 3.3204821293097986e-05,
+      "change_C3_vs_C0": 3.3204821293097986e-05,
+      "circuits": 4,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.018059467257184852,
+       "C1": 0.01809267207847795,
+       "C2": 0.01809267207847795,
+       "C3": 0.01809267207847795,
+       "C3Z": 0.01809267207847795,
+       "ideal": 0.01885669461908425
+      },
+      "n_obs": 4,
+      "physical": 41,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": -0.0003539580877318649,
+      "change_C3Z_vs_C0": -0.0003539580877318649,
+      "change_C3_vs_C0": -0.0003539580877318649,
+      "circuits": 4,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.021438188282680515,
+       "C1": 0.02108423019494865,
+       "C2": 0.02108423019494865,
+       "C3": 0.02108423019494865,
+       "C3Z": 0.02108423019494865,
+       "ideal": 0.020958851410545515
+      },
+      "n_obs": 4,
+      "physical": 42,
+      "role": "other"
+     }
+    ]
+   },
+   "bootstrap": {
+    "resamples": 20000,
+    "seed": 26112501
+   },
+   "circuits": 20,
+   "controls": [
+    3,
+    21
+   ],
+   "counts_sha256": "476ba2c6b2615b1f349b9b885ff57a178d0a340e4109bece39fad32139c41014",
+   "freeze_check": {
+    "checks": [
+     {
+      "detail": "qc26b-frozen-v2",
+      "name": "format",
+      "ok": true
+     },
+     {
+      "detail": "top-level sha256 does not match contents",
+      "name": "frozen self-hash",
+      "ok": true
+     },
+     {
+      "detail": "parameter file differs from the frozen parameters",
+      "name": "parameter file equals frozen parameters",
+      "ok": true
+     },
+     {
+      "detail": null,
+      "name": "params_sha256",
+      "ok": true
+     },
+     {
+      "detail": "qc26b_engine.mjs differs from the frozen version",
+      "name": "engine code hash",
+      "ok": true
+     },
+     {
+      "detail": null,
+      "name": "compiled.json hash",
+      "ok": true
+     },
+     {
+      "detail": null,
+      "name": "plan_sha256",
+      "ok": true
+     },
+     {
+      "detail": null,
+      "name": "calibration snapshot hash",
+      "ok": true
+     },
+     {
+      "detail": null,
+      "name": "circuit id set",
+      "ok": true
+     },
+     {
+      "detail": "0 of 1056 values differ, max gap 0",
+      "name": "predictions recompute within 1e-12",
+      "ok": true
+     },
+     {
+      "detail": 0,
+      "name": "max recompute gap",
+      "ok": true
+     }
+    ],
+    "passed": true
+   },
+   "frozen_sha256": "3ef6e099e1d34aa762dab37079b0a4e02f1e09428ed20c34f2fa8502f2270abc",
+   "label": "SYNTHETIC DRY RUN - NOT HARDWARE DATA",
+   "observables": 176,
+   "params_sha256": "bed8549332d88315bfc81a3afb9f2fc590a68345389cf2232deec66c75f78500",
+   "plan_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+   "refused": false,
+   "synthetic": true,
+   "targets": [
+    5,
+    23
+   ],
+   "thresholds": {
+    "ledger_fraction_of_mae": 0.01,
+    "other_site_degradation": 0.005,
+    "rel_improvement": 0.1
+   }
+  },
+  "counts_follow_C3_under_Z_params": {
+   "analysis": {
+    "candidates": {
+     "C2": {
+      "criteria": {
+       "a_relative_improvement_ge_10pct": {
+        "detail": "pooled 2.61% and targeted(5,23) 4.46% (both must be >= 10%)",
+        "pass": false
+       },
+       "b_paired_ci_lower_positive": {
+        "detail": "pooled CI95 [-0.00017, 0.00141], targeted CI95 [-0.00086, 0.00412] (both lower bounds must be > 0)",
+        "pass": false
+       },
+       "c_no_other_site_degradation_gt_0p005": {
+        "detail": "no site other than 5/23 worsens by more than 0.005 (pooled other-site change -0.00025)",
+        "pass": true
+       },
+       "d_ledger_bound_below_1pct_of_mae": {
+        "detail": "max min_bound 2.428e-11 / MAE 0.01959 = 1.239e-9 (need < 0.01)",
+        "pass": true
+       },
+       "e_no_tuning_freeze_verified": {
+        "detail": "frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring",
+        "pass": true
+       }
+      },
+      "numerical_vs_physical": {
+       "candidate_max_l1_discard": 4.2975503894987456e-11,
+       "candidate_max_min_bound": 2.4281171151061407e-11,
+       "candidate_max_old_bound": 2.4281171151061407e-11,
+       "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C2) < 1% of the pooled MAE of C2",
+       "max_l1_discard": 4.2975503894987456e-11,
+       "max_live_terms": 40948,
+       "max_min_bound": 2.4281171151061407e-11,
+       "max_old_bound": 2.4281171151061407e-11,
+       "mean_abs_model_effect_vs_C0": 0.003237927829177707,
+       "models_considered": "all four models (worst case)",
+       "physical_prediction_error_mae": 0.019591859023418805,
+       "ratio_candidate_l1_to_mae": 2.193538849152467e-09,
+       "ratio_candidate_min_bound_to_mae": 1.2393500342176467e-09,
+       "ratio_candidate_min_bound_to_model_effect": 7.498984669225247e-09,
+       "ratio_candidate_old_bound_to_mae": 1.2393500342176467e-09
+      },
+      "other_site_degradation": {
+       "flagged_sites": [],
+       "pooled_other_sites_change": -0.0002460115784119095
+      },
+      "paired_bootstrap_vs_C0": {
+       "all_sites": {
+        "base": "C0",
+        "ci95": [
+         -0.00017229110992366526,
+         0.0014085378450371306
+        ],
+        "circuits": 20,
+        "losses": 6,
+        "mean_improvement": 0.0005396242595837496,
+        "relative_ci95": [
+         -0.009023258674806384,
+         0.06374767389966898
+        ],
+        "relative_improvement_equal_circuit_weight": 0.026431472532058915,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 14
+       },
+       "targets_5_23": {
+        "base": "C0",
+        "ci95": [
+         -0.0008609442855971887,
+         0.004118630721101512
+        ],
+        "circuits": 20,
+        "losses": 9,
+        "mean_improvement": 0.0014695527129013754,
+        "relative_ci95": [
+         -0.029183784788372216,
+         0.11471314407268206
+        ],
+        "relative_improvement_equal_circuit_weight": 0.04455999820095194,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 11
+       }
+      },
+      "relative_mae_improvement": {
+       "controls_3_21": 0.03109649304183993,
+       "other_than_5_23": 0.015062571595244463,
+       "pooled_all_sites": 0.026053413218622163,
+       "site_23": 0.02967488784652778,
+       "site_5": 0.06970960577444173,
+       "targets_5_23": 0.044559998200952376
+      },
+      "verdict": "FAIL"
+     },
+     "C3": {
+      "criteria": {
+       "a_relative_improvement_ge_10pct": {
+        "detail": "pooled 19.33% and targeted(5,23) 37.08% (both must be >= 10%)",
+        "pass": true
+       },
+       "b_paired_ci_lower_positive": {
+        "detail": "pooled CI95 [0.00201, 0.00614], targeted CI95 [0.00503, 0.01935] (both lower bounds must be > 0)",
+        "pass": true
+       },
+       "c_no_other_site_degradation_gt_0p005": {
+        "detail": "no site other than 5/23 worsens by more than 0.005 (pooled other-site change -0.00143)",
+        "pass": true
+       },
+       "d_ledger_bound_below_1pct_of_mae": {
+        "detail": "max min_bound 2.401e-11 / MAE 0.01623 = 1.479e-9 (need < 0.01)",
+        "pass": true
+       },
+       "e_no_tuning_freeze_verified": {
+        "detail": "frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring",
+        "pass": true
+       }
+      },
+      "numerical_vs_physical": {
+       "candidate_max_l1_discard": 4.2290111418876775e-11,
+       "candidate_max_min_bound": 2.400567378547267e-11,
+       "candidate_max_old_bound": 2.400567378547267e-11,
+       "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C3) < 1% of the pooled MAE of C3",
+       "max_l1_discard": 4.2975503894987456e-11,
+       "max_live_terms": 40948,
+       "max_min_bound": 2.4281171151061407e-11,
+       "max_old_bound": 2.4281171151061407e-11,
+       "mean_abs_model_effect_vs_C0": 0.009562848288692478,
+       "models_considered": "all four models (worst case)",
+       "physical_prediction_error_mae": 0.01622853920767932,
+       "ratio_candidate_l1_to_mae": 2.605909926807532e-09,
+       "ratio_candidate_min_bound_to_mae": 1.479225793416651e-09,
+       "ratio_candidate_min_bound_to_model_effect": 2.510305827381786e-09,
+       "ratio_candidate_old_bound_to_mae": 1.479225793416651e-09
+      },
+      "other_site_degradation": {
+       "flagged_sites": [],
+       "pooled_other_sites_change": -0.0014345407524894473
+      },
+      "paired_bootstrap_vs_C0": {
+       "all_sites": {
+        "base": "C0",
+        "ci95": [
+         0.0020055437676714466,
+         0.006141991095350264
+        ],
+        "circuits": 20,
+        "losses": 4,
+        "mean_improvement": 0.004043255764524148,
+        "relative_ci95": [
+         0.11108477042118355,
+         0.27123271382861447
+        ],
+        "relative_improvement_equal_circuit_weight": 0.1980437346581576,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 16
+       },
+       "targets_5_23": {
+        "base": "C0",
+        "ci95": [
+         0.0050303148617659435,
+         0.019346574200546963
+        ],
+        "circuits": 20,
+        "losses": 4,
+        "mean_improvement": 0.012227160710291476,
+        "relative_ci95": [
+         0.19410711961148172,
+         0.4843781851639803
+        ],
+        "relative_improvement_equal_circuit_weight": 0.3707538045216783,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 16
+       }
+      },
+      "relative_mae_improvement": {
+       "controls_3_21": -0.004266297172384481,
+       "other_than_5_23": 0.08783274726398863,
+       "pooled_all_sites": 0.1932500968451274,
+       "site_23": 0.5444369378856759,
+       "site_5": 0.07730198977309513,
+       "targets_5_23": 0.37075380452167844
+      },
+      "verdict": "PASS"
+     },
+     "C3Z": {
+      "criteria": {
+       "a_relative_improvement_ge_10pct": {
+        "detail": "pooled -183.31% and targeted(5,23) -307.01% (both must be >= 10%)",
+        "pass": false
+       },
+       "b_paired_ci_lower_positive": {
+        "detail": "pooled CI95 [-0.04923, -0.02911], targeted CI95 [-0.12384, -0.07840] (both lower bounds must be > 0)",
+        "pass": false
+       },
+       "c_no_other_site_degradation_gt_0p005": {
+        "detail": "flagged physical sites: 3 (+0.0058), 4 (+0.0916), 16 (+0.0177), 22 (+0.0077)",
+        "pass": false
+       },
+       "d_ledger_bound_below_1pct_of_mae": {
+        "detail": "max min_bound 2.349e-11 / MAE 0.05699 = 4.121e-10 (need < 0.01)",
+        "pass": true
+       },
+       "e_no_tuning_freeze_verified": {
+        "detail": "frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring",
+        "pass": true
+       }
+      },
+      "numerical_vs_physical": {
+       "candidate_max_l1_discard": 4.1619696519014074e-11,
+       "candidate_max_min_bound": 2.3485602927565128e-11,
+       "candidate_max_old_bound": 2.3485602927565128e-11,
+       "definition": "'substantially below' means max min_bound (min of the l1 and 2^(n/2)*sum(eta) bounds, worst case over all sites for C3Z) < 1% of the pooled MAE of C3Z",
+       "max_l1_discard": 4.2975503894987456e-11,
+       "max_live_terms": 42152,
+       "max_min_bound": 2.4281171151061407e-11,
+       "max_old_bound": 2.4281171151061407e-11,
+       "mean_abs_model_effect_vs_C0": 0.05836519428255605,
+       "models_considered": "all models C0, C1, C2, C3, C3Z (worst case)",
+       "physical_prediction_error_mae": 0.05698994890737588,
+       "ratio_candidate_l1_to_mae": 7.302988915932767e-10,
+       "ratio_candidate_min_bound_to_mae": 4.1210078931173637e-10,
+       "ratio_candidate_min_bound_to_model_effect": 4.0239055512892223e-10,
+       "ratio_candidate_old_bound_to_mae": 4.1210078931173637e-10
+      },
+      "other_site_degradation": {
+       "flagged_sites": [
+        {
+         "change": 0.0058053637833681195,
+         "n_obs": 20,
+         "physical": 3
+        },
+        {
+         "change": 0.09156357167703828,
+         "n_obs": 20,
+         "physical": 4
+        },
+        {
+         "change": 0.017725300246293266,
+         "n_obs": 20,
+         "physical": 16
+        },
+        {
+         "change": 0.0077235567062177955,
+         "n_obs": 20,
+         "physical": 22
+        }
+       ],
+       "pooled_other_sites_change": 0.01794050599748675
+      },
+      "paired_bootstrap_vs_C0": {
+       "all_sites": {
+        "base": "C0",
+        "ci95": [
+         -0.04922926766870422,
+         -0.029112551615047756
+        ],
+        "circuits": 20,
+        "losses": 20,
+        "mean_improvement": -0.03896775866864627,
+        "relative_ci95": [
+         -2.4989940483510584,
+         -1.453328493137748
+        ],
+        "relative_improvement_equal_circuit_weight": -1.9086896569118617,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 0
+       },
+       "targets_5_23": {
+        "base": "C0",
+        "ci95": [
+         -0.12384260759863366,
+         -0.07839713258240394
+        ],
+        "circuits": 20,
+        "losses": 18,
+        "mean_improvement": -0.10124788301845433,
+        "relative_ci95": [
+         -4.432024128931245,
+         -2.1730071637994244
+        ],
+        "relative_improvement_equal_circuit_weight": -3.070053524140104,
+        "resamples": 20000,
+        "seed": 26112501,
+        "wins": 2
+       }
+      },
+      "relative_mae_improvement": {
+       "controls_3_21": -0.21148148174072862,
+       "other_than_5_23": -1.0984448690849704,
+       "pooled_all_sites": -1.8330729693816532,
+       "site_23": -4.082138853454688,
+       "site_5": -1.3600528417747935,
+       "targets_5_23": -3.070053524140105
+      },
+      "status": "DECLARED EXTENSION: C3 plus endpoint-local Z terms (params.cz.*.alpha). Not the primary comparator; the C3 verdict and criteria are unaffected by it.",
+      "target_site_mae": {
+       "site_23": {
+        "C0": 0.04143472299421665,
+        "C2": 0.04020515223641132,
+        "C3": 0.01887612928510413,
+        "C3Z": 0.21057701561104078,
+        "n_obs": 20
+       },
+       "site_5": {
+        "C0": 0.024523659960564558,
+        "C2": 0.02281412529256714,
+        "C3": 0.022627932249094134,
+        "C3Z": 0.05787713338064911,
+        "n_obs": 20
+       }
+      },
+      "verdict": "FAIL",
+      "vs_C3": {
+       "mae_change_C3Z_minus_C3": {
+        "all": 0.04076140969969656,
+        "other_than_5_23": 0.019375046749976196,
+        "targets_5_23": 0.11347504372874585
+       },
+       "paired_bootstrap_MAE_C3_minus_MAE_C3Z": {
+        "all_sites": {
+         "base": "C3",
+         "ci95": [
+          -0.053042840655975323,
+          -0.03304836581062205
+         ],
+         "circuits": 20,
+         "losses": 20,
+         "mean_improvement": -0.043011014433170416,
+         "relative_ci95": [
+          -3.183323602324908,
+          -2.1367246964325703
+         ],
+         "relative_improvement_equal_circuit_weight": -2.6269928705800454,
+         "resamples": 20000,
+         "seed": 26112501,
+         "wins": 0
+        },
+        "targets_5_23": {
+         "base": "C3",
+         "ci95": [
+          -0.1349610392516455,
+          -0.09062346015666763
+         ],
+         "circuits": 20,
+         "losses": 18,
+         "mean_improvement": -0.1134750437287458,
+         "relative_ci95": [
+          -6.860622071252037,
+          -4.387119859738969
+         ],
+         "relative_improvement_equal_circuit_weight": -5.468141648510486,
+         "resamples": 20000,
+         "seed": 26112501,
+         "wins": 0
+        }
+       }
+      }
+     }
+    },
+    "groups": {
+     "all": {
+      "C0": 0.0201159481323965,
+      "C1": 0.020142380437509513,
+      "C2": 0.019591859023418805,
+      "C3": 0.01622853920767932,
+      "C3Z": 0.05698994890737588,
+      "ideal": 0.02374293222302313,
+      "n": 176
+     },
+     "controls_3_21": {
+      "C0": 0.01345599058361322,
+      "C1": 0.013531340371466272,
+      "C2": 0.013037556466058827,
+      "C3": 0.01351339783819172,
+      "C3Z": 0.016301683410525035,
+      "ideal": 0.01594747413828613,
+      "n": 40
+     },
+     "other_than_5_23": {
+      "C0": 0.016332641266221762,
+      "C1": 0.016148968473192755,
+      "C2": 0.016086629687809852,
+      "C3": 0.014898100513732315,
+      "C3Z": 0.03427314726370851,
+      "ideal": 0.020541155101684014,
+      "n": 136
+     },
+     "site_23": {
+      "C0": 0.04143472299421665,
+      "C1": 0.04295722463240719,
+      "C2": 0.04020515223641132,
+      "C3": 0.01887612928510413,
+      "C3Z": 0.21057701561104078,
+      "ideal": 0.046141016100043765,
+      "n": 20
+     },
+     "site_5": {
+      "C0": 0.024523659960564558,
+      "C1": 0.02448273759996586,
+      "C2": 0.02281412529256714,
+      "C3": 0.022627932249094134,
+      "C3Z": 0.05787713338064911,
+      "ideal": 0.02311693277110851,
+      "n": 20
+     },
+     "targets_5_23": {
+      "C0": 0.03297919147739061,
+      "C1": 0.033719981116186515,
+      "C2": 0.03150963876448922,
+      "C3": 0.02075203076709913,
+      "C3Z": 0.13422707449584498,
+      "ideal": 0.03462897443557614,
+      "n": 40
+     }
+    },
+    "sites": [
+     {
+      "change_C2_vs_C0": -0.0007700090341174123,
+      "change_C3Z_vs_C0": 0.0058053637833681195,
+      "change_C3_vs_C0": 0.00019151777062476408,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": true,
+      "mae": {
+       "C0": 0.013202942178348378,
+       "C1": 0.01342053904077115,
+       "C2": 0.012432933144230966,
+       "C3": 0.013394459948973142,
+       "C3Z": 0.019008305961716498,
+       "ideal": 0.014336970606628214
+      },
+      "n_obs": 20,
+      "physical": 3,
+      "role": "control"
+     },
+     {
+      "change_C2_vs_C0": -0.001116416486821363,
+      "change_C3Z_vs_C0": 0.09156357167703828,
+      "change_C3_vs_C0": -0.008913198676579612,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": true,
+      "mae": {
+       "C0": 0.026000524250424695,
+       "C1": 0.02510141487819262,
+       "C2": 0.024884107763603332,
+       "C3": 0.017087325573845083,
+       "C3Z": 0.11756409592746297,
+       "ideal": 0.025148475343459948
+      },
+      "n_obs": 20,
+      "physical": 4,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": -0.0017095346679974165,
+      "change_C3Z_vs_C0": 0.033353473420084545,
+      "change_C3_vs_C0": -0.001895727711470424,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.024523659960564558,
+       "C1": 0.02448273759996586,
+       "C2": 0.02281412529256714,
+       "C3": 0.022627932249094134,
+       "C3Z": 0.05787713338064911,
+       "ideal": 0.02311693277110851
+      },
+      "n_obs": 20,
+      "physical": 5,
+      "role": "target"
+     },
+     {
+      "change_C2_vs_C0": -0.0006971147224626335,
+      "change_C3Z_vs_C0": -0.0005889028574674118,
+      "change_C3_vs_C0": -0.0006959235338505829,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.016528886820670833,
+       "C1": 0.01571271461952816,
+       "C2": 0.0158317720982082,
+       "C3": 0.01583296328682025,
+       "C3Z": 0.01593998396320342,
+       "ideal": 0.022137727331999812
+      },
+      "n_obs": 20,
+      "physical": 6,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": -2.914713617568898e-05,
+      "change_C3Z_vs_C0": -2.914713617568898e-05,
+      "change_C3_vs_C0": -2.914713617568898e-05,
+      "circuits": 4,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.015195057850425048,
+       "C1": 0.015165910714249359,
+       "C2": 0.015165910714249359,
+       "C3": 0.015165910714249359,
+       "C3Z": 0.015165910714249359,
+       "ideal": 0.022276446310079565
+      },
+      "n_obs": 4,
+      "physical": 7,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": 0.0004421739758538601,
+      "change_C3Z_vs_C0": 0.017725300246293266,
+      "change_C3_vs_C0": -0.0007067450710512759,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": true,
+      "mae": {
+       "C0": 0.014528704528266195,
+       "C1": 0.014328158938979355,
+       "C2": 0.014970878504120055,
+       "C3": 0.013821959457214919,
+       "C3Z": 0.03225400477455946,
+       "ideal": 0.023103525900132715
+      },
+      "n_obs": 20,
+      "physical": 16,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": -6.685920099137703e-05,
+      "change_C3Z_vs_C0": -0.00011397812954448694,
+      "change_C3_vs_C0": -7.670326146777019e-05,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.013709038988878064,
+       "C1": 0.01364214170216139,
+       "C2": 0.013642179787886687,
+       "C3": 0.013632335727410294,
+       "C3Z": 0.013595060859333577,
+       "ideal": 0.017557977669944047
+      },
+      "n_obs": 20,
+      "physical": 21,
+      "role": "control"
+     },
+     {
+      "change_C2_vs_C0": 0.0006548173783335123,
+      "change_C3Z_vs_C0": 0.0077235567062177955,
+      "change_C3_vs_C0": 0.0005656462983917449,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": true,
+      "mae": {
+       "C0": 0.01280601463281222,
+       "C1": 0.013441637870166011,
+       "C2": 0.013460832011145733,
+       "C3": 0.013371660931203965,
+       "C3Z": 0.020529571339030016,
+       "ideal": 0.019033404582066673
+      },
+      "n_obs": 20,
+      "physical": 22,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": -0.0012295707578053247,
+      "change_C3Z_vs_C0": 0.16914229261682412,
+      "change_C3_vs_C0": -0.022558593709112517,
+      "circuits": 20,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.04143472299421665,
+       "C1": 0.04295722463240719,
+       "C2": 0.04020515223641132,
+       "C3": 0.01887612928510413,
+       "C3Z": 0.21057701561104078,
+       "ideal": 0.046141016100043765
+      },
+      "n_obs": 20,
+      "physical": 23,
+      "role": "target"
+     },
+     {
+      "change_C2_vs_C0": -0.0002474528123631997,
+      "change_C3Z_vs_C0": -0.0002474528123631997,
+      "change_C3_vs_C0": -0.0002474528123631997,
+      "circuits": 4,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.016736532664247558,
+       "C1": 0.01648907985188436,
+       "C2": 0.01648907985188436,
+       "C3": 0.01648907985188436,
+       "C3Z": 0.01648907985188436,
+       "ideal": 0.029716873946390124
+      },
+      "n_obs": 4,
+      "physical": 36,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": 3.3204821293097986e-05,
+      "change_C3Z_vs_C0": 3.3204821293097986e-05,
+      "change_C3_vs_C0": 3.3204821293097986e-05,
+      "circuits": 4,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.018059467257184852,
+       "C1": 0.01809267207847795,
+       "C2": 0.01809267207847795,
+       "C3": 0.01809267207847795,
+       "C3Z": 0.01809267207847795,
+       "ideal": 0.01885669461908425
+      },
+      "n_obs": 4,
+      "physical": 41,
+      "role": "other"
+     },
+     {
+      "change_C2_vs_C0": -0.0003539580877318649,
+      "change_C3Z_vs_C0": -0.0003539580877318649,
+      "change_C3_vs_C0": -0.0003539580877318649,
+      "circuits": 4,
+      "flag_C2": false,
+      "flag_C3": false,
+      "flag_C3Z": false,
+      "mae": {
+       "C0": 0.021438188282680515,
+       "C1": 0.02108423019494865,
+       "C2": 0.02108423019494865,
+       "C3": 0.02108423019494865,
+       "C3Z": 0.02108423019494865,
+       "ideal": 0.020958851410545515
+      },
+      "n_obs": 4,
+      "physical": 42,
+      "role": "other"
+     }
+    ]
+   },
+   "bootstrap": {
+    "resamples": 20000,
+    "seed": 26112501
+   },
+   "circuits": 20,
+   "controls": [
+    3,
+    21
+   ],
+   "counts_sha256": "31f68b5b662efe7ab257b5a3e6aac7390886b385ebea29f4ede0197847abcc00",
+   "freeze_check": {
+    "checks": [
+     {
+      "detail": "qc26b-frozen-v2",
+      "name": "format",
+      "ok": true
+     },
+     {
+      "detail": "top-level sha256 does not match contents",
+      "name": "frozen self-hash",
+      "ok": true
+     },
+     {
+      "detail": "parameter file differs from the frozen parameters",
+      "name": "parameter file equals frozen parameters",
+      "ok": true
+     },
+     {
+      "detail": null,
+      "name": "params_sha256",
+      "ok": true
+     },
+     {
+      "detail": "qc26b_engine.mjs differs from the frozen version",
+      "name": "engine code hash",
+      "ok": true
+     },
+     {
+      "detail": null,
+      "name": "compiled.json hash",
+      "ok": true
+     },
+     {
+      "detail": null,
+      "name": "plan_sha256",
+      "ok": true
+     },
+     {
+      "detail": null,
+      "name": "calibration snapshot hash",
+      "ok": true
+     },
+     {
+      "detail": null,
+      "name": "circuit id set",
+      "ok": true
+     },
+     {
+      "detail": "0 of 1056 values differ, max gap 0",
+      "name": "predictions recompute within 1e-12",
+      "ok": true
+     },
+     {
+      "detail": 0,
+      "name": "max recompute gap",
+      "ok": true
+     }
+    ],
+    "passed": true
+   },
+   "frozen_sha256": "3ef6e099e1d34aa762dab37079b0a4e02f1e09428ed20c34f2fa8502f2270abc",
+   "label": "SYNTHETIC DRY RUN - NOT HARDWARE DATA",
+   "observables": 176,
+   "params_sha256": "bed8549332d88315bfc81a3afb9f2fc590a68345389cf2232deec66c75f78500",
+   "plan_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+   "refused": false,
+   "synthetic": true,
+   "targets": [
+    5,
+    23
+   ],
+   "thresholds": {
+    "ledger_fraction_of_mae": 0.01,
+    "other_site_degradation": 0.005,
+    "rel_improvement": 0.1
+   }
+  }
+ },
+ "description": "freeze -> evaluate on counts fabricated from engine C3 predictions plus Bernoulli shot noise (seed 11), on a subset of the committed QC-23 nc_eval circuits (width 8 all 16, width 12 depth<=2 seeds 41,42) with an ARBITRARY parameter file chosen only to exercise the code. The control run draws counts from C0. Frozen format qc26b-frozen-v2: C3 uses delta only (alpha ignored); C3Z is the declared extension (C3 plus alpha) and is reported beside C3, never as the primary comparator. counts_follow_C3Z uses a second arbitrary parameter file with larger alpha so that C3Z differs visibly from C3. Regenerated for the C3Z schema: the previous receipt (format v1) had C3 including the alpha term of the parameter file.",
  "label": "DRY RUN - SYNTHETIC COUNTS - NOT HARDWARE DATA - pipeline check only",
  "node": "v24",
+ "parameters_used_for_C3Z_dry_run": {
+  "cz": {
+   "16_23": {
+    "alpha": {
+     "16": 0.12,
+     "23": 0.15
+    },
+    "delta": 0.05
+   },
+   "4_5": {
+    "alpha": {
+     "4": -0.1,
+     "5": 0.15
+    },
+    "delta": -0.04
+   }
+  },
+  "sx": {
+   "23": -0.03,
+   "3": 0.02,
+   "5": 0.04
+  }
+ },
  "parameters_used_for_dry_run": {
   "cz": {
    "16_23": {

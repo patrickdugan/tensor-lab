@@ -35,6 +35,11 @@ def find_node():
 NODE = find_node()
 PARAMS = {'sx': {'3': 0.02, '5': 0.04, '23': -0.03},
           'cz': {'16_23': {'delta': 0.05, 'alpha': {'23': 0.02}}, '4_5': {'delta': -0.04}}}
+# Larger endpoint terms so that C3Z is measurably different from C3 (used for the C3Z tests only).
+PARAMS_Z = {'sx': PARAMS['sx'],
+            'cz': {'16_23': {'delta': 0.05, 'alpha': {'16': 0.12, '23': 0.15}}, '4_5': {'delta': -0.04, 'alpha': {'4': -0.10, '5': 0.15}}}}
+PARAMS_Z0 = {'sx': PARAMS['sx'], 'cz': {k: {'delta': v['delta']} for k, v in PARAMS_Z['cz'].items()}}   # same delta, no alpha
+PARAMS_Z_ALPHA0 = {'sx': PARAMS['sx'], 'cz': {k: {'delta': v['delta'], 'alpha': {q: 0.0 for q in v['alpha']}} for k, v in PARAMS_Z['cz'].items()}}
 
 
 def run(*args):
@@ -81,6 +86,21 @@ class ProspectivePipeline(unittest.TestCase):
             c = synth_counts(cls.frozen, model, seed=11)
             write_lf(cls.tmp / f'counts_{model}.json', json.dumps(c, sort_keys=True) + '\n')
         cls.reports = {}
+        cls.z = {}
+        for name, prm in (('Z', PARAMS_Z), ('Z0', PARAMS_Z0), ('Zalpha0', PARAMS_Z_ALPHA0)):
+            pf, ff = cls.tmp / f'params_{name}.json', cls.tmp / f'frozen_{name}.json'
+            write_lf(pf, json.dumps(prm, indent=1) + '\n')
+            r = run(HERE / 'qc26b_freeze.mjs', 'freeze', cls.build, pf, ff)
+            assert r.returncode == 0, r.stderr
+            cls.z[name] = {'params': pf, 'frozen_path': ff, 'frozen': json.loads(ff.read_text())}
+        for model in ('C3Z', 'C3'):
+            c = synth_counts(cls.z['Z']['frozen'], model, seed=11)
+            write_lf(cls.tmp / f'counts_Z_{model}.json', json.dumps(c, sort_keys=True) + '\n')
+            out = cls.tmp / f'report_Z_{model}.json'
+            r = cls.evaluate(cls.z['Z']['frozen_path'], cls.build, cls.z['Z']['params'], cls.tmp / f'counts_Z_{model}.json', out)
+            assert r.returncode == 0, r.stdout + r.stderr
+            cls.reports['Z_' + model] = json.loads(out.read_text())
+            cls.reports['Z_' + model + '_text'] = r.stdout
         for model in ('C3', 'C0'):
             out = cls.tmp / f'report_{model}.json'
             r = cls.evaluate(cls.frozen_path, cls.build, cls.params, cls.tmp / f'counts_{model}.json', out)
@@ -223,10 +243,18 @@ class ProspectivePipeline(unittest.TestCase):
         receipt = {'label': 'DRY RUN - SYNTHETIC COUNTS - NOT HARDWARE DATA - pipeline check only',
                    'description': 'freeze -> evaluate on counts fabricated from engine C3 predictions plus Bernoulli shot noise (seed 11), '
                                   'on a subset of the committed QC-23 nc_eval circuits (width 8 all 16, width 12 depth<=2 seeds 41,42) with an '
-                                  'ARBITRARY parameter file chosen only to exercise the code. The control run draws counts from C0.',
-                   'parameters_used_for_dry_run': PARAMS, 'node': 'v24', 'unittest': 'test_qc26b_prospective.py',
+                                  'ARBITRARY parameter file chosen only to exercise the code. The control run draws counts from C0. '
+                                  'Frozen format qc26b-frozen-v2: C3 uses delta only (alpha ignored); C3Z is the declared extension (C3 plus alpha) and is '
+                                  'reported beside C3, never as the primary comparator. counts_follow_C3Z uses a second arbitrary parameter file with '
+                                  'larger alpha so that C3Z differs visibly from C3. Regenerated for the C3Z schema: the previous receipt (format v1) '
+                                  'had C3 including the alpha term of the parameter file.',
+                   'parameters_used_for_dry_run': PARAMS, 'parameters_used_for_C3Z_dry_run': PARAMS_Z,
+                   'node': 'v24', 'unittest': 'test_qc26b_prospective.py',
                    'counts_follow_C3': keep,
-                   'counts_follow_C0': {k: v for k, v in self.reports['C0'].items() if k not in ('rows',)}}
+                   'counts_follow_C0': {k: v for k, v in self.reports['C0'].items() if k not in ('rows',)},
+                   'declared_extension_C3Z': {
+                       'counts_follow_C3Z': {k: v for k, v in self.reports['Z_C3Z'].items() if k != 'rows'},
+                       'counts_follow_C3_under_Z_params': {k: v for k, v in self.reports['Z_C3'].items() if k != 'rows'}}}
         path = HERE / 'receipts' / 'qc26b_prospective_dryrun.json'
         path.write_bytes((json.dumps(receipt, indent=1, sort_keys=True) + '\n').encode())
 
@@ -257,6 +285,178 @@ class ProspectivePipeline(unittest.TestCase):
         bad[cid]['counts'][k] += 1                                       # shot total no longer matches the build
         p.write_text(json.dumps(bad))
         self.assertNotEqual(self.evaluate(self.frozen_path, self.build, self.params, p, self.tmp / 'x.json').returncode, 0)
+
+
+    # ---- declared extension C3Z -------------------------------------------------------------------------------------
+    def sites(self, frozen):
+        return [(cid, s) for cid, ss in sorted(frozen['predictions'].items()) for s in ss]
+
+    def test_c3z_equals_c3_when_alpha_zero_or_absent(self):
+        for name in ('Z0', 'Zalpha0'):                                   # alpha absent / alpha explicitly 0
+            for cid, s in self.sites(self.z[name]['frozen']):
+                self.assertEqual(s['C3Z'], s['C3'], (name, cid, s['bit']))
+        # PARAMS_Z and its alpha-free copy differ only in C3Z: ideal, C0..C3 are bit-identical
+        a, b = self.z['Z']['frozen'], self.z['Z0']['frozen']
+        for (cid, sa), (_, sb) in zip(self.sites(a), self.sites(b)):
+            for k in ('ideal', 'C0', 'C1', 'C2', 'C3'):
+                self.assertEqual(sa[k], sb[k], (cid, k))
+            self.assertEqual(sb['C3Z'], sb['C3'])
+            self.assertEqual(sa['ledger']['C3'], sb['ledger']['C3'])
+
+    def test_c3_ignores_alpha(self):
+        # C3 of the original PARAMS (contains alpha 0.02) equals C3 with alpha removed
+        p0 = {'sx': PARAMS['sx'], 'cz': {k: {'delta': v['delta']} for k, v in PARAMS['cz'].items()}}
+        pf, ff = self.tmp / 'params_p0.json', self.tmp / 'frozen_p0.json'
+        write_lf(pf, json.dumps(p0, indent=1) + '\n')
+        self.assertEqual(run(HERE / 'qc26b_freeze.mjs', 'freeze', self.build, pf, ff).returncode, 0)
+        other = json.loads(ff.read_text())
+        for (cid, sa), (_, sb) in zip(self.sites(self.frozen), self.sites(other)):
+            self.assertEqual(sa['C3'], sb['C3'])
+            self.assertEqual(sb['C3Z'], sb['C3'])
+        self.assertTrue(any(abs(s['C3Z'] - s['C3']) > 1e-4 for _, s in self.sites(self.frozen)))
+
+    def test_c3z_differs_from_c3_when_alpha_nonzero(self):
+        gaps = [abs(s['C3Z'] - s['C3']) for _, s in self.sites(self.z['Z']['frozen'])]
+        self.assertGreater(max(gaps), 1e-2)
+        f = self.z['Z']['frozen']
+        self.assertIn('C3Z', f['models'])
+        self.assertIn('DECLARED EXTENSION', f['models']['C3Z'])
+        self.assertEqual(f['format'], 'qc26b-frozen-v2')
+        for cid, ss in f['predictions'].items():
+            for s in ss:
+                self.assertIn('C3Z', s['ledger'])
+                self.assertTrue(-1.0001 <= s['C3Z'] <= 1.0001)
+        self.assertEqual(self.verify(self.z['Z']['frozen_path'], params=self.z['Z']['params']).returncode, 0)
+
+    def test_counts_from_c3z_pass_c3z_criteria(self):
+        rep = self.reports['Z_C3Z']
+        cands = rep['analysis']['candidates']
+        z, c3 = cands['C3Z'], cands['C3']
+        self.assertEqual(z['verdict'], 'PASS')
+        self.assertTrue(all(v['pass'] for v in z['criteria'].values()))
+        self.assertIn('DECLARED EXTENSION', z['status'])
+        self.assertEqual(set(z['criteria']), set(c3['criteria']))       # same criteria (a)-(e)
+        v = z['vs_C3']['paired_bootstrap_MAE_C3_minus_MAE_C3Z']
+        self.assertEqual(v['all_sites']['base'], 'C3')
+        self.assertEqual(v['all_sites']['resamples'], 20000)
+        self.assertGreater(v['all_sites']['ci95'][0], 0)
+        self.assertGreater(v['targets_5_23']['ci95'][0], 0)
+        self.assertGreater(v['all_sites']['mean_improvement'], 0)
+        for s in ('site_5', 'site_23'):
+            self.assertLess(z['target_site_mae'][s]['C3Z'], z['target_site_mae'][s]['C3'])
+        self.assertLess(z['numerical_vs_physical']['ratio_candidate_min_bound_to_mae'], 0.01)
+        self.assertIn('flagged_sites', z['other_site_degradation'])
+        a = rep['analysis']['groups']['all']
+        self.assertLess(a['C3Z'], a['C3'])
+        txt = self.reports['Z_C3Z_text']
+        self.assertIn('DECLARED EXTENSION', txt)
+        self.assertIn('paired bootstrap MAE(C3)-MAE(C3Z)', txt)
+        self.assertIn('target-site MAE', txt)
+        self.assertNotIn('(PRIMARY)', txt.split('=== C3Z')[1])
+        self.assertIn('=== C3 (PRIMARY)', txt)
+
+    def test_counts_from_c3_are_not_scored_better_by_c3z(self):
+        rep = self.reports['Z_C3']
+        cands = rep['analysis']['candidates']
+        a = rep['analysis']['groups']['all']
+        self.assertLess(a['C3'], a['C3Z'])                               # counts drawn from C3: the extension does worse
+        v = cands['C3Z']['vs_C3']['paired_bootstrap_MAE_C3_minus_MAE_C3Z']
+        self.assertLess(v['all_sites']['mean_improvement'], 0)
+        self.assertLess(v['all_sites']['ci95'][1], 0)
+        self.assertEqual(cands['C3']['verdict'], 'PASS')                 # C3 is judged on its own, the extension never changes it
+
+    def make_v1(self, v2):
+        """Reduce a v2 frozen document to a legacy v1 one: no C3Z; C3 as originally defined (alpha as given in params) = C3Z."""
+        d = copy.deepcopy(v2)
+        d['format'] = 'qc26b-frozen-v1'
+        del d['models']['C3Z']
+        d['models']['C3'] = 'C2 + coherent CZ phases (params.cz)'
+        for ss in d['predictions'].values():
+            for s in ss:
+                s['C3'] = s.pop('C3Z')
+                s['ledger']['C3'] = s['ledger'].pop('C3Z')
+        return self.rehash(d)
+
+    def test_primary_c3_analysis_identical_for_v1_and_v2(self):
+        # alpha-free parameters: the v1 reduction and the v2 file give the same C3 and C2 analysis on the same counts
+        z0 = self.z['Z0']['frozen']
+        p = self.tmp / 'frozen_v1_z0.json'
+        p.write_text(json.dumps(self.make_v1(z0)))
+        counts = self.tmp / 'counts_Z0.json'
+        write_lf(counts, json.dumps(synth_counts(z0, 'C3', seed=5), sort_keys=True) + '\n')
+        o1, o2 = self.tmp / 'r_v1.json', self.tmp / 'r_v2.json'
+        self.assertEqual(self.evaluate(p, self.build, self.z['Z0']['params'], counts, o1).returncode, 0)
+        self.assertEqual(self.evaluate(self.z['Z0']['frozen_path'], self.build, self.z['Z0']['params'], counts, o2).returncode, 0)
+        a, b = json.loads(o1.read_text())['analysis'], json.loads(o2.read_text())['analysis']
+        for k in ('C3', 'C2'):
+            self.assertEqual(a['candidates'][k], b['candidates'][k])
+        self.assertNotIn('C3Z', a['candidates'])
+        self.assertIn('C3Z', b['candidates'])
+        self.assertEqual(b['candidates']['C3Z']['relative_mae_improvement'], b['candidates']['C3']['relative_mae_improvement'])
+
+    def test_legacy_v1_frozen_files_still_verify(self):
+        for name in ('Z', 'Z0'):                                         # with alpha (legacy C3 used it) and without
+            v1 = self.make_v1(self.z[name]['frozen'])
+            p = self.tmp / f'frozen_v1_{name}.json'
+            p.write_text(json.dumps(v1))
+            r = self.verify(p, params=self.z[name]['params'])
+            self.assertEqual(r.returncode, 0, r.stdout)
+            counts = self.tmp / f'counts_v1_{name}.json'
+            write_lf(counts, json.dumps(synth_counts(v1, 'C3', seed=3), sort_keys=True) + '\n')
+            out = self.tmp / f'report_v1_{name}.json'
+            r = self.evaluate(p, self.build, self.z[name]['params'], counts, out)
+            self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+            rep = json.loads(out.read_text())
+            self.assertEqual(set(rep['analysis']['candidates']), {'C3', 'C2'})
+            self.assertEqual(rep['analysis']['candidates']['C3']['verdict'], 'PASS')
+            self.assertNotIn('C3Z', r.stdout)
+        # a tampered legacy file is still detected
+        v1 = self.make_v1(self.z['Z']['frozen'])
+        cid = sorted(v1['predictions'])[0]
+        v1['predictions'][cid][0]['C3'] += 1e-6
+        p = self.tmp / 'frozen_v1_bad.json'
+        p.write_text(json.dumps(self.rehash(v1)))
+        r = self.verify(p, params=self.z['Z']['params'])
+        self.assertEqual(r.returncode, 2)
+        self.assertIn('predictions recompute', r.stdout)
+
+    def test_tampered_c3z_prediction_detected(self):
+        doc = copy.deepcopy(self.z['Z']['frozen'])
+        cid = sorted(doc['predictions'])[0]
+        doc['predictions'][cid][0]['C3Z'] += 1e-6
+        p = self.tmp / 'frozen_c3z_edit.json'
+        p.write_text(json.dumps(doc))
+        r = self.verify(p, params=self.z['Z']['params'])                 # hash no longer matches contents
+        self.assertEqual(r.returncode, 2)
+        self.assertIn('self-hash', r.stdout)
+        p.write_text(json.dumps(self.rehash(doc)))                       # forged hash: recomputation catches it
+        r = self.verify(p, params=self.z['Z']['params'])
+        self.assertEqual(r.returncode, 2)
+        self.assertIn('predictions recompute', r.stdout)
+        r = self.evaluate(p, self.build, self.z['Z']['params'], self.tmp / 'counts_Z_C3Z.json', self.tmp / 'x.json')
+        self.assertEqual(r.returncode, 2)
+        self.assertIn('REFUSED', r.stderr)
+        # removing the C3Z field from a v2 file is also detected (the hash covers it)
+        doc = copy.deepcopy(self.z['Z']['frozen'])
+        del doc['predictions'][cid][0]['C3Z']
+        p.write_text(json.dumps(doc))
+        self.assertEqual(self.verify(p, params=self.z['Z']['params']).returncode, 2)
+        # changing alpha in the parameter file is detected
+        bad = copy.deepcopy(PARAMS_Z)
+        bad['cz']['16_23']['alpha']['23'] += 1e-6
+        pf = self.tmp / 'params_Z_bad.json'
+        write_lf(pf, json.dumps(bad) + '\n')
+        r = self.verify(self.z['Z']['frozen_path'], params=pf)
+        self.assertEqual(r.returncode, 2)
+        self.assertIn('parameter file', r.stdout)
+
+    def test_original_dryrun_behaviour_unchanged(self):
+        cands = self.reports['C3']['analysis']['candidates']
+        self.assertEqual(list(cands), ['C3', 'C2', 'C3Z'])               # primary, secondary, then the extension last
+        self.assertEqual(cands['C3']['verdict'], 'PASS')
+        self.assertEqual(cands['C3']['numerical_vs_physical']['models_considered'], 'all four models (worst case)')
+        self.assertIn('=== C3 (PRIMARY)', self.reports['C3_text'])
+        self.assertEqual(self.reports['C0']['analysis']['candidates']['C3']['verdict'], 'FAIL')
 
 
 class PathSearch(unittest.TestCase):

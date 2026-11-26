@@ -38,7 +38,7 @@ neighbours are recorded in `compiled.json` under `protocol`.
 2. Parameter file `params.json` `{sx:{phys:rad}, cz:{"a_b":{delta, alpha:{phys:rad}}}}` comes from independent calibration data
    (QC-26A style), never from kicked-Ising counts, and is fixed before step 3.
 3. `qc26b_freeze.mjs freeze` writes `frozen.json`: parameter contents, per-circuit QASM sha256, snapshot sha256, `compiled.json` sha256,
-   plan hash, sha256 of `qc26b_engine.mjs`, predictions (ideal, C0..C3, truncation ledger) for every circuit and site, and a top-level sha256
+   plan hash, sha256 of `qc26b_engine.mjs`, predictions (ideal, C0..C3, C3Z, truncation ledger) for every circuit and site, and a top-level sha256
    over the canonical JSON of everything else. Text is hashed after CRLF to LF normalisation.
 4. `frozen.json` and `params.json` are committed and pushed before the job is submitted. The commit hash is the timestamped proof of order.
 
@@ -48,7 +48,7 @@ The Python `submit` runs the same verification before submitting.
 
 ## Acceptance criteria
 
-Evaluated for C3 (primary) and C2 (secondary) against C0 on the fresh counts. MAE is the mean absolute difference between predicted and
+Evaluated for C3 (primary) and C2 (secondary) against C0 on the fresh counts; the declared extension C3Z (below) is scored the same way and reported separately. MAE is the mean absolute difference between predicted and
 measured single-site `<Z>`, one observable per measured qubit.
 
 - (a) Relative MAE improvement over C0 at least 10 percent, both pooled over all sites and over the targeted sites (physical 5 and 23).
@@ -60,6 +60,19 @@ measured single-site `<Z>`, one observable per measured qubit.
 
 The report states PASS or FAIL per criterion and per model. Negative results (a model worse than C0 pooled or on 5/23, flagged sites, CI crossing zero)
 are printed as such. The tests in `test_qc26b_prospective.py` confirm that counts drawn from C3 pass and counts drawn from C0 fail (a).
+
+## Declared extension C3Z
+
+C3 stays the primary comparator and is defined exactly as in the retrospective replay: C2 plus the coherent CZ error with the conditional ZZ phase
+`delta` only. The endpoint-local Z terms `alpha` of `params.json` are forced to 0 in C3, even when the file contains them.
+`C3Z` is a separately declared extension: C3 plus the endpoint Z terms `alpha` (`exp(-i/2 (a_c Z_c + a_t Z_t + d Z_c Z_t))` per CZ). With every alpha equal to 0 or absent, C3Z equals C3 exactly.
+
+- Engine: `qc26b_engine.mjs` is unchanged (its hash and the 48-case dense cross-check receipt are untouched). The freeze step strips `alpha` from the cz config to get C3.
+- `frozen.json` format `qc26b-frozen-v2` stores predictions and ledger for ideal, C0..C3 and C3Z; the top-level hash covers them, so editing or deleting a C3Z value is detected.
+  Legacy `qc26b-frozen-v1` files (no C3Z, C3 computed with alpha as given in the parameters) still verify and are evaluated for C3 and C2 only.
+- The evaluator scores C3Z with the same criteria (a)-(e) against C0 (the ledger check uses the worst case over C0..C3Z) and labels it DECLARED EXTENSION. It reports target-site MAE (physical 5 and 23),
+  other-site degradation, and the extra line "paired bootstrap MAE(C3)-MAE(C3Z)" (same circuit bootstrap, 20000 resamples, seed 26112501; positive means C3Z is better than C3), pooled and targeted.
+- The C3 and C2 verdicts never depend on C3Z. A C3Z PASS does not substitute for a C3 PASS; it is reported beside it.
 
 ## Command sequence (from `experiments/channel_mpo/ibm_qc23/qc26`)
 

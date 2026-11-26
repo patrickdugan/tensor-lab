@@ -42,7 +42,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--frozen', type=Path, required=True)
     ap.add_argument('--out', type=Path, required=True)
-    ap.add_argument('--model', default='C3', choices=['ideal', 'C0', 'C1', 'C2', 'C3'])
+    ap.add_argument('--model', default='C3', choices=['ideal', 'C0', 'C1', 'C2', 'C3', 'C3Z'])
     ap.add_argument('--seed', type=int, default=1)
     a = ap.parse_args(argv)
     frozen = json.loads(a.frozen.read_text())

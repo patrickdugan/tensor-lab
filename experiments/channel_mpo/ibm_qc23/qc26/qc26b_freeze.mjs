@@ -3,7 +3,10 @@
 //   node qc26b_freeze.mjs verify BUILD_DIR PARAMS.json frozen.json        (exit 0 only if everything recomputes)
 // BUILD_DIR holds compiled.json, circuits/<id>.qasm and calibration_snapshot.json (qc26b_prospective_plan.py build).
 // PARAMS.json: {sx:{phys:rad}, cz:{"a_b":{delta:rad, alpha:{phys:rad}}}} (a<b physical qubits; optional "meta" is hashed, not used).
-// Models: C0 twirled stochastic, C1 + non-unital relaxation, C2 + SX offsets, C3 + CZ coherent phases (qc26b_engine.mjs).
+// Models: C0 twirled stochastic, C1 + non-unital relaxation, C2 + SX offsets, C3 + CZ coherent ZZ phases (params.cz.*.delta only,
+// endpoint terms alpha forced to 0), and the DECLARED EXTENSION C3Z = C3 + endpoint-local Z terms (params.cz.*.alpha). qc26b_engine.mjs
+// is unchanged: C3 is obtained by stripping alpha from the cz config before it reaches the engine.
+// Format qc26b-frozen-v2 stores C3Z; legacy qc26b-frozen-v1 files (no C3Z, C3 used alpha as given in params) still verify.
 // Offline. No network, no credentials. All text is hashed after CRLF->LF normalisation so Windows checkouts agree.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -11,9 +14,11 @@ import crypto from 'node:crypto';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {parse,schedule,evaluate} from './qc26b_engine.mjs';
 
-export const FORMAT='qc26b-frozen-v1';
+export const FORMAT_V1='qc26b-frozen-v1',FORMAT='qc26b-frozen-v2';
 export const TOL=1e-12;
-export const MODELS=['C0','C1','C2','C3'];
+export const MODELS_V1=['C0','C1','C2','C3'];
+export const MODELS=['C0','C1','C2','C3','C3Z'];
+export const modelsFor=format=>format===FORMAT_V1?MODELS_V1:MODELS;
 const HERE=path.dirname(fileURLToPath(import.meta.url));
 export const sha256=s=>crypto.createHash('sha256').update(s).digest('hex');
 export const lf=s=>s.replace(/\r\n/g,'\n');
@@ -44,9 +49,12 @@ export function checkParams(p){
   return p;
 }
 export const readParams=file=>checkParams(JSON.parse(readLF(file)));
-export function configs(p){
+// C3 uses delta only (the original comparator); C3Z adds the endpoint Z terms alpha. legacyV1 reproduces the v1 definition of C3 (alpha as given).
+export const deltaOnly=cz=>Object.fromEntries(Object.entries(cz||{}).map(([k,e])=>[k,{delta:e.delta||0}]));
+export function configs(p,legacyV1=false){
   const sx=p.sx||{},cz=p.cz||{};
-  return {C0:{nonunital:false},C1:{nonunital:true},C2:{nonunital:true,sx},C3:{nonunital:true,sx,cz}};
+  if(legacyV1)return {C0:{nonunital:false},C1:{nonunital:true},C2:{nonunital:true,sx},C3:{nonunital:true,sx,cz}};
+  return {C0:{nonunital:false},C1:{nonunital:true},C2:{nonunital:true,sx},C3:{nonunital:true,sx,cz:deltaOnly(cz)},C3Z:{nonunital:true,sx,cz}};
 }
 
 export function loadBuild(dir){
@@ -60,15 +68,15 @@ export function loadBuild(dir){
 }
 
 // Predictions for every circuit and every measured site (bit k <-> physical_path[k]).
-export function computePredictions(build,params){
-  const cfg=configs(params),preds={};
+export function computePredictions(build,params,format=FORMAT){
+  const cfg=configs(params,format===FORMAT_V1),models=modelsFor(format),preds={};
   for(const {r,q} of build.circuits){
     const ops=parse(r,q),seq=schedule(r,ops,build.snap),n=r.n;
     const ro=r.physical_path.map(p=>build.snap.qubits[p].readout_error||0);
     const idealOps=ops.filter(x=>x.name!=='barrier'),sites=[];
     for(let k=0;k<n;k++){
       const row={bit:k,physical:r.physical_path[k],ideal:evaluate(n,idealOps,k,0,{}).z,ledger:{}};
-      for(const m of MODELS){
+      for(const m of models){
         const v=evaluate(n,seq,k,ro[k],cfg[m]);
         row[m]=v.z;
         row.ledger[m]={l1:v.ledger.l1,old_bound:v.ledger.old_bound,min_bound:v.ledger.min_bound,peak:v.ledger.peak};
@@ -91,7 +99,7 @@ export function buildFrozen(buildDir,paramsFile){
   const body={
     format:FORMAT,
     label:'QC-26B frozen prospective predictions. Written before any fresh counts exist; evaluate with qc26b_prospective_eval.mjs.',
-    models:{C0:'gate-local twirled stochastic noise',C1:'C0 + non-unital T1/T2 relaxation',C2:'C1 + coherent SX angle offsets (params.sx)',C3:'C2 + coherent CZ phases (params.cz)'},
+    models:{C0:'gate-local twirled stochastic noise',C1:'C0 + non-unital T1/T2 relaxation',C2:'C1 + coherent SX angle offsets (params.sx)',C3:'C2 + coherent CZ ZZ phases (params.cz.*.delta only; alpha ignored)',C3Z:'DECLARED EXTENSION, not the primary comparator: C3 + endpoint-local Z terms (params.cz.*.alpha)'},
     params,params_sha256:sha256(canonical(params)),
     build:{backend:build.meta.backend,plan_sha256:build.meta.plan_sha256,calibration_timestamp:build.meta.calibration_timestamp,
       compiled_json_sha256:build.compiled_json_sha256,calibration_snapshot_sha256:build.snapshot_sha256,circuits},
@@ -108,7 +116,8 @@ export function verifyFrozen(frozen,buildDir,paramsFile){
   const chk=(name,ok,detail)=>{checks.push({name,ok:!!ok,detail:detail??null});if(!ok)failures.push(name+(detail?': '+detail:''));};
   try{
     const {sha256:top,...body}=frozen;
-    chk('format',frozen.format===FORMAT,frozen.format);
+    chk('format',frozen.format===FORMAT||frozen.format===FORMAT_V1,frozen.format);
+    const models=modelsFor(frozen.format);
     chk('frozen self-hash',sha256(canonical(body))===top,'top-level sha256 does not match contents');
     const params=readParams(paramsFile);
     chk('parameter file equals frozen parameters',canonical(params)===canonical(frozen.params),'parameter file differs from the frozen parameters');
@@ -127,12 +136,12 @@ export function verifyFrozen(frozen,buildDir,paramsFile){
       if(JSON.stringify(c.r.physical_path)!==JSON.stringify(f.physical_path))chk('path '+c.r.id,false);
     }
     if(!failures.length){
-      const preds=computePredictions(build,params);
+      const preds=computePredictions(build,params,frozen.format);
       let maxGap=0,bad=0,cnt=0;
       for(const id of ids){
         const a=preds[id],b=frozen.predictions[id];
         if(!b||a.length!==b.length){bad++;continue;}
-        for(let i=0;i<a.length;i++)for(const k of ['ideal',...MODELS]){
+        for(let i=0;i<a.length;i++)for(const k of ['ideal',...models]){
           const g=Math.abs(a[i][k]-b[i][k]);cnt++;
           if(!(g<=TOL)){bad++;}
           if(g>maxGap||Number.isNaN(g))maxGap=g;

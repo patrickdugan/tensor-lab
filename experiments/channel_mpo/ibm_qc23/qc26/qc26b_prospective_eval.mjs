@@ -3,13 +3,16 @@
 // counts.json: {circuit_id:{counts:{bitstring:count},physical_path:[...]}}  (qiskit little-endian bitstrings; bit k <-> physical_path[k]).
 // The run REFUSES (exit 2) unless frozen.json verifies: self-hash, parameter file, engine code hash, build hashes, and every
 // prediction recomputes from the build dir and parameter file within 1e-12. Scores use the frozen predictions.
-// Verdict is evaluated for C3 (primary) and C2 (secondary). Negative results are reported as such.
+// Verdict is evaluated for C3 (primary), C2 (secondary) and, for qc26b-frozen-v2 files, C3Z (DECLARED EXTENSION: C3 plus endpoint-local
+// Z terms; never the primary comparator). Legacy qc26b-frozen-v1 files carry no C3Z and are scored exactly as before.
+// Negative results are reported as such.
 import fs from 'node:fs';
 import {pathToFileURL} from 'node:url';
-import {readLF,sha256,verifyFrozen,MODELS} from './qc26b_freeze.mjs';
+import {readLF,sha256,verifyFrozen,MODELS,modelsFor} from './qc26b_freeze.mjs';
 
 export const TARGETS=[5,23],CONTROLS=[3,21];
 export const NAMES=['ideal',...MODELS];
+export const namesFor=frozen=>['ideal',...modelsFor(frozen.format)];
 export const THRESH={rel_improvement:0.10,other_site_degradation:0.005,ledger_fraction_of_mae:0.01};
 export const BOOT={resamples:20000,seed:26112501};
 const mean=a=>a.reduce((s,x)=>s+x,0)/a.length;
@@ -43,7 +46,7 @@ export function buildRows(frozen,meas){
     const f=frozen.build.circuits[id];
     for(const s of sites){
       const row={id,n:f.n,depth:f.depth,seed:f.seed,path_class:f.path_class,bit:s.bit,physical:s.physical,measured:meas[id][s.bit]};
-      for(const k of NAMES)row[k]=s[k];
+      for(const k of ['ideal',...modelsFor(frozen.format)])row[k]=s[k];
       row.ledger=s.ledger;rows.push(row);
     }
   }
@@ -52,54 +55,57 @@ export function buildRows(frozen,meas){
 
 const err=(r,k)=>Math.abs(r[k]-r.measured);
 export const mae=(rs,k)=>rs.length?mean(rs.map(r=>err(r,k))):NaN;
-const metrics=rs=>({n:rs.length,...Object.fromEntries(NAMES.map(k=>[k,mae(rs,k)]))});
+const metrics=(rs,names=NAMES)=>({n:rs.length,...Object.fromEntries(names.map(k=>[k,mae(rs,k)]))});
 
-// Paired circuit bootstrap of MAE(C0)-MAE(k): circuits are resampled with equal weight; each circuit contributes its
-// mean over the selected sites. Fixed seed, 20000 resamples.
-export function paired(rs,k,B=BOOT.resamples,seed=BOOT.seed){
+// Paired circuit bootstrap of MAE(base)-MAE(k) (base defaults to C0): circuits are resampled with equal weight; each circuit
+// contributes its mean over the selected sites. Fixed seed, 20000 resamples. The C3Z-vs-C3 line uses base='C3'.
+export function paired(rs,k,B=BOOT.resamples,seed=BOOT.seed,base='C0'){
   const by=new Map();for(const r of rs){if(!by.has(r.id))by.set(r.id,[]);by.get(r.id).push(r);}
-  const per=[...by.values()].map(a=>({d:mean(a.map(r=>err(r,'C0')-err(r,k))),b:mean(a.map(r=>err(r,'C0')))}));
+  const per=[...by.values()].map(a=>({d:mean(a.map(r=>err(r,base)-err(r,k))),b:mean(a.map(r=>err(r,base)))}));
   const rnd=makeRng(seed),m=per.length,diffs=[],rels=[];
   for(let i=0;i<B;i++){let d=0,b=0;for(let t=0;t<m;t++){const p=per[Math.floor(rnd()*m)];d+=p.d;b+=p.b;}diffs.push(d/m);rels.push(d/b);}
   diffs.sort((x,y)=>x-y);rels.sort((x,y)=>x-y);
   const D=per.reduce((s,x)=>s+x.d,0),Bs=per.reduce((s,x)=>s+x.b,0);
   return {circuits:m,mean_improvement:D/m,ci95:[diffs[Math.floor(.025*B)],diffs[Math.floor(.975*B)]],
     relative_improvement_equal_circuit_weight:D/Bs,relative_ci95:[rels[Math.floor(.025*B)],rels[Math.floor(.975*B)]],
-    wins:per.filter(x=>x.d>0).length,losses:per.filter(x=>x.d<0).length,resamples:B,seed};
+    wins:per.filter(x=>x.d>0).length,losses:per.filter(x=>x.d<0).length,resamples:B,seed,base};
 }
 
-export function siteTable(rows){
+export function siteTable(rows,names=NAMES){
   const out=[];
   for(const p of [...new Set(rows.map(r=>r.physical))].sort((a,b)=>a-b)){
-    const rs=rows.filter(r=>r.physical===p),m=metrics(rs);
+    const rs=rows.filter(r=>r.physical===p),m=metrics(rs,names);
     const d2=m.C2-m.C0,d3=m.C3-m.C0,target=TARGETS.includes(p);
-    out.push({physical:p,role:target?'target':CONTROLS.includes(p)?'control':'other',n_obs:rs.length,circuits:new Set(rs.map(r=>r.id)).size,
-      mae:Object.fromEntries(NAMES.map(k=>[k,m[k]])),change_C2_vs_C0:d2,change_C3_vs_C0:d3,
-      flag_C2:!target&&d2>THRESH.other_site_degradation,flag_C3:!target&&d3>THRESH.other_site_degradation});
+    const row={physical:p,role:target?'target':CONTROLS.includes(p)?'control':'other',n_obs:rs.length,circuits:new Set(rs.map(r=>r.id)).size,
+      mae:Object.fromEntries(names.map(k=>[k,m[k]])),change_C2_vs_C0:d2,change_C3_vs_C0:d3,
+      flag_C2:!target&&d2>THRESH.other_site_degradation,flag_C3:!target&&d3>THRESH.other_site_degradation};
+    if(names.includes('C3Z')){const dz=m.C3Z-m.C0;row.change_C3Z_vs_C0=dz;row.flag_C3Z=!target&&dz>THRESH.other_site_degradation;}
+    out.push(row);
   }
   return out;
 }
 
-export function ledgerSummary(rows,k){
+export function ledgerSummary(rows,k,all=['C0','C1','C2','C3']){
   const get=(key,models)=>Math.max(...rows.flatMap(r=>models.map(m=>r.ledger[m][key])));
-  const one=[k],all=MODELS;
-  return {models_considered:'all four models (worst case)',max_l1_discard:get('l1',all),max_old_bound:get('old_bound',all),max_min_bound:get('min_bound',all),max_live_terms:get('peak',all),
+  const one=[k];
+  return {models_considered:all.length===4?'all four models (worst case)':'all models '+all.join(', ')+' (worst case)',max_l1_discard:get('l1',all),max_old_bound:get('old_bound',all),max_min_bound:get('min_bound',all),max_live_terms:get('peak',all),
     candidate_max_l1_discard:get('l1',one),candidate_max_old_bound:get('old_bound',one),candidate_max_min_bound:get('min_bound',one)};
 }
 
 export function analyse(frozen,rows){
+  const names=namesFor(frozen),hasZ=names.includes('C3Z'),cands=hasZ?['C3','C2','C3Z']:['C3','C2'];
   const T=rows.filter(isT),Ctl=rows.filter(isC),Oth=rows.filter(r=>!isT(r));
   const groups={all:rows,targets_5_23:T,controls_3_21:Ctl,other_than_5_23:Oth,
     ...Object.fromEntries(TARGETS.map(p=>['site_'+p,rows.filter(r=>r.physical===p)]))};
   const classes=[...new Set(rows.map(r=>r.path_class).filter(Boolean))].sort();
   for(const c of classes)groups['class_'+c]=rows.filter(r=>r.path_class===c);
-  const mt=Object.fromEntries(Object.entries(groups).map(([g,rs])=>[g,metrics(rs)]));
-  const sites=siteTable(rows),res={};
-  for(const k of ['C3','C2']){
+  const mt=Object.fromEntries(Object.entries(groups).map(([g,rs])=>[g,metrics(rs,names)]));
+  const sites=siteTable(rows,names),res={};
+  for(const k of cands){
     const rel=g=>(mt[g].C0-mt[g][k])/mt[g].C0;
     const pAll=paired(rows,k),pT=paired(T,k);
     const flagged=sites.filter(s=>s['flag_'+k]);
-    const L=ledgerSummary(rows,k),maeK=mt.all[k];
+    const L=ledgerSummary(rows,k,k==='C3Z'?['C0','C1','C2','C3','C3Z']:undefined),maeK=mt.all[k];
     const ratio=L.candidate_max_min_bound/maeK;
     const eff=mean(rows.map(r=>Math.abs(r[k]-r.C0)));
     res[k]={
@@ -126,6 +132,13 @@ export function analyse(frozen,rows){
     };
     R.verdict=Object.values(R.criteria).every(c=>c.pass)?'PASS':'FAIL';
   }
+  if(hasZ){
+    const R=res.C3Z,pA=paired(rows,'C3Z',BOOT.resamples,BOOT.seed,'C3'),pT=paired(T,'C3Z',BOOT.resamples,BOOT.seed,'C3');
+    R.status='DECLARED EXTENSION: C3 plus endpoint-local Z terms (params.cz.*.alpha). Not the primary comparator; the C3 verdict and criteria are unaffected by it.';
+    R.vs_C3={paired_bootstrap_MAE_C3_minus_MAE_C3Z:{all_sites:pA,targets_5_23:pT},
+      mae_change_C3Z_minus_C3:{all:mt.all.C3Z-mt.all.C3,targets_5_23:mt.targets_5_23.C3Z-mt.targets_5_23.C3,other_than_5_23:mt.other_than_5_23.C3Z-mt.other_than_5_23.C3}};
+    R.target_site_mae=Object.fromEntries(TARGETS.map(p=>['site_'+p,{n_obs:mt['site_'+p].n,C0:mt['site_'+p].C0,C2:mt['site_'+p].C2,C3:mt['site_'+p].C3,C3Z:mt['site_'+p].C3Z}]));
+  }
   return {groups:mt,sites,candidates:res};
 }
 
@@ -135,13 +148,15 @@ export function renderText(rep){
   if(rep.synthetic)L.push('*** SYNTHETIC DRY RUN: counts were fabricated from model predictions. Pipeline check only; not hardware evidence. ***');
   L.push(`frozen sha256 ${rep.frozen_sha256}  plan ${rep.plan_sha256}`);
   L.push(`circuits ${rep.circuits}, observables ${rep.observables}, counts sha256 ${rep.counts_sha256}`);
-  L.push('','MAE vs measured <Z> (group, n, ideal, C0, C1, C2, C3)');
-  for(const [g,m] of Object.entries(rep.analysis.groups))L.push(`  ${g.padEnd(24)} ${String(m.n).padStart(4)}  `+NAMES.map(k=>fmt(m[k])).join('  '));
-  L.push('','Per physical site (role, n, MAE C0, C2, C3, change C2, change C3; ! = flagged > +0.005)');
-  for(const s of rep.analysis.sites)L.push(`  q${String(s.physical).padStart(3)} ${s.role.padEnd(7)} n=${String(s.n_obs).padStart(3)}  ${fmt(s.mae.C0)} ${fmt(s.mae.C2)} ${fmt(s.mae.C3)}  ${(s.change_C2_vs_C0>=0?'+':'')+fmt(s.change_C2_vs_C0)}${s.flag_C2?'!':' '} ${(s.change_C3_vs_C0>=0?'+':'')+fmt(s.change_C3_vs_C0)}${s.flag_C3?'!':' '}`);
-  for(const k of ['C3','C2']){
+  const hasZ=rep.analysis.candidates.C3Z!==undefined,names=hasZ?NAMES:NAMES.filter(k=>k!=='C3Z');
+  L.push('','MAE vs measured <Z> (group, n, '+names.join(', ')+')');
+  for(const [g,m] of Object.entries(rep.analysis.groups))L.push(`  ${g.padEnd(24)} ${String(m.n).padStart(4)}  `+names.map(k=>fmt(m[k])).join('  '));
+  L.push('','Per physical site (role, n, MAE C0, C2, C3'+(hasZ?', C3Z':'')+', change C2, change C3'+(hasZ?', change C3Z':'')+'; ! = flagged > +0.005)');
+  const chg=(v,f)=>(v>=0?'+':'')+fmt(v)+(f?'!':' ');
+  for(const s of rep.analysis.sites)L.push(`  q${String(s.physical).padStart(3)} ${s.role.padEnd(7)} n=${String(s.n_obs).padStart(3)}  ${fmt(s.mae.C0)} ${fmt(s.mae.C2)} ${fmt(s.mae.C3)}${hasZ?' '+fmt(s.mae.C3Z):''}  ${chg(s.change_C2_vs_C0,s.flag_C2)} ${chg(s.change_C3_vs_C0,s.flag_C3)}${hasZ?' '+chg(s.change_C3Z_vs_C0,s.flag_C3Z):''}`);
+  for(const k of hasZ?['C3','C2','C3Z']:['C3','C2']){
     const c=rep.analysis.candidates[k],p=c.paired_bootstrap_vs_C0;
-    L.push('',`=== ${k} ${k==='C3'?'(PRIMARY)':'(secondary)'}: relative MAE improvement over C0: pooled ${(100*c.relative_mae_improvement.pooled_all_sites).toFixed(2)}%, targets 5/23 ${(100*c.relative_mae_improvement.targets_5_23).toFixed(2)}% (5: ${(100*c.relative_mae_improvement.site_5).toFixed(2)}%, 23: ${(100*c.relative_mae_improvement.site_23).toFixed(2)}%), controls 3/21 ${(100*c.relative_mae_improvement.controls_3_21).toFixed(2)}%`);
+    L.push('',`=== ${k} ${k==='C3'?'(PRIMARY)':k==='C3Z'?'(DECLARED EXTENSION, not the primary comparator)':'(secondary)'}: relative MAE improvement over C0: pooled ${(100*c.relative_mae_improvement.pooled_all_sites).toFixed(2)}%, targets 5/23 ${(100*c.relative_mae_improvement.targets_5_23).toFixed(2)}% (5: ${(100*c.relative_mae_improvement.site_5).toFixed(2)}%, 23: ${(100*c.relative_mae_improvement.site_23).toFixed(2)}%), controls 3/21 ${(100*c.relative_mae_improvement.controls_3_21).toFixed(2)}%`);
     L.push(`    paired bootstrap MAE(C0)-MAE(${k}): all ${fmt(p.all_sites.mean_improvement)} CI95 [${fmt(p.all_sites.ci95[0])}, ${fmt(p.all_sites.ci95[1])}] wins ${p.all_sites.wins}/${p.all_sites.circuits}; targets ${fmt(p.targets_5_23.mean_improvement)} CI95 [${fmt(p.targets_5_23.ci95[0])}, ${fmt(p.targets_5_23.ci95[1])}] wins ${p.targets_5_23.wins}/${p.targets_5_23.circuits}`);
     const n=c.numerical_vs_physical;
     L.push(`    ledger: max l1 discard ${n.max_l1_discard.toExponential(3)}, old_bound ${n.max_old_bound.toExponential(3)}, min_bound ${n.max_min_bound.toExponential(3)}; physical MAE ${fmt(n.physical_prediction_error_mae)}; ratio min_bound/MAE ${n.ratio_candidate_min_bound_to_mae.toExponential(3)}, l1/MAE ${n.ratio_candidate_l1_to_mae.toExponential(3)}, old_bound/MAE ${n.ratio_candidate_old_bound_to_mae.toExponential(3)}`);
@@ -149,7 +164,12 @@ export function renderText(rep){
     if(c.relative_mae_improvement.targets_5_23<0)L.push(`    NEGATIVE RESULT: ${k} is WORSE than C0 on targets 5/23 (${(100*c.relative_mae_improvement.targets_5_23).toFixed(2)}%).`);
     L.push('    criterion                                         result  detail');
     for(const [name,v] of Object.entries(c.criteria))L.push(`    ${name.padEnd(48)}  ${v.pass?'PASS':'FAIL'}   ${v.detail}`);
-    L.push(`    VERDICT ${k}: ${c.verdict}${rep.synthetic?' (SYNTHETIC DRY RUN, not evidence)':''}`);
+    if(k==='C3Z'){
+      const v=c.vs_C3.paired_bootstrap_MAE_C3_minus_MAE_C3Z,t=c.target_site_mae;
+      L.push(`    paired bootstrap MAE(C3)-MAE(C3Z): all ${fmt(v.all_sites.mean_improvement)} CI95 [${fmt(v.all_sites.ci95[0])}, ${fmt(v.all_sites.ci95[1])}] wins ${v.all_sites.wins}/${v.all_sites.circuits}; targets ${fmt(v.targets_5_23.mean_improvement)} CI95 [${fmt(v.targets_5_23.ci95[0])}, ${fmt(v.targets_5_23.ci95[1])}] wins ${v.targets_5_23.wins}/${v.targets_5_23.circuits}`);
+      L.push('    target-site MAE (C0, C2, C3, C3Z): '+Object.entries(t).map(([s,x])=>`${s.replace('site_','q')} n=${x.n_obs} ${fmt(x.C0)} ${fmt(x.C2)} ${fmt(x.C3)} ${fmt(x.C3Z)}`).join('; '));
+    }
+    L.push(`    VERDICT ${k}${k==='C3Z'?' (declared extension)':''}: ${c.verdict}${rep.synthetic?' (SYNTHETIC DRY RUN, not evidence)':''}`);
   }
   return L.join('\n');
 }
