@@ -1,0 +1,48 @@
+{
+  "checked_at": "2026-11-26T15:44:17.556395+00:00",
+  "backends": [
+    {
+      "name": "ibm_fez",
+      "num_qubits": 156,
+      "operational": true,
+      "pending_jobs": 2,
+      "two_qubit_gate": "cz",
+      "median_two_qubit_error": 0.002478018201788973,
+      "median_readout_error": 0.01080322265625,
+      "processor_type": "{'family': 'Heron', 'revision': '2'}"
+    },
+    {
+      "name": "ibm_kingston",
+      "num_qubits": 156,
+      "operational": true,
+      "pending_jobs": 0,
+      "two_qubit_gate": "cz",
+      "median_two_qubit_error": 0.001800154208343313,
+      "median_readout_error": 0.0103759765625,
+      "processor_type": "{'family': 'Heron', 'revision': '2'}"
+    },
+    {
+      "name": "ibm_marrakesh",
+      "num_qubits": 156,
+      "operational": true,
+      "pending_jobs": 0,
+      "two_qubit_gate": "cz",
+      "median_two_qubit_error": 0.0025200029833345183,
+      "median_readout_error": 0.02349853515625,
+      "processor_type": "{'family': 'Heron', 'revision': '2'}"
+    }
+  ],
+  "usage": {
+    "usage_consumed_seconds": 224,
+    "usage_limit_seconds": 600,
+    "usage_remaining_seconds": 376,
+    "usage_period": {
+      "start_time": "2026-10-29T15:44:16.804Z",
+      "end_time": "2026-11-26T15:44:16.804Z"
+    },
+    "usage_limit_reached": false
+  },
+  "kingston_calibration_timestamp": "2026-11-26T23:30:31+08:00",
+  "kingston_two_qubit_gate": "cz",
+  "kingston_edges_of_interest": "edges not a dict"
+}

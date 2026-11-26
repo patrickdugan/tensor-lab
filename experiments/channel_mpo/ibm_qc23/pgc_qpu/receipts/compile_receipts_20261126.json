@@ -1,0 +1,33 @@
+{
+ "pgc_q23": {
+  "plan_sha256": "ab72587da384cd534bd0e4564c304b03481d15e582eb35565b86bc1af7b556f2",
+  "qpy_sha256": "e714217e758436229e707788427cce46bc712d19f741e4fb92f55b77b89e0d3c",
+  "calibration_sha256": "2a11442ec0cc96c28a668e199f15094b28ef70537453cd0631bef8421875503f",
+  "proposal_sha256": "2637e79e5fea67baf8fb8d5bbd14d4ab47065bae3fc89eb0ee52c61518bd733b",
+  "estimated_qpu_seconds": 13.189440000000001,
+  "circuits": 66,
+  "compiled_at": "2026-11-26T15:44:53.231738+00:00",
+  "calibration_timestamp": "2026-11-26T23:30:31+08:00"
+ },
+ "pgc_q5": {
+  "plan_sha256": "a6745a5e35454b48c716ce84f377807bb2b8cb65aaa8ef00378dee0a978b95b3",
+  "qpy_sha256": "e4aea945f32c5f44f2d1fd709bffa2b344c381ca4437f5d7375e9c85f0067a0b",
+  "calibration_sha256": "2a11442ec0cc96c28a668e199f15094b28ef70537453cd0631bef8421875503f",
+  "proposal_sha256": "2637e79e5fea67baf8fb8d5bbd14d4ab47065bae3fc89eb0ee52c61518bd733b",
+  "estimated_qpu_seconds": 13.189440000000001,
+  "circuits": 66,
+  "compiled_at": "2026-11-26T15:45:19.101154+00:00",
+  "calibration_timestamp": "2026-11-26T23:30:31+08:00"
+ },
+ "qc26a": {
+  "plan_sha256": "d0282b198bccb45dfa2df68d369693f5b5c435b0af449324bf4af27490d0e7aa",
+  "qpy_sha256": "40ed8b6a17c48684104858bf6a471d62be68f1745d582d3002d0c0036921bc9f",
+  "calibration_sha256": "7ceb0ef87f95d50a08ae4575ad5dd4dd071a879e042b943ead1d0fcd770b0ab6",
+  "proposal_sha256": "296c6ad3c3e59b8f45613f6ddae20b4810d726e6abd8bdae04dc2730293107ab",
+  "estimated_qpu_seconds": 16.38688,
+  "circuits": 82,
+  "compiled_at": "2026-11-26T15:45:39.129047+00:00",
+  "calibration_timestamp": "2026-11-26T23:30:31+08:00"
+ },
+ "note": "Compile-only dry builds (no submission). Authorization requires a build under 15 minutes old at submission time; these hashes document the pipeline and are superseded by the fresh build made at approval time."
+}

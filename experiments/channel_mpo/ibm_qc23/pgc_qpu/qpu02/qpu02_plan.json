@@ -1,0 +1,654 @@
+{
+ "version": "PGC-QPU02-PLAN-v1",
+ "status": "proposal only; fake-backend routing audit; not compiled against the live device, not authorized",
+ "layout_audit": {
+  "fake_backend": "FakeKingston",
+  "physical_qubits_for_s_a_b_t": [
+   2,
+   1,
+   3,
+   4
+  ],
+  "native_cz_in_intact": 10,
+  "logical_two_qubit_gates_intact": 4
+ },
+ "circuits": 30,
+ "shots_per_circuit": 2048,
+ "estimated_qpu_seconds": 18.974399999999996,
+ "estimate_model": {
+  "shot_repetition_delay_s": 0.00025,
+  "per_shot_circuit_allowance_s": 1e-05,
+  "per_circuit_overhead_allowance_s": 0.1
+ },
+ "rows": [
+  {
+   "id": "qpu02_intact_s0_Z_ctx000",
+   "variant": "intact",
+   "input": "0",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.108e-06,
+   "native_gate_counts": {
+    "sx": 20,
+    "rz": 16,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4
+   }
+  },
+  {
+   "id": "qpu02_intact_s1_Z_ctx000",
+   "variant": "intact",
+   "input": "1",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.1400000000000004e-06,
+   "native_gate_counts": {
+    "sx": 20,
+    "rz": 16,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4,
+    "x": 1
+   }
+  },
+  {
+   "id": "qpu02_path_a_only_s0_Z_ctx000",
+   "variant": "path_a_only",
+   "input": "0",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 2.976e-06,
+   "native_gate_counts": {
+    "sx": 18,
+    "rz": 12,
+    "cz": 9,
+    "barrier": 4,
+    "measure": 4
+   }
+  },
+  {
+   "id": "qpu02_path_a_only_s1_Z_ctx000",
+   "variant": "path_a_only",
+   "input": "1",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.0080000000000003e-06,
+   "native_gate_counts": {
+    "sx": 18,
+    "rz": 12,
+    "cz": 9,
+    "barrier": 4,
+    "measure": 4,
+    "x": 1
+   }
+  },
+  {
+   "id": "qpu02_reset_a_s0_Z_ctx000",
+   "variant": "reset_a",
+   "input": "0",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 5.419999999999999e-06,
+   "native_gate_counts": {
+    "sx": 20,
+    "rz": 16,
+    "cz": 10,
+    "barrier": 6,
+    "measure": 4,
+    "reset": 1
+   }
+  },
+  {
+   "id": "qpu02_reset_a_s1_Z_ctx000",
+   "variant": "reset_a",
+   "input": "1",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 5.452e-06,
+   "native_gate_counts": {
+    "sx": 20,
+    "rz": 16,
+    "cz": 10,
+    "barrier": 6,
+    "measure": 4,
+    "x": 1,
+    "reset": 1
+   }
+  },
+  {
+   "id": "qpu02_reset_ab_s0_Z_ctx000",
+   "variant": "reset_ab",
+   "input": "0",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 7.732e-06,
+   "native_gate_counts": {
+    "sx": 20,
+    "rz": 16,
+    "cz": 10,
+    "barrier": 7,
+    "measure": 4,
+    "reset": 2
+   }
+  },
+  {
+   "id": "qpu02_reset_ab_s1_Z_ctx000",
+   "variant": "reset_ab",
+   "input": "1",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 7.763999999999999e-06,
+   "native_gate_counts": {
+    "sx": 20,
+    "rz": 16,
+    "cz": 10,
+    "barrier": 7,
+    "measure": 4,
+    "reset": 2,
+    "x": 1
+   }
+  },
+  {
+   "id": "qpu02_echo_intact_s0_Z_ctx000",
+   "variant": "echo_intact",
+   "input": "0",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.372e-06,
+   "native_gate_counts": {
+    "rz": 24,
+    "sx": 24,
+    "cz": 12,
+    "barrier": 7,
+    "measure": 4
+   }
+  },
+  {
+   "id": "qpu02_echo_intact_s1_Z_ctx000",
+   "variant": "echo_intact",
+   "input": "1",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.4040000000000004e-06,
+   "native_gate_counts": {
+    "rz": 24,
+    "sx": 24,
+    "cz": 12,
+    "barrier": 7,
+    "measure": 4,
+    "x": 1
+   }
+  },
+  {
+   "id": "qpu02_path_a_echo_b_s0_Z_ctx000",
+   "variant": "path_a_echo_b",
+   "input": "0",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.2400000000000003e-06,
+   "native_gate_counts": {
+    "sx": 22,
+    "rz": 20,
+    "cz": 11,
+    "barrier": 6,
+    "measure": 4
+   }
+  },
+  {
+   "id": "qpu02_path_a_echo_b_s1_Z_ctx000",
+   "variant": "path_a_echo_b",
+   "input": "1",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.272e-06,
+   "native_gate_counts": {
+    "sx": 22,
+    "rz": 20,
+    "cz": 11,
+    "barrier": 6,
+    "measure": 4,
+    "x": 1
+   }
+  },
+  {
+   "id": "qpu02_no_source_link_s0_Z_ctx000",
+   "variant": "no_source_link",
+   "input": "0",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.108e-06,
+   "native_gate_counts": {
+    "sx": 20,
+    "rz": 16,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4
+   }
+  },
+  {
+   "id": "qpu02_no_source_link_s1_Z_ctx000",
+   "variant": "no_source_link",
+   "input": "1",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.1400000000000004e-06,
+   "native_gate_counts": {
+    "sx": 20,
+    "rz": 16,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4,
+    "x": 1
+   }
+  },
+  {
+   "id": "qpu02_intact_p_XXXZ_ctx000",
+   "variant": "intact",
+   "input": "+",
+   "basis": "XXXZ",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.1720000000000003e-06,
+   "native_gate_counts": {
+    "rz": 24,
+    "sx": 24,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4
+   }
+  },
+  {
+   "id": "qpu02_intact_m_XXXZ_ctx000",
+   "variant": "intact",
+   "input": "-",
+   "basis": "XXXZ",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.204e-06,
+   "native_gate_counts": {
+    "rz": 24,
+    "sx": 24,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4,
+    "x": 1
+   }
+  },
+  {
+   "id": "qpu02_intact_p_Z_ctx000",
+   "variant": "intact",
+   "input": "+",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.1400000000000004e-06,
+   "native_gate_counts": {
+    "sx": 21,
+    "rz": 18,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4
+   }
+  },
+  {
+   "id": "qpu02_reset_a_p_XXXZ_ctx000",
+   "variant": "reset_a",
+   "input": "+",
+   "basis": "XXXZ",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 5.4839999999999995e-06,
+   "native_gate_counts": {
+    "rz": 24,
+    "sx": 24,
+    "cz": 10,
+    "barrier": 6,
+    "measure": 4,
+    "reset": 1
+   }
+  },
+  {
+   "id": "qpu02_reset_a_m_XXXZ_ctx000",
+   "variant": "reset_a",
+   "input": "-",
+   "basis": "XXXZ",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 5.515999999999999e-06,
+   "native_gate_counts": {
+    "rz": 24,
+    "sx": 24,
+    "cz": 10,
+    "barrier": 6,
+    "measure": 4,
+    "x": 1,
+    "reset": 1
+   }
+  },
+  {
+   "id": "qpu02_reset_a_p_Z_ctx000",
+   "variant": "reset_a",
+   "input": "+",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 5.452e-06,
+   "native_gate_counts": {
+    "sx": 21,
+    "rz": 18,
+    "cz": 10,
+    "barrier": 6,
+    "measure": 4,
+    "reset": 1
+   }
+  },
+  {
+   "id": "qpu02_echo_intact_p_XXXZ_ctx000",
+   "variant": "echo_intact",
+   "input": "+",
+   "basis": "XXXZ",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.4360000000000006e-06,
+   "native_gate_counts": {
+    "rz": 32,
+    "sx": 28,
+    "cz": 12,
+    "barrier": 7,
+    "measure": 4
+   }
+  },
+  {
+   "id": "qpu02_echo_intact_m_XXXZ_ctx000",
+   "variant": "echo_intact",
+   "input": "-",
+   "basis": "XXXZ",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.4680000000000005e-06,
+   "native_gate_counts": {
+    "rz": 32,
+    "sx": 28,
+    "cz": 12,
+    "barrier": 7,
+    "measure": 4,
+    "x": 1
+   }
+  },
+  {
+   "id": "qpu02_echo_intact_p_Z_ctx000",
+   "variant": "echo_intact",
+   "input": "+",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.4040000000000004e-06,
+   "native_gate_counts": {
+    "rz": 26,
+    "sx": 25,
+    "cz": 12,
+    "barrier": 7,
+    "measure": 4
+   }
+  },
+  {
+   "id": "qpu02_no_source_link_p_XXXZ_ctx000",
+   "variant": "no_source_link",
+   "input": "+",
+   "basis": "XXXZ",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.1720000000000003e-06,
+   "native_gate_counts": {
+    "rz": 24,
+    "sx": 24,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4
+   }
+  },
+  {
+   "id": "qpu02_no_source_link_m_XXXZ_ctx000",
+   "variant": "no_source_link",
+   "input": "-",
+   "basis": "XXXZ",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.204e-06,
+   "native_gate_counts": {
+    "rz": 24,
+    "sx": 24,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4,
+    "x": 1
+   }
+  },
+  {
+   "id": "qpu02_no_source_link_p_Z_ctx000",
+   "variant": "no_source_link",
+   "input": "+",
+   "basis": "Z",
+   "ctx": [
+    0,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.1400000000000004e-06,
+   "native_gate_counts": {
+    "sx": 21,
+    "rz": 18,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4
+   }
+  },
+  {
+   "id": "qpu02_intact_s0_Z_ctx100",
+   "variant": "intact",
+   "input": "0",
+   "basis": "Z",
+   "ctx": [
+    1,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.1400000000000004e-06,
+   "native_gate_counts": {
+    "sx": 20,
+    "rz": 16,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4,
+    "x": 1
+   }
+  },
+  {
+   "id": "qpu02_intact_s1_Z_ctx100",
+   "variant": "intact",
+   "input": "1",
+   "basis": "Z",
+   "ctx": [
+    1,
+    0,
+    0
+   ],
+   "shots": 2048,
+   "duration_s": 3.1400000000000004e-06,
+   "native_gate_counts": {
+    "sx": 20,
+    "rz": 16,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4,
+    "x": 2
+   }
+  },
+  {
+   "id": "qpu02_intact_s0_Z_ctx111",
+   "variant": "intact",
+   "input": "0",
+   "basis": "Z",
+   "ctx": [
+    1,
+    1,
+    1
+   ],
+   "shots": 2048,
+   "duration_s": 3.1400000000000004e-06,
+   "native_gate_counts": {
+    "sx": 20,
+    "rz": 16,
+    "cz": 10,
+    "barrier": 5,
+    "measure": 4,
+    "x": 3
+   }
+  },
+  {
+   "id": "qpu02_intact_s1_Z_ctx111",
+   "variant": "intact",
+   "input": "1",
+   "basis": "Z",
+   "ctx": [
+    1,
+    1,
+    1
+   ],
+   "shots": 2048,
+   "duration_s": 3.1400000000000004e-06,
+   "native_gate_counts": {
+    "sx": 20,
+    "rz": 16,
+    "cz": 10,
+    "barrier": 5,
+    "x": 4,
+    "measure": 4
+   }
+  }
+ ],
+ "interpretation": {
+  "structural_reachability": "directed gate path s->t not cut by reset (qpu02_sim.reachability)",
+  "operational_target_distinguishability": "P(t=1|s=1) - P(t=1|s=0) from Z readout",
+  "joint_coherence": "GHZ witness (XXX_plus - XXX_minus)/2 and F = (P(sab equal | t=0) + XXX_plus)/2 over s,a,b",
+  "restoration": "influence in path_a_only/reset_a relative to intact; echo controls match two-qubit gate count",
+  "apparent_influence_null": "intact and echo_intact have ideal response 0; excess over echo isolates depth-independent leakage"
+ }
+}
