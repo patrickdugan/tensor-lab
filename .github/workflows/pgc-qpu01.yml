@@ -1,0 +1,22 @@
+name: PGC-QPU01 local identifiability
+on:
+  pull_request:
+    paths:
+      - 'experiments/channel_mpo/ibm_qc23/pgc_qpu/**'
+      - 'experiments/channel_mpo/ibm_qc23/qc26/qc26b_engine.mjs'
+      - '.github/workflows/pgc-qpu01.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node experiments/channel_mpo/ibm_qc23/pgc_qpu/audit.mjs --check
+      - run: node experiments/channel_mpo/ibm_qc23/pgc_qpu/ramsey_campaign.mjs --check
+      - run: python3 -m py_compile experiments/channel_mpo/ibm_qc23/pgc_qpu/compile_readonly.py

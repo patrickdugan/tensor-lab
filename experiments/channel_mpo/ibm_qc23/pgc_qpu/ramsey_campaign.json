@@ -1,0 +1,2164 @@
+{
+  "version": "PGC-QPU01-RAMSEY-v1",
+  "status": "offline plan; uncompiled and unauthorized",
+  "blocks": [
+    {
+      "id": "q23",
+      "backend": "ibm_kingston",
+      "pairs": [
+        [
+          16,
+          23
+        ],
+        [
+          22,
+          23
+        ]
+      ],
+      "sites": [
+        16,
+        22,
+        23
+      ],
+      "shots": 384,
+      "rows": [
+        {
+          "id": "pgc_q23_16_23_0_2_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_1_0_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_1_2_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_0_2_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_1_1_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_1_8_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_0_8_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_0_0_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_1_2_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_0_1_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_1_0_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_1_1_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_1_0_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_1_8_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_0_1_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_0_2_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_0_0_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_0_8_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_0_2_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_1_2_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_0_1_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_1_8_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_1_1_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_1_0_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_0_0_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_1_2_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_0_0_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_1_2_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_spam_1",
+          "family": "spam",
+          "path": [
+            16,
+            22,
+            23
+          ],
+          "state": 1,
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_1_1_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_0_8_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_0_1_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_1_1_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_0_8_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_spam_0",
+          "family": "spam",
+          "path": [
+            16,
+            22,
+            23
+          ],
+          "state": 0,
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_0_0_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_1_0_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_0_1_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_0_0_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_1_0_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_0_8_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_1_1_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_1_8_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_1_0_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_1_8_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_0_8_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_1_1_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_0_2_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_1_8_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_1_0_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_0_2_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_0_8_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_0_1_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_0_0_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_0_1_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_0_0_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_1_1_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_1_2_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_0_2_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_0_2_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_0_8_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_22_0_1_X",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            22
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_1_8_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_22_23_1_2_Y",
+          "family": "cz",
+          "edge": "22_23",
+          "orientation": "forward",
+          "path": [
+            22,
+            23
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_23_16_1_8_X",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "reverse",
+          "path": [
+            23,
+            16
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q23_16_23_1_2_Y",
+          "family": "cz",
+          "edge": "16_23",
+          "orientation": "forward",
+          "path": [
+            16,
+            23
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        }
+      ],
+      "ordering_seed": 26112601,
+      "cap_seconds": 15,
+      "estimate": {
+        "shot_repetition_delay_s": 0.00025,
+        "per_shot_circuit_allowance_s": 0.00001,
+        "per_circuit_overhead_allowance_s": 0.1,
+        "nominal_seconds": 13.189440000000001
+      }
+    },
+    {
+      "id": "q5",
+      "backend": "ibm_kingston",
+      "pairs": [
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          5
+        ]
+      ],
+      "sites": [
+        4,
+        5,
+        6
+      ],
+      "shots": 384,
+      "rows": [
+        {
+          "id": "pgc_q5_4_5_0_0_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_1_8_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_1_0_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_0_0_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_0_2_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_1_2_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_1_8_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_0_0_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_0_2_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_1_0_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_0_1_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_1_8_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_0_1_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_1_1_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_spam_1",
+          "family": "spam",
+          "path": [
+            4,
+            5,
+            6
+          ],
+          "state": 1,
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_0_2_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_0_8_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_1_1_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_1_1_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_1_2_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_1_2_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_0_8_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_1_1_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_1_0_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_spam_0",
+          "family": "spam",
+          "path": [
+            4,
+            5,
+            6
+          ],
+          "state": 0,
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_0_8_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_0_2_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_0_0_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_0_8_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_0_8_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_1_8_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_0_1_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_1_2_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_0_2_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_0_1_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_0_2_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_1_1_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_1_2_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_1_8_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_1_0_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_0_8_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_1_1_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_0_0_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_1_1_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_1_0_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_0_8_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_0_8_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 0,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_0_1_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_1_0_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_0_1_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_1_2_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_0_1_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_0_0_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_1_0_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_0_1_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 0,
+          "m": 1,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_0_0_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_1_1_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 1,
+          "m": 1,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_1_2_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_1_8_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_1_8_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_6_0_2_Y",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "reverse",
+          "path": [
+            5,
+            6
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_1_8_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 1,
+          "m": 8,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_0_0_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 0,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_5_4_1_0_X",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "reverse",
+          "path": [
+            5,
+            4
+          ],
+          "state": 1,
+          "m": 0,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_6_5_0_2_X",
+          "family": "cz",
+          "edge": "5_6",
+          "orientation": "forward",
+          "path": [
+            6,
+            5
+          ],
+          "state": 0,
+          "m": 2,
+          "axis": "X",
+          "shots": 384
+        },
+        {
+          "id": "pgc_q5_4_5_1_2_Y",
+          "family": "cz",
+          "edge": "4_5",
+          "orientation": "forward",
+          "path": [
+            4,
+            5
+          ],
+          "state": 1,
+          "m": 2,
+          "axis": "Y",
+          "shots": 384
+        }
+      ],
+      "ordering_seed": 26112602,
+      "cap_seconds": 15,
+      "estimate": {
+        "shot_repetition_delay_s": 0.00025,
+        "per_shot_circuit_allowance_s": 0.00001,
+        "per_circuit_overhead_allowance_s": 0.1,
+        "nominal_seconds": 13.189440000000001
+      }
+    }
+  ],
+  "truth": {
+    "16_23": {
+      "local": {
+        "16": 0.031,
+        "23": -0.044
+      },
+      "delta": -0.1
+    },
+    "22_23": {
+      "local": {
+        "22": -0.012,
+        "23": 0.035
+      },
+      "delta": 0.027
+    },
+    "4_5": {
+      "local": {
+        "4": 0.026,
+        "5": -0.021
+      },
+      "delta": -0.032
+    },
+    "5_6": {
+      "local": {
+        "5": 0.048,
+        "6": -0.018
+      },
+      "delta": 0.1
+    }
+  },
+  "oracle": {
+    "cases": 384,
+    "max_expectation_gap": 3.552713678800501e-15,
+    "max_norm_gap": 8.881784197001252e-16
+  },
+  "synthetic": {
+    "trials_per_arm": 256,
+    "stats": {
+      "injected": {
+        "16_23": {
+          "parameters": {
+            "delta": {
+              "truth": -0.1,
+              "mean": -0.09979406862460961,
+              "rmse": 0.003941530552921196,
+              "correct_sign": 256,
+              "abs_over_0p02": 256
+            },
+            "local_16": {
+              "truth": 0.031,
+              "mean": 0.031026325219588036,
+              "rmse": 0.005705828188722032,
+              "correct_sign": 256,
+              "abs_over_0p02": 250
+            },
+            "local_23": {
+              "truth": -0.044,
+              "mean": -0.043997680287911164,
+              "rmse": 0.006089734099879735,
+              "correct_sign": 256,
+              "abs_over_0p02": 256
+            }
+          },
+          "orientation_gap_over_0p04": 0,
+          "min_visibility": 0.8298115795876367
+        },
+        "22_23": {
+          "parameters": {
+            "delta": {
+              "truth": 0.027,
+              "mean": 0.026836494260171238,
+              "rmse": 0.0044104667048828535,
+              "correct_sign": 256,
+              "abs_over_0p02": 237
+            },
+            "local_22": {
+              "truth": -0.012,
+              "mean": -0.012882740889491323,
+              "rmse": 0.006434185990614366,
+              "correct_sign": 251,
+              "abs_over_0p02": 40
+            },
+            "local_23": {
+              "truth": 0.035,
+              "mean": 0.03479510441411116,
+              "rmse": 0.006140191424393947,
+              "correct_sign": 256,
+              "abs_over_0p02": 255
+            }
+          },
+          "orientation_gap_over_0p04": 0,
+          "min_visibility": 0.832477215512973
+        },
+        "4_5": {
+          "parameters": {
+            "delta": {
+              "truth": -0.032,
+              "mean": -0.032310452128717276,
+              "rmse": 0.004392525893159475,
+              "correct_sign": 256,
+              "abs_over_0p02": 256
+            },
+            "local_4": {
+              "truth": 0.026,
+              "mean": 0.02611672329500778,
+              "rmse": 0.005913259910439367,
+              "correct_sign": 256,
+              "abs_over_0p02": 220
+            },
+            "local_5": {
+              "truth": -0.021,
+              "mean": -0.02109881119303719,
+              "rmse": 0.006002176695953585,
+              "correct_sign": 256,
+              "abs_over_0p02": 150
+            }
+          },
+          "orientation_gap_over_0p04": 0,
+          "min_visibility": 0.8285957546754404
+        },
+        "5_6": {
+          "parameters": {
+            "delta": {
+              "truth": 0.1,
+              "mean": 0.09987341812892499,
+              "rmse": 0.0035355523012493306,
+              "correct_sign": 256,
+              "abs_over_0p02": 256
+            },
+            "local_5": {
+              "truth": 0.048,
+              "mean": 0.04872309546042997,
+              "rmse": 0.005967312545834233,
+              "correct_sign": 256,
+              "abs_over_0p02": 256
+            },
+            "local_6": {
+              "truth": -0.018,
+              "mean": -0.01832886937580614,
+              "rmse": 0.005430685421546571,
+              "correct_sign": 256,
+              "abs_over_0p02": 92
+            }
+          },
+          "orientation_gap_over_0p04": 0,
+          "min_visibility": 0.8231754234534566
+        }
+      },
+      "null": {
+        "16_23": {
+          "parameters": {
+            "delta": {
+              "truth": 0,
+              "mean": 0.00022709970296578733,
+              "rmse": 0.004255109221456416,
+              "correct_sign": null,
+              "abs_over_0p02": 0
+            },
+            "local_16": {
+              "truth": 0,
+              "mean": 0.0004203785506261563,
+              "rmse": 0.006324727926615154,
+              "correct_sign": null,
+              "abs_over_0p02": 0
+            },
+            "local_23": {
+              "truth": 0,
+              "mean": 0.00006658772377149664,
+              "rmse": 0.005679456317195652,
+              "correct_sign": null,
+              "abs_over_0p02": 0
+            }
+          },
+          "orientation_gap_over_0p04": 0,
+          "min_visibility": 0.8476299040817454
+        },
+        "22_23": {
+          "parameters": {
+            "delta": {
+              "truth": 0,
+              "mean": 0.00031769705260690557,
+              "rmse": 0.004451840203718076,
+              "correct_sign": null,
+              "abs_over_0p02": 0
+            },
+            "local_22": {
+              "truth": 0,
+              "mean": -0.00024056792987387936,
+              "rmse": 0.0063986689969140085,
+              "correct_sign": null,
+              "abs_over_0p02": 0
+            },
+            "local_23": {
+              "truth": 0,
+              "mean": 0.00013390197890578102,
+              "rmse": 0.005971970852062441,
+              "correct_sign": null,
+              "abs_over_0p02": 0
+            }
+          },
+          "orientation_gap_over_0p04": 0,
+          "min_visibility": 0.86908749052192
+        },
+        "4_5": {
+          "parameters": {
+            "delta": {
+              "truth": 0,
+              "mean": -0.000033093176772643496,
+              "rmse": 0.004495403480748184,
+              "correct_sign": null,
+              "abs_over_0p02": 0
+            },
+            "local_4": {
+              "truth": 0,
+              "mean": -0.0007031688605909729,
+              "rmse": 0.005568030218652057,
+              "correct_sign": null,
+              "abs_over_0p02": 1
+            },
+            "local_5": {
+              "truth": 0,
+              "mean": 0.00013873450309761796,
+              "rmse": 0.005883042739530433,
+              "correct_sign": null,
+              "abs_over_0p02": 0
+            }
+          },
+          "orientation_gap_over_0p04": 0,
+          "min_visibility": 0.8618326725969232
+        },
+        "5_6": {
+          "parameters": {
+            "delta": {
+              "truth": 0,
+              "mean": 0.00016275655768517385,
+              "rmse": 0.004150315657909068,
+              "correct_sign": null,
+              "abs_over_0p02": 0
+            },
+            "local_5": {
+              "truth": 0,
+              "mean": -0.00002686239288516421,
+              "rmse": 0.006089085833685188,
+              "correct_sign": null,
+              "abs_over_0p02": 0
+            },
+            "local_6": {
+              "truth": 0,
+              "mean": -0.00027034118122425143,
+              "rmse": 0.005849043385220718,
+              "correct_sign": null,
+              "abs_over_0p02": 0
+            }
+          },
+          "orientation_gap_over_0p04": 0,
+          "min_visibility": 0.8527777652457333
+        }
+      }
+    },
+    "scope": "synthetic probe marginals, asymmetric effective SPAM, phase offsets and visibility decay; no crosstalk, leakage, hardware drift, joint uncertainty, or hardware significance claim"
+  },
+  "total_estimated_seconds": 26.378880000000002
+}
