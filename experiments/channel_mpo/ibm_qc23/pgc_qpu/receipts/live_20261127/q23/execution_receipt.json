@@ -1,0 +1,33 @@
+{
+  "authorized_ceiling_seconds": 15,
+  "block": "q23",
+  "calibration_timestamp_build": "2026-11-27T20:10:02+08:00",
+  "calibration_timestamp_submission": "2026-11-27T20:10:02+08:00",
+  "circuits": 66,
+  "consumed_seconds_delta": 9,
+  "estimated_qpu_seconds": 13.189440000000001,
+  "job_id": "dc4ngn2nj2vs73dkdrdg",
+  "job_usage": 9,
+  "plan_sha256": "a9676a7c71616cdafa8cc1ffbfb9c881e99a2cbe3689575a10e57e2cb289d984",
+  "shots_per_circuit": 384,
+  "usage_after": {
+    "usage_consumed_seconds": 264,
+    "usage_limit_reached": false,
+    "usage_limit_seconds": 600,
+    "usage_period": {
+      "end_time": "2026-11-27T12:32:48.439Z",
+      "start_time": "2026-10-30T12:32:48.439Z"
+    },
+    "usage_remaining_seconds": 336
+  },
+  "usage_before": {
+    "usage_consumed_seconds": 255,
+    "usage_limit_reached": false,
+    "usage_limit_seconds": 600,
+    "usage_period": {
+      "end_time": "2026-11-27T12:32:26.455Z",
+      "start_time": "2026-10-30T12:32:26.455Z"
+    },
+    "usage_remaining_seconds": 345
+  }
+}
