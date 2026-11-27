@@ -24,6 +24,27 @@ def test_roster_and_routing(tmp_path):
         a=json.loads((out/'analysis.json').read_text())
         assert all(a['summary'][x]['mean_echo_return']==1 for x in ('gray','recursive'))
 
+def test_hardware_analysis_synthetic(tmp_path):
+    """Synthetic noisy counts through analyze_qpu01 (not hardware data)."""
+    import analyze_qpu01 as A
+    b=3;p=plan(b);rng=np.random.default_rng(5)
+    rows=[]
+    for r in p['rows']:
+        rows.append({**r,'metrics':{'num_two_qubit':r['line_cx'],'depth':r['line_cx']*2,'two_qubit_depth':r['line_cx'],'gate_counts':{}},'duration_s':1e-5})
+    write(tmp_path/'compiled.json',dict(b=b,backend='fake',plan_sha256='0'*64,path=[0,1,2],rows=rows))
+    write(tmp_path/'calibration.json',{'timestamp':'synthetic'})
+    counts={}
+    for r in p['rows']:
+        q=np.array(r['ideal']);w=min(.9,.004*r['line_cx']);q=(1-w)*q+w/len(q);q/=q.sum()
+        c=rng.multinomial(SHOTS,q);counts[r['id']]={f'{i:0{b}b}'[::-1]:int(v) for i,v in enumerate(c) if v}
+    write(tmp_path/'counts.json',counts)
+    a=A.analyze_stage(tmp_path,'synthetic')
+    assert a['paired_mean']['n_pairs']==8 and len(a['rows'])==30
+    assert all(0<=v['tv']<=1 and 0<=v['hf']<=1 for v in a['rows'])
+    assert a['summary']['recursive']['mean_tv']>=0
+    A.latex_tables(a,tmp_path/'t.tex');assert (tmp_path/'t.tex').read_text().count('tabular')>=6
+
+
 def test_qiskit_reference():
     import pytest
     pytest.importorskip('qiskit')
