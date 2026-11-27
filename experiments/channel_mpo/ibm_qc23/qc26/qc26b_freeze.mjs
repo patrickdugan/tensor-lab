@@ -6,7 +6,7 @@
 // Models: C0 twirled stochastic, C1 + non-unital relaxation, C2 + SX offsets, C3 + CZ coherent ZZ phases (params.cz.*.delta only,
 // endpoint terms alpha forced to 0), and the DECLARED EXTENSION C3Z = C3 + endpoint-local Z terms (params.cz.*.alpha). qc26b_engine.mjs
 // is unchanged: C3 is obtained by stripping alpha from the cz config before it reaches the engine.
-// Format qc26b-frozen-v2 stores C3Z; legacy qc26b-frozen-v1 files (no C3Z, C3 used alpha as given in params) still verify.
+// v3 hashes scoring code and checks all metadata/ledgers; v1/v2 remain readable for historical replays.
 // Offline. No network, no credentials. All text is hashed after CRLF->LF normalisation so Windows checkouts agree.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -14,7 +14,7 @@ import crypto from 'node:crypto';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {parse,schedule,evaluate} from './qc26b_engine.mjs';
 
-export const FORMAT_V1='qc26b-frozen-v1',FORMAT='qc26b-frozen-v2';
+export const FORMAT_V1='qc26b-frozen-v1',FORMAT_V2='qc26b-frozen-v2',FORMAT='qc26b-frozen-v3';
 export const TOL=1e-12;
 export const MODELS_V1=['C0','C1','C2','C3'];
 export const MODELS=['C0','C1','C2','C3','C3Z'];
@@ -34,6 +34,8 @@ export function canonical(x){
   }
 }
 export const engineSha=()=>sha256(readLF(path.join(HERE,'qc26b_engine.mjs')));
+// All three JS files are standalone except for imports among them and Node builtins.
+export const codeManifest=()=>Object.fromEntries(['qc26b_engine.mjs','qc26b_freeze.mjs','qc26b_prospective_eval.mjs'].map(f=>[f,sha256(readLF(path.join(HERE,f)))]));
 
 export function checkParams(p){
   if(!p||typeof p!=='object'||Array.isArray(p))throw Error('params must be an object');
@@ -103,7 +105,7 @@ export function buildFrozen(buildDir,paramsFile){
     params,params_sha256:sha256(canonical(params)),
     build:{backend:build.meta.backend,plan_sha256:build.meta.plan_sha256,calibration_timestamp:build.meta.calibration_timestamp,
       compiled_json_sha256:build.compiled_json_sha256,calibration_snapshot_sha256:build.snapshot_sha256,circuits},
-    code:{engine_file:'qc26b_engine.mjs',engine_sha256:engineSha()},
+    code:{engine_file:'qc26b_engine.mjs',engine_sha256:engineSha(),manifest:codeManifest()},
     tolerance:TOL,
     predictions:computePredictions(build,params)
   };
@@ -116,24 +118,31 @@ export function verifyFrozen(frozen,buildDir,paramsFile){
   const chk=(name,ok,detail)=>{checks.push({name,ok:!!ok,detail:detail??null});if(!ok)failures.push(name+(detail?': '+detail:''));};
   try{
     const {sha256:top,...body}=frozen;
-    chk('format',frozen.format===FORMAT||frozen.format===FORMAT_V1,frozen.format);
+    chk('format',[FORMAT,FORMAT_V1,FORMAT_V2].includes(frozen.format),frozen.format);
     const models=modelsFor(frozen.format);
     chk('frozen self-hash',sha256(canonical(body))===top,'top-level sha256 does not match contents');
     const params=readParams(paramsFile);
     chk('parameter file equals frozen parameters',canonical(params)===canonical(frozen.params),'parameter file differs from the frozen parameters');
     chk('params_sha256',sha256(canonical(params))===frozen.params_sha256);
     chk('engine code hash',engineSha()===frozen.code.engine_sha256,'qc26b_engine.mjs differs from the frozen version');
+    if(frozen.format===FORMAT)chk('scoring and freeze code manifest',canonical(frozen.code.manifest)===canonical(codeManifest()));
     const build=loadBuild(buildDir);
     chk('compiled.json hash',build.compiled_json_sha256===frozen.build.compiled_json_sha256);
     chk('plan_sha256',build.meta.plan_sha256===frozen.build.plan_sha256);
     chk('calibration snapshot hash',build.snapshot_sha256===frozen.build.calibration_snapshot_sha256);
+    if(frozen.format===FORMAT){
+      chk('backend',frozen.build.backend===build.meta.backend);
+      chk('calibration timestamp',frozen.build.calibration_timestamp===build.meta.calibration_timestamp);
+    }
     const ids=build.circuits.map(c=>c.r.id).sort(),fids=Object.keys(frozen.build.circuits).sort();
+    chk('prediction id set',JSON.stringify(ids)===JSON.stringify(Object.keys(frozen.predictions).sort()));
     chk('circuit id set',JSON.stringify(ids)===JSON.stringify(fids));
     for(const c of build.circuits){
       const f=frozen.build.circuits[c.r.id];
       if(!f)continue;
       if(c.qasm_sha256!==f.qasm_sha256||c.qasm_sha256!==c.r.qasm3_sha256)chk('qasm hash '+c.r.id,false,'QASM differs from the frozen hash');
       if(JSON.stringify(c.r.physical_path)!==JSON.stringify(f.physical_path))chk('path '+c.r.id,false);
+      if(frozen.format===FORMAT){const r=c.r;for(const k of ['n','depth','seed','shots'])chk('metadata '+r.id+' '+k,f[k]===r[k]);chk('path class '+r.id,f.path_class===(r.path_class||null));}
     }
     if(!failures.length){
       const preds=computePredictions(build,params,frozen.format);
@@ -141,10 +150,19 @@ export function verifyFrozen(frozen,buildDir,paramsFile){
       for(const id of ids){
         const a=preds[id],b=frozen.predictions[id];
         if(!b||a.length!==b.length){bad++;continue;}
-        for(let i=0;i<a.length;i++)for(const k of ['ideal',...models]){
-          const g=Math.abs(a[i][k]-b[i][k]);cnt++;
-          if(!(g<=TOL)){bad++;}
-          if(g>maxGap||Number.isNaN(g))maxGap=g;
+        for(let i=0;i<a.length;i++){
+          for(const k of ['ideal',...models]){
+            const g=Math.abs(a[i][k]-b[i][k]);cnt++;
+            if(typeof b[i][k]!=='number'||!(g<=TOL)){bad++;}
+            if(g>maxGap||Number.isNaN(g))maxGap=g;
+          }
+          if(frozen.format===FORMAT){
+            if(a[i].bit!==b[i].bit||a[i].physical!==b[i].physical)bad++;
+            for(const m of models)for(const k of ['l1','old_bound','min_bound','peak']){
+              const x=a[i].ledger[m][k],y=b[i].ledger?.[m]?.[k];
+              if(typeof y!=='number'||!Number.isFinite(y)||y<0||Math.abs(x-y)>TOL*Math.max(Math.abs(x),Number.MIN_VALUE))bad++;
+            }
+          }
         }
       }
       chk('predictions recompute within 1e-12',bad===0,`${bad} of ${cnt} values differ, max gap ${maxGap}`);
