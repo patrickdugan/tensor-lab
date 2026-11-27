@@ -1,5 +1,6 @@
 // Deterministic QPU04 calibration/filter smoke test and offline stress pilot.
 import {VERSION,BLOCKS,parameterSpecs,derive,kalmanTwo,toChannel} from './qpu04_drift.mjs';
+import {pathToFileURL} from 'node:url';
 const assert=(v,msg)=>{if(!v)throw Error(msg)};
 const near=(a,b,t=1e-12)=>Math.abs(a-b)<t;
 export function fixturePack(){
@@ -67,5 +68,7 @@ export function runPilot(trials=512){
   }
   return {label:'SYNTHETIC PARAMETER-SPACE PILOT; not circuit predictions or hardware',seed:261127044,rows};
 }
-const tests=runCoreTests();
-console.log(JSON.stringify({tests,pilot:runPilot()},null,2));
+if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
+  const tests=runCoreTests();
+  console.log(JSON.stringify({tests,pilot:runPilot()},null,2));
+}
