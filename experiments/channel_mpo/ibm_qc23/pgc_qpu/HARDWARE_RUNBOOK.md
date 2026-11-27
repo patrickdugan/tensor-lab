@@ -2,7 +2,7 @@
 
 Nothing in this directory creates an authorization file or submits a job without one. Each job is its own gate: fresh build, owner-written authorization naming the exact `plan_sha256`, submit within 15 minutes of the build, provider usage recorded before and after.
 
-Balance verified 2026-11-26 15:52 UTC: 224 s consumed of 600 s, 376 s remaining (rolling 28-day window). Target spend 56.63 s across three jobs; each job's ceiling below is a check on this tool's own estimate, not a provider limit.
+Historical pre-acquisition balance verified 2026-11-26 15:52 UTC: 224 s consumed of 600 s, 376 s remaining (rolling 28-day window). Target spend 56.63 s across three jobs; each job's ceiling below is a check on this tool's own estimate, not a provider limit.
 
 | Job | Command (from `experiments/channel_mpo/ibm_qc23`) | Estimate | Ceiling to authorize |
 |---|---|---:|---:|
@@ -49,5 +49,7 @@ After each acquisition commit `execution_receipt.json`, `counts.json`, `job.json
 
 1. QC-26A diagnostic first: it supplies independent SX offsets and conditional phases. It must not touch kicked-Ising counts.
 2. PGC Ramsey q23, then q5 (separate authorizations). If the exploratory fit supports the model, a fresh independently shuffled replicate block needs a new estimate and approval.
-3. QC-26B: write `params.json` from the QC-26A and Ramsey estimates, freeze with `qc26b_freeze.mjs`, commit and push `frozen.json` and `params.json`, then build, authorize and submit. C3Z (endpoint-local Z) is a declared extension scored beside, never instead of, the original C3.
+3. QC-26B: write `params.json` from the QC-26A and Ramsey estimates, build, freeze with `qc26b_freeze.mjs`, commit and push `frozen.json` and `params.json`, then authorize and submit. Live submission now requires v3, a published freeze commit, frozen SHA and provider allocation checks; see the updated QC-26B protocol. C3Z (endpoint-local Z) is a declared extension scored beside, never instead of, the original C3.
 4. PGC-QPU02 (proposal in `qpu02/qpu02_plan.json`, 30 circuits, 18.97 s at 2048 shots; about 11.0 s at 1024) needs its own adapter and budget review before any build. Not part of the 56.63 s.
+
+Latest archived allocation: 336 s after q23 (November 27); recheck live before each job. Review branches and old v1/v2 freezes are not authorization to acquire. QPU02 requires regeneration of the corrected GHZ lower-bound simulation receipt and a reviewed hardware adapter.

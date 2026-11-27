@@ -387,6 +387,55 @@ def verify_frozen(out: Path, frozen: Path, params: Path, plan_sha: str):
     return fz
 
 
+def verify_published_freeze(auth, fz):
+    """Require a published main commit containing the exact freeze and scoring code."""
+    import re
+    sha = auth.get("freeze_commit")
+    rel = auth.get("freeze_path")
+    if fz.get("format") != "qc26b-frozen-v3":
+        raise ValueError("live submission requires v3 freeze; v1/v2 are replay-only")
+    if auth.get("frozen_sha256") != fz.get("sha256"):
+        raise ValueError("authorization frozen_sha256 mismatch")
+    if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-f]{40}", sha):
+        raise ValueError("authorization needs full freeze_commit SHA")
+    if not isinstance(rel, str) or not rel or rel.startswith("/") or ".." in rel.split("/") or "\\" in rel:
+        raise ValueError("authorization needs a repository-relative freeze_path")
+
+    def git(*args):
+        try:
+            return subprocess.run(["git", "-C", str(HERE), *args], check=True,
+                                  capture_output=True, timeout=30).stdout
+        except (OSError, subprocess.SubprocessError) as exc:
+            raise ValueError("published freeze git check failed: " + str(exc)) from exc
+
+    root = Path(git("rev-parse", "--show-toplevel").decode().strip())
+    remote = git("ls-remote", "--exit-code", "origin", "refs/heads/main").decode().split()
+    if len(remote) != 2 or remote[1] != "refs/heads/main":
+        raise ValueError("cannot establish published origin/main")
+    git("merge-base", "--is-ancestor", sha, remote[0])
+    if json.loads(git("show", sha + ":" + rel)) != fz:
+        raise ValueError("published frozen file differs from submitted freeze")
+    for name, expected in fz["code"]["manifest"].items():
+        code_rel = (HERE / name).relative_to(root).as_posix()
+        actual = hash_bytes(git("show", sha + ":" + code_rel).replace(b"\r\n", b"\n"))
+        if actual != expected:
+            raise ValueError("published scoring code differs: " + name)
+    return {"freeze_commit": sha, "freeze_path": rel, "published_main_sha": remote[0],
+            "frozen_sha256": fz["sha256"]}
+
+
+def checked_usage(service, ceiling):
+    try:
+        usage = service.usage()
+        remaining = usage["usage_remaining_seconds"]
+    except Exception as exc:
+        raise ValueError("provider allocation unavailable; refusing submission") from exc
+    if (isinstance(remaining, bool) or not isinstance(remaining, (int, float))
+            or not math.isfinite(remaining) or remaining < ceiling or usage.get("usage_limit_reached")):
+        raise ValueError("remaining provider allocation below authorized ceiling")
+    return usage
+
+
 def submit(out: Path, authorization, frozen: Path, params: Path):
     meta, isas = validate_build(out)
     if meta['mode'] != 'live':
@@ -398,6 +447,13 @@ def submit(out: Path, authorization, frozen: Path, params: Path):
                                   estimated_seconds=meta['estimated_qpu_seconds'])
     if not ok:
         raise ValueError(f'hardware execution NOT authorised: {why}')
+    auth = json.loads(Path(authorization).read_text(encoding="utf-8-sig"))
+    ceiling = auth["max_qpu_seconds"]
+    if isinstance(ceiling, bool) or not math.isfinite(ceiling) or ceiling > ESTIMATE_CEILING_S:
+        raise ValueError("invalid authorization ceiling")
+    if auth.get("acknowledge_estimate_not_hard_limit") is not True or auth.get("checked_current_allocation") is not True:
+        raise ValueError("missing owner cost and allocation acknowledgements")
+    provenance = verify_published_freeze(auth, fz)
     age = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(meta['compiled_at'])).total_seconds()
     if not 0 <= age <= FRESHNESS_S:
         raise ValueError('compilation older than 15 minutes; rebuild, refreeze and reauthorize')
@@ -414,6 +470,9 @@ def submit(out: Path, authorization, frozen: Path, params: Path):
         if json.dumps(old[k], sort_keys=True) != json.dumps(snap[k], sort_keys=True):
             raise ValueError(f'calibration {k} changed; rebuild, refreeze and reauthorize')
     (out / 'calibration_submission.json').write_bytes(snapshot_bytes(snap))
+    before = checked_usage(service, ceiling)
+    (out / 'usage_before.json').write_bytes(dump_json(before))
+    (out / 'freeze_provenance.json').write_bytes(dump_json(provenance))
     # Exclusive marker before the irreversible call; an ambiguous failure must be checked in the account job
     # history by hand and is never retried automatically.
     with (out / 'submission_started.json').open('x') as f:
@@ -422,7 +481,7 @@ def submit(out: Path, authorization, frozen: Path, params: Path):
     job = SamplerV2(mode=backend).run(isas, shots=meta['shots'])     # same pattern as qc23_submit_set.py
     job_id = job.job_id()
     (out / 'job.json').write_bytes(dump_json({'job_id': job_id, 'backend': backend.name,
-                                              'plan_sha256': meta['plan_sha256'], 'submitted_at': now()}))
+                                              'plan_sha256': meta['plan_sha256'], 'submitted_at': now(), **provenance}))
     print('Submitted IBM job:', job_id, flush=True)
     result = job.result()
     if len(result) != len(isas):
@@ -435,6 +494,21 @@ def submit(out: Path, authorization, frozen: Path, params: Path):
         done[row['id']] = {'counts': counts, 'physical_path': row['physical_path'], 'job_id': job_id,
                            'backend': backend.name, 'source': 'ibm'}
     (out / 'counts.json').write_bytes(dump_json(done, indent=None))
+    # Preserve counts before attempting optional post-job usage queries.
+    try:
+        after = service.usage()
+    except Exception as exc:
+        after = {"error": type(exc).__name__ + ": " + str(exc)}
+    try:
+        job_usage = job.usage()
+    except Exception as exc:
+        job_usage = {"error": type(exc).__name__ + ": " + str(exc)}
+    (out / 'execution_receipt.json').write_bytes(dump_json({
+        "job_id": job_id, "plan_sha256": meta["plan_sha256"], **provenance,
+        "usage_before": before, "usage_after": after, "job_usage": job_usage,
+        "authorized_ceiling_seconds": ceiling, "circuits": len(done),
+        "shots_per_circuit": meta["shots"]
+    }))
     print(f'Wrote {out}/counts.json')
 
 

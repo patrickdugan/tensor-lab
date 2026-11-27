@@ -113,3 +113,16 @@ Dry run of steps 2 and 5 without hardware: `python qc26b_synth_counts.py --froze
 - The QPU figure is an estimate (`qc23_access.estimate_qpu_seconds`, 250 us repetition delay), not a provider-enforced limit.
 - Predictions use the calibration snapshot of the build; a calibration cycle between build and submit is refused.
 - Fresh seeds do not make the circuits independent of the model class: the same coupler pairs and qubits recur. Pure-control paths test transfer to qubits the parameters never touch.
+
+
+## Review hardening (v3, before any prospective counts)
+
+New live runs require `qc26b-frozen-v3`. Legacy v1/v2 freezes are replay-only. The freeze hashes the engine, scorer and freeze implementation (LF-normalized), checks all path/site metadata, and independently recomputes every truncation ledger. The original registered criteria (a)-(e) and C3/C3Z roles remain unchanged. The scorer additionally reports an observable-weighted bootstrap over (width,seed) path clusters with all three depths kept together, plus each path's result. This is a sensitivity analysis; eight clusters do not establish independent calibration-cycle replication. A PASS with a nonpositive path-clustered lower bound is exploratory. Criterion (a) uses pooled observables; criterion (b) retains the original equal-circuit estimand; the path-clustered interval explicitly uses the pooled observable estimand.
+
+Owner authorization now also requires:
+- `frozen_sha256`: the exact v3 top-level hash.
+- `freeze_commit`: full Git SHA of a commit reachable from published origin/main.
+- `freeze_path`: repository-relative path of the committed frozen JSON.
+- `acknowledge_estimate_not_hard_limit` and `checked_current_allocation`: true.
+
+The live submitter verifies the published commit, committed frozen JSON and committed scoring-code hashes against the local freeze, and fails closed when provider allocation is unavailable or below the authorized ceiling. Store the freeze in a tracked receipt directory (or explicitly add the gitignored file), push it before authorization, and archive the generated freeze provenance and execution receipt with the counts. All authorization and freshness requirements still apply. No authorization or hardware submission is supplied by this review.

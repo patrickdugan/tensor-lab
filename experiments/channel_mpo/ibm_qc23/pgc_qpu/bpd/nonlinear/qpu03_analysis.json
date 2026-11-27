@@ -1,0 +1,361 @@
+{
+  "label": "Offline paired bootstrap (10000 resamples, initial seed 771271) and exhaustive modulo-8 kernel fixtures",
+  "comparisons": [
+    {
+      "scenario": "integer",
+      "budget": 5,
+      "baseline": "random",
+      "mean_baseline_minus_dense": 0.13076773821196155,
+      "paired_ci95": [
+        0.08694040081545625,
+        0.17567777103843218
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "integer",
+      "budget": 5,
+      "baseline": "learned_group",
+      "mean_baseline_minus_dense": 0,
+      "paired_ci95": [
+        0,
+        0
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "integer",
+      "budget": 5,
+      "baseline": "smith_rank_first",
+      "mean_baseline_minus_dense": 0,
+      "paired_ci95": [
+        0,
+        0
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "integer",
+      "budget": 10,
+      "baseline": "random",
+      "mean_baseline_minus_dense": 0.020235781526398895,
+      "paired_ci95": [
+        -0.00207979733508136,
+        0.049860260072350636
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "integer",
+      "budget": 10,
+      "baseline": "learned_group",
+      "mean_baseline_minus_dense": 0,
+      "paired_ci95": [
+        0,
+        0
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "integer",
+      "budget": 10,
+      "baseline": "smith_rank_first",
+      "mean_baseline_minus_dense": 0,
+      "paired_ci95": [
+        0,
+        0
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "nonlinear",
+      "budget": 5,
+      "baseline": "random",
+      "mean_baseline_minus_dense": 0.14056780224051832,
+      "paired_ci95": [
+        0.08390687068062504,
+        0.19855168356816802
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "nonlinear",
+      "budget": 5,
+      "baseline": "learned_group",
+      "mean_baseline_minus_dense": 0.0064910321313414775,
+      "paired_ci95": [
+        -0.0017848683666830288,
+        0.02140646104069575
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "nonlinear",
+      "budget": 5,
+      "baseline": "smith_rank_first",
+      "mean_baseline_minus_dense": 0,
+      "paired_ci95": [
+        0,
+        0
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "nonlinear",
+      "budget": 10,
+      "baseline": "random",
+      "mean_baseline_minus_dense": 0.013649716292693681,
+      "paired_ci95": [
+        0.0037056019886649635,
+        0.026880147212418017
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "nonlinear",
+      "budget": 10,
+      "baseline": "learned_group",
+      "mean_baseline_minus_dense": -0.0029785348207154363,
+      "paired_ci95": [
+        -0.007088202051396154,
+        0.000442919128466936
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "nonlinear",
+      "budget": 10,
+      "baseline": "smith_rank_first",
+      "mean_baseline_minus_dense": 0,
+      "paired_ci95": [
+        0,
+        0
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "drift_offgrid",
+      "budget": 5,
+      "baseline": "random",
+      "mean_baseline_minus_dense": 0.05750414066362556,
+      "paired_ci95": [
+        0.020799500381134026,
+        0.09413034494156623
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "drift_offgrid",
+      "budget": 5,
+      "baseline": "learned_group",
+      "mean_baseline_minus_dense": 0.005119961652987012,
+      "paired_ci95": [
+        0.00018068349023055586,
+        0.014442820069731912
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "drift_offgrid",
+      "budget": 5,
+      "baseline": "smith_rank_first",
+      "mean_baseline_minus_dense": 0,
+      "paired_ci95": [
+        0,
+        0
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "drift_offgrid",
+      "budget": 10,
+      "baseline": "random",
+      "mean_baseline_minus_dense": -0.0006748154608642032,
+      "paired_ci95": [
+        -0.00273063018248708,
+        0.0010472226182150126
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "drift_offgrid",
+      "budget": 10,
+      "baseline": "learned_group",
+      "mean_baseline_minus_dense": -0.0027485133585279345,
+      "paired_ci95": [
+        -0.008092723387091277,
+        0.0007480115742499963
+      ],
+      "n": 24
+    },
+    {
+      "scenario": "drift_offgrid",
+      "budget": 10,
+      "baseline": "smith_rank_first",
+      "mean_baseline_minus_dense": 0,
+      "paired_ci95": [
+        0,
+        0
+      ],
+      "n": 24
+    }
+  ],
+  "kernels": [
+    {
+      "A": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "kernel": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          4,
+          4
+        ],
+        [
+          4,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          4
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          4,
+          4,
+          4
+        ]
+      ],
+      "size": 8
+    },
+    {
+      "A": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "kernel": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          4
+        ]
+      ],
+      "size": 2
+    },
+    {
+      "A": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "kernel": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "size": 1
+    }
+  ]
+}
