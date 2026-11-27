@@ -1,0 +1,50 @@
+{
+  "scope": "SYNTHETIC_PREIMAGE_TESTS_ONLY",
+  "rounded": {
+    "tests": 1536,
+    "hits": 1536,
+    "original": 1501,
+    "work": 446434
+  },
+  "block": {
+    "tests": 192,
+    "hits": 192,
+    "original": 191,
+    "work": 322504
+  },
+  "power": {
+    "k1": {
+      "hits": 48,
+      "caps": 0
+    },
+    "k4": {
+      "hits": 48,
+      "caps": 0
+    },
+    "k8": {
+      "hits": 48,
+      "caps": 0
+    },
+    "k12": {
+      "hits": 24,
+      "caps": 24
+    }
+  },
+  "controls": {
+    "fft": 768,
+    "rounded_targets": 1920,
+    "power_targets": 482,
+    "block_targets": 640,
+    "involution": 4491,
+    "collision_families": 36,
+    "primes": 8,
+    "field_columns": 121
+  },
+  "source_blobs": {
+    "spectrallock.py": "304c53d61df00c6041a88ed903f73bffaff7bcca",
+    "block.py": "ac61a33a36631a460ae3460f7a7b1f45fc6e199f",
+    "run.py": "4faf7cfa5cda728b84745074d2ad1fd3fb74f116",
+    "run_block.py": "c92e2360822479340797b3e09963f6cf576d784e",
+    "audit_exact.py": "e72162349a9306fd2339ca06e027e2fe0999359e"
+  }
+}

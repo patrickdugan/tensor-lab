@@ -1,0 +1,42 @@
+{
+  "scope": "SYNTHETIC_AND_FIELD_RELATION_ONLY",
+  "cross_shell": {
+    "trials": 288,
+    "hits": 256,
+    "caps": 32,
+    "per_family": [
+      48,
+      48,
+      48,
+      48,
+      48,
+      16
+    ]
+  },
+  "fixed_modulus": {
+    "trials": 96,
+    "hits": 96,
+    "max_1024_checks": 2440
+  },
+  "controls": {
+    "direct_convolution": 2910,
+    "involution": 140,
+    "exhaustive_targets": 776,
+    "fibres": 250
+  },
+  "gadget": {
+    "valid": 112,
+    "corruptions_rejected": 2516,
+    "direct_convolution": 4608,
+    "d1024": {
+      "multiplication_rows": 1024,
+      "linear_rows": 6138,
+      "total_rows": 7162
+    }
+  },
+  "source_hashes": {
+    "cross_shell.py": "a85d9ff28aafe1a760bed0cbed04da67cdbac018",
+    "run.py": "5dc271f861705f498892745cc0e5623a7a59f7ec",
+    "gadget.py": "a1a980af882933c0709b565e8070acf5b97a3a60"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "scope": "READBACK_FROM_COMMITTED_RAW_COUNTS",
+  "hardware_ref": "08274a5f5c6e61198bbfd6e106f0bc19a96b9702",
+  "shots": 26112,
+  "rows": 68,
+  "method": "Reverse Qiskit classical bitstring to logical shell order, normalize 384 shots, TV and Hellinger computed against committed compiled ideal; compare every row against analysis_full.",
+  "stages": [
+    {
+      "stage": "stageA_b3",
+      "rows": 30,
+      "shots": 11520,
+      "max_abs_tv_error": 5.551115123125783e-17,
+      "max_abs_hf_error": 4.440892098500626e-16,
+      "counts_blob": "c1dd07bc41b066bb97ad000af714de25d39139a0",
+      "compiled_blob": "793b515f01964d22c2c4ba52bf1d3f6e4b98a5ce",
+      "analysis_blob": "4d7e0640cbf0829b3d9e337088c09a2ba7c8a199",
+      "charge": 5
+    },
+    {
+      "stage": "stageB_b4",
+      "rows": 38,
+      "shots": 14592,
+      "max_abs_tv_error": 2.220446049250313e-16,
+      "max_abs_hf_error": 2.220446049250313e-16,
+      "counts_blob": "69600dea30ac2f9bea15c005687f94a2c256eb61",
+      "compiled_blob": "7c43ec36c8ebdb37011f12b9a4f2bd26bd06813f",
+      "analysis_blob": "f24cfe09897774abfbc1a70155dd6fca0a48481b",
+      "charge": 6
+    }
+  ],
+  "limitations": "No independent device access, ideal circuit rederivation, bootstrap replay, or new QPU jobs."
+}

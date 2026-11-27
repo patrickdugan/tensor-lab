@@ -1,0 +1,5 @@
+__pycache__/
+AUDIT_*.json
+COLLISION_AUDIT.json
+PRIOR_ROSTER.json
+RECEIPT_AUDIT.json
