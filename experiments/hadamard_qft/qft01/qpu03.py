@@ -397,31 +397,30 @@ def freeze(select_path, out_path, b, shots=SHOTS):
     Bx = best('exact', (1, 2)) if b <= 5 else None
     D_nodes = set(D['phys'])
     # arm A: QPU02 circuit on the best-ESP induced path, maximizing overlap with D's nodes first
-    paths = enum_paths(G, b); pl = qpu02.plan(b, 0); rr = [r for r in pl['rows'] if r['arm'] == 'compact_approx']
-    from qiskit import transpile
-    core_gates = None
-    cand = []
-    probe_row = next(r for r in rr if r['probe'] == 'edge' and r['state'] == 'plus')
-    # core = gates after the barrier
-    gl = probe_row['gates']; ib = [i for i, x in enumerate(gl) if x[0] == 'barrier'][0]; core_gates = [tuple(x) for x in gl[ib+1:]]
-    for p in paths:
-        ov = len(D_nodes & set(p))
-        cand.append((ov, p))
-    maxov = max(c[0] for c in cand)
-    best_path = None
-    for ov, p in cand:
-        if ov < maxov: continue
-        tc = T.transpile_core(core_gates, b, G, list(p), seed=0, level=1, initial_layout=list(range(b)))
-        e = S.esp_circuit(tc, list(p), b, b)
-        if best_path is None or e > best_path[0]: best_path = (e, list(p), T.metrics(tc))
-    arms.append(dict(arm='A', kind='old', nodes=best_path[1], level=1, seed=0, esp=best_path[0], core_metrics=best_path[2], overlap_with_D=maxov))
+    if b in qpu02.ARMS:      # the QPU02 line-routed circuit exists only for b = 4, 5, 6
+        paths = enum_paths(G, b); pl = qpu02.plan(b, 0); rr = [r for r in pl['rows'] if r['arm'] == 'compact_approx']
+        cand = []
+        probe_row = next(r for r in rr if r['probe'] == 'edge' and r['state'] == 'plus')
+        gl = probe_row['gates']; ib = [i for i, x in enumerate(gl) if x[0] == 'barrier'][0]; core_gates = [tuple(x) for x in gl[ib+1:]]
+        for p in paths:
+            ov = len(D_nodes & set(p))
+            cand.append((ov, p))
+        maxov = max(c[0] for c in cand)
+        best_path = None
+        for ov, p in cand:
+            if ov < maxov: continue
+            tc = T.transpile_core(core_gates, b, G, list(p), seed=0, level=1, initial_layout=list(range(b)))
+            e = S.esp_circuit(tc, list(p), b, b)
+            if best_path is None or e > best_path[0]: best_path = (e, list(p), T.metrics(tc))
+        arms.append(dict(arm='A', kind='old', nodes=best_path[1], level=1, seed=0, esp=best_path[0], core_metrics=best_path[2], overlap_with_D=maxov))
     def ws(name, r):
         return dict(arm=name, kind='ws', mode=r['mode'], m=r['m'], order=r['order'], shape=r['shape'], phys=r['phys'], level=r['level'], seed=r['seed'],
                     esp=r['esp'], core_metrics=r['metrics'], logical_cx=r['logical_cx'])
     if Bx: arms.append(ws('B', Bx))
     arms.append(ws('C', C)); arms.append(ws('D', D))
     names = [a['arm'] for a in arms]
-    fam = dict(signal=names, difference=[[x, y] for x, y in ([('B', 'A')] if 'B' in names else []) + [('C', 'A'), ('D', 'A'), ('C', 'D')]])
+    cand_pairs = ([('B', 'A')] if 'B' in names and 'A' in names else []) + ([('C', 'A'), ('D', 'A')] if 'A' in names else []) + [('C', 'D')]
+    fam = dict(signal=names, difference=[[x, y] for x, y in cand_pairs])
     design = dict(stage=f'b{b}', b=b, backend='ibm_kingston', shots=shots, calibration_timestamp=sel['calibration_timestamp'],
                   selection_file=Path(select_path).name, selection_sha256=sha_file(select_path), arms=arms, families=fam,
                   primary='edge contrast; simultaneous 95% Hoeffding (Bonferroni) over the registered signal and difference families',

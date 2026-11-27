@@ -31,10 +31,10 @@ CAL_TS = json.load(open(CAL))['calibration_timestamp']
 LEVELS = (2, 3)
 
 
-def variants(b, with_exact_big=False):
+def variants(b, with_exact_big=False, modes=('approx', 'exact'), max_m=4):
     out = []
-    for mode in ('approx', 'exact'):
-        for m in (0, 1, 2, 3, 4):
+    for mode in modes:
+        for m in range(0, max_m + 1):
             if mode == 'exact' and b >= 6 and m not in (0, 2) and not with_exact_big: continue
             for order in (None, 'rev', 'near'):
                 out.append((mode, m, order))
@@ -87,6 +87,8 @@ def main():
     ap.add_argument('--seeds', type=int, default=40)
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--center', type=int, default=68)
+    ap.add_argument('--modes', nargs='*', default=['approx', 'exact'])
+    ap.add_argument('--max-m', type=int, default=4)
     ap.add_argument('--reuse', type=Path, help='re-embed the compiled candidates of an earlier selection file')
     ap.add_argument('--exclude', type=int, nargs='*', default=[], help='physical qubits that may not be used (replicate on a disjoint region)')
     ap.add_argument('--only', nargs='*', default=['approx:0', 'approx:1', 'approx:2', 'exact:1', 'exact:2'])
@@ -115,7 +117,7 @@ def main():
             c = [r for r in rows if r['mode'] == mode and r['m'] in ms]
             if c: r = c[0]; print(mode, ms, 'ESP', round(r['esp'], 4), 'cz', r['metrics']['cz'], 'm', r['m'], 'phys', r['phys'])
         return
-    vs = variants(b)
+    vs = variants(b, modes=tuple(a.modes), max_m=a.max_m)
     jobs = []; shape_cache = {}
     for mode, m, order in vs:
         k = b + m

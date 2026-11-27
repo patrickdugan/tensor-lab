@@ -1,0 +1,10 @@
+{
+  "usage_consumed_seconds": 391,
+  "usage_limit_reached": false,
+  "usage_limit_seconds": 600,
+  "usage_period": {
+    "end_time": "2026-11-27T17:30:18.147Z",
+    "start_time": "2026-10-30T17:30:18.147Z"
+  },
+  "usage_remaining_seconds": 209
+}
