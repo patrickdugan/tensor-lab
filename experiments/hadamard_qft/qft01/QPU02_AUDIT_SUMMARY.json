@@ -1,0 +1,81 @@
+{
+  "scope": "IDEAL_CPU_ONLY_QPU02",
+  "source_blobs": {
+    "compact.py": "54c9d997aea2230fef72d5394cc532de0c9cee65",
+    "qpu02.py": "b3dbfedd5dd27e1ed102be9817b2325bc1d7a2b5",
+    "test_qpu02.py": "c419dfec9a666335ad1ac2433d26b871b6f570d8"
+  },
+  "independent_line_counts": {
+    "3": [
+      54,
+      48,
+      28,
+      28
+    ],
+    "4": [
+      272,
+      170,
+      104,
+      104
+    ],
+    "5": [
+      1108,
+      458,
+      296,
+      218
+    ],
+    "6": [
+      4494,
+      1050,
+      736,
+      418
+    ]
+  },
+  "common_line_counts": {
+    "4": [
+      272,
+      170,
+      104,
+      104
+    ],
+    "5": [
+      1122,
+      468,
+      296,
+      218
+    ],
+    "6": [
+      null,
+      1080,
+      736,
+      434
+    ]
+  },
+  "approx_operator_error": {
+    "5": 0.0012383711146716084,
+    "6": 0.0012406036574142726
+  },
+  "approx_error_bound": {
+    "5": 0.001633280517082403,
+    "6": 0.0016396011472881243
+  },
+  "test_result": "3 passed, 1 skipped (Qiskit absent)",
+  "plans": {
+    "4": {
+      "circuits": 58,
+      "shots": 512,
+      "nominal_estimate": 18.1936
+    },
+    "5": {
+      "circuits": 73,
+      "shots": 512,
+      "nominal_estimate": 22.3816
+    },
+    "6": {
+      "circuits": 58,
+      "shots": 512,
+      "nominal_estimate": 18.1936
+    }
+  },
+  "hardware_jobs": 0
+}
