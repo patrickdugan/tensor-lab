@@ -71,6 +71,26 @@ export function paired(rs,k,B=BOOT.resamples,seed=BOOT.seed,base='C0'){
     wins:per.filter(x=>x.d>0).length,losses:per.filter(x=>x.d<0).length,resamples:B,seed,base};
 }
 
+// Sensitivity analysis: resample whole width/seed paths, keeping all depths and
+// sites together. Ratio of sums preserves the observable-weighted MAE estimand.
+// Eight path clusters are few; treat this interval as a descriptive robustness check.
+export function pathClustered(rs,k,B=BOOT.resamples,seed=BOOT.seed,base='C0'){
+  const by=new Map();
+  for(const r of rs){const key=r.n+':'+r.seed;if(!by.has(key))by.set(key,[]);by.get(key).push(r);}
+  const per=[...by.entries()].sort(([a],[b])=>a.localeCompare(b)).map(([path,a])=>({
+    path,n_obs:a.length,circuits:new Set(a.map(r=>r.id)).size,
+    d:a.reduce((s,r)=>s+err(r,base)-err(r,k),0),b:a.reduce((s,r)=>s+err(r,base),0)
+  }));
+  if(!per.length)return {clusters:0,mean_improvement:null,ci95:[null,null],per_path:[]};
+  const rnd=makeRng(seed),m=per.length,diffs=[];
+  for(let i=0;i<B;i++){let d=0,n=0;for(let j=0;j<m;j++){const x=per[Math.floor(rnd()*m)];d+=x.d;n+=x.n_obs;}diffs.push(d/n);}
+  diffs.sort((a,b)=>a-b);
+  return {clusters:m,mean_improvement:per.reduce((a,x)=>a+x.d,0)/rs.length,
+    ci95:[diffs[Math.floor(.025*B)],diffs[Math.floor(.975*B)]],base,resamples:B,seed,
+    per_path:per.map(x=>({path:x.path,n_obs:x.n_obs,circuits:x.circuits,mean_improvement:x.d/x.n_obs,
+      relative_improvement:x.b?x.d/x.b:null}))};
+}
+
 export function siteTable(rows,names=NAMES){
   const out=[];
   for(const p of [...new Set(rows.map(r=>r.physical))].sort((a,b)=>a-b)){
@@ -112,6 +132,7 @@ export function analyse(frozen,rows){
       relative_mae_improvement:{pooled_all_sites:rel('all'),targets_5_23:rel('targets_5_23'),controls_3_21:rel('controls_3_21'),other_than_5_23:rel('other_than_5_23'),
         site_5:rel('site_5'),site_23:rel('site_23')},
       paired_bootstrap_vs_C0:{all_sites:pAll,targets_5_23:pT},
+      path_clustered_bootstrap_vs_C0:{all_sites:pathClustered(rows,k),targets_5_23:pathClustered(T,k)},
       other_site_degradation:{pooled_other_sites_change:mt.other_than_5_23[k]-mt.other_than_5_23.C0,flagged_sites:flagged.map(s=>({physical:s.physical,change:s['change_'+k+'_vs_C0'],n_obs:s.n_obs}))},
       numerical_vs_physical:{...L,physical_prediction_error_mae:maeK,mean_abs_model_effect_vs_C0:eff,
         ratio_candidate_min_bound_to_mae:ratio,ratio_candidate_l1_to_mae:L.candidate_max_l1_discard/maeK,ratio_candidate_old_bound_to_mae:L.candidate_max_old_bound/maeK,
@@ -131,11 +152,14 @@ export function analyse(frozen,rows){
       e_no_tuning_freeze_verified:{pass:true,detail:'frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring'}
     };
     R.verdict=Object.values(R.criteria).every(c=>c.pass)?'PASS':'FAIL';
+    const pc=R.path_clustered_bootstrap_vs_C0;
+    R.path_robustness=(pc.all_sites.ci95[0]>0&&pc.targets_5_23.ci95[0]>0)?'POSITIVE':'INCONCLUSIVE_OR_NEGATIVE';
   }
   if(hasZ){
     const R=res.C3Z,pA=paired(rows,'C3Z',BOOT.resamples,BOOT.seed,'C3'),pT=paired(T,'C3Z',BOOT.resamples,BOOT.seed,'C3');
     R.status='DECLARED EXTENSION: C3 plus endpoint-local Z terms (params.cz.*.alpha). Not the primary comparator; the C3 verdict and criteria are unaffected by it.';
     R.vs_C3={paired_bootstrap_MAE_C3_minus_MAE_C3Z:{all_sites:pA,targets_5_23:pT},
+      path_clustered_bootstrap:{all_sites:pathClustered(rows,'C3Z',BOOT.resamples,BOOT.seed,'C3'),targets_5_23:pathClustered(T,'C3Z',BOOT.resamples,BOOT.seed,'C3')},
       mae_change_C3Z_minus_C3:{all:mt.all.C3Z-mt.all.C3,targets_5_23:mt.targets_5_23.C3Z-mt.targets_5_23.C3,other_than_5_23:mt.other_than_5_23.C3Z-mt.other_than_5_23.C3}};
     R.target_site_mae=Object.fromEntries(TARGETS.map(p=>['site_'+p,{n_obs:mt['site_'+p].n,C0:mt['site_'+p].C0,C2:mt['site_'+p].C2,C3:mt['site_'+p].C3,C3Z:mt['site_'+p].C3Z}]));
   }
@@ -156,9 +180,11 @@ export function renderText(rep){
   for(const s of rep.analysis.sites)L.push(`  q${String(s.physical).padStart(3)} ${s.role.padEnd(7)} n=${String(s.n_obs).padStart(3)}  ${fmt(s.mae.C0)} ${fmt(s.mae.C2)} ${fmt(s.mae.C3)}${hasZ?' '+fmt(s.mae.C3Z):''}  ${chg(s.change_C2_vs_C0,s.flag_C2)} ${chg(s.change_C3_vs_C0,s.flag_C3)}${hasZ?' '+chg(s.change_C3Z_vs_C0,s.flag_C3Z):''}`);
   for(const k of hasZ?['C3','C2','C3Z']:['C3','C2']){
     const c=rep.analysis.candidates[k],p=c.paired_bootstrap_vs_C0;
+    const pc=c.path_clustered_bootstrap_vs_C0;
     L.push('',`=== ${k} ${k==='C3'?'(PRIMARY)':k==='C3Z'?'(DECLARED EXTENSION, not the primary comparator)':'(secondary)'}: relative MAE improvement over C0: pooled ${(100*c.relative_mae_improvement.pooled_all_sites).toFixed(2)}%, targets 5/23 ${(100*c.relative_mae_improvement.targets_5_23).toFixed(2)}% (5: ${(100*c.relative_mae_improvement.site_5).toFixed(2)}%, 23: ${(100*c.relative_mae_improvement.site_23).toFixed(2)}%), controls 3/21 ${(100*c.relative_mae_improvement.controls_3_21).toFixed(2)}%`);
     L.push(`    paired bootstrap MAE(C0)-MAE(${k}): all ${fmt(p.all_sites.mean_improvement)} CI95 [${fmt(p.all_sites.ci95[0])}, ${fmt(p.all_sites.ci95[1])}] wins ${p.all_sites.wins}/${p.all_sites.circuits}; targets ${fmt(p.targets_5_23.mean_improvement)} CI95 [${fmt(p.targets_5_23.ci95[0])}, ${fmt(p.targets_5_23.ci95[1])}] wins ${p.targets_5_23.wins}/${p.targets_5_23.circuits}`);
     const n=c.numerical_vs_physical;
+    L.push(`    path-clustered observable-weighted CI95: all [${fmt(pc.all_sites.ci95[0])}, ${fmt(pc.all_sites.ci95[1])}] across ${pc.all_sites.clusters} paths; targets [${fmt(pc.targets_5_23.ci95[0])}, ${fmt(pc.targets_5_23.ci95[1])}] across ${pc.targets_5_23.clusters} paths; ${c.path_robustness}`);
     L.push(`    ledger: max l1 discard ${n.max_l1_discard.toExponential(3)}, old_bound ${n.max_old_bound.toExponential(3)}, min_bound ${n.max_min_bound.toExponential(3)}; physical MAE ${fmt(n.physical_prediction_error_mae)}; ratio min_bound/MAE ${n.ratio_candidate_min_bound_to_mae.toExponential(3)}, l1/MAE ${n.ratio_candidate_l1_to_mae.toExponential(3)}, old_bound/MAE ${n.ratio_candidate_old_bound_to_mae.toExponential(3)}`);
     if(c.relative_mae_improvement.pooled_all_sites<0)L.push(`    NEGATIVE RESULT: ${k} is WORSE than C0 pooled (${(100*c.relative_mae_improvement.pooled_all_sites).toFixed(2)}%).`);
     if(c.relative_mae_improvement.targets_5_23<0)L.push(`    NEGATIVE RESULT: ${k} is WORSE than C0 on targets 5/23 (${(100*c.relative_mae_improvement.targets_5_23).toFixed(2)}%).`);
