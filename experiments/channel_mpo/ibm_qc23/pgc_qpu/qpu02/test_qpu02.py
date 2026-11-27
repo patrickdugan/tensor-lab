@@ -62,3 +62,40 @@ def test_plan_shape():
     intact = next(r for r in p["rows"] if r["variant"] == "intact")
     echo = next(r for r in p["rows"] if r["variant"] == "echo_intact")
     assert echo["native_gate_counts"]["cz"] > intact["native_gate_counts"]["cz"] >= 4   # echo control keeps its CNOTs after compilation
+
+
+def test_biseparable_ghz_witness_counterexample():
+    # |+>_s |Phi+>_ab |0>_t has P_equal=1/2, XXX=1.
+    psi = (Q.basis_state((0, 0, 0, 0)) + Q.basis_state((0, 1, 1, 0))
+           + Q.basis_state((1, 0, 0, 0)) + Q.basis_state((1, 1, 1, 0))) / 2
+    rho = Q.density(psi)
+    p = Q.readout_probs(rho)
+    pop = sum(p[i] for i in (0, 1, 14, 15))
+    xxx = Q.parity_expect(Q.readout_probs(rho, "XXXZ"), (Q.S, Q.A, Q.B))
+    assert abs(pop - 0.5) < 1e-12 and abs(xxx - 1) < 1e-12
+    assert abs(Q.ghz_fidelity_lower_bound(pop, xxx) - 0.5) < 1e-12
+
+
+def test_ghz_lower_bound_random_density_matrices():
+    rng = np.random.default_rng(20261127)
+    ghz = np.zeros(8, complex)
+    ghz[0] = ghz[7] = 1 / np.sqrt(2)
+    xxx = np.kron(np.kron(Q.X, Q.X), Q.X)
+    for _ in range(128):
+        a = rng.normal(size=(8, 4)) + 1j * rng.normal(size=(8, 4))
+        rho = a @ a.conj().T
+        rho /= np.trace(rho)
+        pop = float(np.real(rho[0, 0] + rho[7, 7]))
+        x = float(np.real(np.trace(rho @ xxx)))
+        f = float(np.real(ghz.conj() @ rho @ ghz))
+        assert Q.ghz_fidelity_lower_bound(pop, x) <= f + 1e-12
+
+
+def test_target_pauli_pullback_full_operator_identity():
+    u = np.eye(16, dtype=complex)
+    for _, c, t in Q.VARIANTS["intact"]:
+        u = Q.cnot(c, t) @ u
+    for pauli, expected in ((Q.X, Q.op1(Q.X, Q.T)),
+                            (Q.Z, Q.op1(Q.Z, Q.A) @ Q.op1(Q.Z, Q.B) @ Q.op1(Q.Z, Q.T)),
+                            (Q.Y, Q.op1(Q.Z, Q.A) @ Q.op1(Q.Z, Q.B) @ Q.op1(Q.Y, Q.T))):
+        np.testing.assert_allclose(u.conj().T @ Q.op1(pauli, Q.T) @ u, expected, atol=1e-12)
