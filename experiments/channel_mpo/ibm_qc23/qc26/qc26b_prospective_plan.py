@@ -382,6 +382,11 @@ def verify_frozen(out: Path, frozen: Path, params: Path, plan_sha: str):
     if res.returncode != 0:
         raise ValueError(f'frozen.json does not verify against this build: {res.stdout.strip()} {res.stderr.strip()}')
     fz = json.loads(frozen.read_text())
+    if fz.get("qpu04") is not None:
+        check = subprocess.run([sys.executable, str(HERE / "qpu04_calibration.py"), "verify", "--params", str(params)],
+                               capture_output=True, text=True)
+        if check.returncode != 0:
+            raise ValueError("QPU04 calibration provenance does not verify: " + check.stdout + check.stderr)
     if fz['build']['plan_sha256'] != plan_sha:
         raise ValueError('frozen.json was made for a different plan hash')
     return fz
@@ -420,6 +425,15 @@ def verify_published_freeze(auth, fz):
         actual = hash_bytes(git("show", sha + ":" + code_rel).replace(b"\r\n", b"\n"))
         if actual != expected:
             raise ValueError("published scoring code differs: " + name)
+    if fz.get("qpu04") is not None:
+        for epoch in fz["params"]["meta"]["pgc_qpu04"]["epochs"]:
+            for src in epoch["sources"]:
+                source_rel = src["path"]
+                if source_rel.startswith("/") or ".." in source_rel.split("/") or "\\" in source_rel:
+                    raise ValueError("invalid source path")
+                actual = hash_bytes(git("show", sha + ":" + source_rel).replace(b"\r\n", b"\n"))
+                if actual != src["sha256"]:
+                    raise ValueError("published QPU04 calibration source differs: " + source_rel)
     return {"freeze_commit": sha, "freeze_path": rel, "published_main_sha": remote[0],
             "frozen_sha256": fz["sha256"]}
 
