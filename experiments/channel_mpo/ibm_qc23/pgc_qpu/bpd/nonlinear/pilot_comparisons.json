@@ -1,0 +1,221 @@
+{
+  "label": "Paired trial bootstrap on pilot_32.json; 10000 resamples, initial seed 987654321; descriptive, model-generated truths only",
+  "comparisons": [
+    {
+      "scenario": "matched",
+      "budget": 6.5,
+      "baseline": "fixed_even",
+      "rmse_reduction_mean": 0.1456384643149522,
+      "paired_ci95": [
+        0.12588877147495534,
+        0.1655106150331285
+      ],
+      "positive_trials": 32,
+      "n": 32
+    },
+    {
+      "scenario": "matched",
+      "budget": 6.5,
+      "baseline": "random",
+      "rmse_reduction_mean": 0.12234896613375477,
+      "paired_ci95": [
+        0.10040735458798786,
+        0.14511774663985105
+      ],
+      "positive_trials": 31,
+      "n": 32
+    },
+    {
+      "scenario": "matched",
+      "budget": 6.5,
+      "baseline": "group_alias",
+      "rmse_reduction_mean": 0.06905188615426922,
+      "paired_ci95": [
+        0.048454840498941616,
+        0.09018666294814001
+      ],
+      "positive_trials": 28,
+      "n": 32
+    },
+    {
+      "scenario": "matched",
+      "budget": 13,
+      "baseline": "fixed_even",
+      "rmse_reduction_mean": 0.17547987026624007,
+      "paired_ci95": [
+        0.1576857206802004,
+        0.1932083766066802
+      ],
+      "positive_trials": 32,
+      "n": 32
+    },
+    {
+      "scenario": "matched",
+      "budget": 13,
+      "baseline": "random",
+      "rmse_reduction_mean": 0.1243839060296946,
+      "paired_ci95": [
+        0.09603693662989368,
+        0.15418968618547646
+      ],
+      "positive_trials": 31,
+      "n": 32
+    },
+    {
+      "scenario": "matched",
+      "budget": 13,
+      "baseline": "group_alias",
+      "rmse_reduction_mean": 0.07861859594211766,
+      "paired_ci95": [
+        0.06135931304950426,
+        0.09528797110074286
+      ],
+      "positive_trials": 28,
+      "n": 32
+    },
+    {
+      "scenario": "offgrid",
+      "budget": 6.5,
+      "baseline": "fixed_even",
+      "rmse_reduction_mean": 0.14893145468150876,
+      "paired_ci95": [
+        0.1327854680497198,
+        0.1645831441683377
+      ],
+      "positive_trials": 32,
+      "n": 32
+    },
+    {
+      "scenario": "offgrid",
+      "budget": 6.5,
+      "baseline": "random",
+      "rmse_reduction_mean": 0.12598813734689135,
+      "paired_ci95": [
+        0.1080643965639844,
+        0.14289690680485248
+      ],
+      "positive_trials": 32,
+      "n": 32
+    },
+    {
+      "scenario": "offgrid",
+      "budget": 6.5,
+      "baseline": "group_alias",
+      "rmse_reduction_mean": 0.06588841264466586,
+      "paired_ci95": [
+        0.04559658481085449,
+        0.08620042568100789
+      ],
+      "positive_trials": 25,
+      "n": 32
+    },
+    {
+      "scenario": "offgrid",
+      "budget": 13,
+      "baseline": "fixed_even",
+      "rmse_reduction_mean": 0.17239700120052953,
+      "paired_ci95": [
+        0.15940807846660973,
+        0.18531146598709602
+      ],
+      "positive_trials": 32,
+      "n": 32
+    },
+    {
+      "scenario": "offgrid",
+      "budget": 13,
+      "baseline": "random",
+      "rmse_reduction_mean": 0.12750170822911835,
+      "paired_ci95": [
+        0.10737705950684086,
+        0.14773933770808137
+      ],
+      "positive_trials": 32,
+      "n": 32
+    },
+    {
+      "scenario": "offgrid",
+      "budget": 13,
+      "baseline": "group_alias",
+      "rmse_reduction_mean": 0.055713298795056515,
+      "paired_ci95": [
+        0.03930616535269374,
+        0.07211656386393056
+      ],
+      "positive_trials": 29,
+      "n": 32
+    },
+    {
+      "scenario": "drift_relax",
+      "budget": 6.5,
+      "baseline": "fixed_even",
+      "rmse_reduction_mean": 0.13064150324519835,
+      "paired_ci95": [
+        0.1120257827845774,
+        0.1474515384121542
+      ],
+      "positive_trials": 31,
+      "n": 32
+    },
+    {
+      "scenario": "drift_relax",
+      "budget": 6.5,
+      "baseline": "random",
+      "rmse_reduction_mean": 0.10601495645758213,
+      "paired_ci95": [
+        0.08818283712010899,
+        0.12331777474392168
+      ],
+      "positive_trials": 31,
+      "n": 32
+    },
+    {
+      "scenario": "drift_relax",
+      "budget": 6.5,
+      "baseline": "group_alias",
+      "rmse_reduction_mean": 0.06042397010782577,
+      "paired_ci95": [
+        0.040008714269953366,
+        0.08007641406919164
+      ],
+      "positive_trials": 28,
+      "n": 32
+    },
+    {
+      "scenario": "drift_relax",
+      "budget": 13,
+      "baseline": "fixed_even",
+      "rmse_reduction_mean": 0.15221090763275388,
+      "paired_ci95": [
+        0.13584659033009217,
+        0.16816050160514437
+      ],
+      "positive_trials": 32,
+      "n": 32
+    },
+    {
+      "scenario": "drift_relax",
+      "budget": 13,
+      "baseline": "random",
+      "rmse_reduction_mean": 0.08878226467316114,
+      "paired_ci95": [
+        0.06720650911558267,
+        0.11038439543811003
+      ],
+      "positive_trials": 30,
+      "n": 32
+    },
+    {
+      "scenario": "drift_relax",
+      "budget": 13,
+      "baseline": "group_alias",
+      "rmse_reduction_mean": 0.04911485365700112,
+      "paired_ci95": [
+        0.031460288269764006,
+        0.0666598211412629
+      ],
+      "positive_trials": 24,
+      "n": 32
+    }
+  ]
+}
