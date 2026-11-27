@@ -12,11 +12,11 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "qc26"))
 import qc26a_compile as qc
 
-def build(block_id, out):
+def build(block_id, out, ordering_seed=None):
     proposal = HERE / "ramsey_campaign.json"
     campaign = json.loads(proposal.read_text())
     block = next(b for b in campaign["blocks"] if b["id"] == block_id)
-    rows = block["rows"]
+    rows = qc.ordered_rows(block["rows"], ordering_seed)
     if len(rows) != 66 or len({r["id"] for r in rows}) != 66 or any(r["shots"] != 384 for r in rows):
         raise ValueError("unexpected campaign shape")
     if block["cap_seconds"] != 15 or block["backend"] != "ibm_kingston":
@@ -49,6 +49,7 @@ def build(block_id, out):
             "qpy_sha256": qc.hash_bytes(qpy), "circuits": compiled,
             "shots": 384, "estimated_qpu_seconds": est, "cap_seconds": 15,
             "status": "COMPILE ONLY; no submission or authorization"}
+    if ordering_seed is not None: meta["ordering_seed"] = ordering_seed
     meta["plan_sha256"] = qc.plan_hash(meta)
     qc.write_json(out / "compiled.json", meta)
     if est > 15:
@@ -59,5 +60,6 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--block", choices=("q23", "q5"), required=True)
     p.add_argument("--out", type=Path, required=True)
+    p.add_argument("--ordering-seed", type=int)
     a = p.parse_args()
-    build(a.block, a.out)
+    build(a.block, a.out, a.ordering_seed)
