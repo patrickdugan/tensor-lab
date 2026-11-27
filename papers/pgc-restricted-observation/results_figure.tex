@@ -14,7 +14,7 @@
   \draw[gray!30] (\x,-.55)--(\x,3.65);
   \node[anchor=north] at (\x,-.58) {\x};
 }
-\node[anchor=north] at (30,-.95) {MAE reduction (\%)};
+\node[anchor=north] at (30,-1.14) {MAE reduction (\%)};
 \node[anchor=east] at (-1.4,3) {C2};
 \fill[pooled] (0,3.05) rectangle (2.3558,3.32);
 \fill[target] (0,2.68) rectangle (0.2616,2.95);
@@ -23,16 +23,16 @@
 \fill[target] (0,1.68) rectangle (9.0355,1.95);
 \node[anchor=east] at (-1.4,1) {C3Z};
 \fill[pooled] (0,1.05) rectangle (18.8431,1.32);
-\fill[target] (0,0.6799999999999999) rectangle (57.3676,0.95);
+\fill[target] (0,0.68) rectangle (57.3676,0.95);
 \node[anchor=east] at (-1.4,0) {C3Z-D};
 \fill[pooled] (0,0.05) rectangle (18.8245,0.32);
 \fill[target] (0,-0.32) rectangle (57.0015,-0.05);
 \draw[guard,densely dashed,thick] (10,-.55)--(10,3.65);
 \node[anchor=south,guard] at (10,3.65) {10\%};
-\fill[pooled] (1,-1.55) rectangle (4,-1.31);
-\node[anchor=west] at (5,-1.43) {Pooled};
-\fill[target] (29,-1.55) rectangle (32,-1.31);
-\node[anchor=west] at (33,-1.43) {Targets};
+\fill[pooled] (1,-2.24) rectangle (4,-2.00);
+\node[anchor=west] at (5,-2.12) {Pooled};
+\fill[target] (29,-2.24) rectangle (32,-2.00);
+\node[anchor=west] at (33,-2.12) {Targets};
 \end{tikzpicture}}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.49\linewidth}
@@ -46,7 +46,7 @@
   \node[anchor=north] at (\x,-.58) {\lab};
 }
 \draw[gray!80] (0,-.55)--(0,3.65);
-\node[anchor=north] at (.0105,-.95) {MAE(model) $-$ MAE(C0)};
+\node[anchor=north] at (.0105,-1.14) {MAE(model) $-$ MAE(C0)};
 \node[anchor=east] at (-.0034,3) {C2};
 \fill[pooled] (-0.0016914,2.81) rectangle (0.0000000,3.19);
 \node[anchor=east] at (-.0034,2) {C3};
@@ -57,7 +57,7 @@
 \fill[guard] (0.0000000,-0.19) rectangle (0.0200594,0.19);
 \draw[guard,densely dashed,thick] (.005,-.55)--(.005,3.65);
 \node[anchor=south,guard] at (.005,3.65) {0.005};
-\node[anchor=west] at (0,-1.43) {Dashed: maximum allowed increase};
+\node[anchor=west] at (0,-2.12) {Dashed: maximum allowed increase};
 \end{tikzpicture}}
 \end{minipage}
 \caption{Frozen prospective outcomes. Panel (a) compares both registered improvement estimands with the 10\% threshold. Panel (b) shows the only non-target site that violated the degradation guardrail under C3 and its endpoint-phase extensions. Site 6 contributes six observables. All four tested candidate models fail at least one registered criterion.}
