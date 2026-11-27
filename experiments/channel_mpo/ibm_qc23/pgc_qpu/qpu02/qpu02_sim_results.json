@@ -326,415 +326,415 @@
  "ideal_metrics": {
   "intact": {
    "P_t1_given_s": {
-    "0": 0.0,
-    "1": 0.0,
-    "+": 0.0,
-    "-": 0.0
+    "0": 0,
+    "1": 0,
+    "+": 0,
+    "-": 0
    },
-   "influence_basis_0_vs_1": 0.0,
-   "influence_superposition_plus_vs_minus": 0.0,
-   "XXX_plus": 1.0,
-   "XXX_minus": -1.0,
-   "coherence_witness": 1.0,
-   "ghz_population_sab_equal_given_t0": 1.0,
-   "ghz_fidelity_witness_F": 1.0,
-   "target_state_trace_distance_0_vs_1": 0.0
+   "influence_basis_0_vs_1": 0,
+   "influence_superposition_plus_vs_minus": 0,
+   "XXX_plus": 1,
+   "XXX_minus": -1,
+   "coherence_witness": 1,
+   "ghz_population_sab_equal_given_t0": 1,
+   "ghz_fidelity_witness_F": 1,
+   "target_state_trace_distance_0_vs_1": 0
   },
   "path_a_only": {
    "P_t1_given_s": {
-    "0": 0.0,
-    "1": 1.0,
+    "0": 0,
+    "1": 1,
     "+": 0.5,
     "-": 0.5
    },
-   "influence_basis_0_vs_1": 1.0,
-   "influence_superposition_plus_vs_minus": 0.0,
-   "XXX_plus": 0.0,
-   "XXX_minus": 0.0,
-   "coherence_witness": 0.0,
+   "influence_basis_0_vs_1": 1,
+   "influence_superposition_plus_vs_minus": 0,
+   "XXX_plus": 0,
+   "XXX_minus": 0,
+   "coherence_witness": 0,
    "ghz_population_sab_equal_given_t0": 0.5,
    "ghz_fidelity_witness_F": 0.25,
-   "target_state_trace_distance_0_vs_1": 1.0
+   "target_state_trace_distance_0_vs_1": 1
   },
   "path_b_only": {
    "P_t1_given_s": {
-    "0": 0.0,
-    "1": 1.0,
+    "0": 0,
+    "1": 1,
     "+": 0.5,
     "-": 0.5
    },
-   "influence_basis_0_vs_1": 1.0,
-   "influence_superposition_plus_vs_minus": 0.0,
-   "XXX_plus": 0.0,
-   "XXX_minus": 0.0,
-   "coherence_witness": 0.0,
+   "influence_basis_0_vs_1": 1,
+   "influence_superposition_plus_vs_minus": 0,
+   "XXX_plus": 0,
+   "XXX_minus": 0,
+   "coherence_witness": 0,
    "ghz_population_sab_equal_given_t0": 0.5,
    "ghz_fidelity_witness_F": 0.25,
-   "target_state_trace_distance_0_vs_1": 1.0
+   "target_state_trace_distance_0_vs_1": 1
   },
   "reset_a": {
    "P_t1_given_s": {
-    "0": 0.0,
-    "1": 1.0,
+    "0": 0,
+    "1": 1,
     "+": 0.5,
     "-": 0.5
    },
-   "influence_basis_0_vs_1": 1.0,
-   "influence_superposition_plus_vs_minus": 0.0,
-   "XXX_plus": 0.0,
-   "XXX_minus": 0.0,
-   "coherence_witness": 0.0,
+   "influence_basis_0_vs_1": 1,
+   "influence_superposition_plus_vs_minus": 0,
+   "XXX_plus": 0,
+   "XXX_minus": 0,
+   "coherence_witness": 0,
    "ghz_population_sab_equal_given_t0": 0.5,
    "ghz_fidelity_witness_F": 0.25,
-   "target_state_trace_distance_0_vs_1": 1.0
+   "target_state_trace_distance_0_vs_1": 1
   },
   "reset_b": {
    "P_t1_given_s": {
-    "0": 0.0,
-    "1": 1.0,
+    "0": 0,
+    "1": 1,
     "+": 0.5,
     "-": 0.5
    },
-   "influence_basis_0_vs_1": 1.0,
-   "influence_superposition_plus_vs_minus": 0.0,
-   "XXX_plus": 0.0,
-   "XXX_minus": 0.0,
-   "coherence_witness": 0.0,
+   "influence_basis_0_vs_1": 1,
+   "influence_superposition_plus_vs_minus": 0,
+   "XXX_plus": 0,
+   "XXX_minus": 0,
+   "coherence_witness": 0,
    "ghz_population_sab_equal_given_t0": 0.5,
    "ghz_fidelity_witness_F": 0.25,
-   "target_state_trace_distance_0_vs_1": 1.0
+   "target_state_trace_distance_0_vs_1": 1
   },
   "reset_ab": {
    "P_t1_given_s": {
-    "0": 0.0,
-    "1": 0.0,
-    "+": 0.0,
-    "-": 0.0
+    "0": 0,
+    "1": 0,
+    "+": 0,
+    "-": 0
    },
-   "influence_basis_0_vs_1": 0.0,
-   "influence_superposition_plus_vs_minus": 0.0,
-   "XXX_plus": 0.0,
-   "XXX_minus": 0.0,
-   "coherence_witness": 0.0,
+   "influence_basis_0_vs_1": 0,
+   "influence_superposition_plus_vs_minus": 0,
+   "XXX_plus": 0,
+   "XXX_minus": 0,
+   "coherence_witness": 0,
    "ghz_population_sab_equal_given_t0": 0.5,
    "ghz_fidelity_witness_F": 0.25,
-   "target_state_trace_distance_0_vs_1": 0.0
+   "target_state_trace_distance_0_vs_1": 0
   },
   "dephase_a": {
    "P_t1_given_s": {
-    "0": 0.0,
-    "1": 0.0,
-    "+": 0.0,
-    "-": 0.0
+    "0": 0,
+    "1": 0,
+    "+": 0,
+    "-": 0
    },
-   "influence_basis_0_vs_1": 0.0,
-   "influence_superposition_plus_vs_minus": 0.0,
-   "XXX_plus": 0.0,
-   "XXX_minus": 0.0,
-   "coherence_witness": 0.0,
-   "ghz_population_sab_equal_given_t0": 1.0,
+   "influence_basis_0_vs_1": 0,
+   "influence_superposition_plus_vs_minus": 0,
+   "XXX_plus": 0,
+   "XXX_minus": 0,
+   "coherence_witness": 0,
+   "ghz_population_sab_equal_given_t0": 1,
    "ghz_fidelity_witness_F": 0.5,
-   "target_state_trace_distance_0_vs_1": 0.0
+   "target_state_trace_distance_0_vs_1": 0
   },
   "overwrite_a1": {
    "P_t1_given_s": {
-    "0": 1.0,
-    "1": 0.0,
+    "0": 1,
+    "1": 0,
     "+": 0.5,
     "-": 0.5
    },
-   "influence_basis_0_vs_1": -1.0,
-   "influence_superposition_plus_vs_minus": 0.0,
-   "XXX_plus": 0.0,
-   "XXX_minus": 0.0,
-   "coherence_witness": 0.0,
+   "influence_basis_0_vs_1": -1,
+   "influence_superposition_plus_vs_minus": 0,
+   "XXX_plus": 0,
+   "XXX_minus": 0,
+   "coherence_witness": 0,
    "ghz_population_sab_equal_given_t0": 0.5,
    "ghz_fidelity_witness_F": 0.25,
-   "target_state_trace_distance_0_vs_1": 1.0
+   "target_state_trace_distance_0_vs_1": 1
   },
   "echo_intact": {
    "P_t1_given_s": {
-    "0": 0.0,
-    "1": 0.0,
-    "+": 0.0,
-    "-": 0.0
+    "0": 0,
+    "1": 0,
+    "+": 0,
+    "-": 0
    },
-   "influence_basis_0_vs_1": 0.0,
-   "influence_superposition_plus_vs_minus": 0.0,
-   "XXX_plus": 1.0,
-   "XXX_minus": -1.0,
-   "coherence_witness": 1.0,
-   "ghz_population_sab_equal_given_t0": 1.0,
-   "ghz_fidelity_witness_F": 1.0,
-   "target_state_trace_distance_0_vs_1": 0.0
+   "influence_basis_0_vs_1": 0,
+   "influence_superposition_plus_vs_minus": 0,
+   "XXX_plus": 1,
+   "XXX_minus": -1,
+   "coherence_witness": 1,
+   "ghz_population_sab_equal_given_t0": 1,
+   "ghz_fidelity_witness_F": 1,
+   "target_state_trace_distance_0_vs_1": 0
   },
   "path_a_echo_b": {
    "P_t1_given_s": {
-    "0": 0.0,
-    "1": 1.0,
+    "0": 0,
+    "1": 1,
     "+": 0.5,
     "-": 0.5
    },
-   "influence_basis_0_vs_1": 1.0,
-   "influence_superposition_plus_vs_minus": 0.0,
-   "XXX_plus": 0.0,
-   "XXX_minus": 0.0,
-   "coherence_witness": 0.0,
+   "influence_basis_0_vs_1": 1,
+   "influence_superposition_plus_vs_minus": 0,
+   "XXX_plus": 0,
+   "XXX_minus": 0,
+   "coherence_witness": 0,
    "ghz_population_sab_equal_given_t0": 0.5,
    "ghz_fidelity_witness_F": 0.25,
-   "target_state_trace_distance_0_vs_1": 1.0
+   "target_state_trace_distance_0_vs_1": 1
   },
   "no_source_link": {
    "P_t1_given_s": {
-    "0": 0.0,
-    "1": 0.0,
-    "+": 0.0,
-    "-": 0.0
+    "0": 0,
+    "1": 0,
+    "+": 0,
+    "-": 0
    },
-   "influence_basis_0_vs_1": 0.0,
-   "influence_superposition_plus_vs_minus": 0.0,
-   "XXX_plus": 0.0,
-   "XXX_minus": 0.0,
-   "coherence_witness": 0.0,
+   "influence_basis_0_vs_1": 0,
+   "influence_superposition_plus_vs_minus": 0,
+   "XXX_plus": 0,
+   "XXX_minus": 0,
+   "coherence_witness": 0,
    "ghz_population_sab_equal_given_t0": 0.5,
    "ghz_fidelity_witness_F": 0.25,
-   "target_state_trace_distance_0_vs_1": 0.0
+   "target_state_trace_distance_0_vs_1": 0
   }
  },
  "noisy": {
   "ideal": {
    "intact": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 1.0,
-    "ghz_fidelity_witness_F": 1.0,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 1,
+    "ghz_fidelity_witness_F": 1,
+    "target_state_trace_distance_0_vs_1": 0
    },
    "path_a_only": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "path_b_only": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "reset_a": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "reset_b": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "reset_ab": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "dephase_a": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.5,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "overwrite_a1": {
-    "influence_basis_0_vs_1": -1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": -1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "echo_intact": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 1.0,
-    "ghz_fidelity_witness_F": 1.0,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 1,
+    "ghz_fidelity_witness_F": 1,
+    "target_state_trace_distance_0_vs_1": 0
    },
    "path_a_echo_b": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "no_source_link": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    }
   },
   "depol_p2_1pct": {
    "intact": {
     "influence_basis_0_vs_1": -6.938893903907228e-18,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.958011158426864,
     "ghz_fidelity_witness_F": 0.9645227419369875,
     "target_state_trace_distance_0_vs_1": 5.898059818321144e-17
    },
    "path_a_only": {
     "influence_basis_0_vs_1": 0.9787804444444445,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.2453758482962963,
     "target_state_trace_distance_0_vs_1": 0.9787804444444446
    },
    "path_b_only": {
     "influence_basis_0_vs_1": 0.9683401197037038,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24536881303703703,
     "target_state_trace_distance_0_vs_1": 0.9683401197037037
    },
    "reset_a": {
     "influence_basis_0_vs_1": 0.9580111584268642,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24536881303703703,
     "target_state_trace_distance_0_vs_1": 0.9580111584268642
    },
    "reset_b": {
     "influence_basis_0_vs_1": 0.9683401197037038,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.2440707326609383,
     "target_state_trace_distance_0_vs_1": 0.9683401197037038
    },
    "reset_ab": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24602133333333334,
     "target_state_trace_distance_0_vs_1": 5.637851296924623e-17
    },
    "dephase_a": {
     "influence_basis_0_vs_1": -6.938893903907228e-18,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.4855171627235555,
     "target_state_trace_distance_0_vs_1": 5.898059818321144e-17
    },
    "overwrite_a1": {
     "influence_basis_0_vs_1": -0.9580111584268642,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24536881303703703,
     "target_state_trace_distance_0_vs_1": 0.9580111584268642
    },
    "echo_intact": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.9376825874277837,
     "ghz_fidelity_witness_F": 0.9466664544375017,
     "target_state_trace_distance_0_vs_1": 5.898059818321144e-17
    },
    "path_a_echo_b": {
     "influence_basis_0_vs_1": 0.9580111584268642,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24277953825902404,
     "target_state_trace_distance_0_vs_1": 0.9580111584268638
    },
    "no_source_link": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 5.204170427930421e-18,
     "ghz_fidelity_witness_F": 0.24212709220503703,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    }
   },
   "t1_gamma_0p004_per_cx": {
    "intact": {
     "influence_basis_0_vs_1": 0.02352395063495068,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.9762387238338599,
     "ghz_fidelity_witness_F": 0.9763920328545361,
     "target_state_trace_distance_0_vs_1": 0.023523950634950212
    },
    "path_a_only": {
     "influence_basis_0_vs_1": 0.988047936,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25097657128264905,
     "target_state_trace_distance_0_vs_1": 0.9880479360000003
    },
    "path_b_only": {
     "influence_basis_0_vs_1": 0.988047936,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.2509804919200942,
     "target_state_trace_distance_0_vs_1": 0.9880479360000003
    },
    "reset_a": {
     "influence_basis_0_vs_1": 0.9840957442559999,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25102380813131353,
     "target_state_trace_distance_0_vs_1": 0.9840957442560003
    },
    "reset_b": {
     "influence_basis_0_vs_1": 0.9840957442559999,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.2500319963221477,
     "target_state_trace_distance_0_vs_1": 0.9840957442560004
    },
    "reset_ab": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.2539760639359999,
     "target_state_trace_distance_0_vs_1": 3.3306690738754696e-16
    },
    "dephase_a": {
     "influence_basis_0_vs_1": 0.02352395063495068,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.48827267093760607,
     "target_state_trace_distance_0_vs_1": 0.023523950634950268
    },
    "overwrite_a1": {
     "influence_basis_0_vs_1": -0.9762229783019519,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24019804689032315,
     "target_state_trace_distance_0_vs_1": 0.9762229783019527
    },
    "echo_intact": {
     "influence_basis_0_vs_1": 0.01555833398943758,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.9626395818057969,
     "ghz_fidelity_witness_F": 0.963021140442659,
     "target_state_trace_distance_0_vs_1": 0.015558333989436781
    },
    "path_a_echo_b": {
     "influence_basis_0_vs_1": 0.9802530806983057,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25189201272949235,
     "target_state_trace_distance_0_vs_1": 0.9802530806983063
    },
    "no_source_link": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.253976063936,
     "target_state_trace_distance_0_vs_1": 1.1102230246251565e-16
    }
@@ -742,314 +742,314 @@
   "readout_asym_e0_1pct_e1_3pct": {
    "intact": {
     "influence_basis_0_vs_1": -1.734723475976807e-18,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.884736,
     "ghz_fidelity_witness_F": 0.9084144999999999,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "path_a_only": {
     "influence_basis_0_vs_1": 0.96,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24699849999999998,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "path_b_only": {
     "influence_basis_0_vs_1": 0.96,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24699849999999998,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "reset_a": {
     "influence_basis_0_vs_1": 0.96,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24023049999999999,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "reset_b": {
     "influence_basis_0_vs_1": 0.96,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24023049999999999,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "reset_ab": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.2474545,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "dephase_a": {
     "influence_basis_0_vs_1": -1.734723475976807e-18,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.4660465,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "overwrite_a1": {
     "influence_basis_0_vs_1": -0.9599999999999997,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.2261185,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "echo_intact": {
     "influence_basis_0_vs_1": -1.734723475976807e-18,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.884736,
     "ghz_fidelity_witness_F": 0.9084144999999999,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "path_a_echo_b": {
     "influence_basis_0_vs_1": 0.96,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24699849999999998,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "no_source_link": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.00038400000000000635,
     "ghz_fidelity_witness_F": 0.24764650000000002,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    }
   },
   "coherent_zz_0p1": {
    "intact": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.9950041652780257,
     "ghz_fidelity_witness_F": 0.9975020826390129,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "path_a_only": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "path_b_only": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "reset_a": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "reset_b": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "reset_ab": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "dephase_a": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.5,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "overwrite_a1": {
-    "influence_basis_0_vs_1": -1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": -1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "echo_intact": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.9800665778412416,
     "ghz_fidelity_witness_F": 0.9900332889206208,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "path_a_echo_b": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 1.0
+    "target_state_trace_distance_0_vs_1": 1
    },
    "no_source_link": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    }
   },
   "crosstalk_zz_0p05_to_target": {
    "intact": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.9950041652780257,
     "ghz_fidelity_witness_F": 0.9975020826390129,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "path_a_only": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
     "target_state_trace_distance_0_vs_1": 1.0000000000000004
    },
    "path_b_only": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
     "target_state_trace_distance_0_vs_1": 1.0000000000000004
    },
    "reset_a": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
     "target_state_trace_distance_0_vs_1": 1.0000000000000004
    },
    "reset_b": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
     "target_state_trace_distance_0_vs_1": 1.0000000000000004
    },
    "reset_ab": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "dephase_a": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.5,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "overwrite_a1": {
-    "influence_basis_0_vs_1": -1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": -1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
     "target_state_trace_distance_0_vs_1": 1.0000000000000004
    },
    "echo_intact": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.9950041652780257,
     "ghz_fidelity_witness_F": 0.9975020826390129,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    },
    "path_a_echo_b": {
-    "influence_basis_0_vs_1": 1.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 1,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
     "target_state_trace_distance_0_vs_1": 1.0000000000000004
    },
    "no_source_link": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.25,
-    "target_state_trace_distance_0_vs_1": 0.0
+    "target_state_trace_distance_0_vs_1": 0
    }
   },
   "kingston_like_combined": {
    "intact": {
     "influence_basis_0_vs_1": 0.00855366089435964,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.8942602602835901,
     "ghz_fidelity_witness_F": 0.9130551822369375,
     "target_state_trace_distance_0_vs_1": 0.00880006264851757
    },
    "path_a_only": {
     "influence_basis_0_vs_1": 0.9593930417734331,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24527376329429162,
     "target_state_trace_distance_0_vs_1": 0.98702987836773
    },
    "path_b_only": {
     "influence_basis_0_vs_1": 0.9552996314618665,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.2452832640282244,
     "target_state_trace_distance_0_vs_1": 0.9828185508866942
    },
    "reset_a": {
     "influence_basis_0_vs_1": 0.9498029555848425,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.2407554294347083,
     "target_state_trace_distance_0_vs_1": 0.9771635345523078
    },
    "reset_b": {
     "influence_basis_0_vs_1": 0.9538666820146734,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.2399052839621421,
     "target_state_trace_distance_0_vs_1": 0.9813443230603642
    },
    "reset_ab": {
     "influence_basis_0_vs_1": -1.734723475976807e-18,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.2468530680220157,
     "target_state_trace_distance_0_vs_1": 1.1102230246251565e-16
    },
    "dephase_a": {
     "influence_basis_0_vs_1": 0.008553660894359643,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.4659250520951424,
     "target_state_trace_distance_0_vs_1": 0.00880006264851757
    },
    "overwrite_a1": {
     "influence_basis_0_vs_1": -0.9469413555387989,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.22843764355233712,
     "target_state_trace_distance_0_vs_1": 0.9742195015831268
    },
    "echo_intact": {
     "influence_basis_0_vs_1": 0.00564908227610509,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.880808562821942,
     "ghz_fidelity_witness_F": 0.901124788359675,
     "target_state_trace_distance_0_vs_1": 0.005811813041259314
    },
    "path_a_echo_b": {
     "influence_basis_0_vs_1": 0.9483849121461106,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24450971010525296,
     "target_state_trace_distance_0_vs_1": 0.9757046421256292
    },
    "no_source_link": {
-    "influence_basis_0_vs_1": 0.0,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_basis_0_vs_1": 0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.0001395484109280529,
     "ghz_fidelity_witness_F": 0.2453821726075176,
     "target_state_trace_distance_0_vs_1": 2.7929047963226594e-16
@@ -1058,77 +1058,77 @@
   "pessimistic_combined": {
    "intact": {
     "influence_basis_0_vs_1": 0.02125086269932537,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.7748220663211061,
     "ghz_fidelity_witness_F": 0.8155167494604089,
     "target_state_trace_distance_0_vs_1": 0.022487685396111373
    },
    "path_a_only": {
     "influence_basis_0_vs_1": 0.9099554221285613,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.23946406841197387,
     "target_state_trace_distance_0_vs_1": 0.9629157906122345
    },
    "path_b_only": {
     "influence_basis_0_vs_1": 0.8983079927253158,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.23951264316989995,
     "target_state_trace_distance_0_vs_1": 0.950590468492398
    },
    "reset_a": {
     "influence_basis_0_vs_1": 0.8833082212125086,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.23154014537545364,
     "target_state_trace_distance_0_vs_1": 0.9347176944047715
    },
    "reset_b": {
     "influence_basis_0_vs_1": 0.8947147607544146,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.22929667023209482,
     "target_state_trace_distance_0_vs_1": 0.9467881066184285
    },
    "reset_ab": {
     "influence_basis_0_vs_1": 6.938893903907228e-18,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.24396185440880272,
     "target_state_trace_distance_0_vs_1": 5.811323644522304e-17
    },
    "dephase_a": {
     "influence_basis_0_vs_1": 0.02125086269932535,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.42810571629985583,
     "target_state_trace_distance_0_vs_1": 0.02248768539611132
    },
    "overwrite_a1": {
     "influence_basis_0_vs_1": -0.8761505031264735,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.20567921578628687,
     "target_state_trace_distance_0_vs_1": 0.9271433895518243
    },
    "echo_intact": {
     "influence_basis_0_vs_1": 0.013786718798712953,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.7338278730684866,
     "ghz_fidelity_witness_F": 0.7821233511203849,
     "target_state_trace_distance_0_vs_1": 0.014589120421918551
    },
    "path_a_echo_b": {
     "influence_basis_0_vs_1": 0.8798129419144916,
-    "influence_superposition_plus_vs_minus": 0.0,
-    "coherence_witness": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
+    "coherence_witness": 0,
     "ghz_fidelity_witness_F": 0.23692461761530842,
     "target_state_trace_distance_0_vs_1": 0.9310189861529019
    },
    "no_source_link": {
     "influence_basis_0_vs_1": -2.7755575615628914e-17,
-    "influence_superposition_plus_vs_minus": 0.0,
+    "influence_superposition_plus_vs_minus": 0,
     "coherence_witness": 0.000585909450000023,
     "ghz_fidelity_witness_F": 0.23983434234005038,
     "target_state_trace_distance_0_vs_1": 3.365363543395006e-16
@@ -1137,18 +1137,18 @@
  },
  "apparent_influence": {
   "ideal": {
-   "intact_apparent_influence": 0.0,
-   "echo_control_apparent_influence": 0.0,
-   "intact_minus_echo": 0.0,
-   "se_binomial_model": 0.0,
+   "intact_apparent_influence": 0,
+   "echo_control_apparent_influence": 0,
+   "intact_minus_echo": 0,
+   "se_binomial_model": 0,
    "shots_per_arm": 2048,
    "intact_over_3se": false,
    "intact_minus_echo_over_3se": false,
-   "single_path_true_influence": 1.0
+   "single_path_true_influence": 1
   },
   "depol_p2_1pct": {
    "intact_apparent_influence": -6.938893903907228e-18,
-   "echo_control_apparent_influence": 0.0,
+   "echo_control_apparent_influence": 0,
    "intact_minus_echo": -6.938893903907228e-18,
    "se_binomial_model": 0.006335918053669979,
    "shots_per_arm": 2048,
@@ -1169,7 +1169,7 @@
   "readout_asym_e0_1pct_e1_3pct": {
    "intact_apparent_influence": -1.734723475976807e-18,
    "echo_control_apparent_influence": -1.734723475976807e-18,
-   "intact_minus_echo": 0.0,
+   "intact_minus_echo": 0,
    "se_binomial_model": 0.004397264774834465,
    "shots_per_arm": 2048,
    "intact_over_3se": false,
@@ -1177,24 +1177,24 @@
    "single_path_true_influence": 0.96
   },
   "coherent_zz_0p1": {
-   "intact_apparent_influence": 0.0,
-   "echo_control_apparent_influence": 0.0,
-   "intact_minus_echo": 0.0,
-   "se_binomial_model": 0.0,
+   "intact_apparent_influence": 0,
+   "echo_control_apparent_influence": 0,
+   "intact_minus_echo": 0,
+   "se_binomial_model": 0,
    "shots_per_arm": 2048,
    "intact_over_3se": false,
    "intact_minus_echo_over_3se": false,
-   "single_path_true_influence": 1.0
+   "single_path_true_influence": 1
   },
   "crosstalk_zz_0p05_to_target": {
-   "intact_apparent_influence": 0.0,
-   "echo_control_apparent_influence": 0.0,
-   "intact_minus_echo": 0.0,
-   "se_binomial_model": 0.0,
+   "intact_apparent_influence": 0,
+   "echo_control_apparent_influence": 0,
+   "intact_minus_echo": 0,
+   "se_binomial_model": 0,
    "shots_per_arm": 2048,
    "intact_over_3se": false,
    "intact_minus_echo_over_3se": false,
-   "single_path_true_influence": 1.0
+   "single_path_true_influence": 1
   },
   "kingston_like_combined": {
    "intact_apparent_influence": 0.00855366089435964,
@@ -1216,5 +1216,6 @@
    "intact_minus_echo_over_3se": false,
    "single_path_true_influence": 0.9099554221285613
   }
- }
+ },
+ "review_warning": "Historical pre-review simulator receipt: ghz_fidelity_witness_F values use the invalid old formula (P+XXX)/2 and must not be used as an entanglement certificate. Regenerate with corrected qpu02_sim.py before any hardware claim. Other archived metrics are historical."
 }
