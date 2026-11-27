@@ -133,7 +133,7 @@ def build():
             "rows": comp,
             "interpretation": {"structural_reachability": "directed gate path s->t not cut by reset (qpu02_sim.reachability)",
                                "operational_target_distinguishability": "P(t=1|s=1) - P(t=1|s=0) from Z readout",
-                               "joint_coherence": "GHZ witness (XXX_plus - XXX_minus)/2 and F = (P(sab equal | t=0) + XXX_plus)/2 over s,a,b",
+                               "joint_coherence": "Coherence contrast (XXX_plus - XXX_minus)/2; GHZ+ fidelity lower bound max(0, P(sab equal) + (XXX_plus - 1)/2) with t marginalized, valid detector model and confidence bounds required",
                                "restoration": "influence in path_a_only/reset_a relative to intact; echo controls match two-qubit gate count",
                                "apparent_influence_null": "intact and echo_intact have ideal response 0; excess over echo isolates depth-independent leakage"}}
     (HERE / "qpu02_plan.json").write_text(json.dumps(plan, indent=1) + "\n")
