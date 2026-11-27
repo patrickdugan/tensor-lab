@@ -173,6 +173,11 @@ def run_state(variant, kind, noise=None, ctx=(0, 0, 0)):
     return rho
 
 
+def ghz_fidelity_lower_bound(pop, xxx):
+    """Valid lower bound on GHZ+ fidelity from unconditional population and XXX."""
+    return float(max(0.0, pop + (xxx - 1.0) / 2.0))
+
+
 def metrics(variant, noise=None, e0=0.0, e1=0.0, ctx=(0, 0, 0)):
     out = {}
     rhos = {k: run_state(variant, k, noise, ctx) for k in ("0", "1", "+", "-")}
@@ -187,10 +192,17 @@ def metrics(variant, noise=None, e0=0.0, e1=0.0, ctx=(0, 0, 0)):
     out["XXX_minus"] = float(xxx["-"])
     out["coherence_witness"] = float((xxx["+"] - xxx["-"]) / 2)
     p = pz["+"]
+    # Unconditional s,a,b population (sum over both target outcomes).
     pop = sum(p[i] for i in range(2 ** N)
-              if ((i >> 3) & 1) == ((i >> 2) & 1) == ((i >> 1) & 1) and (i & 1) == 0)
-    out["ghz_population_sab_equal_given_t0"] = float(pop)
-    out["ghz_fidelity_witness_F"] = float(0.5 * (pop + xxx["+"]))     # F > 1/2 certifies tripartite entanglement of s,a,b
+              if ((i >> 3) & 1) == ((i >> 2) & 1) == ((i >> 1) & 1))
+    out["ghz_population_sab_equal"] = float(pop)
+    out["ghz_fidelity_witness_F"] = ghz_fidelity_lower_bound(pop, xxx["+"])
+    # Exact simulated reduced-state fidelity, unavailable from only two hardware settings.
+    ghz = np.zeros(8, complex)
+    ghz[0] = ghz[7] = 1 / math.sqrt(2)
+    reduced_sab = np.trace(rhos["+"].reshape(8, 2, 8, 2), axis1=1, axis2=3)
+    out["ghz_fidelity_exact_sim"] = float(np.real(ghz.conj() @ reduced_sab @ ghz))
+    # Readout-corrupted statistics need a detector model/confidence bound before certification.
 
     def red_t(rho):
         return np.einsum("abcdabce->de", rho.reshape([2] * 8))
