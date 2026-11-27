@@ -1,0 +1,3138 @@
+{
+  "backend": "ibm_kingston",
+  "calibration_sha256": "b7288e85e03e470d07523a36a0e38b49aac41cd1676027d026dbec28d3680e8b",
+  "cap_seconds": 20,
+  "circuits": [
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_16_23_1_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          16,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          16,
+          23
+        ],
+        "measurement_map": {
+          "0": 16,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        16,
+        23
+      ],
+      "qasm_sha256": "9eb1b38cfb18122ad401ad3a381ff924c57cc5df965c1c42bd590c9db996fa6c",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_6_5_0_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "81d0e09ea1354bad568834d003cb88c19d2a0e753d53f2d5af7454752ad0f894",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_4_3_1_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          3
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          3
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 3
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        4,
+        3
+      ],
+      "qasm_sha256": "3bd79e7fe6a6f74176f7daf8952f0e08e39dc5cb744210534124eda55a62a798",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.34e-06,
+      "family": "sx",
+      "gate_counts": {
+        "barrier": 5,
+        "measure": 4,
+        "sx": 20
+      },
+      "id": "sx_4_Y",
+      "m": 4,
+      "mapping": {
+        "final_index_layout": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "measurement_map": {
+          "0": 3,
+          "1": 5,
+          "2": 21,
+          "3": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "qasm_sha256": "8c0d5fece09bb8ad2b5357cf20fa5ae254aad51eea390070311707a1fbb6aff0",
+      "shots": 384
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_16_23_1_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          16,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          16,
+          23
+        ],
+        "measurement_map": {
+          "0": 16,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        16,
+        23
+      ],
+      "qasm_sha256": "f730a5e80a04605955a228da055477a4fee2170565400906a04b9b5e3cc6b230",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_22_23_0_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        22,
+        23
+      ],
+      "qasm_sha256": "6a5cb1405570aa15847db3b210eb3b9df4ce409cc30d37f8188a74735eb3ec79",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_22_21_0_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          21
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          21
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 21
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        22,
+        21
+      ],
+      "qasm_sha256": "d800227579be2dbc66c506f07e21a486f26e50c7dce7b29e2e33984d9fdcf476",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_22_21_0_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          21
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          21
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 21
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        22,
+        21
+      ],
+      "qasm_sha256": "deb7404b2bed99903da4bc078f493cb074ad8612a8fc64679c27c8abc0469acc",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_4_5_0_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "a6fbb50c82fb566f6f3b0ae7abe7bbffccdcec31149b69f52985647c24cf0a86",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_16_23_1_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          16,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          16,
+          23
+        ],
+        "measurement_map": {
+          "0": 16,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        16,
+        23
+      ],
+      "qasm_sha256": "be6b4b1d958ec28fc4b31b43d2004c1af4d3804e9fc4986ef8dde7623ddb7fdf",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_4_3_0_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          3
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          3
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 3
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        4,
+        3
+      ],
+      "qasm_sha256": "e86a7b6e7fb1baceafa4232a9dfa3e4710dd166a819513da883526291b0e3706",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_22_21_0_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          21
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          21
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 21
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        22,
+        21
+      ],
+      "qasm_sha256": "574f39a25c2b158778af74e9652bbdfaf1918b3c7645e35843c0aba283626a2c",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_4_3_1_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          3
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          3
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 3
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        4,
+        3
+      ],
+      "qasm_sha256": "496559ed074d3de9aba0157b7cefcdc768185e7ec95d8e8a1982cecd7ac24340",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_4_5_0_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "86deda1379b9aaf75153b0fa072d62034cfec174860e83d3b4697648105bea6e",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_22_23_1_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        22,
+        23
+      ],
+      "qasm_sha256": "cbe467931b786ab232a41a0d38af119b88509b2b9f2632599ec3e2e23c0fbe02",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_22_21_1_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          21
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          21
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 21
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        22,
+        21
+      ],
+      "qasm_sha256": "94311920039912fb1c042442d86d95f2c7365d40347f1a5772205c3b31d1d5cc",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_22_21_1_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          21
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          21
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 21
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        22,
+        21
+      ],
+      "qasm_sha256": "a14782f76b570a12113c2441a9ad3c8b75700e35100cca3e11c3cbcfdb605994",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_4_5_1_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "a56d69ed08f2764daef0ca96429e8db1261596fa67010a1ff05f9843e81995e8",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_22_23_1_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        22,
+        23
+      ],
+      "qasm_sha256": "f6c327a083ccbe9555e166ca66bd8f8ece87d6d1eb4fbf09b72147ecdae2294f",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_16_23_0_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          16,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          16,
+          23
+        ],
+        "measurement_map": {
+          "0": 16,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        16,
+        23
+      ],
+      "qasm_sha256": "cdc70e6333c9effc103d896e05ce4f8382a475d55859bd1e7a2ef29abf69be52",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_4_3_1_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          3
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          3
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 3
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        4,
+        3
+      ],
+      "qasm_sha256": "37131ddad158ec94aef2ad3a90d1a5ba2d92ac004e07ed07b71ccbbf9ba49b07",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_4_5_1_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "e278d3fd0ebe080d3bc3ca22c0485b0459d972cdf93f8e478110706bf91ab29e",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "duration_s": 2.18e-06,
+      "family": "spam",
+      "gate_counts": {
+        "barrier": 1,
+        "measure": 8
+      },
+      "id": "spam_0",
+      "mapping": {
+        "final_index_layout": [
+          3,
+          4,
+          5,
+          6,
+          16,
+          21,
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          3,
+          4,
+          5,
+          6,
+          16,
+          21,
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 3,
+          "1": 4,
+          "2": 5,
+          "3": 6,
+          "4": 16,
+          "5": 21,
+          "6": 22,
+          "7": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        3,
+        4,
+        5,
+        6,
+        16,
+        21,
+        22,
+        23
+      ],
+      "qasm_sha256": "be92a5ccd66bcf67ab95fefa5f50d996025b4626577b38db736d15339c05ae57",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_6_5_0_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "fe67414de84eccbaf27035611fbf6b6eb8e359000045948b0a6437d0e2616560",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Z",
+      "duration_s": 2.564e-06,
+      "family": "sx",
+      "gate_counts": {
+        "barrier": 13,
+        "measure": 4,
+        "sx": 48
+      },
+      "id": "sx_12_Z",
+      "m": 12,
+      "mapping": {
+        "final_index_layout": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "measurement_map": {
+          "0": 3,
+          "1": 5,
+          "2": 21,
+          "3": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "qasm_sha256": "1e9142c479cae40a7dac0f839d1036097c7d2fd152a08ba3a7884b62d72ea332",
+      "shots": 384
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_22_23_0_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        22,
+        23
+      ],
+      "qasm_sha256": "9f1a0ed144119e6253cfd6bcc2755b61e6c1a69d92444ca73ffff6050fe4ef4a",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_22_21_0_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          21
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          21
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 21
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        22,
+        21
+      ],
+      "qasm_sha256": "89310a6bceb0e07de5754ede5d59aed939b23f86206a06361451fe80653bfede",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_6_5_0_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "a0ce3bf2bb01966fa26864440ca78735354902ba4ceb79e54e4619ac3ae0fadb",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_22_21_1_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          21
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          21
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 21
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        22,
+        21
+      ],
+      "qasm_sha256": "d95b7c12a857e5fc49c3c6f58a600792d99d14dda8a351ac9fad54571f991b30",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_4_5_1_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "d175b77e2fa9f06556e4bf020db0aed8f4cfc3221d2d799ba940b622694cf202",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_4_5_1_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "d9dbeb80d4b4f6ba9cea68551bc43a5a970f7f294c5c50a9f6ff0c64b16e2717",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_4_3_1_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          3
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          3
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 3
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        4,
+        3
+      ],
+      "qasm_sha256": "b14174fe0337e8cea8c4a2f97b3815a0c3acea5c12c68d99c1609871384844ce",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_22_21_1_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          21
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          21
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 21
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        22,
+        21
+      ],
+      "qasm_sha256": "30a54725c302a98b73048cc39a7070e7d1cf313206dfa25c6c75d087d18c97b4",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_22_21_1_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          21
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          21
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 21
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        22,
+        21
+      ],
+      "qasm_sha256": "ffb732d16eba4f1a09eaf32859659b856c5c679405310bf38113a1fccbcd598e",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_22_23_1_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        22,
+        23
+      ],
+      "qasm_sha256": "fbb16ebc82b08549775b415754945868232e0989b0c74334a20f5b8a68b8837f",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_22_23_0_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        22,
+        23
+      ],
+      "qasm_sha256": "ffe6a93d163ccc2d0c38b868320eeb09fba5e9cbc5b820347246d9d8f8d7a8d5",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_16_23_1_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          16,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          16,
+          23
+        ],
+        "measurement_map": {
+          "0": 16,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        16,
+        23
+      ],
+      "qasm_sha256": "7944cf829cf59e00e27ecbc4231fda53b461ab59f00ea6f1680968e5cdec6ac6",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_4_5_0_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "532c619feba4d927dc8681adb1c78fe2914c111b16094d33e9143c77b16c09ca",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_4_5_1_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "63bb32b1edcdf820bee8b0684b3235f50e41fec9083b80611993a34d7e1943bc",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_6_5_0_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "dfb2271f36c05e7b697c2d437bd55897b70e79c7cd928dea95312d99dbbb9483",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_16_23_0_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          16,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          16,
+          23
+        ],
+        "measurement_map": {
+          "0": 16,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        16,
+        23
+      ],
+      "qasm_sha256": "96740f20eb40c6f8a21c8937df22821aff4208273b032652dbbf06778b152969",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.2119999999999997e-06,
+      "family": "sx",
+      "gate_counts": {
+        "barrier": 1,
+        "measure": 4,
+        "sx": 4
+      },
+      "id": "sx_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "measurement_map": {
+          "0": 3,
+          "1": 5,
+          "2": 21,
+          "3": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "qasm_sha256": "2976c250823c4cf99a11f81366456eebe6a9b59904a76378dd7423a1eab1f1ca",
+      "shots": 384
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_4_5_1_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "607c3764f7b8e4c3240ee122bf77342b74897edbc6503b0dc98446366ce42b26",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_22_21_1_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          21
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          21
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 21
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        22,
+        21
+      ],
+      "qasm_sha256": "9d5eec394af4293b9a0b4fe150c5e10613f2f29ca7192ae99c7c32acba79e4d8",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_6_5_0_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "4b113dcd07c1f36d1a106ec4bfd9ff6f0e47c63a12777132ebb3102e061abfc7",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_4_3_0_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          3
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          3
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 3
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        4,
+        3
+      ],
+      "qasm_sha256": "d51ab20e7d9cb9e37c41c725edc192fe87ed22d11f6bca12ce47c02aec9959ed",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_4_5_0_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "1893be32ea8076eb0574c9b13373558519c25d2765cb987107fbc337a8496e8d",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_16_23_0_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          16,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          16,
+          23
+        ],
+        "measurement_map": {
+          "0": 16,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        16,
+        23
+      ],
+      "qasm_sha256": "67a3816d62b16ee2faaa7f32f61f394c738f640f20f2b3bd7e4e27b55bdb3e43",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Z",
+      "duration_s": 2.18e-06,
+      "family": "sx",
+      "gate_counts": {
+        "barrier": 1,
+        "measure": 4
+      },
+      "id": "sx_0_Z",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "measurement_map": {
+          "0": 3,
+          "1": 5,
+          "2": 21,
+          "3": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "qasm_sha256": "cfc3bdc2abf2c60b284d1f123ae5f71836028d5f2068594063042da427ee6917",
+      "shots": 384
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_4_5_0_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "c0c56461ad7073b0e67633b1b0796acbf1bf318c6c61e2bc9b436758400e02be",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_6_5_1_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "3d71395038308f08e397df64e88edb88b668557445da36e12fc77f7ce2a69bf4",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_4_5_0_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "b9aea32c6094554adc81e21fac1574fea4da6cdd68f45bfaf92fde894674e76f",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_22_23_0_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        22,
+        23
+      ],
+      "qasm_sha256": "3399a606c6a65e5d4ef60af8348a77d0b4a6040090d6f969b1fc6316d23d9409",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_22_23_1_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        22,
+        23
+      ],
+      "qasm_sha256": "55a7dad56423991b19e4785f1e2d2f8fb609f883ef08cc9d906fea563a1e8dc8",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_4_3_0_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          3
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          3
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 3
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        4,
+        3
+      ],
+      "qasm_sha256": "65787d30d2cb4a6124a80152ebde994df7b960a8c1cc1ce20e36ee345aca084c",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_22_23_0_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        22,
+        23
+      ],
+      "qasm_sha256": "7336e93a5ef1895dc99126c364f380975dd02f86ac329e9c3010b350b1106784",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_6_5_1_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "c482f99f34845f11c602886e4cf61892116badc158491e38c4d3a5da17fb8728",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_22_21_0_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          21
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          21
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 21
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        22,
+        21
+      ],
+      "qasm_sha256": "a166c0b722f69c1004c8496a93f113240e1949cc22055b8ee038525585c8013f",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_16_23_0_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          16,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          16,
+          23
+        ],
+        "measurement_map": {
+          "0": 16,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        16,
+        23
+      ],
+      "qasm_sha256": "6d237a25162a6dcb8e1ed1572379465b97de4433bff7c860d424891438a11c29",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_22_23_0_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        22,
+        23
+      ],
+      "qasm_sha256": "f3e145b6f6e87f715b717b42e37509d78232132a733a3fae35a92e31d9cec2bd",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_16_23_1_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          16,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          16,
+          23
+        ],
+        "measurement_map": {
+          "0": 16,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        16,
+        23
+      ],
+      "qasm_sha256": "ca849f26d1b11954ecbfdb7fac1a08a490b99ff65b559824ca77509f2cc8aa3c",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_4_3_0_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          3
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          3
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 3
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        4,
+        3
+      ],
+      "qasm_sha256": "84fb8ffb2208fd87b42a6b506335b3725689865272a13a121627137ec353a6a8",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_4_3_0_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          3
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          3
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 3
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        4,
+        3
+      ],
+      "qasm_sha256": "203cddf0845fe1eee343e37ae417e331177e0545a0caf1587759a7bdf6f54f46",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_22_21_0_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          21
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          21
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 21
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        22,
+        21
+      ],
+      "qasm_sha256": "c297c2084e2ea9836a77548b1d4487dfa2e39cc5a199847e0e66011fd700caae",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Z",
+      "duration_s": 2.9479999999999996e-06,
+      "family": "sx",
+      "gate_counts": {
+        "barrier": 25,
+        "measure": 4,
+        "sx": 96
+      },
+      "id": "sx_24_Z",
+      "m": 24,
+      "mapping": {
+        "final_index_layout": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "measurement_map": {
+          "0": 3,
+          "1": 5,
+          "2": 21,
+          "3": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "qasm_sha256": "e2974930ac47fc33aa0913fcfc55a544b2d3e71853a63883aca579916719f7c2",
+      "shots": 384
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_4_3_1_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          3
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          3
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 3
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        4,
+        3
+      ],
+      "qasm_sha256": "37a4583b571bab958fa5aa4294833e29159df3d628da56198487b7e6fda19f37",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_6_5_1_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "3cb42fcc6badd1ca3c60a42b0a439fa4c1438ef0b3272bd46d8746e4a1f50476",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_6_5_0_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "38320f3efb6d671b9635a295447ca2f9fcfec9b308c64bac0dac3276bd6c6fae",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_6_5_1_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "099531ea43b32a5c812beeed4a7242d8c08a6be2781599bee5a3d35ca1a06c95",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Z",
+      "duration_s": 2.3079999999999998e-06,
+      "family": "sx",
+      "gate_counts": {
+        "barrier": 5,
+        "measure": 4,
+        "sx": 16
+      },
+      "id": "sx_4_Z",
+      "m": 4,
+      "mapping": {
+        "final_index_layout": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "measurement_map": {
+          "0": 3,
+          "1": 5,
+          "2": 21,
+          "3": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "qasm_sha256": "0a3074e9de5ef5cfbdf5300f85c70e56e3dc68eb5fdfbafb0c30b8d2bd28de82",
+      "shots": 384
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_4_3_0_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          3
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          3
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 3
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        4,
+        3
+      ],
+      "qasm_sha256": "3d13878f71da348a4319592389f5078e33923f186395cbce4d7a4a2fc29ac001",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "duration_s": 2.2119999999999997e-06,
+      "family": "spam",
+      "gate_counts": {
+        "barrier": 1,
+        "measure": 8,
+        "x": 8
+      },
+      "id": "spam_1",
+      "mapping": {
+        "final_index_layout": [
+          3,
+          4,
+          5,
+          6,
+          16,
+          21,
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          3,
+          4,
+          5,
+          6,
+          16,
+          21,
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 3,
+          "1": 4,
+          "2": 5,
+          "3": 6,
+          "4": 16,
+          "5": 21,
+          "6": 22,
+          "7": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        3,
+        4,
+        5,
+        6,
+        16,
+        21,
+        22,
+        23
+      ],
+      "qasm_sha256": "ed0960b6c2c9549805af394979d91261036a620d8504e7360a3afe424c28add0",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_6_5_1_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "4a80aeddbd8be1eb48667c5286e2ed6804ec0e334986634e60b3933f651ead08",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "cz_16_23_0_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          16,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          16,
+          23
+        ],
+        "measurement_map": {
+          "0": 16,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "path": [
+        16,
+        23
+      ],
+      "qasm_sha256": "ecd606787ebe6934098f0eabc14fd3a862191da57c9cf114a45efda098a38e9a",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.5960000000000002e-06,
+      "family": "sx",
+      "gate_counts": {
+        "barrier": 13,
+        "measure": 4,
+        "sx": 52
+      },
+      "id": "sx_12_Y",
+      "m": 12,
+      "mapping": {
+        "final_index_layout": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "measurement_map": {
+          "0": 3,
+          "1": 5,
+          "2": 21,
+          "3": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "qasm_sha256": "f40eb9840838608078aa21374263fee61adb99f14450a6b6de70c74fda08c3d7",
+      "shots": 384
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_16_23_1_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          16,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          16,
+          23
+        ],
+        "measurement_map": {
+          "0": 16,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        16,
+        23
+      ],
+      "qasm_sha256": "695e41e12f03fcf8f59fd8c6359b289f28f2d4cc470be812bebae57d5a3155d9",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_22_23_1_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        22,
+        23
+      ],
+      "qasm_sha256": "64f22fca8a10d719d938dd2f80a0a6f9d19d76658c53674a4bc55444cc1fef0e",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_6_5_1_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "ca7b28e7759f624830ac60ed0fed077b40df9eac922edffb311cc6bfe68bba84",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_22_23_1_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          22,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          22,
+          23
+        ],
+        "measurement_map": {
+          "0": 22,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        22,
+        23
+      ],
+      "qasm_sha256": "4d5d9cdf18a722148cfd4024ab38f4418e79bbb6c4b64282603916d9b59ca225",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "cz_4_3_1_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          3
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          3
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 3
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "path": [
+        4,
+        3
+      ],
+      "qasm_sha256": "dafd2aa8dfc138d947e967d4e8b05c8192b61e8ef1c3f49ce7afa18ad5ae5384",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.98e-06,
+      "family": "sx",
+      "gate_counts": {
+        "barrier": 25,
+        "measure": 4,
+        "sx": 100
+      },
+      "id": "sx_24_Y",
+      "m": 24,
+      "mapping": {
+        "final_index_layout": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          3,
+          5,
+          21,
+          23
+        ],
+        "measurement_map": {
+          "0": 3,
+          "1": 5,
+          "2": 21,
+          "3": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        3,
+        5,
+        21,
+        23
+      ],
+      "qasm_sha256": "719e7b07d4ac91ebc1b815e09b5e90a48044dedb60d58d56513bd56c9b8cba98",
+      "shots": 384
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "cz_16_23_0_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          16,
+          23
+        ],
+        "initial_layout_logical_to_physical": [
+          16,
+          23
+        ],
+        "measurement_map": {
+          "0": 16,
+          "1": 23
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        16,
+        23
+      ],
+      "qasm_sha256": "8a0f418203bd0f59eb05dddf1b1245b4c67c3981a45c57375b298ab77eb9f0e7",
+      "shots": 384,
+      "state": 0
+    }
+  ],
+  "compiled_at": "2026-11-27T12:15:33.843973+00:00",
+  "estimated_qpu_seconds": 16.38688,
+  "plan_sha256": "1d4bb5bd60377c6f56d742a05fedce8fe5c40fc168df4fc1aefa31ca50e0b82b",
+  "proposal_sha256": "296c6ad3c3e59b8f45613f6ddae20b4810d726e6abd8bdae04dc2730293107ab",
+  "qpy_sha256": "0ee572a58a52cb741980f378a34df64fedd205b37d66b9b84973ef3eab9f1ded",
+  "shots": 384,
+  "version": "QC26A-v1"
+}
