@@ -1,0 +1,52 @@
+name: PGC manuscript PDF
+on:
+  pull_request:
+    paths:
+      - 'papers/pgc-restricted-observation/**'
+      - '.github/workflows/pgc-paper.yml'
+  push:
+    branches:
+      - pgc/paper-v1-20261128
+    paths:
+      - 'papers/pgc-restricted-observation/**'
+      - '.github/workflows/pgc-paper.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Independently reconstruct all evaluation observables
+        working-directory: papers/pgc-restricted-observation
+        run: node audit_receipts.mjs
+      - name: Rebuild canonical TeX
+        working-directory: papers/pgc-restricted-observation
+        run: |
+          node render_paper.mjs
+          git diff --exit-code -- paper.tex
+      - name: Install journal-neutral TeX dependencies
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended texlive-pictures lmodern poppler-utils
+      - name: Compile and check manuscript
+        working-directory: papers/pgc-restricted-observation
+        run: |
+          pdflatex -interaction=nonstopmode -halt-on-error paper.tex
+          pdflatex -interaction=nonstopmode -halt-on-error paper.tex
+          ! grep -E 'undefined references|Citation .* undefined|Reference .* undefined' paper.log
+          pdfinfo paper.pdf
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pgc-manuscript
+          path: |
+            papers/pgc-restricted-observation/paper.pdf
+            papers/pgc-restricted-observation/paper.tex
+            papers/pgc-restricted-observation/results_figure.tex
+            papers/pgc-restricted-observation/PAPER.md
+          if-no-files-found: error
