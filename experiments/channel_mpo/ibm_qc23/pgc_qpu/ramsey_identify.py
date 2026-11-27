@@ -13,7 +13,7 @@ Not modelled: crosstalk beyond a joint-readout correlation diagnostic, leakage, 
       --out results_local/pgc_q23/identify.json --bootstraps 400
 """
 from __future__ import annotations
-import argparse, json, math
+import argparse, hashlib, json, math
 from pathlib import Path
 
 import numpy as np
@@ -263,14 +263,22 @@ def main():
     ap.add_argument("--bootstraps", type=int, default=400)
     ap.add_argument("--seed", type=int, default=20261126)
     a = ap.parse_args()
-    rows_all, data_all = [], {}
+    if len(a.compiled)!=len(a.counts): ap.error("compiled/count file counts must match")
     result = {"blocks": []}
     for c, k in zip(a.compiled, a.counts):
         meta = json.loads(c.read_text())
         rows = meta["circuits"]
-        data = load_counts(rows, json.loads(k.read_text()))
+        raw = json.loads(k.read_text())
+        if set(raw)!=set(r["id"] for r in rows): raise ValueError("counts/manifest ids differ")
+        for r in rows:
+            cts=raw[r["id"]]
+            if sum(cts.values())!=r["shots"] or any(len(b)!=len(r["path"]) or set(b)-set("01") or type(n) is not int or n<0 for b,n in cts.items()):
+                raise ValueError("malformed counts "+r["id"])
+        data = load_counts(rows, raw)
         res = run(rows, data, a.bootstraps, a.seed)
         res["block"] = meta["block"]; res["plan_sha256"] = meta["plan_sha256"]
+        res["inputs"] = {"counts_sha256":hashlib.sha256(json.dumps(raw,sort_keys=True,separators=(",",":")).encode()).hexdigest(),
+                         "bootstraps":a.bootstraps,"bootstrap_seed":a.seed}
         res["alias"] = {e: alias_scan(rows, data, e) for e in res["edges"]}
         result["blocks"].append(res)
     a.out.write_text(json.dumps(result, indent=1, default=float) + "\n")
