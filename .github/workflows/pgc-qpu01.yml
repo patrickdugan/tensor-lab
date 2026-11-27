@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - 'experiments/channel_mpo/ibm_qc23/pgc_qpu/**'
+      - 'experiments/channel_mpo/ibm_qc23/qc26/qpu04_*'
+      - 'experiments/channel_mpo/ibm_qc23/qc26/test_qpu04_*'
+      - 'experiments/channel_mpo/ibm_qc23/qc26/PGC_QPU04_PROTOCOL.md'
       - 'experiments/channel_mpo/ibm_qc23/qc26/qc26b_*.mjs'
       - 'experiments/channel_mpo/ibm_qc23/qc26/qc26b_prospective_plan.py'
       - 'experiments/channel_mpo/ibm_qc23/qc26/test_qc26b_prospective.py'
@@ -11,6 +14,9 @@ on:
     branches: [main]
     paths:
       - 'experiments/channel_mpo/ibm_qc23/pgc_qpu/**'
+      - 'experiments/channel_mpo/ibm_qc23/qc26/qpu04_*'
+      - 'experiments/channel_mpo/ibm_qc23/qc26/test_qpu04_*'
+      - 'experiments/channel_mpo/ibm_qc23/qc26/PGC_QPU04_PROTOCOL.md'
       - '.github/workflows/pgc-qpu01.yml'
   workflow_dispatch:
 permissions:
@@ -18,7 +24,7 @@ permissions:
 jobs:
   replay:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -56,3 +62,12 @@ jobs:
           node check_qpu03.mjs qpu03_pilot_24.json /tmp/qpu03.json
           node bpd_qpu03b.mjs 24 > /tmp/qpu03b.json
           node check_qpu03.mjs qpu03b_pilot_24.json /tmp/qpu03b.json
+      - name: Final QPU04 drift and historical-source regressions
+        working-directory: experiments/channel_mpo/ibm_qc23/qc26
+        run: |
+          python -m unittest test_qpu04_calibration -v
+          node test_qpu04_drift.mjs > /tmp/qpu04_drift.json
+          node test_qpu04_pipeline.mjs
+      - name: End-to-end BPD CPU benchmark (timings descriptive)
+        working-directory: experiments/channel_mpo/ibm_qc23/pgc_qpu/bpd/nonlinear
+        run: node qpu04_bpd_benchmark.mjs
