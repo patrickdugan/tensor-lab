@@ -49,3 +49,10 @@ jobs:
         run: |
           node bpd_qpu02.mjs 32 > /tmp/bpd_qpu02.json
           node check_pilot.mjs pilot_32.json /tmp/bpd_qpu02.json
+      - name: Replay cross-edge grouping and residual refinement pilots
+        working-directory: experiments/channel_mpo/ibm_qc23/pgc_qpu/bpd/nonlinear
+        run: |
+          node bpd_qpu03.mjs 24 > /tmp/qpu03.json
+          node check_qpu03.mjs qpu03_pilot_24.json /tmp/qpu03.json
+          node bpd_qpu03b.mjs 24 > /tmp/qpu03b.json
+          node check_qpu03.mjs qpu03b_pilot_24.json /tmp/qpu03b.json
