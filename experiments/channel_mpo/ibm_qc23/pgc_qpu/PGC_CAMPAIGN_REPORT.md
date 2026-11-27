@@ -69,3 +69,19 @@ The Ramsey q23 block (13.19 s). It is the only planned job that directly measure
 | Job IDs | none |
 | tensor-lab commit | `8a0a9ac` (offline phases); later commits listed in the final status |
 | MathCan commit | `96c3729` |
+
+## Hardware results (2026-11-27, ibm_kingston, prospective of nothing: exploratory single datasets)
+
+| Job | ID | Circuits | Provider usage | Status |
+|---|---|---:|---|---|
+| QC-26A | dc4n9ads2omc738fm84g | 82 | 224 s to 240 s consumed (16 s) | counts archived, identified |
+| Ramsey q5 | dc4ne0thdvas73bq1hq0 | 66 | 9 s reported | counts archived, identified |
+| Ramsey q23 | none | 66 | 0 | refused twice by the calibration-change gate; third attempt blocked by the permission classifier |
+
+Remaining allocation after q5: 345 s. Between the QC-26A receipt (360 s remaining) and the q5 `usage_before` (354 s) 6 s were consumed by something outside these receipts, most likely an earlier build and submit attempt by the owner; it is not attributed here.
+
+**QC-26A (200 bootstraps, 16 parameters, single dataset):** all four SX offsets are consistent with zero (point estimates -0.005 to +0.001 rad, bootstrap SE about 0.003), far below the retrospective fitted SX_5 of -0.019 and SX_23 of 0.1 (the 0.1 was at the fit bound). Conditional phases: 5-6 (stored as 6_5) delta +0.033 [0.021, 0.044]; 16-23 delta -0.026 [-0.038, -0.015]; 4-5, 22-23 and 4-3 consistent with zero; 22-21 flagged (xy-linearity, relaxation) and inconclusive. Endpoint phases of the probe: alpha on qubit 5 (probe of 6->5) +0.176; alpha on qubit 23 (probe of 16->23) -0.075; qubit 23 on 22-23 -0.033. Decision counts: 9 consistent with zero, 5 nonzero candidates pending replication, 2 inconclusive. These are not accepted as nonzero without a fresh independently shuffled block.
+
+**Ramsey q5 (200 joint-bitstring bootstraps with SPAM refit):** edge 5-6 delta +0.032 [0.024, 0.041] and alpha_5 +0.184 [0.172, 0.197]; edge 4-5 delta -0.0005 [-0.009, 0.007] (zero), alpha_4 -0.024 [-0.035, -0.013], alpha_5 0.000 [-0.011, 0.011]. Forward and reverse deltas agree on both edges (gap CIs contain 0). Odd repetitions break the even-only alias (profile chi-square gap 1.4e4 and 3.1e4 versus 0 without them). Readout joint correlation 0.0025.
+
+**Reading:** the independent 5-6 conditional phase from two separate experiments agrees (0.033 and 0.032) and is about a third of the retrospective +0.1; the retrospective +-0.1 effective ZZ is not reproduced as an independent conditional phase on 5-6 or 16-23 (0.033, -0.026). A large endpoint-local phase on qubit 5 along the 5-6 coupler (0.18 rad) is a new, previously unobservable term; the same qubit 5 shows 0.000 on the 4-5 coupler, so the term is coupler-specific rather than a fixed qubit offset. Whether these terms explain the Kingston residuals is untested until q23, replication and the QC-26B prospective run.
