@@ -22,6 +22,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Independently reconstruct all evaluation observables
+        working-directory: papers/pgc-restricted-observation
+        run: node audit_receipts.mjs
       - name: Rebuild canonical TeX
         working-directory: papers/pgc-restricted-observation
         run: |
