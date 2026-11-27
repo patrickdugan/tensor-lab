@@ -75,7 +75,7 @@ function runGym(trials=32) {
       function record(budget){
         const g=marginal(w);
         let rmse=0,aliasOK=0;
-        for(let e=0;e<E;e++){let q=0;for(let i=0;i<G;i++)if(locals[i>>1].alias)q+=g[e][i];aliasOK+=Number((q>=.5?1:0)===truth[e].alias);}
+        for(let e=0;e<E;e++){let q=0;for(let i=0;i<G;i++)if(locals[i>>1].alias)q+=g[e][i];aliasOK+=Number((q>=.5-1e-9?1:0)===truth[e].alias);}
         for(let i=0;i<held.length;i++){const a=held[i],t=heldTable[i];let q=0;for(let j=0;j<G;j++)q+=g[a.edge][j]*t[j];rmse+=(q-truthP(a,budget))**2;}
         snapshots.push({budget,spent,shots:step*S,work,alias_both:Number(aliasOK===E),alias_fraction:aliasOK/E,rmse:Math.sqrt(rmse/held.length)});
       }

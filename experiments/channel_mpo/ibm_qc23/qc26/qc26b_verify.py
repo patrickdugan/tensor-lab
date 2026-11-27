@@ -16,7 +16,7 @@ def close(x, y, tol=1e-9):
 
 
 assert a['counts'] == b['counts'] == {'circuits': 48, 'observables': 528}
-assert a['fit_report']['delta'] == b['fit_report']['delta'], 'fitted ZZ phases differ'
+assert close(a['fit_report']['delta'], b['fit_report']['delta']), 'fitted ZZ phases differ'
 assert a['sx_offsets_rad'] == b['sx_offsets_rad']
 assert len(a['rows']) == len(b['rows']) == 528
 for x, y in zip(a['rows'], b['rows']):

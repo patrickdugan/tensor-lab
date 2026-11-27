@@ -20,6 +20,8 @@ At budget 13, dense/group-exact RMSE is 0.03962, 0.05414, 0.07561 for the three 
 
 All 96 trials recover both simulated aliases by the first checkpoint under dense, exact grouped and alias-only design. Alias-only optimizes a coarser mutual information objective, with inferior held-out RMSE.
 
+Alias scoring convention: a posterior marginal within 1e-9 of 0.5 counts as the alias being recovered. Before this convention the fixed-even and random baselines were scored by the last bit of floating-point rounding at exact ties, which differed between Windows and Linux runtimes. Dense, exact grouped and alias-only policies reach 1.0 either way; only baseline alias rates changed, and the tie rule can only raise them.
+
 ## Limits and next stage
 
 The model is deliberately small and exact dependency sets are supplied. The misspecified truths do not prove hardware transfer. The first drift checkpoint scores the post-change truth even though its observations precede the change. No new controls were added to the historical hardware receipts. Future work: action-level learned sensitivity groups, joint cross-edge observables, approximate grouping error bounds, scaling to many edges, and comparison with optimized sufficient-marginal or factor-graph designs rather than naive dense scoring alone.

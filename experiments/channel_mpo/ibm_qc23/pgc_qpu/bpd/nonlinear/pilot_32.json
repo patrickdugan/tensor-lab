@@ -33,8 +33,8 @@
       "scenario": "matched",
       "budget": 6.5,
       "policy": "fixed_even",
-      "alias_both": 0.375,
-      "alias_fraction": 0.546875,
+      "alias_both": 0.59375,
+      "alias_fraction": 0.703125,
       "rmse": 0.2186675620973751,
       "spent": 5.8000000000000025,
       "shots": 60,
@@ -44,8 +44,8 @@
       "scenario": "matched",
       "budget": 6.5,
       "policy": "random",
-      "alias_both": 0.34375,
-      "alias_fraction": 0.515625,
+      "alias_both": 0.5625,
+      "alias_fraction": 0.703125,
       "rmse": 0.1953780639161777,
       "spent": 5.831250000000001,
       "shots": 60.75,
@@ -88,8 +88,8 @@
       "scenario": "matched",
       "budget": 13,
       "policy": "fixed_even",
-      "alias_both": 0.40625,
-      "alias_fraction": 0.5625,
+      "alias_both": 0.59375,
+      "alias_fraction": 0.703125,
       "rmse": 0.21509541441748267,
       "spent": 12.92000000000001,
       "shots": 132,
@@ -99,8 +99,8 @@
       "scenario": "matched",
       "budget": 13,
       "policy": "random",
-      "alias_both": 0.59375,
-      "alias_fraction": 0.734375,
+      "alias_both": 0.625,
+      "alias_fraction": 0.765625,
       "rmse": 0.1639994501809372,
       "spent": 12.561250000000001,
       "shots": 131.25,
@@ -144,7 +144,7 @@
       "budget": 6.5,
       "policy": "fixed_even",
       "alias_both": 0.28125,
-      "alias_fraction": 0.578125,
+      "alias_fraction": 0.5,
       "rmse": 0.23197545240270726,
       "spent": 5.8000000000000025,
       "shots": 60,
@@ -154,7 +154,7 @@
       "scenario": "offgrid",
       "budget": 6.5,
       "policy": "random",
-      "alias_both": 0.25,
+      "alias_both": 0.34375,
       "alias_fraction": 0.546875,
       "rmse": 0.2090321350680899,
       "spent": 5.935,
@@ -199,7 +199,7 @@
       "budget": 13,
       "policy": "fixed_even",
       "alias_both": 0.28125,
-      "alias_fraction": 0.453125,
+      "alias_fraction": 0.5,
       "rmse": 0.226541071596848,
       "spent": 12.92000000000001,
       "shots": 132,
@@ -209,8 +209,8 @@
       "scenario": "offgrid",
       "budget": 13,
       "policy": "random",
-      "alias_both": 0.46875,
-      "alias_fraction": 0.6875,
+      "alias_both": 0.4375,
+      "alias_fraction": 0.671875,
       "rmse": 0.18164577862543685,
       "spent": 12.5425,
       "shots": 130.875,
@@ -222,7 +222,7 @@
       "policy": "dense_eig",
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.05414407039631843,
+      "rmse": 0.05414407039631844,
       "spent": 12.445000000000002,
       "shots": 120,
       "score_work": 1029600
@@ -233,7 +233,7 @@
       "policy": "group_exact",
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.05414407039631843,
+      "rmse": 0.05414407039631844,
       "spent": 12.445000000000002,
       "shots": 120,
       "score_work": 91560
@@ -244,7 +244,7 @@
       "policy": "group_alias",
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.10985736919137493,
+      "rmse": 0.10985736919137494,
       "spent": 12.676250000000001,
       "shots": 135.75,
       "score_work": 97454.25
@@ -253,9 +253,9 @@
       "scenario": "drift_relax",
       "budget": 6.5,
       "policy": "fixed_even",
-      "alias_both": 0.375,
-      "alias_fraction": 0.46875,
-      "rmse": 0.22541211527958963,
+      "alias_both": 0.34375,
+      "alias_fraction": 0.40625,
+      "rmse": 0.22541211527958957,
       "spent": 5.8000000000000025,
       "shots": 60,
       "score_work": 0
@@ -264,8 +264,8 @@
       "scenario": "drift_relax",
       "budget": 6.5,
       "policy": "random",
-      "alias_both": 0.4375,
-      "alias_fraction": 0.546875,
+      "alias_both": 0.46875,
+      "alias_fraction": 0.53125,
       "rmse": 0.2007855684919734,
       "spent": 5.8412500000000005,
       "shots": 61.5,
@@ -308,8 +308,8 @@
       "scenario": "drift_relax",
       "budget": 13,
       "policy": "fixed_even",
-      "alias_both": 0.375,
-      "alias_fraction": 0.484375,
+      "alias_both": 0.34375,
+      "alias_fraction": 0.40625,
       "rmse": 0.2278205000730207,
       "spent": 12.92000000000001,
       "shots": 132,
@@ -319,8 +319,8 @@
       "scenario": "drift_relax",
       "budget": 13,
       "policy": "random",
-      "alias_both": 0.71875,
-      "alias_fraction": 0.765625,
+      "alias_both": 0.75,
+      "alias_fraction": 0.78125,
       "rmse": 0.164391857113428,
       "spent": 12.64375,
       "shots": 132,
@@ -369,8 +369,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.23222853545083882
     },
     {
@@ -609,8 +609,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.19448446362705732
     },
     {
@@ -634,7 +634,7 @@
       "shots": 60,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.17194272614694608
     },
     {
@@ -743,7 +743,7 @@
       "work": 0,
       "alias_both": 0,
       "alias_fraction": 0.5,
-      "rmse": 0.1954421851033009
+      "rmse": 0.19544218510330094
     },
     {
       "scenario": "matched",
@@ -849,8 +849,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.1818973059890423
     },
     {
@@ -861,8 +861,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.19329019590396104
     },
     {
@@ -873,8 +873,8 @@
       "spent": 5.760000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.17227332064485704
     },
     {
@@ -969,8 +969,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2545707420750337
     },
     {
@@ -1089,8 +1089,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.23314226285206593
     },
     {
@@ -1113,8 +1113,8 @@
       "spent": 6.12,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.23639583335869643
     },
     {
@@ -1209,8 +1209,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2604182507397199
     },
     {
@@ -1221,8 +1221,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.24373128358004445
     },
     {
@@ -1449,8 +1449,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.1787080981058139
     },
     {
@@ -1473,8 +1473,8 @@
       "spent": 6.28,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.18828958573161758
     },
     {
@@ -1593,8 +1593,8 @@
       "spent": 5.920000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.27723103534330895
     },
     {
@@ -1727,7 +1727,7 @@
       "work": 0,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.21783313252674336
+      "rmse": 0.21783313252674333
     },
     {
       "scenario": "matched",
@@ -1799,7 +1799,7 @@
       "work": 101136,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.08799015161756436
+      "rmse": 0.08799015161756435
     },
     {
       "scenario": "matched",
@@ -1809,8 +1809,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.19976146958332253
     },
     {
@@ -2049,8 +2049,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.25488593228919393
     },
     {
@@ -2073,8 +2073,8 @@
       "spent": 5.840000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.23419185858485414
     },
     {
@@ -2169,8 +2169,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.2107327333861431
     },
     {
@@ -2193,8 +2193,8 @@
       "spent": 6.000000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.17529236655415506
     },
     {
@@ -2314,7 +2314,7 @@
       "shots": 60,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_fraction": 0.5,
       "rmse": 0.1803204410608047
     },
     {
@@ -2409,8 +2409,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.18011381766992746
     },
     {
@@ -2422,7 +2422,7 @@
       "shots": 132,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.17788731244270267
     },
     {
@@ -2649,8 +2649,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.19614664478970564
     },
     {
@@ -2661,8 +2661,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.18303154040636202
     },
     {
@@ -2673,8 +2673,8 @@
       "spent": 5.640000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.18626234406984116
     },
     {
@@ -2819,7 +2819,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.05722568249425644
+      "rmse": 0.05722568249425645
     },
     {
       "scenario": "matched",
@@ -2843,7 +2843,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.05722568249425644
+      "rmse": 0.05722568249425645
     },
     {
       "scenario": "matched",
@@ -2901,8 +2901,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0.5,
       "rmse": 0.2313145415015717
     },
     {
@@ -3299,7 +3299,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.06356069048765496
+      "rmse": 0.06356069048765497
     },
     {
       "scenario": "matched",
@@ -3323,7 +3323,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.06356069048765496
+      "rmse": 0.06356069048765497
     },
     {
       "scenario": "matched",
@@ -3381,8 +3381,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.1756436958661275
     },
     {
@@ -3501,8 +3501,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.24201462135058094
     },
     {
@@ -3513,8 +3513,8 @@
       "spent": 5.640000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.24248876634198635
     },
     {
@@ -3525,8 +3525,8 @@
       "spent": 12.560000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.22765712063329832
     },
     {
@@ -3741,8 +3741,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2839765423552816
     },
     {
@@ -3969,8 +3969,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2557103392879417
     },
     {
@@ -3981,8 +3981,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2521638620064346
     },
     {
@@ -4019,7 +4019,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.028288880536963653
+      "rmse": 0.02828888053696365
     },
     {
       "scenario": "matched",
@@ -4043,7 +4043,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.028288880536963653
+      "rmse": 0.02828888053696365
     },
     {
       "scenario": "matched",
@@ -4113,8 +4113,8 @@
       "spent": 5.8,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2374241571926114
     },
     {
@@ -4199,7 +4199,7 @@
       "work": 101136,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.06487977993429306
+      "rmse": 0.06487977993429304
     },
     {
       "scenario": "offgrid",
@@ -4209,8 +4209,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2349219699701592
     },
     {
@@ -4221,8 +4221,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.22904042107876718
     },
     {
@@ -4233,8 +4233,8 @@
       "spent": 5.5600000000000005,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.23342321392149346
     },
     {
@@ -4331,7 +4331,7 @@
       "work": 0,
       "alias_both": 0,
       "alias_fraction": 0.5,
-      "rmse": 0.2634126567995147
+      "rmse": 0.26341265679951475
     },
     {
       "scenario": "offgrid",
@@ -4341,8 +4341,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0.5,
       "rmse": 0.2552736812688849
     },
     {
@@ -4379,7 +4379,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.12368354441066223
+      "rmse": 0.12368354441066226
     },
     {
       "scenario": "offgrid",
@@ -4391,7 +4391,7 @@
       "work": 1029600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.08663167626286122
+      "rmse": 0.08663167626286124
     },
     {
       "scenario": "offgrid",
@@ -4403,7 +4403,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.12368354441066223
+      "rmse": 0.12368354441066226
     },
     {
       "scenario": "offgrid",
@@ -4415,7 +4415,7 @@
       "work": 91560,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.08663167626286122
+      "rmse": 0.08663167626286124
     },
     {
       "scenario": "offgrid",
@@ -4439,7 +4439,7 @@
       "work": 94320,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.13909129500017414
+      "rmse": 0.13909129500017417
     },
     {
       "scenario": "offgrid",
@@ -4450,7 +4450,7 @@
       "shots": 60,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.24619400935586147
     },
     {
@@ -4475,7 +4475,7 @@
       "work": 0,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.18923238246925436
+      "rmse": 0.18923238246925433
     },
     {
       "scenario": "offgrid",
@@ -4511,7 +4511,7 @@
       "work": 1029600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.027810741811329743
+      "rmse": 0.02781074181132974
     },
     {
       "scenario": "offgrid",
@@ -4535,7 +4535,7 @@
       "work": 91560,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.027810741811329743
+      "rmse": 0.02781074181132974
     },
     {
       "scenario": "offgrid",
@@ -4559,7 +4559,7 @@
       "work": 101136,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.06452645941483322
+      "rmse": 0.0645264594148332
     },
     {
       "scenario": "offgrid",
@@ -4569,8 +4569,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2941554723862998
     },
     {
@@ -4593,8 +4593,8 @@
       "spent": 5.680000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.23137950664661866
     },
     {
@@ -4929,8 +4929,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2500690838195366
     },
     {
@@ -4941,8 +4941,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.22984538106914842
     },
     {
@@ -4953,8 +4953,8 @@
       "spent": 5.920000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.24080122622236355
     },
     {
@@ -5049,8 +5049,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.24450048463205387
     },
     {
@@ -5074,7 +5074,7 @@
       "shots": 60,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.22663911895057717
     },
     {
@@ -5085,8 +5085,8 @@
       "spent": 12.600000000000001,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.22691006165264577
     },
     {
@@ -5169,8 +5169,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0.5,
       "rmse": 0.2848007024580637
     },
     {
@@ -5327,7 +5327,7 @@
       "work": 0,
       "alias_both": 0,
       "alias_fraction": 0.5,
-      "rmse": 0.22960158670467912
+      "rmse": 0.2296015867046791
     },
     {
       "scenario": "offgrid",
@@ -5409,9 +5409,9 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
-      "rmse": 0.18817074760949873
+      "alias_both": 1,
+      "alias_fraction": 1,
+      "rmse": 0.18817074760949876
     },
     {
       "scenario": "offgrid",
@@ -5542,7 +5542,7 @@
       "shots": 132,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_fraction": 0.5,
       "rmse": 0.18277809694130528
     },
     {
@@ -5699,7 +5699,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.051614402295677764
+      "rmse": 0.051614402295677785
     },
     {
       "scenario": "offgrid",
@@ -5711,7 +5711,7 @@
       "work": 1029600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.055481655155816476
+      "rmse": 0.05548165515581648
     },
     {
       "scenario": "offgrid",
@@ -5723,7 +5723,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.051614402295677764
+      "rmse": 0.051614402295677785
     },
     {
       "scenario": "offgrid",
@@ -5735,7 +5735,7 @@
       "work": 91560,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.055481655155816476
+      "rmse": 0.05548165515581648
     },
     {
       "scenario": "offgrid",
@@ -5759,7 +5759,7 @@
       "work": 92136,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.05824362074589386
+      "rmse": 0.058243620745893884
     },
     {
       "scenario": "offgrid",
@@ -5889,8 +5889,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.24833791796559387
     },
     {
@@ -5939,7 +5939,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.08627119768686567
+      "rmse": 0.08627119768686566
     },
     {
       "scenario": "offgrid",
@@ -5963,7 +5963,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.08627119768686567
+      "rmse": 0.08627119768686566
     },
     {
       "scenario": "offgrid",
@@ -6009,8 +6009,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.25078148511095244
     },
     {
@@ -6021,8 +6021,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.22873937201685723
     },
     {
@@ -6033,8 +6033,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.23042390340600585
     },
     {
@@ -6130,7 +6130,7 @@
       "shots": 60,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.18265746289770718
     },
     {
@@ -6154,7 +6154,7 @@
       "shots": 60,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.17530757502639613
     },
     {
@@ -6286,7 +6286,7 @@
       "shots": 132,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_fraction": 0.5,
       "rmse": 0.23065537013319132
     },
     {
@@ -6299,7 +6299,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.04280075744335663
+      "rmse": 0.042800757443356624
     },
     {
       "scenario": "offgrid",
@@ -6311,7 +6311,7 @@
       "work": 1029600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.04652407008512601
+      "rmse": 0.046524070085126004
     },
     {
       "scenario": "offgrid",
@@ -6323,7 +6323,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.04280075744335663
+      "rmse": 0.042800757443356624
     },
     {
       "scenario": "offgrid",
@@ -6335,7 +6335,7 @@
       "work": 91560,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.04652407008512601
+      "rmse": 0.046524070085126004
     },
     {
       "scenario": "offgrid",
@@ -6369,8 +6369,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.2388263995753915
     },
     {
@@ -6501,8 +6501,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0.5,
       "rmse": 0.2336587659797052
     },
     {
@@ -6527,7 +6527,7 @@
       "work": 0,
       "alias_both": 0,
       "alias_fraction": 0.5,
-      "rmse": 0.22648464269218088
+      "rmse": 0.22648464269218085
     },
     {
       "scenario": "offgrid",
@@ -6539,7 +6539,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.05789184906114482
+      "rmse": 0.05789184906114483
     },
     {
       "scenario": "offgrid",
@@ -6563,7 +6563,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.05789184906114482
+      "rmse": 0.05789184906114483
     },
     {
       "scenario": "offgrid",
@@ -6599,7 +6599,7 @@
       "work": 101136,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.1388420837990105
+      "rmse": 0.13884208379901053
     },
     {
       "scenario": "offgrid",
@@ -6611,7 +6611,7 @@
       "work": 0,
       "alias_both": 0,
       "alias_fraction": 0.5,
-      "rmse": 0.25185206224325396
+      "rmse": 0.251852062243254
     },
     {
       "scenario": "offgrid",
@@ -6729,8 +6729,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.23130485232613518
     },
     {
@@ -6741,8 +6741,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.22755633729954744
     },
     {
@@ -6753,8 +6753,8 @@
       "spent": 5.960000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.23027781435299235
     },
     {
@@ -6850,7 +6850,7 @@
       "shots": 60,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.1707543998160617
     },
     {
@@ -6861,8 +6861,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.17148801935302155
     },
     {
@@ -6969,8 +6969,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.17099438057189548
     },
     {
@@ -6981,8 +6981,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.16921838878732953
     },
     {
@@ -7151,7 +7151,7 @@
       "work": 1029600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.047958890927304335
+      "rmse": 0.04795889092730433
     },
     {
       "scenario": "offgrid",
@@ -7175,7 +7175,7 @@
       "work": 91560,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.047958890927304335
+      "rmse": 0.04795889092730433
     },
     {
       "scenario": "offgrid",
@@ -7341,8 +7341,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0.5,
       "rmse": 0.27029965073112144
     },
     {
@@ -7449,8 +7449,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.2055977598070902
     },
     {
@@ -7474,7 +7474,7 @@
       "shots": 60,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.17462977529828
     },
     {
@@ -7569,8 +7569,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.17363043985543505
     },
     {
@@ -7581,8 +7581,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.16959900157458016
     },
     {
@@ -7823,7 +7823,7 @@
       "work": 0,
       "alias_both": 0,
       "alias_fraction": 0.5,
-      "rmse": 0.22617232639643703
+      "rmse": 0.226172326396437
     },
     {
       "scenario": "offgrid",
@@ -7929,8 +7929,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.20257672950968283
     },
     {
@@ -7954,7 +7954,7 @@
       "shots": 72,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.18987359088087621
     },
     {
@@ -8073,8 +8073,8 @@
       "spent": 5.680000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2030677670907036
     },
     {
@@ -8169,8 +8169,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.25660549675399486
     },
     {
@@ -8181,8 +8181,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2508667970347422
     },
     {
@@ -8219,7 +8219,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.078196763367582
+      "rmse": 0.07819676336758198
     },
     {
       "scenario": "drift_relax",
@@ -8243,7 +8243,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.078196763367582
+      "rmse": 0.07819676336758198
     },
     {
       "scenario": "drift_relax",
@@ -8289,8 +8289,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.24882265192400715
     },
     {
@@ -8339,7 +8339,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.11303314540065108
+      "rmse": 0.1130331454006511
     },
     {
       "scenario": "drift_relax",
@@ -8363,7 +8363,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.11303314540065108
+      "rmse": 0.1130331454006511
     },
     {
       "scenario": "drift_relax",
@@ -8399,7 +8399,7 @@
       "work": 92136,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.19400039083251933
+      "rmse": 0.19400039083251935
     },
     {
       "scenario": "drift_relax",
@@ -8433,8 +8433,8 @@
       "spent": 6.040000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.16774510596399458
     },
     {
@@ -8529,8 +8529,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.272462435990437
     },
     {
@@ -8541,8 +8541,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2902282037426504
     },
     {
@@ -8553,8 +8553,8 @@
       "spent": 6.48,
       "shots": 72,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2761243076054422
     },
     {
@@ -8565,9 +8565,9 @@
       "spent": 12.680000000000001,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
-      "rmse": 0.2423444539797612
+      "alias_both": 1,
+      "alias_fraction": 1,
+      "rmse": 0.24234445397976118
     },
     {
       "scenario": "drift_relax",
@@ -8661,8 +8661,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.22431722753428965
     },
     {
@@ -8686,7 +8686,7 @@
       "shots": 132,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.20710308470438304
     },
     {
@@ -8759,7 +8759,7 @@
       "work": 99000,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.16702577823009052
+      "rmse": 0.1670257782300905
     },
     {
       "scenario": "drift_relax",
@@ -8771,7 +8771,7 @@
       "work": 0,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.19241850670403304
+      "rmse": 0.19241850670403302
     },
     {
       "scenario": "drift_relax",
@@ -8879,7 +8879,7 @@
       "work": 97752,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.03778025565863837
+      "rmse": 0.037780255658638365
     },
     {
       "scenario": "drift_relax",
@@ -8889,8 +8889,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.27054141175924734
     },
     {
@@ -8901,8 +8901,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.30833338398176874
     },
     {
@@ -9009,8 +9009,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.17220754373995892
     },
     {
@@ -9129,8 +9129,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.2355252859942984
     },
     {
@@ -9153,8 +9153,8 @@
       "spent": 5.720000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.23188523743079795
     },
     {
@@ -9369,8 +9369,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.25322518430273616
     },
     {
@@ -9503,7 +9503,7 @@
       "work": 0,
       "alias_both": 0,
       "alias_fraction": 0,
-      "rmse": 0.26451459888481
+      "rmse": 0.26451459888481005
     },
     {
       "scenario": "drift_relax",
@@ -9622,7 +9622,7 @@
       "shots": 132,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.2474918053430444
     },
     {
@@ -9633,8 +9633,8 @@
       "spent": 5.880000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.24375900499391015
     },
     {
@@ -9645,8 +9645,8 @@
       "spent": 12.040000000000003,
       "shots": 120,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.2506459652620387
     },
     {
@@ -9729,8 +9729,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.24874529865446027
     },
     {
@@ -9741,8 +9741,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.22805031798593997
     },
     {
@@ -9753,8 +9753,8 @@
       "spent": 5.640000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.24337398172017355
     },
     {
@@ -9861,8 +9861,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.17577950959570918
     },
     {
@@ -9969,8 +9969,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.17558018723045188
     },
     {
@@ -9981,8 +9981,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.17461097251315433
     },
     {
@@ -10019,7 +10019,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.06396706618542865
+      "rmse": 0.06396706618542866
     },
     {
       "scenario": "drift_relax",
@@ -10031,7 +10031,7 @@
       "work": 1029600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.04579620738990226
+      "rmse": 0.04579620738990227
     },
     {
       "scenario": "drift_relax",
@@ -10043,7 +10043,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.06396706618542865
+      "rmse": 0.06396706618542866
     },
     {
       "scenario": "drift_relax",
@@ -10055,7 +10055,7 @@
       "work": 91560,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.04579620738990226
+      "rmse": 0.04579620738990227
     },
     {
       "scenario": "drift_relax",
@@ -10113,8 +10113,8 @@
       "spent": 5.920000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.18151586193799163
     },
     {
@@ -10125,8 +10125,8 @@
       "spent": 12.680000000000003,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.16905716923840453
     },
     {
@@ -10210,7 +10210,7 @@
       "shots": 60,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.21671712445024202
     },
     {
@@ -10329,8 +10329,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.24989421277629012
     },
     {
@@ -10341,8 +10341,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.28494634162040133
     },
     {
@@ -10449,8 +10449,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.17745710430397837
     },
     {
@@ -10499,7 +10499,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.12256835408938169
+      "rmse": 0.12256835408938167
     },
     {
       "scenario": "drift_relax",
@@ -10523,7 +10523,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.12256835408938169
+      "rmse": 0.12256835408938167
     },
     {
       "scenario": "drift_relax",
@@ -10569,8 +10569,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2643257462731274
     },
     {
@@ -10581,8 +10581,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.2490870276388603
     },
     {
@@ -10689,8 +10689,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.23284063638113361
     },
     {
@@ -10701,8 +10701,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 0,
-      "alias_fraction": 0,
+      "alias_both": 1,
+      "alias_fraction": 1,
       "rmse": 0.234472809700565
     },
     {
@@ -10727,7 +10727,7 @@
       "work": 0,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.13409452802487268
+      "rmse": 0.13409452802487265
     },
     {
       "scenario": "drift_relax",
@@ -10739,7 +10739,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.11289592647308794
+      "rmse": 0.11289592647308792
     },
     {
       "scenario": "drift_relax",
@@ -10763,7 +10763,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.11289592647308794
+      "rmse": 0.11289592647308792
     },
     {
       "scenario": "drift_relax",
@@ -10871,7 +10871,7 @@
       "work": 1029600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.0869845436438215
+      "rmse": 0.08698454364382151
     },
     {
       "scenario": "drift_relax",
@@ -10895,7 +10895,7 @@
       "work": 91560,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.0869845436438215
+      "rmse": 0.08698454364382151
     },
     {
       "scenario": "drift_relax",
@@ -10953,9 +10953,9 @@
       "spent": 5.680000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
-      "rmse": 0.17489990629045044
+      "alias_both": 0,
+      "alias_fraction": 0,
+      "rmse": 0.1748999062904504
     },
     {
       "scenario": "drift_relax",
@@ -11099,7 +11099,7 @@
       "work": 561600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.09506529224982974
+      "rmse": 0.09506529224982971
     },
     {
       "scenario": "drift_relax",
@@ -11111,7 +11111,7 @@
       "work": 1029600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.04289387615068214
+      "rmse": 0.042893876150682124
     },
     {
       "scenario": "drift_relax",
@@ -11123,7 +11123,7 @@
       "work": 49680,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.09506529224982974
+      "rmse": 0.09506529224982971
     },
     {
       "scenario": "drift_relax",
@@ -11135,7 +11135,7 @@
       "work": 91560,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.04289387615068214
+      "rmse": 0.042893876150682124
     },
     {
       "scenario": "drift_relax",
@@ -11159,7 +11159,7 @@
       "work": 94320,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.12754477333441122
+      "rmse": 0.12754477333441125
     },
     {
       "scenario": "drift_relax",
@@ -11183,7 +11183,7 @@
       "work": 0,
       "alias_both": 0,
       "alias_fraction": 0,
-      "rmse": 0.24445433392522786
+      "rmse": 0.24445433392522783
     },
     {
       "scenario": "drift_relax",
@@ -11194,7 +11194,7 @@
       "shots": 60,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.22930294659217118
     },
     {
@@ -11289,8 +11289,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.2551332711929626
     },
     {
@@ -11313,8 +11313,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.25294125150959623
     },
     {
@@ -11410,7 +11410,7 @@
       "shots": 60,
       "work": 0,
       "alias_both": 0,
-      "alias_fraction": 0.5,
+      "alias_fraction": 0,
       "rmse": 0.1733577559986475
     },
     {
@@ -11421,8 +11421,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.19329562186869947
     },
     {
@@ -11529,8 +11529,8 @@
       "spent": 5.800000000000001,
       "shots": 60,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.2803332738741673
     },
     {
@@ -11541,8 +11541,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.2729784382949842
     },
     {
@@ -11591,7 +11591,7 @@
       "work": 1029600,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.10064145474614611
+      "rmse": 0.10064145474614612
     },
     {
       "scenario": "drift_relax",
@@ -11615,7 +11615,7 @@
       "work": 91560,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.10064145474614611
+      "rmse": 0.10064145474614612
     },
     {
       "scenario": "drift_relax",
@@ -11661,8 +11661,8 @@
       "spent": 12.920000000000002,
       "shots": 132,
       "work": 0,
-      "alias_both": 1,
-      "alias_fraction": 1,
+      "alias_both": 0,
+      "alias_fraction": 0,
       "rmse": 0.184655110220979
     },
     {
@@ -11879,7 +11879,7 @@
       "work": 94320,
       "alias_both": 1,
       "alias_fraction": 1,
-      "rmse": 0.05807200909208638
+      "rmse": 0.05807200909208637
     }
   ],
   "limitations": [
