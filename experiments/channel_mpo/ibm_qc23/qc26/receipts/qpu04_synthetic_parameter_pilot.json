@@ -1,0 +1,62 @@
+{
+  "tests": {
+    "checks": [
+      "exactly sixteen calibrated coordinates",
+      "static channel equals fresh points",
+      "analytic gain 2/3",
+      "analytic posterior mean",
+      "analytic predictive variance",
+      "forecast variance nondecreasing",
+      "drift shrinkage lies between independent observations",
+      "duplicate calibration job rejected",
+      "unchanged calibration snapshot rejected",
+      "missing fresh permutation rejected",
+      "unqualified phase branch rejected",
+      "invalid uncertainty rejected",
+      "future acquisition rejected",
+      "provenance traversal rejected",
+      "stale calibration rejected"
+    ],
+    "passed": 15,
+    "parameter_count": 16
+  },
+  "pilot": {
+    "label": "SYNTHETIC PARAMETER-SPACE PILOT; not circuit predictions or hardware",
+    "seed": 261127044,
+    "rows": [
+      {
+        "scenario": "stationary",
+        "trials": 512,
+        "rmse_rad": {
+          "latest": 0.0053690035696206265,
+          "pooled": 0.0038197787442510356,
+          "drift": 0.004738036318576373
+        },
+        "drift_interval_coverage": 0.986328125,
+        "drift_beats_latest_trials": 511
+      },
+      {
+        "scenario": "matched_random_walk",
+        "trials": 512,
+        "rmse_rad": {
+          "latest": 0.006437554573832753,
+          "pooled": 0.00871655943144841,
+          "drift": 0.0061386237821170735
+        },
+        "drift_interval_coverage": 0.9503173828125,
+        "drift_beats_latest_trials": 370
+      },
+      {
+        "scenario": "unmodelled_jump",
+        "trials": 512,
+        "rmse_rad": {
+          "latest": 0.006524638859632441,
+          "pooled": 0.023523800641943874,
+          "drift": 0.008375061074591397
+        },
+        "drift_interval_coverage": 0.835205078125,
+        "drift_beats_latest_trials": 57
+      }
+    ]
+  }
+}
