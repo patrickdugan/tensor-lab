@@ -1,0 +1,46 @@
+{
+  "scope": "SYNTHETIC_TOY_LWR_AND_EXACT_COLLISION_THEOREM",
+  "initial": {
+    "delta": 0.75,
+    "trials": 72,
+    "dense_hits": 23,
+    "global_hits": 21,
+    "dense_rank_defects": 0,
+    "global_rank_defects": 8
+  },
+  "stronger": {
+    "delta": 0.99,
+    "trials": 24,
+    "dense_hits": 10,
+    "global_hits": 12
+  },
+  "regular": {
+    "delta": 0.99,
+    "trials": 6,
+    "hits": 5,
+    "full_rank": 6
+  },
+  "total_reductions": 102,
+  "unique_inputs": 78,
+  "verified_hits": 71,
+  "misses": 31,
+  "errors": 0,
+  "all_hits_original": true,
+  "embedding_controls": 408,
+  "determinant_checks": 102,
+  "collision_coordinate_checks": 87533,
+  "support_tuple_controls": 1243,
+  "prior_roster": 48,
+  "prior_dyadic_caps": 16,
+  "prior_dyadic_caps_with_collision": 15,
+  "prior_alternative_planted_preimages": 1,
+  "cpu_seconds": 250.929567681,
+  "archive_sha256": "a4bdab27fd1c331bf3c06cee562e324d38fd72d210b7befb307c9c042b634acb",
+  "source_blobs": {
+    "lattice_pilot.py": "af50dbf548240acf80fa38355d9de7881a37567b",
+    "collision_audit.py": "e74251fdd0a6415ff2fff3364c7c7f8c6bff180c",
+    "regular_replay.py": "34c67b164e977b95d1a58f594d857f5323520c45",
+    "prior_roster.py": "b05ea031db332470a698fb44ac378be4e1a3316f",
+    "verify_receipts.py": "f6307b446f8eb399a3dd1a9bb27036229ff8bdf9"
+  }
+}
