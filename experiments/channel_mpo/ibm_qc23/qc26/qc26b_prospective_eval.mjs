@@ -47,7 +47,9 @@ export function buildRows(frozen,meas){
     for(const s of sites){
       const row={id,n:f.n,depth:f.depth,seed:f.seed,path_class:f.path_class,bit:s.bit,physical:s.physical,measured:meas[id][s.bit]};
       for(const k of ['ideal',...modelsFor(frozen.format)])row[k]=s[k];
-      row.ledger=s.ledger;rows.push(row);
+      row.ledger={...s.ledger};
+      if(frozen.qpu04){const d=frozen.qpu04.predictions[id][s.bit];row.C3ZD=d.C3ZD;row.ledger.C3ZD=d.ledger;}
+      rows.push(row);
     }
   }
   return rows;
@@ -166,6 +168,42 @@ export function analyse(frozen,rows){
   return {groups:mt,sites,candidates:res};
 }
 
+// Separate C3Z-D report; no change to the original C0/C2/C3/C3Z verdicts.
+export function analyseQPU04(frozen,rows){
+  if(!frozen.qpu04)return null;
+  const T=rows.filter(isT),models=['C0','C3','C3Z','C3ZD'];
+  if(!rows.length||!T.length)throw Error('QPU04 requires target observations');
+  const all=metrics(rows,models),target=metrics(T,models);
+  const vsBase=(base,rs)=>({circuit:paired(rs,'C3ZD',BOOT.resamples,BOOT.seed,base),
+    paths:pathClustered(rs,'C3ZD',BOOT.resamples,BOOT.seed,base)});
+  const c0={all:vsBase('C0',rows),targets:vsBase('C0',T)};
+  const z={all:vsBase('C3Z',rows),targets:vsBase('C3Z',T)};
+  const relative=(a,b)=>a>0?(a-b)/a:null;
+  const sites=[...new Set(rows.map(r=>r.physical))].sort((a,b)=>a-b).map(physical=>{
+    const rs=rows.filter(r=>r.physical===physical),m=metrics(rs,models);
+    return {physical,n:rs.length,mae:m,other_site_degradation:!TARGETS.includes(physical)&&m.C3ZD-m.C0>THRESH.other_site_degradation,
+      degradation_vs_static:!TARGETS.includes(physical)&&m.C3ZD-m.C3Z>THRESH.other_site_degradation};
+  });
+  const ledger=ledgerSummary(rows,'C3ZD',['C3ZD']);
+  const ratio=all.C3ZD>0?ledger.candidate_max_min_bound/all.C3ZD:null;
+  const positive=x=>x.ci95[0]!==null&&x.ci95[0]>0;
+  const relAll=relative(all.C0,all.C3ZD),relTarget=relative(target.C0,target.C3ZD);
+  const criteria={
+    a_relative_improvement_ge_10pct:relAll!==null&&relTarget!==null&&relAll>=THRESH.rel_improvement&&relTarget>=THRESH.rel_improvement,
+    b_paired_ci_lower_positive:positive(c0.all.circuit)&&positive(c0.targets.circuit),
+    c_no_other_site_degradation_gt_0p005:!sites.some(s=>s.other_site_degradation),
+    d_ledger_bound_below_1pct_of_mae:ratio!==null&&ratio<THRESH.ledger_fraction_of_mae,
+    e_no_tuning_freeze_verified:true
+  };
+  const incremental=positive(z.all.circuit)&&positive(z.targets.circuit)&&positive(z.all.paths)&&positive(z.targets.paths)&&!sites.some(s=>s.degradation_vs_static);
+  return {label:frozen.qpu04.label,mae:{all,targets:target},relative_improvement_vs_C0:{all:relAll,targets:relTarget},
+    comparisons:{vs_C0:c0,vs_C3Z:z},criteria,verdict:Object.values(criteria).every(Boolean)?'PASS':'FAIL',
+    path_robustness_vs_C0:positive(c0.all.paths)&&positive(c0.targets.paths),
+    incremental_vs_static:incremental?'POSITIVE':'INCONCLUSIVE_OR_NEGATIVE',
+    sites,ledger,ledger_ratio:ratio,
+    note:'Exploratory extension, cannot substitute for C3. Path-cluster bootstrap describes within-block sensitivity, not between-cycle uncertainty.'};
+}
+
 function fmt(x,d=5){return Number.isFinite(x)?x.toFixed(d):String(x);}
 export function renderText(rep){
   const L=[];
@@ -197,6 +235,7 @@ export function renderText(rep){
     }
     L.push(`    VERDICT ${k}${k==='C3Z'?' (declared extension)':''}: ${c.verdict}${rep.synthetic?' (SYNTHETIC DRY RUN, not evidence)':''}`);
   }
+  if(rep.qpu04){const q=rep.qpu04;L.push('',q.label,'C3Z-D MAE all '+fmt(q.mae.all.C3ZD)+' / target '+fmt(q.mae.targets.C3ZD),'C3Z-D vs C0 '+q.verdict+'; incremental vs static '+q.incremental_vs_static);}
   return L.join('\n');
 }
 
@@ -209,7 +248,7 @@ export function run({frozenFile,buildDir,paramsFile,countsFile}){
   return {refused:false,label:synthetic?'SYNTHETIC DRY RUN - NOT HARDWARE DATA':'PROSPECTIVE EVALUATION',synthetic,
     frozen_sha256:frozen.sha256,plan_sha256:frozen.build.plan_sha256,params_sha256:frozen.params_sha256,
     counts_sha256:sha256(readLF(countsFile)),circuits:Object.keys(frozen.predictions).length,observables:rows.length,
-    freeze_check:{passed:true,checks:v.checks},thresholds:THRESH,bootstrap:BOOT,targets:TARGETS,controls:CONTROLS,analysis,rows};
+    freeze_check:{passed:true,checks:v.checks},thresholds:THRESH,bootstrap:BOOT,targets:TARGETS,controls:CONTROLS,analysis,rows,...(frozen.qpu04?{qpu04:analyseQPU04(frozen,rows)}:{})};
 }
 
 function main(){
