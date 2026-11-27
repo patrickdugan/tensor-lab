@@ -1,5 +1,7 @@
 # PGC-QPU campaign: consolidated report (2026-11-26 to 2026-11-27)
 
+**Review status:** the initial phase table and ledger below describe the offline build on November 26. The November 27 hardware section is the later acquisition record (34 s across 214 circuits, 336 s remaining as recorded). No QC-26B prospective hardware exists at this commit.
+
 Evidence labels used below: **exact** (algebra, Lean), **ideal sim**, **noisy sim**, **retrospective hardware** (archived Kingston counts), **prospective hardware** (none yet). No QPU time was consumed in this session. Emergent spacetime and Einstein dynamics are not addressed.
 
 ## Status in one table
@@ -41,7 +43,7 @@ The endpoint-local Z extension **C3Z** is declared separately from the original 
 
 ## Phase 4: PGC-QPU02
 
-See `qpu02/` and the MathCan note. Exact results: the intact circuit maps `|s,a0,b0,t0>` to `|s,a0+s,b0+s,t0+a0+b0>` so the target is independent of `s` in all eight contexts; a gate path from `s` to `t` exists; GHZ fidelity witness 1; cutting either path or resetting either middle register restores response magnitude 1; resetting both gives 0 and no structural path; dephasing one middle qubit keeps the response at 0 and drops the coherence witness to 0. Noisy simulation: diagonal coherent ZZ errors, crosstalk phases, depolarizing and symmetric readout error produce no Z-basis influence on the zero-response target; amplitude damping does (intact apparent influence 0.86% Kingston-like, 2.1% pessimistic; echo control 0.56% and 1.4%). With 2048 shots per arm the intact-minus-echo difference stays below 3 standard errors in both combined scenarios. The proposal has 30 circuits; the intact circuit compiles to 10 native CZ on FakeKingston because the 4-cycle does not embed in heavy-hex. A real build must re-select qubits from fresh calibration.
+See `qpu02/` and the MathCan note. Exact results: the intact circuit maps `|s,a0,b0,t0>` to `|s,a0+s,b0+s,t0+a0+b0>` so the target is independent of `s` in all eight contexts; a gate path from `s` to `t` exists; exact ideal GHZ+ state (fidelity 1); cutting either path or resetting either middle register restores response magnitude 1; resetting both gives 0 and no structural path; dephasing one middle qubit keeps the response at 0 and drops the coherence witness to 0. Noisy simulation: diagonal coherent ZZ errors, crosstalk phases, depolarizing and symmetric readout error produce no Z-basis influence on the zero-response target; amplitude damping does (intact apparent influence 0.86% Kingston-like, 2.1% pessimistic; echo control 0.56% and 1.4%). With 2048 shots per arm the intact-minus-echo difference stays below 3 standard errors in both combined scenarios. The proposal has 30 circuits; the intact circuit compiles to 10 native CZ on FakeKingston because the 4-cycle does not embed in heavy-hex. A real build must re-select qubits from fresh calibration.
 
 ## Phase 5: arithmetic holonomy and minimal observation sets
 
@@ -78,7 +80,7 @@ The Ramsey q23 block (13.19 s). It is the only planned job that directly measure
 | Ramsey q5 | dc4ne0thdvas73bq1hq0 | 66 | 9 s reported | counts archived, identified |
 | Ramsey q23 | dc4ngn2nj2vs73dkdrdg | 66 | 9 s reported | counts archived, identified (two earlier builds refused by the calibration-change gate, one submit attempt blocked by the permission classifier) |
 
-Remaining allocation after q5: 345 s; after q23: 336 s. Between the QC-26A receipt (360 s remaining) and the q5 `usage_before` (354 s) 6 s were consumed by something outside these receipts, most likely an earlier build and submit attempt by the owner; it is not attributed here.
+Remaining allocation after q5: 345 s; after q23: 336 s. Between the QC-26A receipt (360 s remaining) and the q5 `usage_before` (354 s) 6 s were consumed outside these archived receipts; source unverified.
 
 **QC-26A (200 bootstraps, 16 parameters, single dataset):** all four SX offsets are consistent with zero (point estimates -0.005 to +0.001 rad, bootstrap SE about 0.003), far below the retrospective fitted SX_5 of -0.019 and SX_23 of 0.1 (the 0.1 was at the fit bound). Conditional phases: 5-6 (stored as 6_5) delta +0.033 [0.021, 0.044]; 16-23 delta -0.026 [-0.038, -0.015]; 4-5, 22-23 and 4-3 consistent with zero; 22-21 flagged (xy-linearity, relaxation) and inconclusive. Endpoint phases of the probe: alpha on qubit 5 (probe of 6->5) +0.176; alpha on qubit 23 (probe of 16->23) -0.075; qubit 23 on 22-23 -0.033. Decision counts: 9 consistent with zero, 5 nonzero candidates pending replication, 2 inconclusive. These are not accepted as nonzero without a fresh independently shuffled block.
 
@@ -88,4 +90,11 @@ Remaining allocation after q5: 345 s; after q23: 336 s. Between the QC-26A recei
 
 **Ramsey q23 (200 joint-bitstring bootstraps, SPAM refit):** edge 16-23 delta -0.025 [-0.033, -0.019], alpha_23 -0.064 [-0.074, -0.053], alpha_16 +0.014 [0.004, 0.025]; edge 22-23 delta -0.008 [-0.015, -0.001], alpha_23 -0.032 [-0.042, -0.022], alpha_22 -0.010 [-0.022, 0.003]. Forward/reverse deltas agree on both edges; odd repetitions break the alias (chi-square gap 3.6e4 and 1.5e4); readout joint correlation 3e-4. Against QC-26A on the same edges: delta 16-23 -0.025 vs -0.026, delta 22-23 -0.008 vs -0.006, alpha_23 on 22-23 -0.032 vs -0.033, alpha_23 on 16-23 -0.064 vs -0.075 (intervals touch). Two independent experiments agree to within about 0.01 rad on every conditional phase; the effective ZZ near +-0.1 of the retrospective fit is not reproduced (measured 0.025 to 0.033 on 16-23 and 5-6). Still single datasets from one calibration cycle each; nothing is accepted as replicated. Total consumed by the three jobs: 16 + 9 + 9 = 34 s of provider time; remaining 336 s.
 
-**Next step:** write `params.json` from these independent estimates (SX offsets about 0, conditional phases and endpoint phases as measured), freeze with `qc26b_freeze.mjs` (C3 and the declared C3Z extension), commit and push, then build and run the QC-26B prospective block (13.86 s estimate).
+**Next step:** write `params.json` from these independent estimates (SX offsets about 0, conditional phases and endpoint phases as measured), build against fresh calibration, freeze with `qc26b_freeze.mjs` (C3 and the declared C3Z extension), commit and push, authorize and run the QC-26B prospective block (13.86 s estimate).
+
+## Independent review follow-up (offline)
+
+- Corrected the invalid GHZ expression (P+XXX)/2. Biseparable |+> tensor |Phi+> gives 0.75 under that expression. Use the unconditional reduced sab population and max(0,P+(XXX-1)/2). Historical qpu02_sim_results.json witness numbers are superseded; rerun the simulator before using them. Added full target Pauli operator identity tests.
+- The nominal Ramsey chi-square residuals for 5-6 and 16-23 are approximately 38 on 16 degrees of freedom; boundary/SPAM caveats apply. The companion ramsey_modelcheck.py compares bounded binomial constant-phase, relaxation and curvature models and m=8 extrapolation. No new model acceptance or replication is claimed.
+- QC-26B v3 binds scoring code, ledger recomputation, published freeze commit and owner authorization to the acquisition. Report the new path-clustered sensitivity analysis beside the original acceptance criteria.
+- Replicate q5/q23/QC-26A across calibration cycles before claiming physical persistence. QC-26B remains prospective and unrun. No additional provider time was consumed by review work.
