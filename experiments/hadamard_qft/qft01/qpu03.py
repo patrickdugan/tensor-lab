@@ -389,9 +389,17 @@ def freeze(select_path, out_path, b, shots=SHOTS):
     import qpu03_select as S
     sel = old.read(Path(select_path)); G, ERR, RO, OQ = T.load_topology(T_PATH)
     rows = sel['candidates']
+    rejected = []
     def best(mode, ms):
-        c = [r for r in rows if r['mode'] == mode and r['m'] in ms and r['esp'] > 0]
-        return max(c, key=lambda r: (r['esp'], -r['metrics']['cz']))
+        # Registered rule: highest ESP among candidates whose NATIVE circuit reproduces the logical circuit to 1e-8.
+        c = sorted([r for r in rows if r['mode'] == mode and r['m'] in ms and r['esp'] > 0], key=lambda r: (-r['esp'], r['metrics']['cz']))
+        for r in c:
+            gates, nw = W.core(b, r['mode'], r['m'], order=r['order'])
+            tc = T.transpile_core(gates, nw, G, r['shape'], seed=r['seed'], level=r['level'])
+            ok, err = T.verify_native(tc, gates, nw)
+            if ok: return r
+            rejected.append(dict(mode=r['mode'], m=r['m'], order=r['order'], shape=r['shape'], level=r['level'], seed=r['seed'], esp=r['esp'], cz=r['metrics']['cz'], native_vs_logical_max_entry_error=err))
+        raise SystemExit('no verified candidate')
     arms = []
     D = best('approx', (0,)); C = best('approx', (1, 2))
     Bx = best('exact', (1, 2)) if b <= 5 else None
@@ -424,7 +432,7 @@ def freeze(select_path, out_path, b, shots=SHOTS):
     design = dict(stage=f'b{b}', b=b, backend='ibm_kingston', shots=shots, calibration_timestamp=sel['calibration_timestamp'],
                   selection_file=Path(select_path).name, selection_sha256=sha_file(select_path), arms=arms, families=fam,
                   primary='edge contrast; simultaneous 95% Hoeffding (Bonferroni) over the registered signal and difference families',
-                  roster=ROSTER)
+                  roster=ROSTER, native_verification_tolerance=1e-8, rejected_candidates=rejected)
     old.write(Path(out_path), design)
     print(json.dumps({a['arm']: dict(kind=a['kind'], m=a.get('m'), esp=round(a['esp'], 4), cz=a['core_metrics'].get('cz', a['core_metrics'].get('cz')), nodes=a.get('phys', a.get('nodes'))) for a in arms}, indent=1))
 

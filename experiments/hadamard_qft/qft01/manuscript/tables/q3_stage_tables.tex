@@ -1,0 +1,70 @@
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{QPU03, $b=5$, replicate 0: compiled resources and phase contrast, 1024 shots per circuit, raw counts. Native counts, depth and duration are for the edge phase circuit. $C$ is the edge contrast (ideal 1) with its simultaneous lower bound (Hoeffding, Bonferroni over 4 arms, 95\%). Leakage is the mean probability of a workspace readout of 1 in the plus and minus circuits (ideal 0); the control leakage is the same quantity with no transform.}\label{tab:q3-b5r0}
+\begin{tabular}{llrrrrrrrrr}\toprule Arm & $m$ & Native 2q & 2q depth & Dur. ($\mu$s) & ESP & $C$ & lower bound & mean TV & Leakage & Ctl.\ leak.\\\midrule
+A & 0 & 218 & 206 & 24.0 & 0.70 & 0.196 & +0.126 & 0.685 & 0.000 & 0.000\\
+B & 1 & 175 & 153 & 20.3 & 0.73 & 0.401 & +0.331 & 0.490 & 0.404 & 0.001\\
+C & 1 & 102 & 90 & 12.8 & 0.80 & 0.534 & +0.464 & 0.365 & 0.776 & 0.001\\
+D & 0 & 95 & 92 & 13.5 & 0.82 & 0.487 & +0.417 & 0.388 & 0.000 & 0.000\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{QPU03, $b=5$, replicate 0: registered edge-contrast differences. Simultaneous intervals use Hoeffding with Bonferroni over the 4 registered comparisons; unadjusted 95\% intervals are shown for reference. Middle and tail probes are secondary.}\label{tab:q3d-b5r0}
+\begin{tabular}{llrcc}\toprule Comparison & Probe & Difference & Simultaneous interval & Unadjusted interval\\\midrule
+B $-$ A & edge & +0.205 & [+0.106,+0.305] & [+0.120,+0.290]\\
+B $-$ A & middle & -0.106 & [-0.206,-0.007] & [-0.191,-0.022]\\
+B $-$ A & tail & +0.115 & [+0.016,+0.215] & [+0.030,+0.200]\\
+C $-$ A & edge & +0.338 & [+0.238,+0.437] & [+0.253,+0.423]\\
+C $-$ A & middle & +0.298 & [+0.198,+0.397] & [+0.213,+0.383]\\
+C $-$ A & tail & +0.092 & [-0.008,+0.191] & [+0.007,+0.177]\\
+D $-$ A & edge & +0.291 & [+0.191,+0.391] & [+0.206,+0.376]\\
+D $-$ A & middle & +0.194 & [+0.095,+0.294] & [+0.109,+0.279]\\
+D $-$ A & tail & +0.204 & [+0.105,+0.304] & [+0.119,+0.289]\\
+C $-$ D & edge & +0.047 & [-0.053,+0.146] & [-0.038,+0.132]\\
+C $-$ D & middle & +0.104 & [+0.004,+0.203] & [+0.019,+0.188]\\
+C $-$ D & tail & -0.112 & [-0.212,-0.013] & [-0.197,-0.027]\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{QPU03, $b=6$, replicate 0: compiled resources and phase contrast, 1024 shots per circuit, raw counts. Native counts, depth and duration are for the edge phase circuit. $C$ is the edge contrast (ideal 1) with its simultaneous lower bound (Hoeffding, Bonferroni over 3 arms, 95\%). Leakage is the mean probability of a workspace readout of 1 in the plus and minus circuits (ideal 0); the control leakage is the same quantity with no transform.}\label{tab:q3-b6r0}
+\begin{tabular}{llrrrrrrrrr}\toprule Arm & $m$ & Native 2q & 2q depth & Dur. ($\mu$s) & ESP & $C$ & lower bound & mean TV & Leakage & Ctl.\ leak.\\\midrule
+A & 0 & 434 & 400 & 43.7 & 0.48 & 0.046 & -0.022 & 0.801 & 0.000 & 0.000\\
+C & 1 & 189 & 165 & 20.4 & 0.68 & 0.363 & +0.295 & 0.470 & 0.104 & 0.025\\
+D & 0 & 178 & 153 & 20.4 & 0.72 & 0.337 & +0.269 & 0.501 & 0.000 & 0.000\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{QPU03, $b=6$, replicate 0: registered edge-contrast differences. Simultaneous intervals use Hoeffding with Bonferroni over the 3 registered comparisons; unadjusted 95\% intervals are shown for reference. Middle and tail probes are secondary.}\label{tab:q3d-b6r0}
+\begin{tabular}{llrcc}\toprule Comparison & Probe & Difference & Simultaneous interval & Unadjusted interval\\\midrule
+C $-$ A & edge & +0.317 & [+0.221,+0.414] & [+0.233,+0.402]\\
+C $-$ A & middle & +0.091 & [-0.006,+0.188] & [+0.006,+0.176]\\
+C $-$ A & tail & +0.197 & [+0.101,+0.294] & [+0.112,+0.282]\\
+D $-$ A & edge & +0.291 & [+0.194,+0.388] & [+0.206,+0.376]\\
+D $-$ A & middle & +0.230 & [+0.134,+0.327] & [+0.146,+0.315]\\
+D $-$ A & tail & +0.212 & [+0.115,+0.309] & [+0.127,+0.297]\\
+C $-$ D & edge & +0.026 & [-0.070,+0.123] & [-0.059,+0.111]\\
+C $-$ D & middle & -0.140 & [-0.236,-0.043] & [-0.225,-0.055]\\
+C $-$ D & tail & -0.015 & [-0.111,+0.082] & [-0.100,+0.070]\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{QPU03, $b=6$, replicate 1: compiled resources and phase contrast, 1024 shots per circuit, raw counts. Native counts, depth and duration are for the edge phase circuit. $C$ is the edge contrast (ideal 1) with its simultaneous lower bound (Hoeffding, Bonferroni over 3 arms, 95\%). Leakage is the mean probability of a workspace readout of 1 in the plus and minus circuits (ideal 0); the control leakage is the same quantity with no transform.}\label{tab:q3-b6r1}
+\begin{tabular}{llrrrrrrrrr}\toprule Arm & $m$ & Native 2q & 2q depth & Dur. ($\mu$s) & ESP & $C$ & lower bound & mean TV & Leakage & Ctl.\ leak.\\\midrule
+A & 0 & 434 & 400 & 43.7 & 0.46 & 0.096 & +0.027 & 0.799 & 0.000 & 0.000\\
+C & 1 & 184 & 160 & 19.7 & 0.65 & 0.473 & +0.404 & 0.400 & 0.121 & 0.002\\
+D & 0 & 185 & 163 & 20.5 & 0.68 & 0.417 & +0.349 & 0.451 & 0.000 & 0.000\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{QPU03, $b=6$, replicate 1: registered edge-contrast differences. Simultaneous intervals use Hoeffding with Bonferroni over the 3 registered comparisons; unadjusted 95\% intervals are shown for reference. Middle and tail probes are secondary.}\label{tab:q3d-b6r1}
+\begin{tabular}{llrcc}\toprule Comparison & Probe & Difference & Simultaneous interval & Unadjusted interval\\\midrule
+C $-$ A & edge & +0.377 & [+0.280,+0.474] & [+0.292,+0.462]\\
+C $-$ A & middle & +0.225 & [+0.128,+0.321] & [+0.140,+0.309]\\
+C $-$ A & tail & +0.295 & [+0.198,+0.392] & [+0.210,+0.380]\\
+D $-$ A & edge & +0.321 & [+0.225,+0.418] & [+0.236,+0.406]\\
+D $-$ A & middle & +0.246 & [+0.149,+0.343] & [+0.161,+0.331]\\
+D $-$ A & tail & +0.186 & [+0.089,+0.282] & [+0.101,+0.270]\\
+C $-$ D & edge & +0.056 & [-0.041,+0.152] & [-0.029,+0.141]\\
+C $-$ D & middle & -0.021 & [-0.118,+0.075] & [-0.106,+0.063]\\
+C $-$ D & tail & +0.109 & [+0.013,+0.206] & [+0.024,+0.194]\\
+\bottomrule\end{tabular}\end{table}
+

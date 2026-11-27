@@ -1,0 +1,312 @@
+{
+  "arms": [
+    {
+      "arm": "C",
+      "core_metrics": {
+        "cz": 320,
+        "cz_depth": 248,
+        "depth": 835,
+        "rz": 414,
+        "size": 1463,
+        "sx": 689,
+        "x": 40
+      },
+      "esp": 0.537181232247016,
+      "kind": "ws",
+      "level": 3,
+      "logical_cx": 150,
+      "m": 1,
+      "mode": "approx",
+      "order": "rev",
+      "phys": [
+        153,
+        152,
+        151,
+        150,
+        149,
+        148,
+        147,
+        138
+      ],
+      "seed": 4,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        37
+      ]
+    },
+    {
+      "arm": "D",
+      "core_metrics": {
+        "cz": 320,
+        "cz_depth": 259,
+        "depth": 954,
+        "rz": 482,
+        "size": 1525,
+        "sx": 691,
+        "x": 32
+      },
+      "esp": 0.5106684241517349,
+      "kind": "ws",
+      "level": 3,
+      "logical_cx": 188,
+      "m": 0,
+      "mode": "approx",
+      "order": "rev",
+      "phys": [
+        51,
+        58,
+        71,
+        70,
+        69,
+        72,
+        73
+      ],
+      "seed": 0,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        37,
+        45
+      ]
+    }
+  ],
+  "b": 7,
+  "backend": "ibm_kingston",
+  "calibration_timestamp": "2026-11-28T00:19:05+08:00",
+  "families": {
+    "difference": [
+      [
+        "C",
+        "D"
+      ]
+    ],
+    "signal": [
+      "C",
+      "D"
+    ]
+  },
+  "native_verification_tolerance": 1e-08,
+  "primary": "edge contrast; simultaneous 95% Hoeffding (Bonferroni) over the registered signal and difference families",
+  "rejected_candidates": [
+    {
+      "cz": 340,
+      "esp": 0.5447613392946224,
+      "level": 3,
+      "m": 0,
+      "mode": "approx",
+      "native_vs_logical_max_entry_error": 5.394806596868169e-06,
+      "order": null,
+      "seed": 4,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        37
+      ]
+    },
+    {
+      "cz": 340,
+      "esp": 0.5447613392946224,
+      "level": 2,
+      "m": 0,
+      "mode": "approx",
+      "native_vs_logical_max_entry_error": 5.3948065969824475e-06,
+      "order": null,
+      "seed": 4,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        37
+      ]
+    },
+    {
+      "cz": 340,
+      "esp": 0.5446178444342072,
+      "level": 3,
+      "m": 0,
+      "mode": "approx",
+      "native_vs_logical_max_entry_error": 5.39480659691459e-06,
+      "order": null,
+      "seed": 0,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        37
+      ]
+    },
+    {
+      "cz": 340,
+      "esp": 0.5446178444342072,
+      "level": 2,
+      "m": 0,
+      "mode": "approx",
+      "native_vs_logical_max_entry_error": 5.394806597052963e-06,
+      "order": null,
+      "seed": 0,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        37
+      ]
+    },
+    {
+      "cz": 364,
+      "esp": 0.5246625602565911,
+      "level": 3,
+      "m": 0,
+      "mode": "approx",
+      "native_vs_logical_max_entry_error": 5.394806596754227e-06,
+      "order": "near",
+      "seed": 6,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        37
+      ]
+    },
+    {
+      "cz": 364,
+      "esp": 0.5246625602565911,
+      "level": 2,
+      "m": 0,
+      "mode": "approx",
+      "native_vs_logical_max_entry_error": 5.3948065969640135e-06,
+      "order": "near",
+      "seed": 6,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        37
+      ]
+    },
+    {
+      "cz": 364,
+      "esp": 0.5245243595888506,
+      "level": 3,
+      "m": 0,
+      "mode": "approx",
+      "native_vs_logical_max_entry_error": 5.3948065971617914e-06,
+      "order": "near",
+      "seed": 0,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        37
+      ]
+    },
+    {
+      "cz": 364,
+      "esp": 0.5245243595888506,
+      "level": 2,
+      "m": 0,
+      "mode": "approx",
+      "native_vs_logical_max_entry_error": 5.394806597301978e-06,
+      "order": "near",
+      "seed": 0,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        37
+      ]
+    },
+    {
+      "cz": 371,
+      "esp": 0.5202684888810077,
+      "level": 3,
+      "m": 0,
+      "mode": "approx",
+      "native_vs_logical_max_entry_error": 5.394806596917022e-06,
+      "order": null,
+      "seed": 26,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        37
+      ]
+    },
+    {
+      "cz": 383,
+      "esp": 0.5162842241954797,
+      "level": 3,
+      "m": 0,
+      "mode": "approx",
+      "native_vs_logical_max_entry_error": 5.394806596308225e-06,
+      "order": "near",
+      "seed": 1,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        37
+      ]
+    }
+  ],
+  "roster": {
+    "edge": [
+      "plus",
+      "minus",
+      "imag",
+      "basis0",
+      "basis1"
+    ],
+    "middle": [
+      "plus",
+      "minus"
+    ],
+    "tail": [
+      "plus",
+      "minus"
+    ]
+  },
+  "selection_file": "select_b7.json",
+  "selection_sha256": "a827ccbd163e918f98b15024689dbd7215ce4d444769542cfb372cf287863880",
+  "shots": 1024,
+  "stage": "b7"
+}
