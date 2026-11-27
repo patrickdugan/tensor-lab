@@ -1,0 +1,9 @@
+OPENQASM 3.0;
+include "stdgates.inc";
+bit[3] meas;
+x $48;
+x $49;
+barrier $38, $49, $48;
+meas[0] = measure $38;
+meas[1] = measure $49;
+meas[2] = measure $48;
