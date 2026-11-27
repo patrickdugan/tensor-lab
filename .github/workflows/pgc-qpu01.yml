@@ -44,3 +44,8 @@ jobs:
           for block in q5 q23; do
             python ramsey_modelcheck.py --compiled receipts/live_20261127/$block/compiled.json --counts receipts/live_20261127/$block/counts.json --out /tmp/modelcheck_$block.json
           done
+      - name: Replay nonlinear Bayesian design pilot
+        working-directory: experiments/channel_mpo/ibm_qc23/pgc_qpu/bpd/nonlinear
+        run: |
+          node bpd_qpu02.mjs 32 > /tmp/bpd_qpu02.json
+          node check_pilot.mjs pilot_32.json /tmp/bpd_qpu02.json
