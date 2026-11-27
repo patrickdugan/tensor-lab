@@ -29,3 +29,21 @@ def test_qiskit_reference():
     pytest.importorskip('qiskit')
     from qpu01 import qiskit_check
     for b in (3,4): qiskit_check(plan(b))
+
+def test_fake_backend_isa():
+    import pytest
+    pytest.importorskip('qiskit')
+    from qiskit.providers.fake_provider import GenericBackendV2
+    from qiskit.quantum_info import Statevector
+    from qpu01 import hardware_helpers, circuit
+    h=hardware_helpers()
+    for b in (3,4):
+        edges=[e for i in range(b-1) for e in ([i,i+1],[i+1,i])]
+        backend=GenericBackendV2(num_qubits=b,basis_gates=['id','rz','sx','x','cx'],coupling_map=edges,seed=271126)
+        order=[int(f'{i:0{b}b}'[::-1],2) for i in range(1<<b)]
+        for row in plan(b)['rows']:
+            isa=h['transpile_on_path'](backend,circuit(row,b),list(range(b)),optimization_level=0)
+            h['audit_mapping'](isa,list(range(b)),b)
+            u=isa.remove_final_measurements(inplace=False)
+            got=Statevector.from_instruction(u).probabilities()[order]
+            assert np.max(abs(got-row['ideal']))<1e-10
