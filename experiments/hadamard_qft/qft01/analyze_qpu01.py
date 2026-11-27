@@ -102,6 +102,7 @@ def analyze_stage(stage_dir, label):
         h = boot(cv, lambda x: hfid(x, q), rng); e['hf_ci'] = ci(h)
         e['floor'] = ideal_floor(q, rng)
         e['excess_tv'] = e['tv'] - e['floor']['tv_mean']
+        e['uniform_tv'] = tv(np.full(len(q), 1. / len(q)), q)
         if r['basis'] in ('X', 'Y'):
             e['parity_obs'] = parity(p, b); e['parity_ideal'] = parity(q, b)
             pb = boot(cv, lambda x: parity(x, b), rng); e['parity_ci'] = ci(pb)
@@ -143,6 +144,7 @@ def analyze_stage(stage_dir, label):
                           mean_tv_coherent=float(np.mean([v['tv'] for v in c])),
                           mean_hf=float(np.mean([v['hf'] for v in f])), mean_hf_coherent=float(np.mean([v['hf'] for v in c])),
                           mean_echo=float(np.mean([v['p0'] for v in e])), mean_floor_tv=float(np.mean([v['floor']['tv_mean'] for v in f])),
+                          mean_uniform_tv=float(np.mean([v['uniform_tv'] for v in f])),
                           n_forward=len(f), n_echo=len(e))
     sp = [v for v in res.values() if v['arm'] == 'spam']; pe = [v for v in res.values() if v['arm'] == 'prep']
     controls = dict(spam_mean_correct=float(np.mean([v['p0'] if v['probe'] == '0' else
@@ -184,7 +186,7 @@ def latex_tables(a, path):
     b = a['b']; r = a['resources']; s = a['summary']
     L = []
     L.append(r'\begin{table}[htbp]\centering\small')
-    L.append(rf'\caption{{Stage $b={b}$ compiled resources for the core transform on {a["backend"]} (physical qubits {a["path"]}). Counts are IBM ISA native gates at optimization level 0; duration is the calibrated schedule length of one shot.}}')
+    L.append(rf'\caption{{Stage $b={b}$ compiled resources for the core transform on {a["backend"].replace("_", chr(92) + "_")} (physical qubits {a["path"]}). Counts are IBM ISA native gates at optimization level 0; duration is the calibrated schedule length of one shot.}}')
     L.append(rf'\label{{tab:hw-res-b{b}}}\begin{{tabular}}{{lrr}}\toprule Quantity & Gray shell & Recursive\\\midrule')
     for k, n in (('logical_cx', 'Logical CNOT (with label conversion)'), ('line_cx', 'Nearest-neighbor CNOT after bridging'),
                  ('cz', 'Native two-qubit gates'), ('cz_depth', 'Two-qubit depth'), ('depth', 'Circuit depth'),
@@ -236,8 +238,8 @@ def figures(stages, outdir):
             bars = ax[0, j].bar(x + (i - .5) * w, vals, w, color=col[arm], hatch=hat[arm], edgecolor='white' if arm == 'recursive' else 'black', linewidth=.5, label='Gray shell' if arm == 'gray' else 'Recursive')
             for bb, v in zip(bars, vals): ax[0, j].text(bb.get_x() + bb.get_width() / 2, v, f'{v:.0f}' if v > 20 else f'{v:.1f}', ha='center', va='bottom', fontsize=7)
         ax[0, j].set_xticks(x); ax[0, j].set_xticklabels(labs); ax[0, j].set_title(f'$b={a["b"]}$ ({2**(2**a["b"]-1)} positions)')
-        ax[0, j].set_yscale('log')
-    ax[0, 0].legend(frameon=False, loc='upper left'); ax[0, 0].set_ylabel('Count (log scale)')
+        ax[0, j].set_yscale('log'); ax[0, j].set_ylim(top=ax[0, j].get_ylim()[1] * 2.2)
+    ax[0, 0].legend(frameon=False, loc='upper left', fontsize=7); ax[0, 0].set_ylabel('Count (log scale)')
     fig.tight_layout(); fig.savefig(outdir / 'hw_resources.pdf'); fig.savefig(outdir / 'hw_resources.png', dpi=200); plt.close(fig)
     # Fig 2: paired TV per probe with CI, plus floor
     fig, ax = plt.subplots(1, len(stages), figsize=(6.4, 2.9), squeeze=False)
@@ -251,7 +253,9 @@ def figures(stages, outdir):
             ax[0, j].errorbar(x + (i - .5) * .18, ys, yerr=[[y - l[0] for y, l in zip(ys, lo)], [l[1] - y for y, l in zip(ys, lo)]],
                               fmt=mk[arm], color=col[arm], ms=4.5, capsize=2, lw=.8, label='Gray shell' if arm == 'gray' else 'Recursive')
         fl = np.mean([v['floor']['tv_mean'] for v in a['rows'] if v['arm'] in ARMS and v['basis'] != 'echo'])
-        ax[0, j].axhline(fl, color='0.45', lw=.7, ls=':'); ax[0, j].text(len(fw) - .5, fl, 'ideal-sampling floor', ha='right', va='bottom', fontsize=7, color='0.35')
+        ax[0, j].axhline(fl, color='0.45', lw=.7, ls=':'); ax[0, j].text(len(fw) - .5, fl + .01, 'ideal-sampling floor', ha='right', va='bottom', fontsize=7, color='0.35')
+        un = a['summary']['gray']['mean_uniform_tv']
+        ax[0, j].axhline(un, color='0.45', lw=.7, ls='--'); ax[0, j].text(len(fw) - .5, un + .01, 'uniform-noise reference', ha='right', va='bottom', fontsize=7, color='0.35')
         ax[0, j].set_xticks(x); ax[0, j].set_xticklabels([f"{p['probe']}\n{p['basis']}" for p in fw], fontsize=7)
         ax[0, j].set_title(f'$b={a["b"]}$'); ax[0, j].set_ylim(0, 1.0)
     ax[0, 0].set_ylabel('Total variation from ideal'); ax[0, 0].legend(frameon=False, loc='upper left', fontsize=7)

@@ -32,3 +32,7 @@ python qpu01.py collect --out results_local/qft3
 ```
 
 Submit writes the provider job ID immediately; collect retrieves existing job only. If a started marker exists without job ID, inspect the account job history before any manual retry. Never regenerate an authorization to work around a calibration/plan mismatch. Rebuild and obtain fresh authorization instead. Save compiled.json, calibration snapshots, QASM/QPY hashes, raw counts, analysis.json, execution receipt and usage before/after; exclude authorization, account secrets, and local configuration from public commits. Paper remains a working draft; hardware results must be added only after receipt validation.
+
+## Execution record
+
+Executed 27 November 2026 on ibm_kingston: Stage A job dc4n8nmq4uuc73a94qa0 (5 QPU s) and Stage B job dc4nal6q4uuc73a94sm0 (6 QPU s). The statements above about missing Qiskit packages describe the earlier offline environment; the QC23 environment (Qiskit 2.6.2, qiskit-ibm-runtime 0.52.0) was used for the run. Raw counts, receipts and reproduction steps are in hardware_results/README.md. Use owner_submit.ps1 -B <3|4> -Hash <printed plan hash> for the owner step.

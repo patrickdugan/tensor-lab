@@ -1,0 +1,399 @@
+{
+  "paired_tv_gray_minus_recursive": [
+    {
+      "basis": "X",
+      "difference": 0.13802083333333337,
+      "probe": "last"
+    },
+    {
+      "basis": "X",
+      "difference": 0.1393069565330114,
+      "probe": "zero"
+    },
+    {
+      "basis": "Z",
+      "difference": 0.015625,
+      "probe": "zero"
+    },
+    {
+      "basis": "Y",
+      "difference": -0.002604166666666685,
+      "probe": "imag"
+    },
+    {
+      "basis": "X",
+      "difference": -0.05468750000000011,
+      "probe": "plus"
+    },
+    {
+      "basis": "Z",
+      "difference": 0.01821390787760413,
+      "probe": "imag"
+    },
+    {
+      "basis": "Z",
+      "difference": -0.0546875,
+      "probe": "last"
+    },
+    {
+      "basis": "Z",
+      "difference": 0.0961809386802609,
+      "probe": "plus"
+    }
+  ],
+  "rows": [
+    {
+      "arm": "gray",
+      "basis": "X",
+      "hellinger_fidelity": 0.46476960866067896,
+      "id": "gray_last_X",
+      "probability_zero": 0.059895833333333336,
+      "probe": "last",
+      "tv": 0.5156249999999998
+    },
+    {
+      "arm": "gray",
+      "basis": "X",
+      "hellinger_fidelity": 0.5598499091650675,
+      "id": "gray_zero_X",
+      "probability_zero": 0.08333333333333333,
+      "probe": "zero",
+      "tv": 0.5513602214737313
+    },
+    {
+      "arm": "recursive",
+      "basis": "Z",
+      "hellinger_fidelity": 0.6765598217230788,
+      "id": "recursive_imag_Z",
+      "probability_zero": 0.14583333333333334,
+      "probe": "imag",
+      "tv": 0.41150410970052087
+    },
+    {
+      "arm": "gray",
+      "basis": "echo",
+      "hellinger_fidelity": 0.08333333333333333,
+      "id": "gray_imag_echo",
+      "probability_zero": 0.08333333333333333,
+      "probe": "imag",
+      "tv": 0.9166666666666666
+    },
+    {
+      "arm": "recursive",
+      "basis": "echo",
+      "hellinger_fidelity": 0.03906250000000001,
+      "id": "recursive_imag_echo",
+      "probability_zero": 0.0390625,
+      "probe": "imag",
+      "tv": 0.9609375
+    },
+    {
+      "arm": "gray",
+      "basis": "Z",
+      "hellinger_fidelity": 0.5468279948311615,
+      "id": "gray_zero_Z",
+      "probability_zero": 0.09375,
+      "probe": "zero",
+      "tv": 0.5286458333333334
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9843750000000001,
+      "id": "spam_15",
+      "probability_zero": 0.0,
+      "probe": "15",
+      "tv": 0.015625
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9791666666666666,
+      "id": "spam_08",
+      "probability_zero": 0.010416666666666666,
+      "probe": "8",
+      "tv": 0.02083333333333335
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9765625,
+      "id": "spam_09",
+      "probability_zero": 0.0,
+      "probe": "9",
+      "tv": 0.0234375
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9817708333333334,
+      "id": "spam_07",
+      "probability_zero": 0.0,
+      "probe": "7",
+      "tv": 0.018229166666666647
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9869791666666666,
+      "id": "spam_00",
+      "probability_zero": 0.9869791666666666,
+      "probe": "0",
+      "tv": 0.013020833333333351
+    },
+    {
+      "arm": "recursive",
+      "basis": "Y",
+      "hellinger_fidelity": 0.8639125403711433,
+      "id": "recursive_imag_Y",
+      "probability_zero": 0.078125,
+      "probe": "imag",
+      "tv": 0.31495084764831827
+    },
+    {
+      "arm": "recursive",
+      "basis": "X",
+      "hellinger_fidelity": 0.6142249669158595,
+      "id": "recursive_last_X",
+      "probability_zero": 0.028645833333333332,
+      "probe": "last",
+      "tv": 0.3776041666666664
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.96875,
+      "id": "spam_14",
+      "probability_zero": 0.0,
+      "probe": "14",
+      "tv": 0.03125
+    },
+    {
+      "arm": "gray",
+      "basis": "Y",
+      "hellinger_fidelity": 0.8462219679185172,
+      "id": "gray_imag_Y",
+      "probability_zero": 0.0390625,
+      "probe": "imag",
+      "tv": 0.3123466809816516
+    },
+    {
+      "arm": "recursive",
+      "basis": "Z",
+      "hellinger_fidelity": 0.7234368263546083,
+      "id": "recursive_plus_Z",
+      "probability_zero": 0.16927083333333334,
+      "probe": "plus",
+      "tv": 0.3853044738365109
+    },
+    {
+      "arm": "recursive",
+      "basis": "Z",
+      "hellinger_fidelity": 0.3922752004560286,
+      "id": "recursive_last_Z",
+      "probability_zero": 0.2994791666666667,
+      "probe": "last",
+      "tv": 0.5859375000000001
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9895833333333334,
+      "id": "spam_01",
+      "probability_zero": 0.005208333333333333,
+      "probe": "1",
+      "tv": 0.010416666666666649
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9869791666666666,
+      "id": "spam_03",
+      "probability_zero": 0.0,
+      "probe": "3",
+      "tv": 0.013020833333333351
+    },
+    {
+      "arm": "recursive",
+      "basis": "Z",
+      "hellinger_fidelity": 0.5785991679010019,
+      "id": "recursive_zero_Z",
+      "probability_zero": 0.059895833333333336,
+      "probe": "zero",
+      "tv": 0.5130208333333334
+    },
+    {
+      "arm": "gray",
+      "basis": "X",
+      "hellinger_fidelity": 0.6886940936998313,
+      "id": "gray_plus_X",
+      "probability_zero": 0.08854166666666667,
+      "probe": "plus",
+      "tv": 0.4769096513539087
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9817708333333334,
+      "id": "spam_05",
+      "probability_zero": 0.0,
+      "probe": "5",
+      "tv": 0.018229166666666647
+    },
+    {
+      "arm": "recursive",
+      "basis": "X",
+      "hellinger_fidelity": 0.5933792713843825,
+      "id": "recursive_plus_X",
+      "probability_zero": 0.06510416666666667,
+      "probe": "plus",
+      "tv": 0.5315971513539088
+    },
+    {
+      "arm": "gray",
+      "basis": "echo",
+      "hellinger_fidelity": 0.06510416666666667,
+      "id": "gray_plus_echo",
+      "probability_zero": 0.06510416666666667,
+      "probe": "plus",
+      "tv": 0.9348958333333335
+    },
+    {
+      "arm": "recursive",
+      "basis": "echo",
+      "hellinger_fidelity": 0.07812500000000001,
+      "id": "recursive_plus_echo",
+      "probability_zero": 0.078125,
+      "probe": "plus",
+      "tv": 0.921875
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9817708333333334,
+      "id": "spam_02",
+      "probability_zero": 0.0078125,
+      "probe": "2",
+      "tv": 0.018229166666666647
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9713541666666666,
+      "id": "spam_13",
+      "probability_zero": 0.0,
+      "probe": "13",
+      "tv": 0.02864583333333335
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9739583333333334,
+      "id": "spam_10",
+      "probability_zero": 0.0,
+      "probe": "10",
+      "tv": 0.026041666666666647
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9609375000000001,
+      "id": "spam_11",
+      "probability_zero": 0.0,
+      "probe": "11",
+      "tv": 0.0390625
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9843750000000001,
+      "id": "spam_12",
+      "probability_zero": 0.0,
+      "probe": "12",
+      "tv": 0.015625
+    },
+    {
+      "arm": "gray",
+      "basis": "Z",
+      "hellinger_fidelity": 0.6468569770090408,
+      "id": "gray_imag_Z",
+      "probability_zero": 0.1796875,
+      "probe": "imag",
+      "tv": 0.429718017578125
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9947916666666665,
+      "id": "spam_04",
+      "probability_zero": 0.005208333333333333,
+      "probe": "4",
+      "tv": 0.005208333333333351
+    },
+    {
+      "arm": "gray",
+      "basis": "Z",
+      "hellinger_fidelity": 0.39086353320389194,
+      "id": "gray_last_Z",
+      "probability_zero": 0.4088541666666667,
+      "probe": "last",
+      "tv": 0.5312500000000001
+    },
+    {
+      "arm": "recursive",
+      "basis": "X",
+      "hellinger_fidelity": 0.7070517058041167,
+      "id": "recursive_zero_X",
+      "probability_zero": 0.11197916666666667,
+      "probe": "zero",
+      "tv": 0.4120532649407199
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9869791666666666,
+      "id": "spam_06",
+      "probability_zero": 0.0,
+      "probe": "6",
+      "tv": 0.013020833333333351
+    },
+    {
+      "arm": "prep",
+      "basis": "echo",
+      "hellinger_fidelity": 0.7317708333333334,
+      "id": "prep_imag",
+      "probability_zero": 0.7317708333333334,
+      "probe": "imag",
+      "tv": 0.26822916666666663
+    },
+    {
+      "arm": "prep",
+      "basis": "echo",
+      "hellinger_fidelity": 0.7578125,
+      "id": "prep_plus",
+      "probability_zero": 0.7578125,
+      "probe": "plus",
+      "tv": 0.2421875
+    },
+    {
+      "arm": "gray",
+      "basis": "Z",
+      "hellinger_fidelity": 0.6017840994278378,
+      "id": "gray_plus_Z",
+      "probability_zero": 0.1796875,
+      "probe": "plus",
+      "tv": 0.4814854125167718
+    }
+  ],
+  "scope": "DESCRIPTIVE_EXPLORATORY_RAW_COUNTS",
+  "summary": {
+    "gray": {
+      "mean_echo_return": 0.07421875,
+      "mean_forward_tv": 0.4784176021546902
+    },
+    "recursive": {
+      "mean_echo_return": 0.05859375,
+      "mean_forward_tv": 0.44149654343499733
+    }
+  }
+}
