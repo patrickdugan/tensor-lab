@@ -1,0 +1,9 @@
+{
+  "authorized": true,
+  "backend": "ibm_kingston",
+  "plan_sha256": "2ff47b05b8204845204a2367b05f69d0dd272e6af1ac5a5c8543f2f1fad7b87b",
+  "max_qpu_seconds": 15,
+  "authorized_by": "Patrick Dugan, chat instruction DO IT, 2026-11-27",
+  "acknowledge_estimate_not_hard_limit": true,
+  "checked_current_allocation": true
+}

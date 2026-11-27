@@ -1,0 +1,510 @@
+{
+  "cz": {
+    "16_23": {
+      "alpha": {
+        "16": 0.019001937468589247,
+        "23": -0.067891603419314
+      },
+      "delta": -0.023157980860858185
+    },
+    "22_23": {
+      "alpha": {
+        "22": 3.387097749740775e-05,
+        "23": -0.031288184938357944
+      },
+      "delta": -0.006793152051859375
+    },
+    "4_5": {
+      "alpha": {
+        "4": -0.012796235465644568,
+        "5": 0.009068782131406827
+      },
+      "delta": -0.005373940046914605
+    },
+    "5_6": {
+      "alpha": {
+        "5": 0.1772688208495965,
+        "6": 0.01147082562210855
+      },
+      "delta": 0.02398895200450535
+    }
+  },
+  "meta": {
+    "pgc_qpu04": {
+      "backend": "ibm_kingston",
+      "epochs": [
+        {
+          "blocks": {
+            "q23": {
+              "calibration_timestamp": "2026-11-27T20:10:02+08:00",
+              "counts_sha256": "3f9317a12fbe66cc379adae27938c6db7f6c304a26261e9f48d17de2a604d491",
+              "fit_count_hash_bound": false,
+              "fit_path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/analysis/ramsey_q23_identify.json",
+              "job_id": "dc4ngn2nj2vs73dkdrdg",
+              "ordering_seed": null,
+              "plan_sha256": "a9676a7c71616cdafa8cc1ffbfb9c881e99a2cbe3689575a10e57e2cb289d984",
+              "submitted_at": "2026-11-27T12:32:30.377838+00:00"
+            },
+            "q5": {
+              "calibration_timestamp": "2026-11-27T20:10:02+08:00",
+              "counts_sha256": "f71c91a33ef9e5d55797af8d94cbded167a5df9e24312577bd8166676cb67e93",
+              "fit_count_hash_bound": false,
+              "fit_path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/analysis/ramsey_q5_identify.json",
+              "job_id": "dc4ne0thdvas73bq1hq0",
+              "ordering_seed": null,
+              "plan_sha256": "b27eb1eb90212387ddfcbc7b016550f1e9e9530047086ad44f681597f417a6e0",
+              "submitted_at": "2026-11-27T12:26:46.155920+00:00"
+            },
+            "qc26a": {
+              "calibration_timestamp": "2026-11-27T19:57:17+08:00",
+              "counts_sha256": "ece6e92e7db54b0b21570cc566106b51988b8f1ee02d47fcb275548b0054f5e8",
+              "fit_path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/analysis/identify_qc26a_live.json",
+              "job_id": "dc4n9ads2omc738fm84g",
+              "ordering_seed": null,
+              "plan_sha256": "1d4bb5bd60377c6f56d742a05fedce8fe5c40fc168df4fc1aefa31ca50e0b82b",
+              "submitted_at": "2026-11-27T12:16:44.078412+00:00"
+            }
+          },
+          "observations": {
+            "cz.16_23.alpha.16": {
+              "block": "q23",
+              "chi2": 38.34958090594067,
+              "estimate": 0.01351658110851961,
+              "forward_reverse_agree_95": true,
+              "se": 0.00565798146810774
+            },
+            "cz.16_23.alpha.23": {
+              "block": "q23",
+              "chi2": 38.34958090594067,
+              "estimate": -0.06470256186475343,
+              "forward_reverse_agree_95": true,
+              "se": 0.0056735766179314626
+            },
+            "cz.16_23.delta": {
+              "block": "q23",
+              "chi2": 38.34958090594067,
+              "estimate": -0.02495749145977877,
+              "forward_reverse_agree_95": true,
+              "se": 0.0037061139365229
+            },
+            "cz.22_23.alpha.22": {
+              "block": "q23",
+              "chi2": 27.711021548282897,
+              "estimate": -0.009709627089160122,
+              "forward_reverse_agree_95": true,
+              "se": 0.006274205557555971
+            },
+            "cz.22_23.alpha.23": {
+              "block": "q23",
+              "chi2": 27.711021548282897,
+              "estimate": -0.031463246702717385,
+              "forward_reverse_agree_95": true,
+              "se": 0.005089486825832092
+            },
+            "cz.22_23.delta": {
+              "block": "q23",
+              "chi2": 27.711021548282897,
+              "estimate": -0.008033389963209014,
+              "forward_reverse_agree_95": true,
+              "se": 0.003729215799972019
+            },
+            "cz.4_5.alpha.4": {
+              "block": "q5",
+              "chi2": 22.1677367153545,
+              "estimate": -0.023510168797446607,
+              "forward_reverse_agree_95": true,
+              "se": 0.005654134405794019
+            },
+            "cz.4_5.alpha.5": {
+              "block": "q5",
+              "chi2": 22.1677367153545,
+              "estimate": 0.0006609149062555275,
+              "forward_reverse_agree_95": true,
+              "se": 0.00560428026390926
+            },
+            "cz.4_5.delta": {
+              "block": "q5",
+              "chi2": 22.1677367153545,
+              "estimate": -0.0002217362297578518,
+              "forward_reverse_agree_95": true,
+              "se": 0.003919413424102153
+            },
+            "cz.5_6.alpha.5": {
+              "block": "q5",
+              "chi2": 38.10451022022313,
+              "estimate": 0.1831136346847817,
+              "forward_reverse_agree_95": true,
+              "se": 0.006218301218421032
+            },
+            "cz.5_6.alpha.6": {
+              "block": "q5",
+              "chi2": 38.10451022022313,
+              "estimate": 0.0061032946614911765,
+              "forward_reverse_agree_95": true,
+              "se": 0.006402152001146944
+            },
+            "cz.5_6.delta": {
+              "block": "q5",
+              "chi2": 38.10451022022313,
+              "estimate": 0.031640607131363296,
+              "forward_reverse_agree_95": true,
+              "se": 0.004629265927144803
+            },
+            "sx.21": {
+              "block": "qc26a",
+              "diagnostic_status": "CONSISTENT_WITH_ZERO",
+              "estimate": -0.003316167921158446,
+              "se": 0.0028859316697817006
+            },
+            "sx.23": {
+              "block": "qc26a",
+              "diagnostic_status": "CONSISTENT_WITH_ZERO",
+              "estimate": -0.004911995223938367,
+              "se": 0.0027405383082696536
+            },
+            "sx.3": {
+              "block": "qc26a",
+              "diagnostic_status": "CONSISTENT_WITH_ZERO",
+              "estimate": -0.002682386650455489,
+              "se": 0.0027785882409614273
+            },
+            "sx.5": {
+              "block": "qc26a",
+              "diagnostic_status": "CONSISTENT_WITH_ZERO",
+              "estimate": 0.0009453678264204463,
+              "se": 0.0026809804488463146
+            }
+          },
+          "root": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127",
+          "sources": [
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/ramsey_campaign.json",
+              "sha256": "092c3037d8ff35c8b6e66e5c3d278746737939e03e07746ef718f1eeef1ea2fe"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/analysis/identify_qc26a_live.json",
+              "sha256": "9c70b77795c63466690448a6ce29d52ed8af19b7fc6eaeb5866460d4f4f6a6db"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/analysis/ramsey_q23_identify.json",
+              "sha256": "4b3a68774cc0e2f468fbf3c12cea15f667b75920bdc7fca126316956d1ed3b88"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/analysis/ramsey_q5_identify.json",
+              "sha256": "19c7664c11e7c309ee7135a095cd1451b5a076c86600cade857ee7a200eb285d"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/q23/calibration_build.json",
+              "sha256": "661b40739010f6abcab89333d0395f78eb7fb811d374bdf23e9e90502a984f10"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/q23/calibration_submission.json",
+              "sha256": "239f826c877962e33ed9354a3862dad5f53127199d8abb827a211ee5ec3e41b2"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/q23/compiled.json",
+              "sha256": "609ad4e690c1d0c66de747686df98825694b81fb68bc79b88239c0982fc49487"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/q23/counts.json",
+              "sha256": "4ba99d403b4a47f60196ed57eaa50e9e3233470783c0a2efde4bb07994497c8e"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/q23/job.json",
+              "sha256": "97fecdc4486b923b7cb53f0e0f3496008f7985ee1f266b193e477bf1234128fc"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/q5/calibration_build.json",
+              "sha256": "661b40739010f6abcab89333d0395f78eb7fb811d374bdf23e9e90502a984f10"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/q5/calibration_submission.json",
+              "sha256": "239f826c877962e33ed9354a3862dad5f53127199d8abb827a211ee5ec3e41b2"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/q5/compiled.json",
+              "sha256": "8d7bc09108cc98d41e05c582ee75cae8e1a29a77a79471cf4f757280bbe5a5e4"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/q5/counts.json",
+              "sha256": "52131db89b164555be1eaf991da54e5ed387f9267a577d38462c5e1d423002c7"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/q5/job.json",
+              "sha256": "a00e3d92813179aed4131dca17446160d0d17472334c22da9e6bca377d42aacc"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/qc26a/calibration_build.json",
+              "sha256": "8b71c9a6a244e217676144c96a326e6f4d125abdd6bd3eed25271e1370fc4759"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/qc26a/calibration_submission.json",
+              "sha256": "49a77e8e662ce9f61f9379c05f2cd383ccf994cfff95c38796b32d49d9298454"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/qc26a/compiled.json",
+              "sha256": "5a876677c14f9eb84b3ec93f301121accdc8d01f27af87aabcee67a9d36bf79b"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/qc26a/counts.json",
+              "sha256": "ce5399009242bc6af964693b78f0d326a2cdf8bd77cbf9e0fb8c363ce9e0e8db"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/live_20261127/qc26a/job.json",
+              "sha256": "c22646391620de2a5943ce412e8d5b19d96418208f7d2b295e80c52b0ffd67e5"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/qc26/qc26a_plan.json",
+              "sha256": "b9d0ef2bfc539594a209c357ead93946710fd1b46b5d1550de64566faa84ad96"
+            }
+          ]
+        },
+        {
+          "blocks": {
+            "q23": {
+              "calibration_timestamp": "2026-11-27T23:33:10+08:00",
+              "counts_sha256": "e52b29da28256de5a926fb521ec8c4c07e03f0456d3dc5e48838a703839c81ba",
+              "fit_count_hash_bound": true,
+              "fit_path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/analysis/ramsey_q23_identify.json",
+              "job_id": "dc4qftuq4uuc73a99hag",
+              "ordering_seed": 261127043,
+              "plan_sha256": "2ff47b05b8204845204a2367b05f69d0dd272e6af1ac5a5c8543f2f1fad7b87b",
+              "submitted_at": "2026-11-27T15:55:38.157774+00:00"
+            },
+            "q5": {
+              "calibration_timestamp": "2026-11-27T23:33:10+08:00",
+              "counts_sha256": "3811089a14fded512c6fac6dd1ecea203c9b4c23a501a08bd5be9f188a0d3a03",
+              "fit_count_hash_bound": true,
+              "fit_path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/analysis/ramsey_q5_identify.json",
+              "job_id": "dc4qf65s2omc738fqksg",
+              "ordering_seed": 261127042,
+              "plan_sha256": "3378d6a93f7ddbe9ff6fd06db49c313fcf9414bcbec68af4c2ac07970603b1a7",
+              "submitted_at": "2026-11-27T15:54:02.968557+00:00"
+            },
+            "qc26a": {
+              "calibration_timestamp": "2026-11-27T23:33:10+08:00",
+              "counts_sha256": "bd82b5f7f1236ad32be5b411639ed97192981a0917acbe780b331a3e1bda9092",
+              "fit_path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/analysis/identify_qc26a_live.json",
+              "job_id": "dc4qdhqnj2vs73dkhrpg",
+              "ordering_seed": 261127041,
+              "plan_sha256": "1c788ff3430eb4a7beb571a1ab3f75de2f6915fd8c4f00199d2f419e0d45e6d3",
+              "submitted_at": "2026-11-27T15:50:34.253467+00:00"
+            }
+          },
+          "observations": {
+            "cz.16_23.alpha.16": {
+              "block": "q23",
+              "chi2": 14.078277199943134,
+              "estimate": 0.019001937468589247,
+              "forward_reverse_agree_95": false,
+              "se": 0.005306492758948637
+            },
+            "cz.16_23.alpha.23": {
+              "block": "q23",
+              "chi2": 14.078277199943134,
+              "estimate": -0.067891603419314,
+              "forward_reverse_agree_95": false,
+              "se": 0.005610504269678096
+            },
+            "cz.16_23.delta": {
+              "block": "q23",
+              "chi2": 14.078277199943134,
+              "estimate": -0.023157980860858185,
+              "forward_reverse_agree_95": false,
+              "se": 0.003648270363523729
+            },
+            "cz.22_23.alpha.22": {
+              "block": "q23",
+              "chi2": 18.547984988763307,
+              "estimate": 3.387097749740775e-05,
+              "forward_reverse_agree_95": true,
+              "se": 0.006310131539100329
+            },
+            "cz.22_23.alpha.23": {
+              "block": "q23",
+              "chi2": 18.547984988763307,
+              "estimate": -0.031288184938357944,
+              "forward_reverse_agree_95": true,
+              "se": 0.004912708912049104
+            },
+            "cz.22_23.delta": {
+              "block": "q23",
+              "chi2": 18.547984988763307,
+              "estimate": -0.006793152051859375,
+              "forward_reverse_agree_95": true,
+              "se": 0.0043412370358071545
+            },
+            "cz.4_5.alpha.4": {
+              "block": "q5",
+              "chi2": 25.297500707661253,
+              "estimate": -0.012796235465644568,
+              "forward_reverse_agree_95": true,
+              "se": 0.005204567081855655
+            },
+            "cz.4_5.alpha.5": {
+              "block": "q5",
+              "chi2": 25.297500707661253,
+              "estimate": 0.009068782131406827,
+              "forward_reverse_agree_95": true,
+              "se": 0.0056433122970067804
+            },
+            "cz.4_5.delta": {
+              "block": "q5",
+              "chi2": 25.297500707661253,
+              "estimate": -0.005373940046914605,
+              "forward_reverse_agree_95": true,
+              "se": 0.0036920695698836885
+            },
+            "cz.5_6.alpha.5": {
+              "block": "q5",
+              "chi2": 28.403255259204908,
+              "estimate": 0.1772688208495965,
+              "forward_reverse_agree_95": true,
+              "se": 0.005381041058388456
+            },
+            "cz.5_6.alpha.6": {
+              "block": "q5",
+              "chi2": 28.403255259204908,
+              "estimate": 0.01147082562210855,
+              "forward_reverse_agree_95": true,
+              "se": 0.005059601999207978
+            },
+            "cz.5_6.delta": {
+              "block": "q5",
+              "chi2": 28.403255259204908,
+              "estimate": 0.02398895200450535,
+              "forward_reverse_agree_95": true,
+              "se": 0.004054707327750117
+            },
+            "sx.21": {
+              "block": "qc26a",
+              "diagnostic_status": "INCONCLUSIVE_FLAGS",
+              "estimate": 0.0006684233491880749,
+              "se": 0.002710398277764564
+            },
+            "sx.23": {
+              "block": "qc26a",
+              "diagnostic_status": "NONZERO_CANDIDATE_PENDING_REPLICATION",
+              "estimate": -0.007505200801419342,
+              "se": 0.0028607488408187763
+            },
+            "sx.3": {
+              "block": "qc26a",
+              "diagnostic_status": "INCONCLUSIVE_FLAGS",
+              "estimate": -0.008837225820735727,
+              "se": 0.0026631937185579943
+            },
+            "sx.5": {
+              "block": "qc26a",
+              "diagnostic_status": "CONSISTENT_WITH_ZERO",
+              "estimate": -0.0004612755145554241,
+              "se": 0.002925537628612726
+            }
+          },
+          "root": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127",
+          "sources": [
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/ramsey_campaign.json",
+              "sha256": "092c3037d8ff35c8b6e66e5c3d278746737939e03e07746ef718f1eeef1ea2fe"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/analysis/identify_qc26a_live.json",
+              "sha256": "454541671b23475f5b6c236558e06fd1fa99f3d8a60a06d1b646837eb42a1a4a"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/analysis/ramsey_q23_identify.json",
+              "sha256": "31f204b68ec2acda1ee351a1b49c6267760f2d9f1f6ef3581a6a391d8433e022"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/analysis/ramsey_q5_identify.json",
+              "sha256": "04b35058a63aae73a297954956a347ea492f39e9e41e0de7ee86fda830c3f20b"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/q23/calibration_build.json",
+              "sha256": "5f89bbfecad0542f53017d039110db485556cd09c2cb1da43acf1fe0ca77238a"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/q23/calibration_submission.json",
+              "sha256": "6d12676b706c38f15d4c0bd401390a9562d66fb67d88a89f55889fac1ded2a73"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/q23/compiled.json",
+              "sha256": "6a9de54144250e12d1c8ac9ee94d5a5b5c585b33759b8530eded4e6b1a62cc11"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/q23/counts.json",
+              "sha256": "6c3887331c9e1b292b53a98ba70be7fb95553a4fe095ee02151858bb9be2275c"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/q23/execution_receipt.json",
+              "sha256": "d20d9c1b669847694a97e3a766ba6284da806aad592ef34a7e3853d5107ceaac"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/q23/job.json",
+              "sha256": "1fdafd66cff7a03afd1411589985a792b1c6b15c53526441fd0eaa4bdb4c9b36"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/q5/calibration_build.json",
+              "sha256": "5f89bbfecad0542f53017d039110db485556cd09c2cb1da43acf1fe0ca77238a"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/q5/calibration_submission.json",
+              "sha256": "6d12676b706c38f15d4c0bd401390a9562d66fb67d88a89f55889fac1ded2a73"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/q5/compiled.json",
+              "sha256": "dcb36ec2a886f66b65c86e4455a77249a614607098b126cc386cc47bb7847123"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/q5/counts.json",
+              "sha256": "47884e7e32d4c0d0d463fb6c5efc5729b8f007e097b6c8826e236901e07a954d"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/q5/execution_receipt.json",
+              "sha256": "595860f4d8ddc17b2935707af140583bd7273ca5d7782eb875b657945aabe0d8"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/q5/job.json",
+              "sha256": "c509a0ac514f94054f63e767d9db6dd321608a4e3d9d858566910b643084e574"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/qc26a/calibration_build.json",
+              "sha256": "d2a0af9b1c131339ab5f8ed02d9f0a49600af9bb5d9641088df107aac72e09de"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/qc26a/calibration_submission.json",
+              "sha256": "2d782cef9f7b69658e3424f76c76cbfaa06e8d0e443d7570ea0d666a1b35058a"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/qc26a/compiled.json",
+              "sha256": "90441697f29c220f55fd4d2874e244f6f9396ab9c170efa22975f2e84d4c68e1"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/qc26a/counts.json",
+              "sha256": "67525549f5e844e4ac6235ce2a358f8960ebd559f62d8198465089582738e0cd"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/qc26a/execution_receipt.json",
+              "sha256": "c80c262656e12bdfa444bbf04e816e2012145fea71dbf9d7b2e60d2382718e55"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/qc26a/job.json",
+              "sha256": "ee9dbabadc1e4c0c148b467ba3d0b78a9397ea649edcae6ede233c96ce62f6d4"
+            },
+            {
+              "path": "experiments/channel_mpo/ibm_qc23/qc26/qc26a_plan.json",
+              "sha256": "b9d0ef2bfc539594a209c357ead93946710fd1b46b5d1550de64566faa84ad96"
+            }
+          ]
+        }
+      ],
+      "version": "pgc-qpu04-v1"
+    }
+  },
+  "sx": {
+    "21": 0.0006684233491880749,
+    "23": -0.007505200801419342,
+    "3": -0.008837225820735727,
+    "5": -0.0004612755145554241
+  }
+}

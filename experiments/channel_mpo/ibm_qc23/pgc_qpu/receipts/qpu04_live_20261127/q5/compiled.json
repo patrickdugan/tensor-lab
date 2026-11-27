@@ -1,0 +1,2602 @@
+{
+  "backend": "ibm_kingston",
+  "block": "q5",
+  "calibration_sha256": "88ddd783f88cad9208652b09c4edcf770550b8d50e9d9655734adf2f6e23daf2",
+  "cap_seconds": 15,
+  "circuits": [
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_6_5_0_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "81d0e09ea1354bad568834d003cb88c19d2a0e753d53f2d5af7454752ad0f894",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_4_0_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "9c081eafb6f1161c093d16c6a3236ec0b94f17e26d47c36400eaec7fed44f283",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.312e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_4_0_1_Y",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "7c80af8e0df9ec809b2084b7fc46ce425ec00c7d644f303d831ae2acfba9b29c",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_4_5_0_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "a6fbb50c82fb566f6f3b0ae7abe7bbffccdcec31149b69f52985647c24cf0a86",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_4_5_1_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "607c3764f7b8e4c3240ee122bf77342b74897edbc6503b0dc98446366ce42b26",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.312e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_4_0_1_X",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "dbaf91600349a3eb1ffa094c9ff77d32b4867f2b3c0ac5155d159986a907eae2",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_4_5_1_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "d9dbeb80d4b4f6ba9cea68551bc43a5a970f7f294c5c50a9f6ff0c64b16e2717",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_4_5_0_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "b9aea32c6094554adc81e21fac1574fea4da6cdd68f45bfaf92fde894674e76f",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_4_1_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "3b9b86bfbabbd85068c308e4dd9ced6b56310c67e6a6e903917d5263b1b9213f",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.312e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_6_5_1_1_Y",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "20d725c18f556ebfdde211ee9288e9ee48c132f7a323f81428ea2ce3f3851c47",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_6_5_0_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "4b113dcd07c1f36d1a106ec4bfd9ff6f0e47c63a12777132ebb3102e061abfc7",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_4_1_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "17150aaf092a7e25664d13f446a391e9c521da7c915992b9cd591b6858a6f9e3",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.312e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_4_5_1_1_X",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "a96445197d3ec4fe77ca4018bd5bb868e31d84c0e6331b006c0c8b0d9d9e5077",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.312e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_6_5_1_1_X",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "662fddf046f529750d19e10d0bdaea3c311e9b48fb599b9f9d86a9422f6fdc6a",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_4_1_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "fab831d963f74bba6c09534b5fb2cd8ddf81ecffe4bcf54ae2f5e6389f2736a0",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_6_1_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "6328c88a3e6bb60ef3b90c17abeaab5f6e58cc882b058effda814285c41bf8b9",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.312e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_4_1_1_Y",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "649f80b98d54db47d6ae6f5011f12ceb04ffd56e553a20751b3cd9f9ffe8f508",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.312e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_6_1_1_Y",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "ad098333522a95ab29ac5af24d4c5c96544f88d6725370d6e6d99a41dffa1b72",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_6_0_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "f906136568bcf1d4c9efc0962fb4a8c76f226a06b7b637d9d9f5cbd2fc348380",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.312e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_4_5_0_1_Y",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "d9f6ae9aa770ffd53da4e175b58576d411a3eff36129f8fc4de849ce72b377f0",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_4_5_1_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "e278d3fd0ebe080d3bc3ca22c0485b0459d972cdf93f8e478110706bf91ab29e",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_4_1_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "3fad88946780fb5fe18a6da0b94ad8aa31e4f5e0d58bcfd75df8fca53eba6840",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_4_5_0_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "532c619feba4d927dc8681adb1c78fe2914c111b16094d33e9143c77b16c09ca",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.312e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_6_1_1_X",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "4afb52cd4d549b8295c02f4ef796ff64d938796a8a10baaf0bd6b95677bb809f",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_4_0_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "7dd4dfb7901007b5e21ea0242d82de5ee4ae190b4df180a504aefadc72a87e17",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_6_5_1_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "099531ea43b32a5c812beeed4a7242d8c08a6be2781599bee5a3d35ca1a06c95",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "duration_s": 2.2119999999999997e-06,
+      "family": "spam",
+      "gate_counts": {
+        "barrier": 1,
+        "measure": 3,
+        "x": 3
+      },
+      "id": "pgc_q5_spam_1",
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5,
+          "2": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        4,
+        5,
+        6
+      ],
+      "qasm_sha256": "155f792e0691d3a62fd25ee80828cc1cada54a6b5b2df51e326ec491d40492da",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_6_5_1_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "ca7b28e7759f624830ac60ed0fed077b40df9eac922edffb311cc6bfe68bba84",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "duration_s": 2.18e-06,
+      "family": "spam",
+      "gate_counts": {
+        "barrier": 1,
+        "measure": 3
+      },
+      "id": "pgc_q5_spam_0",
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5,
+          "2": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "path": [
+        4,
+        5,
+        6
+      ],
+      "qasm_sha256": "9eae46d6bda23fa1a08f12b8e70333f531296e954b071b066a8e0bb3fa94aafb",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_4_5_0_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "1893be32ea8076eb0574c9b13373558519c25d2765cb987107fbc337a8496e8d",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_6_0_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "38bac7a69a4a3da30e4fb5916b47a10200c42abf54a1b4c270ecf24cb49a38eb",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_4_0_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "6df10a405c7f84e116f5e4501c8c32c0ef59b9399c04b6c829f506ab1fc6356f",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.312e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_4_5_0_1_X",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "6d2fdf45b7947be05fd6217ad61e88ce6ac367647fb8418f25f38608c7c2c95c",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_4_1_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "b19a9b03766165a363f078f2042fa26e5c41dba5e5122a36468d8d00e3a941e0",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_6_5_0_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "38320f3efb6d671b9635a295447ca2f9fcfec9b308c64bac0dac3276bd6c6fae",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_4_0_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "e8eb88604d679a6d38718edf44901e939bd26d1669bd41885f863f312b4bd818",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.312e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_4_5_1_1_Y",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "9c91c160e2dfa325a71d425f3e7dced9b5c298a4fe57b0c7a36ea0c07a6dd104",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_4_1_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "8f658e3c9ef8fd3c0908c20a8e3207da8edf255fc7a910183c4e7e220de00d5a",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_6_5_1_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "3cb42fcc6badd1ca3c60a42b0a439fa4c1438ef0b3272bd46d8746e4a1f50476",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_6_0_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "ce0b60dab81ad665d1873a3265aacfc21470059e5c0e5cf842c79ceebfb4e7b5",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.312e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_6_5_0_1_X",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "f5f459d3d7f974f7305f7e65c314a515ae623ab8377c701aee642411fee08e0f",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_6_5_0_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "a0ce3bf2bb01966fa26864440ca78735354902ba4ceb79e54e4619ac3ae0fadb",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_4_5_0_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "c0c56461ad7073b0e67633b1b0796acbf1bf318c6c61e2bc9b436758400e02be",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_4_5_1_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "a56d69ed08f2764daef0ca96429e8db1261596fa67010a1ff05f9843e81995e8",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_6_1_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "f4201c6f87eadcc449138e1c0770e5e7e2447093e56a2fba7fd769323c669b94",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.312e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_6_0_1_X",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "0da01ffbe274febfe9be965b82e53f5394933f49d7cf50e9afb2277600e7d38c",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_6_1_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "55e50c4661a6b2d03806f77606dc2de6ed2748a7263bde23c90dbaa2945a08c2",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_4_5_0_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "86deda1379b9aaf75153b0fa072d62034cfec174860e83d3b4697648105bea6e",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_6_1_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "f1b033bc3464321044c17226d086f639319b05b05a89ceb94968e0cbe2f15fc2",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_6_5_1_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "4a80aeddbd8be1eb48667c5286e2ed6804ec0e334986634e60b3933f651ead08",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_6_5_0_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "fe67414de84eccbaf27035611fbf6b6eb8e359000045948b0a6437d0e2616560",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_6_0_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "9c0e28da8c909cfc1e2b9c319bf8a881c8f58360830ff4597d4b38e2d941dab2",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_6_0_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "f30d5dd7f5cdef1a6ceb016d5f1d369a74829aab3c0a9c5771c00cf0860cfd4d",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_6_1_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "a5df2d3b2926c5c24a0b556461c8a884cdc45e3edcbec8232f8594cee3c92622",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.788e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_6_0_8_X",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "8bc205a9704c866e1867c0378edc69b8367d4763bd2c4fa553154777bbc26f39",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_6_5_0_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "dfb2271f36c05e7b697c2d437bd55897b70e79c7cd928dea95312d99dbbb9483",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.244e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_4_0_0_Y",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "381b3dc1190dd0f3503262247e0508b027999f8c4b8735827f08b75af079aefd",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_4_0_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "08c05f8b41de78c09ece191b5f032abf33fcdfb323151cf24bdb3ec187bda811",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_4_5_1_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "d175b77e2fa9f06556e4bf020db0aed8f4cfc3221d2d799ba940b622694cf202",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.244e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_6_1_0_X",
+      "m": 0,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 0
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "c748b344bd1ff11c7af3ea09365da49fd510cc5e65f3ccbf80d8f5c02a72fa88",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.312e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_6_5_0_1_Y",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "60d0f8ab870a33f9960ec242ab65628cab002a4d2dce777023f69b922e52c027",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.38e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_6_5_1_2_Y",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "3d71395038308f08e397df64e88edb88b668557445da36e12fc77f7ce2a69bf4",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.312e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_5_4_1_1_X",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          4
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          4
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 4
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        4
+      ],
+      "qasm_sha256": "8118f78a64858b6fed5619d161fc54c8ef667767cdab58438756e2fa13abcfcb",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.312e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 3,
+        "cz": 1,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2
+      },
+      "id": "pgc_q5_5_6_0_1_Y",
+      "m": 1,
+      "mapping": {
+        "final_index_layout": [
+          5,
+          6
+        ],
+        "initial_layout_logical_to_physical": [
+          5,
+          6
+        ],
+        "measurement_map": {
+          "0": 5,
+          "1": 6
+        },
+        "swaps": 0,
+        "two_qubit_gates": 1
+      },
+      "orientation": "reverse",
+      "path": [
+        5,
+        6
+      ],
+      "qasm_sha256": "c7927d45c96755afd8030c61fc656102ac6434349cef66340a258368a8c40b4e",
+      "shots": 384,
+      "state": 0
+    },
+    {
+      "axis": "X",
+      "duration_s": 2.38e-06,
+      "edge": "4_5",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 4,
+        "cz": 2,
+        "measure": 2,
+        "rz": 4,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_4_5_1_2_X",
+      "m": 2,
+      "mapping": {
+        "final_index_layout": [
+          4,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          4,
+          5
+        ],
+        "measurement_map": {
+          "0": 4,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 2
+      },
+      "orientation": "forward",
+      "path": [
+        4,
+        5
+      ],
+      "qasm_sha256": "63bb32b1edcdf820bee8b0684b3235f50e41fec9083b80611993a34d7e1943bc",
+      "shots": 384,
+      "state": 1
+    },
+    {
+      "axis": "Y",
+      "duration_s": 2.788e-06,
+      "edge": "5_6",
+      "family": "cz",
+      "gate_counts": {
+        "barrier": 10,
+        "cz": 8,
+        "measure": 2,
+        "rz": 5,
+        "sx": 2,
+        "x": 1
+      },
+      "id": "pgc_q5_6_5_1_8_Y",
+      "m": 8,
+      "mapping": {
+        "final_index_layout": [
+          6,
+          5
+        ],
+        "initial_layout_logical_to_physical": [
+          6,
+          5
+        ],
+        "measurement_map": {
+          "0": 6,
+          "1": 5
+        },
+        "swaps": 0,
+        "two_qubit_gates": 8
+      },
+      "orientation": "forward",
+      "path": [
+        6,
+        5
+      ],
+      "qasm_sha256": "c482f99f34845f11c602886e4cf61892116badc158491e38c4d3a5da17fb8728",
+      "shots": 384,
+      "state": 1
+    }
+  ],
+  "compiled_at": "2026-11-27T15:51:56.983033+00:00",
+  "estimated_qpu_seconds": 13.189440000000001,
+  "ordering_seed": 261127042,
+  "plan_sha256": "3378d6a93f7ddbe9ff6fd06db49c313fcf9414bcbec68af4c2ac07970603b1a7",
+  "proposal_sha256": "2637e79e5fea67baf8fb8d5bbd14d4ab47065bae3fc89eb0ee52c61518bd733b",
+  "qpy_sha256": "e99cca3d232f5c02dc22e8cb7552d355670f82d2aced1069fa0727673b82a325",
+  "shots": 384,
+  "status": "COMPILE ONLY; no submission or authorization",
+  "version": "PGC-QPU01-RAMSEY-v1"
+}

@@ -1,0 +1,15 @@
+{
+  "instance_id": "crn:v1:bluemix:public:quantum-computing:us-east:a/a237ff74999c4c69bf59f4d8a25f8786:db4b2706-3607-43b7-84bb-136b2ad34512::",
+  "plan_id": "850b21a7-71de-4e53-9441-1abdd202f35d",
+  "usage_consumed_ru": 4.891282,
+  "usage_consumed_seconds": 304,
+  "usage_limit_reached": false,
+  "usage_limit_ru": 10,
+  "usage_limit_seconds": 600,
+  "usage_period": {
+    "end_time": "2026-11-27T15:50:29.857Z",
+    "start_time": "2026-10-30T15:50:29.857Z"
+  },
+  "usage_remaining_ru": 5.108718,
+  "usage_remaining_seconds": 296
+}
