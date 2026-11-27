@@ -1,0 +1,25 @@
+# HAD-QFT-01 / HAD-QFT-02
+
+Application of BPD HAD-07–17 group-ring/CRT symmetry to restricted Fourier transforms. Mathematical reductions exact; gate angles and statevector simulations numerical. No QPU submission, Fable calls, training, general QFT speedup or novelty claim.
+
+For N with coprime factors n_i, input CRT x_i=x mod n_i and dual output k_i=k*(N/n_i)^(-1) mod n_i factor the Fourier kernel. Use normalized orbit embeddings B_i, and Q_i=B_i^* F_i B_i. Inversion in each local multiplier group makes Q_i a real symmetric involution. At 598 the surviving order-eight group's factors are 2,13,23, local orbit dimensions 2,4,12. Position register has 96 logical states in 7 physical wires (ordinary 598 encoding 10). The two label maps differ. All 96 columns checked against the full Fourier transform. CSD synthesis absorbs sign diagonals into conditional RY angles and has 140 CX, 126 RY, 14 RZ, 1 H; reflection synthesis 384 CX,192 RY,96 RZ,1 H. Both exclude input preparation, encoding, decoding, routing and fault-tolerant synthesis.
+
+## Prime-power shell theorem
+
+For N=p^n, p prime, full unit-invariant orbits are S0={0} and S_j of additive order p^j, j=1..n. Sizes w0=1,w_j=(p-1)p^(j-1). Normalized Q[i,j]=sqrt(w_i w_j/N) times 1 when i=0 or j=0 or i+j<=n, -1/(p-1) when i+j=n+1 with i,j>0, zero otherwise. This follows from the unit root sums: at conductor p, sum of nonzero residues is -1; at conductor p^k,k>=2, the full sum and the multiples-of-p sum both vanish.
+
+Define c=sqrt((p-1)/p),d=1/sqrt(p), and G_j on adjacent coordinates j,j+1 as [[c,d],[-d,c]]. Let R reverse shell labels. Then QR=G_0...G_(n-1). Proof: b_j=sum_{i<=j}sqrt(w_i/p^j)e_i obeys b_j=d b_(j-1)+c e_j, so G_0...G_(j-1)e_j=b_j. Column j<n of the product is c b_j-d e_(j+1); last column b_n. These are the reversed columns of Q. This proves the factorization exactly. If n+1=2^b, Gray code g(j)=j XOR (j>>1) turns reversal into one X on the MSB, and each adjacent rotation into a multiplexed RY with one active control pattern. For b>=2, n*2^(b-1) CX and RY, one X, no ancilla, all-to-all logical connections. For n=1 no CX. At p=2 n=7/15/31: 3/4/5 encoded wires and 28/120/496 CX. Standard full QFT without swaps, counting controlled phase as two CX: 42/210/930 CX on 7/15/31 wires. These address different input spaces; state preparation and conversion are excluded. Known composite N=prod p_i^e_i has full-unit-invariant dimension tau(N)=prod(e_i+1); use CRT to combine local transforms. Does not factor unknown N.
+
+For approximate symmetry, normalized psi and orthogonal projector P have compression loss epsilon=||(I-P)psi||^2. Normalized projected state, when nonzero, has squared fidelity 1-epsilon, preserved by Fourier; any measurement TV error <=sqrt(epsilon). No assumption arbitrary inputs have small epsilon.
+
+## Exact modular certificate
+
+Use q=5981 prime, local primitive roots 5980,2796,3182. Unnormalized orbit-value NTT entries sum z^(kx) over x in each orbit. Inversion implies M_i^2=n_i I mod q. Tensor NTT of four symmetric sign rows, sum squares; B4 target 4 at DC and 4(N+1) elsewhere. Invertibility and integer residual bound 4N+4<q imply exact zero residual when all modular characters pass. No floating exclusion. Tested 64 random length598 arrays, 6144 exact character checks. Positive length10 symmetric B4 core, 24 orbit mutations rejected by exact integer and NTT. Order2396 unresolved.
+
+## Fourier sampling
+
+For sign state sum_(f,x) a_f(x)|f,x>/sqrt(4m), position probability p(k)=sum |DFT a_f|^2/(4m^2). GS target uniform; B4 DC 1/m^2 and other frequencies (m+1)/m^2. Parseval gives sum(p-p*)^2=sum residual(t)^2/(16m^3). Fixed DC gives the same excess collision probability. For orbit masses q_j=w_j p(k_j), use weighted collision 1{same orbit}/w_j. 38 small known certificates and order668 seed verified; 64 row-sum-preserving opposite-sign swaps all invalid. TV median .02867; Hellinger-affinity necessary and sufficient 90%-success shot bounds for fully specified simple hypotheses under ideal independent measurements have medians706 and2223. These are bounds, not hardware or unknown-candidate guarantees. Keep exact integer verification.
+
+## Reproduction and limits
+
+Core compiler sources here match the executed local files. The complete HAD_QFT01_02.zip bundle contains run.py, input certificates, full receipts, SHA256SUMS, timing and emitted OpenQASM3 circuits. Archive SHA256 99c7a75f65aab5bd8567a439579823f575f893848556b046a20546d41e2d96be. Local replay audit byte-identical. Numerical formulas checked on 128 prime-power cases, direct FFT on 16 prime-power sets of shell basis directions plus composite3375, compiled circuits on 16 settings, 20 random CSD controls. Maximum compiled error 1.96e-14. No Qiskit parse/transpile or hardware use. Suggested pilot: two/three-wire shell circuits, basis and signed pair superpositions, readout and identity controls, Q^2 echo secondary; then four-wire shell and seven-wire CRT subject to fidelity, explicit hardware budget and approval.

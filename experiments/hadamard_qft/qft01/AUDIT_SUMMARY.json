@@ -1,0 +1,89 @@
+{
+  "scope": "CPU_NUMERICAL_QFT_AND_EXACT_INTEGER_NTT_NO_QPU",
+  "crt": {
+    "N": 598,
+    "dimensions": [
+      2,
+      4,
+      12
+    ],
+    "logical_states": 96,
+    "encoded_qubits": 7,
+    "intertwining_error": 9.042339273290807e-17,
+    "reflection": {
+      "cx": 384,
+      "ry": 192,
+      "rz": 96,
+      "max_error": 9.87543387751446e-13
+    },
+    "csd": {
+      "cx": 140,
+      "ry": 126,
+      "rz": 14,
+      "max_error": 5.833652768087078e-16,
+      "max_leakage": 1.144917494144692e-16
+    }
+  },
+  "ntt": {
+    "prime": 5981,
+    "random_arrays": 64,
+    "exact_checks": 6144,
+    "small_positive_order": 44,
+    "negative_mutations": 24
+  },
+  "radial": {
+    "formula_cases": 128,
+    "full_fft_controls": 16,
+    "compiled_settings": 16,
+    "composite_N": 3375,
+    "composite_dimension": 16,
+    "max_circuit_error": 1.9539925233402755e-14,
+    "circuits": [
+      {
+        "N": 128,
+        "wires": 3,
+        "cx": 28
+      },
+      {
+        "N": 32768,
+        "wires": 4,
+        "cx": 120
+      },
+      {
+        "N": 2147483648,
+        "wires": 5,
+        "cx": 496
+      },
+      {
+        "N": 2187,
+        "wires": 3,
+        "cx": 28
+      }
+    ]
+  },
+  "random_csd_controls": 20,
+  "projection_controls": 64,
+  "sampling": {
+    "known_certificates": 39,
+    "invalid_swaps": 64,
+    "median_tv": 0.028665778319466526,
+    "necessary_shots90": {
+      "min": 463,
+      "median": 706,
+      "max": 914
+    },
+    "sufficient_shots90": {
+      "min": 1459,
+      "median": 2223,
+      "max": 2879
+    }
+  },
+  "source_blobs": {
+    "orbit_qft.py": "53823f8202d3830d2bc9fedf9df49f7d7b86c199",
+    "circuit.py": "2af68cbbe3e5398e49cb4f5b2bb2d508abe818c9",
+    "csd_compile.py": "1e2cdfa81de702cb21c3bcc3a7b07507315814ac",
+    "radial_qft.py": "02231717d7056ac3210bbcd1b12ce901b3408b6f",
+    "run.py": "68b4e557295eec1e42e9d22302c37bc5d3f0d33a"
+  },
+  "full_archive_sha256": "99c7a75f65aab5bd8567a439579823f575f893848556b046a20546d41e2d96be"
+}
