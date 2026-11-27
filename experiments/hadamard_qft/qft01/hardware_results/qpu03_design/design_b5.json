@@ -1,0 +1,185 @@
+{
+  "arms": [
+    {
+      "arm": "A",
+      "core_metrics": {
+        "cz": 218,
+        "cz_depth": 206,
+        "depth": 845,
+        "rz": 530,
+        "size": 1114,
+        "sx": 365,
+        "x": 1
+      },
+      "esp": 0.6996135793374029,
+      "kind": "old",
+      "level": 1,
+      "nodes": [
+        153,
+        152,
+        151,
+        150,
+        149
+      ],
+      "overlap_with_D": 4,
+      "seed": 0
+    },
+    {
+      "arm": "B",
+      "core_metrics": {
+        "cz": 175,
+        "cz_depth": 153,
+        "depth": 551,
+        "rz": 267,
+        "size": 860,
+        "sx": 395,
+        "x": 23
+      },
+      "esp": 0.725540957926856,
+      "kind": "ws",
+      "level": 2,
+      "logical_cx": 112,
+      "m": 1,
+      "mode": "exact",
+      "order": "near",
+      "phys": [
+        153,
+        152,
+        151,
+        150,
+        149,
+        138
+      ],
+      "seed": 0,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        37
+      ]
+    },
+    {
+      "arm": "C",
+      "core_metrics": {
+        "cz": 102,
+        "cz_depth": 90,
+        "depth": 313,
+        "rz": 171,
+        "size": 530,
+        "sx": 243,
+        "x": 14
+      },
+      "esp": 0.8017284998254052,
+      "kind": "ws",
+      "level": 3,
+      "logical_cx": 68,
+      "m": 1,
+      "mode": "approx",
+      "order": "rev",
+      "phys": [
+        149,
+        150,
+        151,
+        152,
+        153,
+        138
+      ],
+      "seed": 0,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        37
+      ]
+    },
+    {
+      "arm": "D",
+      "core_metrics": {
+        "cz": 95,
+        "cz_depth": 92,
+        "depth": 358,
+        "rz": 177,
+        "size": 515,
+        "sx": 229,
+        "x": 14
+      },
+      "esp": 0.8243810727527978,
+      "kind": "ws",
+      "level": 3,
+      "logical_cx": 70,
+      "m": 0,
+      "mode": "approx",
+      "order": "near",
+      "phys": [
+        149,
+        150,
+        151,
+        138,
+        152
+      ],
+      "seed": 18,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        37
+      ]
+    }
+  ],
+  "b": 5,
+  "backend": "ibm_kingston",
+  "calibration_timestamp": "2026-11-28T00:19:05+08:00",
+  "families": {
+    "difference": [
+      [
+        "B",
+        "A"
+      ],
+      [
+        "C",
+        "A"
+      ],
+      [
+        "D",
+        "A"
+      ],
+      [
+        "C",
+        "D"
+      ]
+    ],
+    "signal": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ]
+  },
+  "primary": "edge contrast; simultaneous 95% Hoeffding (Bonferroni) over the registered signal and difference families",
+  "roster": {
+    "edge": [
+      "plus",
+      "minus",
+      "imag",
+      "basis0",
+      "basis1"
+    ],
+    "middle": [
+      "plus",
+      "minus"
+    ],
+    "tail": [
+      "plus",
+      "minus"
+    ]
+  },
+  "selection_file": "select_b5.json",
+  "selection_sha256": "1c1f349490bb7701ea7ad3dd77004977700cdfc92cc31a457def891e714c2d31",
+  "shots": 1024,
+  "stage": "b5"
+}

@@ -1,0 +1,2165 @@
+{
+ "b": 6,
+ "calibration_timestamp": "2026-11-28T00:19:05+08:00",
+ "seeds": 40,
+ "levels": [
+  2,
+  3
+ ],
+ "n_rows": 59,
+ "excluded_nodes": [
+  138,
+  148,
+  149,
+  150,
+  151,
+  152,
+  153
+ ],
+ "reuse": "select_b6.json",
+ "candidates": [
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37
+   ],
+   "level": 3,
+   "seed": 4,
+   "metrics": {
+    "cz": 185,
+    "depth": 583,
+    "cz_depth": 163,
+    "sx": 420,
+    "x": 18,
+    "rz": 303,
+    "size": 926
+   },
+   "esp": 0.6823180702921432,
+   "phys": [
+    1,
+    2,
+    3,
+    16,
+    23,
+    4
+   ],
+   "n_embeddings": 246,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37
+   ],
+   "level": 2,
+   "seed": 4,
+   "metrics": {
+    "cz": 185,
+    "depth": 582,
+    "cz_depth": 163,
+    "sx": 420,
+    "x": 18,
+    "rz": 304,
+    "size": 927
+   },
+   "esp": 0.6821972848813215,
+   "phys": [
+    1,
+    2,
+    3,
+    16,
+    23,
+    4
+   ],
+   "n_embeddings": 246,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 185,
+    "depth": 575,
+    "cz_depth": 160,
+    "sx": 418,
+    "x": 17,
+    "rz": 302,
+    "size": 922
+   },
+   "esp": 0.6820197562442266,
+   "phys": [
+    23,
+    16,
+    3,
+    2,
+    1,
+    4
+   ],
+   "n_embeddings": 246,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 185,
+    "depth": 574,
+    "cz_depth": 160,
+    "sx": 418,
+    "x": 17,
+    "rz": 303,
+    "size": 923
+   },
+   "esp": 0.6818990236415976,
+   "phys": [
+    23,
+    16,
+    3,
+    2,
+    1,
+    4
+   ],
+   "n_embeddings": 246,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37
+   ],
+   "level": 3,
+   "seed": 2,
+   "metrics": {
+    "cz": 178,
+    "depth": 568,
+    "cz_depth": 153,
+    "sx": 393,
+    "x": 24,
+    "rz": 283,
+    "size": 878
+   },
+   "esp": 0.6742993291052407,
+   "phys": [
+    23,
+    16,
+    3,
+    2,
+    1,
+    4
+   ],
+   "n_embeddings": 246,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37
+   ],
+   "level": 2,
+   "seed": 2,
+   "metrics": {
+    "cz": 178,
+    "depth": 571,
+    "cz_depth": 153,
+    "sx": 393,
+    "x": 25,
+    "rz": 287,
+    "size": 883
+   },
+   "esp": 0.6740955455926346,
+   "phys": [
+    23,
+    16,
+    3,
+    2,
+    1,
+    4
+   ],
+   "n_embeddings": 246,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 178,
+    "depth": 564,
+    "cz_depth": 150,
+    "sx": 393,
+    "x": 23,
+    "rz": 281,
+    "size": 875
+   },
+   "esp": 0.6738661259726632,
+   "phys": [
+    23,
+    16,
+    3,
+    2,
+    1,
+    4
+   ],
+   "n_embeddings": 246,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 178,
+    "depth": 567,
+    "cz_depth": 150,
+    "sx": 393,
+    "x": 24,
+    "rz": 285,
+    "size": 880
+   },
+   "esp": 0.673662473380632,
+   "phys": [
+    23,
+    16,
+    3,
+    2,
+    1,
+    4
+   ],
+   "n_embeddings": 246,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 183,
+    "depth": 577,
+    "cz_depth": 151,
+    "sx": 403,
+    "x": 21,
+    "rz": 270,
+    "size": 877
+   },
+   "esp": 0.664080109872071,
+   "phys": [
+    3,
+    16,
+    23,
+    22,
+    21,
+    24
+   ],
+   "n_embeddings": 246,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 183,
+    "depth": 579,
+    "cz_depth": 151,
+    "sx": 403,
+    "x": 21,
+    "rz": 274,
+    "size": 881
+   },
+   "esp": 0.664080109872071,
+   "phys": [
+    3,
+    16,
+    23,
+    22,
+    21,
+    24
+   ],
+   "n_embeddings": 246,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37
+   ],
+   "level": 3,
+   "seed": 1,
+   "metrics": {
+    "cz": 183,
+    "depth": 570,
+    "cz_depth": 149,
+    "sx": 403,
+    "x": 20,
+    "rz": 268,
+    "size": 874
+   },
+   "esp": 0.6638620611167719,
+   "phys": [
+    21,
+    22,
+    23,
+    16,
+    3,
+    24
+   ],
+   "n_embeddings": 246,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37
+   ],
+   "level": 2,
+   "seed": 1,
+   "metrics": {
+    "cz": 183,
+    "depth": 572,
+    "cz_depth": 149,
+    "sx": 403,
+    "x": 20,
+    "rz": 272,
+    "size": 878
+   },
+   "esp": 0.6638620611167719,
+   "phys": [
+    21,
+    22,
+    23,
+    16,
+    3,
+    24
+   ],
+   "n_embeddings": 246,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 184,
+    "depth": 508,
+    "cz_depth": 160,
+    "sx": 410,
+    "x": 17,
+    "rz": 257,
+    "size": 868
+   },
+   "esp": 0.646463175449808,
+   "phys": [
+    5,
+    4,
+    3,
+    2,
+    1,
+    16,
+    23
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 184,
+    "depth": 510,
+    "cz_depth": 160,
+    "sx": 410,
+    "x": 19,
+    "rz": 262,
+    "size": 875
+   },
+   "esp": 0.6461783160292218,
+   "phys": [
+    5,
+    4,
+    3,
+    2,
+    1,
+    16,
+    23
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 3,
+   "seed": 3,
+   "metrics": {
+    "cz": 184,
+    "depth": 502,
+    "cz_depth": 157,
+    "sx": 410,
+    "x": 18,
+    "rz": 256,
+    "size": 868
+   },
+   "esp": 0.6459600373216727,
+   "phys": [
+    5,
+    4,
+    3,
+    2,
+    1,
+    16,
+    23
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 2,
+   "seed": 3,
+   "metrics": {
+    "cz": 184,
+    "depth": 504,
+    "cz_depth": 157,
+    "sx": 410,
+    "x": 19,
+    "rz": 260,
+    "size": 873
+   },
+   "esp": 0.6458705915210788,
+   "phys": [
+    23,
+    16,
+    3,
+    2,
+    1,
+    4,
+    5
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 189,
+    "depth": 509,
+    "cz_depth": 165,
+    "sx": 407,
+    "x": 24,
+    "rz": 243,
+    "size": 863
+   },
+   "esp": 0.6458698876623328,
+   "phys": [
+    123,
+    136,
+    143,
+    142,
+    141,
+    140,
+    144
+   ],
+   "n_embeddings": 458,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 189,
+    "depth": 510,
+    "cz_depth": 165,
+    "sx": 407,
+    "x": 24,
+    "rz": 244,
+    "size": 864
+   },
+   "esp": 0.6458698876623328,
+   "phys": [
+    123,
+    136,
+    143,
+    142,
+    141,
+    140,
+    144
+   ],
+   "n_embeddings": 458,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 3,
+   "seed": 1,
+   "metrics": {
+    "cz": 184,
+    "depth": 492,
+    "cz_depth": 143,
+    "sx": 416,
+    "x": 24,
+    "rz": 265,
+    "size": 889
+   },
+   "esp": 0.64482544423986,
+   "phys": [
+    23,
+    16,
+    3,
+    4,
+    5,
+    2,
+    1
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 2,
+   "seed": 1,
+   "metrics": {
+    "cz": 184,
+    "depth": 494,
+    "cz_depth": 143,
+    "sx": 416,
+    "x": 25,
+    "rz": 268,
+    "size": 893
+   },
+   "esp": 0.644630568183526,
+   "phys": [
+    23,
+    16,
+    3,
+    4,
+    5,
+    2,
+    1
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 184,
+    "depth": 487,
+    "cz_depth": 140,
+    "sx": 416,
+    "x": 25,
+    "rz": 264,
+    "size": 889
+   },
+   "esp": 0.6443235807473837,
+   "phys": [
+    1,
+    2,
+    3,
+    16,
+    23,
+    4,
+    5
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 184,
+    "depth": 489,
+    "cz_depth": 140,
+    "sx": 416,
+    "x": 25,
+    "rz": 266,
+    "size": 891
+   },
+   "esp": 0.6443235807473837,
+   "phys": [
+    1,
+    2,
+    3,
+    16,
+    23,
+    4,
+    5
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 3,
+   "seed": 3,
+   "metrics": {
+    "cz": 185,
+    "depth": 494,
+    "cz_depth": 143,
+    "sx": 422,
+    "x": 22,
+    "rz": 266,
+    "size": 895
+   },
+   "esp": 0.6434719396705151,
+   "phys": [
+    5,
+    4,
+    3,
+    16,
+    23,
+    2,
+    1
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 194,
+    "depth": 493,
+    "cz_depth": 155,
+    "sx": 424,
+    "x": 22,
+    "rz": 245,
+    "size": 885
+   },
+   "esp": 0.6396392953741992,
+   "phys": [
+    21,
+    22,
+    23,
+    16,
+    3,
+    2,
+    24
+   ],
+   "n_embeddings": 458,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37
+   ],
+   "level": 2,
+   "seed": 3,
+   "metrics": {
+    "cz": 194,
+    "depth": 495,
+    "cz_depth": 155,
+    "sx": 424,
+    "x": 23,
+    "rz": 251,
+    "size": 892
+   },
+   "esp": 0.6393698577579427,
+   "phys": [
+    21,
+    22,
+    23,
+    16,
+    3,
+    2,
+    24
+   ],
+   "n_embeddings": 458,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37
+   ],
+   "level": 3,
+   "seed": 4,
+   "metrics": {
+    "cz": 196,
+    "depth": 495,
+    "cz_depth": 157,
+    "sx": 428,
+    "x": 22,
+    "rz": 244,
+    "size": 890
+   },
+   "esp": 0.6371658313552456,
+   "phys": [
+    21,
+    22,
+    23,
+    16,
+    3,
+    2,
+    24
+   ],
+   "n_embeddings": 458,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37
+   ],
+   "level": 3,
+   "seed": 2,
+   "metrics": {
+    "cz": 198,
+    "depth": 515,
+    "cz_depth": 160,
+    "sx": 430,
+    "x": 24,
+    "rz": 248,
+    "size": 900
+   },
+   "esp": 0.6369447393367453,
+   "phys": [
+    21,
+    22,
+    23,
+    16,
+    3,
+    2,
+    24
+   ],
+   "n_embeddings": 458,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 196,
+    "depth": 497,
+    "cz_depth": 157,
+    "sx": 428,
+    "x": 23,
+    "rz": 250,
+    "size": 897
+   },
+   "esp": 0.6368974356453484,
+   "phys": [
+    21,
+    22,
+    23,
+    16,
+    3,
+    2,
+    24
+   ],
+   "n_embeddings": 458,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 198,
+    "depth": 507,
+    "cz_depth": 162,
+    "sx": 426,
+    "x": 17,
+    "rz": 255,
+    "size": 896
+   },
+   "esp": 0.6367225413614642,
+   "phys": [
+    3,
+    16,
+    23,
+    22,
+    21,
+    20,
+    24
+   ],
+   "n_embeddings": 458,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 198,
+    "depth": 508,
+    "cz_depth": 162,
+    "sx": 426,
+    "x": 17,
+    "rz": 255,
+    "size": 896
+   },
+   "esp": 0.6367225413614642,
+   "phys": [
+    3,
+    16,
+    23,
+    22,
+    21,
+    20,
+    24
+   ],
+   "n_embeddings": 458,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37
+   ],
+   "level": 3,
+   "seed": 3,
+   "metrics": {
+    "cz": 200,
+    "depth": 512,
+    "cz_depth": 164,
+    "sx": 427,
+    "x": 18,
+    "rz": 254,
+    "size": 899
+   },
+   "esp": 0.6351517934420953,
+   "phys": [
+    3,
+    16,
+    23,
+    22,
+    21,
+    20,
+    24
+   ],
+   "n_embeddings": 458,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37
+   ],
+   "level": 2,
+   "seed": 2,
+   "metrics": {
+    "cz": 200,
+    "depth": 513,
+    "cz_depth": 164,
+    "sx": 427,
+    "x": 18,
+    "rz": 254,
+    "size": 899
+   },
+   "esp": 0.6351517934420953,
+   "phys": [
+    3,
+    16,
+    23,
+    22,
+    21,
+    20,
+    24
+   ],
+   "n_embeddings": 458,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 3,
+   "seed": 4,
+   "metrics": {
+    "cz": 194,
+    "depth": 464,
+    "cz_depth": 147,
+    "sx": 416,
+    "x": 24,
+    "rz": 236,
+    "size": 870
+   },
+   "esp": 0.6348379379719528,
+   "phys": [
+    23,
+    16,
+    3,
+    2,
+    1,
+    4,
+    5
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 2,
+   "seed": 1,
+   "metrics": {
+    "cz": 207,
+    "depth": 542,
+    "cz_depth": 176,
+    "sx": 442,
+    "x": 24,
+    "rz": 255,
+    "size": 928
+   },
+   "esp": 0.6271438822501909,
+   "phys": [
+    23,
+    16,
+    3,
+    4,
+    5,
+    2,
+    1
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 197,
+    "depth": 516,
+    "cz_depth": 151,
+    "sx": 433,
+    "x": 23,
+    "rz": 271,
+    "size": 924
+   },
+   "esp": 0.625916948716289,
+   "phys": [
+    23,
+    16,
+    3,
+    2,
+    1,
+    4,
+    5
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 197,
+    "depth": 515,
+    "cz_depth": 151,
+    "sx": 433,
+    "x": 24,
+    "rz": 267,
+    "size": 921
+   },
+   "esp": 0.6255863465902978,
+   "phys": [
+    23,
+    16,
+    3,
+    2,
+    1,
+    4,
+    5
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 2,
+   "seed": 2,
+   "metrics": {
+    "cz": 197,
+    "depth": 513,
+    "cz_depth": 150,
+    "sx": 433,
+    "x": 23,
+    "rz": 269,
+    "size": 922
+   },
+   "esp": 0.625145500427456,
+   "phys": [
+    23,
+    16,
+    3,
+    2,
+    1,
+    4,
+    5
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    37,
+    45
+   ],
+   "level": 3,
+   "seed": 2,
+   "metrics": {
+    "cz": 197,
+    "depth": 512,
+    "cz_depth": 150,
+    "sx": 433,
+    "x": 25,
+    "rz": 266,
+    "size": 921
+   },
+   "esp": 0.6247287878725974,
+   "phys": [
+    23,
+    16,
+    3,
+    2,
+    1,
+    4,
+    5
+   ],
+   "n_embeddings": 234,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 3,
+   "seed": 3,
+   "metrics": {
+    "cz": 232,
+    "depth": 512,
+    "cz_depth": 183,
+    "sx": 494,
+    "x": 17,
+    "rz": 258,
+    "size": 1001
+   },
+   "esp": 0.6166981507494519,
+   "phys": [
+    49,
+    50,
+    51,
+    58,
+    71,
+    70,
+    69
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 2,
+   "seed": 3,
+   "metrics": {
+    "cz": 232,
+    "depth": 510,
+    "cz_depth": 183,
+    "sx": 494,
+    "x": 18,
+    "rz": 258,
+    "size": 1002
+   },
+   "esp": 0.6166031833281257,
+   "phys": [
+    49,
+    50,
+    51,
+    58,
+    71,
+    70,
+    69
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 234,
+    "depth": 514,
+    "cz_depth": 185,
+    "sx": 497,
+    "x": 17,
+    "rz": 256,
+    "size": 1004
+   },
+   "esp": 0.6140879721813014,
+   "phys": [
+    38,
+    49,
+    50,
+    51,
+    58,
+    71,
+    70
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 234,
+    "depth": 512,
+    "cz_depth": 185,
+    "sx": 497,
+    "x": 18,
+    "rz": 256,
+    "size": 1005
+   },
+   "esp": 0.6139552653356563,
+   "phys": [
+    38,
+    49,
+    50,
+    51,
+    58,
+    71,
+    70
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 256,
+    "depth": 598,
+    "cz_depth": 213,
+    "sx": 553,
+    "x": 22,
+    "rz": 295,
+    "size": 1126
+   },
+   "esp": 0.6124998492789088,
+   "phys": [
+    24,
+    23,
+    16,
+    3,
+    2,
+    1
+   ],
+   "n_embeddings": 998,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 256,
+    "depth": 596,
+    "cz_depth": 213,
+    "sx": 553,
+    "x": 23,
+    "rz": 298,
+    "size": 1130
+   },
+   "esp": 0.6124150366957506,
+   "phys": [
+    24,
+    23,
+    16,
+    3,
+    2,
+    1
+   ],
+   "n_embeddings": 998,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 2,
+   "seed": 13,
+   "metrics": {
+    "cz": 237,
+    "depth": 558,
+    "cz_depth": 194,
+    "sx": 512,
+    "x": 21,
+    "rz": 273,
+    "size": 1043
+   },
+   "esp": 0.611569997462704,
+   "phys": [
+    69,
+    70,
+    71,
+    58,
+    51,
+    50,
+    49
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 3,
+   "seed": 13,
+   "metrics": {
+    "cz": 237,
+    "depth": 559,
+    "cz_depth": 194,
+    "sx": 512,
+    "x": 22,
+    "rz": 271,
+    "size": 1042
+   },
+   "esp": 0.6114758197429432,
+   "phys": [
+    69,
+    70,
+    71,
+    58,
+    51,
+    50,
+    49
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+   ],
+   "level": 3,
+   "seed": 5,
+   "metrics": {
+    "cz": 258,
+    "depth": 601,
+    "cz_depth": 215,
+    "sx": 556,
+    "x": 23,
+    "rz": 294,
+    "size": 1131
+   },
+   "esp": 0.610386255676037,
+   "phys": [
+    24,
+    23,
+    16,
+    3,
+    2,
+    1
+   ],
+   "n_embeddings": 998,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "rev",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+   ],
+   "level": 2,
+   "seed": 5,
+   "metrics": {
+    "cz": 258,
+    "depth": 599,
+    "cz_depth": 215,
+    "sx": 556,
+    "x": 24,
+    "rz": 298,
+    "size": 1136
+   },
+   "esp": 0.6103017357612492,
+   "phys": [
+    24,
+    23,
+    16,
+    3,
+    2,
+    1
+   ],
+   "n_embeddings": 998,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 2,
+   "seed": 5,
+   "metrics": {
+    "cz": 237,
+    "depth": 551,
+    "cz_depth": 189,
+    "sx": 516,
+    "x": 21,
+    "rz": 277,
+    "size": 1051
+   },
+   "esp": 0.6099945837098617,
+   "phys": [
+    49,
+    50,
+    51,
+    58,
+    71,
+    70,
+    69
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 3,
+   "seed": 5,
+   "metrics": {
+    "cz": 237,
+    "depth": 552,
+    "cz_depth": 189,
+    "sx": 516,
+    "x": 22,
+    "rz": 275,
+    "size": 1050
+   },
+   "esp": 0.6099006485933596,
+   "phys": [
+    49,
+    50,
+    51,
+    58,
+    71,
+    70,
+    69
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 2,
+   "seed": 7,
+   "metrics": {
+    "cz": 239,
+    "depth": 543,
+    "cz_depth": 189,
+    "sx": 514,
+    "x": 25,
+    "rz": 277,
+    "size": 1055
+   },
+   "esp": 0.6096900890719538,
+   "phys": [
+    49,
+    50,
+    51,
+    58,
+    71,
+    70,
+    69
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 2,
+   "seed": 1,
+   "metrics": {
+    "cz": 258,
+    "depth": 606,
+    "cz_depth": 211,
+    "sx": 538,
+    "x": 21,
+    "rz": 273,
+    "size": 1090
+   },
+   "esp": 0.6040719698098443,
+   "phys": [
+    1,
+    2,
+    3,
+    16,
+    23,
+    22,
+    21
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 3,
+   "seed": 1,
+   "metrics": {
+    "cz": 258,
+    "depth": 607,
+    "cz_depth": 211,
+    "sx": 538,
+    "x": 21,
+    "rz": 271,
+    "size": 1088
+   },
+   "esp": 0.6040719698098443,
+   "phys": [
+    1,
+    2,
+    3,
+    16,
+    23,
+    22,
+    21
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 260,
+    "depth": 607,
+    "cz_depth": 213,
+    "sx": 539,
+    "x": 21,
+    "rz": 269,
+    "size": 1089
+   },
+   "esp": 0.603354100480541,
+   "phys": [
+    1,
+    2,
+    3,
+    16,
+    23,
+    22,
+    21
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 1,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 260,
+    "depth": 608,
+    "cz_depth": 213,
+    "sx": 539,
+    "x": 21,
+    "rz": 267,
+    "size": 1087
+   },
+   "esp": 0.603354100480541,
+   "phys": [
+    1,
+    2,
+    3,
+    16,
+    23,
+    22,
+    21
+   ],
+   "n_embeddings": 1396,
+   "logical_cx": 100
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 278,
+    "depth": 653,
+    "cz_depth": 238,
+    "sx": 591,
+    "x": 18,
+    "rz": 289,
+    "size": 1176
+   },
+   "esp": 0.5897661879893675,
+   "phys": [
+    49,
+    50,
+    51,
+    58,
+    71,
+    70
+   ],
+   "n_embeddings": 998,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": null,
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 278,
+    "depth": 654,
+    "cz_depth": 238,
+    "sx": 591,
+    "x": 18,
+    "rz": 286,
+    "size": 1173
+   },
+   "esp": 0.5897661879893675,
+   "phys": [
+    49,
+    50,
+    51,
+    58,
+    71,
+    70
+   ],
+   "n_embeddings": 998,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+   ],
+   "level": 2,
+   "seed": 0,
+   "metrics": {
+    "cz": 275,
+    "depth": 669,
+    "cz_depth": 216,
+    "sx": 585,
+    "x": 31,
+    "rz": 334,
+    "size": 1225
+   },
+   "esp": 0.5894285467252053,
+   "phys": [
+    49,
+    50,
+    51,
+    58,
+    71,
+    70
+   ],
+   "n_embeddings": 998,
+   "logical_cx": 112
+  },
+  {
+   "mode": "approx",
+   "m": 0,
+   "order": "near",
+   "shape": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+   ],
+   "level": 3,
+   "seed": 0,
+   "metrics": {
+    "cz": 275,
+    "depth": 670,
+    "cz_depth": 216,
+    "sx": 585,
+    "x": 31,
+    "rz": 332,
+    "size": 1223
+   },
+   "esp": 0.5894285467252053,
+   "phys": [
+    49,
+    50,
+    51,
+    58,
+    71,
+    70
+   ],
+   "n_embeddings": 998,
+   "logical_cx": 112
+  }
+ ]
+}

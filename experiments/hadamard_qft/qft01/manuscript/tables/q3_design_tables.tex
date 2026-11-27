@@ -1,0 +1,39 @@
+\begin{table}[htbp]\centering\small
+\caption{Workspace trade-off at $b=5$ (offline, calibration snapshot 2026-11-28T00:19): for each exact or bounded-error variant with $m$ clean ancillas, the logical CNOT count, the best native CZ count after heavy-hex SABRE routing (best of 40 seeds, levels 2--3, all induced shapes of $b+m$ nodes, three control orders), its CZ depth and the best calibrated estimated success probability (ESP) over all embeddings on \texttt{ibm\_kingston}.}\label{tab:q3-ws-b5}
+\begin{tabular}{llrrrrr}\toprule Level & $m$ & Logical CX & Native CZ & CZ depth & Depth & ESP\\\midrule
+bounded-error & 0 & 70 & 94 & 82 & 315 & 0.824\\
+bounded-error & 1 & 68 & 102 & 90 & 313 & 0.802\\
+bounded-error & 2 & 68 & 102 & 90 & 313 & 0.797\\
+bounded-error & 3 & 68 & 102 & 90 & 313 & 0.793\\
+bounded-error & 4 & 68 & 101 & 92 & 344 & 0.784\\
+\midrule
+exact & 0 & 114 & 166 & 152 & 572 & 0.743\\
+exact & 1 & 112 & 175 & 153 & 551 & 0.726\\
+exact & 2 & 112 & 175 & 153 & 551 & 0.721\\
+exact & 3 & 112 & 175 & 153 & 551 & 0.717\\
+exact & 4 & 112 & 175 & 153 & 551 & 0.710\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\small
+\caption{Workspace trade-off at $b=6$ (offline, calibration snapshot 2026-11-28T00:19): for each exact or bounded-error variant with $m$ clean ancillas, the logical CNOT count, the best native CZ count after heavy-hex SABRE routing (best of 40 seeds, levels 2--3, all induced shapes of $b+m$ nodes, three control orders), its CZ depth and the best calibrated estimated success probability (ESP) over all embeddings on \texttt{ibm\_kingston}.}\label{tab:q3-ws-b6}
+\begin{tabular}{llrrrrr}\toprule Level & $m$ & Logical CX & Native CZ & CZ depth & Depth & ESP\\\midrule
+bounded-error & 0 & 112 & 178 & 150 & 564 & 0.718\\
+bounded-error & 1 & 100 & 184 & 140 & 487 & 0.681\\
+bounded-error & 2 & 98 & 182 & 155 & 481 & 0.652\\
+bounded-error & 3 & 98 & 179 & 154 & 480 & 0.643\\
+bounded-error & 4 & 98 & 179 & 154 & 480 & 0.638\\
+\midrule
+exact & 0 & 260 & 386 & 346 & 1329 & 0.534\\
+exact & 2 & 246 & 391 & 353 & 1334 & 0.467\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\small
+\caption{Offline resource scaling of the workspace compiler through $b=8$ encoded qubits (ambient dimension $2^{2^b-1}$). Logical CNOTs and best native CZ after heavy-hex routing (12 seeds, levels 2--3, six induced shapes, two control orders) for the bounded-error compiler with $m$ clean ancillas; the exact compiler is routed through $b=6$ only, and its $m{=}b{-}2$ column (prefix-predicate chain active) is a logical count. Every circuit through $b=7$ was verified by full simulation (workspace returned to $\ket0$). The ideal operator error of the bounded-error circuits is below $1.7\cdot10^{-3}$ throughout.}\label{tab:q3-scaling}
+\begin{tabular}{r rrrrr rrr}\toprule & \multicolumn{5}{c}{Bounded-error, logical (native CZ)} & \multicolumn{3}{c}{Exact, logical (native CZ)}\\ $b$ & $m{=}0$ & $m{=}1$ & $m{=}2$ & $m{=}3$ & $m{=}4$ & $m{=}0$ & $m{=}2$ & $m{=}b{-}2$\\\midrule
+3 & 16 (16) & 16 (--) & 16 (--) & 16 (--) & 16 (--) & 16 (16) & 16 (16) & 16 (--)\\
+4 & 46 (70) & 46 (54) & 46 (54) & 46 (54) & 46 (54) & 46 (70) & 46 (54) & 46 (--)\\
+5 & 70 (94) & 68 (102) & 68 (102) & 68 (102) & 68 (102) & 114 (168) & 112 (175) & 112 (--)\\
+6 & 112 (178) & 100 (184) & 98 (182) & 98 (179) & 98 (179) & 260 (415) & 246 (419) & 206 (--)\\
+7 & 188 (320) & 150 (320) & 138 (295) & 136 (297) & 136 (298) & 564 (--) & 514 (--) & 324 (--)\\
+8 & 330 (592) & 234 (495) & 196 (451) & 184 (421) & 182 (426) & 1186 (--) & 1052 (--) & 466 (--)\\
+\bottomrule\end{tabular}\end{table}
