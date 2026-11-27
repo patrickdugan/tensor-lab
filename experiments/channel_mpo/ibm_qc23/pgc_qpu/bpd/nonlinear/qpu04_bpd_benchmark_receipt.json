@@ -1,0 +1,230 @@
+{
+  "label": "SYNTHETIC fixed workload, actual per-process CPU/RSS; not QPU time",
+  "node": "v22.16.0",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "platform": "linux",
+  "matched_paths": true,
+  "source_sha256": "279b9c7c69999b0febe2a3b8e62d0c37f3677c26ebd6e0f0768cd8007c7ee476",
+  "summary": {
+    "dense": {
+      "cpu_ms_median": 224.025,
+      "setup_cpu_ms_median": 36.503,
+      "max_rss_kib_median": 57304,
+      "fallbacks": 0
+    },
+    "oracle": {
+      "cpu_ms_median": 162.841,
+      "setup_cpu_ms_median": 68.557,
+      "max_rss_kib_median": 57496,
+      "fallbacks": 0
+    },
+    "learned": {
+      "cpu_ms_median": 181.084,
+      "setup_cpu_ms_median": 86.936,
+      "max_rss_kib_median": 59736,
+      "fallbacks": 0
+    }
+  },
+  "runs": [
+    {
+      "rep": 0,
+      "mode": "dense",
+      "cpu_ms": 319.92,
+      "setup_cpu_ms": 68.303,
+      "max_rss_kib": 58216,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 0,
+      "mode": "oracle",
+      "cpu_ms": 162.841,
+      "setup_cpu_ms": 68.557,
+      "max_rss_kib": 59644,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 0,
+      "mode": "learned",
+      "cpu_ms": 296.511,
+      "setup_cpu_ms": 89.013,
+      "max_rss_kib": 60120,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 1,
+      "mode": "dense",
+      "cpu_ms": 223.214,
+      "setup_cpu_ms": 36.503,
+      "max_rss_kib": 57304,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 1,
+      "mode": "oracle",
+      "cpu_ms": 148.279,
+      "setup_cpu_ms": 69.396,
+      "max_rss_kib": 58300,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 1,
+      "mode": "learned",
+      "cpu_ms": 167.311,
+      "setup_cpu_ms": 82.396,
+      "max_rss_kib": 56880,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 2,
+      "mode": "dense",
+      "cpu_ms": 239.315,
+      "setup_cpu_ms": 49.318,
+      "max_rss_kib": 56104,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 2,
+      "mode": "oracle",
+      "cpu_ms": 155.465,
+      "setup_cpu_ms": 66.566,
+      "max_rss_kib": 56528,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 2,
+      "mode": "learned",
+      "cpu_ms": 181.084,
+      "setup_cpu_ms": 88.414,
+      "max_rss_kib": 61008,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 3,
+      "mode": "dense",
+      "cpu_ms": 224.025,
+      "setup_cpu_ms": 35.527,
+      "max_rss_kib": 58524,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 3,
+      "mode": "oracle",
+      "cpu_ms": 169.82,
+      "setup_cpu_ms": 69.707,
+      "max_rss_kib": 55440,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 3,
+      "mode": "learned",
+      "cpu_ms": 195.126,
+      "setup_cpu_ms": 86.936,
+      "max_rss_kib": 59736,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 4,
+      "mode": "dense",
+      "cpu_ms": 199.266,
+      "setup_cpu_ms": 33.844,
+      "max_rss_kib": 56924,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 4,
+      "mode": "oracle",
+      "cpu_ms": 175.599,
+      "setup_cpu_ms": 65.373,
+      "max_rss_kib": 57496,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    },
+    {
+      "rep": 4,
+      "mode": "learned",
+      "cpu_ms": 158.931,
+      "setup_cpu_ms": 78.221,
+      "max_rss_kib": 59500,
+      "digest": 255552748,
+      "posteriorChecksum": 12.739055990646648,
+      "fallbacks": 0,
+      "states": 1024,
+      "trials": 24,
+      "steps": 8
+    }
+  ],
+  "limitations": [
+    "Five process repeats on a shared Linux CPU environment; descriptive timing, not a general speed guarantee.",
+    "One fixed in-family synthetic workload. Full likelihood table retained and common setup included; no hardware calibration or continuous model inference.",
+    "Process CPU timer begins inside worker run, excluding Node startup and static module declarations; maxRSS includes process overhead."
+  ]
+}
