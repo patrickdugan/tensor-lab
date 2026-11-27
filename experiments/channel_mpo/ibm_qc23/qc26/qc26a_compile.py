@@ -4,7 +4,7 @@ No IBM access in tests. Build uses the account already configured on the local
 machine. The estimate is not a provider-enforced time limit. Never print tokens.
 """
 from __future__ import annotations
-import argparse, datetime as dt, hashlib, io, json, math, sys
+import argparse, datetime as dt, hashlib, io, json, math, random, sys
 from pathlib import Path
 
 HERE=Path(__file__).resolve().parent
@@ -100,7 +100,15 @@ def backend_connection():
     if backend.name!='ibm_kingston': raise RuntimeError('wrong backend')
     return service,backend
 
-def build(out):
+def ordered_rows(rows, ordering_seed=None):
+    rows=list(rows)
+    if ordering_seed is not None:
+        if type(ordering_seed) is not int: raise ValueError('ordering seed must be an integer')
+        random.Random(ordering_seed).shuffle(rows)
+    return rows
+
+
+def build(out, ordering_seed=None):
     plan=load_plan()
     _,backend=backend_connection()
     snap=calibration_snapshot(backend,source='qc26a_build')
@@ -109,7 +117,7 @@ def build(out):
     (out/'circuits').mkdir()
     write_json(out/'calibration_build.json',snap)
     rows=[];isas=[]
-    for row in plan['rows']:
+    for row in ordered_rows(plan['rows'], ordering_seed):
         qc=logical_circuit(row)
         isa=transpile_on_path(backend,qc,row['path'],optimization_level=0)
         mapping=audit_mapping(isa,row['path'],len(row['path']))
@@ -126,6 +134,7 @@ def build(out):
           'calibration_sha256':hash_bytes((out/'calibration_build.json').read_bytes()),
           'proposal_sha256':hash_bytes((HERE/'qc26a_plan.json').read_bytes()),
           'qpy_sha256':hash_bytes(qpy),'estimated_qpu_seconds':est,'cap_seconds':20,'shots':384,'circuits':rows}
+    if ordering_seed is not None: meta['ordering_seed']=ordering_seed
     meta['plan_sha256']=plan_hash(meta)
     write_json(out/'compiled.json',meta)
     if est>20: raise RuntimeError(f'compiled estimate {est:.3f}s exceeds proposed cap; do not submit')
@@ -146,7 +155,7 @@ def validate_frozen(out):
     assert meta['qpy_sha256']==hash_bytes(data)
     isas=qpy.load(io.BytesIO(data))
     assert len(isas)==len(plan['rows'])==len(meta['circuits'])
-    for spec,row,isa in zip(plan['rows'],meta['circuits'],isas):
+    for spec,row,isa in zip(ordered_rows(plan['rows'],meta.get('ordering_seed')),meta['circuits'],isas):
         assert all(row[k]==v for k,v in spec.items()),'plan row mismatch'
         assert_counts(row,isa)
         assert audit_mapping(isa,row['path'],len(row['path']))==row['mapping']
@@ -168,7 +177,7 @@ def submit(out,authorization):
         raise ValueError('owner must acknowledge provider runtime uncertainty and confirm current allocation')
     age=(dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(meta['compiled_at'])).total_seconds()
     if not 0<=age<=900: raise ValueError('frozen compilation older than 15 minutes; rebuild and reauthorize')
-    _,backend=backend_connection()
+    service,backend=backend_connection()
     old=json.loads((out/'calibration_build.json').read_text())
     snap=calibration_snapshot(backend,source='qc26a_submission')
     if not old.get('timestamp') or snap.get('timestamp')!=old['timestamp']:
@@ -181,6 +190,9 @@ def submit(out,authorization):
     for row,isa in zip(meta['circuits'],isas):
         if abs(duration(isa,backend.target)-row['duration_s'])>1e-12:
             raise ValueError('duration changed; rebuild and reauthorize')
+    from qc26b_prospective_plan import checked_usage
+    before=checked_usage(service,auth['max_qpu_seconds'])
+    write_json(out/'usage_before.json',before)
     write_json(out/'calibration_submission.json',snap)
     # Exclusive marker before the irreversible call: do not retry automatically
     # after an ambiguous network error. Check account job history first.
@@ -200,15 +212,30 @@ def submit(out,authorization):
         assert all(len(k)==len(row['path']) and set(k)<=set('01') for k in c)
         counts[row['id']]={k:int(v) for k,v in c.items()}
     write_json(out/'counts.json',counts)
-    print('Wrote raw counts; inspect provider-reported usage separately.')
+    try:
+        after=service.usage()
+    except Exception as exc:
+        after={'error':type(exc).__name__+': '+str(exc)}
+    try:
+        job_usage=job.usage()
+    except Exception as exc:
+        job_usage={'error':type(exc).__name__+': '+str(exc)}
+    write_json(out/'execution_receipt.json',{'job_id':job.job_id(),'plan_sha256':meta['plan_sha256'],
+        'usage_before':before,'usage_after':after,'job_usage':job_usage,
+        'authorized_ceiling_seconds':auth['max_qpu_seconds'],'circuits':len(counts),'shots_per_circuit':meta['shots'],
+        'calibration_timestamp_build':old['timestamp'],'calibration_timestamp_submission':snap['timestamp']})
+    print('Wrote raw counts and execution receipt.')
 
 if __name__=='__main__':
     p=argparse.ArgumentParser()
     p.add_argument('command',choices=['build','submit'])
     p.add_argument('--out',type=Path,required=True)
     p.add_argument('--authorization',type=Path)
+    p.add_argument('--ordering-seed',type=int)
     a=p.parse_args()
     if a.command=='build':
         if a.authorization: p.error('authorization is for submit only')
-        build(a.out)
-    else: submit(a.out,a.authorization)
+        build(a.out,a.ordering_seed)
+    else:
+        if a.ordering_seed is not None: p.error('ordering seed is build-only')
+        submit(a.out,a.authorization)
