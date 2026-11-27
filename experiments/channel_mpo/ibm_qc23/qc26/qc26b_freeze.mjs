@@ -13,6 +13,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {parse,schedule,evaluate} from './qc26b_engine.mjs';
+import {derive as deriveQPU04} from './qpu04_drift.mjs';
 
 export const FORMAT_V1='qc26b-frozen-v1',FORMAT_V2='qc26b-frozen-v2',FORMAT='qc26b-frozen-v3';
 export const TOL=1e-12;
@@ -35,7 +36,7 @@ export function canonical(x){
 }
 export const engineSha=()=>sha256(readLF(path.join(HERE,'qc26b_engine.mjs')));
 // All three JS files are standalone except for imports among them and Node builtins.
-export const codeManifest=()=>Object.fromEntries(['qc26b_engine.mjs','qc26b_freeze.mjs','qc26b_prospective_eval.mjs'].map(f=>[f,sha256(readLF(path.join(HERE,f)))]));
+export const codeManifest=(qpu04=false)=>Object.fromEntries(['qc26b_engine.mjs','qc26b_freeze.mjs','qc26b_prospective_eval.mjs',...(qpu04?['qpu04_drift.mjs','qpu04_calibration.py','PGC_QPU04_PROTOCOL.md']:[])].map(f=>[f,sha256(readLF(path.join(HERE,f)))]));
 
 export function checkParams(p){
   if(!p||typeof p!=='object'||Array.isArray(p))throw Error('params must be an object');
@@ -90,6 +91,23 @@ export function computePredictions(build,params,format=FORMAT){
   return preds;
 }
 
+// The extension is a separate frozen C3Z configuration. No baseline model or
+// acceptance criterion changes. Same engine, QASM, readout and calibration.
+export function computeQPU04(build,params){
+  const pack=params.meta?.pgc_qpu04;
+  if(!pack)return null;
+  const fit=deriveQPU04(pack,build.meta.compiled_at,build.meta.calibration_timestamp);
+  if(canonical({sx:params.sx,cz:params.cz})!==canonical(fit.latest))throw Error('QPU04 latest baseline differs from independent fit pack');
+  const cfg={nonunital:true,sx:fit.drift.sx,cz:fit.drift.cz},predictions={};
+  for(const {r,q} of build.circuits){
+    const seq=schedule(r,parse(r,q),build.snap);
+    predictions[r.id]=r.physical_path.map((physical,bit)=>{
+      const z=evaluate(r.n,seq,bit,build.snap.qubits[physical].readout_error||0,cfg);
+      return {bit,physical,C3ZD:z.z,ledger:{l1:z.ledger.l1,old_bound:z.ledger.old_bound,min_bound:z.ledger.min_bound,peak:z.ledger.peak}};
+    });
+  }
+  return {label:'DECLARED EXPLORATORY EXTENSION C3Z-D: two-round random-walk plug-in mean',fit,predictions};
+}
 export function buildFrozen(buildDir,paramsFile){
   const params=readParams(paramsFile),build=loadBuild(buildDir);
   const circuits={};
@@ -105,10 +123,12 @@ export function buildFrozen(buildDir,paramsFile){
     params,params_sha256:sha256(canonical(params)),
     build:{backend:build.meta.backend,plan_sha256:build.meta.plan_sha256,calibration_timestamp:build.meta.calibration_timestamp,
       compiled_json_sha256:build.compiled_json_sha256,calibration_snapshot_sha256:build.snapshot_sha256,circuits},
-    code:{engine_file:'qc26b_engine.mjs',engine_sha256:engineSha(),manifest:codeManifest()},
+    code:{engine_file:'qc26b_engine.mjs',engine_sha256:engineSha(),manifest:codeManifest(!!params.meta?.pgc_qpu04)},
     tolerance:TOL,
     predictions:computePredictions(build,params)
   };
+  const ext=computeQPU04(build,params);
+  if(ext)body.qpu04=ext;
   return {...body,sha256:sha256(canonical(body))};
 }
 
@@ -125,7 +145,9 @@ export function verifyFrozen(frozen,buildDir,paramsFile){
     chk('parameter file equals frozen parameters',canonical(params)===canonical(frozen.params),'parameter file differs from the frozen parameters');
     chk('params_sha256',sha256(canonical(params))===frozen.params_sha256);
     chk('engine code hash',engineSha()===frozen.code.engine_sha256,'qc26b_engine.mjs differs from the frozen version');
-    if(frozen.format===FORMAT)chk('scoring and freeze code manifest',canonical(frozen.code.manifest)===canonical(codeManifest()));
+    if(frozen.format===FORMAT)chk('scoring and freeze code manifest',canonical(frozen.code.manifest)===canonical(codeManifest(!!params.meta?.pgc_qpu04)));
+    chk('QPU04 extension presence',!!params.meta?.pgc_qpu04===!!frozen.qpu04);
+    if(params.meta?.pgc_qpu04)chk('QPU04 v3 format',frozen.format===FORMAT);
     const build=loadBuild(buildDir);
     chk('compiled.json hash',build.compiled_json_sha256===frozen.build.compiled_json_sha256);
     chk('plan_sha256',build.meta.plan_sha256===frozen.build.plan_sha256);
@@ -167,6 +189,24 @@ export function verifyFrozen(frozen,buildDir,paramsFile){
       }
       chk('predictions recompute within 1e-12',bad===0,`${bad} of ${cnt} values differ, max gap ${maxGap}`);
       checks.push({name:'max recompute gap',ok:true,detail:maxGap});
+      if(params.meta?.pgc_qpu04){
+        const a=computeQPU04(build,params),b=frozen.qpu04;
+        chk('QPU04 derived parameters and posterior',canonical(a.fit)===canonical(b.fit));
+        chk('QPU04 prediction id set',canonical(Object.keys(a.predictions).sort())===canonical(Object.keys(b.predictions).sort()));
+        let mismatches=0;
+        for(const id of Object.keys(a.predictions)){
+          const x=a.predictions[id],y=b.predictions[id];
+          if(!y||x.length!==y.length){mismatches++;continue;}
+          for(let i=0;i<x.length;i++){
+            if(x[i].bit!==y[i].bit||x[i].physical!==y[i].physical||typeof y[i].C3ZD!=='number'||!(Math.abs(x[i].C3ZD-y[i].C3ZD)<=TOL))mismatches++;
+            for(const k of ['l1','old_bound','min_bound','peak']){
+              const t=x[i].ledger[k],u=y[i].ledger?.[k];
+              if(typeof u!=='number'||!Number.isFinite(u)||u<0||Math.abs(t-u)>TOL*Math.max(Math.abs(t),Number.MIN_VALUE))mismatches++;
+            }
+          }
+        }
+        chk('QPU04 predictions and ledgers recompute',mismatches===0,String(mismatches)+' mismatches');
+      }
     }
   }catch(e){chk('verification error',false,String(e&&e.message||e));}
   return {ok:failures.length===0,failures,checks};
