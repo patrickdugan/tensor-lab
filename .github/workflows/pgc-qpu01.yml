@@ -3,7 +3,9 @@ on:
   pull_request:
     paths:
       - 'experiments/channel_mpo/ibm_qc23/pgc_qpu/**'
-      - 'experiments/channel_mpo/ibm_qc23/qc26/qc26b_engine.mjs'
+      - 'experiments/channel_mpo/ibm_qc23/qc26/qc26b_*.mjs'
+      - 'experiments/channel_mpo/ibm_qc23/qc26/qc26b_prospective_plan.py'
+      - 'experiments/channel_mpo/ibm_qc23/qc26/test_qc26b_prospective.py'
       - '.github/workflows/pgc-qpu01.yml'
   push:
     branches: [main]
@@ -32,4 +34,13 @@ jobs:
         run: python experiments/channel_mpo/ibm_qc23/pgc_qpu/analysis/jacobian_svd_check.py > /dev/null
       - name: Ramsey estimator, submit-adapter gates and QPU02 offline tests
         working-directory: experiments/channel_mpo/ibm_qc23/pgc_qpu
-        run: python -m pytest test_pgc_ramsey.py qpu02/test_qpu02.py -q
+        run: python -m pytest test_pgc_ramsey.py test_ramsey_modelcheck.py qpu02/test_qpu02.py -q
+      - name: QC-26B prospective freeze/scoring regressions
+        working-directory: experiments/channel_mpo/ibm_qc23/qc26
+        run: python -m unittest test_qc26b_prospective -v
+      - name: Run exploratory Ramsey model checks on archived counts
+        working-directory: experiments/channel_mpo/ibm_qc23/pgc_qpu
+        run: |
+          for block in q5 q23; do
+            python ramsey_modelcheck.py --compiled receipts/live_20261127/$block/compiled.json --counts receipts/live_20261127/$block/counts.json --out /tmp/modelcheck_$block.json
+          done
