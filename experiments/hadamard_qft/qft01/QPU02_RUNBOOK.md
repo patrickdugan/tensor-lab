@@ -66,3 +66,7 @@ python qpu02.py collect --out results_local/qpu02_b5_r0
 ```
 
 Fail closed on calibration/usage/hash/duration mismatch. Never automatically create auth or retry a submission; inspect job history if started marker exists without ID. Collect retrieves existing job only. Replicate 1 uses new directory and fresh authorization, different line chosen in advance from calibration via --path or new calibration. Commit safe receipts/counts/calibration/manifests/QPY/QASM/analysis and manuscript section after hardware; exclude account files/auth. No new QPU jobs yet. Full local reproducibility archive SHA256 ae702cc387f326870d5fd349d85bfde2190c433abf414a16517bff8346a4d1a5.
+
+## Execution record
+
+Executed 27 November 2026 on ibm_kingston: b=5 replicate 0 job dc4oaqqnj2vs73dkf2kg (14 QPU s), b=5 replicate 1 on the disjoint chain 67,68,69,78,89 job dc4ock2nj2vs73dkf570 (14 s), and the b=6 stretch job dc4oduinj2vs73dkf74g (12 s): 40 QPU s in total, 296 of 600 s remaining. The b=6 stretch was saturated by noise; the b=4 anchor was not run. Raw counts, receipts and reproduction steps: hardware_results/README.md. Owner step: owner_submit_qpu02.ps1 -Dir <stage dir> -Hash <printed plan hash>.

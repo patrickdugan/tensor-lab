@@ -49,6 +49,23 @@ def test_qiskit_and_fake_backend():
             isa=pm.run(old.circuit(row,b));native_check(isa,list(range(b)),row,b)
 
 
+def test_committed_hardware_counts_reproduce_analysis(tmp_path):
+    """Re-analyze the committed raw counts and compare with the committed analysis.json."""
+    from pathlib import Path
+    root = Path(__file__).resolve().parent / 'hardware_results'
+    stages = [d for d in ('qpu02_b5_r0', 'qpu02_b5_r1', 'qpu02_b6_r0') if (root / d / 'counts.json').exists()]
+    if not stages:
+        pytest.skip('hardware_results not present')
+    for d in stages:
+        out = tmp_path / d; out.mkdir()
+        for f in ('compiled.json', 'counts.json'):
+            (out / f).write_bytes((root / d / f).read_bytes())
+        analyze(out)
+        new, ref = old.read(out / 'analysis.json'), old.read(root / d / 'analysis.json')
+        assert new['contrasts'] == ref['contrasts'] and new['comparisons'] == ref['comparisons']
+        assert all(sum(c.values()) == SHOTS for c in old.read(out / 'counts.json').values())
+
+
 def test_phase_blind_null(tmp_path):
     p=plan(5);out=tmp_path;old.write(out/'compiled.json',p)
     # Perfectly uniform phase-insensitive counts, no hardware claim.

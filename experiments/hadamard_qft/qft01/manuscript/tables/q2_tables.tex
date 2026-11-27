@@ -1,0 +1,76 @@
+\begin{table}[htbp]\centering\small
+\caption{QPU02, $b=5$: compiled resources on \texttt{ibm\_kingston} (IBM native gates, optimization level 1; identical for every replicate at this $b$). Routed CNOTs are the registered compiler output on the common layout; native two-qubit gates, depth and duration are for the edge phase circuit including preparation. The operator error is the ideal spectral-norm distance from the exact shell transform.}\label{tab:q2res-b5}
+\begin{tabular}{lrrrrrr}\toprule Arm & Routed CNOT & Native 2q & 2q depth & Depth & Duration ($\mu$s) & Operator error\\\midrule
+Gray & 1122 & 1122 & 1041 & 4509 & 117.7 & 2.2e-14\\
+Recursive & 468 & 468 & 434 & 1801 & 48.3 & 4.5e-15\\
+Exact compact & 296 & 296 & 271 & 1148 & 31.8 & 4.9e-15\\
+Approx. compact & 218 & 218 & 206 & 849 & 24.0 & 1.2e-03\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{QPU02, $b=5$, replicate 0: phase contrast $C=P(n\mid\psi_-)-P(n\mid\psi_+)$, 512 shots per circuit, raw counts. Ideal $C$ is 1 (edge) or $1/\sqrt2$ (middle, tail). Intervals are marginal 95\% Hoeffding intervals from finite shots only. $\Delta$ is the contrast minus the recursive arm's, with its interval; TV and $F_H$ are means over the plus, minus and imaginary circuits of each arm (uniform-noise TV reference 0.869).}\label{tab:q2c-b5r0}
+\begin{tabular}{llrcrcrr}\toprule Arm & Probe & $C$ & 95\% interval & $C/C_{\rm ideal}$ & $\Delta$ vs recursive & mean TV & mean $F_H$\\\midrule
+Gray & edge & 0.012 & [-0.073,+0.097] & 0.012 & -0.004 [-0.124,+0.116] & 0.799 & 0.212\\
+Gray & middle & 0.021 & [-0.063,+0.106] & 0.030 & -0.004 [-0.124,+0.116] &  & \\
+Gray & tail & 0.023 & [-0.061,+0.108] & 0.033 & -0.047 [-0.167,+0.073] &  & \\
+\midrule
+Recursive & edge & 0.016 & [-0.069,+0.101] & 0.016 & --- & 0.733 & 0.276\\
+Recursive & middle & 0.025 & [-0.059,+0.110] & 0.036 & --- &  & \\
+Recursive & tail & 0.070 & [-0.015,+0.155] & 0.099 & --- &  & \\
+\midrule
+Exact compact & edge & 0.121 & [+0.036,+0.206] & 0.121 & +0.105 [-0.015,+0.226] & 0.642 & 0.385\\
+Exact compact & middle & 0.121 & [+0.036,+0.206] & 0.171 & +0.096 [-0.024,+0.216] &  & \\
+Exact compact & tail & 0.141 & [+0.056,+0.226] & 0.199 & +0.070 [-0.050,+0.190] &  & \\
+\midrule
+Approx. compact & edge & 0.189 & [+0.105,+0.274] & 0.189 & +0.174 [+0.054,+0.294] & 0.593 & 0.438\\
+Approx. compact & middle & 0.203 & [+0.118,+0.288] & 0.287 & +0.178 [+0.058,+0.298] &  & \\
+Approx. compact & tail & 0.211 & [+0.126,+0.296] & 0.298 & +0.141 [+0.021,+0.261] &  & \\
+\multicolumn{8}{l}{Preparation-only mean success 0.977; SPAM mean 0.974, min 0.957.}\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{QPU02, $b=5$, replicate 1: phase contrast $C=P(n\mid\psi_-)-P(n\mid\psi_+)$, 512 shots per circuit, raw counts. Ideal $C$ is 1 (edge) or $1/\sqrt2$ (middle, tail). Intervals are marginal 95\% Hoeffding intervals from finite shots only. $\Delta$ is the contrast minus the recursive arm's, with its interval; TV and $F_H$ are means over the plus, minus and imaginary circuits of each arm (uniform-noise TV reference 0.869).}\label{tab:q2c-b5r1}
+\begin{tabular}{llrcrcrr}\toprule Arm & Probe & $C$ & 95\% interval & $C/C_{\rm ideal}$ & $\Delta$ vs recursive & mean TV & mean $F_H$\\\midrule
+Gray & edge & 0.047 & [-0.038,+0.132] & 0.047 & -0.004 [-0.124,+0.116] & 0.789 & 0.218\\
+Gray & middle & -0.012 & [-0.097,+0.073] & -0.017 & -0.098 [-0.218,+0.022] &  & \\
+Gray & tail & 0.023 & [-0.061,+0.108] & 0.033 & -0.006 [-0.126,+0.114] &  & \\
+\midrule
+Recursive & edge & 0.051 & [-0.034,+0.136] & 0.051 & --- & 0.692 & 0.324\\
+Recursive & middle & 0.086 & [+0.001,+0.171] & 0.122 & --- &  & \\
+Recursive & tail & 0.029 & [-0.056,+0.114] & 0.041 & --- &  & \\
+\midrule
+Exact compact & edge & 0.148 & [+0.064,+0.233] & 0.148 & +0.098 [-0.022,+0.218] & 0.578 & 0.452\\
+Exact compact & middle & 0.176 & [+0.091,+0.261] & 0.249 & +0.090 [-0.030,+0.210] &  & \\
+Exact compact & tail & 0.238 & [+0.153,+0.323] & 0.337 & +0.209 [+0.089,+0.329] &  & \\
+\midrule
+Approx. compact & edge & 0.309 & [+0.224,+0.393] & 0.309 & +0.258 [+0.138,+0.378] & 0.498 & 0.540\\
+Approx. compact & middle & 0.236 & [+0.151,+0.321] & 0.334 & +0.150 [+0.030,+0.270] &  & \\
+Approx. compact & tail & 0.254 & [+0.169,+0.339] & 0.359 & +0.225 [+0.105,+0.345] &  & \\
+\multicolumn{8}{l}{Preparation-only mean success 0.964; SPAM mean 0.965, min 0.955.}\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\small
+\caption{QPU02, $b=6$: compiled resources on \texttt{ibm\_kingston} (IBM native gates, optimization level 1; identical for every replicate at this $b$). Routed CNOTs are the registered compiler output on the common layout; native two-qubit gates, depth and duration are for the edge phase circuit including preparation. The operator error is the ideal spectral-norm distance from the exact shell transform.}\label{tab:q2res-b6}
+\begin{tabular}{lrrrrrr}\toprule Arm & Routed CNOT & Native 2q & 2q depth & Depth & Duration ($\mu$s) & Operator error\\\midrule
+Recursive & 1080 & 1080 & 987 & 4101 & 106.6 & 9.1e-15\\
+Exact compact & 736 & 736 & 659 & 2790 & 73.7 & 8.3e-15\\
+Approx. compact & 434 & 434 & 400 & 1626 & 43.7 & 1.2e-03\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{QPU02, $b=6$, replicate 0: phase contrast $C=P(n\mid\psi_-)-P(n\mid\psi_+)$, 512 shots per circuit, raw counts. Ideal $C$ is 1 (edge) or $1/\sqrt2$ (middle, tail). Intervals are marginal 95\% Hoeffding intervals from finite shots only. $\Delta$ is the contrast minus the recursive arm's, with its interval; TV and $F_H$ are means over the plus, minus and imaginary circuits of each arm (uniform-noise TV reference 0.925).}\label{tab:q2c-b6r0}
+\begin{tabular}{llrcrcrr}\toprule Arm & Probe & $C$ & 95\% interval & $C/C_{\rm ideal}$ & $\Delta$ vs recursive & mean TV & mean $F_H$\\\midrule
+Recursive & edge & -0.006 & [-0.091,+0.079] & -0.006 & --- & 0.922 & 0.069\\
+Recursive & middle & -0.020 & [-0.104,+0.065] & -0.028 & --- &  & \\
+Recursive & tail & -0.010 & [-0.095,+0.075] & -0.014 & --- &  & \\
+\midrule
+Exact compact & edge & -0.002 & [-0.087,+0.083] & -0.002 & +0.004 [-0.116,+0.124] & 0.891 & 0.096\\
+Exact compact & middle & 0.000 & [-0.085,+0.085] & 0.000 & +0.020 [-0.101,+0.140] &  & \\
+Exact compact & tail & -0.008 & [-0.093,+0.077] & -0.011 & +0.002 [-0.118,+0.122] &  & \\
+\midrule
+Approx. compact & edge & 0.020 & [-0.065,+0.104] & 0.020 & +0.025 [-0.095,+0.145] & 0.883 & 0.110\\
+Approx. compact & middle & 0.004 & [-0.081,+0.089] & 0.006 & +0.023 [-0.097,+0.143] &  & \\
+Approx. compact & tail & -0.002 & [-0.087,+0.083] & -0.003 & +0.008 [-0.112,+0.128] &  & \\
+\multicolumn{8}{l}{Preparation-only mean success 0.965; SPAM mean 0.956, min 0.938.}\\
+\bottomrule\end{tabular}\end{table}
+
