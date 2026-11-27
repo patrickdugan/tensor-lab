@@ -1,56 +1,106 @@
 # PGC-QPU04 campaign report (2026-11-27)
 
-**Status: hardware phase not started. No new QPU job, no calibration count and no evaluation count exists. No model prediction has been frozen. The offline phase is complete and verified.**
+**Outcome: executed end to end on ibm_kingston. The primary C3 endpoint FAILED (criteria a and c). The declared C3Z extension and the C3Z-D extension also failed criterion c. C3Z-D gave no incremental gain over static C3Z.** All numbers below come from archived raw counts; nothing was tuned, re-run or replaced after the evaluation counts arrived.
 
-Registration: `PGC_QPU04_PROTOCOL.md` (registration v1). The historical Kingston acquisitions (jobs dc4n9ads2omc738fm84g, dc4ne0thdvas73bq1hq0, dc4ngn2nj2vs73dkdrdg) are unchanged.
+Registration: `PGC_QPU04_PROTOCOL.md` (registration v1). All receipts: `pgc_qpu/receipts/qpu04_live_20261127/`.
 
-## 1. Offline regression suites
+## 1. Execution record
 
-All run on the PR branch (`pgc/qpu04-final-prospective-20261127`, PR 36), Windows, Python 3.12.10, Node 24.19.0, qiskit 2.6.2.
+| Step | Job | Submitted (UTC) | Est. s | Ceiling s | Provider usage s | Plan sha256 |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| QC-26A (seed 261127041) | dc4qdhqnj2vs73dkhrpg | 15:50:34 | 16.39 | 20 | 11 | 1c788ff3430eb4a7... |
+| Ramsey q5 (seed 261127042) | dc4qf65s2omc738fqksg | 15:54:02 | 13.19 | 15 | 9 | 3378d6a93f7ddbe9... |
+| Ramsey q23 (seed 261127043) | dc4qftuq4uuc73a99hag | 15:55:38 | 13.19 | 15 | 9 | (see q23/compiled.json) |
+| QC-26B seeds 51-54, evaluation | dc4qnoeq4uuc73a99t3g | 16:12:19 | 13.86 | 15 | 15 | 498b263512357f87... |
+| **Total** | | | 56.63 | 65 | **44** | |
 
-| Suite | Result |
-| --- | --- |
-| `pgc_qpu/audit.mjs --check` | PASS |
-| `pgc_qpu/ramsey_campaign.mjs --check` | PASS |
-| `analysis/jacobian_svd_check.py` | exit 0 |
-| pytest `test_pgc_ramsey`, `test_ramsey_modelcheck`, `qpu02/test_qpu02` | 49 passed |
-| `test_qc26b_prospective` | 26 tests OK (370 s) |
-| `test_qpu04_calibration` | 3 tests OK |
-| `test_qpu04_drift.mjs`, `test_qpu04_pipeline.mjs` | PASS (synthetic) |
-| `test_qc26a_identify` | OK |
-| BPD-QPU02 / QPU03 / QPU03B replays | passed |
-| `qpu04_bpd_benchmark.mjs` | ran, exit 0 |
-| `qc26b_selftest` vs dense check | 48 cases, 96 evaluations, worst gap 4.9e-15, receipt byte-identical |
+Allocation before the first job: 296 s remaining; after the last: 252 s (instance plan open, limit 600 s). Every job was built, authorized and submitted one at a time inside the 15-minute freshness gate, with no retries and no ambiguous submissions. Authorization files (`authorization/`) name the exact plan hash, the evaluation file also the frozen sha256 and freeze commit; `authorized_by` records the owner's chat instruction "DO IT" given after the gate procedure was explained. The three fresh jobs all follow the historical round (dc4n9ads..., dc4ne0th..., dc4ngn2n...), which the parameter-pack verifier checks.
 
-## 2. CI failures on the PR head and their repair
+Freeze order (verified from timestamps): parameter pack and calibration receipts pushed to main at a4a0efd; frozen.json (six model sets, sha256 `da7bcb56...a99c`) committed and pushed as `1f120d1250d49d6c91aa21b12215e6a90ff6564a` at 16:09:07 UTC; evaluation circuits submitted at 16:12:19 UTC. The submitter recomputed the published freeze and source bytes before submitting.
 
-CI on PR head 35fa92d had two failing jobs on ubuntu/Node 22. Both reproduced on Linux (WSL Ubuntu 24.04, Node 18) and neither depended on QPU04 code.
+## 2. Calibration diagnostics and the 16-value parameter pack
 
-1. **PGC-QPU01 / nonlinear BPD replay.** `bpd_qpu02.mjs` scored alias recovery with `q >= .5`. For the fixed-even and random baselines the posterior is often exactly 0.5 up to the last bit, and the committed receipt had been decided by rounding that differs between runtimes (7 of 960 records flipped on Linux). Scoring now treats a marginal within 1e-9 of 0.5 as recovered, which can only raise baseline alias rates. `pilot_32.json` was regenerated; 219 record fields changed, all `alias_both`/`alias_fraction` for fixed-even and random policies. RMSE fields and every dense, exact-grouped and alias-only result are unchanged, and `BPD_QPU02_REPORT.md` states the convention. The same replay is now green on Windows and Linux.
-2. **QC-26B channel engine / replay verify.** `qc26b_verify.py` compared the fitted ZZ phases with exact equality (`0.10000000000000002` vs `0.1`). Its own docstring says floats are compared to 1e-9; the phases now use the same tolerance. This check already failed on main at 78cf47e.
+All fits used 400 bootstraps (`analysis/`). Parameters are plug-in point estimates by the registered rule, with no thresholding.
 
-## 3. Live allocation
+| Coordinate | Value (rad) | | Coordinate | Value (rad) |
+| --- | ---: | --- | --- | ---: |
+| SX q3 | -0.008837 | | delta 4-5 | -0.005374 |
+| SX q5 | -0.000461 | | alpha 4-5 (q4, q5) | -0.012796, +0.009069 |
+| SX q21 | +0.000668 | | delta 5-6 | +0.023989 |
+| SX q23 | -0.007505 | | alpha 5-6 (q5, q6) | +0.177269, +0.011471 |
+| delta 16-23 | -0.023158 | | delta 22-23 | -0.006793 |
+| alpha 16-23 (q16, q23) | +0.019002, -0.067892 | | alpha 22-23 (q22, q23) | +0.000034, -0.031288 |
 
-Read-only query at 2026-11-27 (instance Blot, plan open): consumed 304 s, limit 600 s, **remaining 296 s**, `usage_limit_reached` false. ibm_kingston operational, 0 pending jobs. The authorization ceilings total 65 s against 296 s remaining. The reported usage period ended 14:56 UTC and the query ran after that, so the provider may roll the period; either way the margin is sufficient.
+Ramsey bootstrap on delta: 4-5 SE 0.0037 (CI includes 0), 5-6 SE 0.0041 (CI excludes 0), 16-23 SE 0.0036 (CI excludes 0; forward/reverse gap also excludes 0), 22-23 SE 0.0043 (CI includes 0). Point chi-square 25.3, 28.4, 14.1, 18.6. QC-26A decision counts: 7 NONZERO_CANDIDATE_PENDING_REPLICATION, 7 CONSISTENT_WITH_ZERO, 2 INCONCLUSIVE_FLAGS, `any_diagnostic_flag` true; SX crosstalk test max |z| 2.04 against the Bonferroni threshold 3.71. These are exploratory plug-in estimates, not independently established nonzero effects, and the residual model misspecification is reported rather than corrected. The q5 alpha of 0.177 rad on edge 5-6 is large for a plug-in value and sits inside the registered +/-0.4 rad bound.
 
-A verification-only QC-26A build with registered seed 261127041 completed (82 circuits, estimate 16.38688 s, cap 20 s, plan sha256 `b6f3b78a...54dd`). It was built locally under `results_local/qpu04_verify_build` and is not for submission: it will exceed the 15-minute freshness gate and the registered run requires a fresh build.
+## 3. Results (frozen predictions, evaluation counts, 24 circuits, 240 site observables)
 
-## 4. Why the hardware phase stopped
+Mean absolute error against measured <Z>:
 
-Every submit path (`qc26a_compile.py submit`, `submit_ramsey.py`, `qc26b_prospective_plan.py submit`) requires an authorization file written by the account owner that names the exact plan sha256 of a just-compiled build and attests `acknowledge_estimate_not_hard_limit` and `checked_current_allocation`. The protocol states that none is produced by the agent. The plan hash exists only after the build, and the build expires after 15 minutes, so the approval cannot be given in advance. Nothing was submitted and nothing was retried.
+| Group | n | Ideal | C0 | C1 | C2 | C3 | C3Z | C3Z-D |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| All sites | 240 | 0.03699 | 0.03627 | 0.03518 | 0.03541 | 0.03495 | 0.02943 | 0.02944 |
+| Targets 5, 23 | 24 | 0.09953 | 0.10232 | 0.10089 | 0.10205 | 0.09307 | 0.04362 | 0.04399 |
+| Controls 3, 21 | 24 | 0.02413 | 0.02678 | 0.02513 | 0.02603 | 0.02574 | 0.02503 | n/a |
+| Other sites | 216 | 0.03004 | 0.02893 | 0.02788 | 0.02801 | 0.02849 | 0.02786 | n/a |
+| Site 5 | 12 | 0.08800 | 0.09102 | 0.08884 | 0.08881 | 0.08197 | 0.06286 | n/a |
+| Site 23 | 12 | 0.11105 | 0.11361 | 0.11294 | 0.11529 | 0.10417 | 0.02438 | n/a |
 
-## 5. Owner procedure to complete the campaign
+Relative MAE improvement over C0 and registered criteria:
 
-From `experiments/channel_mpo/ibm_qc23`, one block at a time (build, authorize, submit before the next block), using the registered seeds:
+| Model | Pooled | Targets | (a) >=10% both | (b) paired CI lower > 0 | (c) no other-site degradation > 0.005 | (d) ledger < 1% MAE | (e) freeze verified | Verdict |
+| --- | ---: | ---: | --- | --- | --- | --- | --- | --- |
+| **C3 (primary)** | 3.64% | 9.04% | FAIL | PASS | FAIL (site 6, +0.0118) | PASS | PASS | **FAIL** |
+| C2 | 2.36% | 0.26% | FAIL | FAIL (targets CI [-0.00083, 0.00132]) | PASS | PASS | PASS | FAIL |
+| C3Z (extension) | 18.84% | 57.37% | PASS | PASS | FAIL (site 6, +0.0200) | PASS | PASS | FAIL |
+| C3Z-D (extension) | 18.82% | 57.00% | PASS | PASS | FAIL | PASS | PASS | FAIL |
 
-    python qc26/qc26a_compile.py build --out pgc_qpu/results_local/qpu04/qc26a --ordering-seed 261127041
+Paired bootstrap 95% intervals on MAE improvement (positive means better):
 
-Read `plan_sha256` from the build output, write the authorization (ceiling 20 for QC-26A, 15 for each Ramsey block and for evaluation):
+| Comparison | Pooled circuit CI | Targets circuit CI | Pooled path-cluster CI (8) | Targets path-cluster CI (4) | Label |
+| --- | --- | --- | --- | --- | --- |
+| C3 vs C0 | [0.00059, 0.00270], wins 19/24 | [0.00446, 0.01476], 12/12 | [-0.00014, 0.00300] | [0.00269, 0.01885] | INCONCLUSIVE_OR_NEGATIVE |
+| C2 vs C0 | [0.00055, 0.00117], 20/24 | [-0.00083, 0.00132], 6/12 | [0.00060, 0.00106] | [-0.00143, 0.00197] | INCONCLUSIVE_OR_NEGATIVE |
+| C3Z vs C0 | [0.00318, 0.01345], 20/24 | [0.03176, 0.08907], 10/12 | [0.00088, 0.01475] | [0.02417, 0.09846] | POSITIVE |
+| C3Z vs C3 | [0.00225, 0.01117], 9/24 | [0.02450, 0.07689], 9/12 | | | |
+| C3Z-D vs C0 | [0.00318, 0.01343], 20/24 | [0.03142, 0.08864], 10/12 | [0.00089, 0.01469] | [0.02371, 0.09799] | fails criterion c |
+| C3Z-D vs static C3Z | [-0.00005, 0.00003], 9/9 ties 6 | [-0.00052, -0.00024], 0/12 | [-0.00005, 0.00003] | [-0.00056, -0.00019] | **INCONCLUSIVE_OR_NEGATIVE** |
 
-    {"authorized": true, "backend": "ibm_kingston", "plan_sha256": "<hash printed by build>", "max_qpu_seconds": 20, "authorized_by": "<owner>", "acknowledge_estimate_not_hard_limit": true, "checked_current_allocation": true}
+Incremental drift label: INCONCLUSIVE_OR_NEGATIVE. The drift-smoothed mean was slightly worse than static C3Z on target sites (0 wins, 12 losses, about -0.0004 MAE), with both interval levels excluding zero in the wrong direction. The temporal regularizer did not help in this block, and no rule adjustment follows.
 
-then `python qc26/qc26a_compile.py submit --out pgc_qpu/results_local/qpu04/qc26a --authorization <file>`. Repeat with `pgc_qpu/compile_readonly.py --block q5 ... --ordering-seed 261127042` and `--block q23 ... 261127043` plus `pgc_qpu/submit_ramsey.py`. Steps 2 to 4 of the protocol (fit reports with 400 bootstraps, `qpu04_calibration.py prepare/verify`, QC-26B build, freeze, push, owner authorization naming `frozen_sha256` and `freeze_commit`, submit, score) follow unchanged.
+Site-level degradation: physical qubit 6 (n=6) worsens under C3 by +0.0118 and under C3Z by +0.0200 against C0; it is the only flagged site. Qubit 6 is the neighbour of qubit 5 on edge 5-6, which carries the +0.177 rad alpha estimate. Per-site tables for all 34 sites are in `qpu04_report.txt`.
 
-## 6. Results tables
+The primary improvement is concentrated in the target sites and mostly comes from the Ramsey-informed edge terms: C3Z (adding endpoint-local Z corrections) cuts target MAE from 0.0931 (C3) to 0.0436, chiefly on site 23 (0.1042 to 0.0244). This is a declared extension and does not replace the failed primary result.
 
-Not available. The tables for the calibration blocks, six model predictions, C3 primary endpoint, C3Z-D comparisons, truncation ledgers and provider usage will be filled only from archived raw counts after the gates above are satisfied. No negative or null hardware result exists yet, and none has been withheld.
+## 4. Truncation ledgers
+
+Maximum discarded L1 mass and conservative bound per model set, against physical MAE:
+
+| Model | Max L1 discard | Min bound | Ratio to MAE | Criterion (d, < 1%) |
+| --- | ---: | ---: | ---: | --- |
+| C3 | 5.634e-11 | 5.634e-11 | 1.61e-9 | PASS |
+| C2 | 5.634e-11 | 4.902e-11 | 1.38e-9 | PASS |
+| C3Z | 6.848e-11 | 6.848e-11 | 2.33e-9 | PASS |
+| C3Z-D (worst case over all models) | 6.876e-11 | 6.876e-11 | 2.34e-9 | PASS |
+
+Maximum live terms 53,753. Truncation is irrelevant to the outcome.
+
+## 5. Negative and null results (none withheld)
+
+- C3 primary: FAIL on criterion (a) (pooled 3.64%, targets 9.04%, both below 10%) and (c) (qubit 6 +0.0118). Its pooled path-cluster interval includes zero.
+- C2: pooled gain 2.36%, targets 0.26%; target interval includes zero; C2 on site 23 is worse than C0.
+- C3Z: strong target gain but fails (c); it is an extension and cannot rescue the primary.
+- C3Z-D: no incremental benefit over static C3Z.
+- QC-26A produced 2 INCONCLUSIVE_FLAGS decisions and the Ramsey point fits report chi-square of 14 to 28 (section 2) and the model-misspecification error carried by the plug-in parameters is not modelled in the scoring.
+
+## 6. Limits and disclosures
+
+One evaluation block on one device on one day; two diagnostic rounds do not give between-cycle uncertainty on evaluation MAE. The eight path clusters are within-block robustness, not independent calibration cycles. C3Z-D rests on a two-point Gaussian drift model with fixed process noise and uses submission time as a proxy. BPD results remain computational evidence only; the CPU benchmark (dense 224.0 ms, oracle 162.8 ms, learned audited 181.1 ms median, RSS 57.3, 57.5, 59.7 MiB) was run before this campaign and is unchanged. Lean kernel verification and CI status on the final commit were not re-confirmed as part of this run; Linux CI repairs from earlier in the campaign are in commit 36b3c95.
+
+## 7. Offline phase and CI repairs
+
+All offline suites passed before any acquisition (pytest 49, QC-26B prospective 26 tests, QPU04 calibration/drift/pipeline, BPD-QPU02/03/03B replays, QC-26B dense cross-check 48 cases). Two Linux CI failures were repaired first: BPD-QPU02 alias scoring treated exact posterior ties by last-bit rounding (a 1e-9 tolerance rule now applies and `pilot_32.json` was regenerated; only fixed-even and random baseline alias fields changed), and `qc26b_verify.py` used exact float equality for fitted phases (now 1e-9 tolerance).
+
+## 8. Reproduction
+
+Raw counts and scoring inputs are in `pgc_qpu/receipts/qpu04_live_20261127/{qc26a,q5,q23,eval}/counts.json`; `qpu04_report.json` and `qpu04_report.txt` are the deterministic scorer output (re-running reproduced the JSON byte for byte). Command: `node qc26/qc26b_prospective_eval.mjs --frozen <fresh>/frozen.json --build <fresh>/eval --params <fresh>/params.json --counts <fresh>/eval/counts.json --out <fresh>/qpu04_report.json` with the compiled QASM in `eval/circuits/`.

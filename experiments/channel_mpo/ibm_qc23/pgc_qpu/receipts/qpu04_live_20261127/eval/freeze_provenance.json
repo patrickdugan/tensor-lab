@@ -1,0 +1,6 @@
+{
+  "freeze_commit": "1f120d1250d49d6c91aa21b12215e6a90ff6564a",
+  "freeze_path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/frozen.json",
+  "frozen_sha256": "da7bcb562c942d3715360260851b91e52ed6ce3fd80d2df8dbd30580bf39a99c",
+  "published_main_sha": "1f120d1250d49d6c91aa21b12215e6a90ff6564a"
+}

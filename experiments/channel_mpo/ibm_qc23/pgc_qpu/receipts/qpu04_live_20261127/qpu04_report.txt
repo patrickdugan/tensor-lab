@@ -1,0 +1,93 @@
+frozen sha256 da7bcb562c942d3715360260851b91e52ed6ce3fd80d2df8dbd30580bf39a99c  plan 498b263512357f876d0ed1034c54d6efdf0f69589e29031b78b1fc60acba8525
+circuits 24, observables 240, counts sha256 392f6fc6fbd3823233a57aaf22a73b0a3b840b9e3a866be0f7409fb8bc9423b6
+
+MAE vs measured <Z> (group, n, ideal, C0, C1, C2, C3, C3Z)
+  all                       240  0.03699  0.03627  0.03518  0.03541  0.03495  0.02943
+  targets_5_23               24  0.09953  0.10232  0.10089  0.10205  0.09307  0.04362
+  controls_3_21              24  0.02413  0.02678  0.02513  0.02603  0.02574  0.02503
+  other_than_5_23           216  0.03004  0.02893  0.02788  0.02801  0.02849  0.02786
+  site_5                     12  0.08800  0.09102  0.08884  0.08881  0.08197  0.06286
+  site_23                    12  0.11105  0.11361  0.11294  0.11529  0.10417  0.02438
+  class_controls             60  0.02824  0.02650  0.02544  0.02544  0.02544  0.02544
+  class_pure_control         60  0.03543  0.03421  0.03355  0.03355  0.03355  0.03355
+  class_targets_23_end       60  0.04546  0.04547  0.04433  0.04477  0.04415  0.03439
+  class_targets_end          60  0.03884  0.03890  0.03740  0.03789  0.03665  0.02435
+
+Per physical site (role, n, MAE C0, C2, C3, C3Z, change C2, change C3, change C3Z; ! = flagged > +0.005)
+  q  3 control n= 12  0.03291 0.03246 0.03233 0.03091  -0.00045  -0.00058  -0.00200 
+  q  4 other   n= 12  0.03256 0.03182 0.03014 0.02237  -0.00074  -0.00242  -0.01019 
+  q  5 target  n= 12  0.09102 0.08881 0.08197 0.06286  -0.00222  -0.00906  -0.02816 
+  q  6 other   n=  6  0.02155 0.01986 0.03334 0.04159  -0.00169  +0.01179! +0.02004!
+  q  7 other   n=  6  0.04867 0.04677 0.04785 0.04848  -0.00190  -0.00081  -0.00019 
+  q 16 other   n= 12  0.02252 0.02155 0.02459 0.01865  -0.00096  +0.00207  -0.00387 
+  q 17 other   n=  6  0.03333 0.02996 0.02998 0.02999  -0.00337  -0.00335  -0.00334 
+  q 20 other   n=  3  0.00893 0.00948 0.00950 0.00950  +0.00055  +0.00057  +0.00057 
+  q 21 control n= 12  0.02065 0.01959 0.01914 0.01914  -0.00106  -0.00151  -0.00151 
+  q 22 other   n=  6  0.02609 0.02557 0.02673 0.02532  -0.00052  +0.00064  -0.00078 
+  q 23 target  n= 12  0.11361 0.11529 0.10417 0.02438  +0.00168  -0.00943  -0.08923 
+  q 27 other   n=  3  0.02795 0.02677 0.02677 0.02677  -0.00119  -0.00119  -0.00119 
+  q 28 other   n=  3  0.02878 0.02749 0.02749 0.02749  -0.00128  -0.00128  -0.00128 
+  q 29 other   n=  3  0.02419 0.02264 0.02264 0.02264  -0.00155  -0.00155  -0.00155 
+  q 30 other   n=  3  0.01433 0.01472 0.01472 0.01472  +0.00040  +0.00040  +0.00040 
+  q 36 other   n=  9  0.01757 0.01731 0.01732 0.01732  -0.00026  -0.00025  -0.00025 
+  q 41 other   n=  9  0.04747 0.04734 0.04734 0.04734  -0.00013  -0.00013  -0.00013 
+  q 42 other   n=  9  0.04295 0.04069 0.04069 0.04069  -0.00226  -0.00226  -0.00226 
+  q 43 other   n=  9  0.02170 0.02123 0.02123 0.02123  -0.00047  -0.00047  -0.00047 
+  q 44 other   n=  6  0.02245 0.02067 0.02067 0.02067  -0.00177  -0.00177  -0.00177 
+  q 45 other   n=  6  0.01292 0.01254 0.01254 0.01254  -0.00037  -0.00037  -0.00037 
+  q 46 other   n=  6  0.02123 0.01762 0.01762 0.01762  -0.00361  -0.00361  -0.00361 
+  q 47 other   n=  9  0.01528 0.01486 0.01486 0.01486  -0.00043  -0.00043  -0.00043 
+  q 48 other   n=  9  0.02325 0.02389 0.02389 0.02389  +0.00063  +0.00063  +0.00063 
+  q 49 other   n=  9  0.02884 0.02884 0.02884 0.02884  +0.00000  +0.00000  +0.00000 
+  q 50 other   n=  9  0.03769 0.03576 0.03576 0.03576  -0.00192  -0.00192  -0.00192 
+  q 51 other   n=  3  0.02424 0.02595 0.02595 0.02595  +0.00171  +0.00171  +0.00171 
+  q 56 other   n=  3  0.00649 0.00579 0.00579 0.00579  -0.00070  -0.00070  -0.00070 
+  q 57 other   n=  6  0.01947 0.01909 0.01909 0.01909  -0.00038  -0.00038  -0.00038 
+  q 67 other   n=  6  0.04558 0.04362 0.04362 0.04362  -0.00197  -0.00197  -0.00197 
+  q 68 other   n=  6  0.04265 0.04001 0.04001 0.04001  -0.00264  -0.00264  -0.00264 
+  q 69 other   n=  6  0.07452 0.07301 0.07301 0.07301  -0.00152  -0.00152  -0.00152 
+  q 78 other   n=  3  0.03855 0.03778 0.03778 0.03778  -0.00077  -0.00077  -0.00077 
+  q 88 other   n=  3  0.01869 0.02161 0.02161 0.02161  +0.00292  +0.00292  +0.00292 
+  q 89 other   n=  3  0.01497 0.01550 0.01550 0.01550  +0.00053  +0.00053  +0.00053 
+
+=== C3 (PRIMARY): relative MAE improvement over C0: pooled 3.64%, targets 5/23 9.04% (5: 9.95%, 23: 8.30%), controls 3/21 3.90%
+    paired bootstrap MAE(C0)-MAE(C3): all 0.00158 CI95 [0.00059, 0.00270] wins 19/24; targets 0.00924 CI95 [0.00446, 0.01476] wins 12/12
+    path-clustered observable-weighted CI95: all [-0.00014, 0.00300] across 8 paths; targets [0.00269, 0.01885] across 4 paths; INCONCLUSIVE_OR_NEGATIVE
+    ledger: max l1 discard 5.634e-11, old_bound 1.135e-10, min_bound 5.634e-11; physical MAE 0.03495; ratio min_bound/MAE 1.612e-9, l1/MAE 1.612e-9, old_bound/MAE 3.249e-9
+    criterion                                         result  detail
+    a_relative_improvement_ge_10pct                   FAIL   pooled 3.64% and targeted(5,23) 9.04% (both must be >= 10%)
+    b_paired_ci_lower_positive                        PASS   pooled CI95 [0.00059, 0.00270], targeted CI95 [0.00446, 0.01476] (both lower bounds must be > 0)
+    c_no_other_site_degradation_gt_0p005              FAIL   flagged physical sites: 6 (+0.0118)
+    d_ledger_bound_below_1pct_of_mae                  PASS   max min_bound 5.634e-11 / MAE 0.03495 = 1.612e-9 (need < 0.01)
+    e_no_tuning_freeze_verified                       PASS   frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring
+    VERDICT C3: FAIL
+
+=== C2 (secondary): relative MAE improvement over C0: pooled 2.36%, targets 5/23 0.26% (5: 2.44%, 23: -1.48%), controls 3/21 2.82%
+    paired bootstrap MAE(C0)-MAE(C2): all 0.00087 CI95 [0.00055, 0.00117] wins 20/24; targets 0.00027 CI95 [-0.00083, 0.00132] wins 6/12
+    path-clustered observable-weighted CI95: all [0.00060, 0.00106] across 8 paths; targets [-0.00143, 0.00197] across 4 paths; INCONCLUSIVE_OR_NEGATIVE
+    ledger: max l1 discard 5.634e-11, old_bound 1.135e-10, min_bound 5.634e-11; physical MAE 0.03541; ratio min_bound/MAE 1.384e-9, l1/MAE 1.384e-9, old_bound/MAE 2.957e-9
+    criterion                                         result  detail
+    a_relative_improvement_ge_10pct                   FAIL   pooled 2.36% and targeted(5,23) 0.26% (both must be >= 10%)
+    b_paired_ci_lower_positive                        FAIL   pooled CI95 [0.00055, 0.00117], targeted CI95 [-0.00083, 0.00132] (both lower bounds must be > 0)
+    c_no_other_site_degradation_gt_0p005              PASS   no site other than 5/23 worsens by more than 0.005 (pooled other-site change -0.00092)
+    d_ledger_bound_below_1pct_of_mae                  PASS   max min_bound 4.902e-11 / MAE 0.03541 = 1.384e-9 (need < 0.01)
+    e_no_tuning_freeze_verified                       PASS   frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring
+    VERDICT C2: FAIL
+
+=== C3Z (DECLARED EXTENSION, not the primary comparator): relative MAE improvement over C0: pooled 18.84%, targets 5/23 57.37% (5: 30.94%, 23: 78.54%), controls 3/21 6.55%
+    paired bootstrap MAE(C0)-MAE(C3Z): all 0.00787 CI95 [0.00318, 0.01345] wins 20/24; targets 0.05870 CI95 [0.03176, 0.08907] wins 10/12
+    path-clustered observable-weighted CI95: all [0.00088, 0.01475] across 8 paths; targets [0.02417, 0.09846] across 4 paths; POSITIVE
+    ledger: max l1 discard 6.848e-11, old_bound 1.201e-10, min_bound 6.848e-11; physical MAE 0.02943; ratio min_bound/MAE 2.327e-9, l1/MAE 2.327e-9, old_bound/MAE 4.079e-9
+    criterion                                         result  detail
+    a_relative_improvement_ge_10pct                   PASS   pooled 18.84% and targeted(5,23) 57.37% (both must be >= 10%)
+    b_paired_ci_lower_positive                        PASS   pooled CI95 [0.00318, 0.01345], targeted CI95 [0.03176, 0.08907] (both lower bounds must be > 0)
+    c_no_other_site_degradation_gt_0p005              FAIL   flagged physical sites: 6 (+0.0200)
+    d_ledger_bound_below_1pct_of_mae                  PASS   max min_bound 6.848e-11 / MAE 0.02943 = 2.327e-9 (need < 0.01)
+    e_no_tuning_freeze_verified                       PASS   frozen.json self-hash, parameter file, engine hash, build hashes and 1e-12 prediction recompute all verified before scoring
+    paired bootstrap MAE(C3)-MAE(C3Z): all 0.00629 CI95 [0.00225, 0.01117] wins 9/24; targets 0.04945 CI95 [0.02450, 0.07689] wins 9/12
+    target-site MAE (C0, C2, C3, C3Z): q5 n=12 0.09102 0.08881 0.08197 0.06286; q23 n=12 0.11361 0.11529 0.10417 0.02438
+    VERDICT C3Z (declared extension): FAIL
+
+DECLARED EXPLORATORY EXTENSION C3Z-D: two-round random-walk plug-in mean
+C3Z-D MAE all 0.02944 / target 0.04399
+C3Z-D vs C0 FAIL; incremental vs static INCONCLUSIVE_OR_NEGATIVE

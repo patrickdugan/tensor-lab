@@ -1,0 +1,12 @@
+{
+  "authorized": true,
+  "backend": "ibm_kingston",
+  "plan_sha256": "498b263512357f876d0ed1034c54d6efdf0f69589e29031b78b1fc60acba8525",
+  "max_qpu_seconds": 15,
+  "authorized_by": "Patrick Dugan, chat instruction DO IT, 2026-11-27",
+  "acknowledge_estimate_not_hard_limit": true,
+  "checked_current_allocation": true,
+  "frozen_sha256": "da7bcb562c942d3715360260851b91e52ed6ce3fd80d2df8dbd30580bf39a99c",
+  "freeze_commit": "1f120d1250d49d6c91aa21b12215e6a90ff6564a",
+  "freeze_path": "experiments/channel_mpo/ibm_qc23/pgc_qpu/receipts/qpu04_live_20261127/frozen.json"
+}
