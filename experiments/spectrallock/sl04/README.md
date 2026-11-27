@@ -1,0 +1,22 @@
+# SpectralLock-04: coefficient-domain module LWR and ring restriction
+
+2026-11-27. Synthetic arithmetic and toy lattice experiments only. No new hardness assumption, bit-security estimate, Nova, QPU, GPU, Fable or deployment.
+
+## Exact implementation
+R_N=(Z/qZ)[X]/(X^N+1), N power of two. Public module matrix A uniform in coefficient representation; iid signs in s. Output coefficientwise floor(B*(As mod q)/q). Use classical twisted negacyclic NTT for multiplication, then invert before rounding. This is ordinary Module-LWR-style arithmetic, not a new cryptographic primitive or SABER implementation. See https://eprint.iacr.org/2018/230 and https://eprint.iacr.org/2021/420. With an invertible NTT, uniform public polynomials remain uniform in the transformed representation. This does not change the secret distribution.
+
+q12289; 192 cases, N1..2048, module rank/sample-count pairs (1,1),(2,2),(3,2),(4,3), four roots each. Direct, cold NTT and prepared NTT agree: 262080 coefficient equalities, 376740 NTT round-trip coordinates, 992 independent dense scalar expansion checks. Both B8/32 agree. At k=m=3, 21 timings per method with prewarmed root tables: direct/cold/prepared median ms at N256 .422722/.374933/.187276, N1024 5.706569/1.382177/.597871, N2048 22.68551/2.896609/1.197635. Prepared excludes public matrix transform. NumPy direct convolution is a local baseline, not an optimized cryptographic library. Python code is not constant-time. No quantum acceleration.
+
+## Subring-secret equivalence
+For N=rd and Y=X^r, Y^d=-1. Write every public polynomial as sum_{h=0}^{r-1} X^h a_h(Y). For s(X)=s0(Y) multiplication gives sum_h X^h a_h(Y)s0(Y). Deinterleave public coefficients and rounded outputs: a rank-k, m-row restricted-secret instance over R_N is bijectively equivalent to a rank-k, mr-row instance over R_d with independent uniform public entries. The argument holds for arbitrary coefficient modulus; NTT checks used prime q. The binary entropy is kd, not kN. If A also lies in the subring, the other r-1 output cosets are identically zero. 192 tests, 97920 coefficient equalities; independent signed-circulant matrix restriction checks at N<=32. Related subring-secret work: https://eprint.iacr.org/2018/494. Novelty of this elementary equivalence unclaimed; no general break of Module-LWR.
+
+## Retain every sector
+For unrestricted secret s=sum_g X^g s_g(Y), output coset h is sum_g Y^[h<g] a_((h-g) mod r)(Y) s_g(Y), summing module components as usual. This expresses the same instance as an (mr)-by-(kr) smaller-ring block matrix with correlated entries. The full scalar matrix differs only by permutations of rows and columns. The rounding relation, coefficient norm, and entropy are preserved. 180 cases, 14880 output coefficients, 177408 scalar matrix entries, 180 norm/sparsity checks. Expanded representation is not independent smaller-ring Module-LWR; no performance or hardness advantage claimed.
+
+## Toy matched reduction
+q12289, B8/32, scalar m=d_secret, binary signs, matched roots. Use the previous SL03 centered embedding, SymPy 1.14.0 integer LLL delta=.99, verify candidates against the original rounded observations. Degree/rank (8,2),(8,3),(16,2), 3,3,2 roots per precision. Rank2 module instances sampled as larger-ring restricted-secret instances then deinterleaved; rank3 direct. Dense 6/6,6/6,2/4 and module 6/6,5/6,4/4 at d16/24/32. All 29 hits original planted secret, all recovered among reduced basis rows. 3 misses, no errors, all 32 full rank; regenerate input hashes and independently check determinants and candidates. Sum reduction-stage process CPU 154.080966899 seconds. No statistical ranking, BKZ or extrapolation. fpylll unavailable.
+
+## Reproduction
+Python3.13.5, NumPy2.3.5, SymPy1.14.0. Run python audit.py, python polyphase.py, python lattice_compare.py. Four reduction workers; one BLAS thread during runs. sl03_reference.py is byte-identical to SL03. Full local archive SpectralLock04_module_lwr.zip SHA256 33f038752cd17f437f7a57709e0f622f470631091760629e69f0b854edf5cd8b includes raw receipts, timings, sources, report and checksum manifest. CI unverified.
+
+Next study the exact parameter and reduction conditions for conventional Module-LWR and alternative rings, including Radical Ring-LWR (https://eprint.iacr.org/2026/2078). Keep coefficient-domain distributions and evaluate stronger lattice solvers before claiming security. No use in live credentials, funds or authentication.

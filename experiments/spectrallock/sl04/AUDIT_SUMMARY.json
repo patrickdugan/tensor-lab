@@ -1,0 +1,47 @@
+{
+  "scope": "TOY_MODULE_LWR_AND_EXACT_RING_EQUIVALENCES",
+  "arithmetic": {
+    "cases": 192,
+    "coefficient_equalities": 262080,
+    "roundtrip": 376740,
+    "dense_checks": 992,
+    "subring_cases": 192,
+    "subring_equalities": 97920
+  },
+  "polyphase": {
+    "cases": 180,
+    "coefficient_equalities": 14880,
+    "scalar_matrix_equalities": 177408,
+    "norm_checks": 180
+  },
+  "lattice": {
+    "trials": 32,
+    "full_rank": 32,
+    "verified_hits": 29,
+    "all_hits_original": true,
+    "dense": [
+      6,
+      6,
+      2
+    ],
+    "module": [
+      6,
+      5,
+      4
+    ],
+    "denominators": [
+      6,
+      6,
+      4
+    ],
+    "cpu_seconds": 154.080966899
+  },
+  "source_blobs": {
+    "module_lwr.py": "2ca49e42c2170f66b3f6174077cbeb9bfbca72d2",
+    "audit.py": "c5410bb622726db056f2db3735dcd2adef1e4db6",
+    "lattice_compare.py": "4e168ebade93af63897aefaf29b203f814e6d671",
+    "polyphase.py": "e7d3a24890061aefbd6ee25475d2a6453e25e3f9",
+    "sl03_reference.py": "af50dbf548240acf80fa38355d9de7881a37567b"
+  },
+  "archive_sha256": "33f038752cd17f437f7a57709e0f622f470631091760629e69f0b854edf5cd8b"
+}
