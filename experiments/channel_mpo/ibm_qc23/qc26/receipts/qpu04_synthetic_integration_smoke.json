@@ -1,0 +1,70 @@
+{
+  "label": "SYNTHETIC integration smoke; two archived QASM circuits, virtual file system; no IBM access",
+  "circuits": [
+    "kicked_ising_n8_d1_s41",
+    "kicked_ising_n8_d1_s42"
+  ],
+  "observables": 16,
+  "freeze_verified": true,
+  "tampered_rehashed_prediction_rejected": true,
+  "primary_candidates": [
+    "C3",
+    "C2",
+    "C3Z"
+  ],
+  "extension_present": true,
+  "extension_mae": {
+    "all": {
+      "n": 16,
+      "C0": 0.016637889017783854,
+      "C3": 0.017305783056596163,
+      "C3Z": 0.016732740469837935,
+      "C3ZD": 0.016745024747295355
+    },
+    "targets": {
+      "n": 4,
+      "C0": 0.021407349920010338,
+      "C3": 0.01910785679978269,
+      "C3Z": 0.01681568645274978,
+      "C3ZD": 0.016884755368767684
+    }
+  },
+  "extension_verdict": "FAIL",
+  "incremental": "INCONCLUSIVE_OR_NEGATIVE",
+  "checks": [
+    "format",
+    "frozen self-hash",
+    "parameter file equals frozen parameters",
+    "params_sha256",
+    "engine code hash",
+    "scoring and freeze code manifest",
+    "QPU04 extension presence",
+    "QPU04 v3 format",
+    "compiled.json hash",
+    "plan_sha256",
+    "calibration snapshot hash",
+    "backend",
+    "calibration timestamp",
+    "prediction id set",
+    "circuit id set",
+    "metadata kicked_ising_n8_d1_s41 n",
+    "metadata kicked_ising_n8_d1_s41 depth",
+    "metadata kicked_ising_n8_d1_s41 seed",
+    "metadata kicked_ising_n8_d1_s41 shots",
+    "path class kicked_ising_n8_d1_s41",
+    "metadata kicked_ising_n8_d1_s42 n",
+    "metadata kicked_ising_n8_d1_s42 depth",
+    "metadata kicked_ising_n8_d1_s42 seed",
+    "metadata kicked_ising_n8_d1_s42 shots",
+    "path class kicked_ising_n8_d1_s42",
+    "predictions recompute within 1e-12",
+    "max recompute gap",
+    "QPU04 derived parameters and posterior",
+    "QPU04 prediction id set",
+    "QPU04 predictions and ledgers recompute"
+  ],
+  "limitations": [
+    "Synthetic parameters/observables; no claim of physical accuracy",
+    "JS virtual file replay, Python and Qiskit submission gates not executed"
+  ]
+}
