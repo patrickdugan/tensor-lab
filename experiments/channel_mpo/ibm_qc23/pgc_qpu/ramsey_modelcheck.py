@@ -96,6 +96,7 @@ def fit(rows, data, spam, hint, relaxed=False, curved=False, holdout=None):
 
 def run(rows, data):
     points, spam = R.estimate(rows, data)
+    train_points, _ = R.estimate(rows, data, include=(0, 1, 2))
     out = {}
     for edge, point in points.items():
         out[edge] = {}
@@ -103,17 +104,18 @@ def run(rows, data):
             rs = [r for r in rows if r["family"]=="cz" and r["edge"]==edge and r["orientation"]==orientation]
             probe = str(rs[0]["path"][1])
             hint = [point["alpha"][probe], point["delta_"+orientation]]
+            train_hint = [train_points[edge]['alpha'][probe], train_points[edge]['delta_'+orientation]]
             out[edge][orientation] = {}
             for name, relaxed, curved in (("constant",False,False),("relaxation",True,False),
                                            ("curvature",False,True),("both",True,True)):
                 out[edge][orientation][name] = {
                     "full": fit(rs,data,spam[int(probe)],hint,relaxed,curved),
-                    "holdout_m8": fit(rs,data,spam[int(probe)],hint,relaxed,curved,holdout=8)}
+                    "holdout_m8": fit(rs,data,spam[int(probe)],train_hint,relaxed,curved,holdout=8)}
     return {"label":"EXPLORATORY MODEL CHECK; no replication or model acceptance",
             "limitations":["Probe marginal likelihood conditional on effective SPAM.",
                            "Relaxation after each CZ is a simplified control-decay model.",
                            "m=8 extrapolation uses few train rows; curvature is weakly identified.",
-                           "Baseline initial branch uses all rows; held-out comparison is branch-conditional."],
+                           "Held-out branch initialization uses only m=0,1,2; all models are conditional on a small-error branch."],
             "edges":out}
 
 
