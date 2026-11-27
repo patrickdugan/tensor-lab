@@ -152,6 +152,51 @@ class ProspectivePipeline(unittest.TestCase):
         gaps = [abs(s['C3'] - s['C2']) for sites in f['predictions'].values() for s in sites]
         self.assertGreater(max(gaps), 1e-3)
 
+
+    def test_v3_rehashed_metadata_ledger_and_scoring_code_tampering(self):
+        cid = sorted(self.frozen['predictions'])[0]
+        def changed_ledger(doc):
+            doc['predictions'][cid][0]['ledger']['C3']['min_bound'] += 0.01
+        def changed_site(doc):
+            doc['predictions'][cid][0]['physical'] += 1
+        def changed_depth(doc):
+            doc['build']['circuits'][cid]['depth'] += 1
+        def changed_score_hash(doc):
+            doc['code']['manifest']['qc26b_prospective_eval.mjs'] = '0' * 64
+        for change in (changed_ledger, changed_site, changed_depth, changed_score_hash):
+            doc = copy.deepcopy(self.frozen)
+            change(doc)
+            p = self.tmp / ('forged_' + change.__name__ + '.json')
+            p.write_text(json.dumps(self.rehash(doc)))
+            self.assertEqual(self.verify(p).returncode, 2, change.__name__)
+
+    def test_path_clustered_estimand_matches_pooled_mae(self):
+        a = self.reports['C3']['analysis']
+        pc = a['candidates']['C3']['path_clustered_bootstrap_vs_C0']['all_sites']
+        self.assertAlmostEqual(pc['mean_improvement'], a['groups']['all']['C0'] - a['groups']['all']['C3'])
+        self.assertEqual(sum(r['n_obs'] for r in pc['per_path']), a['groups']['all']['n'])
+        self.assertEqual(pc['clusters'], len({(r['n'], r['seed']) for r in self.rows}))
+
+    def test_legacy_v2_replay_and_live_rejection(self):
+        doc = copy.deepcopy(self.frozen)
+        doc['format'] = 'qc26b-frozen-v2'
+        doc['code'].pop('manifest')
+        p = self.tmp / 'legacy_v2.json'
+        p.write_text(json.dumps(self.rehash(doc)))
+        self.assertEqual(self.verify(p).returncode, 0)
+        with self.assertRaisesRegex(ValueError, 'requires v3'):
+            plan.verify_published_freeze({}, doc)
+
+    def test_usage_gate_fail_closed(self):
+        class Service:
+            def __init__(self, usage): self.value = usage
+            def usage(self): return self.value
+        with self.assertRaises(ValueError):
+            plan.checked_usage(Service({}), 15)
+        with self.assertRaises(ValueError):
+            plan.checked_usage(Service({'usage_remaining_seconds': 14}), 15)
+        self.assertEqual(plan.checked_usage(Service({'usage_remaining_seconds': 16}), 15)['usage_remaining_seconds'], 16)
+
     def test_tampered_parameter_file_detected(self):
         bad = copy.deepcopy(PARAMS)
         bad['sx']['23'] += 1e-6
@@ -321,7 +366,7 @@ class ProspectivePipeline(unittest.TestCase):
         f = self.z['Z']['frozen']
         self.assertIn('C3Z', f['models'])
         self.assertIn('DECLARED EXTENSION', f['models']['C3Z'])
-        self.assertEqual(f['format'], 'qc26b-frozen-v2')
+        self.assertEqual(f['format'], 'qc26b-frozen-v3')
         for cid, ss in f['predictions'].items():
             for s in ss:
                 self.assertIn('C3Z', s['ledger'])
