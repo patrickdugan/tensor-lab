@@ -15,7 +15,7 @@ The authorization file is written by the account owner. This module never create
   python submit_ramsey.py submit --out DIR --authorization FILE
 """
 from __future__ import annotations
-import argparse, datetime as dt, io, json, sys
+import argparse, datetime as dt, io, json, math, sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -55,7 +55,7 @@ def validate_frozen(out: Path):
     assert meta["qpy_sha256"] == qc.hash_bytes(data)
     isas = qpy.load(io.BytesIO(data))
     assert len(isas) == len(block["rows"]) == len(meta["circuits"])
-    for spec, row, isa in zip(block["rows"], meta["circuits"], isas):
+    for spec, row, isa in zip(qc.ordered_rows(block["rows"],meta.get("ordering_seed")), meta["circuits"], isas):
         assert all(row[k] == v for k, v in spec.items()), "plan row mismatch"
         qc.assert_counts(row, isa)
         assert qc.audit_mapping(isa, row["path"], len(row["path"])) == row["mapping"]
@@ -105,7 +105,8 @@ def submit(out: Path, authorization, *, connection=None, sampler_cls=None, clock
             raise ValueError("duration changed; rebuild and reauthorize")
     before = usage_of(service)
     rem = before.get("usage_remaining_seconds")
-    if before.get("usage_limit_reached") or (rem is not None and rem < auth["max_qpu_seconds"]):
+    if (before.get("usage_limit_reached") or type(rem) not in (int, float) or not math.isfinite(rem)
+            or rem < auth["max_qpu_seconds"]):
         raise ValueError(f"remaining allocation {rem} s is below authorized ceiling {auth['max_qpu_seconds']} s")
     qc.write_json(out / "calibration_submission.json", snap)
     qc.write_json(out / "usage_before.json", {"checked_at": clock().isoformat(), **before})
