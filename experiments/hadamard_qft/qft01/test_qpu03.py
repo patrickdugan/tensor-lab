@@ -136,3 +136,11 @@ def test_audit_reproduces_five_of_six():
     rep = A.audit([root / 'qpu02_b5_r0', root / 'qpu02_b5_r1'])
     assert rep['m'] == 6 and rep['n_survive_simultaneous'] == 5 and rep['edge_both_survive']
     assert [o['survives_simultaneous'] for o in rep['comparisons']] == [True, True, False, True, True, True]
+
+
+def test_b7_design_records_the_native_verification_gate():
+    d = _design(7)
+    assert [a['arm'] for a in d['arms']] == ['C', 'D'] and d['families'] == {'signal': ['C', 'D'], 'difference': [['C', 'D']]}
+    assert d['native_verification_tolerance'] == 1e-8
+    assert d['rejected_candidates'] and all(r['native_vs_logical_max_entry_error'] > 1e-8 for r in d['rejected_candidates'])
+    assert all(a['core_metrics']['cz'] == 320 for a in d['arms'])

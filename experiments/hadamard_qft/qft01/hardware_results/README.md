@@ -66,3 +66,41 @@ cd manuscript && pdflatex paper.tex && pdflatex paper.tex
 - The routed and native two-qubit counts were identical at optimization level 1 for every arm.
 - `owner_submit_qpu02.ps1` wrote each authorization file for the exact printed plan hash (ceiling 30 s) under the owner's chat pre-approval, then ran submit and collect. Each stage has one `submission_started.json` and one `job.json`; no submission was retried. The files are untracked.
 - `analyze_qpu02.py` and `select_path.py` are additions; the runbook's own `analysis.json` (shot-only Hoeffding intervals) is the primary analysis and is unchanged.
+
+# HAD-QFT-QPU03 hardware record (28 November 2026)
+
+Workspace-assisted compaction and topology-aware compilation, `ibm_kingston`, Qiskit 2.6.2, qiskit-ibm-runtime 0.52.0, 1,024 shots per circuit, Sampler V2, `rep_delay` 0.00025 s, no dynamical decoupling, no mitigation. Frozen designs and offline selection (committed before the corresponding job): `qpu03_design/` (`design_b5.json`, `design_b6.json`, `design_b6_r1.json` at commit a66a7fe; `design_b7.json` at 25d9c60), with the calibration snapshot `design_calibration.json` (28 Nov 2026 00:19 +08:00) used for every ESP.
+
+| Stage | Directory | Job ID | Plan SHA-256 | Arms (native CZ) | Estimate | IBM charge |
+|---|---|---|---|---|---|---|
+| b=5 | `qpu03_b5_r0` | `dc4rl6dhdvas73bq7no0` | `e4082278f0b3a0044b259c2e36318701e23a6b00d517790975e51a78c3c97b88` | A 218, B 175, C 102, D 95 | 25.837 s | 17 s |
+| b=6, region 0 | `qpu03_b6_r0` | `dc4rqqts2omc738fsmpg` | `e877ae383ce7ba670ab9692b097ed78883097a347a750cad811072260a11287b` | A 434, C 189, D 178 | 19.878 s | 13 s |
+| b=6, region 1 | `qpu03_b6_r1` | `dc4rrneq4uuc73a9bmt0` | `41672754faa781251e3f5279f9beebdcd2b86b400c5d88e60634a849324f292b` | A 434, C 184, D 185 | 19.878 s | 13 s |
+| b=7 | `qpu03_b7_r0` | `dc4sidqnj2vs73dkl2og` | `b035c38844947386d27ace813fd61b8f6db276c76c0ce2a3b920579e4cdffc30` | C 320, D 320 | 13.918 s | 10 s |
+
+QPU seconds charged: 53 (estimates 79.5 s, within the registered 90 s; every job under the 30 s ceiling). Account counter: 348 s consumed before the first QPU03 job, 401 after the last (`qpu03_b7_r0/usage_after.json`), 199 of 600 s remaining; the 53 s increase equals the four job charges. Physical qubits: b=5 A 149-153 (path), B and C 149-153 and 138, D 149,150,151,138,152; b=6 region 0 A 148-153, C 148-153 and 138, D 149-153 and 138; region 1 A 1,2,3,16,23,24, C 1-5,16,23, D 1,2,3,4,16,23; b=7 C 138,147-153, D 51,58,69-73.
+
+Authorization: job 1 on the account owner's chat message "authorized" after the exact plan hash and estimate were shown; jobs 2-4 under the owner's later chat statement that the other three jobs were pre-authorized. For each, the script wrote the authorization file for the exact built hash with a 30 s ceiling after checking hash equality and the estimate; the files are untracked. One `submission_started.json` and one `job.json` per stage; no submission was retried.
+
+## Reproduce (CPU only)
+
+```
+cd experiments/hadamard_qft/qft01
+python -m pytest test_qpu03.py -q
+python audit_qpu02_simultaneous.py      # independent reproduction of the QPU02 simultaneous audit
+python analyze_qpu03.py design          # tables/figures from select_b*.json and scaling.json
+python analyze_qpu03.py stages --stage hardware_results/qpu03_b5_r0 --stage hardware_results/qpu03_b6_r0 \
+    --stage hardware_results/qpu03_b6_r1 --stage hardware_results/qpu03_b7_r0
+cd manuscript && pdflatex paper.tex && pdflatex paper.tex
+```
+
+Offline design runs are deterministic given seeds (re-embedding recompiles every stored candidate and aborts if the compiled metrics change).
+
+## Deviations and unfavorable results
+
+- Roster trimmed from the QPU02 roster so that 1,024 shots fit the 30 s ceiling: 13 circuits per arm (mixture controls and imaginary inputs only on the edge probe; two preparation-only and two SPAM circuits per arm). Fixed before submission.
+- Offline selection used the 00:19 calibration snapshot; builds were made later. Qubit and edge properties of the b=5 and b=6 regions were identical at build; for b=7 the readout errors had been refreshed (CZ and single-qubit errors unchanged).
+- b=7 was run only because b=6 retained informative contrast (registered condition). Before its design was frozen we added a native-verification gate (1e-8) to the selection rule after the best-ESP ancilla-free candidate failed by a seed-independent 5.4e-6; the next eligible candidate lies on a different region than arm C, so C-versus-D at b=7 is confounded by region. Rejected candidates are recorded in `design_b7.json`.
+- QPU02's line routing had inflated the native counts of the same logical circuits (b=6: 434 against 178 after heavy-hex routing); QPU02's recorded counts were correct for what was run.
+- Workspace did not reduce routed native counts at b=5, 6 and did not improve phase contrast (C-D not significant at b=5, 6, 7); workspace readout was anomalous at b=5 (B 0.40, C 0.78; a noisy simulation of the exact circuits gives 0.03; independent of every data qubit) and 0.10-0.12 at b=6; the cause is unexplained (an equatorial-idle dephasing explanation was tested and does not fit). Rotation pruning saves no CNOTs.
+- No b=7 replicate and no b=4 anchor were run. The independent audit of QPU02 reproduced 5 of 6 simultaneous improvements (both edge ones); the second-replicate middle probe survives by 0.004.

@@ -68,3 +68,18 @@ C $-$ D & middle & -0.021 & [-0.118,+0.075] & [-0.106,+0.063]\\
 C $-$ D & tail & +0.109 & [+0.013,+0.206] & [+0.024,+0.194]\\
 \bottomrule\end{tabular}\end{table}
 
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{QPU03, $b=7$, replicate 0: compiled resources and phase contrast, 1024 shots per circuit, raw counts. Native counts, depth and duration are for the edge phase circuit. $C$ is the edge contrast (ideal 1) with its simultaneous lower bound (Hoeffding, Bonferroni over 2 arms, 95\%). Leakage is the mean probability of a workspace readout of 1 in the plus and minus circuits (ideal 0); the control leakage is the same quantity with no transform.}\label{tab:q3-b7r0}
+\begin{tabular}{llrrrrrrrrr}\toprule Arm & $m$ & Native 2q & 2q depth & Dur. ($\mu$s) & ESP & $C$ & lower bound & mean TV & Leakage & Ctl.\ leak.\\\midrule
+C & 1 & 320 & 248 & 30.5 & 0.54 & 0.088 & +0.022 & 0.805 & 0.237 & 0.012\\
+D & 0 & 320 & 259 & 31.7 & 0.51 & 0.168 & +0.103 & 0.716 & 0.000 & 0.000\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{QPU03, $b=7$, replicate 0: registered edge-contrast differences. Simultaneous intervals use Hoeffding with Bonferroni over the 1 registered comparisons; unadjusted 95\% intervals are shown for reference. Middle and tail probes are secondary.}\label{tab:q3d-b7r0}
+\begin{tabular}{llrcc}\toprule Comparison & Probe & Difference & Simultaneous interval & Unadjusted interval\\\midrule
+C $-$ D & edge & -0.080 & [-0.165,+0.005] & [-0.165,+0.005]\\
+C $-$ D & middle & -0.061 & [-0.145,+0.024] & [-0.145,+0.024]\\
+C $-$ D & tail & -0.115 & [-0.200,-0.030] & [-0.200,-0.030]\\
+\bottomrule\end{tabular}\end{table}
+

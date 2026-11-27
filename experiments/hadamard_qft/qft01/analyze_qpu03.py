@@ -151,7 +151,7 @@ def stage_figures(stages, outdir, qpu02_points):
         ax.plot(g, c, 'x', color='0.5', ms=4)
     ax.axhline(0, color='0.6', lw=.6); ax.set_xscale('log'); ax.set_xlabel('Native two-qubit gates'); ax.set_ylabel('Edge phase contrast (ideal 1)')
     from matplotlib.ticker import ScalarFormatter, NullFormatter
-    ax.set_xticks([100, 200, 300, 500]); ax.xaxis.set_major_formatter(ScalarFormatter()); ax.xaxis.set_minor_formatter(NullFormatter())
+    ax.set_xticks([100, 200, 300, 500, 1000]); ax.xaxis.set_major_formatter(ScalarFormatter()); ax.xaxis.set_minor_formatter(NullFormatter())
     from matplotlib.lines import Line2D
     h = [Line2D([], [], marker=MK[a], color=COL[a], ls='', ms=4.5, label=NAME[a]) for a in 'ABCD'] + [Line2D([], [], marker='x', color='0.5', ls='', ms=4, label='QPU02 (all arms)')]
     ax.legend(handles=h, frameon=False, fontsize=6, loc='upper right')

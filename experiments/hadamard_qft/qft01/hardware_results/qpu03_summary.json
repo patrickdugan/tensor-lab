@@ -1494,6 +1494,268 @@
         },
         "usage_remaining_seconds": 222
       }
+    },
+    {
+      "arms": {
+        "C": {
+          "control_leakage": 0.011962890625,
+          "control_success": 0.86083984375,
+          "depth": 839,
+          "duration_us": 30.491999999999887,
+          "esp": 0.537181232247016,
+          "leakage_core": 0.23688616071428573,
+          "logical_cx": 150,
+          "m": 1,
+          "mean_hf": 0.2002795547321306,
+          "mean_tv": 0.8045388937510498,
+          "mode": "approx",
+          "native_2q": 320,
+          "nodes": [
+            153,
+            152,
+            151,
+            150,
+            149,
+            148,
+            147,
+            138
+          ],
+          "two_q_depth": 248
+        },
+        "D": {
+          "control_leakage": 0.0,
+          "control_success": 0.872314453125,
+          "depth": 958,
+          "duration_us": 31.695999999999895,
+          "esp": 0.5106684241517349,
+          "leakage_core": 0.0,
+          "logical_cx": 188,
+          "m": 0,
+          "mean_hf": 0.2901417304028539,
+          "mean_tv": 0.7160771455595792,
+          "mode": "approx",
+          "native_2q": 320,
+          "nodes": [
+            51,
+            58,
+            71,
+            70,
+            69,
+            72,
+            73
+          ],
+          "two_q_depth": 259
+        }
+      },
+      "b": 7,
+      "calibration": "2026-11-28T02:01:19+08:00",
+      "contrasts": [
+        {
+          "arm": "C",
+          "contrast": 0.087890625,
+          "contrast_postselected": 0.10423917293184891,
+          "ideal": 1.0,
+          "leakage_mean": 0.228515625,
+          "normalized": 0.087890625,
+          "probe": "edge"
+        },
+        {
+          "arm": "C",
+          "contrast": 0.08984375,
+          "contrast_postselected": 0.11032992002832946,
+          "ideal": 0.7071067811865475,
+          "leakage_mean": 0.28076171875,
+          "normalized": 0.12705824974445776,
+          "probe": "middle"
+        },
+        {
+          "arm": "C",
+          "contrast": -0.0087890625,
+          "contrast_postselected": -0.008943143537136863,
+          "ideal": 0.7071067811865475,
+          "leakage_mean": 0.22412109375,
+          "normalized": -0.012429611388044782,
+          "probe": "tail"
+        },
+        {
+          "arm": "D",
+          "contrast": 0.16796875,
+          "contrast_postselected": 0.16796875,
+          "ideal": 1.0,
+          "leakage_mean": 0.0,
+          "normalized": 0.16796875,
+          "probe": "edge"
+        },
+        {
+          "arm": "D",
+          "contrast": 0.150390625,
+          "contrast_postselected": 0.150390625,
+          "ideal": 0.7071067811865475,
+          "leakage_mean": 0.0,
+          "normalized": 0.21268446152876627,
+          "probe": "middle"
+        },
+        {
+          "arm": "D",
+          "contrast": 0.1064453125,
+          "contrast_postselected": 0.1064453125,
+          "ideal": 0.7071067811865475,
+          "leakage_mean": 0.0,
+          "normalized": 0.15053640458854237,
+          "probe": "tail"
+        }
+      ],
+      "differences": [
+        {
+          "difference": -0.080078125,
+          "first": "C",
+          "interval_simultaneous": [
+            -0.16495946973378872,
+            0.004803219733788722
+          ],
+          "interval_unadjusted": [
+            -0.16495946973378872,
+            0.004803219733788722
+          ],
+          "primary": true,
+          "probe": "edge",
+          "radius_simultaneous": 0.08488134473378872,
+          "radius_unadjusted": 0.08488134473378872,
+          "second": "D",
+          "survives_simultaneous": false
+        },
+        {
+          "difference": -0.060546875,
+          "first": "C",
+          "interval_simultaneous": [
+            -0.14542821973378872,
+            0.02433446973378872
+          ],
+          "interval_unadjusted": [
+            -0.14542821973378872,
+            0.02433446973378872
+          ],
+          "primary": false,
+          "probe": "middle",
+          "radius_simultaneous": 0.08488134473378872,
+          "radius_unadjusted": 0.08488134473378872,
+          "second": "D",
+          "survives_simultaneous": false
+        },
+        {
+          "difference": -0.115234375,
+          "first": "C",
+          "interval_simultaneous": [
+            -0.20011571973378872,
+            -0.03035303026621128
+          ],
+          "interval_unadjusted": [
+            -0.20011571973378872,
+            -0.03035303026621128
+          ],
+          "primary": false,
+          "probe": "tail",
+          "radius_simultaneous": 0.08488134473378872,
+          "radius_unadjusted": 0.08488134473378872,
+          "second": "D",
+          "survives_simultaneous": false
+        }
+      ],
+      "estimated": 13.9184,
+      "families": {
+        "difference": [
+          [
+            "C",
+            "D"
+          ]
+        ],
+        "signal": [
+          "C",
+          "D"
+        ]
+      },
+      "job_id": "dc4sidqnj2vs73dkl2og",
+      "job_usage": 10,
+      "label": "qpu03_b7_r0",
+      "plan_sha256": "b035c38844947386d27ace813fd61b8f6db276c76c0ce2a3b920579e4cdffc30",
+      "replicate": 0,
+      "shots": 1024,
+      "signal": [
+        {
+          "arm": "C",
+          "contrast": 0.087890625,
+          "informative": true,
+          "lower_simultaneous": 0.022474091268658722,
+          "primary": true,
+          "probe": "edge",
+          "radius": 0.06541653373134128
+        },
+        {
+          "arm": "C",
+          "contrast": 0.08984375,
+          "informative": true,
+          "lower_simultaneous": 0.024427216268658722,
+          "primary": false,
+          "probe": "middle",
+          "radius": 0.06541653373134128
+        },
+        {
+          "arm": "C",
+          "contrast": -0.0087890625,
+          "informative": false,
+          "lower_simultaneous": -0.07420559623134128,
+          "primary": false,
+          "probe": "tail",
+          "radius": 0.06541653373134128
+        },
+        {
+          "arm": "D",
+          "contrast": 0.16796875,
+          "informative": true,
+          "lower_simultaneous": 0.10255221626865872,
+          "primary": true,
+          "probe": "edge",
+          "radius": 0.06541653373134128
+        },
+        {
+          "arm": "D",
+          "contrast": 0.150390625,
+          "informative": true,
+          "lower_simultaneous": 0.08497409126865872,
+          "primary": false,
+          "probe": "middle",
+          "radius": 0.06541653373134128
+        },
+        {
+          "arm": "D",
+          "contrast": 0.1064453125,
+          "informative": true,
+          "lower_simultaneous": 0.04102877876865872,
+          "primary": false,
+          "probe": "tail",
+          "radius": 0.06541653373134128
+        }
+      ],
+      "usage_after": {
+        "usage_consumed_seconds": 401,
+        "usage_limit_reached": false,
+        "usage_limit_seconds": 600,
+        "usage_period": {
+          "end_time": "2026-11-27T18:19:50.354Z",
+          "start_time": "2026-10-30T18:19:50.354Z"
+        },
+        "usage_remaining_seconds": 199
+      },
+      "usage_before": {
+        "usage_consumed_seconds": 391,
+        "usage_limit_reached": false,
+        "usage_limit_seconds": 600,
+        "usage_period": {
+          "end_time": "2026-11-27T18:17:25.802Z",
+          "start_time": "2026-10-30T18:17:25.802Z"
+        },
+        "usage_remaining_seconds": 209
+      }
     }
   ]
 }
