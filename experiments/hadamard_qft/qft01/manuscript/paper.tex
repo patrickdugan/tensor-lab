@@ -1,0 +1,222 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.86in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\usepackage{xcolor}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\diag}{diag}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\id}{\mathrm{I}}
+\title{Recursive Quantum Fourier Circuits for Valuation-Shell States\\[3pt]\large Coherent spectral computation under multiplier symmetry}
+\author{Research working draft --- HAD-QFT-04}
+\date{27 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The discrete Fourier transform on $\Z/p^n\Z$ preserves the space of functions invariant under multiplication by units. This space has dimension $n+1$; its normalized Fourier matrix is a Ramanujan supercharacter transform. We derive a factorization of this restricted transform into identical adjacent plane rotations and give a binary recursion for the rotation product. For $n+1=2^b$, our explicit circuit uses $5\,2^b+b^2-5b-6$ CNOTs on $b$ qubits without ancillas, or $(b-1)(23b-38)$ CNOTs and at most $b-2$ clean ancillas for $b\ge2$. These counts use arbitrary single-qubit rotations and a six-CNOT Toffoli decomposition. We also derive the character-sector action: a nontrivial multiplicative character of conductor $p^c$ undergoes a shell reversal, conjugation of the character label, and a normalized Gauss phase. An explicit coherent two-sector compiler extends the construction to invariance under units congruent to $1$ modulo $4$. We demonstrate a nested-subgroup hopping Hamiltonian with inexpensive spectral phases, compare against a direct full-register Walsh circuit, and check the emitted circuits using deterministic ideal simulations. The reductions require a native symmetry-adapted encoding; they establish logical quantum resource bounds for promised inputs rather than general QFT or computational speedup. Novelty of the circuit factorization requires further literature review.
+\end{abstract}
+
+\section{Scope and prior work}
+The quantum Fourier transform (QFT) is a coherent change of basis used in period finding, phase estimation and spectral algorithms. General-purpose approximate QFT circuits can achieve substantially better scaling than an elementary quadratic construction; see, for example, Nam, Su and Maslov \cite{nam} and the recursive construction proposed by Shah \cite{shah}. Our resource comparisons concern a restricted input/output interface. A full-register approximate QFT and an encoded restricted QFT solve different tasks.
+
+The present approach arose from integer autocorrelation certificates for group-developed Hadamard matrices, where common multiplier symmetries and Chinese remainder decompositions reduce both the sign search and the Fourier verification. The normalized Ramanujan matrix and its factorization over coprime moduli are established mathematics \cite{fowler,brumbaugh}. We use those facts to design a circuit that exploits the matrix's special structure. Hierarchical Laplacians and finite models of $p$-adic quantum walks supply a physical setting for symmetry-preserving dynamics \cite{bendikov,zuniga}. We distinguish the circuit derivations and tests below from any claim of literature priority.
+
+Let $F_N$ denote the positive-exponent unitary Fourier transform,
+\begin{equation}
+ (F_N)_{yx}=N^{-1/2}\exp(2\pi i xy/N).
+\end{equation}
+If $u$ is a unit modulo $N$, write $M_u\ket{x}=\ket{ux}$. Then $F_N M_u=M_{u^{-1}}F_N$. For a subgroup $K$ of units, the invariant subspace is spanned by the normalized orbit vectors $\ket{O}=|O|^{-1/2}\sum_{x\in O}\ket{x}$. Write $B_K$ for the isometric embedding of the orbit register and $Q_K=B_K^*F_N B_K$. The intertwining identity is $F_N B_K=B_K Q_K$. If $-1\in K$, $F_N^2=M_{-1}$ implies that $Q_K$ is an involution; the Fourier entries paired by inversion also make $Q_K$ real and symmetric.
+
+For pairwise coprime factors $m_i$ with $N=\prod_i m_i$, use time labels $x_i=x\bmod m_i$ and dual frequency labels $k_i=(N/m_i)^{-1}k\bmod m_i$. The character kernel separates over the factors. When the multiplier group is a direct product, the normalized orbit transform is a tensor product in these two label systems. Full unit invariance at $N=\prod_i p_i^{e_i}$ has dimension $\prod_i(e_i+1)=\tau(N)$. The factorization is assumed known. It is not an algorithm for finding the factorization.
+
+\section{Prime-power shell transform}
+For $N=p^n$, the unit group acts transitively on each set of fixed additive order. Define $S_0=\{0\}$, and for $1\le j\le n$, put
+\begin{equation}
+ S_j=\{p^{n-j}a: a\in (\Z/p^j\Z)^\times\},\qquad w_j=(p-1)p^{j-1},\quad w_0=1.
+\end{equation}
+The normalized orbit vector is $\ket{j}_{\rm phys}=w_j^{-1/2}\sum_{x\in S_j}\ket{x}$. The $n+1$ abstract shell labels are denoted $\ket{j}$. They need not be represented by physical position labels at any stage of the encoded algorithm.
+
+The Ramanujan sum over units of a prime power vanishes for conductor $p^r$ with $r\ge2$, is $-1$ at conductor $p$, and is the unit count at the trivial character. In the shell basis this gives the known normalized matrix
+\begin{equation}\label{eq:q}
+ Q_{ij}=\sqrt{\frac{w_i w_j}{p^n}}\begin{cases}
+ 1,& i=0\text{ or }j=0\text{ or }i+j\le n,\\
+ -1/(p-1),& i,j>0,\ i+j=n+1,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+Set $c=\sqrt{(p-1)/p}$, $d=1/\sqrt p$. Let $R$ reverse the labels $0,\ldots,n$ and let $G_j$ be the identity except on $(j,j+1)$, where its matrix is $\left(\begin{smallmatrix}c&d\\-d&c\end{smallmatrix}\right)$.
+\begin{theorem}[Adjacent rotations]\label{thm:adj}
+In the shell basis, $Q R=G_0G_1\cdots G_{n-1}$.
+\end{theorem}
+\begin{proof}
+Write $v_j=\sum_{i=0}^j\sqrt{w_i/p^j}\ket{i}$. Then $v_0=\ket{0}$ and $v_j=d v_{j-1}+c\ket{j}$. Induction gives $G_0\cdots G_{j-1}\ket{j}=v_j$. For $j<n$ the resulting column is $c v_j-d\ket{j+1}$; the final column is $v_n$. Substituting the weights in (\ref{eq:q}) gives exactly the reversed columns of $Q$. All products here are exact real matrix identities.
+\end{proof}
+A direct circuit for each two-level rotation uses a Gray-coded shell register and a uniformly controlled rotation. If $n+1=2^b$ and $b\ge2$, it needs $n2^{b-1}$ CNOTs. We next exploit the order and equal angles of the rotations to lower this count.
+
+\section{Binary recursive compilation}
+\label{sec:recursive}
+Let $W_D$ denote the rotation product in Theorem~\ref{thm:adj} on $D$ levels, with $W_1=1$. For $D=2L$, partition the labels into two equal contiguous halves. The rotations wholly within the two halves form copies of $W_L$; the single boundary rotation acts between $\ket{0,L-1}$ and $\ket{1,0}$. Thus
+\begin{equation}\label{eq:factor}
+ W_{2L}=(W_L\oplus\id)G_{L-1}(\id\oplus W_L)
+ = (\id_2\otimes W_L)(\id\oplus W_L^T)G_{L-1}(\id\oplus W_L).
+\end{equation}
+The right half of the conjugated rotation uses $g_L=W_L^T\ket{0}$. From the column formula above,
+\begin{equation}\label{eq:g}
+ g_L=c\ket{0}+cd\ket{1}+\cdots+cd^{L-2}\ket{L-2}+d^{L-1}\ket{L-1}.
+\end{equation}
+The vector is normalized by $c^2=1-d^2$. Our binary conditional-mass preparation uses the standard state-loading approach of Grover and Rudolph \cite{grover} and uniformly controlled rotations \cite{mottonen}. Let $P_L$ be a unitary satisfying
+\begin{equation}
+ P_L\ket{0,0}=\ket{0,L-1},\qquad P_L\ket{1,0}=\ket{1,g_L}.
+\end{equation}
+It can preserve the leading binary digit. Let $C_L$ apply $R_y(-2\arcsin d)$ to that digit conditioned on every remaining bit being zero, with $R_y(\theta)=\left(\begin{smallmatrix}\cos(\theta/2)&-\sin(\theta/2)\\\sin(\theta/2)&\cos(\theta/2)\end{smallmatrix}\right)$. The two conjugations act identically on the affected plane and as identity on its orthogonal complement. Equation (\ref{eq:factor}) therefore gives the recursion
+\begin{equation}\label{eq:rec}
+ \boxed{ W_{2L}=(\id_2\otimes W_L)P_L C_L P_L^\dagger. }
+\end{equation}
+Only one copy of the smaller quantum circuit is required: its action on the lower bits is unconditional.
+
+\paragraph{Preparing $g_L$.} Let $L=2^r$, and generate the lower bits from most to least significant. When preparing bit $k=0,\ldots,r-1$, set $z=d^{2^{r-1-k}}$. If the prefix is all ones (including the empty prefix), the remaining conditional state is again a truncated geometric state. Its probability of the right half is $z^2$. Otherwise the conditional amplitudes are proportional to a geometric sequence, with ratio of right-half to left-half norms equal to $z$. Consequently the rotation angles are $2\arcsin z$ on the all-ones prefix and $2\arctan z$ on other prefixes. On the leading-zero branch, $P_L$ instead flips all lower bits, mapping the zero label to $L-1$. These conditions specify a full unitary implementation, not just a state map: we use the prescribed controlled rotations on arbitrary inputs and their actual inverse in (\ref{eq:rec}).
+
+\begin{theorem}[Resource counts]\label{thm:cost}
+Suppose $n=2^b-1$, $b\ge1$. With arbitrary single-qubit rotations, all-to-all logical connections, and a six-CNOT exact Toffoli decomposition, the following CNOT counts implement the shell QFT:
+\begin{align}
+ C_{\rm noanc}(b)&=5\,2^b+b^2-5b-6,\\
+ C_{\rm clean}(b)&=(b-1)(23b-38).
+\end{align}
+The first circuit uses $b$ qubits. The second uses $b+\max(0,b-2)$ qubits, with clean work bits returned to zero. Total elementary gate counts have order $O(2^b)$ and $O(b^2)$, respectively. A hybrid may take the cheaper construction at each recursive level.
+\end{theorem}
+\begin{proof}
+In a level with $r$ lower bits, the left-branch complement in $P_L$ uses $r$ CNOTs. For the right branch, a Gray-cycle multiplexer for bit $k$ has $k+1$ controls including the leading digit, so it uses $2^{k+1}$ CNOTs and the same number of rotations. The total for $P_L$ is $r+2^{r+1}-2$. The middle rotation $C_L$ costs $2^r$ CNOTs by the same multiplexer. With the inverse preparation included, this level costs $5\,2^r+2r-4$ CNOTs.
+
+With clean workspace, compute the prefix-AND flags during preparation and uncompute them in reverse order after the last rotation. Every prefix is a predicate of already-prepared bits; later rotations never change those bits. The first right-branch rotation is singly controlled. Each subsequent bit uses one rotation controlled by the leading bit plus a correction controlled by the prefix flag. This gives $2r-1$ singly controlled rotations and $2(r-1)$ Toffolis in $P_L$. For $C_L$, flip the lower bits, compute their conjunction, rotate the leading bit once, and uncompute. Its cost is one controlled rotation and $2(r-1)$ Toffolis. In total, this level uses $2r$ direct CNOTs, $4r-1$ controlled rotations (two CNOTs each) and $6(r-1)$ Toffolis. Hence its cost is $46r-38$. The $r-1$ work bits can be reused at later levels. The bottom $W_2$ is one rotation with no CNOT, and $R$ is bitwise complement, requiring only $b$ X gates. Summing over $r=1,\ldots,b-1$ proves the formulas. The other elementary gates have the same asymptotic bounds.
+\end{proof}
+The equal-size recursion has been proved for the family $n+1=2^b$. General $n$ still has the shell matrix and adjacent rotation product, but a comparably efficient padding or unequal-size recursion remains to be studied. Rotation angles are exact analytic specifications; actual hardware or finite gate-set approximations introduce synthesis error. If $M$ ideal elementary rotations are approximated with operator error at most $\eta/M$ each, telescoping gives total operator error at most $\eta$. We do not report synthesized T counts for arbitrary rotations.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Logical CNOT counts for a single restricted QFT. The original full position register has $n$ bits when $p=2$. ``Old'' is the direct Gray-cycle shell compiler; ``hybrid'' selects a lower-cost construction per recursion level. Counts at large $n$ follow from circuit generation and Theorem~\ref{thm:cost}, rather than full position-space simulation.}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $b$ & Old & No ancilla & Hybrid & Hybrid wires\\
+\midrule
+7 & 3 & 28 & 28 & 28 & 3\\
+15 & 4 & 120 & 70 & 70 & 4\\
+31 & 5 & 496 & 154 & 154 & 5\\
+63 & 6 & 2,016 & 320 & 320 & 6\\
+127 & 7 & 8,128 & 648 & 558 & 12\\
+255 & 8 & 32,640 & 1,298 & 842 & 14\\
+1,023 & 10 & 523,776 & 5,164 & 1,548 & 18\\
+4,095 & 12 & 8,386,560 & 20,558 & 2,438 & 22\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Nontrivial character sectors and partial symmetry}
+Let $\chi$ be a nontrivial multiplicative character of the unit group of $\Z/p^n\Z$, induced by a primitive character modulo $p^a$ with $1\le a\le n$ (its conductor is $p^a$). For $j\ge a$ define
+\begin{equation}
+ \ket{j,\chi}=\frac{1}{\sqrt{w_j}}\sum_{u\in(\Z/p^j\Z)^\times}\chi(u)\ket{p^{n-j}u}.
+\end{equation}
+These vectors span the character sector in which multiplier $v$ acts by $\chi(v)^{-1}$. At each shell with $j<a$, the stabilizer includes units on which $\chi$ is nontrivial, so no vector of that character type exists there.
+\begin{theorem}[Conductor-resolved transform]\label{thm:char}
+Define $\gamma_\chi=p^{-a/2}\sum_{u\in(\Z/p^a\Z)^\times}\chi(u)e^{2\pi i u/p^a}$. For $a\le j\le n$,
+\begin{equation}\label{eq:char}
+ F_{p^n}\ket{j,\chi}=\gamma_\chi\ket{n+a-j,\overline{\chi}},\qquad |\gamma_\chi|=1.
+\end{equation}
+\end{theorem}
+\begin{proof}
+On a nonzero output shell $\ell$ write $y=p^{n-\ell}v$ with $v$ a unit. The unnormalized sum in the Fourier coefficient has additive conductor $p^{j+\ell-n}$ if $j+\ell>n$, and is a constant additive phase otherwise. If the additive conductor is smaller than $p^a$, summing over the character's nontrivial kernel of reduction gives zero. If it is greater, the character is constant on the lifts of a residue modulo $p^a$, while the geometric sum of additive phases over those lifts is zero. At equality $j+\ell=n+a$, the sum is $p^{j-a}\overline\chi(v)$ times the Gauss sum modulo $p^a$. Converting to normalized shell vectors multiplies this sum by $\sqrt{w_\ell}/(p^{n/2}\sqrt{w_j})$, giving (\ref{eq:char}). The zero output coordinate vanishes since $\chi$ is nontrivial. Unitarity now yields $|\gamma_\chi|=1$.
+\end{proof}
+For a known fixed character, the compressed transform is a reversal of $n-a+1$ labels, together with a relabeling of the output character. If that length is a power of two, the reversal is bitwise complement. The Gauss phase is global only for a fixed, uncontrolled sector. A coherent superposition of sectors must retain their relative phases. These phases and the required encoding need not be cheap for arbitrary characters of growing conductor.
+
+For $1\le s\le n$, define $K_s=\{u:u\equiv1\pmod {p^s}\}$. Its invariant subspace is the direct sum of the trivial sector and all characters of conductor at most $p^s$. Counting orbits on shells gives
+\begin{equation}
+ \dim\mathcal H^{K_s}=p^s+(n-s)\varphi(p^s).
+\end{equation}
+This broadens the promise to more than fully unit-invariant states; for fixed $p,s$ the dimension still grows linearly with $n$.
+
+\paragraph{An explicit two-sector circuit.} For $p=2,s=2$ there are the trivial character and $\chi_4(u)=(-1)^{(u-1)/2}$, with normalized Gauss phase $i$. The dimension is $2n$. Use a character flag and an absolute $b$-bit shell label, where flag 1 is valid for $j\ge2$. A flag-controlled version of Theorem~\ref{thm:cost} implements the trivial block; the other block maps $j\mapsto n+2-j\equiv 1-j\pmod{2^b}$ and applies phase $i$ to the flag. This permutation is complement followed by addition of two modulo $2^b$. Controlled increment of the upper $b-1$ bits uses a reversible carry chain whose flags are uncomputed before their source bits change. Adding one control to each gate of the clean recursion costs at most a constant number of gates using one scratch bit. The result has $O(b^2)$ logical gates and $2b$ total wires for $b\ge2$, with workspace restored. Unused labels are given a unitary extension. The code implements this coherent circuit; its constants are larger than those for the single-sector compiler.
+
+\section{Application: coherent hierarchical hopping}
+Let $H_j$ be the additive subgroup of order $p^j$ in $\Z/p^n\Z$, and define the orthogonal projector
+\begin{equation}
+ (A_j f)(x)=p^{-j}\sum_{h\in H_j} f(x+h).
+\end{equation}
+In Fourier coordinates, $A_j$ is the indicator of $H_j^\perp$; on shell $r$ it has eigenvalue $\mathbf1_{r\le n-j}$. The uniform-weight Hamiltonian $H=\sum_{j=1}^n(\id-A_j)$ therefore has eigenvalue $r$ on Fourier shell $r$. More general real weights give eigenvalues $E_r=\sum_{j>n-r}w'_j$. The fast phase circuit below is for uniform weights; a general table of eigenvalues has its own implementation cost.
+
+In the trivial sector, the uniform Hamiltonian evolves as
+\begin{equation}
+ U(t)=Q^*\diag_{r}(e^{-itr})Q.
+\end{equation}
+The binary shell index is a weighted sum of bits, so the diagonal is a tensor product of $b$ phase gates. A position potential depending on shell index is diagonal in the original shell basis. In particular, a linear potential gives another $b$ phase gates. Alternating exact hopping and such potential steps stays in the same native compressed register. This supplies a coherent use case, where a measurement-only Fourier sampler would lose the required phase information. A localized origin initial state is simply the all-zero shell state; any shell basis initial state also has a direct encoding. A physical position readout from a shell probability sample may be obtained by drawing a uniform member of that shell.
+
+For $p=2$ a stronger full-register baseline avoids the usual QFT altogether. Translation by the subgroup of size $2^j$ permutes the high $j$ bits while preserving the other bits; averaging projects the high bits onto the tensor product $\ket{+}^{\otimes j}$. Thus a tensor product of Hadamards diagonalizes all the $A_j$. Compute the all-zero prefix predicates with $n-1$ clean bits, apply the phases, and uncompute. This particular circuit uses $2(n-1)$ Toffolis, or $12(n-1)$ CNOTs, with $2n-1$ total wires. It is a direct coherent baseline and need not be optimal. Table~\ref{tab:app} includes this cost rather than assigning two generic QFTs to the full algorithm.
+\begin{table}[htbp]
+\centering\small
+\caption{Uniform hierarchical hopping: one coherent time step, $p=2$. Both circuits have diagonal phase costs in addition to the CNOT counts.}\label{tab:app}
+\begin{tabular}{rrrrr}
+\toprule
+Original bits $n$ & Full Walsh wires & Full Walsh CX & Shell wires & Shell CX\\
+\midrule
+7 & 13 & 72 & 3 & 56\\
+15 & 29 & 168 & 4 & 140\\
+31 & 61 & 360 & 5 & 308\\
+127 & 253 & 1,512 & 12 & 1,116\\
+255 & 509 & 3,048 & 14 & 1,684\\
+1,023 & 2,045 & 12,264 & 18 & 3,096\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Validation, Hadamard case study, and scope limits}
+All reported new checks are local ideal CPU simulations, using double-precision arithmetic for quantum amplitudes. The Python reference independently evaluates (\ref{eq:q}) and directly evolves the chronological gates. A separate direct simulator verifies the elementary controlled-rotation and Toffoli decompositions. The audit includes the following coverage:
+\begin{center}\small
+\begin{tabular}{p{0.60\linewidth}r}
+\toprule
+Check & Count or maximum error\\
+\midrule
+Recursive compilation settings & 58\\
+Basis columns and random complex test vectors & 1,184\\
+Maximum compiled amplitude error & $7.33\cdot10^{-15}$\\
+Maximum workspace leakage norm & $2.59\cdot10^{-15}$\\
+Hierarchical hopping parameter settings & 8\\
+Full FFT evolution amplitude error & $1.02\cdot10^{-15}$\\
+Dense Hamiltonian exponential error (small cases) & $3.33\cdot10^{-15}$\\
+Six-step alternating evolution error & $1.23\cdot10^{-15}$\\
+Nontrivial character sectors enumerated & 490\\
+Nontrivial shell columns checked by FFT & 769\\
+Maximum character transform error & $4.49\cdot10^{-16}$\\
+Two-sector compiler basis columns & 248\\
+Maximum two-sector compiler error & $4.45\cdot10^{-16}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Full direct FFT references for the two-sector compiler cover $N=8,128,32768$. For the single-sector compiler, all columns are simulated through $64$ shell levels for each $p\in\{2,3,5,7\}$ in both principal modes, with larger binary tests and one fully elementary decomposition. The full underlying position vector is not generated at the largest represented sizes. A repeat audit produced byte-identical JSON and text receipts. The code emits OpenQASM 3; parser, routing, hardware execution and fault-tolerant synthesis remain future validation.
+
+The original application was a cyclic Hadamard-core problem at order 2396. Its length-598 core admits a candidate order-eight multiplier group with CRT factors of dimensions $2,13,23$ and orbit dimensions $2,4,12$. The earlier ideal-simulation study used a seven-wire encoding of these 96 orbit labels, with a 140-CNOT real cosine-sine compiler; it also checked exact modular autocorrelation certificates. This is an illustration of the more general orbit restriction. It does not construct a new Hadamard matrix or establish the existence of a length-598 core in that family. The new prime-power recursion relies on the special shell matrix rather than applying to arbitrary multiplier orbit transforms.
+
+\paragraph{Approximate symmetry.} With orbit projection $P$ and a normalized input $\psi$, let $\epsilon=\|(\id-P)\psi\|^2$. If $\epsilon<1$, its normalized projection has squared fidelity $1-\epsilon$ with $\psi$. Every common unitary continuation preserves this fidelity, and every measurement has total-variation error at most $\sqrt\epsilon$. In a symmetry-preserving circuit the projected branch can be represented in the smaller register throughout. This guarantee presumes that the encoded projected input is available. Neither projection success nor a general encoder is free. Additional symmetry-breaking operations require a separate error analysis.
+
+\paragraph{Limits on general QFT acceleration.} For a phase ramp $\psi_k(x)=N^{-1/2}e^{2\pi i kx/N}$, the projection onto unit-invariant states retains squared norm $1/|O(k)|$: Fourier transforms the ramp to a basis vector at $-k$, and the projector commutes with $F_N$. For a unit $k$, this is $1/\varphi(N)$, exponentially small in the binary position width for prime powers. Our audit verifies the identity on 237 phase ramps. Standard phase estimation and period-finding registers have no general invariant-input promise. A complete character-basis decomposition of the unrestricted QFT would also need a coherent change of basis from position labels and implementation of conductor-dependent phases. Their costs have not been bounded here.
+
+The invariant dynamics can be classically simulated with $O(n)$ amplitudes, and the adjacent rotation product itself can be evaluated classically in $O(n)$ arithmetic operations. We therefore make no quantum-advantage claim. The result is a reduction in encoded logical circuit resources for a symmetry-preserving quantum computation, including coherent access by a larger quantum algorithm. Comparisons must account for state preparation, conversion, phase oracles, desired output, approximation error and hardware connectivity.
+
+\section{Next steps toward a submission}
+A submission should add a targeted literature review of the binary recursive identity and circuit complexity of Ramanujan or supercharacter transforms; the normalized orbit matrix is already known. Extending the recursion to arbitrary shell counts and quantifying approximate symmetry for realistic input ensembles would broaden its scope. A controlled-QFT and phase-oracle study should include synthesis costs and comparisons against modern approximate QFT circuits, along with the direct hierarchical baseline. A small hardware experiment can use the 3- and 4-qubit native shell circuits, fixed complex superpositions and coherent spectral-phase sandwiches, with calibration and identity controls. The present ideal simulation receipts support a mathematical and engineering draft, without a claim of hardware performance or priority.
+
+\begin{thebibliography}{9}\small
+\bibitem{fowler} C. F. Fowler, S. R. Garcia, G. Karaali, ``Ramanujan sums as supercharacters,'' \emph{Ramanujan Journal}; preprint \href{https://arxiv.org/abs/1201.1060}{arXiv:1201.1060} (2012).
+\bibitem{brumbaugh} J. L. Brumbaugh et al., ``Supercharacters, exponential sums, and the uncertainty principle,'' \emph{Journal of Number Theory} 144, 151--175 (2014), \href{https://doi.org/10.1016/j.jnt.2014.04.019}{doi:10.1016/j.jnt.2014.04.019}.
+\bibitem{nam} Y. Nam, Y. Su, D. Maslov, ``Approximate quantum Fourier transform with $O(n\log n)$ T gates,'' \emph{npj Quantum Information} 6, 26 (2020), \href{https://doi.org/10.1038/s41534-020-0257-5}{doi:10.1038/s41534-020-0257-5}.
+\bibitem{shah} R. Shah, ``A Faster Quantum Fourier Transform,'' preprint \href{https://arxiv.org/abs/2501.12414}{arXiv:2501.12414} (2025).
+\bibitem{bendikov} A. Bendikov, P. Krupski, ``On the spectrum of the hierarchical Laplacian,'' \emph{Potential Analysis} 41, 1247--1266 (2014), \href{https://doi.org/10.1007/s11118-014-9409-6}{doi:10.1007/s11118-014-9409-6}.
+\bibitem{grover} L. Grover, T. Rudolph, ``Creating superpositions that correspond to efficiently integrable probability distributions,'' \href{https://arxiv.org/abs/quant-ph/0208112}{arXiv:quant-ph/0208112} (2002).
+\bibitem{mottonen} M. M\"ott\"onen et al., ``Transformation of quantum states using uniformly controlled rotations,'' \href{https://arxiv.org/abs/quant-ph/0407010}{arXiv:quant-ph/0407010} (2004).
+\bibitem{zuniga} W. A. Z\'u\~niga-Galindo, N. P. Mayes, ``p-Adic quantum mechanics, infinite potential wells, and continuous-time quantum walks,'' \emph{Reviews in Mathematical Physics} 38, 2550027 (2026), \href{https://arxiv.org/abs/2410.13048}{arXiv:2410.13048}.
+\end{thebibliography}
+\end{document}
