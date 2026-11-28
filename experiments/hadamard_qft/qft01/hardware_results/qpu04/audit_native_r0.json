@@ -1,0 +1,110 @@
+{
+  "all_gates_pass": true,
+  "arms": {
+    "A": {
+      "all_used_are_region_data_qubits": true,
+      "analytic_bound": 0.0016396012437297346,
+      "core_size": 2984,
+      "data_wires": 7,
+      "depth": 2088,
+      "edge_circuit_duration_us": 41.088000000000214,
+      "estimated_success_core_and_prep": 0.5637393304171664,
+      "estimated_success_total": 0.5016932358720269,
+      "frozen_routed_cx": 276,
+      "instruction_support_all": true,
+      "native_cz": 276,
+      "native_not_above_routed": true,
+      "native_operator_error_vs_exact": 0.0012406036744641435,
+      "native_vs_routed_max_entry_discrepancy": 5.5543028637420134e-14,
+      "one_qubit": {
+        "rz": 1731,
+        "sx": 970,
+        "x": 7
+      },
+      "physical_qubits": [
+        71,
+        72,
+        73,
+        58,
+        70,
+        74,
+        79
+      ],
+      "readout_success": 0.8899383257520359,
+      "rows_checked": 19,
+      "total_native_two_qubit": 276,
+      "two_qubit_depth": 263,
+      "two_qubit_gate_kinds": {
+        "cz": 276
+      },
+      "used_qubits": [
+        58,
+        70,
+        71,
+        72,
+        73,
+        74,
+        79
+      ],
+      "workspace": 0
+    },
+    "D": {
+      "all_used_are_region_data_qubits": true,
+      "analytic_bound": 0.0016396012437297346,
+      "core_size": 2073,
+      "data_wires": 7,
+      "depth": 1316,
+      "edge_circuit_duration_us": 27.107999999999905,
+      "estimated_success_core_and_prep": 0.6700840411036368,
+      "estimated_success_total": 0.596333469652929,
+      "frozen_routed_cx": 199,
+      "instruction_support_all": true,
+      "native_cz": 199,
+      "native_not_above_routed": true,
+      "native_operator_error_vs_exact": 0.0012406036744632726,
+      "native_vs_routed_max_entry_discrepancy": 4.3525079250226396e-14,
+      "one_qubit": {
+        "rz": 1225,
+        "sx": 630,
+        "x": 19
+      },
+      "physical_qubits": [
+        71,
+        72,
+        73,
+        58,
+        70,
+        74,
+        79
+      ],
+      "readout_success": 0.8899383257520359,
+      "rows_checked": 19,
+      "total_native_two_qubit": 199,
+      "two_qubit_depth": 193,
+      "two_qubit_gate_kinds": {
+        "cz": 199
+      },
+      "used_qubits": [
+        58,
+        70,
+        71,
+        72,
+        73,
+        74,
+        79
+      ],
+      "workspace": 0
+    }
+  },
+  "calibration_timestamp": "2026-11-28T10:52:47+08:00",
+  "design": "qpu04_b7_r0.json",
+  "gates": {
+    "armD_below_200": true,
+    "instructions_supported": true,
+    "native_checks_pass": true,
+    "native_not_above_routed": true,
+    "only_cz_two_qubit": true,
+    "seven_physical_data_qubits": true,
+    "zero_workspace": true
+  }
+}
