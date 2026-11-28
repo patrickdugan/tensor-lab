@@ -104,3 +104,7 @@ Offline design runs are deterministic given seeds (re-embedding recompiles every
 - QPU02's line routing had inflated the native counts of the same logical circuits (b=6: 434 against 178 after heavy-hex routing); QPU02's recorded counts were correct for what was run.
 - Workspace did not reduce routed native counts at b=5, 6 and did not improve phase contrast (C-D not significant at b=5, 6, 7); workspace readout was anomalous at b=5 (B 0.40, C 0.78; a noisy simulation of the exact circuits gives 0.03; independent of every data qubit) and 0.10-0.12 at b=6; the cause is unexplained (an equatorial-idle dephasing explanation was tested and does not fit). Rotation pruning saves no CNOTs.
 - No b=7 replicate and no b=4 anchor were run. The independent audit of QPU02 reproduced 5 of 6 simultaneous improvements (both edge ones); the second-replicate middle probe survives by 0.004.
+
+# HAD-QFT-QPU04 hardware record (28 November 2026)
+
+See `../QPU04_RESULTS.md` for the verdict, native audit, receipts and authorization record. Jobs: `dc54l02nj2vs73dl0cdg` (region 0, plan `ceb4ef50b9a5`, 13 s) and `dc54v96q4uuc73a9p2d0` (region 1, plan `6bf1be377485`, 13 s); 26 QPU s charged, 173 of 600 s remaining. The registered replicated positive primary result is not met (region 0 joint lower bound -0.021, region 1 +0.0003). A first region-1 build (`2e007417028a`) expired before submission and was never sent to IBM.
