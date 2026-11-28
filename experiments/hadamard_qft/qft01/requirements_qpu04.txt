@@ -1,0 +1,10 @@
+# Environment used for QPU04 (Python 3.12.10, Windows 11). Recorded by qpu04_preflight.py in hardware_results/qpu04/preflight.json.
+qiskit==2.6.2
+qiskit-ibm-runtime==0.52.0
+qiskit-aer==0.18.2
+numpy==2.5.4
+scipy==1.18.1
+networkx==3.7
+rustworkx==0.18.1
+matplotlib==3.11.2
+pytest==9.1.1

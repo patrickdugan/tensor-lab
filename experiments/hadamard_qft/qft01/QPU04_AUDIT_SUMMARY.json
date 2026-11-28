@@ -1,0 +1,186 @@
+{
+  "scope": "CPU_ONLY_QPU04",
+  "parent": "9547024409ef7594cfea5230e26125d176dbf8db",
+  "source_blobs": {
+    "selective.py": "3a196aef19b8ba1f612f9de1fa4ea056d56d122f",
+    "route_dp.py": "df53f150ee41a813d66885b709b13d96861363a6",
+    "qpu04_design.py": "cfcc833ceb6b45488bb47c70960abd725029d82b",
+    "qpu04.py": "54e364973223200650b21c61ff713cd672629901",
+    "test_qpu04.py": "135a42957e9e75b3562102b109771913799b3074",
+    "qpu04_b7_r0.json": "a79eaf745ed40462b19704f291af893ccab4917c",
+    "qpu04_b7_r1.json": "1b8c82f2b04496553742902fb657f228a96c7cd2"
+  },
+  "tests": {
+    "passed": 23,
+    "skipped": 1,
+    "seconds": 6.47
+  },
+  "boundary_controls": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "boundary_cx": [
+    2,
+    4,
+    8,
+    14,
+    20,
+    28,
+    40,
+    52
+  ],
+  "scaling": [
+    {
+      "b": 5,
+      "logical": [
+        70,
+        68
+      ],
+      "routed": [
+        90,
+        86
+      ]
+    },
+    {
+      "b": 6,
+      "logical": [
+        112,
+        98
+      ],
+      "routed": [
+        157,
+        136
+      ]
+    },
+    {
+      "b": 7,
+      "logical": [
+        188,
+        138
+      ],
+      "routed": [
+        276,
+        199
+      ]
+    },
+    {
+      "b": 8,
+      "logical": [
+        330,
+        192
+      ],
+      "routed": [
+        494,
+        301
+      ]
+    }
+  ],
+  "b7_candidates": [
+    [
+      "direct",
+      "rev",
+      false,
+      276
+    ],
+    [
+      "direct",
+      "rev",
+      true,
+      279
+    ],
+    [
+      "direct",
+      "forward",
+      false,
+      295
+    ],
+    [
+      "direct",
+      "forward",
+      true,
+      296
+    ],
+    [
+      "commutator",
+      "rev",
+      false,
+      201
+    ],
+    [
+      "commutator",
+      "rev",
+      true,
+      199
+    ],
+    [
+      "commutator",
+      "forward",
+      false,
+      210
+    ],
+    [
+      "commutator",
+      "forward",
+      true,
+      207
+    ]
+  ],
+  "b7": {
+    "old_native_qpu03": 320,
+    "dp_cost": [
+      276,
+      201
+    ],
+    "post_simplify": [
+      276,
+      199
+    ],
+    "logical_cx": [
+      188,
+      138
+    ],
+    "operator_error": [
+      0.0012406036744622307,
+      0.0012406036744622255
+    ],
+    "bound": 0.0016396012437297346,
+    "routing_max_entry_error": 0,
+    "initial": [
+      0,
+      2,
+      6,
+      5,
+      1,
+      4,
+      3
+    ],
+    "final": [
+      3,
+      4,
+      0,
+      5,
+      6,
+      1,
+      2
+    ]
+  },
+  "b8": {
+    "operator_error": 0.0012406036744621973,
+    "bound": 0.0016396012437297348,
+    "routing_max_entry_error": 0
+  },
+  "hardware": {
+    "jobs": 0,
+    "native_verified": false,
+    "shots_per_circuit": 1024,
+    "rows_per_region": 38,
+    "regions": 2
+  },
+  "limitations": "Qiskit unavailable; CPU-only; no global optimality or hardware accuracy claim. Exploratory prior order search preceded the final four-choice per-arm comparison."
+}

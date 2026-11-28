@@ -1,0 +1,42 @@
+[
+  {
+    "b": 5,
+    "new_dp": 86,
+    "new_logical": 68,
+    "new_routed": 86,
+    "previous_dp": 90,
+    "previous_logical": 70,
+    "previous_routed": 90,
+    "seconds": 0.3
+  },
+  {
+    "b": 6,
+    "new_dp": 138,
+    "new_logical": 98,
+    "new_routed": 136,
+    "previous_dp": 157,
+    "previous_logical": 112,
+    "previous_routed": 157,
+    "seconds": 1.6
+  },
+  {
+    "b": 7,
+    "new_dp": 201,
+    "new_logical": 138,
+    "new_routed": 199,
+    "previous_dp": 276,
+    "previous_logical": 188,
+    "previous_routed": 276,
+    "seconds": 5.6
+  },
+  {
+    "b": 8,
+    "new_dp": 303,
+    "new_logical": 192,
+    "new_routed": 301,
+    "previous_dp": 498,
+    "previous_logical": 330,
+    "previous_routed": 494,
+    "seconds": 30.6
+  }
+]

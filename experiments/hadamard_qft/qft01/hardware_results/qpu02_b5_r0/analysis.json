@@ -1,0 +1,788 @@
+{
+  "comparisons": [
+    {
+      "arm": "gray",
+      "difference": -0.00390625,
+      "probe": "edge",
+      "shot_hoeffding95": [
+        -0.12394659891499009,
+        0.11613409891499009
+      ]
+    },
+    {
+      "arm": "gray",
+      "difference": -0.00390625,
+      "probe": "middle",
+      "shot_hoeffding95": [
+        -0.12394659891499009,
+        0.11613409891499009
+      ]
+    },
+    {
+      "arm": "gray",
+      "difference": -0.046875,
+      "probe": "tail",
+      "shot_hoeffding95": [
+        -0.1669153489149901,
+        0.07316534891499009
+      ]
+    },
+    {
+      "arm": "compact_exact",
+      "difference": 0.10546875,
+      "probe": "edge",
+      "shot_hoeffding95": [
+        -0.014571598914990089,
+        0.2255090989149901
+      ]
+    },
+    {
+      "arm": "compact_exact",
+      "difference": 0.095703125,
+      "probe": "middle",
+      "shot_hoeffding95": [
+        -0.02433722391499009,
+        0.2157434739149901
+      ]
+    },
+    {
+      "arm": "compact_exact",
+      "difference": 0.0703125,
+      "probe": "tail",
+      "shot_hoeffding95": [
+        -0.04972784891499009,
+        0.1903528489149901
+      ]
+    },
+    {
+      "arm": "compact_approx",
+      "difference": 0.173828125,
+      "probe": "edge",
+      "shot_hoeffding95": [
+        0.05378777608500991,
+        0.2938684739149901
+      ]
+    },
+    {
+      "arm": "compact_approx",
+      "difference": 0.177734375,
+      "probe": "middle",
+      "shot_hoeffding95": [
+        0.05769402608500991,
+        0.2977747239149901
+      ]
+    },
+    {
+      "arm": "compact_approx",
+      "difference": 0.140625,
+      "probe": "tail",
+      "shot_hoeffding95": [
+        0.02058465108500991,
+        0.2606653489149901
+      ]
+    }
+  ],
+  "contrasts": [
+    {
+      "arm": "gray",
+      "contrast": 0.01171875,
+      "ideal": 1.0,
+      "imag_vs_mix_tv": 0.1171875,
+      "midpoint_vs_mix_tv": 0.0712890625,
+      "normalized": 0.01171875,
+      "probe": "edge",
+      "shot_hoeffding95": [
+        -0.07316259473378872,
+        0.09660009473378872
+      ]
+    },
+    {
+      "arm": "gray",
+      "contrast": 0.021484375,
+      "ideal": 0.7071067811865475,
+      "imag_vs_mix_tv": 0.103515625,
+      "midpoint_vs_mix_tv": 0.08203125,
+      "normalized": 0.030383494504109466,
+      "probe": "middle",
+      "shot_hoeffding95": [
+        -0.06339696973378872,
+        0.10636571973378872
+      ]
+    },
+    {
+      "arm": "gray",
+      "contrast": 0.0234375,
+      "ideal": 0.7071067811865475,
+      "imag_vs_mix_tv": 0.1279296875,
+      "midpoint_vs_mix_tv": 0.09765625,
+      "normalized": 0.03314563036811942,
+      "probe": "tail",
+      "shot_hoeffding95": [
+        -0.06144384473378872,
+        0.10831884473378872
+      ]
+    },
+    {
+      "arm": "recursive",
+      "contrast": 0.015625,
+      "ideal": 1.0,
+      "imag_vs_mix_tv": 0.1630859375,
+      "midpoint_vs_mix_tv": 0.08984375,
+      "normalized": 0.015625,
+      "probe": "edge",
+      "shot_hoeffding95": [
+        -0.06925634473378872,
+        0.10050634473378872
+      ]
+    },
+    {
+      "arm": "recursive",
+      "contrast": 0.025390625,
+      "ideal": 0.7071067811865475,
+      "imag_vs_mix_tv": 0.1328125,
+      "midpoint_vs_mix_tv": 0.087890625,
+      "normalized": 0.03590776623212937,
+      "probe": "middle",
+      "shot_hoeffding95": [
+        -0.05949071973378872,
+        0.11027196973378872
+      ]
+    },
+    {
+      "arm": "recursive",
+      "contrast": 0.0703125,
+      "ideal": 0.7071067811865475,
+      "imag_vs_mix_tv": 0.1103515625,
+      "midpoint_vs_mix_tv": 0.0947265625,
+      "normalized": 0.09943689110435826,
+      "probe": "tail",
+      "shot_hoeffding95": [
+        -0.014568844733788722,
+        0.15519384473378872
+      ]
+    },
+    {
+      "arm": "compact_exact",
+      "contrast": 0.12109375,
+      "ideal": 1.0,
+      "imag_vs_mix_tv": 0.125,
+      "midpoint_vs_mix_tv": 0.091796875,
+      "normalized": 0.12109375,
+      "probe": "edge",
+      "shot_hoeffding95": [
+        0.03621240526621128,
+        0.20597509473378872
+      ]
+    },
+    {
+      "arm": "compact_exact",
+      "contrast": 0.12109375,
+      "ideal": 0.7071067811865475,
+      "imag_vs_mix_tv": 0.1416015625,
+      "midpoint_vs_mix_tv": 0.0927734375,
+      "normalized": 0.171252423568617,
+      "probe": "middle",
+      "shot_hoeffding95": [
+        0.03621240526621128,
+        0.20597509473378872
+      ]
+    },
+    {
+      "arm": "compact_exact",
+      "contrast": 0.140625,
+      "ideal": 0.7071067811865475,
+      "imag_vs_mix_tv": 0.1240234375,
+      "midpoint_vs_mix_tv": 0.0712890625,
+      "normalized": 0.19887378220871652,
+      "probe": "tail",
+      "shot_hoeffding95": [
+        0.05574365526621128,
+        0.22550634473378872
+      ]
+    },
+    {
+      "arm": "compact_approx",
+      "contrast": 0.189453125,
+      "ideal": 1.0,
+      "imag_vs_mix_tv": 0.1572265625,
+      "midpoint_vs_mix_tv": 0.11328125,
+      "normalized": 0.189453125,
+      "probe": "edge",
+      "shot_hoeffding95": [
+        0.10457178026621128,
+        0.2743344697337887
+      ]
+    },
+    {
+      "arm": "compact_approx",
+      "contrast": 0.203125,
+      "ideal": 0.7071067811865475,
+      "imag_vs_mix_tv": 0.123046875,
+      "midpoint_vs_mix_tv": 0.08203125,
+      "normalized": 0.287262129857035,
+      "probe": "middle",
+      "shot_hoeffding95": [
+        0.11824365526621128,
+        0.2880063447337887
+      ]
+    },
+    {
+      "arm": "compact_approx",
+      "contrast": 0.2109375,
+      "ideal": 0.7071067811865475,
+      "imag_vs_mix_tv": 0.146484375,
+      "midpoint_vs_mix_tv": 0.0791015625,
+      "normalized": 0.29831067331307476,
+      "probe": "tail",
+      "shot_hoeffding95": [
+        0.12605615526621128,
+        0.2958188447337887
+      ]
+    }
+  ],
+  "note": "Edge contrast is primary; other probes secondary. Marginal Hoeffding intervals assume independent fixed-probability shots, exclude drift and systematics, and are not multiplicity-adjusted.",
+  "resources": {
+    "compact_approx": {
+      "analytic_bound": 0.001633280517082403,
+      "line_cx": 218,
+      "logical_cx": 70,
+      "operator_error": 0.0012383711146714803,
+      "own_best_line_cx": 218
+    },
+    "compact_exact": {
+      "analytic_bound": 0.0,
+      "line_cx": 296,
+      "logical_cx": 114,
+      "operator_error": 4.9017587849337195e-15,
+      "own_best_line_cx": 296
+    },
+    "gray": {
+      "analytic_bound": 0.0,
+      "line_cx": 1122,
+      "logical_cx": 504,
+      "operator_error": 2.2229296698589647e-14,
+      "own_best_line_cx": 1108
+    },
+    "recursive": {
+      "analytic_bound": 0.0,
+      "line_cx": 468,
+      "logical_cx": 154,
+      "operator_error": 4.525542469942609e-15,
+      "own_best_line_cx": 458
+    }
+  },
+  "rows": {
+    "compact_approx_edge_basis0": {
+      "hf": 0.4023590474713472,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.11328125,
+      "tv": 0.63671875,
+      "tv_compiled": 0.6367222210590481
+    },
+    "compact_approx_edge_basis1": {
+      "hf": 0.46231072483475905,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.123046875,
+      "tv": 0.5859375,
+      "tv_compiled": 0.585937172752143
+    },
+    "compact_approx_edge_imag": {
+      "hf": 0.46123158907660805,
+      "ideal_target": 0.4999999999999999,
+      "target_prob": 0.140625,
+      "tv": 0.578125,
+      "tv_compiled": 0.5781265719055959
+    },
+    "compact_approx_edge_minus": {
+      "hf": 0.20703125,
+      "ideal_target": 1.0,
+      "target_prob": 0.20703125,
+      "tv": 0.79296875,
+      "tv_compiled": 0.792967983195666
+    },
+    "compact_approx_edge_plus": {
+      "hf": 0.5204724035983879,
+      "ideal_target": 0.0,
+      "target_prob": 0.017578125,
+      "tv": 0.5390625,
+      "tv_compiled": 0.539066689939719
+    },
+    "compact_approx_middle_basis0": {
+      "hf": 0.582775978359706,
+      "ideal_target": 0.25,
+      "target_prob": 0.083984375,
+      "tv": 0.48632812500000006,
+      "tv_compiled": 0.48632748075807963
+    },
+    "compact_approx_middle_basis1": {
+      "hf": 0.5246134152046961,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.185546875,
+      "tv": 0.521484375,
+      "tv_compiled": 0.5214843750000011
+    },
+    "compact_approx_middle_imag": {
+      "hf": 0.5276899195629885,
+      "ideal_target": 0.37499999999999994,
+      "target_prob": 0.1171875,
+      "tv": 0.52734375,
+      "tv_compiled": 0.5273430955114096
+    },
+    "compact_approx_middle_minus": {
+      "hf": 0.4216739288882112,
+      "ideal_target": 0.7285533905932737,
+      "target_prob": 0.23046875,
+      "tv": 0.6250377655932737,
+      "tv_compiled": 0.6250371136613571
+    },
+    "compact_approx_middle_plus": {
+      "hf": 0.5452173093299975,
+      "ideal_target": 0.02144660940672625,
+      "target_prob": 0.02734375,
+      "tv": 0.5209094286811942,
+      "tv_compiled": 0.5209087741926034
+    },
+    "compact_approx_tail_basis0": {
+      "hf": 0.4461366005382339,
+      "ideal_target": 0.25,
+      "target_prob": 0.115234375,
+      "tv": 0.546875,
+      "tv_compiled": 0.5468750000000002
+    },
+    "compact_approx_tail_basis1": {
+      "hf": 0.3947678476718654,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.255859375,
+      "tv": 0.5976562500000001,
+      "tv_compiled": 0.5976562500000002
+    },
+    "compact_approx_tail_imag": {
+      "hf": 0.425482275195288,
+      "ideal_target": 0.37499999999999994,
+      "target_prob": 0.13671875,
+      "tv": 0.5703125,
+      "tv_compiled": 0.5703125000000012
+    },
+    "compact_approx_tail_minus": {
+      "hf": 0.3756615321275819,
+      "ideal_target": 0.7285533905932737,
+      "target_prob": 0.271484375,
+      "tv": 0.6269908905932737,
+      "tv_compiled": 0.6269908905932735
+    },
+    "compact_approx_tail_plus": {
+      "hf": 0.4572285747967629,
+      "ideal_target": 0.02144660940672625,
+      "target_prob": 0.060546875,
+      "tv": 0.5586315155932737,
+      "tv_compiled": 0.5586315155932736
+    },
+    "compact_exact_edge_basis0": {
+      "hf": 0.3487829782657906,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.068359375,
+      "tv": 0.66015625,
+      "tv_compiled": 0.6601562500000027
+    },
+    "compact_exact_edge_basis1": {
+      "hf": 0.36364137053717166,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.099609375,
+      "tv": 0.6328125,
+      "tv_compiled": 0.6328125000000033
+    },
+    "compact_exact_edge_imag": {
+      "hf": 0.36283151344059583,
+      "ideal_target": 0.4999999999999999,
+      "target_prob": 0.080078125,
+      "tv": 0.66015625,
+      "tv_compiled": 0.6601562500000013
+    },
+    "compact_exact_edge_minus": {
+      "hf": 0.138671875,
+      "ideal_target": 1.0,
+      "target_prob": 0.138671875,
+      "tv": 0.861328125,
+      "tv_compiled": 0.861328125000002
+    },
+    "compact_exact_edge_plus": {
+      "hf": 0.40093533889528593,
+      "ideal_target": 0.0,
+      "target_prob": 0.017578125,
+      "tv": 0.630859375,
+      "tv_compiled": 0.6308593750000016
+    },
+    "compact_exact_middle_basis0": {
+      "hf": 0.43895954305600743,
+      "ideal_target": 0.25,
+      "target_prob": 0.0546875,
+      "tv": 0.619140625,
+      "tv_compiled": 0.6191406250000013
+    },
+    "compact_exact_middle_basis1": {
+      "hf": 0.43398124283587236,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.13671875,
+      "tv": 0.603515625,
+      "tv_compiled": 0.6035156250000019
+    },
+    "compact_exact_middle_imag": {
+      "hf": 0.4791612162156106,
+      "ideal_target": 0.37499999999999994,
+      "target_prob": 0.130859375,
+      "tv": 0.572265625,
+      "tv_compiled": 0.5722656250000017
+    },
+    "compact_exact_middle_minus": {
+      "hf": 0.3270520275049473,
+      "ideal_target": 0.7285533905932737,
+      "target_prob": 0.16796875,
+      "tv": 0.7246471405932737,
+      "tv_compiled": 0.7246471405932758
+    },
+    "compact_exact_middle_plus": {
+      "hf": 0.5377241591597249,
+      "ideal_target": 0.02144660940672625,
+      "target_prob": 0.046875,
+      "tv": 0.5248156786811942,
+      "tv_compiled": 0.524815678681196
+    },
+    "compact_exact_tail_basis0": {
+      "hf": 0.3806423907854509,
+      "ideal_target": 0.25,
+      "target_prob": 0.09765625,
+      "tv": 0.603515625,
+      "tv_compiled": 0.6035156250000042
+    },
+    "compact_exact_tail_basis1": {
+      "hf": 0.3603727908656008,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.19921875,
+      "tv": 0.6386718750000001,
+      "tv_compiled": 0.6386718750000049
+    },
+    "compact_exact_tail_imag": {
+      "hf": 0.45439727784823203,
+      "ideal_target": 0.37499999999999994,
+      "target_prob": 0.134765625,
+      "tv": 0.5390625,
+      "tv_compiled": 0.5390625000000023
+    },
+    "compact_exact_tail_minus": {
+      "hf": 0.36009430849347696,
+      "ideal_target": 0.7285533905932737,
+      "target_prob": 0.228515625,
+      "tv": 0.6504283905932737,
+      "tv_compiled": 0.6504283905932772
+    },
+    "compact_exact_tail_plus": {
+      "hf": 0.4038098400853935,
+      "ideal_target": 0.02144660940672625,
+      "target_prob": 0.087890625,
+      "tv": 0.6172252655932737,
+      "tv_compiled": 0.6172252655932774
+    },
+    "gray_edge_basis0": {
+      "hf": 0.21997445132876475,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.076171875,
+      "tv": 0.78564453125,
+      "tv_compiled": 0.7856445312500113
+    },
+    "gray_edge_basis1": {
+      "hf": 0.19033341830251743,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.046875,
+      "tv": 0.8125,
+      "tv_compiled": 0.8125000000000103
+    },
+    "gray_edge_imag": {
+      "hf": 0.19393080937614343,
+      "ideal_target": 0.4999999999999999,
+      "target_prob": 0.060546875,
+      "tv": 0.814453125,
+      "tv_compiled": 0.8144531250000051
+    },
+    "gray_edge_minus": {
+      "hf": 0.05078125000000001,
+      "ideal_target": 1.0,
+      "target_prob": 0.05078125,
+      "tv": 0.94921875,
+      "tv_compiled": 0.9492187500000093
+    },
+    "gray_edge_plus": {
+      "hf": 0.15307534457919086,
+      "ideal_target": 0.0,
+      "target_prob": 0.0390625,
+      "tv": 0.853515625,
+      "tv_compiled": 0.8535156250000158
+    },
+    "gray_middle_basis0": {
+      "hf": 0.22621484550875667,
+      "ideal_target": 0.25,
+      "target_prob": 0.07421875,
+      "tv": 0.76953125,
+      "tv_compiled": 0.7695312500000142
+    },
+    "gray_middle_basis1": {
+      "hf": 0.32680627829356684,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.076171875,
+      "tv": 0.705078125,
+      "tv_compiled": 0.7050781250000115
+    },
+    "gray_middle_imag": {
+      "hf": 0.2799185930723648,
+      "ideal_target": 0.37499999999999994,
+      "target_prob": 0.07421875,
+      "tv": 0.728515625,
+      "tv_compiled": 0.7285156250000161
+    },
+    "gray_middle_minus": {
+      "hf": 0.15196465532741116,
+      "ideal_target": 0.7285533905932737,
+      "target_prob": 0.0859375,
+      "tv": 0.8750377655932737,
+      "tv_compiled": 0.8750377655932854
+    },
+    "gray_middle_plus": {
+      "hf": 0.2821102385520722,
+      "ideal_target": 0.02144660940672625,
+      "target_prob": 0.064453125,
+      "tv": 0.7533313036811942,
+      "tv_compiled": 0.7533313036812074
+    },
+    "gray_tail_basis0": {
+      "hf": 0.2966852551513872,
+      "ideal_target": 0.25,
+      "target_prob": 0.087890625,
+      "tv": 0.6875,
+      "tv_compiled": 0.6875000000000132
+    },
+    "gray_tail_basis1": {
+      "hf": 0.25544852736247997,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.078125,
+      "tv": 0.7324218750000001,
+      "tv_compiled": 0.7324218750000091
+    },
+    "gray_tail_imag": {
+      "hf": 0.32650772588895294,
+      "ideal_target": 0.37499999999999994,
+      "target_prob": 0.126953125,
+      "tv": 0.66796875,
+      "tv_compiled": 0.6679687500000311
+    },
+    "gray_tail_minus": {
+      "hf": 0.2128193396421224,
+      "ideal_target": 0.7285533905932737,
+      "target_prob": 0.099609375,
+      "tv": 0.8008190155932737,
+      "tv_compiled": 0.8008190155932979
+    },
+    "gray_tail_plus": {
+      "hf": 0.2610674366506911,
+      "ideal_target": 0.02144660940672625,
+      "target_prob": 0.076171875,
+      "tv": 0.7480846405932737,
+      "tv_compiled": 0.7480846405933003
+    },
+    "prep_edge_imag": {
+      "hf": 0.9882812499999996,
+      "ideal_target": 0.9999999999999996,
+      "target_prob": 0.98828125,
+      "tv": 0.011718749999999778,
+      "tv_compiled": 0.011718749999999778
+    },
+    "prep_edge_minus": {
+      "hf": 0.9843749999999997,
+      "ideal_target": 0.9999999999999996,
+      "target_prob": 0.984375,
+      "tv": 0.015624999999999778,
+      "tv_compiled": 0.015624999999999778
+    },
+    "prep_edge_plus": {
+      "hf": 0.9863281249999997,
+      "ideal_target": 0.9999999999999996,
+      "target_prob": 0.986328125,
+      "tv": 0.013671874999999778,
+      "tv_compiled": 0.013671874999999778
+    },
+    "prep_middle_imag": {
+      "hf": 0.9863281249999997,
+      "ideal_target": 0.9999999999999996,
+      "target_prob": 0.986328125,
+      "tv": 0.013671874999999778,
+      "tv_compiled": 0.013671874999999778
+    },
+    "prep_middle_minus": {
+      "hf": 0.9765624999999996,
+      "ideal_target": 0.9999999999999996,
+      "target_prob": 0.9765625,
+      "tv": 0.023437499999999778,
+      "tv_compiled": 0.023437499999999778
+    },
+    "prep_middle_plus": {
+      "hf": 0.9687499999999996,
+      "ideal_target": 0.9999999999999996,
+      "target_prob": 0.96875,
+      "tv": 0.031249999999999778,
+      "tv_compiled": 0.031249999999999778
+    },
+    "prep_tail_imag": {
+      "hf": 0.9667968749999997,
+      "ideal_target": 0.9999999999999996,
+      "target_prob": 0.966796875,
+      "tv": 0.03320312499999978,
+      "tv_compiled": 0.03320312499999978
+    },
+    "prep_tail_minus": {
+      "hf": 0.9667968749999997,
+      "ideal_target": 0.9999999999999996,
+      "target_prob": 0.966796875,
+      "tv": 0.03320312499999978,
+      "tv_compiled": 0.03320312499999978
+    },
+    "prep_tail_plus": {
+      "hf": 0.9726562499999994,
+      "ideal_target": 0.9999999999999996,
+      "target_prob": 0.97265625,
+      "tv": 0.027343749999999778,
+      "tv_compiled": 0.027343749999999778
+    },
+    "recursive_edge_basis0": {
+      "hf": 0.23835304286146175,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.033203125,
+      "tv": 0.748046875,
+      "tv_compiled": 0.7480468750000033
+    },
+    "recursive_edge_basis1": {
+      "hf": 0.25894014667272525,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.048828125,
+      "tv": 0.724609375,
+      "tv_compiled": 0.7246093750000036
+    },
+    "recursive_edge_imag": {
+      "hf": 0.24297000699774435,
+      "ideal_target": 0.4999999999999999,
+      "target_prob": 0.046875,
+      "tv": 0.7578125,
+      "tv_compiled": 0.7578125000000022
+    },
+    "recursive_edge_minus": {
+      "hf": 0.041015625000000014,
+      "ideal_target": 1.0,
+      "target_prob": 0.041015625,
+      "tv": 0.958984375,
+      "tv_compiled": 0.9589843750000024
+    },
+    "recursive_edge_plus": {
+      "hf": 0.28236185432758654,
+      "ideal_target": 0.0,
+      "target_prob": 0.025390625,
+      "tv": 0.7265625,
+      "tv_compiled": 0.726562500000002
+    },
+    "recursive_middle_basis0": {
+      "hf": 0.4085288832486229,
+      "ideal_target": 0.25,
+      "target_prob": 0.052734375,
+      "tv": 0.64453125,
+      "tv_compiled": 0.6445312500000016
+    },
+    "recursive_middle_basis1": {
+      "hf": 0.35987110828854896,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.07421875,
+      "tv": 0.6796875,
+      "tv_compiled": 0.6796875000000026
+    },
+    "recursive_middle_imag": {
+      "hf": 0.36128306549374906,
+      "ideal_target": 0.37499999999999994,
+      "target_prob": 0.05859375,
+      "tv": 0.658203125,
+      "tv_compiled": 0.6582031250000018
+    },
+    "recursive_middle_minus": {
+      "hf": 0.17486218848914967,
+      "ideal_target": 0.7285533905932737,
+      "target_prob": 0.0546875,
+      "tv": 0.8476940155932737,
+      "tv_compiled": 0.8476940155932755
+    },
+    "recursive_middle_plus": {
+      "hf": 0.46161079642777525,
+      "ideal_target": 0.02144660940672625,
+      "target_prob": 0.029296875,
+      "tv": 0.5827967167691146,
+      "tv_compiled": 0.582796716769116
+    },
+    "recursive_tail_basis0": {
+      "hf": 0.3359343370519589,
+      "ideal_target": 0.25,
+      "target_prob": 0.1171875,
+      "tv": 0.626953125,
+      "tv_compiled": 0.6269531250000046
+    },
+    "recursive_tail_basis1": {
+      "hf": 0.2822265625000001,
+      "ideal_target": 0.5000000000000001,
+      "target_prob": 0.0703125,
+      "tv": 0.6933593750000001,
+      "tv_compiled": 0.6933593750000044
+    },
+    "recursive_tail_imag": {
+      "hf": 0.3256117949186199,
+      "ideal_target": 0.37499999999999994,
+      "target_prob": 0.056640625,
+      "tv": 0.6484375,
+      "tv_compiled": 0.6484375000000024
+    },
+    "recursive_tail_minus": {
+      "hf": 0.26107775709480846,
+      "ideal_target": 0.7285533905932737,
+      "target_prob": 0.125,
+      "tv": 0.7461315155932737,
+      "tv_compiled": 0.7461315155932777
+    },
+    "recursive_tail_plus": {
+      "hf": 0.33734712744883294,
+      "ideal_target": 0.02144660940672625,
+      "target_prob": 0.0546875,
+      "tv": 0.6699596405932737,
+      "tv_compiled": 0.6699596405932776
+    },
+    "spam_0": {
+      "hf": 0.9843750000000001,
+      "ideal_target": 1.0,
+      "target_prob": 0.984375,
+      "tv": 0.015625,
+      "tv_compiled": 0.015625
+    },
+    "spam_1": {
+      "hf": 0.974609375,
+      "ideal_target": 1.0,
+      "target_prob": 0.974609375,
+      "tv": 0.025390625,
+      "tv_compiled": 0.025390625
+    },
+    "spam_15": {
+      "hf": 0.9785156249999999,
+      "ideal_target": 1.0,
+      "target_prob": 0.978515625,
+      "tv": 0.021484375,
+      "tv_compiled": 0.021484375
+    },
+    "spam_31": {
+      "hf": 0.9570312500000001,
+      "ideal_target": 1.0,
+      "target_prob": 0.95703125,
+      "tv": 0.04296875,
+      "tv_compiled": 0.04296875
+    }
+  },
+  "scope": "EXPLORATORY_PHASE_CONTRAST_SHOT_ONLY"
+}

@@ -1,0 +1,25 @@
+# HAD-QFT-04: Recursive valuation-shell Fourier circuits
+
+Research working draft, 2026-11-27. Known normalized Ramanujan supercharacter matrices: Fowler, Garcia, Karaali (arXiv:1201.1060); Brumbaugh et al. (doi:10.1016/j.jnt.2014.04.019). The new circuit recursion needs a further priority search. No general QFT speedup, quantum advantage, hardware, or formal proof-assistant claim.
+
+For N=p^n, p prime, full-unit-invariant shells S_j are elements of additive order p^j. Set c=sqrt((p-1)/p), d=1/sqrt(p), G_j=[[c,d],[-d,c]] on adjacent labels. The normalized shell QFT Q obeys QR=W_(n+1)=G_0...G_(n-1), with R reversing labels. This follows from v_j=d v_(j-1)+c e_j: column j<n of the product is c v_j-d e_(j+1), last column v_n. Compare the normalized Ramanujan matrix.
+
+## New recursion
+
+W_(2L)=(W_L⊕I)G_(L-1)(I⊕W_L). Extract I_2⊗W_L on the left, conjugating the boundary rotation by I⊕W_L^T. The right-hand vector is g_L=W_L^T e_0=(c,cd,...,cd^(L-2),d^(L-1)). Let P_L preserve the leading bit and map |0,0> to |0,L-1>, |1,0> to |1,g_L>. Let C_L rotate the leading bit by -2 asin(d) conditioned on the lower register being zero. Then W_(2L)=(I_2⊗W_L)P_L C_L P_L†. Only one smaller circuit is invoked. For a lower register of r bits, bit k uses z=d^(2^(r-1-k)), angle 2 asin(z) if all prefix bits are one, and 2 atan(z) otherwise; leading-zero branch flips all lower bits. These are full controlled rotations; actual inverse preparation used.
+
+When n+1=2^b, binary label reversal is b X gates. A Gray-cycle multiplexed level costs 5*2^r+2r-4 CX, sum 5*2^b+b^2-5b-6. Clean workspace: P_L uses r CX, 2r-1 controlled RY and 2(r-1) CCX; C_L uses one controlled RY and 2(r-1) CCX. Level total 46r-38 CX with 2 CX per controlled RY and 6 per CCX. Sum (b-1)(23b-38), using max(0,b-2) reusable clean bits. Total gates O(2^b) or O(b^2). Hybrid picks cheaper level. Full position encoding is assumed unnecessary: these are native shell-register circuits with arbitrary rotation gates, no routing or finite-gate synthesis. General unequal shell counts remain open.
+
+## Character sectors
+
+For nontrivial multiplicative chi of conductor p^a, normalized shell |j,chi> for j>=a has amplitudes chi(u)/sqrt(phi(p^j)) at p^(n-j)u. Positive-exponent F maps it to gamma_chi |n+a-j, conjugate chi>, gamma_chi=GaussSum(chi)/sqrt(p^a). Additive conductor mismatch makes the character sum vanish (kernel cancellation or lift cancellation); at equality the sum is p^(j-a) conjugate chi(v) times the primitive Gauss sum. Normalization gives gamma, magnitude1 by unitarity. General K_s={u=1 mod p^s} invariant dimension p^s+(n-s)phi(p^s). For p=2,s=2 the two sectors are trivial and chi4 with phase i. Use flag-controlled shell QFT, controlled reversal j ->1-j mod2^b in other block, and phase i on flag. Explicit compiler O(b^2) with 2b total wires. Relative phases retained; two invalid labels get unitary extension.
+
+## Application
+
+A_j averages over the additive subgroup of order p^j; H=sum_j(I-A_j) has eigenvalues r on shell r in Fourier coordinates. U(t)=Q† diag(e^-itr)Q, diagonal realized with b phase gates. Alternating radial potential and hopping remains encoded. For p=2 direct full Walsh baseline uses H on all bits to diagonalize each subgroup projector, and compute/uncompute prefix-zero flags: 12(n-1) CX and 2n-1 total wires. At n=7/15/31/127/1023 baseline CX 72/168/360/1512/12264 vs hybrid shell step 56/140/308/1116/3096. This is one specific direct coherent baseline, not optimality. General eigenvalue tables and encoding cost separate. Classically simulable in O(n) amplitudes and O(n) arithmetic per shell transform. Ordinary phase estimation ramp at exact frequency k retains only 1/orbit_size under unit-invariant projection; no general promise.
+
+## Reproduction
+
+Run OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python audit_recursive.py from this folder. Uses previous radial_qft.py, circuit.py, orbit_qft.py, NumPy, SciPy. Generates AUDIT.json and QASM outputs; run in a disposable copy if preserving older receipts. 58 compiled settings, 1184 columns/test vectors, max amplitude error7.3275e-15, leakage norm2.5868e-15. 8 hierarchical settings, 42 shell columns, FFT error1.0191e-15, six-step error1.2216e-15, dense exponential error3.3275e-15. 490 nontrivial sectors,769 FFT columns, max4.4841e-16; 248 two-sector basis columns, max4.4409e-16, zero leakage, full FFT at N8,128,32768. 237 phase-ramp checks. Two final replays byte-identical. Counts through b12 from generation, no full position simulation at giant sizes. Initial syntax typo fixed before successful runs. QASM not parsed by Qiskit. No QPU usage.
+
+The complete local HAD_QFT04_paper_and_circuits.zip (SHA256 066ccda146b49f77c43cb19f9e6160e68d02b8c6c6d0406822fe0ec10095ff56) contains the seven-page PDF and editable LaTeX manuscript, full audit output, QASM and manifests. The repository contains executable core and audit, not the PDF/manuscript itself in this commit. Future paper work: unequal shell counts, controlled-QFT synthesis, stronger baseline and encoder analysis, literature novelty review, prospective hardware pilot. 

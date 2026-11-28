@@ -1,0 +1,87 @@
+{
+  "alpha": 0.05,
+  "comparisons": [
+    {
+      "approx": 0.189453125,
+      "diff": 0.173828125,
+      "lower_bound_simultaneous": 0.027510847160694046,
+      "n": 512,
+      "probe": "edge",
+      "radius_bonferroni": 0.14631727783930595,
+      "radius_unadjusted": 0.12004034891499009,
+      "recursive": 0.015625,
+      "stage": "qpu02_b5_r0",
+      "survives_simultaneous": true,
+      "survives_unadjusted": true
+    },
+    {
+      "approx": 0.203125,
+      "diff": 0.177734375,
+      "lower_bound_simultaneous": 0.031417097160694046,
+      "n": 512,
+      "probe": "middle",
+      "radius_bonferroni": 0.14631727783930595,
+      "radius_unadjusted": 0.12004034891499009,
+      "recursive": 0.025390625,
+      "stage": "qpu02_b5_r0",
+      "survives_simultaneous": true,
+      "survives_unadjusted": true
+    },
+    {
+      "approx": 0.2109375,
+      "diff": 0.140625,
+      "lower_bound_simultaneous": -0.005692277839305954,
+      "n": 512,
+      "probe": "tail",
+      "radius_bonferroni": 0.14631727783930595,
+      "radius_unadjusted": 0.12004034891499009,
+      "recursive": 0.0703125,
+      "stage": "qpu02_b5_r0",
+      "survives_simultaneous": false,
+      "survives_unadjusted": true
+    },
+    {
+      "approx": 0.30859375,
+      "diff": 0.2578125,
+      "lower_bound_simultaneous": 0.11149522216069405,
+      "n": 512,
+      "probe": "edge",
+      "radius_bonferroni": 0.14631727783930595,
+      "radius_unadjusted": 0.12004034891499009,
+      "recursive": 0.05078125,
+      "stage": "qpu02_b5_r1",
+      "survives_simultaneous": true,
+      "survives_unadjusted": true
+    },
+    {
+      "approx": 0.236328125,
+      "diff": 0.150390625,
+      "lower_bound_simultaneous": 0.004073347160694046,
+      "n": 512,
+      "probe": "middle",
+      "radius_bonferroni": 0.14631727783930595,
+      "radius_unadjusted": 0.12004034891499009,
+      "recursive": 0.0859375,
+      "stage": "qpu02_b5_r1",
+      "survives_simultaneous": true,
+      "survives_unadjusted": true
+    },
+    {
+      "approx": 0.25390625,
+      "diff": 0.224609375,
+      "lower_bound_simultaneous": 0.07829209716069405,
+      "n": 512,
+      "probe": "tail",
+      "radius_bonferroni": 0.14631727783930595,
+      "radius_unadjusted": 0.12004034891499009,
+      "recursive": 0.029296875,
+      "stage": "qpu02_b5_r1",
+      "survives_simultaneous": true,
+      "survives_unadjusted": true
+    }
+  ],
+  "edge_both_survive": true,
+  "family": "compact_approx minus recursive, edge/middle/tail, replicates 0 and 1",
+  "m": 6,
+  "n_survive_simultaneous": 5
+}

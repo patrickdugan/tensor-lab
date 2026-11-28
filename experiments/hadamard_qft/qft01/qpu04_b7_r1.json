@@ -1,0 +1,125 @@
+{
+  "scope": "FROZEN_QPU04_PHASE_CONTRAST",
+  "stage": "b7",
+  "b": 7,
+  "replicate": 1,
+  "backend": "ibm_kingston",
+  "shots": 1024,
+  "parent": "9547024409ef7594cfea5230e26125d176dbf8db",
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      6
+    ]
+  ],
+  "arms": [
+    {
+      "arm": "A",
+      "style": "direct",
+      "order": "rev",
+      "modified": false,
+      "phys": [
+        123,
+        136,
+        143,
+        122,
+        124,
+        142,
+        144
+      ],
+      "routed_cx": 276,
+      "dp_cx": 276,
+      "logical_cx": 188,
+      "initial": [
+        0,
+        2,
+        6,
+        5,
+        1,
+        4,
+        3
+      ],
+      "final": [
+        3,
+        4,
+        0,
+        5,
+        6,
+        1,
+        2
+      ],
+      "m": 0
+    },
+    {
+      "arm": "D",
+      "style": "commutator",
+      "order": "rev",
+      "modified": true,
+      "phys": [
+        123,
+        136,
+        143,
+        122,
+        124,
+        142,
+        144
+      ],
+      "routed_cx": 199,
+      "dp_cx": 201,
+      "logical_cx": 138,
+      "initial": [
+        0,
+        2,
+        6,
+        5,
+        1,
+        4,
+        3
+      ],
+      "final": [
+        3,
+        4,
+        0,
+        5,
+        6,
+        1,
+        2
+      ],
+      "m": 0
+    }
+  ],
+  "families": {
+    "signal": [
+      "A",
+      "D"
+    ],
+    "difference": [
+      [
+        "D",
+        "A"
+      ]
+    ]
+  },
+  "primary": "edge contrast D-A, matched physical region; shot-only Hoeffding",
+  "note": "Same node set, independently optimized input/output permutation per compiler. Two disjoint regions. Secondary probes exploratory."
+}

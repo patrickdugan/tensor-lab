@@ -1,0 +1,52 @@
+\begin{table}[htbp]\centering\small
+\caption{Ancilla-free logical and routed CNOT counts of the previous bounded-error compiler (direct boundary rotations) and the selective-rotation commutator compiler, both routed with the same permutation-state dynamic program on the induced prefix of the seven-node H-shaped region ($b=8$ appends a neighbor of local node 4). Routed counts are optimal only within the stated grammar and fixed chronological gate order; $b=7$ uses the frozen control order. CPU results, reproduced from the committed code.}\label{tab:q4-resources}
+\begin{tabular}{rrrrr}\toprule $b$ & Logical (prev.) & Logical (new) & Routed (prev.) & Routed (new)\\\midrule
+5 & 70 & 68 & 90 & 86\\
+6 & 112 & 98 & 157 & 136\\
+7 & 188 & 138 & 276 & 199\\
+8 & 330 & 192 & 494 & 301\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\scriptsize\setlength{\tabcolsep}{3pt}
+\caption{Native compilation audit of the frozen seven-qubit circuits (basis CZ, SX, RZ, X; optimization level 0; no remapping). Counts are for the input-independent core including routing; duration is the scheduled length of the edge phase circuit (preparation, core, measurement) from the live backend target. The success estimates multiply calibrated CZ, single-qubit and readout fidelities (core and preparation, and with readout). Discrepancy is the largest entry difference between the native and routed logical unitaries; the last column is the spectral-norm distance of the native operator to the exact shell transform (analytic bound $1.6396\cdot10^{-3}$).}\label{tab:q4-native}
+\begin{tabular}{llrrrrrrrrrr}\toprule Region & Arm & CZ & SX & RZ & X & 2q depth & Depth & Dur. ($\mu$s) & Est.\ success & Discrepancy & Error\\\midrule
+0 & A & 276 & 970 & 1731 & 7 & 263 & 2088 & 41.1 & 0.564/0.502 & 6e-14 & 0.001241\\
+0 & D & 199 & 630 & 1225 & 19 & 193 & 1316 & 27.1 & 0.670/0.596 & 4e-14 & 0.001241\\
+1 & A & 276 & 970 & 1731 & 7 & 263 & 2088 & 41.1 & 0.555/0.509 & 6e-14 & 0.001241\\
+1 & D & 199 & 630 & 1225 & 19 & 193 & 1316 & 27.1 & 0.658/0.604 & 4e-14 & 0.001241\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\small
+\caption{QPU04 primary endpoint: edge phase contrast $C=P(n\mid\psi_-)-P(n\mid\psi_+)$ (ideal 1), 1024 shots per circuit, raw counts, no postselection. The joint 95\% Bonferroni--Hoeffding interval (shot noise only, radius $\sqrt{2\ln(4/0.05)/1024}=0.0925$ for each of the two registered differences, no independence assumption across regions) applies to $D-A$. A replicated positive result needs both lower endpoints above zero.}\label{tab:q4-primary}
+\begin{tabular}{lrrrcl}\toprule Region (job) & $C_A$ & $C_D$ & $D-A$ & Joint interval & Lower $>0$\\\midrule
+0 (\texttt{dc54l02nj2vs73dl0cdg}) & 0.086 & 0.157 & +0.0713 & [-0.0212,+0.1638] & no\\
+1 (\texttt{dc54v96q4uuc73a9p2d0}) & 0.061 & 0.153 & +0.0928 & [+0.0003,+0.1853] & yes\\
+\midrule
+\multicolumn{6}{l}{Replicated positive primary result (both lower endpoints above zero): \textbf{no}}\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\small
+\caption{Secondary and exploratory probes: $D-A$ contrast difference with the unadjusted 95\% shot-only interval (radius $0.0849$), descriptive only and not part of the registered primary family.}\label{tab:q4-secondary}
+\begin{tabular}{llrrrrr}\toprule Region & Probe & $C_A$ & $C_D$ & $D-A$ & Interval & \\\midrule
+0 & edge & 0.086 & 0.157 & +0.071 & [-0.014,+0.156] & \\
+0 & middle & 0.082 & 0.161 & +0.079 & [-0.006,+0.164] & \\
+0 & tail & 0.049 & 0.140 & +0.091 & [+0.006,+0.176] & \\
+0 & quarter (32) & 0.041 & 0.164 & +0.123 & [+0.038,+0.208] & \\
+0 & three-quarter (96) & 0.070 & 0.112 & +0.042 & [-0.043,+0.127] & \\
+\midrule
+1 & edge & 0.061 & 0.153 & +0.093 & [+0.008,+0.178] & \\
+1 & middle & 0.052 & 0.099 & +0.047 & [-0.038,+0.132] & \\
+1 & tail & 0.020 & 0.125 & +0.105 & [+0.021,+0.190] & \\
+1 & quarter (32) & 0.058 & 0.120 & +0.062 & [-0.022,+0.147] & \\
+1 & three-quarter (96) & 0.063 & 0.120 & +0.057 & [-0.028,+0.142] & \\
+
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\small
+\caption{QPU04 distribution-level diagnostics and controls. Mean total variation distance and Hellinger fidelity are over the plus, minus and imaginary circuits of the arm; control success is the mean success probability of the two preparation-only and two SPAM circuits; the last column is the total variation distance between the edge imaginary-phase circuit and the average of the two endpoint circuits.}\label{tab:q4-controls}
+\begin{tabular}{llrrrr}\toprule Region & Arm & Mean TV & Mean $F_H$ & Control success & Imag.\ vs mixture TV\\\midrule
+0 & A & 0.817 & 0.181 & 0.926 & 0.171\\
+0 & D & 0.731 & 0.274 & 0.927 & 0.167\\
+1 & A & 0.839 & 0.156 & 0.947 & 0.179\\
+1 & D & 0.757 & 0.246 & 0.944 & 0.151\\
+\bottomrule\end{tabular}\end{table}

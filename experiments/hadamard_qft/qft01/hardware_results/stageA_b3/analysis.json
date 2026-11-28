@@ -1,0 +1,327 @@
+{
+  "paired_tv_gray_minus_recursive": [
+    {
+      "basis": "Z",
+      "difference": -0.04166666666666666,
+      "probe": "imag"
+    },
+    {
+      "basis": "X",
+      "difference": -0.055711410531920524,
+      "probe": "zero"
+    },
+    {
+      "basis": "Y",
+      "difference": 0.006732855764383372,
+      "probe": "imag"
+    },
+    {
+      "basis": "Z",
+      "difference": -0.015624999999999986,
+      "probe": "last"
+    },
+    {
+      "basis": "Z",
+      "difference": 0.005208333333333315,
+      "probe": "zero"
+    },
+    {
+      "basis": "X",
+      "difference": -0.013020833333333315,
+      "probe": "last"
+    },
+    {
+      "basis": "Z",
+      "difference": -0.04963248568501494,
+      "probe": "plus"
+    },
+    {
+      "basis": "X",
+      "difference": -0.03258519874761198,
+      "probe": "plus"
+    }
+  ],
+  "rows": [
+    {
+      "arm": "gray",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9919050100537153,
+      "id": "gray_imag_Z",
+      "probability_zero": 0.11197916666666667,
+      "probe": "imag",
+      "tv": 0.06901041666666671
+    },
+    {
+      "arm": "gray",
+      "basis": "X",
+      "hellinger_fidelity": 0.9426425476661748,
+      "id": "gray_zero_X",
+      "probability_zero": 0.5755208333333334,
+      "probe": "zero",
+      "tv": 0.10762282413092517
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9843750000000001,
+      "id": "spam_03",
+      "probability_zero": 0.0,
+      "probe": "3",
+      "tv": 0.015625
+    },
+    {
+      "arm": "gray",
+      "basis": "echo",
+      "hellinger_fidelity": 0.6067708333333334,
+      "id": "gray_plus_echo",
+      "probability_zero": 0.6067708333333334,
+      "probe": "plus",
+      "tv": 0.39322916666666663
+    },
+    {
+      "arm": "gray",
+      "basis": "Y",
+      "hellinger_fidelity": 0.9761627729614468,
+      "id": "gray_imag_Y",
+      "probability_zero": 0.13541666666666666,
+      "probe": "imag",
+      "tv": 0.1367663801125772
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9765625,
+      "id": "spam_02",
+      "probability_zero": 0.018229166666666668,
+      "probe": "2",
+      "tv": 0.023437500000000003
+    },
+    {
+      "arm": "recursive",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9788354046146321,
+      "id": "recursive_zero_Z",
+      "probability_zero": 0.03125,
+      "probe": "zero",
+      "tv": 0.10937500000000003
+    },
+    {
+      "arm": "gray",
+      "basis": "Z",
+      "hellinger_fidelity": 0.8982091055865342,
+      "id": "gray_last_Z",
+      "probability_zero": 0.4635416666666667,
+      "probe": "last",
+      "tv": 0.10156250000000012
+    },
+    {
+      "arm": "recursive",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9831468873488538,
+      "id": "recursive_imag_Z",
+      "probability_zero": 0.109375,
+      "probe": "imag",
+      "tv": 0.11067708333333337
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9921875000000001,
+      "id": "spam_05",
+      "probability_zero": 0.0,
+      "probe": "5",
+      "tv": 0.007812499999999999
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9973958333333334,
+      "id": "spam_00",
+      "probability_zero": 0.9973958333333334,
+      "probe": "0",
+      "tv": 0.002604166666666648
+    },
+    {
+      "arm": "recursive",
+      "basis": "X",
+      "hellinger_fidelity": 0.8770743326960678,
+      "id": "recursive_last_X",
+      "probability_zero": 0.033854166666666664,
+      "probe": "last",
+      "tv": 0.13541666666666655
+    },
+    {
+      "arm": "recursive",
+      "basis": "echo",
+      "hellinger_fidelity": 0.5234375,
+      "id": "recursive_plus_echo",
+      "probability_zero": 0.5234375,
+      "probe": "plus",
+      "tv": 0.4765625
+    },
+    {
+      "arm": "gray",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9682855219612655,
+      "id": "gray_zero_Z",
+      "probability_zero": 0.046875,
+      "probe": "zero",
+      "tv": 0.11458333333333334
+    },
+    {
+      "arm": "prep",
+      "basis": "echo",
+      "hellinger_fidelity": 0.9322916666666666,
+      "id": "prep_plus",
+      "probability_zero": 0.9322916666666666,
+      "probe": "plus",
+      "tv": 0.06770833333333334
+    },
+    {
+      "arm": "recursive",
+      "basis": "Z",
+      "hellinger_fidelity": 0.8801754902397365,
+      "id": "recursive_last_Z",
+      "probability_zero": 0.4895833333333333,
+      "probe": "last",
+      "tv": 0.11718750000000011
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9869791666666666,
+      "id": "spam_04",
+      "probability_zero": 0.0078125,
+      "probe": "4",
+      "tv": 0.013020833333333351
+    },
+    {
+      "arm": "gray",
+      "basis": "X",
+      "hellinger_fidelity": 0.8867194255324778,
+      "id": "gray_last_X",
+      "probability_zero": 0.026041666666666668,
+      "probe": "last",
+      "tv": 0.12239583333333323
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9921875000000001,
+      "id": "spam_07",
+      "probability_zero": 0.0,
+      "probe": "7",
+      "tv": 0.007812499999999999
+    },
+    {
+      "arm": "gray",
+      "basis": "echo",
+      "hellinger_fidelity": 0.5416666666666666,
+      "id": "gray_imag_echo",
+      "probability_zero": 0.5416666666666666,
+      "probe": "imag",
+      "tv": 0.45833333333333337
+    },
+    {
+      "arm": "recursive",
+      "basis": "X",
+      "hellinger_fidelity": 0.9159546069040193,
+      "id": "recursive_plus_X",
+      "probability_zero": 0.1328125,
+      "probe": "plus",
+      "tv": 0.21991764711162182
+    },
+    {
+      "arm": "recursive",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9766165759494239,
+      "id": "recursive_plus_Z",
+      "probability_zero": 0.12239583333333333,
+      "probe": "plus",
+      "tv": 0.11335790950917414
+    },
+    {
+      "arm": "prep",
+      "basis": "echo",
+      "hellinger_fidelity": 0.9270833333333335,
+      "id": "prep_imag",
+      "probability_zero": 0.9270833333333334,
+      "probe": "imag",
+      "tv": 0.07291666666666666
+    },
+    {
+      "arm": "recursive",
+      "basis": "echo",
+      "hellinger_fidelity": 0.5807291666666666,
+      "id": "recursive_imag_echo",
+      "probability_zero": 0.5807291666666666,
+      "probe": "imag",
+      "tv": 0.41927083333333337
+    },
+    {
+      "arm": "recursive",
+      "basis": "X",
+      "hellinger_fidelity": 0.9191219863397614,
+      "id": "recursive_zero_X",
+      "probability_zero": 0.5182291666666666,
+      "probe": "zero",
+      "tv": 0.1633342346628457
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9817708333333334,
+      "id": "spam_06",
+      "probability_zero": 0.0,
+      "probe": "6",
+      "tv": 0.018229166666666647
+    },
+    {
+      "arm": "spam",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9921875000000001,
+      "id": "spam_01",
+      "probability_zero": 0.0026041666666666665,
+      "probe": "1",
+      "tv": 0.007812499999999999
+    },
+    {
+      "arm": "recursive",
+      "basis": "Y",
+      "hellinger_fidelity": 0.9754158989535278,
+      "id": "recursive_imag_Y",
+      "probability_zero": 0.07291666666666667,
+      "probe": "imag",
+      "tv": 0.13003352434819382
+    },
+    {
+      "arm": "gray",
+      "basis": "Z",
+      "hellinger_fidelity": 0.9873543086603087,
+      "id": "gray_plus_Z",
+      "probability_zero": 0.16145833333333334,
+      "probe": "plus",
+      "tv": 0.0637254238241592
+    },
+    {
+      "arm": "gray",
+      "basis": "X",
+      "hellinger_fidelity": 0.9369791564462653,
+      "id": "gray_plus_X",
+      "probability_zero": 0.057291666666666664,
+      "probe": "plus",
+      "tv": 0.18733244836400983
+    }
+  ],
+  "scope": "DESCRIPTIVE_EXPLORATORY_RAW_COUNTS",
+  "summary": {
+    "gray": {
+      "mean_echo_return": 0.57421875,
+      "mean_forward_tv": 0.1128748949706256
+    },
+    "recursive": {
+      "mean_echo_return": 0.5520833333333333,
+      "mean_forward_tv": 0.13741244570397942
+    }
+  }
+}

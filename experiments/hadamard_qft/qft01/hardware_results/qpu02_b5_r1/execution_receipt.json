@@ -1,0 +1,26 @@
+{
+  "collected_at": "2026-11-27T13:32:42.223412+00:00",
+  "job_id": "dc4ock2nj2vs73dkf570",
+  "job_usage": 14,
+  "plan_sha256": "13ad51412877f8ea611970be899eb567676acbf7ce37ee850571d8e1f5a6a8ee",
+  "usage_after": {
+    "usage_consumed_seconds": 292,
+    "usage_limit_reached": false,
+    "usage_limit_seconds": 600,
+    "usage_period": {
+      "end_time": "2026-11-27T13:32:39.567Z",
+      "start_time": "2026-10-30T13:32:39.567Z"
+    },
+    "usage_remaining_seconds": 308
+  },
+  "usage_before": {
+    "usage_consumed_seconds": 278,
+    "usage_limit_reached": false,
+    "usage_limit_seconds": 600,
+    "usage_period": {
+      "end_time": "2026-11-27T13:31:57.924Z",
+      "start_time": "2026-10-30T13:31:57.924Z"
+    },
+    "usage_remaining_seconds": 322
+  }
+}

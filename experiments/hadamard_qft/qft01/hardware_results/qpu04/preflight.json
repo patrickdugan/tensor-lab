@@ -1,0 +1,312 @@
+{
+  "backend": {
+    "name": "ibm_kingston",
+    "num_qubits": 156,
+    "operational": true,
+    "pending_jobs": 0
+  },
+  "basis": [
+    "cz",
+    "delay",
+    "id",
+    "if_else",
+    "measure",
+    "measure_2",
+    "measure_reset",
+    "measure_reset_2",
+    "reset",
+    "reset_2",
+    "rz",
+    "sx",
+    "x",
+    "xslow"
+  ],
+  "calibration_timestamp": "2026-11-28T10:52:47+08:00",
+  "packages": {
+    "matplotlib": "3.11.2",
+    "networkx": "3.7",
+    "numpy": "2.5.4",
+    "pytest": "9.1.1",
+    "qiskit": "2.6.2",
+    "qiskit-aer": "0.18.2",
+    "qiskit-ibm-runtime": "0.52.0",
+    "rustworkx": "0.18.1",
+    "scipy": "1.18.1"
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10",
+  "regions": [
+    {
+      "edges": [
+        {
+          "cz_error": 0.001259492617962793,
+          "cz_supported": true,
+          "logical": [
+            0,
+            1
+          ],
+          "physical": [
+            71,
+            72
+          ]
+        },
+        {
+          "cz_error": 0.0011427598320810084,
+          "cz_supported": true,
+          "logical": [
+            1,
+            2
+          ],
+          "physical": [
+            72,
+            73
+          ]
+        },
+        {
+          "cz_error": 0.0011762787304469835,
+          "cz_supported": true,
+          "logical": [
+            0,
+            3
+          ],
+          "physical": [
+            71,
+            58
+          ]
+        },
+        {
+          "cz_error": 0.0016897257881919037,
+          "cz_supported": true,
+          "logical": [
+            0,
+            4
+          ],
+          "physical": [
+            71,
+            70
+          ]
+        },
+        {
+          "cz_error": 0.0012296337950855885,
+          "cz_supported": true,
+          "logical": [
+            2,
+            5
+          ],
+          "physical": [
+            73,
+            74
+          ]
+        },
+        {
+          "cz_error": 0.001374661513183023,
+          "cz_supported": true,
+          "logical": [
+            2,
+            6
+          ],
+          "physical": [
+            73,
+            79
+          ]
+        }
+      ],
+      "nodes": [
+        71,
+        72,
+        73,
+        58,
+        70,
+        74,
+        79
+      ],
+      "ok": true,
+      "qubits": {
+        "58": {
+          "readout_error": 0.0194091796875,
+          "sx_error": 0.00019835272243890755,
+          "t1_us": 261.8810293325522,
+          "t2_us": 137.98510553031295
+        },
+        "70": {
+          "readout_error": 0.0123291015625,
+          "sx_error": 0.00018172796964529902,
+          "t1_us": 224.1293371884046,
+          "t2_us": 244.2462648685271
+        },
+        "71": {
+          "readout_error": 0.005859375,
+          "sx_error": 0.0002180462040855455,
+          "t1_us": 339.10871038198667,
+          "t2_us": 220.42965829748286
+        },
+        "72": {
+          "readout_error": 0.0472412109375,
+          "sx_error": 0.00018202657116017477,
+          "t1_us": 119.25767112579693,
+          "t2_us": 94.03760080708021
+        },
+        "73": {
+          "readout_error": 0.0155029296875,
+          "sx_error": 0.00026237357662883105,
+          "t1_us": 346.5556069366464,
+          "t2_us": 228.46391021912137
+        },
+        "74": {
+          "readout_error": 0.006591796875,
+          "sx_error": 0.00026476825324839895,
+          "t1_us": 216.97466487233285,
+          "t2_us": 160.48209226097117
+        },
+        "79": {
+          "readout_error": 0.008056640625,
+          "sx_error": 0.00017904449901106202,
+          "t1_us": 202.0297038540218,
+          "t2_us": 78.62528698809865
+        }
+      },
+      "region": 0
+    },
+    {
+      "edges": [
+        {
+          "cz_error": 0.0016349852219755823,
+          "cz_supported": true,
+          "logical": [
+            0,
+            1
+          ],
+          "physical": [
+            123,
+            136
+          ]
+        },
+        {
+          "cz_error": 0.0015877279289405466,
+          "cz_supported": true,
+          "logical": [
+            1,
+            2
+          ],
+          "physical": [
+            136,
+            143
+          ]
+        },
+        {
+          "cz_error": 0.0012180715251164653,
+          "cz_supported": true,
+          "logical": [
+            0,
+            3
+          ],
+          "physical": [
+            123,
+            122
+          ]
+        },
+        {
+          "cz_error": 0.0011741417343484883,
+          "cz_supported": true,
+          "logical": [
+            0,
+            4
+          ],
+          "physical": [
+            123,
+            124
+          ]
+        },
+        {
+          "cz_error": 0.001266458155047251,
+          "cz_supported": true,
+          "logical": [
+            2,
+            5
+          ],
+          "physical": [
+            143,
+            142
+          ]
+        },
+        {
+          "cz_error": 0.0014379577048591885,
+          "cz_supported": true,
+          "logical": [
+            2,
+            6
+          ],
+          "physical": [
+            143,
+            144
+          ]
+        }
+      ],
+      "nodes": [
+        123,
+        136,
+        143,
+        122,
+        124,
+        142,
+        144
+      ],
+      "ok": true,
+      "qubits": {
+        "122": {
+          "readout_error": 0.0030517578125,
+          "sx_error": 0.00019816580757552963,
+          "t1_us": 322.72866373914525,
+          "t2_us": 293.2172410592454
+        },
+        "123": {
+          "readout_error": 0.00634765625,
+          "sx_error": 0.00017923641195919437,
+          "t1_us": 370.21184609073146,
+          "t2_us": 19.912307373254723
+        },
+        "124": {
+          "readout_error": 0.020751953125,
+          "sx_error": 0.00023589942485736592,
+          "t1_us": 189.76182891021824,
+          "t2_us": 143.41833927211792
+        },
+        "136": {
+          "readout_error": 0.0054931640625,
+          "sx_error": 0.00030346103494638746,
+          "t1_us": 207.85891588831544,
+          "t2_us": 312.4659683350215
+        },
+        "142": {
+          "readout_error": 0.029296875,
+          "sx_error": 0.0002473988888641753,
+          "t1_us": 324.8938559922899,
+          "t2_us": 221.59210713611557
+        },
+        "143": {
+          "readout_error": 0.0145263671875,
+          "sx_error": 0.00012750544222398481,
+          "t1_us": 489.7640372684137,
+          "t2_us": 33.248758930349474
+        },
+        "144": {
+          "readout_error": 0.0054931640625,
+          "sx_error": 0.00020161160667247528,
+          "t1_us": 347.1633519114083,
+          "t2_us": 451.9735510920605
+        }
+      },
+      "region": 1
+    }
+  ],
+  "usage": {
+    "usage_consumed_seconds": 401,
+    "usage_limit_reached": false,
+    "usage_limit_seconds": 600,
+    "usage_period": {
+      "end_time": "2026-11-28T03:09:23.232Z",
+      "start_time": "2026-10-31T03:09:23.232Z"
+    },
+    "usage_remaining_seconds": 199
+  }
+}

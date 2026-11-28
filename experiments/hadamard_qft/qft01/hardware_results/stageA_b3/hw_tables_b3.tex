@@ -1,0 +1,39 @@
+\begin{table}[htbp]\centering\small
+\caption{Stage $b=3$ compiled resources for the core transform on ibm\_kingston (physical qubits [38, 49, 48]). Counts are IBM ISA native gates at optimization level 0; duration is the calibrated schedule length of one shot.}
+\label{tab:hw-res-b3}\begin{tabular}{lrr}\toprule Quantity & Gray shell & Recursive\\\midrule
+Logical CNOT (with label conversion) & 32 & 28\\
+Nearest-neighbor CNOT after bridging & 62 & 52\\
+Native two-qubit gates & 62 & 52\\
+Two-qubit depth & 62 & 52\\
+Circuit depth & 395 & 360\\
+Duration ($\mu$s) & 9.66 & 9.08\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\small
+\caption{Stage $b=3$ paired forward-transform results, raw counts, 384 shots per circuit. $\Delta=\mathrm{TV}_{\rm Gray}-\mathrm{TV}_{\rm rec}$ (positive favors the recursive circuit); brackets are 95\% multinomial bootstrap intervals from finite shots only. The ideal-sampling floor is the mean TV a perfect device would show at this shot count.}
+\label{tab:hw-pairs-b3}\begin{tabular}{llrrrcrr}\toprule Probe & Basis & TV Gray & TV rec & $\Delta$ & 95\% interval & $F_H$ Gray & $F_H$ rec\\\midrule
+imag & Y & 0.137 & 0.130 & +0.007 & [-0.062,+0.065] & 0.976 & 0.975\\
+imag & Z & 0.069 & 0.111 & -0.042 & [-0.094,+0.026] & 0.992 & 0.983\\
+last & X & 0.122 & 0.135 & -0.013 & [-0.065,+0.049] & 0.887 & 0.877\\
+last & Z & 0.102 & 0.117 & -0.016 & [-0.068,+0.023] & 0.898 & 0.880\\
+plus & X & 0.187 & 0.220 & -0.033 & [-0.103,+0.033] & 0.937 & 0.916\\
+plus & Z & 0.064 & 0.113 & -0.050 & [-0.100,+0.015] & 0.987 & 0.977\\
+zero & X & 0.108 & 0.163 & -0.056 & [-0.109,+0.007] & 0.943 & 0.919\\
+zero & Z & 0.115 & 0.109 & +0.005 & [-0.052,+0.073] & 0.968 & 0.979\\
+\midrule
+Mean & & 0.113 & 0.137 & -0.025 & [-0.041,-0.001] & 0.949 & 0.938\\
+Ideal floor & & 0.040 & 0.040 & & & &\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\small
+\caption{Stage $b=3$ inverse-transform echoes and controls (ideal return probability 1; 95\% Wilson intervals). Prep-only rows contain the state preparation and its inverse without the transform.}
+\label{tab:hw-echo-b3}\begin{tabular}{lrrc}\toprule Circuit & Probe & Return probability & 95\% interval\\\midrule
+gray & plus & 0.607 & [0.557,0.654]\\
+recursive & plus & 0.523 & [0.473,0.573]\\
+prep & plus & 0.932 & [0.903,0.953]\\
+gray & imag & 0.542 & [0.492,0.591]\\
+prep & imag & 0.927 & [0.897,0.949]\\
+recursive & imag & 0.581 & [0.531,0.629]\\
+\midrule
+SPAM, mean correct readout & all 8 basis states & 0.988 & min 0.977\\
+\bottomrule\end{tabular}\end{table}

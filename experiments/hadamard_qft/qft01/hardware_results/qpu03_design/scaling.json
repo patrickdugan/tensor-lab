@@ -1,0 +1,1046 @@
+{
+ "seeds": 12,
+ "levels": [
+  2,
+  3
+ ],
+ "shape_cap": 6,
+ "rows": [
+  {
+   "b": 3,
+   "mode": "approx",
+   "m": 0,
+   "n_wires": 3,
+   "logical_cx": 16,
+   "bound": 0,
+   "operator_error": 8.169913955419451e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 16,
+    "cz_depth": 16,
+    "depth": 69,
+    "order": "near",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25
+    ]
+   }
+  },
+  {
+   "b": 3,
+   "mode": "approx",
+   "m": 1,
+   "n_wires": 4,
+   "logical_cx": 16,
+   "bound": 0,
+   "operator_error": 8.169913955419451e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": null
+  },
+  {
+   "b": 3,
+   "mode": "approx",
+   "m": 2,
+   "n_wires": 5,
+   "logical_cx": 16,
+   "bound": 0,
+   "operator_error": 8.169913955419451e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": null
+  },
+  {
+   "b": 3,
+   "mode": "approx",
+   "m": 3,
+   "n_wires": 6,
+   "logical_cx": 16,
+   "bound": 0,
+   "operator_error": 8.169913955419451e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": null
+  },
+  {
+   "b": 3,
+   "mode": "approx",
+   "m": 4,
+   "n_wires": 7,
+   "logical_cx": 16,
+   "bound": 0,
+   "operator_error": 8.169913955419451e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": null
+  },
+  {
+   "b": 3,
+   "mode": "exact",
+   "m": 0,
+   "n_wires": 3,
+   "logical_cx": 16,
+   "bound": 0.0,
+   "operator_error": 8.169913955419451e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 16,
+    "cz_depth": 16,
+    "depth": 69,
+    "order": "near",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25
+    ]
+   }
+  },
+  {
+   "b": 3,
+   "mode": "exact",
+   "m": 2,
+   "n_wires": 5,
+   "logical_cx": 16,
+   "bound": 0.0,
+   "operator_error": 8.169913955419451e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 16,
+    "cz_depth": 16,
+    "depth": 69,
+    "order": "near",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     37
+    ]
+   }
+  },
+  {
+   "b": 4,
+   "mode": "approx",
+   "m": 0,
+   "n_wires": 4,
+   "logical_cx": 46,
+   "bound": 0,
+   "operator_error": 9.145541733793703e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 70,
+    "cz_depth": 64,
+    "depth": 236,
+    "order": "rev",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26
+    ]
+   }
+  },
+  {
+   "b": 4,
+   "mode": "approx",
+   "m": 1,
+   "n_wires": 5,
+   "logical_cx": 46,
+   "bound": 0,
+   "operator_error": 9.145541733793703e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 54,
+    "cz_depth": 54,
+    "depth": 217,
+    "order": "near",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     37
+    ]
+   }
+  },
+  {
+   "b": 4,
+   "mode": "approx",
+   "m": 2,
+   "n_wires": 6,
+   "logical_cx": 46,
+   "bound": 0,
+   "operator_error": 9.145541733793703e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 54,
+    "cz_depth": 54,
+    "depth": 217,
+    "order": "near",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     37
+    ]
+   }
+  },
+  {
+   "b": 4,
+   "mode": "approx",
+   "m": 3,
+   "n_wires": 7,
+   "logical_cx": 46,
+   "bound": 0,
+   "operator_error": 9.145541733793703e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 54,
+    "cz_depth": 54,
+    "depth": 217,
+    "order": "near",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     37
+    ]
+   }
+  },
+  {
+   "b": 4,
+   "mode": "approx",
+   "m": 4,
+   "n_wires": 8,
+   "logical_cx": 46,
+   "bound": 0,
+   "operator_error": 9.145541733793703e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 54,
+    "cz_depth": 54,
+    "depth": 217,
+    "order": "near",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     37
+    ]
+   }
+  },
+  {
+   "b": 4,
+   "mode": "exact",
+   "m": 0,
+   "n_wires": 4,
+   "logical_cx": 46,
+   "bound": 0.0,
+   "operator_error": 9.145541733793703e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 70,
+    "cz_depth": 64,
+    "depth": 236,
+    "order": "rev",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26
+    ]
+   }
+  },
+  {
+   "b": 4,
+   "mode": "exact",
+   "m": 2,
+   "n_wires": 6,
+   "logical_cx": 46,
+   "bound": 0.0,
+   "operator_error": 9.145541733793703e-16,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 54,
+    "cz_depth": 54,
+    "depth": 217,
+    "order": "near",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     37
+    ]
+   }
+  },
+  {
+   "b": 5,
+   "mode": "approx",
+   "m": 0,
+   "n_wires": 5,
+   "logical_cx": 70,
+   "bound": 0.001633280517082403,
+   "operator_error": 0.0012383711146712589,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 94,
+    "cz_depth": 82,
+    "depth": 315,
+    "order": "rev",
+    "level": 2,
+    "seed": 1,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     37
+    ]
+   }
+  },
+  {
+   "b": 5,
+   "mode": "approx",
+   "m": 1,
+   "n_wires": 6,
+   "logical_cx": 68,
+   "bound": 0.001633280517082403,
+   "operator_error": 0.001238371114671214,
+   "leakage": 2.3157330015318015e-16,
+   "verified": true,
+   "routed": {
+    "cz": 102,
+    "cz_depth": 90,
+    "depth": 314,
+    "order": "rev",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     37
+    ]
+   }
+  },
+  {
+   "b": 5,
+   "mode": "approx",
+   "m": 2,
+   "n_wires": 7,
+   "logical_cx": 68,
+   "bound": 0.001633280517082403,
+   "operator_error": 0.001238371114671214,
+   "leakage": 2.3157330015318015e-16,
+   "verified": true,
+   "routed": {
+    "cz": 102,
+    "cz_depth": 90,
+    "depth": 314,
+    "order": "rev",
+    "level": 2,
+    "seed": 1,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     37
+    ]
+   }
+  },
+  {
+   "b": 5,
+   "mode": "approx",
+   "m": 3,
+   "n_wires": 8,
+   "logical_cx": 68,
+   "bound": 0.001633280517082403,
+   "operator_error": 0.001238371114671214,
+   "leakage": 2.3157330015318015e-16,
+   "verified": true,
+   "routed": {
+    "cz": 102,
+    "cz_depth": 90,
+    "depth": 314,
+    "order": "rev",
+    "level": 2,
+    "seed": 1,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     37
+    ]
+   }
+  },
+  {
+   "b": 5,
+   "mode": "approx",
+   "m": 4,
+   "n_wires": 9,
+   "logical_cx": 68,
+   "bound": 0.001633280517082403,
+   "operator_error": 0.001238371114671214,
+   "leakage": 2.3157330015318015e-16,
+   "verified": true,
+   "routed": {
+    "cz": 102,
+    "cz_depth": 90,
+    "depth": 314,
+    "order": "rev",
+    "level": 2,
+    "seed": 2,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     37
+    ]
+   }
+  },
+  {
+   "b": 5,
+   "mode": "exact",
+   "m": 0,
+   "n_wires": 5,
+   "logical_cx": 114,
+   "bound": 0.0,
+   "operator_error": 4.391000509319086e-15,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 168,
+    "cz_depth": 158,
+    "depth": 586,
+    "order": "rev",
+    "level": 2,
+    "seed": 2,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     37
+    ]
+   }
+  },
+  {
+   "b": 5,
+   "mode": "exact",
+   "m": 2,
+   "n_wires": 7,
+   "logical_cx": 112,
+   "bound": 0.0,
+   "operator_error": 4.888994334176836e-15,
+   "leakage": 1.22715594237498e-16,
+   "verified": true,
+   "routed": {
+    "cz": 175,
+    "cz_depth": 153,
+    "depth": 551,
+    "order": "near",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     37
+    ]
+   }
+  },
+  {
+   "b": 6,
+   "mode": "approx",
+   "m": 0,
+   "n_wires": 6,
+   "logical_cx": 112,
+   "bound": 0.0016396011472881243,
+   "operator_error": 0.0012406036574141997,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 178,
+    "cz_depth": 150,
+    "depth": 567,
+    "order": "near",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     37
+    ]
+   }
+  },
+  {
+   "b": 6,
+   "mode": "approx",
+   "m": 1,
+   "n_wires": 7,
+   "logical_cx": 100,
+   "bound": 0.0016396011472881243,
+   "operator_error": 0.0012406036574138446,
+   "leakage": 3.5873476201784545e-16,
+   "verified": true,
+   "routed": {
+    "cz": 184,
+    "cz_depth": 140,
+    "depth": 489,
+    "order": "near",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     37,
+     45
+    ]
+   }
+  },
+  {
+   "b": 6,
+   "mode": "approx",
+   "m": 2,
+   "n_wires": 8,
+   "logical_cx": 98,
+   "bound": 0.0016396011472881243,
+   "operator_error": 0.0012406036574139072,
+   "leakage": 4.3491560066222386e-16,
+   "verified": true,
+   "routed": {
+    "cz": 182,
+    "cz_depth": 155,
+    "depth": 483,
+    "order": "rev",
+    "level": 2,
+    "seed": 3,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     37,
+     45
+    ]
+   }
+  },
+  {
+   "b": 6,
+   "mode": "approx",
+   "m": 3,
+   "n_wires": 9,
+   "logical_cx": 98,
+   "bound": 0.0016396011472881243,
+   "operator_error": 0.0012406036574139072,
+   "leakage": 4.3491560066222386e-16,
+   "verified": true,
+   "routed": {
+    "cz": 179,
+    "cz_depth": 154,
+    "depth": 480,
+    "order": "rev",
+    "level": 2,
+    "seed": 10,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     37,
+     45
+    ]
+   }
+  },
+  {
+   "b": 6,
+   "mode": "approx",
+   "m": 4,
+   "n_wires": 10,
+   "logical_cx": 98,
+   "bound": 0.0016396011472881243,
+   "operator_error": 0.0012406036574139072,
+   "leakage": 4.3491560066222386e-16,
+   "verified": true,
+   "routed": {
+    "cz": 179,
+    "cz_depth": 154,
+    "depth": 480,
+    "order": "rev",
+    "level": 2,
+    "seed": 10,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     37,
+     44,
+     45
+    ]
+   }
+  },
+  {
+   "b": 6,
+   "mode": "exact",
+   "m": 0,
+   "n_wires": 6,
+   "logical_cx": 260,
+   "bound": 0.0,
+   "operator_error": 8.271242324714524e-15,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 415,
+    "cz_depth": 363,
+    "depth": 1274,
+    "order": "rev",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     37
+    ]
+   }
+  },
+  {
+   "b": 6,
+   "mode": "exact",
+   "m": 2,
+   "n_wires": 8,
+   "logical_cx": 246,
+   "bound": 0.0,
+   "operator_error": 7.984408521692358e-15,
+   "leakage": 1.1456605217272018e-15,
+   "verified": true,
+   "routed": {
+    "cz": 419,
+    "cz_depth": 347,
+    "depth": 1282,
+    "order": "rev",
+    "level": 2,
+    "seed": 2,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     37,
+     45
+    ]
+   }
+  },
+  {
+   "b": 7,
+   "mode": "approx",
+   "m": 0,
+   "n_wires": 7,
+   "logical_cx": 188,
+   "bound": 0.0016396012437297346,
+   "operator_error": 0.00124060367446222,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": {
+    "cz": 320,
+    "cz_depth": 259,
+    "depth": 953,
+    "order": "rev",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     37,
+     45
+    ]
+   }
+  },
+  {
+   "b": 7,
+   "mode": "approx",
+   "m": 1,
+   "n_wires": 8,
+   "logical_cx": 150,
+   "bound": 0.0016396012437297346,
+   "operator_error": 0.001240603674462289,
+   "leakage": 5.324635301086029e-16,
+   "verified": true,
+   "routed": {
+    "cz": 320,
+    "cz_depth": 248,
+    "depth": 838,
+    "order": "rev",
+    "level": 2,
+    "seed": 4,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     37
+    ]
+   }
+  },
+  {
+   "b": 7,
+   "mode": "approx",
+   "m": 2,
+   "n_wires": 9,
+   "logical_cx": 138,
+   "bound": 0.0016396012437297346,
+   "operator_error": 0.0012406036744620622,
+   "leakage": 4.867008546655707e-16,
+   "verified": true,
+   "routed": {
+    "cz": 295,
+    "cz_depth": 239,
+    "depth": 697,
+    "order": "rev",
+    "level": 2,
+    "seed": 2,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     37,
+     45
+    ]
+   }
+  },
+  {
+   "b": 7,
+   "mode": "approx",
+   "m": 3,
+   "n_wires": 10,
+   "logical_cx": 136,
+   "bound": 0.0016396012437297346,
+   "operator_error": 0.0012406036744620414,
+   "leakage": 4.745784828911792e-16,
+   "verified": true,
+   "routed": {
+    "cz": 297,
+    "cz_depth": 238,
+    "depth": 715,
+    "order": "rev",
+    "level": 2,
+    "seed": 0,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     37,
+     44,
+     45,
+     46
+    ]
+   }
+  },
+  {
+   "b": 7,
+   "mode": "approx",
+   "m": 4,
+   "n_wires": 11,
+   "logical_cx": 136,
+   "bound": 0.0016396012437297346,
+   "operator_error": 0.0012406036744620414,
+   "leakage": 4.745784828911792e-16,
+   "verified": true,
+   "routed": {
+    "cz": 298,
+    "cz_depth": 245,
+    "depth": 718,
+    "order": "rev",
+    "level": 2,
+    "seed": 8,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     37,
+     43,
+     44,
+     45,
+     46
+    ]
+   }
+  },
+  {
+   "b": 7,
+   "mode": "exact",
+   "m": 0,
+   "n_wires": 7,
+   "logical_cx": 564,
+   "bound": 0.0,
+   "operator_error": 1.0886047901661975e-14,
+   "leakage": 0.0,
+   "verified": true,
+   "routed": null
+  },
+  {
+   "b": 7,
+   "mode": "exact",
+   "m": 2,
+   "n_wires": 9,
+   "logical_cx": 514,
+   "bound": 0.0,
+   "operator_error": 9.320257086235205e-15,
+   "leakage": 2.7827431820175466e-15,
+   "verified": true,
+   "routed": null
+  },
+  {
+   "b": 8,
+   "mode": "approx",
+   "m": 0,
+   "n_wires": 8,
+   "logical_cx": 330,
+   "bound": 0.0016396012437297348,
+   "routed": {
+    "cz": 592,
+    "cz_depth": 449,
+    "depth": 1650,
+    "order": "near",
+    "level": 2,
+    "seed": 3,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     37,
+     45
+    ]
+   }
+  },
+  {
+   "b": 8,
+   "mode": "approx",
+   "m": 1,
+   "n_wires": 9,
+   "logical_cx": 234,
+   "bound": 0.0016396012437297348,
+   "routed": {
+    "cz": 495,
+    "cz_depth": 379,
+    "depth": 1259,
+    "order": "rev",
+    "level": 3,
+    "seed": 4,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     37,
+     45
+    ]
+   }
+  },
+  {
+   "b": 8,
+   "mode": "approx",
+   "m": 2,
+   "n_wires": 10,
+   "logical_cx": 196,
+   "bound": 0.0016396012437297348,
+   "routed": {
+    "cz": 451,
+    "cz_depth": 353,
+    "depth": 1110,
+    "order": "rev",
+    "level": 2,
+    "seed": 2,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     37,
+     44,
+     45,
+     46
+    ]
+   }
+  },
+  {
+   "b": 8,
+   "mode": "approx",
+   "m": 3,
+   "n_wires": 11,
+   "logical_cx": 184,
+   "bound": 0.0016396012437297348,
+   "routed": {
+    "cz": 421,
+    "cz_depth": 330,
+    "depth": 974,
+    "order": "rev",
+    "level": 2,
+    "seed": 4,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     37,
+     43,
+     44,
+     45,
+     46
+    ]
+   }
+  },
+  {
+   "b": 8,
+   "mode": "approx",
+   "m": 4,
+   "n_wires": 12,
+   "logical_cx": 182,
+   "bound": 0.0016396012437297348,
+   "routed": {
+    "cz": 426,
+    "cz_depth": 326,
+    "depth": 949,
+    "order": "rev",
+    "level": 2,
+    "seed": 8,
+    "nodes": [
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     37,
+     43,
+     44,
+     45,
+     46,
+     47
+    ]
+   }
+  },
+  {
+   "b": 8,
+   "mode": "exact",
+   "m": 0,
+   "n_wires": 8,
+   "logical_cx": 1186,
+   "bound": 0.0,
+   "routed": null
+  },
+  {
+   "b": 8,
+   "mode": "exact",
+   "m": 2,
+   "n_wires": 10,
+   "logical_cx": 1052,
+   "bound": 0.0,
+   "routed": null
+  }
+ ]
+}

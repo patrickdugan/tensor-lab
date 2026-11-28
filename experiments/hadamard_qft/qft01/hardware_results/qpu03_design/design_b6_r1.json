@@ -1,0 +1,149 @@
+{
+  "arms": [
+    {
+      "arm": "A",
+      "core_metrics": {
+        "cz": 434,
+        "cz_depth": 400,
+        "depth": 1622,
+        "rz": 1070,
+        "size": 2186,
+        "sx": 681,
+        "x": 1
+      },
+      "esp": 0.45827318019021646,
+      "kind": "old",
+      "level": 1,
+      "nodes": [
+        1,
+        2,
+        3,
+        16,
+        23,
+        24
+      ],
+      "overlap_with_D": 5,
+      "seed": 0
+    },
+    {
+      "arm": "C",
+      "core_metrics": {
+        "cz": 184,
+        "cz_depth": 160,
+        "depth": 508,
+        "rz": 257,
+        "size": 868,
+        "sx": 410,
+        "x": 17
+      },
+      "esp": 0.646463175449808,
+      "kind": "ws",
+      "level": 3,
+      "logical_cx": 100,
+      "m": 1,
+      "mode": "approx",
+      "order": "rev",
+      "phys": [
+        5,
+        4,
+        3,
+        2,
+        1,
+        16,
+        23
+      ],
+      "seed": 0,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        37,
+        45
+      ]
+    },
+    {
+      "arm": "D",
+      "core_metrics": {
+        "cz": 185,
+        "cz_depth": 163,
+        "depth": 583,
+        "rz": 303,
+        "size": 926,
+        "sx": 420,
+        "x": 18
+      },
+      "esp": 0.6823180702921432,
+      "kind": "ws",
+      "level": 3,
+      "logical_cx": 112,
+      "m": 0,
+      "mode": "approx",
+      "order": "rev",
+      "phys": [
+        1,
+        2,
+        3,
+        16,
+        23,
+        4
+      ],
+      "seed": 4,
+      "shape": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        37
+      ]
+    }
+  ],
+  "b": 6,
+  "backend": "ibm_kingston",
+  "calibration_timestamp": "2026-11-28T00:19:05+08:00",
+  "families": {
+    "difference": [
+      [
+        "C",
+        "A"
+      ],
+      [
+        "D",
+        "A"
+      ],
+      [
+        "C",
+        "D"
+      ]
+    ],
+    "signal": [
+      "A",
+      "C",
+      "D"
+    ]
+  },
+  "primary": "edge contrast; simultaneous 95% Hoeffding (Bonferroni) over the registered signal and difference families",
+  "roster": {
+    "edge": [
+      "plus",
+      "minus",
+      "imag",
+      "basis0",
+      "basis1"
+    ],
+    "middle": [
+      "plus",
+      "minus"
+    ],
+    "tail": [
+      "plus",
+      "minus"
+    ]
+  },
+  "selection_file": "select_b6_r1.json",
+  "selection_sha256": "ea9bb842b4ecfb4b154e229e05f9cd2e2a2f4bfd55e3de3ed387379caa76e05b",
+  "shots": 1024,
+  "stage": "b6"
+}

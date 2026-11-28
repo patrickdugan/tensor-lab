@@ -1,0 +1,57 @@
+{
+  "alpha": 0.05,
+  "primary_both_positive": false,
+  "regions": [
+    {
+      "contrast": {
+        "A": {
+          "edge": 0.0859375,
+          "middle": 0.08203125,
+          "quarter": 0.041015625,
+          "tail": 0.048828125,
+          "threequarter": 0.0703125
+        },
+        "D": {
+          "edge": 0.1572265625,
+          "middle": 0.1611328125,
+          "quarter": 0.1640625,
+          "tail": 0.1396484375,
+          "threequarter": 0.1123046875
+        }
+      },
+      "edge_difference": 0.0712890625,
+      "interval": [
+        -0.02122388670629989,
+        0.16380201170629988
+      ],
+      "job_id": "dc54l02nj2vs73dl0cdg",
+      "replicate": 0
+    },
+    {
+      "contrast": {
+        "A": {
+          "edge": 0.060546875,
+          "middle": 0.0517578125,
+          "quarter": 0.0576171875,
+          "tail": 0.01953125,
+          "threequarter": 0.0634765625
+        },
+        "D": {
+          "edge": 0.1533203125,
+          "middle": 0.0986328125,
+          "quarter": 0.1201171875,
+          "tail": 0.125,
+          "threequarter": 0.1201171875
+        }
+      },
+      "edge_difference": 0.0927734375,
+      "interval": [
+        0.00026048829370010906,
+        0.18528638670629988
+      ],
+      "job_id": "dc54v96q4uuc73a9p2d0",
+      "replicate": 1
+    }
+  ],
+  "scope": "QPU04_TWO_REGION_PRIMARY_SHOT_ONLY"
+}
